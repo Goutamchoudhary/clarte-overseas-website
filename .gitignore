@@ -12,6 +12,9 @@ dist/
 .env.*
 !.env.example
 
+# local editor/harness settings
+.claude/settings.local.json
+
 # os / editor
 .DS_Store
 *.log

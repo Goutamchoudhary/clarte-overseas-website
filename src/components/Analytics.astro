@@ -1,0 +1,23 @@
+---
+// Google tag (GA4 / Google Ads) + Microsoft Clarity.
+// IDs come from src/consts.ts. Each block only renders when its ID is set,
+// so there are no broken requests before you supply (e.g.) the Clarity ID.
+import { ANALYTICS } from "../consts";
+const { ga4, googleTag, clarity } = ANALYTICS;
+const gtagId = googleTag || ga4;
+
+const gtagInit = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  ${googleTag ? `gtag('config','${googleTag}');` : ""}
+  ${ga4 ? `gtag('config','${ga4}');` : ""}
+`;
+
+const clarityInit = `
+  (function(c,l,a,r,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};var t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${clarity}");
+`;
+---
+{gtagId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`} />}
+{gtagId && <script is:inline set:html={gtagInit} />}
+{clarity && <script is:inline set:html={clarityInit} />}

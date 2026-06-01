@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "static",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4173"],
-      "port": 4173
+      "name": "astro",
+      "runtimeExecutable": "/Users/gautamchoudhary/.nvm/versions/node/v22.22.0/bin/node",
+      "runtimeArgs": ["node_modules/astro/astro.js", "dev", "--port", "4321"],
+      "port": 4321
     }
   ]
 }
