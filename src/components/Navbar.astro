@@ -12,7 +12,20 @@
       <!-- Desktop links (non-navigating placeholders) -->
       <div class="hidden lg:flex items-center gap-7">
         <button class="nav-link active text-[15px]" data-nolink>Home</button>
-        <button class="nav-link text-[15px]" data-nolink>Products</button>
+        <div class="nav-dd">
+          <button class="nav-link text-[15px] inline-flex items-center gap-1" data-nolink>Products
+            <svg class="w-3.5 h-3.5 nav-dd-caret" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dd-menu">
+            <div class="nav-dd-card">
+              <button class="nav-dd-item" data-nolink>Herbal &amp; Leaf Powders</button>
+              <button class="nav-dd-item" data-nolink>Dehydrated Vegetable Powders &ndash; Culinary &amp; Spice Applications</button>
+              <button class="nav-dd-item" data-nolink>Dehydrated Vegetable Powders &ndash; Functional &amp; Nutritional</button>
+              <button class="nav-dd-item" data-nolink>Dehydrated Fruit Powder Ingredients</button>
+              <button class="nav-dd-item" data-nolink>Hydrocolloids &amp; Food Additives</button>
+            </div>
+          </div>
+        </div>
         <button class="nav-link text-[15px]" data-nolink>About Us</button>
         <button class="nav-link text-[15px]" data-nolink>How We Export</button>
         <button class="nav-link text-[15px]" data-nolink>Certifications</button>
@@ -49,6 +62,13 @@
     <nav class="flex flex-col items-center justify-center gap-7 h-[80%] text-white font-head text-2xl">
       <button class="mobile-link" data-nolink>Home</button>
       <button class="mobile-link" data-nolink>Products</button>
+      <div class="flex flex-col items-center gap-2.5 -mt-3 mb-1 px-6 text-center">
+        <button class="mobile-sub" data-nolink>Herbal &amp; Leaf Powders</button>
+        <button class="mobile-sub" data-nolink>Dehydrated Vegetable Powders &ndash; Culinary &amp; Spice</button>
+        <button class="mobile-sub" data-nolink>Dehydrated Vegetable Powders &ndash; Functional &amp; Nutritional</button>
+        <button class="mobile-sub" data-nolink>Dehydrated Fruit Powder Ingredients</button>
+        <button class="mobile-sub" data-nolink>Hydrocolloids &amp; Food Additives</button>
+      </div>
       <button class="mobile-link" data-nolink>About Us</button>
       <button class="mobile-link" data-nolink>How We Export</button>
       <button class="mobile-link" data-nolink>Certifications</button>
