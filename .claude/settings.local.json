@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat)",
+      "Bash(python3 /tmp/make_logos.py)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(touch MEMORY.md)",
+      "Bash(printf -- '- [Website redesign]\\(website-redesign.md\\) — Clarté Overseas homepage rebuild: stack, brand #1f4693, BlueDot-inspired\\\\n')",
+      "Bash(python3 /tmp/move_strip.py)",
+      "Bash(npm -v)",
+      "Bash(echo \"npm: $\\(npm -v 2>&1\\)\")",
+      "Bash(npm view *)",
+      "Bash([ -s \"$HOME/.nvm/nvm.sh\" ])",
+      "Read(//opt/homebrew/opt/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(/opt/homebrew/bin/node -v)"
+    ]
+  }
+}

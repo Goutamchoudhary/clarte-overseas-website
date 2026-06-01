@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarté Overseas — Premium Dehydrated Fruits & Vegetables, Exported from India</title>
+  <meta name="description" content="Clarté Overseas is an India-based merchant exporter of premium dehydrated fruits, vegetables, flakes & powders — delivered to global markets with quality and care." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (CDN) + brand tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: "#1f4693", 600: "#2a55ad", 400: "#5b82d6", 100: "#e7f0ff" },
+            navy:  { DEFAULT: "#0d1a36", 800: "#122a52" },
+            gold:  "#e0a234",
+            cream: "#f7f8fb",
+          },
+          fontFamily: { head: ['Sora','sans-serif'], body: ['Inter','sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-icon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="font-body">
+
+  <!-- =====================================================================
+       NAVBAR (full-width white band, edge-to-edge, rounded bottom corners)
+       Nav links are placeholders — dedicated pages come later, so they do
+       not navigate on the homepage.
+       ===================================================================== -->
+  <header id="navbar" class="nav-bar sticky top-0 z-50 w-full">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-10 flex items-center justify-between gap-4 py-3">
+      <!-- Logo (larger) -->
+      <a href="#home" class="flex items-center shrink-0" aria-label="Clarté Overseas home">
+        <img src="assets/logo/logo-horizontal.svg" alt="Clarté Overseas" class="h-12 lg:h-14 w-auto" />
+      </a>
+
+      <!-- Desktop links (non-navigating placeholders) -->
+      <div class="hidden lg:flex items-center gap-7">
+        <button class="nav-link active text-[15px]" data-nolink>Home</button>
+        <button class="nav-link text-[15px]" data-nolink>Products</button>
+        <button class="nav-link text-[15px]" data-nolink>Portfolio</button>
+        <button class="nav-link text-[15px]" data-nolink>Why Us</button>
+        <button class="nav-link text-[15px]" data-nolink>Markets</button>
+        <button class="nav-link text-[15px]" data-nolink>Certifications</button>
+      </div>
+
+      <!-- Right actions -->
+      <div class="flex items-center gap-2.5">
+        <button class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-brand px-3 py-2 rounded-full transition" aria-label="Language">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          EN
+        </button>
+        <a href="#" data-wa class="hidden sm:flex w-10 h-10 items-center justify-center rounded-full bg-[#25d366] text-white hover:bg-[#1faa4f] transition" aria-label="WhatsApp">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+        </a>
+        <a href="#quote" class="btn btn-dark text-sm px-5 py-2.5">Get a Quote</a>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full text-navy hover:bg-slate-100 transition" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu hidden-menu fixed inset-0 z-[55] bg-navy/95 backdrop-blur-md lg:hidden">
+    <div class="flex justify-between items-center px-6 pt-6">
+      <img src="assets/logo/logo-horizontal-white.svg" alt="Clarté Overseas" class="h-9 w-auto" />
+      <button id="menuClose" class="w-10 h-10 flex items-center justify-center rounded-full text-white hover:bg-white/10" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="flex flex-col items-center justify-center gap-7 h-[80%] text-white font-head text-2xl">
+      <button class="mobile-link" data-nolink>Home</button>
+      <button class="mobile-link" data-nolink>Products</button>
+      <button class="mobile-link" data-nolink>Portfolio</button>
+      <button class="mobile-link" data-nolink>Why Us</button>
+      <button class="mobile-link" data-nolink>Markets</button>
+      <button class="mobile-link" data-nolink>Certifications</button>
+      <a href="#quote" class="btn btn-primary mt-2">Get a Quote</a>
+    </nav>
+  </div>
+
+  <!-- =====================================================================
+       HERO
+       ===================================================================== -->
+  <section id="home" class="hero flex items-center min-h-[88vh] pt-20 pb-24">
+    <!-- Optional photo layer (loads when online; gradient shows otherwise) -->
+    <img class="hero-photo" data-src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80" alt="" aria-hidden="true" />
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- Content (now on the RIGHT on desktop) -->
+      <div class="lg:order-2 lg:col-span-7">
+        <span class="badge-pill reveal">🌿 Merchant exporter of dehydrated foods · India</span>
+
+        <h1 class="reveal d1 text-white font-extrabold leading-[1.03] mt-6 text-5xl sm:text-6xl lg:text-[4.2rem]">
+          India's Harvest,<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-amber-200">Preserved for the World.</span>
+        </h1>
+
+        <p class="reveal d2 text-slate-300 text-lg leading-relaxed mt-7 max-w-xl">
+          We dehydrate India's finest fruits and vegetables into shelf-stable
+          flakes, granules and powders — then deliver them to food brands,
+          processors and distributors across the globe.
+        </p>
+
+        <div class="reveal d3 flex flex-wrap gap-4 mt-9">
+          <a href="#export" class="btn btn-primary">Explore Products
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#quote" class="btn btn-ghost">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Stat cards (now on the LEFT on desktop) -->
+      <div class="lg:order-1 lg:col-span-5 reveal d4 flex flex-col gap-4 w-full max-w-md">
+        <div class="hero-stat">
+          <span class="hs-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg></span>
+          <div>
+            <div class="stat-num text-3xl sm:text-4xl" data-count="40" data-suffix="+">0</div>
+            <div class="text-slate-300 text-sm">Dehydrated SKUs &amp; grades</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <span class="hs-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>
+          <div>
+            <div class="stat-num text-3xl sm:text-4xl" data-count="25" data-suffix="+">0</div>
+            <div class="text-slate-300 text-sm">Countries served worldwide</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <span class="hs-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <div>
+            <div class="stat-num text-3xl sm:text-4xl">100%</div>
+            <div class="text-slate-300 text-sm">Quality-checked batches</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       WHAT WE EXPORT
+       ===================================================================== -->
+  <section id="export" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl reveal">
+        <span class="eyebrow">Product Range</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">A portfolio built for global kitchens</h2>
+        <p class="text-slate-500 text-lg mt-4">Premium India-origin dehydrated produce — in dried, flake, granule and powder form — engineered for shelf life, flavour and food-grade consistency.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mt-14">
+        <!-- Card 1 -->
+        <article class="card product-card reveal">
+          <div class="ph-wrap img-ph h-48" data-emoji="🧅" data-img="https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=800&q=80">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-head font-bold text-xl text-navy">Dehydrated Onion</h3>
+              <span class="status-badge sb-flagship">Flagship</span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed">White &amp; red onion — kibbled, minced, granules &amp; powder. Low microbial load.</p>
+            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card product-card reveal d1">
+          <div class="ph-wrap img-ph h-48" data-emoji="🧄" data-img="https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=800&q=80">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-head font-bold text-xl text-navy">Dehydrated Garlic</h3>
+              <span class="status-badge sb-available">Available</span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Flakes, chopped, granules &amp; fine powder. Strong aroma, food-grade purity.</p>
+            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card product-card reveal d2">
+          <div class="ph-wrap img-ph h-48" data-emoji="🥕" data-img="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-head font-bold text-xl text-navy">Dehydrated Vegetables</h3>
+              <span class="status-badge sb-available">Available</span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Carrot, beetroot, tomato, spinach, cabbage &amp; more — flakes &amp; powders.</p>
+            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article class="card product-card reveal">
+          <div class="ph-wrap img-ph h-48" data-emoji="🍎" data-img="https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?auto=format&fit=crop&w=800&q=80">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06z"/><path d="M10 2c1 .5 2 2 2 5"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-head font-bold text-xl text-navy">Dehydrated Fruits</h3>
+              <span class="status-badge sb-soon">Coming Soon</span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Banana, mango, pineapple &amp; more — slices, dices and powders.</p>
+            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <!-- Card 5 -->
+        <article class="card product-card reveal d1">
+          <div class="ph-wrap img-ph h-48" data-emoji="🌶️" data-img="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10 2v7.31L4.7 17.6a2 2 0 0 0 1.7 3h11.2a2 2 0 0 0 1.7-3L14 9.3V2"/><path d="M8.5 2h7M7 16h10"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-head font-bold text-xl text-navy">Spray-Dried Powders</h3>
+              <span class="status-badge sb-available">Available</span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Free-flowing vegetable &amp; fruit powders for food processing &amp; blends.</p>
+            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <!-- Card 6 -->
+        <article class="card product-card reveal d2">
+          <div class="ph-wrap img-ph h-48" data-emoji="➕">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 4H14M10 4H3M21 12H12M8 12H3M21 20H16M12 20H3M14 2v4M8 10v4M16 18v4"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-head font-bold text-xl text-navy">Custom Blends</h3>
+              <span class="status-badge sb-inquire">Inquire</span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Private-label blends &amp; custom specs tailored to your formulation.</p>
+            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">Talk to Us
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       OUR PORTFOLIO (filterable gallery)
+       ===================================================================== -->
+  <section id="portfolio" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">Our Portfolio</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Dried &amp; powdered, every form you need</h2>
+        <p class="text-slate-500 text-lg mt-4">Filter the range by category. Real product photography and full spec sheets are added as ranges go live.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap justify-center gap-3 mt-10 reveal" id="portfolioFilters">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="vegetables">Vegetables</button>
+        <button class="filter-tab" data-filter="fruits">Fruits</button>
+        <button class="filter-tab" data-filter="powders">Powders &amp; Flakes</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12" id="portfolioGrid">
+        <!-- items -->
+        <figure class="portfolio-item card overflow-hidden reveal" data-cat="vegetables">
+          <div class="img-ph h-56" data-emoji="🧅" data-img="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Onion Flakes &amp; Powder</h3><p class="text-slate-400 text-sm mt-1">Vegetables</p></figcaption>
+        </figure>
+        <figure class="portfolio-item card overflow-hidden reveal d1" data-cat="vegetables">
+          <div class="img-ph h-56" data-emoji="🍅" data-img="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Tomato Powder</h3><p class="text-slate-400 text-sm mt-1">Vegetables</p></figcaption>
+        </figure>
+        <figure class="portfolio-item card overflow-hidden reveal d2" data-cat="powders">
+          <div class="img-ph h-56" data-emoji="🟡" data-img="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Vegetable Powder Blend</h3><p class="text-slate-400 text-sm mt-1">Powders &amp; Flakes</p></figcaption>
+        </figure>
+        <figure class="portfolio-item card overflow-hidden reveal d3" data-cat="fruits">
+          <div class="img-ph h-56" data-emoji="🥭" data-img="https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Mango Powder</h3><p class="text-slate-400 text-sm mt-1">Fruits</p></figcaption>
+        </figure>
+        <figure class="portfolio-item card overflow-hidden reveal" data-cat="vegetables">
+          <div class="img-ph h-56" data-emoji="🥕" data-img="https://images.unsplash.com/photo-1447175008436-054170c2e979?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Carrot Flakes</h3><p class="text-slate-400 text-sm mt-1">Vegetables</p></figcaption>
+        </figure>
+        <figure class="portfolio-item card overflow-hidden reveal d1" data-cat="vegetables">
+          <div class="img-ph h-56" data-emoji="🥬" data-img="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Spinach Powder</h3><p class="text-slate-400 text-sm mt-1">Vegetables</p></figcaption>
+        </figure>
+        <figure class="portfolio-item card overflow-hidden reveal d2" data-cat="fruits">
+          <div class="img-ph h-56" data-emoji="🍌" data-img="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Banana Flakes</h3><p class="text-slate-400 text-sm mt-1">Fruits</p></figcaption>
+        </figure>
+        <figure class="portfolio-item card overflow-hidden reveal d3" data-cat="powders">
+          <div class="img-ph h-56" data-emoji="🧄" data-img="https://images.unsplash.com/photo-1599909533730-f9ba0a2f8c6c?auto=format&fit=crop&w=700&q=80"></div>
+          <figcaption class="p-5"><h3 class="font-head font-semibold text-navy">Garlic Granules</h3><p class="text-slate-400 text-sm mt-1">Powders &amp; Flakes</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       WHY CHOOSE CLARTÉ (Our Advantage) + dark feature strip
+       ===================================================================== -->
+  <section id="advantage" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">The Clarté Edge</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Why buyers choose Clarté Overseas</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7 mt-14">
+        <div class="card p-8 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-head font-bold text-xl text-navy">Compliance, Built In</h3>
+          <p class="text-slate-500 mt-3 leading-relaxed">From FSSAI and ISO 22000 to HACCP and APEDA, every consignment ships with the certifications and paperwork your market expects.</p>
+        </div>
+        <div class="card p-8 reveal d1">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+          </div>
+          <h3 class="font-head font-bold text-xl text-navy">Farm-Direct Sourcing</h3>
+          <p class="text-slate-500 mt-3 leading-relaxed">We partner directly with India's leading growers and audited processing units — removing middlemen for traceable, consistent quality.</p>
+        </div>
+        <div class="card p-8 reveal d2">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7zM7 19a2 2 0 100-4 2 2 0 000 4zM18 19a2 2 0 100-4 2 2 0 000 4z"/></svg>
+          </div>
+          <h3 class="font-head font-bold text-xl text-navy">Seamless Export Logistics</h3>
+          <p class="text-slate-500 mt-3 leading-relaxed">Strategic port access, dependable freight partners and export-grade packaging keep every shipment safe and on schedule, worldwide.</p>
+        </div>
+        <div class="card p-8 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10M7 9h6M7 15h8"/></svg>
+          </div>
+          <h3 class="font-head font-bold text-xl text-navy">Batch Traceability System</h3>
+          <p class="text-slate-500 mt-3 leading-relaxed">Every lot is coded and tracked from raw material to dispatch — full visibility for audits, recalls and complete peace of mind.</p>
+        </div>
+        <div class="card p-8 reveal d1">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="font-head font-bold text-xl text-navy">Integrity &amp; Transparency</h3>
+          <p class="text-slate-500 mt-3 leading-relaxed">Honest dealing, clear communication and ethical trade in every transaction — no hidden surprises.</p>
+        </div>
+        <div class="card p-8 reveal d2">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="font-head font-bold text-xl text-navy">Long-Term Partnerships</h3>
+          <p class="text-slate-500 mt-3 leading-relaxed">We invest in sustainable relationships built on trust and mutual growth — not one-off orders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       INDUSTRIES WE SERVE (split — image left, list right)
+       ===================================================================== -->
+  <section id="industries" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <div class="img-ph rounded-3xl h-[300px] sm:h-[420px]" data-emoji="🥘" data-img="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=80"></div>
+      </div>
+      <div class="reveal d1">
+        <span class="eyebrow">Who We Serve</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Industries we serve</h2>
+        <p class="text-slate-500 text-lg mt-4">We supply dehydrated ingredients to businesses that build flavour into their products:</p>
+        <ul class="mt-6 space-y-3 text-slate-600">
+          <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><span>Food &amp; beverage manufacturers</span></li>
+          <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><span>Flavour houses &amp; ingredient blenders</span></li>
+          <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><span>Seasoning &amp; formulation companies</span></li>
+          <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><span>Bakery &amp; confectionery</span></li>
+          <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><span>Nutraceutical &amp; health-food brands</span></li>
+          <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><span>HoReCa &amp; private-label retailers</span></li>
+        </ul>
+        <p class="text-slate-500 mt-6 leading-relaxed">Our role is to support these industries with reliable, food-grade ingredients that add real value to their end products.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       QUALITY & SUSTAINABILITY MISSION (dark split)
+       ===================================================================== -->
+  <section class="py-24 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <!-- Visual card (now on the right) with blurred product backdrop -->
+      <div class="reveal lg:order-2">
+        <div class="img-ph dark rounded-3xl h-[400px] flex-col gap-6 p-10 text-center" data-emoji="🌱">
+          <img class="bg-blur" src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=70" alt="" aria-hidden="true" onload="this.classList.add('loaded')" onerror="this.remove()" />
+          <p class="text-slate-100 leading-relaxed max-w-sm relative z-10">
+            Gentle dehydration locks in nature — extending shelf life with zero preservatives, less waste and a lighter shipping footprint.
+          </p>
+          <div class="flex flex-wrap justify-center gap-2.5 relative z-10">
+            <span class="badge-pill">No Preservatives</span>
+            <span class="badge-pill">Long Shelf Life</span>
+            <span class="badge-pill">Food-Safe</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copy + stats (now on the left) -->
+      <div class="reveal d1 lg:order-1">
+        <span class="eyebrow light">Our Process</span>
+        <h2 class="text-white font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Quality controlled,<br class="hidden sm:block" /> batch by batch.</h2>
+        <p class="text-slate-300 mt-5 leading-relaxed">
+          Every lot moves through hygienic, certified facilities under strict QC —
+          raw-material grading, moisture and microbial testing, metal detection and
+          final inspection before it's cleared for dispatch.
+        </p>
+
+        <div class="grid grid-cols-2 gap-5 mt-9">
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <div class="stat-num text-4xl">100%</div>
+            <div class="text-slate-300 text-sm mt-1.5">Quality Checked</div>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <div class="stat-num text-4xl">0</div>
+            <div class="text-slate-300 text-sm mt-1.5">Added Preservatives</div>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <div class="stat-num text-4xl" data-count="24" data-suffix="mo">0</div>
+            <div class="text-slate-300 text-sm mt-1.5">Typical Shelf Life</div>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <div class="stat-num text-4xl" data-count="40" data-suffix="+">0</div>
+            <div class="text-slate-300 text-sm mt-1.5">SKUs &amp; Grades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       OUR MISSION & VISION
+       ===================================================================== -->
+  <section id="purpose" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">Our Purpose</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Mission &amp; vision</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7 mt-14">
+        <div class="card p-8 sm:p-10 reveal">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 rounded-full bg-brand text-white flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>
+            </div>
+            <h3 class="font-head font-bold text-2xl text-navy">Our Mission</h3>
+          </div>
+          <p class="text-slate-500 leading-relaxed">To supply reliable, high-quality dehydrated food ingredients through transparent sourcing, consistent supply and professional export practices — helping our clients achieve excellence in their own products and operations.</p>
+        </div>
+        <div class="card p-8 sm:p-10 reveal d1">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 rounded-full bg-brand text-white flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="font-head font-bold text-2xl text-navy">Our Vision</h3>
+          </div>
+          <p class="text-slate-500 leading-relaxed">To be a trusted global export partner in the dehydrated foods and ingredient industry — recognised for quality, reliability and lasting business relationships across international markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       MARKETS WE SERVE
+       ===================================================================== -->
+  <section id="markets" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">Export Footprint</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Where our produce travels</h2>
+        <p class="text-slate-500 text-lg mt-4">From the US and UK to Europe, the Gulf and Australia, Clarté Overseas supplies importers, processors and distributors across five continents — and the map keeps growing.</p>
+      </div>
+
+      <!-- World map -->
+      <div class="mt-14 reveal rounded-3xl bg-white border border-slate-100 p-6 sm:p-10 shadow-sm">
+        <div class="relative w-full max-w-4xl mx-auto" id="worldMap"></div>
+        <!-- Legend -->
+        <div class="flex flex-wrap justify-center gap-x-7 gap-y-3 mt-8 text-sm text-slate-600">
+          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff4d4f]"></span> United States</span>
+          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff4d4f]"></span> United Kingdom</span>
+          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff4d4f]"></span> Europe (Multiple)</span>
+          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff4d4f]"></span> UAE &amp; Middle East</span>
+          <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff4d4f]"></span> Australia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       WORKING WITH US (redesigned — light band with accent cards)
+       ===================================================================== -->
+  <section class="trade-band py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">Working With Us</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Sourcing made simple</h2>
+        <p class="text-slate-500 text-lg mt-4">From your first trial order to repeat container loads — we keep the process flexible, transparent and export-ready.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+        <div class="trade-card reveal">
+          <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15M21 8l-9 5-9-5 9-5 9 5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="m12 13 0 8"/></svg></div>
+          <h3 class="font-head font-bold text-lg text-navy">Trial-Friendly MOQs</h3>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Begin with a small test order and scale up as your demand grows.</p>
+        </div>
+        <div class="trade-card reveal d1">
+          <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9a2.5 2 0 0 0-2.5-1.5c-1.4 0-2.5.7-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2A2.5 2 0 0 1 9.5 16M12 6v1.5M12 16.5V18"/></svg></div>
+          <h3 class="font-head font-bold text-lg text-navy">Priced in Your Currency</h3>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Clear, itemised quotes in USD, EUR, GBP or AED — no surprises.</p>
+        </div>
+        <div class="trade-card reveal d2">
+          <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2a2 2 0 0 1-.6-1.4V4a1 1 0 0 1 1-1h8a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></div>
+          <h3 class="font-head font-bold text-lg text-navy">Private Label &amp; Custom Packs</h3>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Your brand, your spec — packed to your retail or bulk format.</p>
+        </div>
+        <div class="trade-card reveal">
+          <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3 class="font-head font-bold text-lg text-navy">2–4 Week Dispatch</h3>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Quick turnaround from confirmed order to goods on the dock.</p>
+        </div>
+        <div class="trade-card reveal d1">
+          <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="18" cy="17" r="2"/></svg></div>
+          <h3 class="font-head font-bold text-lg text-navy">Door-to-Port Freight</h3>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Dependable freight partners for reliable, on-time global delivery.</p>
+        </div>
+        <div class="trade-card reveal d2">
+          <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div>
+          <h3 class="font-head font-bold text-lg text-navy">Full Export Documentation</h3>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Invoice, packing list, COO and certificates handled end-to-end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CERTIFIED & COMPLIANT
+       ===================================================================== -->
+  <section id="certifications" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">Standards &amp; Trust</span>
+        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Certified &amp; compliant</h2>
+        <p class="text-slate-500 text-lg mt-4">Documentation and certifications that let your customs clear faster and your buyers trust deeper.</p>
+      </div>
+
+      <div class="mt-14 reveal">
+        <p class="text-center font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400 mb-5">Our Registrations</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>IEC</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>APEDA</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>FSSAI</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>GST</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>RCMC</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>FIEO</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>MSME / Udyam</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>Spices Board</span>
+          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>ISO 9001:2015</span>
+        </div>
+      </div>
+
+      <div class="mt-12 reveal d1">
+        <p class="text-center font-head font-semibold text-xs tracking-[0.18em] uppercase text-brand/70 mb-5">Quality &amp; Partner Certifications</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>ISO 22000</span>
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>HACCP</span>
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>BRCGS</span>
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>FDA Registered</span>
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Halal</span>
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Kosher</span>
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>FSSC 22000</span>
+          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Sedex</span>
+        </div>
+        <p class="text-center text-slate-400 text-sm mt-7">Official certification logos &amp; documents will replace these icons as you provide them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CTA / GET A QUOTE BAND
+       ===================================================================== -->
+  <section id="quote" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="hero rounded-[2rem] px-8 py-16 sm:px-16 text-center relative overflow-hidden">
+        <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal">Ready to source from India?</h2>
+        <p class="text-slate-300 text-lg mt-5 max-w-xl mx-auto reveal d1">Send us your requirement and target market — we'll respond with specs, samples and a quote in your currency.</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-9 reveal d2">
+          <a href="#" data-wa class="btn btn-wa">Chat on WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          </a>
+          <a href="mailto:info@clarteoverseas.com" class="btn btn-ghost">Enquire Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="bg-navy text-slate-300 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Reversed order: Get a Quote → Contact → Explore → Logo (logo now on the right) -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <h4 class="font-head font-semibold text-white mb-4">Get a Quote</h4>
+          <p class="text-slate-400 text-sm mb-4">Tell us your requirement and target market.</p>
+          <a href="#quote" class="btn btn-primary text-sm w-full mb-3">Request a Quote</a>
+          <a href="#" data-wa class="btn btn-wa text-sm w-full">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+        <div class="lg:pl-8">
+          <h4 class="font-head font-semibold text-white mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li class="flex gap-2.5"><svg class="w-4 h-4 mt-0.5 text-gold shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>1st Floor, CW-59, Sanjay Gandhi Transport Nagar, Delhi, India. 110042</span></li>
+            <li class="flex gap-2.5"><svg class="w-4 h-4 mt-0.5 text-gold shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:info@clarteoverseas.com" class="hover:text-white transition">info@clarteoverseas.com</a></li>
+            <li class="flex gap-2.5"><svg class="w-4 h-4 mt-0.5 text-gold shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg><a href="#" data-wa class="hover:text-white transition">WhatsApp Business</a></li>
+          </ul>
+        </div>
+        <div class="lg:pl-8">
+          <h4 class="font-head font-semibold text-white mb-4">Explore</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#export" class="hover:text-white transition">Products</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+            <li><a href="#advantage" class="hover:text-white transition">Why Us</a></li>
+            <li><a href="#markets" class="hover:text-white transition">Markets</a></li>
+            <li><a href="#certifications" class="hover:text-white transition">Certifications</a></li>
+          </ul>
+        </div>
+        <div class="lg:text-right">
+          <img src="assets/logo/logo-horizontal-white.svg" alt="Clarté Overseas" class="h-10 w-auto lg:ml-auto" />
+          <p class="text-slate-400 text-sm mt-5 leading-relaxed max-w-xs lg:ml-auto">Premium merchant exporters of dehydrated fruits, vegetables &amp; powders — bringing India's natural goodness to the world.</p>
+          <div class="flex gap-3 mt-6 lg:justify-end">
+            <a href="#" aria-label="Instagram" class="social-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="LinkedIn" class="social-ico"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-ico"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-slate-500">
+        <p>© <span id="year"></span> Clarté Overseas. All rights reserved.</p>
+        <p>Proudly exporting from India 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating buttons -->
+  <a href="#" data-wa class="fab-wa" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+  </a>
+  <button id="toTop" class="fab-top" aria-label="Scroll to top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
