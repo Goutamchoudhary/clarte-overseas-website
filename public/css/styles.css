@@ -14,6 +14,9 @@
   --cream: #f7f8fb;
   --font-head: "Sora", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+  /* Modern brand gradients (replace the old gold accent) */
+  --grad-bright: linear-gradient(95deg, #5eead4 0%, #38bdf8 48%, #818cf8 100%); /* for dark backgrounds */
+  --grad-deep: linear-gradient(95deg, #1f4693 0%, #5b3fd6 55%, #8b5cf6 100%);   /* for light backgrounds */
 }
 
 * { -webkit-font-smoothing: antialiased; }
@@ -28,6 +31,15 @@ body {
 }
 
 h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.02em; }
+
+/* ---- Gradient text helpers ------------------------------------------- */
+.text-grad,
+.text-grad-deep {
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.text-grad { background-image: var(--grad-bright); }
+.text-grad-deep { background-image: var(--grad-deep); }
 
 /* ---- Eyebrow label — pill/chip style with a dot ----------------------- */
 .eyebrow {
@@ -226,18 +238,35 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .product-card:hover .ph-wrap { transform: scale(1.06); }
 .product-card.featured { border-color: var(--brand); box-shadow: 0 18px 40px -22px rgba(31,70,147,.5); }
 
-.status-badge {
-  font-family: var(--font-head); font-size: .66rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-  padding: .3rem .7rem; border-radius: 999px;
+/* ---- Minimal product status (dot + micro-label, no filled pill) ------ */
+.tag-min {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-family: var(--font-head); font-size: .66rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: #94a3b8;
+  white-space: nowrap;
 }
-.sb-flagship { background: var(--brand); color: #fff; }
-.sb-available { background: #e7f0ff; color: var(--brand); }
-.sb-soon { background: #eef1f6; color: #8a93a6; }
-.sb-inquire { background: var(--navy); color: #fff; }
+.tag-min i { width: 6px; height: 6px; border-radius: 50%; background: #cbd5e1; display: inline-block; }
+.tag-min.is-flagship i { background: var(--brand); }
+.tag-min.is-available i { background: #16a34a; }
+.tag-min.is-soon i { background: #cbd5e1; }
+.tag-min.is-inquire i { background: var(--gold); }
 
-/* ---- Stat numbers ----------------------------------------------------- */
-.stat-num { font-family: var(--font-head); font-weight: 800; color: var(--gold); line-height: 1; }
+/* ---- Redesigned card link (circular arrow, not a sliding text-arrow) -- */
+.card-link {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-family: var(--font-head); font-weight: 600; font-size: .78rem;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--brand);
+}
+.card-link .arrow {
+  width: 30px; height: 30px; border-radius: 50%; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--brand-100); color: var(--brand);
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+.card-link:hover .arrow { background: var(--brand); color: #fff; transform: translateX(3px); }
+
+/* ---- Stat numbers (color comes from .text-grad / utility, not gold) --- */
+.stat-num { font-family: var(--font-head); font-weight: 800; line-height: 1; }
 
 /* ---- Feature strip (dark) -------------------------------------------- */
 .feature-strip { background: var(--navy); }
@@ -310,3 +339,55 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 /* ---- Mobile menu ------------------------------------------------------ */
 .mobile-menu { transition: opacity .3s ease, visibility .3s ease; }
 .mobile-menu.hidden-menu { opacity: 0; visibility: hidden; }
+
+/* ---- Process section (deep blue gradient — lighter & distinct from footer) */
+.bg-process {
+  background:
+    radial-gradient(700px 400px at 85% 0%, rgba(91,130,214,.28), transparent 60%),
+    linear-gradient(155deg, #14264c 0%, #1c3a72 60%, #214a99 100%);
+}
+
+/* =======================================================================
+   FOOTER — layered gradient, watermark, trust strip (not a flat dark block)
+   ======================================================================= */
+.site-footer {
+  position: relative; isolation: isolate; overflow: hidden; color: #cdd6e6;
+  background:
+    radial-gradient(600px 380px at 12% 0%, rgba(91,130,214,.22), transparent 60%),
+    radial-gradient(700px 460px at 100% 100%, rgba(31,70,147,.45), transparent 55%),
+    linear-gradient(160deg, #0b1730 0%, #0d1f44 55%, #12306b 100%);
+  background-color: #0b1730;
+}
+/* dotted texture + accent top line */
+.site-footer::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.footer-topline { height: 3px; background: var(--grad-bright); }
+/* big faded watermark */
+.footer-watermark {
+  position: absolute; right: -2%; bottom: -8%; z-index: -1;
+  font-family: var(--font-head); font-weight: 800; font-size: clamp(7rem, 16vw, 15rem);
+  line-height: .8; color: #fff; opacity: .035; letter-spacing: -.04em; pointer-events: none;
+  white-space: nowrap;
+}
+/* trust strip */
+.trust-strip {
+  display: grid; gap: 1px; background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.08); border-radius: 1rem; overflow: hidden;
+}
+@media (min-width: 768px) { .trust-strip { grid-template-columns: repeat(4, 1fr); } }
+.trust-item {
+  display: flex; align-items: center; gap: .85rem; padding: 1.1rem 1.25rem;
+  background: rgba(255,255,255,.02);
+}
+.trust-item .t-ico {
+  width: 42px; height: 42px; border-radius: 12px; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(94,234,212,.12); color: #7ee0d3;
+}
+.trust-item .t-num { font-family: var(--font-head); font-weight: 800; color: #fff; font-size: 1.15rem; line-height: 1; }
+.trust-item .t-label { font-size: .8rem; color: #9fb0c9; margin-top: 2px; }
+.footer-link { color: #aebbd0; transition: color .2s ease, padding-left .2s ease; }
+.footer-link:hover { color: #fff; padding-left: 4px; }

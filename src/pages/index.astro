@@ -2,13 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../consts';
 const title = 'Clarté Overseas — Premium Dehydrated Fruits, Vegetables & Powders | Indian Exporter';
-const description = 'Clarté Overseas is an India-based merchant exporter of premium dehydrated fruits, vegetables, flakes and powders — supplying food manufacturers, flavour houses and distributors worldwide.';
+const description = 'Clarté Overseas is an India-based merchant exporter of premium dehydrated fruits, vegetables, flakes and powders, supplying food manufacturers, flavour houses and distributors worldwide.';
 ---
 <BaseLayout title={title} description={description}>
 <!-- =====================================================================
        HERO
        ===================================================================== -->
-  <section id="home" class="hero flex items-center min-h-[88vh] pt-20 pb-24">
+  <section id="home" class="hero flex items-center min-h-screen pt-20 pb-24">
     <!-- Optional photo layer (loads when online; gradient shows otherwise) -->
     <img class="hero-photo" data-src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80" alt="" aria-hidden="true" />
 
@@ -18,13 +18,14 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
         <span class="badge-pill reveal">🌿 Merchant exporter of dehydrated foods · India</span>
 
         <h1 class="reveal d1 text-white font-extrabold leading-[1.03] mt-6 text-5xl sm:text-6xl lg:text-[4.2rem]">
-          India's Harvest,<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-amber-200">Preserved for the World.</span>
+          India's Harvest,<br /><span class="text-grad">Preserved for the World.</span>
         </h1>
 
         <p class="reveal d2 text-slate-300 text-lg leading-relaxed mt-7 max-w-xl">
-          We dehydrate India's finest fruits and vegetables into shelf-stable
-          flakes, granules and powders — then deliver them to food brands,
-          processors and distributors across the globe.
+          We take freshly harvested Indian produce and turn it into shelf-stable
+          flakes, granules and powders that travel well. Food manufacturers,
+          flavour houses and distributors in 25+ countries rely on us for steady
+          supply and consistent quality.
         </p>
 
         <div class="reveal d3 flex flex-wrap gap-4 mt-9">
@@ -40,21 +41,21 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
         <div class="hero-stat">
           <span class="hs-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg></span>
           <div>
-            <div class="stat-num text-3xl sm:text-4xl" data-count="40" data-suffix="+">0</div>
+            <div class="stat-num text-grad text-3xl sm:text-4xl" data-count="40" data-suffix="+">0</div>
             <div class="text-slate-300 text-sm">Dehydrated SKUs &amp; grades</div>
           </div>
         </div>
         <div class="hero-stat">
           <span class="hs-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>
           <div>
-            <div class="stat-num text-3xl sm:text-4xl" data-count="25" data-suffix="+">0</div>
+            <div class="stat-num text-grad text-3xl sm:text-4xl" data-count="25" data-suffix="+">0</div>
             <div class="text-slate-300 text-sm">Countries served worldwide</div>
           </div>
         </div>
         <div class="hero-stat">
           <span class="hs-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
           <div>
-            <div class="stat-num text-3xl sm:text-4xl">100%</div>
+            <div class="stat-num text-grad text-3xl sm:text-4xl">100%</div>
             <div class="text-slate-300 text-sm">Quality-checked batches</div>
           </div>
         </div>
@@ -70,7 +71,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
       <div class="max-w-2xl reveal">
         <span class="eyebrow">Product Range</span>
         <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">A portfolio built for global kitchens</h2>
-        <p class="text-slate-500 text-lg mt-4">Premium India-origin dehydrated produce — in dried, flake, granule and powder form — engineered for shelf life, flavour and food-grade consistency.</p>
+        <p class="text-slate-500 text-lg mt-4">Indian-grown fruits and vegetables, dried and milled into flakes, granules and powders. Every grade is made for long shelf life, true flavour and food-safe consistency.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mt-14">
@@ -82,11 +83,10 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-head font-bold text-xl text-navy">Dehydrated Onion</h3>
-              <span class="status-badge sb-flagship">Flagship</span>
+              <span class="tag-min is-flagship"><i></i>Flagship</span>
             </div>
-            <p class="text-slate-500 text-[15px] leading-relaxed">White &amp; red onion — kibbled, minced, granules &amp; powder. Low microbial load.</p>
-            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p class="text-slate-500 text-[15px] leading-relaxed">White and red onion in kibbled, minced, granule and powder grades, with consistently low moisture and microbial counts.</p>
+            <a href="#quote" class="card-link mt-5">View Products<span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </article>
         <!-- Card 2 -->
@@ -97,11 +97,10 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-head font-bold text-xl text-navy">Dehydrated Garlic</h3>
-              <span class="status-badge sb-available">Available</span>
+              <span class="tag-min is-available"><i></i>Available</span>
             </div>
-            <p class="text-slate-500 text-[15px] leading-relaxed">Flakes, chopped, granules &amp; fine powder. Strong aroma, food-grade purity.</p>
-            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Flakes, chopped, granules and fine powder that keep a strong, true aroma. Processed to food-grade purity.</p>
+            <a href="#quote" class="card-link mt-5">View Products<span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </article>
         <!-- Card 3 -->
@@ -112,11 +111,10 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-head font-bold text-xl text-navy">Dehydrated Vegetables</h3>
-              <span class="status-badge sb-available">Available</span>
+              <span class="tag-min is-available"><i></i>Available</span>
             </div>
-            <p class="text-slate-500 text-[15px] leading-relaxed">Carrot, beetroot, tomato, spinach, cabbage &amp; more — flakes &amp; powders.</p>
-            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Carrot, beetroot, tomato, spinach, cabbage and more, ready as flakes or powders.</p>
+            <a href="#quote" class="card-link mt-5">View Products<span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </article>
         <!-- Card 4 -->
@@ -127,11 +125,10 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-head font-bold text-xl text-navy">Dehydrated Fruits</h3>
-              <span class="status-badge sb-soon">Coming Soon</span>
+              <span class="tag-min is-soon"><i></i>Coming Soon</span>
             </div>
-            <p class="text-slate-500 text-[15px] leading-relaxed">Banana, mango, pineapple &amp; more — slices, dices and powders.</p>
-            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Banana, mango and pineapple in slices, dices and powders for bakery, cereal and drinks.</p>
+            <a href="#quote" class="card-link mt-5">View Products<span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </article>
         <!-- Card 5 -->
@@ -142,11 +139,10 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-head font-bold text-xl text-navy">Spray-Dried Powders</h3>
-              <span class="status-badge sb-available">Available</span>
+              <span class="tag-min is-available"><i></i>Available</span>
             </div>
-            <p class="text-slate-500 text-[15px] leading-relaxed">Free-flowing vegetable &amp; fruit powders for food processing &amp; blends.</p>
-            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">View Products
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Free-flowing fruit and vegetable powders that disperse cleanly in soups, blends and seasonings.</p>
+            <a href="#quote" class="card-link mt-5">View Products<span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </article>
         <!-- Card 6 -->
@@ -157,11 +153,10 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-head font-bold text-xl text-navy">Custom Blends</h3>
-              <span class="status-badge sb-inquire">Inquire</span>
+              <span class="tag-min is-inquire"><i></i>Inquire</span>
             </div>
-            <p class="text-slate-500 text-[15px] leading-relaxed">Private-label blends &amp; custom specs tailored to your formulation.</p>
-            <a href="#quote" class="inline-flex items-center gap-1.5 text-brand font-head font-semibold text-sm mt-5 hover:gap-2.5 transition-all">Talk to Us
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p class="text-slate-500 text-[15px] leading-relaxed">Private-label blends and made-to-spec grades, built around your recipe and packed to your brief.</p>
+            <a href="#quote" class="card-link mt-5">Talk to Us<span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </article>
       </div>
@@ -249,7 +244,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
           </div>
           <h3 class="font-head font-bold text-xl text-navy">Farm-Direct Sourcing</h3>
-          <p class="text-slate-500 mt-3 leading-relaxed">We partner directly with India's leading growers and audited processing units — removing middlemen for traceable, consistent quality.</p>
+          <p class="text-slate-500 mt-3 leading-relaxed">We buy straight from India's growers and audited processing units, so there are no middlemen and quality stays traceable from farm to pack.</p>
         </div>
         <div class="card p-8 reveal d2">
           <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
@@ -263,21 +258,21 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10M7 9h6M7 15h8"/></svg>
           </div>
           <h3 class="font-head font-bold text-xl text-navy">Batch Traceability System</h3>
-          <p class="text-slate-500 mt-3 leading-relaxed">Every lot is coded and tracked from raw material to dispatch — full visibility for audits, recalls and complete peace of mind.</p>
+          <p class="text-slate-500 mt-3 leading-relaxed">Every lot carries a code you can follow from raw material to dispatch, which keeps audits and recalls straightforward.</p>
         </div>
         <div class="card p-8 reveal d1">
           <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <h3 class="font-head font-bold text-xl text-navy">Integrity &amp; Transparency</h3>
-          <p class="text-slate-500 mt-3 leading-relaxed">Honest dealing, clear communication and ethical trade in every transaction — no hidden surprises.</p>
+          <p class="text-slate-500 mt-3 leading-relaxed">Straight answers, clear pricing and ethical trade on every order. No fine print, no surprises.</p>
         </div>
         <div class="card p-8 reveal d2">
           <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-6">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3 class="font-head font-bold text-xl text-navy">Long-Term Partnerships</h3>
-          <p class="text-slate-500 mt-3 leading-relaxed">We invest in sustainable relationships built on trust and mutual growth — not one-off orders.</p>
+          <p class="text-slate-500 mt-3 leading-relaxed">We would rather earn a long partnership than win a single order, so we invest in trust and steady growth.</p>
         </div>
       </div>
     </div>
@@ -311,14 +306,14 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
   <!-- =====================================================================
        QUALITY & SUSTAINABILITY MISSION (dark split)
        ===================================================================== -->
-  <section class="py-24 bg-navy">
+  <section class="py-24 bg-process">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <!-- Visual card (now on the right) with blurred product backdrop -->
       <div class="reveal lg:order-2">
         <div class="img-ph dark rounded-3xl h-[400px] flex-col gap-6 p-10 text-center" data-emoji="🌱">
           <img class="bg-blur" src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=70" alt="" aria-hidden="true" onload="this.classList.add('loaded')" onerror="this.remove()" />
           <p class="text-slate-100 leading-relaxed max-w-sm relative z-10">
-            Gentle dehydration locks in nature — extending shelf life with zero preservatives, less waste and a lighter shipping footprint.
+            Careful drying keeps the goodness in, so the product lasts longer with no preservatives, less waste and lighter freight.
           </p>
           <div class="flex flex-wrap justify-center gap-2.5 relative z-10">
             <span class="badge-pill">No Preservatives</span>
@@ -333,26 +328,24 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
         <span class="eyebrow light">Our Process</span>
         <h2 class="text-white font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Quality controlled,<br class="hidden sm:block" /> batch by batch.</h2>
         <p class="text-slate-300 mt-5 leading-relaxed">
-          Every lot moves through hygienic, certified facilities under strict QC —
-          raw-material grading, moisture and microbial testing, metal detection and
-          final inspection before it's cleared for dispatch.
+          Every lot is made in hygienic, certified facilities under tight quality control. We grade the raw material, test moisture and microbial counts, run metal detection, then do a final check before it leaves for dispatch.
         </p>
 
         <div class="grid grid-cols-2 gap-5 mt-9">
           <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-            <div class="stat-num text-4xl">100%</div>
+            <div class="stat-num text-white text-4xl">100%</div>
             <div class="text-slate-300 text-sm mt-1.5">Quality Checked</div>
           </div>
           <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-            <div class="stat-num text-4xl">0</div>
+            <div class="stat-num text-white text-4xl">0</div>
             <div class="text-slate-300 text-sm mt-1.5">Added Preservatives</div>
           </div>
           <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-            <div class="stat-num text-4xl" data-count="24" data-suffix="mo">0</div>
+            <div class="stat-num text-white text-4xl" data-count="24" data-suffix="mo">0</div>
             <div class="text-slate-300 text-sm mt-1.5">Typical Shelf Life</div>
           </div>
           <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-            <div class="stat-num text-4xl" data-count="40" data-suffix="+">0</div>
+            <div class="stat-num text-white text-4xl" data-count="40" data-suffix="+">0</div>
             <div class="text-slate-300 text-sm mt-1.5">SKUs &amp; Grades</div>
           </div>
         </div>
@@ -367,7 +360,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center">Our Purpose</span>
-        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Mission &amp; vision</h2>
+        <h2 class="text-grad-deep font-extrabold text-4xl sm:text-5xl mt-4">Mission &amp; vision</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-7 mt-14">
         <div class="card p-8 sm:p-10 reveal">
@@ -377,7 +370,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
             </div>
             <h3 class="font-head font-bold text-2xl text-navy">Our Mission</h3>
           </div>
-          <p class="text-slate-500 leading-relaxed">To supply reliable, high-quality dehydrated food ingredients through transparent sourcing, consistent supply and professional export practices — helping our clients achieve excellence in their own products and operations.</p>
+          <p class="text-slate-500 leading-relaxed">To give food businesses dehydrated ingredients they can count on, backed by honest sourcing, steady supply and proper export practice, so they can build their own products with confidence.</p>
         </div>
         <div class="card p-8 sm:p-10 reveal d1">
           <div class="flex items-center gap-4 mb-5">
@@ -386,7 +379,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
             </div>
             <h3 class="font-head font-bold text-2xl text-navy">Our Vision</h3>
           </div>
-          <p class="text-slate-500 leading-relaxed">To be a trusted global export partner in the dehydrated foods and ingredient industry — recognised for quality, reliability and lasting business relationships across international markets.</p>
+          <p class="text-slate-500 leading-relaxed">To become the partner buyers think of first for dehydrated foods, known for quality, reliability and relationships that last well beyond the first shipment.</p>
         </div>
       </div>
     </div>
@@ -399,8 +392,8 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center">Export Footprint</span>
-        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Where our produce travels</h2>
-        <p class="text-slate-500 text-lg mt-4">From the US and UK to Europe, the Gulf and Australia, Clarté Overseas supplies importers, processors and distributors across five continents — and the map keeps growing.</p>
+        <h2 class="text-grad-deep font-extrabold text-4xl sm:text-5xl mt-4">Where our produce travels</h2>
+        <p class="text-slate-500 text-lg mt-4">From the US and UK to Europe, the Gulf and Australia, Clarté Overseas supplies importers, processors and distributors across five continents, and the map keeps growing.</p>
       </div>
 
       <!-- World map -->
@@ -425,8 +418,8 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center">Working With Us</span>
-        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Sourcing made simple</h2>
-        <p class="text-slate-500 text-lg mt-4">From your first trial order to repeat container loads — we keep the process flexible, transparent and export-ready.</p>
+        <h2 class="text-grad-deep font-extrabold text-4xl sm:text-5xl mt-4">Sourcing made simple</h2>
+        <p class="text-slate-500 text-lg mt-4">From a first trial order to repeat container loads, we keep things flexible, clear and ready for export.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
@@ -438,12 +431,12 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
         <div class="trade-card reveal d1">
           <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9a2.5 2 0 0 0-2.5-1.5c-1.4 0-2.5.7-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2A2.5 2 0 0 1 9.5 16M12 6v1.5M12 16.5V18"/></svg></div>
           <h3 class="font-head font-bold text-lg text-navy">Priced in Your Currency</h3>
-          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Clear, itemised quotes in USD, EUR, GBP or AED — no surprises.</p>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Clear, itemised quotes in USD, EUR, GBP or AED, with nothing hidden.</p>
         </div>
         <div class="trade-card reveal d2">
           <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2a2 2 0 0 1-.6-1.4V4a1 1 0 0 1 1-1h8a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></div>
           <h3 class="font-head font-bold text-lg text-navy">Private Label &amp; Custom Packs</h3>
-          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Your brand, your spec — packed to your retail or bulk format.</p>
+          <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">Your brand and your spec, packed to retail or bulk format.</p>
         </div>
         <div class="trade-card reveal">
           <div class="trade-ico"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
@@ -471,8 +464,8 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center">Standards &amp; Trust</span>
-        <h2 class="text-navy font-extrabold text-4xl sm:text-5xl mt-4">Certified &amp; compliant</h2>
-        <p class="text-slate-500 text-lg mt-4">Documentation and certifications that let your customs clear faster and your buyers trust deeper.</p>
+        <h2 class="text-grad-deep font-extrabold text-4xl sm:text-5xl mt-4">Certified &amp; compliant</h2>
+        <p class="text-slate-500 text-lg mt-4">The paperwork and certifications that move your shipments through customs faster and give buyers one less thing to worry about.</p>
       </div>
 
       <div class="mt-14 reveal">
@@ -514,7 +507,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="hero rounded-[2rem] px-8 py-16 sm:px-16 text-center relative overflow-hidden">
         <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal">Ready to source from India?</h2>
-        <p class="text-slate-300 text-lg mt-5 max-w-xl mx-auto reveal d1">Send us your requirement and target market — we'll respond with specs, samples and a quote in your currency.</p>
+        <p class="text-slate-300 text-lg mt-5 max-w-xl mx-auto reveal d1">Tell us what you need and where it is headed. We will reply with specs, samples and a quote in your currency.</p>
         <div class="flex flex-wrap justify-center gap-4 mt-9 reveal d2">
           <a href="#" data-wa class="btn btn-wa">Chat on WhatsApp
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
