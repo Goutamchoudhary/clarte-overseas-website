@@ -318,11 +318,31 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   transition: transform .25s ease;
 }
 .fab-wa:hover { transform: scale(1.08); }
+/* pulse ring only animates on hover (no continuous outward effect) */
 .fab-wa::before {
   content: ""; position: absolute; inset: 0; border-radius: 50%;
-  background: #25d366; z-index: -1; animation: pulse 2.2s ease-out infinite;
+  background: #25d366; z-index: -1; opacity: 0;
 }
-@keyframes pulse { 0% { transform: scale(1); opacity: .6; } 70%,100% { transform: scale(1.9); opacity: 0; } }
+.fab-wa:hover::before { animation: pulse 1.5s ease-out infinite; }
+@keyframes pulse { 0% { transform: scale(1); opacity: .55; } 70%,100% { transform: scale(1.9); opacity: 0; } }
+
+/* WhatsApp tooltip (appears on hover, points at the button) */
+.fab-tip {
+  position: absolute; right: calc(100% + 16px); top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: #fff; color: var(--navy); border-radius: 14px;
+  padding: .65rem .95rem; text-align: right; white-space: nowrap;
+  box-shadow: 0 18px 44px -14px rgba(13,26,54,.5);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.fab-tip strong { display: block; font-family: var(--font-head); font-size: .82rem; font-weight: 700; color: var(--navy); }
+.fab-tip span { display: block; font-size: .8rem; font-weight: 600; color: #16a34a; margin-top: 1px; }
+.fab-tip::after {
+  content: ""; position: absolute; left: 100%; top: 50%; transform: translateY(-50%);
+  border: 7px solid transparent; border-left-color: #fff;
+}
+.fab-wa:hover .fab-tip { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); }
 
 .fab-top {
   position: fixed; right: 26px; bottom: 96px; z-index: 55;
