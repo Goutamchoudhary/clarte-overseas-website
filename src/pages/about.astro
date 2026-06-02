@@ -80,7 +80,7 @@ const partners = [
           <div class="glance-row"><span class="k">Established</span><span class="v">2025</span></div>
           <div class="glance-row"><span class="k">Head office</span><span class="v">New Delhi, India</span></div>
           <div class="glance-row"><span class="k">Business type</span><span class="v">Merchant exporter</span></div>
-          <div class="glance-row"><span class="k">Registered</span><span class="v">MSME (Udyam) · GST · IEC</span></div>
+          <div class="glance-row"><span class="k">Registered</span><span class="v">GST · IEC · RCMC · FSSAI · ISO 9001</span></div>
           <div class="glance-row"><span class="k">Product lines</span><span class="v">5 ingredient categories</span></div>
           <div class="glance-row"><span class="k">Target markets</span><span class="v">15+ countries</span></div>
           <div class="glance-row"><span class="k">Team</span><span class="v">Small, specialist</span></div>
@@ -89,42 +89,106 @@ const partners = [
     </div>
   </section>
 
-  <!-- ===================== STATS BAND (animated) ===================== -->
-  <section class="bg-process py-14">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-      <div class="reveal">
-        <div class="stat-num text-grad text-4xl sm:text-5xl" data-count="5">0</div>
-        <div class="text-slate-300 text-sm mt-2">Ingredient categories</div>
-      </div>
-      <div class="reveal d1">
-        <div class="stat-num text-grad text-4xl sm:text-5xl" data-count="15" data-suffix="+">0</div>
-        <div class="text-slate-300 text-sm mt-2">Markets in our sights</div>
-      </div>
-      <div class="reveal d2">
-        <div class="stat-num text-grad text-4xl sm:text-5xl" data-count="5">0</div>
-        <div class="text-slate-300 text-sm mt-2">Continents</div>
-      </div>
-      <div class="reveal d3">
-        <div class="stat-num text-grad text-4xl sm:text-5xl">100%</div>
-        <div class="text-slate-300 text-sm mt-2">Quality-checked lots</div>
+  <!-- ===================== BY THE NUMBERS (light) ===================== -->
+  <section class="py-16 bg-cream">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="card text-center p-7 reveal">
+          <div class="stat-num text-grad-deep text-4xl sm:text-5xl" data-count="5">0</div>
+          <div class="text-slate-500 text-sm mt-2">Ingredient categories</div>
+        </div>
+        <div class="card text-center p-7 reveal d1">
+          <div class="stat-num text-grad-deep text-4xl sm:text-5xl" data-count="15" data-suffix="+">0</div>
+          <div class="text-slate-500 text-sm mt-2">Markets in our sights</div>
+        </div>
+        <div class="card text-center p-7 reveal d2">
+          <div class="stat-num text-grad-deep text-4xl sm:text-5xl" data-count="5">0</div>
+          <div class="text-slate-500 text-sm mt-2">Continents</div>
+        </div>
+        <div class="card text-center p-7 reveal d3">
+          <div class="stat-num text-grad-deep text-4xl sm:text-5xl">100%</div>
+          <div class="text-slate-500 text-sm mt-2">Quality-checked lots</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== WHAT WE DO ===================== -->
-  <section class="py-20 lg:py-24 bg-cream">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-2xl reveal">
-        <span class="eyebrow">What We Do</span>
-        <h2 class="tg-7 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">From sourcing to your dock</h2>
-        <p class="text-slate-500 text-lg mt-4">We handle the whole chain so you deal with one accountable partner, not a dozen moving parts.</p>
+  <!-- =====================================================================
+       OUR MISSION & VISION
+       ===================================================================== -->
+  <section id="purpose" class="py-24 bg-white relative overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute -top-28 -right-28 w-[26rem] h-[26rem] rounded-full" style="background: radial-gradient(closest-side, rgba(91,130,214,.16), transparent); filter: blur(10px);"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <!-- Header (left-aligned, editorial) -->
+      <div class="max-w-3xl reveal">
+        <span class="eyebrow">Our Purpose</span>
+        <h2 class="tg-5 font-extrabold text-4xl sm:text-5xl mt-4 leading-[1.08]">Building the world's go-to ingredient partner</h2>
+        <p class="text-slate-500 text-lg mt-5 max-w-2xl">We are not here just to fill orders. We are building Clarté Overseas into a name food businesses anywhere can source from with complete confidence.</p>
       </div>
-      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-5 mt-12">
-        {services.map((s, i) => (
-          <div class={`flex items-start gap-3 reveal ${i % 2 ? "d1" : ""}`}>
-            <svg class="w-5 h-5 text-brand mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
-            <span class="text-slate-700 text-[17px] leading-snug">{s}</span>
+
+      <!-- Mission / Vision as big numbered statements (no boxed cards) -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-0 mt-16">
+        <div class="lg:pr-16 reveal">
+          <div class="flex gap-5">
+            <span class="mv-bar"></span>
+            <div>
+              <p class="mv-label">Mission</p>
+              <p class="mv-text text-xl sm:text-2xl">Give food brands and manufacturers a dehydrated-ingredient partner they can fully rely on: steady quality, honest sourcing, and supply that lands on time, every single order.</p>
+            </div>
           </div>
+        </div>
+        <div class="lg:pl-16 lg:border-l lg:border-slate-200 reveal d1">
+          <div class="flex gap-5">
+            <span class="mv-bar"></span>
+            <div>
+              <p class="mv-label">Vision</p>
+              <p class="mv-text text-xl sm:text-2xl">Become the world's largest and most trusted exporter of dehydrated food ingredients, reaching buyers in as many countries as we possibly can.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What we're driving toward -->
+      <div class="mt-20 reveal">
+        <p class="font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400 mb-7">What we're driving toward</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-9">
+          <div class="reveal">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Reach across the globe</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Serve buyers on every continent, then keep widening the map year on year.</p>
+          </div>
+          <div class="reveal d1">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Reliability, first</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Be the supplier our customers never have to chase, shipment after shipment.</p>
+          </div>
+          <div class="reveal d2">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Traceable &amp; responsible</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Full traceability and fair, sustainable sourcing, from the farm to the port.</p>
+          </div>
+          <div class="reveal d3">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Built to scale</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Capacity, systems and certifications that grow as fast as demand does.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MARKETS MARQUEE ===================== -->
+  <section class="py-20 lg:py-24 bg-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal mb-12">
+      <span class="eyebrow center">Where We're Headed</span>
+      <h2 class="tg-6 font-extrabold text-3xl sm:text-4xl mt-4">Markets we're building toward</h2>
+      <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">We already work with buyers across the UK, Europe, the Gulf and Australia, and we're actively opening up more. Here is where we're focused next.</p>
+    </div>
+    <div class="marquee reveal">
+      <div class="marquee-track">
+        {[...countries, ...countries].map((c) => (
+          <span class="country-chip"><span class="dot"></span>{c}</span>
         ))}
       </div>
     </div>
@@ -153,24 +217,8 @@ const partners = [
     </div>
   </section>
 
-  <!-- ===================== MARKETS MARQUEE ===================== -->
-  <section class="py-20 lg:py-24 bg-cream overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal mb-12">
-      <span class="eyebrow center">Where We're Headed</span>
-      <h2 class="tg-6 font-extrabold text-3xl sm:text-4xl mt-4">Markets we're building toward</h2>
-      <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">We already work with buyers across the UK, Europe, the Gulf and Australia, and we're actively opening up more. Here is where we're focused next.</p>
-    </div>
-    <div class="marquee reveal">
-      <div class="marquee-track">
-        {[...countries, ...countries].map((c) => (
-          <span class="country-chip"><span class="dot"></span>{c}</span>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== PARTNER WITH US ===================== -->
-  <section class="py-20 lg:py-24 bg-white">
+  <section class="py-20 lg:py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl reveal">
         <span class="eyebrow">Work With Us</span>
