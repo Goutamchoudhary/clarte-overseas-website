@@ -70,6 +70,7 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 
 /* ---- Navbar (full-width white band, rounded bottom corners) ----------- */
 .nav-bar {
+  position: relative;
   background: #fff;
   border-bottom-left-radius: var(--nav-radius, 28px);
   border-bottom-right-radius: var(--nav-radius, 28px);
@@ -107,8 +108,11 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .btn-quote:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(31,70,147,.85); }
 .btn-quote .qarrow { transition: transform .2s ease; }
 .btn-quote:hover .qarrow { transform: translateX(3px); }
-/* optional bottom accent line variant */
-.nav-accent { height: 2px; background: var(--grad-bright); border-radius: 2px; }
+/* bottom accent line */
+.nav-accent {
+  position: absolute; left: 24px; right: 24px; bottom: 0; height: 3px;
+  border-radius: 3px; background: var(--grad-bright);
+}
 .nav-link {
   position: relative; font-weight: 500; color: #334155; background: none; border: none;
   cursor: pointer; font-family: var(--font-body);
@@ -421,6 +425,25 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .map-ping, .fab-wa::before { animation: none; }
+}
+
+/* ---- "Why dehydrated" compact panel (card-in-section, distinct look) -- */
+.wd-panel {
+  border-radius: 1.75rem; padding: 1.75rem;
+  background: linear-gradient(120deg, #e7eeff 0%, #f4f7ff 55%, #eae9ff 100%);
+  border: 1px solid #e1e8f6;
+  box-shadow: 0 26px 54px -34px rgba(13,26,54,.35);
+}
+@media (min-width: 1024px) { .wd-panel { padding: 2.4rem 2.8rem; } }
+.wd-item {
+  background: #fff; border: 1px solid #eef0f5; border-radius: 1rem; padding: 1.05rem 1.1rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.wd-item:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -18px rgba(13,26,54,.4); }
+.wd-ico {
+  width: 38px; height: 38px; border-radius: 11px; margin-bottom: .7rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--brand-100); color: var(--brand);
 }
 
 /* ---- Mobile menu ------------------------------------------------------ */
