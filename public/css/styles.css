@@ -449,6 +449,17 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 /* ---- Purpose / goals (editorial, no boxed cards) --------------------- */
 .goal-bar { display: block; width: 34px; height: 3px; border-radius: 3px; background: var(--grad-deep); margin-bottom: .9rem; }
 
+/* Mission & Vision — vertical accent bar + plain gradient label + soft text */
+.mv-bar { width: 4px; border-radius: 4px; background: var(--grad-deep); flex: none; }
+.mv-label {
+  display: inline-block; margin-bottom: .9rem;
+  font-family: var(--font-head); font-weight: 700; font-size: .82rem;
+  letter-spacing: .16em; text-transform: uppercase;
+  background: var(--grad-deep); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.mv-text { color: #64748b; font-family: var(--font-head); font-weight: 500; line-height: 1.45; }
+
 /* ---- Process steps card (modern stepper, replaces decorative visual) -- */
 .proc-card {
   background: rgba(255,255,255,.06);
