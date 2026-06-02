@@ -446,6 +446,9 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   background: var(--brand-100); color: var(--brand);
 }
 
+/* ---- Purpose / goals (editorial, no boxed cards) --------------------- */
+.goal-bar { display: block; width: 34px; height: 3px; border-radius: 3px; background: var(--grad-deep); margin-bottom: .9rem; }
+
 /* ---- Process steps card (modern stepper, replaces decorative visual) -- */
 .proc-card {
   background: rgba(255,255,255,.06);

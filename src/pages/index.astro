@@ -208,7 +208,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
   <section id="industries" class="py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="reveal">
-        <div class="img-ph rounded-3xl h-[300px] sm:h-[420px]" data-emoji="🥘" data-img="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="img-ph rounded-3xl h-[300px] sm:h-[420px]" data-emoji="🥘"></div>
       </div>
       <div class="reveal d1">
         <span class="eyebrow">Who We Serve</span>
@@ -360,30 +360,59 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
   <!-- =====================================================================
        OUR MISSION & VISION
        ===================================================================== -->
-  <section id="purpose" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <span class="eyebrow center">Our Purpose</span>
-        <h2 class="tg-5 font-extrabold text-4xl sm:text-5xl mt-4">Mission &amp; vision</h2>
+  <section id="purpose" class="py-24 bg-white relative overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute -top-28 -right-28 w-[26rem] h-[26rem] rounded-full" style="background: radial-gradient(closest-side, rgba(91,130,214,.16), transparent); filter: blur(10px);"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <!-- Header (left-aligned, editorial) -->
+      <div class="max-w-3xl reveal">
+        <span class="eyebrow">Our Purpose</span>
+        <h2 class="tg-5 font-extrabold text-4xl sm:text-5xl mt-4 leading-[1.08]">Building the world's go-to ingredient partner</h2>
+        <p class="text-slate-500 text-lg mt-5 max-w-2xl">We are not here just to fill orders. We are building Clarté Overseas into a name food businesses anywhere can source from with complete confidence.</p>
       </div>
-      <div class="grid md:grid-cols-2 gap-7 mt-14">
-        <div class="card p-8 sm:p-10 reveal">
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 rounded-full bg-brand text-white flex items-center justify-center shrink-0">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>
-            </div>
-            <h3 class="font-head font-bold text-2xl text-navy">Our Mission</h3>
+
+      <!-- Mission / Vision as big numbered statements (no boxed cards) -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-0 mt-16">
+        <div class="lg:pr-16 reveal">
+          <div class="flex items-baseline gap-4">
+            <span class="tg-5 font-head font-extrabold text-5xl sm:text-6xl leading-none">01</span>
+            <span class="eyebrow">Mission</span>
           </div>
-          <p class="text-slate-500 leading-relaxed">To give food businesses dehydrated ingredients they can count on, backed by honest sourcing, steady supply and proper export practice, so they can build their own products with confidence.</p>
+          <p class="font-head font-semibold text-navy text-xl sm:text-2xl leading-snug mt-6">Give food brands and manufacturers a dehydrated-ingredient partner they can fully rely on: steady quality, honest sourcing, and supply that lands on time, every single order.</p>
         </div>
-        <div class="card p-8 sm:p-10 reveal d1">
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 rounded-full bg-brand text-white flex items-center justify-center shrink-0">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <h3 class="font-head font-bold text-2xl text-navy">Our Vision</h3>
+        <div class="lg:pl-16 lg:border-l lg:border-slate-200 reveal d1">
+          <div class="flex items-baseline gap-4">
+            <span class="tg-6 font-head font-extrabold text-5xl sm:text-6xl leading-none">02</span>
+            <span class="eyebrow">Vision</span>
           </div>
-          <p class="text-slate-500 leading-relaxed">To become the partner buyers think of first for dehydrated foods, known for quality, reliability and relationships that last well beyond the first shipment.</p>
+          <p class="font-head font-semibold text-navy text-xl sm:text-2xl leading-snug mt-6">Become the world's largest and most trusted exporter of dehydrated food ingredients, reaching buyers in as many countries as we possibly can.</p>
+        </div>
+      </div>
+
+      <!-- What we're driving toward -->
+      <div class="mt-20 reveal">
+        <p class="font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400 mb-7">What we're driving toward</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-9">
+          <div class="reveal">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Reach across the globe</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Serve buyers on every continent, then keep widening the map year on year.</p>
+          </div>
+          <div class="reveal d1">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Reliability, first</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Be the supplier our customers never have to chase, shipment after shipment.</p>
+          </div>
+          <div class="reveal d2">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Traceable &amp; responsible</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Full traceability and fair, sustainable sourcing, from the farm to the port.</p>
+          </div>
+          <div class="reveal d3">
+            <span class="goal-bar"></span>
+            <h4 class="font-head font-bold text-navy">Built to scale</h4>
+            <p class="text-slate-500 text-sm mt-2 leading-relaxed">Capacity, systems and certifications that grow as fast as demand does.</p>
+          </div>
         </div>
       </div>
     </div>
