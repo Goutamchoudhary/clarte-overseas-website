@@ -187,6 +187,7 @@ function buildWorldMap() {
   lines.setAttribute("viewBox", "0 0 100 50");
   lines.setAttribute("preserveAspectRatio", "none");
   lines.style.cssText = "position:absolute;inset:0;width:100%;height:100%;overflow:visible;";
+  lines.setAttribute("class", "map-route");
   const O = pos(78, 22); // India origin
   const ox = O.x, oy = O.y / 2; // viewBox is 100 x 50 → y is halved
   markets.filter((m) => !m.origin).forEach((m) => {
@@ -205,13 +206,14 @@ function buildWorldMap() {
   host.appendChild(lines);
 
   // pins
-  markets.forEach((m) => {
+  markets.forEach((m, i) => {
     const { x, y } = pos(m.lon, m.lat);
     const color = "#ff4d4f"; // vivid coral-red — high contrast on the terrain map
     const r = m.origin ? 5 : 4;
     const pin = document.createElement("div");
     pin.title = m.name;
-    pin.style.cssText = `position:absolute;left:${x}%;top:${y}%;transform:translate(-50%,-50%);z-index:2;`;
+    pin.className = "map-pin";
+    pin.style.cssText = `position:absolute;left:${x}%;top:${y}%;z-index:2;transition-delay:${i * 90}ms;`;
     const labelStyle =
       m.label === "above"
         ? "bottom:135%"
@@ -227,4 +229,5 @@ function buildWorldMap() {
         background:rgba(255,255,255,.85);padding:1px 6px;border-radius:6px;white-space:nowrap;">${m.name}</span>`;
     host.appendChild(pin);
   });
+  // Pins + routes animate in via the .reveal wrapper around the map (see CSS).
 }

@@ -38,7 +38,10 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .tg-1, .tg-2, .tg-3, .tg-4, .tg-5, .tg-6, .tg-7, .tg-8 {
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
+  background-size: 200% auto;
+  animation: tg-shimmer 9s ease-in-out infinite alternate;
 }
+@keyframes tg-shimmer { from { background-position: 0% center; } to { background-position: 100% center; } }
 .text-grad { background-image: var(--grad-bright); }
 .text-grad-deep { background-image: var(--grad-deep); }
 /* Per-title gradients (each distinct, all readable on light backgrounds) */
@@ -410,16 +413,25 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .fab-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .fab-top:hover { background: var(--brand); }
 
-/* ---- Scroll reveal ---------------------------------------------------- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+/* ---- Scroll reveal (directional + zoom variants, smooth easing) ------- */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+.reveal.from-left { transform: translateX(-40px); }
+.reveal.from-right { transform: translateX(40px); }
+.reveal.zoom { transform: scale(.94); }
 .reveal.in { opacity: 1; transform: none; }
-.reveal.d1 { transition-delay: .08s; }
-.reveal.d2 { transition-delay: .16s; }
-.reveal.d3 { transition-delay: .24s; }
-.reveal.d4 { transition-delay: .32s; }
+.reveal.d1 { transition-delay: .09s; }
+.reveal.d2 { transition-delay: .18s; }
+.reveal.d3 { transition-delay: .27s; }
+.reveal.d4 { transition-delay: .36s; }
+.reveal.d5 { transition-delay: .45s; }
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .map-ping, .fab-wa::before { animation: none; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+  .map-ping, .fab-wa::before, .text-grad, .text-grad-deep,
+  .tg-1, .tg-2, .tg-3, .tg-4, .tg-5, .tg-6, .tg-7, .tg-8 { animation: none !important; }
 }
 
 /* ---- "Why dehydrated" compact panel (card-in-section, distinct look) -- */
@@ -612,3 +624,39 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .prose-article li { position: relative; padding-left: 1.6rem; margin-bottom: .55rem; }
 .prose-article li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 2px; background: var(--grad-deep); }
 .prose-article strong { color: var(--navy); font-weight: 600; }
+
+/* =======================================================================
+   HOMEPAGE ANIMATIONS (subtle, IntersectionObserver-driven)
+   ======================================================================= */
+/* Card shine sweep on hover */
+.product-card, .trade-card, .blog-card-link { position: relative; }
+.product-card::after, .trade-card::after, .blog-card-link::after {
+  content: ""; position: absolute; top: 0; left: -60%; width: 45%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-18deg); pointer-events: none; opacity: 0; z-index: 3;
+}
+.product-card:hover::after, .trade-card:hover::after, .blog-card-link:hover::after {
+  opacity: 1; animation: card-shine .85s ease;
+}
+@keyframes card-shine { from { left: -60%; } to { left: 130%; } }
+
+/* Process stepper: connecting line draws + numbered badges pop in */
+.proc-step::before { transform: scaleY(0); transform-origin: top; transition: transform .6s ease .12s; }
+.proc-step.in::before { transform: scaleY(1); }
+.proc-num { transform: scale(.4); opacity: 0; transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease; }
+.proc-step.in .proc-num { transform: scale(1); opacity: 1; }
+
+/* Markets map: pins pop + routes fade in when scrolled into view */
+.map-wrap .map-pin { transform: translate(-50%, -50%) scale(0); opacity: 0;
+  transition: transform .55s cubic-bezier(.34,1.56,.64,1), opacity .4s ease; }
+.reveal.in .map-pin { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+.map-wrap .map-route { opacity: 0; transition: opacity 1s ease .25s; }
+.reveal.in .map-route { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card::after, .trade-card::after, .blog-card-link::after { display: none; }
+  .proc-step::before, .proc-step.in::before { transform: scaleY(1); transition: none; }
+  .proc-num { transform: none; opacity: 1; transition: none; }
+  .map-wrap .map-pin { transform: translate(-50%, -50%) scale(1); opacity: 1; transition: none; }
+  .map-wrap .map-route { opacity: 1; transition: none; }
+}
