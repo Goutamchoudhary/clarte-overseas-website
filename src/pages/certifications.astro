@@ -242,17 +242,19 @@ const faqLd = {
       <div class="std-rail mt-12 reveal d1" id="stdRail">
         {partnerStandards.map((s, i) => (
           <div class={`std-panel${i === 0 ? " open" : ""}`} tabindex="0" role="button" aria-expanded={i === 0 ? "true" : "false"}>
-            <div class="std-head">
-              <span class="std-ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={s.svg} />
-              </span>
-              <div class="std-title">
-                <span class="std-name">{s.name}</span>
-                <span class="std-line">{s.line}</span>
-              </div>
-            </div>
-            <p class="std-desc">{s.desc}</p>
             <span class="std-index" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <div class="std-body">
+              <div class="std-head">
+                <span class="std-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={s.svg} />
+                </span>
+                <div class="std-title">
+                  <span class="std-name">{s.name}</span>
+                  <span class="std-line">{s.line}</span>
+                </div>
+              </div>
+              <p class="std-desc">{s.desc}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -425,14 +427,18 @@ const faqLd = {
     background: rgba(255,255,255,.12); color: #fff;
   }
   .std-ico svg { width: 23px; height: 23px; }
+  .std-body { width: 100%; }
   .std-name { display: block; font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.1rem; }
   .std-line { display: block; color: #b9c8ea; font-size: .78rem; margin-top: .12rem; letter-spacing: .03em; }
   .std-desc {
     color: #d7e0f4; font-size: .92rem; line-height: 1.6; margin-top: .9rem;
     max-height: 0; opacity: 0; overflow: hidden;
-    transition: max-height .5s ease, opacity .4s ease, margin-top .4s ease;
+    transition: max-height .45s ease, opacity .3s ease, margin-top .4s ease;
   }
-  .std-panel.open .std-desc { max-height: 220px; opacity: 1; }
+  .std-panel.open .std-desc {
+    max-height: 240px; opacity: 1;
+    transition: max-height .45s ease, opacity .4s ease .22s, margin-top .4s ease;
+  }
   .std-index {
     position: absolute; right: 1.1rem; top: .8rem; font: 800 .8rem "Sora", sans-serif;
     color: rgba(255,255,255,.22);
@@ -444,6 +450,10 @@ const faqLd = {
       flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: flex-end;
       transition: flex .55s cubic-bezier(.4,0,.2,1), box-shadow .3s ease;
     }
+    /* Fixed-width body = text is laid out at its final (expanded) width from
+       the start and stays constant while the panel widens (the panel's
+       overflow:hidden simply clips it when collapsed) — so it never re-wraps. */
+    .std-body { width: 340px; }
     .std-panel .std-head { flex-direction: column; align-items: flex-start; gap: .7rem; }
     .std-panel .std-desc { max-height: 0; }
     .std-panel.open { flex: 3.4 1 0; }
