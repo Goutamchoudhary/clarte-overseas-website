@@ -37,6 +37,37 @@ const partners = [
   { t: "Private-label brands", d: "Your branding and packaging, our sourcing and quality control." },
   { t: "Business development", d: "Partners who can open doors to new buyers and regions." },
 ];
+
+const aboutFaqs = [
+  {
+    q: "Where is Clarté Overseas based?",
+    a: "We are based in New Delhi, India, and ship to buyers around the world. Working from a major trade and logistics hub keeps documentation, freight and coordination straightforward.",
+  },
+  {
+    q: "Are you a manufacturer or an exporter?",
+    a: "We are a merchant exporter. Rather than running a single factory, we work with a vetted network of manufacturers and processors across India, which lets us offer a wide range of grades and forms while keeping a close watch on quality and paperwork.",
+  },
+  {
+    q: "How long have you been in business?",
+    a: "Clarté Overseas was established in 2025. We are a young, focused company built specifically around making dehydrated-ingredient sourcing from India simple and dependable for overseas buyers.",
+  },
+  {
+    q: "What makes you different from other exporters?",
+    a: "Consolidated sourcing across several ingredient categories, quality control and lab testing on every lot, full batch traceability, transparent communication, and a genuine preference for long-term partnerships over one-off orders.",
+  },
+  {
+    q: "Do you only work with large buyers?",
+    a: "Not at all. We keep MOQs trial-friendly so smaller importers, manufacturers and private-label brands can start with a test order and scale as the relationship grows.",
+  },
+  {
+    q: "What registrations and certifications do you hold?",
+    a: "We are GST, IEC and RCMC registered, with FSSAI and ISO 9001 in place, and we provide complete export documentation with every shipment.",
+  },
+  {
+    q: "How do we start working together?",
+    a: "Tell us the product, the form and your target market through the quote form or WhatsApp. We will come back with specifications, samples where helpful, and a quote in your currency.",
+  },
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -238,6 +269,28 @@ const partners = [
           <span class="inline-flex items-center gap-2 mt-4 font-head font-semibold text-sm text-white">Get in touch
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <span class="eyebrow center">FAQ</span>
+        <h2 class="tg-2 font-extrabold text-3xl sm:text-4xl mt-4">Questions about Clarté Overseas</h2>
+        <p class="text-slate-500 text-lg mt-4">A few things buyers often want to know before getting in touch.</p>
+      </div>
+      <div class="mt-12 reveal d1">
+        {aboutFaqs.map((f) => (
+          <details class="faq-item">
+            <summary>
+              {f.q}
+              <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-body">{f.a}</div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
