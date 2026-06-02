@@ -1,6 +1,9 @@
 ---
-// Shared site navigation (sticky full-width white bar). Links are placeholders
-// until dedicated pages exist; see data-nolink handling in /js/script.js
+// Shared site navigation (sticky full-width white bar). Links without a built
+// page yet use data-nolink (no navigation); see /js/script.js.
+const path = (Astro.url.pathname.replace(/\/+$/, "") || "/");
+const isHome = path === "/";
+const isAbout = path === "/about";
 ---
 <header id="navbar" class="nav-bar sticky top-0 z-50 w-full">
     <nav class="max-w-7xl mx-auto px-5 lg:px-10 flex items-center justify-between gap-4 py-3">
@@ -11,7 +14,7 @@
 
       <!-- Desktop links (non-navigating placeholders) -->
       <div class="hidden lg:flex items-center gap-7">
-        <button class="nav-link active text-[15px]" data-nolink>Home</button>
+        <a href="/" class={`nav-link text-[15px] ${isHome ? "active" : ""}`}>Home</a>
         <div class="nav-dd">
           <button class="nav-link text-[15px] inline-flex items-center gap-1" data-nolink>Products
             <svg class="w-3.5 h-3.5 nav-dd-caret" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
@@ -26,7 +29,7 @@
             </div>
           </div>
         </div>
-        <button class="nav-link text-[15px]" data-nolink>About Us</button>
+        <a href="/about" class={`nav-link text-[15px] ${isAbout ? "active" : ""}`}>About Us</a>
         <button class="nav-link text-[15px]" data-nolink>How We Export</button>
         <button class="nav-link text-[15px]" data-nolink>Certifications</button>
         <button class="nav-link text-[15px]" data-nolink>Blogs</button>
@@ -53,7 +56,6 @@
         </button>
       </div>
     </nav>
-    <div class="nav-accent"></div>
   </header>
 
   <!-- Mobile menu -->
@@ -65,7 +67,7 @@
       </button>
     </div>
     <nav class="flex flex-col items-center justify-center gap-7 h-[80%] text-white font-head text-2xl">
-      <button class="mobile-link" data-nolink>Home</button>
+      <a href="/" class="mobile-link">Home</a>
       <button class="mobile-link" data-nolink>Products</button>
       <div class="flex flex-col items-center gap-2.5 -mt-3 mb-1 px-6 text-center">
         <button class="mobile-sub" data-nolink>Herbal &amp; Leaf Powders</button>
@@ -74,7 +76,7 @@
         <button class="mobile-sub" data-nolink>Dehydrated Fruit Powder Ingredients</button>
         <button class="mobile-sub" data-nolink>Hydrocolloids &amp; Food Additives</button>
       </div>
-      <button class="mobile-link" data-nolink>About Us</button>
+      <a href="/about" class="mobile-link">About Us</a>
       <button class="mobile-link" data-nolink>How We Export</button>
       <button class="mobile-link" data-nolink>Certifications</button>
       <button class="mobile-link" data-nolink>Blogs</button>

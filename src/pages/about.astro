@@ -1,0 +1,212 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "About Clarté Overseas — Dehydrated Food Ingredient Exporter from India";
+const description =
+  "Clarté Overseas is a New Delhi based merchant exporter of dehydrated fruits, vegetables and food-grade ingredients, helping food brands and manufacturers worldwide source dependably from India.";
+
+const services = [
+  "Source dehydrated fruits and vegetables in flake and powder form",
+  "Supply herbal, leaf, culinary, functional and fruit powders, plus hydrocolloids and additives",
+  "Vet and coordinate trusted manufacturers and processors across India",
+  "Run quality control and lab testing on every lot",
+  "Handle export documentation and compliance end to end",
+  "Offer flexible packaging, private label and made-to-spec grades",
+  "Manage freight and on-time delivery to your port",
+];
+
+const values = [
+  { t: "Consistent quality", d: "The same spec, batch after batch, so your line never has to adjust.", paths: ["M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", "m9 12 2 2 4-4"] },
+  { t: "Regulatory compliance", d: "Documentation and standards matched to each market you sell into.", paths: ["M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"] },
+  { t: "Transparent process", d: "Clear pricing, clear timelines, and updates you do not have to ask for.", paths: ["M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z", "M12 9a3 3 0 100 6 3 3 0 000-6z"] },
+  { t: "Customer-centric", d: "We build the grade, form and pack around your recipe, not ours.", paths: ["M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", "M9 11a4 4 0 100-8 4 4 0 000 8z", "M22 21v-2a4 4 0 0 0-3-3.87", "M16 3.13a4 4 0 0 1 0 7.75"] },
+  { t: "Dependable supply", d: "A vetted network and planning that keeps repeat orders steady.", paths: ["M3 7h11v8H3z", "M14 10h4l3 3v2h-7z", "M7 19a2 2 0 100-4 2 2 0 000 4z", "M18 19a2 2 0 100-4 2 2 0 000 4z"] },
+  { t: "Long-term partnership", d: "We would rather grow with you than win a one-off order.", paths: ["M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"] },
+];
+
+const countries = [
+  "United Kingdom","United States","Germany","France","Netherlands","Sweden",
+  "Czech Republic","South Korea","Australia","New Zealand","United Arab Emirates",
+  "Oman","South Africa","Sri Lanka","Russia",
+];
+
+const partners = [
+  { t: "Importers & distributors", d: "Bulk supply with the paperwork and consistency your customers expect." },
+  { t: "Agency & distributorship", d: "Represent our range in your market with dependable backing." },
+  { t: "Contract manufacturing", d: "Made-to-spec grades and forms produced to your brief." },
+  { t: "Private-label brands", d: "Your branding and packaging, our sourcing and quality control." },
+  { t: "Business development", d: "Partners who can open doors to new buyers and regions." },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- ===================== HERO ===================== -->
+  <section class="about-hero pt-14 pb-20 lg:pt-16 lg:pb-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
+        <span class="text-slate-500">About Us</span>
+      </nav>
+      <div class="mt-6 reveal d1"><span class="eyebrow">About Us</span></div>
+      <h1 class="tg-1 font-extrabold text-4xl sm:text-5xl lg:text-6xl mt-5 max-w-4xl leading-[1.08] reveal d1">
+        Bringing India's harvest to the world's food businesses
+      </h1>
+      <p class="text-slate-600 text-lg mt-6 max-w-2xl leading-relaxed reveal d2">
+        Clarté Overseas is a New Delhi based merchant exporter of dehydrated fruits, vegetables and
+        food-grade ingredients. We help food brands, manufacturers and distributors source from India
+        without the usual friction.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== STORY + GLANCE ===================== -->
+  <section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-7 reveal">
+        <span class="eyebrow">Who We Are</span>
+        <h2 class="text-navy font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Sourcing from India, made straightforward</h2>
+        <div class="text-slate-600 leading-relaxed mt-6 space-y-5 text-[17px]">
+          <p>We started Clarté Overseas in 2025 with one clear aim: make it easy for food businesses anywhere to buy dependable dehydrated ingredients from India. The country grows an extraordinary range of produce and botanicals, yet for an overseas buyer, finding a supplier who is consistent, compliant and genuinely easy to deal with is still surprisingly hard. Closing that gap is the whole reason we exist.</p>
+          <p>We are a merchant exporter, not a single factory. We work with a vetted network of manufacturers and processors across the country, which lets us offer a broad range of grades and forms while keeping a close watch on quality, documentation and delivery. From raw-material selection and lab testing to packaging and export paperwork, every shipment is handled with the same care, whether it is a first trial order or a repeat container.</p>
+          <p>The way we work comes down to three habits: clarity in how we communicate, compliance with the standards each market expects, and consistency you can plan your own production around.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 reveal d1">
+        <div class="glance">
+          <div class="px-6 pt-6 pb-4">
+            <p class="font-head font-semibold text-xs tracking-[0.16em] uppercase text-slate-400">Company at a glance</p>
+          </div>
+          <div class="glance-row"><span class="k">Established</span><span class="v">2025</span></div>
+          <div class="glance-row"><span class="k">Head office</span><span class="v">New Delhi, India</span></div>
+          <div class="glance-row"><span class="k">Business type</span><span class="v">Merchant exporter</span></div>
+          <div class="glance-row"><span class="k">Registered</span><span class="v">MSME (Udyam) · GST · IEC</span></div>
+          <div class="glance-row"><span class="k">Product lines</span><span class="v">5 ingredient categories</span></div>
+          <div class="glance-row"><span class="k">Target markets</span><span class="v">15+ countries</span></div>
+          <div class="glance-row"><span class="k">Team</span><span class="v">Small, specialist</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS BAND (animated) ===================== -->
+  <section class="bg-process py-14">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="stat-num text-grad text-4xl sm:text-5xl" data-count="5">0</div>
+        <div class="text-slate-300 text-sm mt-2">Ingredient categories</div>
+      </div>
+      <div class="reveal d1">
+        <div class="stat-num text-grad text-4xl sm:text-5xl" data-count="15" data-suffix="+">0</div>
+        <div class="text-slate-300 text-sm mt-2">Markets in our sights</div>
+      </div>
+      <div class="reveal d2">
+        <div class="stat-num text-grad text-4xl sm:text-5xl" data-count="5">0</div>
+        <div class="text-slate-300 text-sm mt-2">Continents</div>
+      </div>
+      <div class="reveal d3">
+        <div class="stat-num text-grad text-4xl sm:text-5xl">100%</div>
+        <div class="text-slate-300 text-sm mt-2">Quality-checked lots</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT WE DO ===================== -->
+  <section class="py-20 lg:py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl reveal">
+        <span class="eyebrow">What We Do</span>
+        <h2 class="tg-7 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">From sourcing to your dock</h2>
+        <p class="text-slate-500 text-lg mt-4">We handle the whole chain so you deal with one accountable partner, not a dozen moving parts.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-5 mt-12">
+        {services.map((s, i) => (
+          <div class={`flex items-start gap-3 reveal ${i % 2 ? "d1" : ""}`}>
+            <svg class="w-5 h-5 text-brand mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="text-slate-700 text-[17px] leading-snug">{s}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VALUES ===================== -->
+  <section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">What Sets Us Apart</span>
+        <h2 class="tg-3 font-extrabold text-3xl sm:text-4xl mt-4">The way we like to work</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-14">
+        {values.map((v, i) => (
+          <div class={`card p-8 reveal ${["", "d1", "d2"][i % 3]}`}>
+            <div class="w-12 h-12 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                {v.paths.map((d) => <path d={d} />)}
+              </svg>
+            </div>
+            <h3 class="font-head font-bold text-lg text-navy">{v.t}</h3>
+            <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">{v.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MARKETS MARQUEE ===================== -->
+  <section class="py-20 lg:py-24 bg-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal mb-12">
+      <span class="eyebrow center">Where We're Headed</span>
+      <h2 class="tg-6 font-extrabold text-3xl sm:text-4xl mt-4">Markets we're building toward</h2>
+      <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">We already work with buyers across the UK, Europe, the Gulf and Australia, and we're actively opening up more. Here is where we're focused next.</p>
+    </div>
+    <div class="marquee reveal">
+      <div class="marquee-track">
+        {[...countries, ...countries].map((c) => (
+          <span class="country-chip"><span class="dot"></span>{c}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PARTNER WITH US ===================== -->
+  <section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl reveal">
+        <span class="eyebrow">Work With Us</span>
+        <h2 class="tg-4 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Who we partner with</h2>
+        <p class="text-slate-500 text-lg mt-4">If you source, distribute, manufacture or open markets in food ingredients, there is a way to work together.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {partners.map((p, i) => (
+          <div class={`trade-card reveal ${["", "d1", "d2"][i % 3]}`}>
+            <h3 class="font-head font-bold text-lg text-navy">{p.t}</h3>
+            <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">{p.d}</p>
+          </div>
+        ))}
+        <a href="#quote" class="trade-card reveal d2 flex flex-col justify-center items-start bg-navy text-white" style="background:linear-gradient(135deg,#122a52,#1f4693);">
+          <h3 class="font-head font-bold text-lg text-white">Something else in mind?</h3>
+          <p class="text-slate-200 text-[15px] mt-2 leading-relaxed">Tell us what you need and we'll find the right fit.</p>
+          <span class="inline-flex items-center gap-2 mt-4 font-head font-semibold text-sm text-white">Get in touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section id="quote" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="hero rounded-[2rem] px-8 py-16 sm:px-16 text-center relative overflow-hidden">
+        <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal">Let's build something together</h2>
+        <p class="text-slate-300 text-lg mt-5 max-w-xl mx-auto reveal d1">Tell us your requirement and target market. We'll reply with specs, samples and a quote in your currency.</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-9 reveal d2">
+          <a href="#" data-wa class="btn btn-wa">Chat on WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          </a>
+          <a href="mailto:info@clarteoverseas.com" class="btn btn-ghost">Enquire Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
