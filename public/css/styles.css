@@ -446,6 +446,34 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   background: var(--brand-100); color: var(--brand);
 }
 
+/* ---- Process steps card (modern stepper, replaces decorative visual) -- */
+.proc-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 1.75rem; padding: 1.75rem; backdrop-filter: blur(8px);
+}
+@media (min-width: 1024px) { .proc-card { padding: 2.25rem 2.4rem; } }
+.proc-head {
+  display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.6rem;
+  color: #bcd0ff; font-family: var(--font-head); font-weight: 700;
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+}
+.proc-step { display: flex; gap: 1rem; position: relative; padding-bottom: 1.6rem; }
+.proc-step:last-child { padding-bottom: 0; }
+.proc-step::before {
+  content: ""; position: absolute; left: 19px; top: 44px; bottom: 2px; width: 2px;
+  background: linear-gradient(rgba(94,234,212,.55), rgba(129,140,248,.05));
+}
+.proc-step:last-child::before { display: none; }
+.proc-num {
+  width: 40px; height: 40px; border-radius: 50%; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 700; font-size: .95rem; color: #0d1a36;
+  background: var(--grad-bright);
+}
+.proc-step h4 { color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 1.02rem; }
+.proc-step p { color: #c6d2e6; font-size: .86rem; margin-top: .15rem; line-height: 1.45; }
+
 /* ---- Mobile menu ------------------------------------------------------ */
 .mobile-menu { transition: opacity .3s ease, visibility .3s ease; }
 .mobile-menu.hidden-menu { opacity: 0; visibility: hidden; }
