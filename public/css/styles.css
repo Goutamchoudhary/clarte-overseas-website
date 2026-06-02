@@ -71,12 +71,44 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 /* ---- Navbar (full-width white band, rounded bottom corners) ----------- */
 .nav-bar {
   background: #fff;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: var(--nav-radius, 28px);
+  border-bottom-right-radius: var(--nav-radius, 28px);
   box-shadow: 0 6px 20px -14px rgba(13,26,54,.35);
   transition: box-shadow .35s ease;
 }
 .nav-bar.scrolled { box-shadow: 0 14px 34px -18px rgba(13,26,54,.4); }
+
+/* ---- Navbar right cluster (language · WhatsApp · quote) -------------- */
+.lang-chip {
+  display: inline-flex; align-items: center; gap: .4rem; cursor: pointer;
+  font-family: var(--font-body); font-size: .85rem; font-weight: 600; color: #475569;
+  padding: .5rem .8rem; border-radius: 999px; border: 1px solid #e4e8f0; background: #fff;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.lang-chip:hover { color: var(--brand); border-color: var(--brand); background: var(--brand-100); }
+.lang-chip .caret { transition: transform .2s ease; }
+.lang-chip:hover .caret { transform: rotate(180deg); }
+.nav-sep { width: 1px; height: 24px; background: #e6e9f0; }
+.wa-chip {
+  width: 42px; height: 42px; border-radius: 50%; flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(37,211,102,.12); color: #1faa4f;
+  transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .25s ease;
+}
+.wa-chip:hover { background: #25d366; color: #fff; transform: translateY(-1px); box-shadow: 0 9px 20px -6px rgba(37,211,102,.6); }
+.btn-quote {
+  display: inline-flex; align-items: center; gap: .5rem; white-space: nowrap;
+  font-family: var(--font-head); font-weight: 600; font-size: .9rem; color: #fff;
+  padding: .68rem 1.3rem; border-radius: 999px;
+  background: linear-gradient(95deg, var(--brand), var(--brand-600));
+  box-shadow: 0 10px 24px -10px rgba(31,70,147,.7);
+  transition: transform .2s ease, box-shadow .25s ease;
+}
+.btn-quote:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(31,70,147,.85); }
+.btn-quote .qarrow { transition: transform .2s ease; }
+.btn-quote:hover .qarrow { transform: translateX(3px); }
+/* optional bottom accent line variant */
+.nav-accent { height: 2px; background: var(--grad-bright); border-radius: 2px; }
 .nav-link {
   position: relative; font-weight: 500; color: #334155; background: none; border: none;
   cursor: pointer; font-family: var(--font-body);
