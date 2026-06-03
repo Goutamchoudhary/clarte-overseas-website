@@ -1,0 +1,22 @@
+---
+// Smooth single-arch section partition (distinct from the multi-curve wave).
+// topColor = section above, bottomColor = below. flip inverts the arch.
+interface Props {
+  topColor?: string;
+  bottomColor?: string;
+  accent?: string;
+  flip?: boolean;
+}
+const {
+  topColor = "#ffffff",
+  bottomColor = "#f7f8fb",
+  accent = "rgba(31,70,147,0.10)",
+  flip = false,
+} = Astro.props;
+---
+<div class={`curve-divider${flip ? " flip" : ""}`} style={`background:${topColor}`} aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path fill={accent} d="M0,120 L0,52 Q720,-12 1440,52 L1440,120 Z"></path>
+    <path fill={bottomColor} d="M0,120 L0,72 Q720,10 1440,72 L1440,120 Z"></path>
+  </svg>
+</div>

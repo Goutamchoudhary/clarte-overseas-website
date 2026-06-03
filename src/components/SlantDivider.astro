@@ -1,0 +1,24 @@
+---
+// Diagonal section partition. topColor = section above, bottomColor = below.
+// flip mirrors the slant direction.
+interface Props {
+  topColor?: string;
+  bottomColor?: string;
+  accent?: string;
+  flip?: boolean;
+}
+const {
+  topColor = "#ffffff",
+  bottomColor = "#f7f8fb",
+  accent = "rgba(31,70,147,0.10)",
+  flip = false,
+} = Astro.props;
+const front = flip ? "0,20 1440,80 1440,100 0,100" : "0,80 1440,20 1440,100 0,100";
+const back = flip ? "0,4 1440,64 1440,100 0,100" : "0,64 1440,4 1440,100 0,100";
+---
+<div class="slant-divider" style={`background:${topColor}`} aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <polygon fill={accent} points={back}></polygon>
+    <polygon fill={bottomColor} points={front}></polygon>
+  </svg>
+</div>

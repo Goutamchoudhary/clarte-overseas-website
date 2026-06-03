@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import WaveDivider from "../components/WaveDivider.astro";
+import CurveDivider from "../components/CurveDivider.astro";
 
 const title = "About Clarté Overseas — Dehydrated Food Ingredient Exporter from India";
 const description =
@@ -220,6 +221,8 @@ const aboutFaqs = [
     </div>
   </section>
 
+  <CurveDivider topColor="#f7f8fb" bottomColor="#ffffff" />
+
   <!-- ===================== VALUES ===================== -->
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -256,7 +259,9 @@ const aboutFaqs = [
         {partners.map((p) => (
           <span class="part-tag">{p.t}</span>
         ))}
-        <a href="#quote" class="part-tag part-tag-cta">Something else in mind?</a>
+        <a href="#quote" class="part-tag part-tag-cta">Something else in mind?
+          <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
   </section>

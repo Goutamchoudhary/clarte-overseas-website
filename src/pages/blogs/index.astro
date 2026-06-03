@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
+import SlantDivider from "../../components/SlantDivider.astro";
 import { posts, faqs } from "../../data/blogs";
 
 const title = "Blog — Dehydrated Foods, Ingredients & India Export Insights | Clarté Overseas";
@@ -71,6 +72,8 @@ const [featured, ...rest] = posts;
       </div>
     </div>
   </section>
+
+  <SlantDivider topColor="#ffffff" bottomColor="#f7f8fb" flip={true} />
 
   <!-- ===================== FAQ ===================== -->
   <section class="py-20 lg:py-24 bg-cream">

@@ -752,4 +752,16 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 .part-tag:hover { transform: translateY(-3px); border-color: #1f4693; box-shadow: 0 18px 32px -18px rgba(31,70,147,.55); }
 .part-tag-cta { background: linear-gradient(135deg, #122a52, #1f4693); color: #fff; border-color: transparent; }
+.part-tag-cta svg { width: 18px; height: 18px; color: #fff; transition: transform .25s ease; }
 .part-tag-cta:hover { color: #fff; border-color: transparent; box-shadow: 0 20px 36px -16px rgba(18,42,82,.7); }
+.part-tag-cta:hover svg { transform: translateX(4px); }
+
+/* Slant + curve section dividers (variety alongside the wave) */
+.slant-divider, .curve-divider { line-height: 0; }
+.slant-divider svg { display: block; width: 100%; height: 56px; }
+.curve-divider svg { display: block; width: 100%; height: 60px; }
+.curve-divider.flip svg { transform: scaleY(-1); }
+@media (min-width: 768px) {
+  .slant-divider svg { height: 88px; }
+  .curve-divider svg { height: 104px; }
+}
