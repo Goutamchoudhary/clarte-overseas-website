@@ -227,16 +227,17 @@ const aboutFaqs = [
         <span class="eyebrow center">What Sets Us Apart</span>
         <h2 class="tg-3 font-extrabold text-3xl sm:text-4xl mt-4">The way we like to work</h2>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-14">
+      <div class="val-grid mt-14">
         {values.map((v, i) => (
-          <div class={`card p-8 reveal ${["", "d1", "d2"][i % 3]}`}>
-            <div class="w-12 h-12 rounded-2xl bg-brand-100 flex items-center justify-center text-brand mb-5">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <div class={`val-card reveal ${["", "d1", "d2"][i % 3]}`}>
+            <span class="val-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <span class="val-ico">
+              <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                 {v.paths.map((d) => <path d={d} />)}
               </svg>
-            </div>
-            <h3 class="font-head font-bold text-lg text-navy">{v.t}</h3>
-            <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">{v.d}</p>
+            </span>
+            <h3 class="val-title">{v.t}</h3>
+            <p class="val-desc">{v.d}</p>
           </div>
         ))}
       </div>
@@ -251,18 +252,26 @@ const aboutFaqs = [
         <h2 class="tg-4 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Who we partner with</h2>
         <p class="text-slate-500 text-lg mt-4">If you source, distribute, manufacture or open markets in food ingredients, there is a way to work together.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <div class="part-grid mt-12">
         {partners.map((p, i) => (
-          <div class={`trade-card reveal ${["", "d1", "d2"][i % 3]}`}>
-            <h3 class="font-head font-bold text-lg text-navy">{p.t}</h3>
-            <p class="text-slate-500 text-[15px] mt-2 leading-relaxed">{p.d}</p>
+          <div class={`part-row reveal ${["", "d1"][i % 2]}`}>
+            <div>
+              <h3 class="part-title">{p.t}</h3>
+              <p class="part-desc">{p.d}</p>
+            </div>
+            <span class="part-arrow" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
           </div>
         ))}
-        <a href="#quote" class="trade-card reveal d2 flex flex-col justify-center items-start bg-navy text-white" style="background:linear-gradient(135deg,#122a52,#1f4693);">
-          <h3 class="font-head font-bold text-lg text-white">Something else in mind?</h3>
-          <p class="text-slate-200 text-[15px] mt-2 leading-relaxed">Tell us what you need and we'll find the right fit.</p>
-          <span class="inline-flex items-center gap-2 mt-4 font-head font-semibold text-sm text-white">Get in touch
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a href="#quote" class="part-row part-cta reveal d1">
+          <div>
+            <h3 class="part-title">Something else in mind?</h3>
+            <p class="part-desc">Tell us what you need and we'll find the right fit.</p>
+            <span class="part-cta-link">Get in touch
+              <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
         </a>
       </div>
     </div>
