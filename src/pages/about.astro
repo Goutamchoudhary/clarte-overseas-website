@@ -252,26 +252,16 @@ const aboutFaqs = [
         <h2 class="tg-4 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Who we partner with</h2>
         <p class="text-slate-500 text-lg mt-4">If you source, distribute, manufacture or open markets in food ingredients, there is a way to work together.</p>
       </div>
-      <div class="part-grid mt-12">
+      <div class="part-tags mt-12">
         {partners.map((p, i) => (
-          <div class={`part-row reveal ${["", "d1"][i % 2]}`}>
-            <div>
-              <h3 class="part-title">{p.t}</h3>
-              <p class="part-desc">{p.d}</p>
-            </div>
-            <span class="part-arrow" aria-hidden="true">
-              <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
+          <span class={`part-tag reveal ${["", "d1", "d2"][i % 3]}`}>
+            {p.t}
+            <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
         ))}
-        <a href="#quote" class="part-row part-cta reveal d1">
-          <div>
-            <h3 class="part-title">Something else in mind?</h3>
-            <p class="part-desc">Tell us what you need and we'll find the right fit.</p>
-            <span class="part-cta-link">Get in touch
-              <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </div>
+        <a href="#quote" class="part-tag part-tag-cta reveal d1">
+          Something else in mind?
+          <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
     </div>
