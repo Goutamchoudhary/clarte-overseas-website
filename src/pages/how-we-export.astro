@@ -1,0 +1,560 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "How We Export — From India's Harvest to Your Port | Clarté Overseas";
+const description =
+  "Follow a Clarté Overseas shipment end to end: sourcing, customer-led procurement, quality and compliance, export packing, documentation, loading and delivery — plus the after-sales support that keeps the relationship going.";
+
+// The export journey — sequential stages, no numbers. The last one is the finale.
+const journey = [
+  {
+    t: "Sourcing the right material",
+    d: "It starts upstream. We map your requirement to a vetted network of growers, processors and manufacturers across India, choosing each source for the crop belt, capability and track record behind it.",
+    svg: '<path d="M7 20h10"/><path d="M12 20V9"/><path d="M12 9C9 9 7 7 7 4c3 0 5 2 5 5z"/><path d="M12 9c3 0 5-2 5-5-3 0-5 2-5 5z"/>',
+  },
+  {
+    t: "Procurement built around you",
+    d: "Specs before stock. We buy to your grade, mesh, moisture, pack size and volume — confirming the brief, samples and timeline first, so what we procure is what you actually need.",
+    svg: '<path d="M8 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="8" y="3" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/>',
+  },
+  {
+    t: "Quality inspection & compliance",
+    d: "Nothing moves until it passes. Every lot is graded and lab-checked — moisture, microbial counts, foreign matter, metal detection — with documentation matched to the rules of the market you sell into.",
+    svg: '<path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/>',
+  },
+  {
+    t: "Packed to travel",
+    d: "Food-grade liners, sturdy export cartons or bags, clear lot marking and proper palletisation — packaging built for long ocean transits and easy handling at your warehouse.",
+    svg: '<path d="M21 8 12 3 3 8m18 0-9 5m9-5v8l-9 5m0-13L3 8m9 5v8m0-8L3 8v8l9 5"/>',
+  },
+  {
+    t: "Documentation that clears customs",
+    d: "Commercial invoice, packing list, certificate of origin, phytosanitary and lab certificates — prepared accurately and on time so your consignment moves without hold-ups.",
+    svg: '<path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-5z"/><path d="M9 13h6M9 17h4"/>',
+  },
+  {
+    t: "Loading & onto the vessel",
+    d: "Container booking, supervised stuffing and dispatch on the Incoterms we've agreed — with tracking shared so you always know where your goods are on the water.",
+    svg: '<path d="M3 17s1.5 1.5 3.5 1.5S10 17 12 17s3.5 1.5 5.5 1.5S21 17 21 17"/><path d="M5 17 3.5 11h17L19 17"/><path d="M12 11V7H7"/><path d="M12 7h5l2 4"/><path d="M12 3v4"/>',
+  },
+  {
+    t: "After the shipment, we stay",
+    d: "The container sails and it feels like the deal is done. For us, that's where the relationship really begins — we track it to your door, help with any clearance query, check the product landed right, and get your next order moving.",
+    final: true,
+    svg: '<path d="M4 15v-3a8 8 0 0 1 16 0v3"/><path d="M4 15a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2z"/><path d="M20 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2z"/><path d="M18 17v1a3 3 0 0 1-3 3h-3"/>',
+  },
+];
+
+const incoterms = [
+  {
+    code: "EXW",
+    name: "Ex Works",
+    cover: 9,
+    hand: "Collected at the source",
+    desc: "You take charge right at the source. We make the goods ready; you arrange pickup, export clearance and everything onward. Maximum control for buyers with their own India logistics.",
+  },
+  {
+    code: "FOB",
+    name: "Free on Board",
+    cover: 38,
+    hand: "Handed over once loaded at the origin port",
+    desc: "We handle everything up to and including loading your goods onto the vessel at the Indian port. From there, ocean freight and risk are yours. The term most of our buyers choose.",
+  },
+  {
+    code: "CFR",
+    name: "Cost & Freight",
+    cover: 66,
+    hand: "Sea freight paid to your port",
+    desc: "We cover the goods plus the sea freight to your destination port. Risk passes once loaded at origin, so you insure the voyage. Useful when you'd rather we book the shipping line.",
+  },
+  {
+    code: "CIF",
+    name: "Cost, Insurance & Freight",
+    cover: 66,
+    ins: true,
+    hand: "Freight + marine insurance to your port",
+    desc: "Everything in CFR, plus we arrange marine insurance for the voyage to your destination port. The most hands-off term — you simply take over at the destination quay.",
+  },
+];
+
+const payments = [
+  { t: "Proforma first", d: "Every order opens with a clear proforma invoice — quantity, grade, price and terms in writing.", svg: '<path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M9 13h6M9 17h3"/>' },
+  { t: "Advance T/T", d: "A telegraphic-transfer deposit confirms your order and books production.", svg: '<path d="M3 7h18v10H3z"/><path d="M3 11h18"/><path d="M7 15h2"/>' },
+  { t: "L/C at sight", d: "Irrevocable letters of credit for larger or first-time contracts.", svg: '<path d="M4 5h16v14H4z"/><path d="m4 8 8 5 8-5"/>' },
+  { t: "Flexible for regulars", d: "Documents-against-payment and balance terms we tune for repeat buyers.", svg: '<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/>' },
+  { t: "Billed in your currency", d: "Invoiced in USD, EUR, GBP or INR — whichever suits your books.", svg: '<circle cx="12" cy="12" r="9"/><path d="M9 8h4a2 2 0 0 1 0 4H9h6M9 12h6"/>' },
+  { t: "Costs laid bare", d: "FOB or CIF, broken down line by line — no hidden charges, no surprises.", svg: '<path d="M9 7h6M9 11h6M9 15h4"/><rect x="4" y="3" width="16" height="18" rx="2"/>' },
+];
+
+const sustain = [
+  { t: "Responsible sourcing", d: "We favour growers and processors who treat land and labour fairly.", svg: '<path d="M11 20A7 7 0 0 1 4 13c0-5 7-9 7-9s7 4 7 9a7 7 0 0 1-7 7z"/><path d="M11 20v-7"/>' },
+  { t: "Less-waste packaging", d: "Right-sized, food-grade packing that protects product without excess.", svg: '<path d="M7 19a3 3 0 0 1-2.6-4.5L6 11"/><path d="M12 4 9.5 8.3"/><path d="M17 19a3 3 0 0 0 2.6-4.5l-3-5.2a3 3 0 0 0-5.2 0"/><path d="M9 19h8"/>' },
+  { t: "Smarter loads", d: "Consolidated, well-planned shipments that cut empty miles and emissions.", svg: '<path d="M3 17h11V6H3zM14 9h4l3 3v5h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- ===================== HERO (blueprint) ===================== -->
+  <section class="hx-hero blueprint">
+    <span class="bp-plus" style="top:18%;left:7%"></span>
+    <span class="bp-plus" style="top:62%;left:14%"></span>
+    <span class="bp-plus" style="top:30%;right:10%"></span>
+    <span class="bp-plus" style="top:74%;right:18%"></span>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
+        <span class="text-slate-500">How We Export</span>
+      </nav>
+      <div class="hx-stack reveal d1">
+        <span class="hx-watermark" aria-hidden="true">Export</span>
+        <div class="hx-fore">
+          <span class="eyebrow center">The Export Journey</span>
+          <h1 class="hx-h1 font-extrabold mt-4">How your order travels<br />from India to your port</h1>
+          <p class="text-slate-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+            No black boxes. Here is the route every Clarté Overseas shipment follows — from the field it
+            is sourced in to the vessel it sails on, and the support that carries on long after it lands.
+          </p>
+          <div class="hx-chips mt-8">
+            <span class="hx-chip">Sourced &amp; vetted in India</span>
+            <span class="hx-chip">Quality-checked, lot by lot</span>
+            <span class="hx-chip">After-sales included</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE JOURNEY ===================== -->
+  <section class="hx-journey-sec blueprint">
+    <span class="bp-plus" style="top:6%;left:9%"></span>
+    <span class="bp-plus" style="top:46%;right:8%"></span>
+    <span class="bp-plus" style="top:88%;left:12%"></span>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">Stage by Stage</span>
+        <h2 class="tg-1 font-extrabold text-3xl sm:text-4xl mt-4">Follow the route</h2>
+        <p class="text-slate-500 text-lg mt-4">Scroll down and the road draws itself. Each stop lights up as your shipment reaches it.</p>
+      </div>
+
+      <div class="journey mt-16" id="journey">
+        <div class="journey-track" aria-hidden="true">
+          <span class="journey-fill"></span>
+          <span class="journey-marker"><span class="jm-dot"></span></span>
+        </div>
+        <ol class="journey-steps">
+          {journey.map((s, i) => (
+            <li class={`jstep${s.final ? " jstep-final" : ""}`} data-side={i % 2 === 0 ? "left" : "right"}>
+              <span class="jstep-node" aria-hidden="true"></span>
+              <div class="jstep-card">
+                <span class="jstep-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={s.svg} />
+                </span>
+                <div class="jstep-text">
+                  {s.final && <span class="jstep-flag">After-sales</span>}
+                  <h3 class="jstep-title">{s.t}</h3>
+                  <p class="jstep-desc">{s.d}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="hx-aftercare reveal">
+        <div class="hx-aftercare-glow" aria-hidden="true"></div>
+        <p class="hx-aftercare-kicker">Deal closed? Not quite.</p>
+        <p class="hx-aftercare-line">
+          A lot of exporters wave goodbye at the port. We see the loaded container as a beginning — because
+          the next order, and the one after that, are built on how we show up after this one lands.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <a href="#" data-wa class="btn btn-wa">Talk to us on WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INCOTERMS EXPLORER ===================== -->
+  <section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="eyebrow center">Delivery Terms</span>
+        <h2 class="tg-5 font-extrabold text-3xl sm:text-4xl mt-4">Incoterms, without the jargon</h2>
+        <p class="text-slate-500 text-lg mt-4">Pick a term and see exactly how far we carry the shipment — and where you take over.</p>
+      </div>
+
+      <div class="inco reveal d1" id="inco">
+        <div class="inco-tabs" role="tablist">
+          {incoterms.map((t, i) => (
+            <button
+              class={`inco-tab${i === 1 ? " active" : ""}`}
+              role="tab"
+              data-cover={String(t.cover)}
+              data-name={t.name}
+              data-desc={t.desc}
+              data-ins={t.ins ? "1" : "0"}
+              data-hand={t.hand}
+            >{t.code}</button>
+          ))}
+        </div>
+
+        <div class="inco-bar">
+          <span class="inco-cover"></span>
+          <span class="inco-flag"><span class="inco-flag-pole"></span></span>
+          <div class="inco-seg" style="flex:18"><span>Source</span></div>
+          <div class="inco-seg" style="flex:20"><span>Origin port</span></div>
+          <div class="inco-seg" style="flex:28"><span>Ocean freight</span></div>
+          <div class="inco-seg" style="flex:18"><span>Your port</span></div>
+          <div class="inco-seg" style="flex:16"><span>You</span></div>
+        </div>
+        <div class="inco-legend">
+          <span class="inco-legend-item inco-legend-we">We cover this</span>
+          <span class="inco-legend-item inco-legend-you">You take over here</span>
+        </div>
+
+        <div class="inco-detail">
+          <h3 class="inco-name">Free on Board</h3>
+          <p class="inco-hand"></p>
+          <p class="inco-desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAYMENT ===================== -->
+  <section class="py-20 lg:py-24 hx-pay-sec">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl reveal">
+        <span class="eyebrow">Payment, Made Simple</span>
+        <h2 class="tg-3 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Clear terms, no surprises</h2>
+        <p class="text-slate-500 text-lg mt-4">A few small things that make paying — and getting paid — straightforward on both sides.</p>
+      </div>
+      <div class="hx-pay-grid mt-12">
+        {payments.map((p, i) => (
+          <div class={`hx-pay-card reveal d${(i % 3) + 1}`}>
+            <span class="hx-pay-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={p.svg} />
+            </span>
+            <div>
+              <h3 class="hx-pay-title">{p.t}</h3>
+              <p class="hx-pay-desc">{p.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SUSTAINABILITY ===================== -->
+  <section class="py-20 hx-sus-sec">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="hx-sus-wrap reveal">
+        <div class="hx-sus-head">
+          <span class="eyebrow eyebrow-sus">Doing It Responsibly</span>
+          <h2 class="font-extrabold text-3xl sm:text-4xl mt-4 text-white leading-tight">Trade that respects the source</h2>
+          <p class="text-emerald-50/80 text-lg mt-4 max-w-md">Exporting well isn't only about speed and price. A few principles we hold to along the way.</p>
+        </div>
+        <div class="hx-sus-list">
+          {sustain.map((s) => (
+            <div class="hx-sus-item">
+              <span class="hx-sus-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={s.svg} />
+              </span>
+              <div>
+                <h3 class="hx-sus-title">{s.t}</h3>
+                <p class="hx-sus-desc">{s.d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section id="quote" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="hero rounded-[2rem] px-8 py-16 sm:px-16 text-center relative overflow-hidden">
+        <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal">Ready to start the journey?</h2>
+        <p class="text-slate-300 text-lg mt-5 max-w-xl mx-auto reveal d1">Tell us the product, the form and your destination. We'll map the route, the terms and a quote — and stay with you the whole way.</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-9 reveal d2">
+          <a href="#" data-wa class="btn btn-wa">Chat on WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          </a>
+          <a href="mailto:info@clarteoverseas.com" class="btn btn-ghost">Enquire Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  /* ====================== HOW WE EXPORT PAGE ====================== */
+  /* ---- Blueprint backdrop ---- */
+  .blueprint { position: relative; background: #fbfcfe; overflow: hidden; isolation: isolate; }
+  .blueprint::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; opacity: .6;
+    background-image:
+      linear-gradient(rgba(31,70,147,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31,70,147,.05) 1px, transparent 1px);
+    background-size: 54px 54px;
+    mask-image: radial-gradient(130% 100% at 50% 0%, #000 55%, transparent 92%);
+    -webkit-mask-image: radial-gradient(130% 100% at 50% 0%, #000 55%, transparent 92%);
+  }
+  .bp-plus { position: absolute; width: 20px; height: 20px; z-index: 0; pointer-events: none; }
+  .bp-plus::before, .bp-plus::after { content: ""; position: absolute; background: rgba(31,70,147,.22); }
+  .bp-plus::before { left: 50%; top: 0; width: 1.5px; height: 100%; transform: translateX(-50%); }
+  .bp-plus::after { top: 50%; left: 0; height: 1.5px; width: 100%; transform: translateY(-50%); }
+
+  /* ---- Hero ---- */
+  .hx-hero { padding: 3.5rem 0 4rem; }
+  .hx-stack { position: relative; text-align: center; padding: 2.5rem 0; }
+  .hx-watermark {
+    position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+    font-family: "Sora", sans-serif; font-weight: 800; white-space: nowrap; letter-spacing: -.02em;
+    font-size: clamp(5rem, 19vw, 17rem); line-height: 1; z-index: 0; pointer-events: none;
+    color: transparent; -webkit-text-stroke: 1.5px rgba(31,70,147,.10);
+    background: linear-gradient(180deg, rgba(31,70,147,.10), rgba(31,70,147,.02));
+    -webkit-background-clip: text; background-clip: text;
+  }
+  .hx-fore { position: relative; z-index: 1; }
+  .hx-h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.07; color: #16265a; }
+  .hx-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
+  .hx-chip {
+    font: 600 .82rem "Inter", sans-serif; color: #2b4585;
+    background: #fff; border: 1px solid #dde6f5; border-radius: 999px; padding: .42rem .9rem;
+    box-shadow: 0 6px 16px -12px rgba(31,70,147,.5);
+  }
+
+  /* ---- Journey ---- */
+  .hx-journey-sec { padding: 4.5rem 0 5.5rem; }
+  .journey { position: relative; max-width: 980px; margin: 0 auto; }
+  .journey-track {
+    position: absolute; top: 6px; bottom: 6px; left: 24px; width: 0;
+    border-left: 2px dashed #cdd9ef;
+  }
+  .journey-fill {
+    position: absolute; left: -2px; top: 0; width: 3px; border-radius: 3px;
+    height: calc(var(--p, 0) * 100%);
+    background: linear-gradient(180deg, #2b57b0, #1f4693);
+    box-shadow: 0 0 14px rgba(31,70,147,.45);
+  }
+  .journey-marker {
+    position: absolute; left: 0; top: calc(var(--p, 0) * 100%); transform: translate(-50%, -50%);
+    width: 22px; height: 22px;
+  }
+  .jm-dot {
+    position: absolute; inset: 0; border-radius: 50%; background: #fff; border: 3px solid #1f4693;
+    box-shadow: 0 0 0 4px rgba(31,70,147,.15);
+  }
+  .jm-dot::after {
+    content: ""; position: absolute; inset: -3px; border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(31,70,147,.5); animation: jm-pulse 1.8s ease-out infinite;
+  }
+  @keyframes jm-pulse { 0% { transform: scale(.7); opacity: .8; } 100% { transform: scale(2.1); opacity: 0; } }
+
+  .journey-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2.4rem; }
+  .jstep { position: relative; padding-left: 64px; }
+  .jstep-node {
+    position: absolute; left: 24px; top: 26px; width: 16px; height: 16px; transform: translate(-50%, -50%);
+    border-radius: 50%; background: #fff; border: 2px solid #cdd9ef; transition: all .4s ease; z-index: 2;
+  }
+  .jstep-card {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: #fff; border: 1px solid #e7edf7; border-radius: 1.1rem; padding: 1.3rem 1.4rem;
+    box-shadow: 0 14px 34px -26px rgba(31,70,147,.4); transition: transform .45s ease, box-shadow .4s ease, border-color .4s ease;
+  }
+  .jstep-ico {
+    flex: none; width: 50px; height: 50px; border-radius: 13px; display: grid; place-items: center; color: #fff;
+    background: linear-gradient(150deg, #5e78b8, #41598f); transition: background .4s ease, transform .4s ease;
+  }
+  .jstep-ico svg { width: 25px; height: 25px; }
+  .jstep-title { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.12rem; color: #16265a; }
+  .jstep-desc { color: #54627d; font-size: .93rem; line-height: 1.6; margin-top: .35rem; }
+  .jstep-flag {
+    display: inline-block; font: 700 .66rem "Sora", sans-serif; letter-spacing: .08em; text-transform: uppercase;
+    color: #b07a12; background: #fdf3dc; border: 1px solid #f1dca5; padding: .18rem .5rem; border-radius: 6px; margin-bottom: .5rem;
+  }
+
+  /* progressive reveal (only when JS enables it) */
+  .journey-anim .jstep { opacity: .32; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+  .journey-anim .jstep.active { opacity: 1; transform: none; }
+  .jstep.active .jstep-node { border-color: #1f4693; background: #1f4693; box-shadow: 0 0 0 5px rgba(31,70,147,.16); }
+  .jstep.active .jstep-ico { background: linear-gradient(150deg, #2b57b0, #1f4693); transform: scale(1.04); }
+  .jstep.active .jstep-card { border-color: #cfddf5; box-shadow: 0 22px 44px -28px rgba(31,70,147,.55); }
+
+  /* finale */
+  .jstep-final .jstep-card {
+    background: linear-gradient(155deg, #1f4693 0%, #16306e 100%); border-color: transparent;
+    box-shadow: 0 26px 56px -28px rgba(22,38,90,.7);
+  }
+  .jstep-final .jstep-title { color: #fff; }
+  .jstep-final .jstep-desc { color: #c9d6f1; }
+  .jstep-final .jstep-ico { background: linear-gradient(150deg, #e8c878, #d6b36a); color: #3a2a07; }
+  .jstep-final.active .jstep-ico { transform: scale(1.06); }
+  .jstep-final .jstep-node { width: 20px; height: 20px; }
+  .jstep-final.active .jstep-node { background: #d6b36a; border-color: #d6b36a; box-shadow: 0 0 0 6px rgba(214,179,106,.22); }
+
+  @media (min-width: 880px) {
+    .journey-track { left: 50%; transform: translateX(-50%); }
+    .journey-marker { left: 50%; }
+    .journey-steps { gap: 3rem; }
+    .jstep { width: 50%; padding-left: 0; }
+    .jstep[data-side="left"] { margin-right: auto; padding-right: 44px; }
+    .jstep[data-side="right"] { margin-left: auto; padding-left: 44px; }
+    .jstep[data-side="left"] .jstep-node { left: auto; right: -8px; }
+    .jstep[data-side="right"] .jstep-node { left: -8px; }
+    .jstep[data-side="left"] .jstep-card { flex-direction: row-reverse; text-align: right; }
+    .jstep[data-side="left"] .jstep-flag { margin-left: auto; }
+    .journey-anim .jstep[data-side="left"] { transform: translateX(-22px); }
+    .journey-anim .jstep[data-side="right"] { transform: translateX(22px); }
+    .journey-anim .jstep.active { transform: none; }
+  }
+
+  /* ---- After-care band ---- */
+  .hx-aftercare {
+    position: relative; overflow: hidden; text-align: center; max-width: 760px; margin: 4.5rem auto 0;
+    background: #fff; border: 1px solid #e7edf7; border-radius: 1.5rem; padding: 2.8rem 2rem;
+    box-shadow: 0 24px 60px -34px rgba(31,70,147,.45);
+  }
+  .hx-aftercare-glow {
+    position: absolute; width: 340px; height: 340px; left: 50%; top: -180px; transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(214,179,106,.28), transparent 60%); pointer-events: none;
+  }
+  .hx-aftercare-kicker { position: relative; font-family: "Sora", sans-serif; font-weight: 800; color: #1f4693; font-size: 1.15rem; }
+  .hx-aftercare-line { position: relative; color: #44516b; font-size: 1.05rem; line-height: 1.7; margin-top: .7rem; }
+
+  /* ---- Incoterms explorer ---- */
+  .inco { margin-top: 3rem; background: #fff; border: 1px solid #e7edf7; border-radius: 1.4rem; padding: 1.8rem; box-shadow: 0 20px 50px -34px rgba(31,70,147,.4); }
+  .inco-tabs { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+  .inco-tab {
+    font: 700 .9rem "Sora", sans-serif; letter-spacing: .03em; color: #51607a;
+    background: #f1f5fc; border: 1px solid #e2e9f5; border-radius: 10px; padding: .5rem 1.1rem; cursor: pointer;
+    transition: all .25s ease;
+  }
+  .inco-tab:hover { border-color: #c2d2ee; color: #1f4693; }
+  .inco-tab.active { color: #fff; background: linear-gradient(135deg, #2b57b0, #1f4693); border-color: transparent; box-shadow: 0 10px 22px -12px rgba(31,70,147,.7); }
+
+  .inco-bar { position: relative; display: flex; gap: 4px; margin-top: 1.8rem; height: 64px; }
+  .inco-seg {
+    flex: 1; position: relative; border-radius: 8px; background: #eef2fa; display: grid; place-items: center;
+    border: 1px dashed #d3deef;
+  }
+  .inco-seg span { font: 600 .72rem "Inter", sans-serif; color: #6b7a99; text-align: center; padding: 0 .3rem; z-index: 2; }
+  .inco-cover {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 38%; border-radius: 8px; z-index: 1;
+    background: linear-gradient(135deg, rgba(43,87,176,.16), rgba(31,70,147,.22));
+    border: 1.5px solid rgba(31,70,147,.5);
+    transition: width .6s cubic-bezier(.4,0,.2,1);
+  }
+  .inco-flag {
+    position: absolute; top: -10px; bottom: -10px; left: 38%; width: 2px; z-index: 3;
+    background: #d6b36a; transition: left .6s cubic-bezier(.4,0,.2,1);
+  }
+  .inco-flag::after {
+    content: "⚑"; position: absolute; top: -20px; left: 1px; color: #c79a32; font-size: 1rem;
+  }
+  .inco-legend { display: flex; gap: 1.4rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+  .inco-legend-item { font: 600 .76rem "Inter", sans-serif; color: #6b7a99; display: inline-flex; align-items: center; gap: .45rem; }
+  .inco-legend-item::before { content: ""; width: 14px; height: 14px; border-radius: 4px; }
+  .inco-legend-we::before { background: rgba(31,70,147,.22); border: 1.5px solid rgba(31,70,147,.5); }
+  .inco-legend-you::before { background: #d6b36a; }
+  .inco-detail { text-align: center; margin-top: 1.6rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .inco-name { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.25rem; color: #16265a; }
+  .inco-hand { font: 600 .85rem "Inter", sans-serif; color: #1f4693; margin-top: .3rem; }
+  .inco-desc { color: #54627d; font-size: .96rem; line-height: 1.65; margin-top: .6rem; }
+  .inco.has-ins .inco-cover { background: linear-gradient(135deg, rgba(43,87,176,.18), rgba(15,122,82,.2)); border-color: rgba(15,122,82,.5); }
+
+  /* ---- Payment ---- */
+  .hx-pay-sec { background: linear-gradient(180deg, #f6f9ff, #eef3fc); }
+  .hx-pay-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .hx-pay-card {
+    display: flex; gap: .9rem; align-items: flex-start; background: #fff; border: 1px solid #e7edf7;
+    border-radius: 1rem; padding: 1.2rem 1.25rem; transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .hx-pay-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -26px rgba(31,70,147,.45); }
+  .hx-pay-ico { flex: none; width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; color: #1f4693; background: #eaf0fb; }
+  .hx-pay-ico svg { width: 21px; height: 21px; }
+  .hx-pay-title { font-family: "Sora", sans-serif; font-weight: 700; font-size: .98rem; color: #16265a; }
+  .hx-pay-desc { color: #5a6884; font-size: .85rem; line-height: 1.55; margin-top: .2rem; }
+
+  /* ---- Sustainability ---- */
+  .hx-sus-sec { }
+  .hx-sus-wrap {
+    display: grid; gap: 2.5rem; border-radius: 2rem; padding: 3rem 2rem; position: relative; overflow: hidden;
+    background: linear-gradient(150deg, #0f6b4a 0%, #15805a 60%, #0e6f6a 100%);
+  }
+  @media (min-width: 900px) { .hx-sus-wrap { grid-template-columns: 1fr 1.1fr; align-items: center; padding: 3.4rem 3rem; } }
+  .eyebrow-sus { color: #9ff0cd; }
+  .hx-sus-list { display: flex; flex-direction: column; gap: 1rem; }
+  .hx-sus-item {
+    display: flex; gap: .9rem; align-items: flex-start; background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.16); border-radius: 1rem; padding: 1.1rem 1.2rem; backdrop-filter: blur(2px);
+  }
+  .hx-sus-ico { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; color: #0f6b4a; background: #bff3da; }
+  .hx-sus-ico svg { width: 22px; height: 22px; }
+  .hx-sus-title { font-family: "Sora", sans-serif; font-weight: 700; color: #fff; font-size: 1rem; }
+  .hx-sus-desc { color: rgba(233,252,243,.82); font-size: .9rem; line-height: 1.55; margin-top: .2rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .jm-dot::after { animation: none; }
+    .journey-anim .jstep { opacity: 1; transform: none; }
+  }
+</style>
+
+<script>
+  // ---- Journey: scroll-driven route draw + marker travel + stage activation ----
+  const journey = document.getElementById("journey");
+  if (journey) {
+    const steps = Array.from(journey.querySelectorAll(".jstep")) as HTMLElement[];
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce) journey.classList.add("journey-anim");
+
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const rect = journey.getBoundingClientRect();
+      const h = journey.offsetHeight || 1;
+      const startAt = window.innerHeight * 0.6;
+      let p = (startAt - rect.top) / h;
+      p = Math.max(0, Math.min(1, p));
+      journey.style.setProperty("--p", p.toFixed(4));
+      const passed = p * h;
+      steps.forEach((s) => {
+        const trigger = s.offsetTop + Math.min(s.offsetHeight * 0.45, 80);
+        if (reduce || passed >= trigger) s.classList.add("active");
+        else s.classList.remove("active");
+      });
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", update);
+  }
+
+  // ---- Incoterms explorer ----
+  const inco = document.getElementById("inco");
+  if (inco) {
+    const cover = inco.querySelector(".inco-cover") as HTMLElement;
+    const flag = inco.querySelector(".inco-flag") as HTMLElement;
+    const name = inco.querySelector(".inco-name") as HTMLElement;
+    const hand = inco.querySelector(".inco-hand") as HTMLElement;
+    const desc = inco.querySelector(".inco-desc") as HTMLElement;
+    const tabs = Array.from(inco.querySelectorAll(".inco-tab")) as HTMLElement[];
+    const select = (btn: HTMLElement) => {
+      tabs.forEach((t) => t.classList.toggle("active", t === btn));
+      const cv = btn.dataset.cover || "0";
+      cover.style.width = cv + "%";
+      flag.style.left = cv + "%";
+      name.textContent = btn.dataset.name || "";
+      hand.textContent = btn.dataset.hand || "";
+      desc.textContent = btn.dataset.desc || "";
+      inco.classList.toggle("has-ins", btn.dataset.ins === "1");
+    };
+    tabs.forEach((t) => t.addEventListener("click", () => select(t)));
+    const def = tabs.find((t) => t.classList.contains("active")) || tabs[0];
+    if (def) select(def);
+  }
+</script>

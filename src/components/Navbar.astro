@@ -6,6 +6,7 @@ const isHome = path === "/";
 const isAbout = path === "/about";
 const isBlog = path === "/blogs" || path.startsWith("/blogs/");
 const isCert = path === "/certifications";
+const isExport = path === "/how-we-export";
 ---
 <header id="navbar" class="nav-bar sticky top-0 z-50 w-full">
     <nav class="max-w-7xl mx-auto px-5 lg:px-10 flex items-center justify-between gap-4 py-3">
@@ -32,7 +33,7 @@ const isCert = path === "/certifications";
           </div>
         </div>
         <a href="/about" class={`nav-link text-[15px] ${isAbout ? "active" : ""}`}>About Us</a>
-        <button class="nav-link text-[15px]" data-nolink>How We Export</button>
+        <a href="/how-we-export" class={`nav-link text-[15px] ${isExport ? "active" : ""}`}>How We Export</a>
         <a href="/certifications" class={`nav-link text-[15px] ${isCert ? "active" : ""}`}>Certifications</a>
         <a href="/blogs" class={`nav-link text-[15px] ${isBlog ? "active" : ""}`}>Blogs</a>
       </div>
@@ -79,7 +80,7 @@ const isCert = path === "/certifications";
         <button class="mobile-sub" data-nolink>Hydrocolloids &amp; Food Additives</button>
       </div>
       <a href="/about" class="mobile-link">About Us</a>
-      <button class="mobile-link" data-nolink>How We Export</button>
+      <a href="/how-we-export" class="mobile-link">How We Export</a>
       <a href="/certifications" class="mobile-link">Certifications</a>
       <a href="/blogs" class="mobile-link">Blogs</a>
       <a href="#quote" class="btn btn-primary mt-2">Get a Quote</a>
