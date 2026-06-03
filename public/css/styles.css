@@ -750,9 +750,6 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   box-shadow: 0 10px 24px -18px rgba(31,70,147,.5);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease, color .25s ease;
 }
-.part-tag svg { width: 18px; height: 18px; color: #1f4693; transition: transform .25s ease; }
 .part-tag:hover { transform: translateY(-3px); border-color: #1f4693; box-shadow: 0 18px 32px -18px rgba(31,70,147,.55); }
-.part-tag:hover svg { transform: translateX(4px); }
 .part-tag-cta { background: linear-gradient(135deg, #122a52, #1f4693); color: #fff; border-color: transparent; }
-.part-tag-cta svg { color: #fff; }
 .part-tag-cta:hover { color: #fff; border-color: transparent; box-shadow: 0 20px 36px -16px rgba(18,42,82,.7); }
