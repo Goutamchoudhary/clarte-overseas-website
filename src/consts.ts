@@ -31,7 +31,7 @@ export const CONTACT = {
 };
 
 export const SOCIAL = {
-  instagram: "#",
-  linkedin: "#",
-  facebook: "#",
+  instagram: "https://www.instagram.com/clarte_overseas/",
+  linkedin: "https://www.linkedin.com/company/clart%C3%A9-overseas/",
+  facebook: "https://www.facebook.com/share/1EqVT8eMpo/",
 };
