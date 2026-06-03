@@ -82,9 +82,58 @@ const sustain = [
   { t: "Less-waste packaging", d: "Right-sized, food-grade packing that protects product without excess.", svg: '<path d="M7 19a3 3 0 0 1-2.6-4.5L6 11"/><path d="M12 4 9.5 8.3"/><path d="M17 19a3 3 0 0 0 2.6-4.5l-3-5.2a3 3 0 0 0-5.2 0"/><path d="M9 19h8"/>' },
   { t: "Smarter loads", d: "Consolidated, well-planned shipments that cut empty miles and emissions.", svg: '<path d="M3 17h11V6H3zM14 9h4l3 3v5h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>' },
 ];
+
+const exportFaqs = [
+  {
+    q: "What is your minimum order quantity?",
+    a: "It depends on the product and packing, but we keep MOQs trial-friendly so first-time buyers can start with a test order and scale once the relationship is working. Tell us the item and target volume and we'll confirm what's workable.",
+  },
+  {
+    q: "Can I order a sample before placing a full order?",
+    a: "Yes. For most products we can arrange representative samples so you can check the grade, colour, mesh and aroma against your spec before committing to a shipment.",
+  },
+  {
+    q: "Which Incoterms do you work with?",
+    a: "Commonly EXW, FOB, CFR and CIF. FOB is what most of our buyers choose, but if you'd rather we book and pay the freight (and insurance), CFR or CIF work just as well. The Incoterms section above shows exactly how far we cover under each.",
+  },
+  {
+    q: "How long does a typical shipment take?",
+    a: "Production and pre-shipment checks usually take a couple of weeks after the order is confirmed, then ocean transit depends on your destination port. We share an indicative timeline with your quote and keep you posted as dates firm up.",
+  },
+  {
+    q: "What payment terms do you accept?",
+    a: "Every order starts with a proforma invoice. We typically work on an advance T/T deposit with the balance against a copy of the bill of lading, and we accept irrevocable letters of credit at sight for larger or first-time contracts. Terms are flexible for repeat buyers.",
+  },
+  {
+    q: "Which documents come with my consignment?",
+    a: "A standard set includes the commercial invoice, packing list and certificate of origin, along with the product specification, lab/analysis reports and any market-specific certificates your importer requires.",
+  },
+  {
+    q: "Can you handle packaging and private labelling to our spec?",
+    a: "Yes. We supply food-grade bulk packing as standard and can arrange custom pack sizes, retail packaging and private-label branding when you need it — just share the brief.",
+  },
+  {
+    q: "What happens after my goods are shipped?",
+    a: "We don't disappear at the port. We track the shipment to your door, help with any clearance query, check the product landed as expected, and stay on hand to plan your next order. The relationship is the point.",
+  },
+];
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: exportFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </Fragment>
+
   <!-- ===================== HERO (blueprint) ===================== -->
   <section class="hx-hero blueprint">
     <span class="bp-plus" style="top:18%;left:7%"></span>
@@ -314,6 +363,28 @@ const sustain = [
             <h3 class="sus-title">{s.t}</h3>
             <p class="sus-desc">{s.d}</p>
           </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="py-20 lg:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <span class="eyebrow center">FAQ</span>
+        <h2 class="tg-2 font-extrabold text-3xl sm:text-4xl mt-4">Exporting with us, answered</h2>
+        <p class="text-slate-500 text-lg mt-4">The practical questions buyers ask before the first shipment.</p>
+      </div>
+      <div class="mt-12 reveal d1">
+        {exportFaqs.map((f) => (
+          <details class="faq-item">
+            <summary>
+              {f.q}
+              <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-body">{f.a}</div>
+          </details>
         ))}
       </div>
     </div>
