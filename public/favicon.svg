@@ -3,7 +3,7 @@
   <!-- White background + complete circular border -->
   <circle cx="256" cy="256" r="246" fill="#ffffff" stroke="#1f4693" stroke-width="14"/>
   <!-- Brand icon, scaled + centered inside the circle -->
-  <g transform="translate(106,106) scale(0.6726)">
+  <g transform="translate(74,73) scale(0.82)">
     <g transform="matrix(1.47,0,0,1.47,225.47,224)">
       <g>
         <g transform="matrix(0.05,0,0,-0.05,82.93,-79.34)"><path fill="#1f4693" transform="translate(-6844.55,-6779.48)" d="m 6729,7968 c -5,-21 -7,-2186 -2,-2247 7,-74 10,-85 28,-86 11,-2 54,-5 95,-9 53,-4 79,-11 87,-23 7,-9 15,-15 17,-12 2,2 5,537 7,1189 l 4,1185 -117,3 c -65,1 -118,1 -119,0 z"/></g>
