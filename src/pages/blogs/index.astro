@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 import { posts, faqs } from "../../data/blogs";
 
 const title = "Blog — Dehydrated Foods, Ingredients & India Export Insights | Clarté Overseas";
@@ -11,22 +12,14 @@ const [featured, ...rest] = posts;
 
 <BaseLayout title={title} description={description}>
   <!-- ===================== HERO ===================== -->
-  <section class="about-hero pt-14 pb-16 lg:pt-16 lg:pb-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
-        <span class="text-slate-500">Blog</span>
-      </nav>
-      <div class="mt-6 reveal d1"><span class="eyebrow">The Clarté Blog</span></div>
-      <h1 class="tg-2 font-extrabold text-4xl sm:text-5xl lg:text-6xl mt-5 max-w-4xl leading-[1.08] reveal d1">
-        Notes on dehydrated foods, ingredients and exporting from India
-      </h1>
-      <p class="text-slate-600 text-lg mt-6 max-w-2xl leading-relaxed reveal d2">
-        Plain, useful reads for anyone buying or selling dried food ingredients: market shifts,
-        buyer guides and lessons from the world of global sourcing.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    crumb="Blog"
+    eyebrow="The Clarté Blog"
+    watermark="Insights"
+    heading="Notes on dehydrated foods, ingredients<br class='hidden sm:block'/> and exporting from India"
+    subtitle="Plain, useful reads for anyone buying or selling dried food ingredients: market shifts, buyer guides and lessons from the world of global sourcing."
+    chips={["Sourcing guides", "Quality & specs", "Market trends"]}
+  />
 
   <!-- ===================== FEATURED ===================== -->
   <section class="py-14 lg:py-16 bg-white">

@@ -1,0 +1,40 @@
+---
+// Reusable blueprint-style page hero: faint grid, crosshair markers, a large
+// faded watermark word behind a crisp headline, optional subtitle and chips.
+interface Props {
+  crumb: string;            // current page label for the breadcrumb
+  eyebrow: string;
+  heading: string;          // may include inline HTML (e.g. <br/>)
+  watermark: string;        // large faded background word
+  subtitle?: string;
+  chips?: string[];
+}
+const { crumb, eyebrow, heading, watermark, subtitle, chips = [] } = Astro.props;
+---
+<section class="page-hero blueprint">
+  <span class="bp-plus" style="top:16%;left:7%"></span>
+  <span class="bp-plus" style="top:60%;left:13%"></span>
+  <span class="bp-plus" style="top:28%;right:9%"></span>
+  <span class="bp-plus" style="top:72%;right:17%"></span>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
+      <span class="text-slate-500">{crumb}</span>
+    </nav>
+    <div class="ph-stack reveal d1">
+      <span class="ph-watermark" aria-hidden="true">{watermark}</span>
+      <div class="ph-fore">
+        <span class="eyebrow center">{eyebrow}</span>
+        <h1 class="ph-h1 font-extrabold mt-4" set:html={heading}></h1>
+        {subtitle && (
+          <p class="text-slate-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
+        )}
+        {chips.length > 0 && (
+          <div class="ph-chips mt-8">
+            {chips.map((c) => <span class="ph-chip">{c}</span>)}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WaveDivider from '../components/WaveDivider.astro';
 import { SITE } from '../consts';
 const title = 'Clarté Overseas — Premium Dehydrated Fruits, Vegetables & Powders | Indian Exporter';
 const description = 'Clarté Overseas is an India-based merchant exporter of premium dehydrated fruits, vegetables, flakes and powders, supplying food manufacturers, flavour houses and distributors worldwide.';
@@ -284,6 +285,8 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
     </div>
   </section>
 
+  <WaveDivider topColor="#ffffff" bottomColor="#14264c" accent="rgba(91,130,214,0.25)" />
+
   <!-- =====================================================================
        QUALITY & SUSTAINABILITY MISSION (dark split)
        ===================================================================== -->
@@ -364,7 +367,8 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
        ===================================================================== -->
   <section id="markets" class="py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
+      <div class="sec-wm text-center max-w-2xl mx-auto reveal">
+        <span class="sec-wm-word" aria-hidden="true">Global</span>
         <span class="eyebrow center">Export Footprint</span>
         <h2 class="tg-6 font-extrabold text-4xl sm:text-5xl mt-4">Where our produce travels</h2>
         <p class="text-slate-500 text-lg mt-4">From the US and UK to Europe, the Gulf and Australia, Clarté Overseas supplies importers, processors and distributors across five continents, and the map keeps growing.</p>

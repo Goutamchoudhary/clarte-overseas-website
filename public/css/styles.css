@@ -660,3 +660,57 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   .map-wrap .map-pin { transform: translate(-50%, -50%) scale(1); opacity: 1; transition: none; }
   .map-wrap .map-route { opacity: 1; transition: none; }
 }
+
+/* =======================================================================
+   SHARED PAGE HERO (blueprint backdrop + watermark) + WAVE DIVIDER
+   ======================================================================= */
+.blueprint { position: relative; background: #fbfcfe; overflow: hidden; isolation: isolate; }
+.blueprint::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .6;
+  background-image:
+    linear-gradient(rgba(31,70,147,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,70,147,.05) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(130% 100% at 50% 0%, #000 55%, transparent 92%);
+  mask-image: radial-gradient(130% 100% at 50% 0%, #000 55%, transparent 92%);
+}
+.bp-plus { position: absolute; width: 20px; height: 20px; z-index: 0; pointer-events: none; }
+.bp-plus::before, .bp-plus::after { content: ""; position: absolute; background: rgba(31,70,147,.22); }
+.bp-plus::before { left: 50%; top: 0; width: 1.5px; height: 100%; transform: translateX(-50%); }
+.bp-plus::after { top: 50%; left: 0; height: 1.5px; width: 100%; transform: translateY(-50%); }
+
+/* Reusable hero */
+.page-hero { position: relative; padding: 3.25rem 0 3.5rem; }
+@media (min-width: 1024px) { .page-hero { padding: 3.75rem 0 4rem; } }
+.ph-stack { position: relative; text-align: center; padding: 2.25rem 0; }
+.ph-watermark {
+  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+  font-family: "Sora", sans-serif; font-weight: 800; white-space: nowrap; letter-spacing: -.02em;
+  font-size: clamp(5rem, 19vw, 17rem); line-height: 1; z-index: 0; pointer-events: none;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(31,70,147,.10);
+  background: linear-gradient(180deg, rgba(31,70,147,.10), rgba(31,70,147,.02));
+  -webkit-background-clip: text; background-clip: text;
+}
+.ph-fore { position: relative; z-index: 1; }
+.ph-h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.07; color: #16265a; }
+.ph-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
+.ph-chip {
+  font: 600 .82rem "Inter", sans-serif; color: #2b4585;
+  background: #fff; border: 1px solid #dde6f5; border-radius: 999px; padding: .42rem .9rem;
+  box-shadow: 0 6px 16px -12px rgba(31,70,147,.5);
+}
+
+/* Section-heading watermark (e.g. one home section) */
+.sec-wm { position: relative; }
+.sec-wm-word {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  font-family: "Sora", sans-serif; font-weight: 800; white-space: nowrap; letter-spacing: -.02em;
+  font-size: clamp(3.5rem, 12vw, 9rem); line-height: 1; z-index: 0; pointer-events: none;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(31,70,147,.08);
+}
+.sec-wm > *:not(.sec-wm-word) { position: relative; z-index: 1; }
+
+/* Wave divider between two sections */
+.wave-divider { line-height: 0; }
+.wave-divider svg { display: block; width: 100%; height: 64px; }
+@media (min-width: 768px) { .wave-divider svg { height: 104px; } }

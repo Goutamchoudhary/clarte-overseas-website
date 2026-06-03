@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import WaveDivider from "../components/WaveDivider.astro";
 
 const title = "How We Export — From India's Harvest to Your Port | Clarté Overseas";
 const description =
@@ -135,34 +137,14 @@ const faqLd = {
   </Fragment>
 
   <!-- ===================== HERO (blueprint) ===================== -->
-  <section class="hx-hero blueprint">
-    <span class="bp-plus" style="top:18%;left:7%"></span>
-    <span class="bp-plus" style="top:62%;left:14%"></span>
-    <span class="bp-plus" style="top:30%;right:10%"></span>
-    <span class="bp-plus" style="top:74%;right:18%"></span>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
-      <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
-        <span class="text-slate-500">How We Export</span>
-      </nav>
-      <div class="hx-stack reveal d1">
-        <span class="hx-watermark" aria-hidden="true">Export</span>
-        <div class="hx-fore">
-          <span class="eyebrow center">The Export Journey</span>
-          <h1 class="hx-h1 font-extrabold mt-4">How your order travels<br />from India to your port</h1>
-          <p class="text-slate-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-            No black boxes. Here is the route every Clarté Overseas shipment follows — from the field it
-            is sourced in to the vessel it sails on, and the support that carries on long after it lands.
-          </p>
-          <div class="hx-chips mt-8">
-            <span class="hx-chip">Sourced &amp; vetted in India</span>
-            <span class="hx-chip">Quality-checked, lot by lot</span>
-            <span class="hx-chip">After-sales included</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    crumb="How We Export"
+    eyebrow="The Export Journey"
+    watermark="Export"
+    heading="How your order travels<br class='hidden sm:block'/> from India to your port"
+    subtitle="No black boxes. Here is the route every Clarté Overseas shipment follows — from the field it is sourced in to the vessel it sails on, and the support that carries on long after it lands."
+    chips={["Sourced & vetted in India", "Quality-checked, lot by lot", "After-sales included"]}
+  />
 
   <!-- ===================== THE JOURNEY ===================== -->
   <section class="hx-journey-sec blueprint">
@@ -368,6 +350,8 @@ const faqLd = {
     </div>
   </section>
 
+  <WaveDivider topColor="#e9f8f0" bottomColor="#ffffff" accent="rgba(15,107,74,0.12)" />
+
   <!-- ===================== FAQ ===================== -->
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
@@ -409,41 +393,8 @@ const faqLd = {
 
 <style is:global>
   /* ====================== HOW WE EXPORT PAGE ====================== */
-  /* ---- Blueprint backdrop ---- */
-  .blueprint { position: relative; background: #fbfcfe; overflow: hidden; isolation: isolate; }
-  .blueprint::before {
-    content: ""; position: absolute; inset: 0; z-index: -1; opacity: .6;
-    background-image:
-      linear-gradient(rgba(31,70,147,.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(31,70,147,.05) 1px, transparent 1px);
-    background-size: 54px 54px;
-    mask-image: radial-gradient(130% 100% at 50% 0%, #000 55%, transparent 92%);
-    -webkit-mask-image: radial-gradient(130% 100% at 50% 0%, #000 55%, transparent 92%);
-  }
-  .bp-plus { position: absolute; width: 20px; height: 20px; z-index: 0; pointer-events: none; }
-  .bp-plus::before, .bp-plus::after { content: ""; position: absolute; background: rgba(31,70,147,.22); }
-  .bp-plus::before { left: 50%; top: 0; width: 1.5px; height: 100%; transform: translateX(-50%); }
-  .bp-plus::after { top: 50%; left: 0; height: 1.5px; width: 100%; transform: translateY(-50%); }
-
-  /* ---- Hero ---- */
-  .hx-hero { padding: 3.5rem 0 4rem; }
-  .hx-stack { position: relative; text-align: center; padding: 2.5rem 0; }
-  .hx-watermark {
-    position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
-    font-family: "Sora", sans-serif; font-weight: 800; white-space: nowrap; letter-spacing: -.02em;
-    font-size: clamp(5rem, 19vw, 17rem); line-height: 1; z-index: 0; pointer-events: none;
-    color: transparent; -webkit-text-stroke: 1.5px rgba(31,70,147,.10);
-    background: linear-gradient(180deg, rgba(31,70,147,.10), rgba(31,70,147,.02));
-    -webkit-background-clip: text; background-clip: text;
-  }
-  .hx-fore { position: relative; z-index: 1; }
-  .hx-h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.07; color: #16265a; }
-  .hx-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
-  .hx-chip {
-    font: 600 .82rem "Inter", sans-serif; color: #2b4585;
-    background: #fff; border: 1px solid #dde6f5; border-radius: 999px; padding: .42rem .9rem;
-    box-shadow: 0 6px 16px -12px rgba(31,70,147,.5);
-  }
+  /* (Blueprint backdrop, crosshairs and the page hero now live in the
+     shared stylesheet — see PageHero.astro / styles.css.) */
 
   /* ---- Journey ---- */
   .hx-journey-sec { padding: 4.5rem 0 5.5rem; }

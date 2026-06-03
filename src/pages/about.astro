@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import WaveDivider from "../components/WaveDivider.astro";
 
 const title = "About Clarté Overseas — Dehydrated Food Ingredient Exporter from India";
 const description =
@@ -72,23 +74,14 @@ const aboutFaqs = [
 
 <BaseLayout title={title} description={description}>
   <!-- ===================== HERO ===================== -->
-  <section class="about-hero pt-14 pb-20 lg:pt-16 lg:pb-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
-        <span class="text-slate-500">About Us</span>
-      </nav>
-      <div class="mt-6 reveal d1"><span class="eyebrow">About Us</span></div>
-      <h1 class="tg-1 font-extrabold text-4xl sm:text-5xl lg:text-6xl mt-5 max-w-4xl leading-[1.08] reveal d1">
-        Bringing India's harvest to the world's food businesses
-      </h1>
-      <p class="text-slate-600 text-lg mt-6 max-w-2xl leading-relaxed reveal d2">
-        Clarté Overseas is a New Delhi based merchant exporter of dehydrated fruits, vegetables and
-        food-grade ingredients. We help food brands, manufacturers and distributors source from India
-        without the usual friction.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    crumb="About Us"
+    eyebrow="About Us"
+    watermark="About"
+    heading="Bringing India's harvest to<br class='hidden sm:block'/> the world's food businesses"
+    subtitle="Clarté Overseas is a New Delhi based merchant exporter of dehydrated fruits, vegetables and food-grade ingredients. We help food brands, manufacturers and distributors source from India without the usual friction."
+    chips={["New Delhi, India", "Merchant exporter", "Shipping worldwide"]}
+  />
 
   <!-- ===================== STORY + GLANCE ===================== -->
   <section class="py-20 lg:py-24 bg-white">
@@ -143,6 +136,8 @@ const aboutFaqs = [
       </div>
     </div>
   </section>
+
+  <WaveDivider topColor="#f7f8fb" bottomColor="#ffffff" />
 
   <!-- =====================================================================
        OUR MISSION & VISION

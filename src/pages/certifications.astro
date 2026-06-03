@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
 
 const title = "Certifications & Compliance — Clarté Overseas | Verified Export Credentials";
 const description =
@@ -151,39 +152,14 @@ const faqLd = {
   </Fragment>
 
   <!-- ===================== HERO ===================== -->
-  <section class="cert-hero">
-    <span class="cert-hero-grid" aria-hidden="true"></span>
-    <span class="cert-hero-glow" aria-hidden="true"></span>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
-      <nav class="crumb crumb-light text-sm reveal" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span class="mx-1 opacity-40">/</span>
-        <span class="opacity-80">Certifications</span>
-      </nav>
-      <div class="mt-7 reveal d1"><span class="eyebrow eyebrow-light">Compliance &amp; Trust</span></div>
-      <h1 class="cert-h1 font-extrabold text-4xl sm:text-5xl lg:text-6xl mt-5 max-w-4xl leading-[1.08] reveal d1">
-        Credentials you can open, read and verify
-      </h1>
-      <p class="text-slate-300 text-lg mt-6 max-w-2xl leading-relaxed reveal d2">
-        We would rather show our paperwork than talk about it. Every registration and licence below is
-        held in Clarté Overseas's own name — download the actual certificate and check it for yourself.
-      </p>
-
-      <div class="cert-stats reveal d3">
-        <div class="cert-stat">
-          <span class="cert-stat-num" data-count="6">0</span>
-          <span class="cert-stat-lab">Registrations &amp; licences</span>
-        </div>
-        <div class="cert-stat">
-          <span class="cert-stat-num" data-count="100" data-suffix="%">0</span>
-          <span class="cert-stat-lab">Held in our own name</span>
-        </div>
-        <div class="cert-stat">
-          <span class="cert-stat-num cert-stat-text">ISO&nbsp;9001</span>
-          <span class="cert-stat-lab">Quality system certified</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    crumb="Certifications"
+    eyebrow="Compliance & Trust"
+    watermark="Trust"
+    heading="Credentials you can<br class='hidden sm:block'/> open, read and verify"
+    subtitle="We would rather show our paperwork than talk about it. Every registration and licence below is held in Clarté Overseas's own name — download the actual certificate and check it for yourself."
+    chips={["6 verifiable certificates", "All in our own name", "ISO 9001:2015 certified"]}
+  />
 
   <!-- ===================== COMPANY CREDENTIALS (downloadable) ===================== -->
   <section class="py-20 lg:py-24 bg-white">
@@ -306,43 +282,6 @@ const faqLd = {
 
 <style is:global>
   /* ====================== CERTIFICATIONS PAGE ====================== */
-  .eyebrow-light { color: #9db4e6; }
-  .crumb-light a { color: #cdd9f2; }
-  .crumb-light a:hover { color: #fff; }
-  .crumb-light { color: #cdd9f2; }
-
-  /* ---- Hero ---- */
-  .cert-hero {
-    position: relative; overflow: hidden; isolation: isolate;
-    padding: 4rem 0 5.5rem;
-    background:
-      radial-gradient(120% 120% at 0% 0%, #244e9e 0%, transparent 55%),
-      linear-gradient(135deg, #16265a 0%, #1f4693 55%, #16306e 100%);
-  }
-  @media (min-width: 1024px) { .cert-hero { padding: 4.5rem 0 6.5rem; } }
-  .cert-hero .cert-h1, .cert-hero h1 { color: #fff; }
-  .cert-hero-grid {
-    position: absolute; inset: 0; z-index: -1; opacity: .5;
-    background-image:
-      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
-    background-size: 46px 46px;
-    mask-image: radial-gradient(120% 90% at 70% 0%, #000 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(120% 90% at 70% 0%, #000 30%, transparent 80%);
-  }
-  .cert-hero-glow {
-    position: absolute; z-index: -1; width: 540px; height: 540px; right: -120px; top: -160px;
-    background: radial-gradient(circle, rgba(214,179,106,.32), transparent 62%);
-    filter: blur(8px); border-radius: 50%;
-    animation: cert-float 11s ease-in-out infinite alternate;
-  }
-  @keyframes cert-float { from { transform: translateY(-12px); } to { transform: translateY(18px); } }
-
-  .cert-stats { display: flex; flex-wrap: wrap; gap: 1rem 2.6rem; margin-top: 2.6rem; }
-  .cert-stat { display: flex; flex-direction: column; }
-  .cert-stat-num { font-family: "Sora", sans-serif; font-weight: 800; font-size: 2.4rem; line-height: 1; color: #fff; }
-  .cert-stat-text { letter-spacing: -.01em; }
-  .cert-stat-lab { color: #aebfe2; font-size: .82rem; margin-top: .5rem; letter-spacing: .02em; }
 
   /* ---- Credential cards (cursor-tilt + holographic sheen) ---- */
   .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.4rem; }
@@ -464,7 +403,6 @@ const faqLd = {
 
   /* ---- Reduced motion ---- */
   @media (prefers-reduced-motion: reduce) {
-    .cert-hero-glow { animation: none; }
     .cred-card { transform: none !important; transition: box-shadow .3s ease; }
     .cred-card:hover .cred-shine { animation: none; opacity: 0; }
     .reveal.in .verified .vcheck { animation: none; stroke-dashoffset: 0; }

@@ -1,0 +1,21 @@
+---
+// Decorative wave separating two sections. Set topColor to the section above
+// and bottomColor to the section below for a seamless transition. A faint
+// back wave (accent) adds depth so it reads even on low-contrast boundaries.
+interface Props {
+  topColor?: string;
+  bottomColor?: string;
+  accent?: string;
+}
+const {
+  topColor = "#ffffff",
+  bottomColor = "#f7f8fb",
+  accent = "rgba(31,70,147,0.10)",
+} = Astro.props;
+---
+<div class="wave-divider" style={`background:${topColor}`} aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path fill={accent} d="M0,36 C240,104 480,4 720,40 C960,76 1200,16 1440,56 L1440,120 L0,120 Z"></path>
+    <path fill={bottomColor} d="M0,64 C240,120 480,28 720,64 C960,100 1200,40 1440,80 L1440,120 L0,120 Z"></path>
+  </svg>
+</div>
