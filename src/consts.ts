@@ -25,7 +25,8 @@ export const CONTACT = {
   // TODO: replace with the real WhatsApp number (country code, no +)
   whatsapp:
     "https://wa.me/910000000000?text=Hi%20Clart%C3%A9%20Overseas%2C%20I%27d%20like%20a%20quote.",
-  formspree: "https://formspree.io/f/xwprzqrl",
+  // Form backend endpoint — undecided (see options); leave empty for now
+  formspree: "",
   address: "1st Floor, CW-59, Sanjay Gandhi Transport Nagar, Delhi, India. 110042",
 };
 
