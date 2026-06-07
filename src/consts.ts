@@ -29,6 +29,8 @@ export const CONTACT = {
   web3formsKey: "c15bc0d8-19b2-42dd-a385-5a15dd3a7883",
   // Cloudflare Turnstile site key (optional spam protection) — leave empty to disable
   turnstileSiteKey: "",
+  // Google Apps Script Web App URL (saves leads to a Sheet + WhatsApp alert) — paste the /exec URL
+  sheetWebhook: "",
   address: "1st Floor, CW-59, Sanjay Gandhi Transport Nagar, Delhi, India. 110042",
 };
 
