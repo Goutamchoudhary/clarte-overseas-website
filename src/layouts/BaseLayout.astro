@@ -2,7 +2,9 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
-import { SITE } from "../consts";
+import { SITE, LANGUAGES } from "../consts";
+
+const includedLanguages = LANGUAGES.map((l) => l.code).join(",");
 
 interface Props {
   title?: string;
@@ -81,6 +83,22 @@ const orgSchema = {
   </head>
 
   <body class="font-body">
+    <!-- Google Translate (hidden widget; driven by the navbar language picker) -->
+    <div id="google_translate_element" aria-hidden="true"></div>
+    <script is:inline define:vars={{ includedLanguages }}>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: includedLanguages,
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script is:inline src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <Navbar />
     <slot />
     <Footer />

@@ -47,6 +47,60 @@ document.addEventListener("DOMContentLoaded", () => {
     el.addEventListener("click", (e) => e.preventDefault())
   );
 
+  /* ---- Language picker (Google Translate) ---------------------------- */
+  (function () {
+    const readCookie = (n) => {
+      const m = document.cookie.match(new RegExp("(?:^|; )" + n + "=([^;]*)"));
+      return m ? decodeURIComponent(m[1]) : "";
+    };
+    const currentLang = () => {
+      const parts = (readCookie("googtrans") || "").split("/"); // /en/<lang>
+      return parts.length === 3 && parts[2] ? parts[2] : "en";
+    };
+    const setLabel = (lang) => {
+      const item = document.querySelector('.lang-dd-item[data-lang="' + lang + '"]');
+      const label = document.getElementById("langLabel");
+      if (label) label.textContent = item ? item.getAttribute("data-short") || "EN" : "EN";
+      document.querySelectorAll(".lang-dd-item").forEach((b) =>
+        b.classList.toggle("active", b.getAttribute("data-lang") === lang)
+      );
+      const sel = document.getElementById("langSelect");
+      if (sel) sel.value = lang;
+    };
+    const clearCookie = () => {
+      const host = location.hostname;
+      const exp = "; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      document.cookie = "googtrans=; path=/" + exp;
+      document.cookie = "googtrans=; path=/; domain=" + host + exp;
+      document.cookie = "googtrans=; path=/; domain=." + host + exp;
+    };
+    const translateTo = (lang) => {
+      if (!lang || lang === "en") {
+        clearCookie();
+        location.reload();
+        return;
+      }
+      const host = location.hostname;
+      const val = "/en/" + lang;
+      document.cookie = "googtrans=" + val + "; path=/";
+      try { document.cookie = "googtrans=" + val + "; path=/; domain=." + host; } catch (e) {}
+      const combo = document.querySelector(".goog-te-combo");
+      if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event("change"));
+        setLabel(lang);
+      } else {
+        location.reload();
+      }
+    };
+    document.querySelectorAll(".lang-dd-item").forEach((b) =>
+      b.addEventListener("click", () => translateTo(b.getAttribute("data-lang")))
+    );
+    const sel = document.getElementById("langSelect");
+    if (sel) sel.addEventListener("change", () => translateTo(sel.value));
+    setLabel(currentLang());
+  })();
+
   /* ---- Scroll-to-top -------------------------------------------------- */
   document.getElementById("toTop").addEventListener("click", () =>
     window.scrollTo({ top: 0, behavior: "smooth" })

@@ -765,3 +765,46 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   .slant-divider svg { height: 88px; }
   .curve-divider svg { height: 104px; }
 }
+
+/* =======================================================================
+   LANGUAGE PICKER + GOOGLE TRANSLATE (hide its default UI/banner)
+   ======================================================================= */
+.lang-dd { position: relative; }
+.lang-dd-menu {
+  position: absolute; top: 100%; right: 0; padding-top: 12px; /* hover bridge */
+  opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px);
+  transition: opacity .2s ease, transform .2s ease; z-index: 60;
+}
+.lang-dd:hover .lang-dd-menu, .lang-dd:focus-within .lang-dd-menu {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+}
+.lang-dd-card {
+  width: 220px; max-height: 340px; overflow-y: auto; background: #fff; border: 1px solid #eef0f5;
+  border-radius: 1rem; box-shadow: 0 26px 54px -22px rgba(13,26,54,.4); padding: .5rem;
+}
+.lang-dd-item {
+  display: flex; align-items: center; gap: .65rem; width: 100%; text-align: left;
+  padding: .55rem .7rem; border-radius: .6rem; cursor: pointer; border: none; background: none;
+  font-size: .9rem; color: #334155; font-family: var(--font-body); transition: background .15s ease, color .15s ease;
+}
+.lang-dd-item:hover { background: var(--brand-100); color: var(--brand); }
+.lang-dd-item.active { background: var(--brand-100); color: var(--brand); font-weight: 600; }
+.lang-flag { font-size: 1.1rem; line-height: 1; }
+
+/* Mobile language select */
+.lang-select {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  font-family: var(--font-body); font-size: 1rem; color: #fff;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px; padding: .55rem 1.4rem; margin-top: .25rem; text-align: center;
+}
+.lang-select option { color: #0d1a36; }
+
+/* Suppress Google Translate's banner + branding; keep the widget functional but off-screen */
+#google_translate_element { position: absolute !important; left: -9999px !important; top: -9999px !important; }
+.goog-te-banner-frame, .goog-te-banner-frame.skiptranslate { display: none !important; }
+.goog-te-gadget-icon { display: none !important; }
+body { top: 0 !important; }
+.skiptranslate > iframe { visibility: hidden !important; height: 0 !important; }
+#goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+font.goog-text-highlight { background: none !important; box-shadow: none !important; }

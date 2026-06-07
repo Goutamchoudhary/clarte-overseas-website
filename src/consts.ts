@@ -39,3 +39,26 @@ export const SOCIAL = {
   linkedin: "https://www.linkedin.com/company/clart%C3%A9-overseas/",
   facebook: "https://www.facebook.com/share/1EqVT8eMpo/",
 };
+
+// Languages offered in the navbar translator (Google Translate codes).
+// Native labels stay in their own script so they're recognizable in any locale.
+export const LANGUAGES = [
+  { code: "en",    short: "EN", label: "English",     flag: "🇬🇧" },
+  { code: "es",    short: "ES", label: "Español",     flag: "🇪🇸" },
+  { code: "fr",    short: "FR", label: "Français",    flag: "🇫🇷" },
+  { code: "de",    short: "DE", label: "Deutsch",     flag: "🇩🇪" },
+  { code: "it",    short: "IT", label: "Italiano",    flag: "🇮🇹" },
+  { code: "pt",    short: "PT", label: "Português",   flag: "🇵🇹" },
+  { code: "nl",    short: "NL", label: "Nederlands",  flag: "🇳🇱" },
+  { code: "ru",    short: "RU", label: "Русский",     flag: "🇷🇺" },
+  { code: "ar",    short: "AR", label: "العربية",     flag: "🇸🇦" },
+  { code: "tr",    short: "TR", label: "Türkçe",      flag: "🇹🇷" },
+  { code: "zh-CN", short: "ZH", label: "中文",         flag: "🇨🇳" },
+  { code: "ja",    short: "JA", label: "日本語",        flag: "🇯🇵" },
+  { code: "ko",    short: "KO", label: "한국어",        flag: "🇰🇷" },
+  { code: "vi",    short: "VI", label: "Tiếng Việt",  flag: "🇻🇳" },
+  { code: "th",    short: "TH", label: "ไทย",          flag: "🇹🇭" },
+  { code: "id",    short: "ID", label: "Indonesia",   flag: "🇮🇩" },
+  { code: "hi",    short: "HI", label: "हिन्दी",        flag: "🇮🇳" },
+  { code: "sv",    short: "SV", label: "Svenska",     flag: "🇸🇪" },
+];
