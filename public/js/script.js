@@ -215,12 +215,12 @@ function buildWorldMap() {
 
   // accurate lon/lat on a full-extent equirectangular (plate carrée) map
   const markets = [
-    { name: "USA", lon: -98, lat: 39, origin: false, label: "below" },
-    { name: "UK", lon: -2, lat: 54, origin: false, label: "above" },
-    { name: "Europe", lon: 12, lat: 49, origin: false, label: "below" },
-    { name: "UAE", lon: 54, lat: 24, origin: false, label: "below" },
-    { name: "India", lon: 78, lat: 22, origin: true, label: "below" },
-    { name: "Australia", lon: 134, lat: -25, origin: false, label: "below" },
+    { name: "United States", flag: "🇺🇸", lon: -98, lat: 39, origin: false, label: "below" },
+    { name: "United Kingdom", flag: "🇬🇧", lon: -2, lat: 54, origin: false, label: "above" },
+    { name: "Europe", flag: "🇪🇺", lon: 12, lat: 49, origin: false, label: "below" },
+    { name: "UAE", flag: "🇦🇪", lon: 54, lat: 24, origin: false, label: "below" },
+    { name: "India", flag: "🇮🇳", lon: 78, lat: 22, origin: true, label: "below" },
+    { name: "Australia", flag: "🇦🇺", lon: 134, lat: -25, origin: false, label: "below" },
   ];
 
   host.classList.add("map-wrap");
@@ -252,7 +252,7 @@ function buildWorldMap() {
     const path = document.createElementNS(svgNS, "path");
     path.setAttribute("d", `M ${ox} ${oy} Q ${midX} ${midY} ${px} ${py}`);
     path.setAttribute("fill", "none");
-    path.setAttribute("stroke", "rgba(255,77,79,.45)");
+    path.setAttribute("stroke", "rgba(224,162,52,.6)");
     path.setAttribute("stroke-width", "0.35");
     path.setAttribute("stroke-dasharray", "1.4 1.4");
     lines.appendChild(path);
@@ -262,7 +262,8 @@ function buildWorldMap() {
   // pins
   markets.forEach((m, i) => {
     const { x, y } = pos(m.lon, m.lat);
-    const color = "#ff4d4f"; // vivid coral-red — high contrast on the terrain map
+    // India (origin) = brand gold; destinations = brand blue
+    const color = m.origin ? "#e0a234" : "#1f4693";
     const r = m.origin ? 5 : 4;
     const pin = document.createElement("div");
     pin.title = m.name;
@@ -274,13 +275,15 @@ function buildWorldMap() {
         : "top:135%";
     pin.innerHTML = `
       <svg width="${r * 5}" height="${r * 5}" viewBox="0 0 24 24" style="overflow:visible;display:block">
+        <circle cx="12" cy="12" r="${r + 1.3}" fill="#fff"></circle>
         <circle cx="12" cy="12" r="${r}" fill="${color}"></circle>
-        <circle cx="12" cy="12" r="${r}" fill="none" stroke="#fff" stroke-width="1.4"></circle>
         <circle class="map-ping" cx="12" cy="12" r="${r}" fill="none" stroke="${color}" stroke-width="2" style="r:${r}"></circle>
       </svg>
       <span style="position:absolute;left:50%;${labelStyle};transform:translateX(-50%);
+        display:inline-flex;align-items:center;gap:3px;
         font:700 11px Sora,sans-serif;color:${m.origin ? "#1f4693" : "#334155"};
-        background:rgba(255,255,255,.85);padding:1px 6px;border-radius:6px;white-space:nowrap;">${m.name}</span>`;
+        background:rgba(255,255,255,.92);padding:2px 7px;border-radius:7px;white-space:nowrap;
+        box-shadow:0 4px 10px -4px rgba(13,26,54,.35);"><span style="font-size:12px;line-height:1">${m.flag}</span>${m.name}</span>`;
     host.appendChild(pin);
   });
   // Pins + routes animate in via the .reveal wrapper around the map (see CSS).
