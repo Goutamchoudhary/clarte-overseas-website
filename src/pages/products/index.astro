@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import { categories, productsByCategory } from "../../data/products";
+
+const title = "Products — Dehydrated Fruit, Vegetable, Herbal & Spice Powders | Clarté Overseas";
+const description =
+  "Explore Clarté Overseas's range of dehydrated powders from India: fruit powders, culinary & spice powders, functional & nutritional powders, herbal & leaf powders, and hydrocolloids & food additives.";
+
+const cats = categories.map((c) => {
+  const items = productsByCategory(c.slug);
+  return {
+    ...c,
+    count: items.length,
+    thumbs: items.filter((p) => p.image).slice(0, 4),
+    fallback: items.slice(0, 4),
+  };
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <PageHero
+    crumb="Products"
+    eyebrow="Our Range"
+    watermark="Products"
+    heading="Dehydrated powders, milled for the world's food makers"
+    subtitle="Five focused categories, each grown and processed in India for clean flavour, true colour and dependable, spec-driven supply. Pick a category to see the full range."
+    chips={["100% natural", "Spec-driven supply", "Private label ready"]}
+  />
+
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-6 lg:gap-8">
+      {cats.map((c, i) => (
+        <article class="cat-row" style={`--from:${c.accentFrom};--to:${c.accentTo}`} data-side={i % 2 === 0 ? "l" : "r"}>
+          <div class="cat-row-text reveal">
+            <div class="cat-row-head">
+              <span class="cat-index">{String(i + 1).padStart(2, "0")}</span>
+              <span class="cat-emoji">{c.emoji}</span>
+            </div>
+            <h2 class="cat-name">{c.name}</h2>
+            <p class="cat-desc">{c.description}</p>
+            <div class="cat-row-foot">
+              <a href={`/products/${c.slug}`} class="cat-cta">
+                Explore range
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <span class="cat-count">{c.count} products</span>
+            </div>
+          </div>
+          <a href={`/products/${c.slug}`} class="cat-row-media reveal d1" aria-label={c.name}>
+            <span class="cat-media-tint" aria-hidden="true"></span>
+            {(c.thumbs.length ? c.thumbs : c.fallback).map((p) => (
+              <span class="cat-thumb">
+                {p.image
+                  ? <img src={p.image} alt={p.name} loading="lazy" />
+                  : <span class="cat-thumb-emoji">{p.emoji}</span>}
+              </span>
+            ))}
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import { CONTACT, SOCIAL } from "../consts";
+import { categories as catData, products } from "../data/products";
 
 const title = "Contact Clarté Overseas — Request a Quote | Dehydrated Food Exporter";
 const description =
@@ -10,14 +11,12 @@ const description =
 const phoneDisplay = "(+91) 8800242156";
 const phoneHref = "tel:+918800242156";
 
-const categories = [
-  "Herbal & Leaf Powders",
-  "Dehydrated Vegetable Powders – Culinary & Spice",
-  "Dehydrated Vegetable Powders – Functional & Nutritional",
-  "Dehydrated Fruit Powder Ingredients",
-  "Hydrocolloids & Food Additives",
-  "Something else / Not sure yet",
-];
+const categories = [...catData.map((c) => c.name), "Something else / Not sure yet"];
+// Products grouped by category for the optgroup select
+const productGroups = catData.map((c) => ({
+  label: c.name,
+  items: products.filter((p) => p.category === c.slug).map((p) => p.name),
+}));
 
 // Google Maps embed (no API key needed) + share link for directions
 const mapQuery = encodeURIComponent(CONTACT.address);
@@ -138,12 +137,25 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
               </div>
             </div>
 
-            <div class="field">
-              <label for="product">Product of interest</label>
-              <select id="product" name="product">
-                <option value="" disabled selected>Select a category</option>
-                {categories.map((c) => <option value={c}>{c}</option>)}
-              </select>
+            <div class="cc-row two">
+              <div class="field">
+                <label for="category">Product category</label>
+                <select id="category" name="category">
+                  <option value="" selected>Select a category</option>
+                  {categories.map((c) => <option value={c}>{c}</option>)}
+                </select>
+              </div>
+              <div class="field">
+                <label for="product">Specific product</label>
+                <select id="product" name="product">
+                  <option value="" selected>Any / not sure yet</option>
+                  {productGroups.map((g) => (
+                    <optgroup label={g.label}>
+                      {g.items.map((name) => <option value={name}>{name}</option>)}
+                    </optgroup>
+                  ))}
+                </select>
+              </div>
             </div>
 
             <div class="field">
@@ -368,6 +380,22 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
 </style>
 
 <script>
+  // Pre-fill category/product from URL params (e.g. /contact?category=...&product=...)
+  (function () {
+    const params = new URLSearchParams(location.search);
+    const setSelect = (id, val) => {
+      if (!val) return;
+      const sel = document.getElementById(id) as HTMLSelectElement | null;
+      if (!sel) return;
+      const match = Array.from(sel.options).find(
+        (o) => o.value.toLowerCase() === val.toLowerCase()
+      );
+      if (match) sel.value = match.value;
+    };
+    setSelect("category", params.get("category"));
+    setSelect("product", params.get("product"));
+  })();
+
   const form = document.getElementById("quoteForm") as HTMLFormElement | null;
   const modal = document.getElementById("ccModal");
   if (form && modal) {

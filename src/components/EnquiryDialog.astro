@@ -1,0 +1,121 @@
+---
+// Reusable enquiry dialog. Any element with [data-open-enquire] opens it;
+// the trigger's data-product / data-category pre-fill the form. Posts to
+// Web3Forms (same backend as the contact page).
+import { CONTACT } from "../consts";
+---
+<div class="enq-modal" id="enqModal" hidden>
+  <div class="enq-card" role="dialog" aria-modal="true" aria-labelledby="enqTitle">
+    <button type="button" class="enq-x" data-enq-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+
+    <div class="enq-main" id="enqMain">
+      <span class="eyebrow">Enquiry</span>
+      <h3 id="enqTitle" class="enq-title">Request a quote</h3>
+      <p class="enq-sub">Tell us a little about your requirement — we reply within one business day, often the same day.</p>
+
+      <div class="enq-chip" id="enqChip" hidden>
+        <span class="enq-chip-dot"></span>
+        <span><strong id="enqChipProduct"></strong><span id="enqChipCat" class="enq-chip-cat"></span></span>
+      </div>
+
+      <form id="enqForm" action="https://api.web3forms.com/submit" method="POST" class="enq-form">
+        <input type="hidden" name="access_key" value={CONTACT.web3formsKey} />
+        <input type="hidden" name="subject" value="Product enquiry — Clarté Overseas website" />
+        <input type="hidden" name="from_name" value="Clarté Overseas website" />
+        <input type="checkbox" name="botcheck" class="enq-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="hidden" name="category" id="enqCategory" value="" />
+        <input type="hidden" name="product" id="enqProduct" value="" />
+
+        <div class="enq-2col">
+          <label class="enq-field"><span>Name <i>*</i></span>
+            <input name="name" type="text" required placeholder="Your name" />
+          </label>
+          <label class="enq-field"><span>Company</span>
+            <input name="company" type="text" placeholder="Company" />
+          </label>
+        </div>
+        <div class="enq-2col">
+          <label class="enq-field"><span>Email <i>*</i></span>
+            <input name="email" type="email" required placeholder="you@company.com" />
+          </label>
+          <label class="enq-field"><span>Phone / WhatsApp</span>
+            <input name="phone" type="tel" placeholder="+1 555 000 0000" />
+          </label>
+        </div>
+        <label class="enq-field"><span>Your requirement</span>
+          <textarea name="message" placeholder="Quantity, grade, form, destination country, target price…"></textarea>
+        </label>
+        <button type="submit" class="enq-submit">
+          Send enquiry
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="enq-done" id="enqDone" hidden>
+      <span class="enq-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>
+      <h3 class="enq-title">Enquiry sent — thank you!</h3>
+      <p class="enq-sub">We've received your message and will reply within one business day.</p>
+      <button type="button" class="enq-submit" data-enq-close>Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("enqModal");
+  if (modal) {
+    const form = document.getElementById("enqForm") as HTMLFormElement;
+    const main = document.getElementById("enqMain");
+    const done = document.getElementById("enqDone");
+    const chip = document.getElementById("enqChip");
+    const chipProduct = document.getElementById("enqChipProduct");
+    const chipCat = document.getElementById("enqChipCat");
+    const fCat = document.getElementById("enqCategory") as HTMLInputElement;
+    const fProd = document.getElementById("enqProduct") as HTMLInputElement;
+
+    const open = (product, category) => {
+      fProd.value = product || "";
+      fCat.value = category || "";
+      if (product || category) {
+        chip.hidden = false;
+        chipProduct.textContent = product || "General enquiry";
+        chipCat.textContent = category ? "  ·  " + category : "";
+      } else {
+        chip.hidden = true;
+      }
+      main.hidden = false;
+      done.hidden = true;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => { modal.hidden = true; document.body.style.overflow = ""; };
+
+    document.querySelectorAll("[data-open-enquire]").forEach((b) =>
+      b.addEventListener("click", () =>
+        open(b.getAttribute("data-product") || "", b.getAttribute("data-category") || "")
+      )
+    );
+    modal.addEventListener("click", (e) => {
+      const t = e.target as HTMLElement;
+      if (t === modal || t.closest("[data-enq-close]")) close();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      const btn = form.querySelector(".enq-submit") as HTMLButtonElement;
+      const original = btn.innerHTML;
+      btn.disabled = true; btn.textContent = "Sending…";
+      try {
+        const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        const data = await res.json().catch(() => null);
+        if (res.ok && data && data.success) { form.reset(); main.hidden = true; done.hidden = false; }
+        else { alert((data && data.message) || "Something went wrong. Please email info@clarteoverseas.com."); }
+      } catch { alert("Network error — please try again or email info@clarteoverseas.com."); }
+      finally { btn.disabled = false; btn.innerHTML = original; }
+    });
+  }
+</script>

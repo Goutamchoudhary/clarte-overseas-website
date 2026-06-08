@@ -2,6 +2,7 @@
 // Shared site footer + floating WhatsApp / scroll-to-top buttons.
 // Layered gradient + trust strip + watermark (not a flat dark block).
 import { SOCIAL } from "../consts";
+import { categories } from "../data/products";
 ---
 <footer class="site-footer text-slate-300">
   <div class="footer-topline"></div>
@@ -41,11 +42,9 @@ import { SOCIAL } from "../consts";
       <div class="lg:col-span-3">
         <h4 class="font-head font-semibold text-white mb-4">Products</h4>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="#" data-nolink class="footer-link">Herbal &amp; Leaf Powders</a></li>
-          <li><a href="#" data-nolink class="footer-link">Dehydrated Vegetable Powders &ndash; Culinary &amp; Spice Applications</a></li>
-          <li><a href="#" data-nolink class="footer-link">Dehydrated Vegetable Powders &ndash; Functional &amp; Nutritional</a></li>
-          <li><a href="#" data-nolink class="footer-link">Dehydrated Fruit Powder Ingredients</a></li>
-          <li><a href="#" data-nolink class="footer-link">Hydrocolloids &amp; Food Additives</a></li>
+          {categories.map((c) => (
+            <li><a href={`/products/${c.slug}`} class="footer-link">{c.navName}</a></li>
+          ))}
         </ul>
       </div>
 
