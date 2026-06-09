@@ -876,8 +876,8 @@ font.goog-text-highlight { background: none !important; box-shadow: none !import
 @media (max-width: 768px) { .cathero-motif { opacity: .1; right: -2%; font-size: 9rem; } }
 
 /* right-side hero photo — fades into the accent gradient so the left text stays dominant */
-.cathero.has-photo { min-height: 380px; display: flex; align-items: center; }
-@media (min-width: 1024px) { .cathero.has-photo { min-height: 440px; } }
+.cathero.has-photo { min-height: 360px; }
+@media (min-width: 1024px) { .cathero.has-photo { min-height: 420px; } }
 /* full-bleed, zoomed photo that fades in from the right (after the heading) */
 .cathero-photo {
   position: absolute; inset: 0; z-index: -1;
