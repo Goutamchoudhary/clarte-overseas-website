@@ -856,12 +856,24 @@ font.goog-text-highlight { background: none !important; box-shadow: none !import
 .cathero { position: relative; overflow: hidden; isolation: isolate; padding: 3.5rem 0 3rem; color: #fff;
   background: linear-gradient(150deg, var(--from), var(--to)); }
 @media (min-width: 1024px) { .cathero { padding: 4rem 0 3.5rem; } }
-.cathero-bg { position: absolute; inset: 0; z-index: -2; }
-.cathero-img { position: absolute; width: 150px; height: 150px; object-fit: contain; opacity: .16; filter: saturate(.7); }
-.ci-0 { top: -12px; left: 2%; } .ci-1 { top: 44%; left: 12%; width: 110px; } .ci-2 { top: 6%; right: 8%; }
-.ci-3 { bottom: -24px; right: 16%; width: 120px; } .ci-4 { top: 48%; right: 3%; width: 100px; } .ci-5 { bottom: 4%; left: 30%; width: 90px; opacity: .1; }
-@media (max-width: 768px) { .ci-1, .ci-4, .ci-5 { display: none; } .cathero-img { width: 90px; } }
-.cathero-veil { position: absolute; inset: 0; z-index: -1; background: linear-gradient(150deg, rgba(8,16,40,.18), rgba(8,16,40,.45)); }
+/* subtle dot texture, masked to the top */
+.cathero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background-image: radial-gradient(rgba(255,255,255,.16) 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(130% 95% at 70% 0%, #000 32%, transparent 78%);
+  mask-image: radial-gradient(130% 95% at 70% 0%, #000 32%, transparent 78%);
+}
+/* soft corner glow */
+.cathero-glow { position: absolute; z-index: -1; width: 520px; height: 520px; right: -130px; top: -170px;
+  background: radial-gradient(circle, rgba(255,255,255,.22), transparent 62%); pointer-events: none; }
+/* large faint category motif (depicts the category) */
+.cathero-motif {
+  position: absolute; z-index: -1; right: 3%; top: 52%; transform: translateY(-50%);
+  font-size: clamp(8rem, 22vw, 17rem); line-height: 1; opacity: .14; pointer-events: none;
+  filter: grayscale(.2) drop-shadow(0 8px 20px rgba(0,0,0,.25));
+}
+@media (max-width: 768px) { .cathero-motif { opacity: .1; right: -2%; font-size: 9rem; } }
 .crumb-on-dark, .crumb-on-dark a { color: rgba(255,255,255,.78); }
 .crumb-on-dark a:hover { color: #fff; }
 .cathero-emoji { display: block; font-size: 2.4rem; margin-top: 1.5rem; }

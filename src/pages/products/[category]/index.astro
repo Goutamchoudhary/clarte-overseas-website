@@ -15,8 +15,6 @@ const items = productsByCategory(category);
 const title = `${cat.name} — Indian Dehydrated Powders | Clarté Overseas`;
 const description = `${cat.description} Export-ready, spec-driven supply from Clarté Overseas, India.`;
 
-const bgImages = items.filter((p) => p.image).slice(0, 6);
-
 const breadcrumbLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -47,12 +45,8 @@ const listLd = {
 
   <!-- ===================== CATEGORY HERO ===================== -->
   <section class="cathero" style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
-    <div class="cathero-bg" aria-hidden="true">
-      {bgImages.map((p, i) => (
-        <img src={p.image} alt="" class={`cathero-img ci-${i}`} loading="lazy" />
-      ))}
-    </div>
-    <div class="cathero-veil" aria-hidden="true"></div>
+    <span class="cathero-glow" aria-hidden="true"></span>
+    <span class="cathero-motif" aria-hidden="true">{cat.emoji}</span>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <nav class="crumb crumb-on-dark text-sm reveal" aria-label="Breadcrumb">
         <a href="/">Home</a> <span class="mx-1 opacity-50">/</span>

@@ -32,20 +32,20 @@ import { CONTACT } from "../consts";
           <label class="enq-field"><span>Name <i>*</i></span>
             <input name="name" type="text" required placeholder="Your name" />
           </label>
-          <label class="enq-field"><span>Company</span>
-            <input name="company" type="text" placeholder="Company" />
+          <label class="enq-field"><span>Company <i>*</i></span>
+            <input name="company" type="text" required placeholder="Company" />
           </label>
         </div>
         <div class="enq-2col">
           <label class="enq-field"><span>Email <i>*</i></span>
             <input name="email" type="email" required placeholder="you@company.com" />
           </label>
-          <label class="enq-field"><span>Phone / WhatsApp</span>
-            <input name="phone" type="tel" placeholder="+1 555 000 0000" />
+          <label class="enq-field"><span>Phone / WhatsApp <i>*</i></span>
+            <input name="phone" type="tel" required placeholder="+1 555 000 0000" />
           </label>
         </div>
-        <label class="enq-field"><span>Your requirement</span>
-          <textarea name="message" placeholder="Quantity, grade, form, destination country, target price…"></textarea>
+        <label class="enq-field"><span>Your requirement <i>*</i></span>
+          <textarea name="message" required placeholder="Quantity, grade, form, destination country, target price…"></textarea>
         </label>
         <button type="submit" class="enq-submit">
           Send enquiry
