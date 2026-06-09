@@ -26,6 +26,7 @@ export interface Category {
   description: string;
   accentFrom: string;
   accentTo: string;
+  heroImage?: string; // optional right-side hero photo (replaces the emoji motif)
 }
 
 export interface Product {
@@ -67,6 +68,7 @@ export const categories: Category[] = [
       "Onion, garlic, ginger and chilli — the workhorses of kitchens and food plants worldwide. Consistent pungency, clean flavour and a full range of cuts, from fine powder to kibbled flakes.",
     accentFrom: "#c2410c",
     accentTo: "#9a3412",
+    heroImage: "/assets/img/categories/culinary-spice.jpg",
   },
   {
     slug: "functional-nutritional-powders",

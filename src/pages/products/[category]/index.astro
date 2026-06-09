@@ -44,9 +44,11 @@ const listLd = {
   </Fragment>
 
   <!-- ===================== CATEGORY HERO ===================== -->
-  <section class="cathero" style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
+  <section class={`cathero${cat.heroImage ? " has-photo" : ""}`} style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
     <span class="cathero-glow" aria-hidden="true"></span>
-    <span class="cathero-motif" aria-hidden="true">{cat.emoji}</span>
+    {cat.heroImage
+      ? <span class="cathero-photo" style={`background-image:url(${cat.heroImage})`} aria-hidden="true"></span>
+      : <span class="cathero-motif" aria-hidden="true">{cat.emoji}</span>}
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <nav class="crumb crumb-on-dark text-sm reveal" aria-label="Breadcrumb">
         <a href="/">Home</a> <span class="mx-1 opacity-50">/</span>
