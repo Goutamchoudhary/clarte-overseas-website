@@ -878,18 +878,17 @@ font.goog-text-highlight { background: none !important; box-shadow: none !import
 /* right-side hero photo — fades into the accent gradient so the left text stays dominant */
 .cathero.has-photo { min-height: 380px; display: flex; align-items: center; }
 @media (min-width: 1024px) { .cathero.has-photo { min-height: 440px; } }
+/* full-bleed, zoomed photo that fades in from the right (after the heading) */
 .cathero-photo {
-  position: absolute; z-index: -1; top: 0; bottom: 0; right: 0; left: auto; width: 56%;
+  position: absolute; inset: 0; z-index: -1;
   background-size: cover; background-position: right center; background-repeat: no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.5) 14%, #000 40%);
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.5) 14%, #000 40%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 46%, rgba(0,0,0,.5) 58%, #000 72%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 46%, rgba(0,0,0,.5) 58%, #000 72%);
 }
-@media (max-width: 1024px) { .cathero-photo { width: 50%; } }
-.cathero.has-photo .cathero-title, .cathero.has-photo .cathero-sub { max-width: 30rem; }
-.cathero.has-photo .cathero-sub { text-shadow: 0 1px 10px rgba(60,20,8,.25); }
+.cathero.has-photo .cathero-sub { max-width: 30rem; text-shadow: 0 1px 10px rgba(60,20,8,.3); }
 @media (max-width: 860px) {
-  .cathero-photo { left: 0; width: 100%; opacity: .2; -webkit-mask-image: none; mask-image: none; }
-  .cathero.has-photo .cathero-title, .cathero.has-photo .cathero-sub { max-width: none; }
+  .cathero-photo { opacity: .18; -webkit-mask-image: none; mask-image: none; }
+  .cathero.has-photo .cathero-sub { max-width: none; }
 }
 .crumb-on-dark, .crumb-on-dark a { color: rgba(255,255,255,.78); }
 .crumb-on-dark a:hover { color: #fff; }
