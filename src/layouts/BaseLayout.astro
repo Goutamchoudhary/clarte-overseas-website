@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
-import { SITE, LANGUAGES } from "../consts";
+import { SITE, LANGUAGES, ANALYTICS } from "../consts";
 
 const includedLanguages = LANGUAGES.map((l) => l.code).join(",");
 
@@ -83,6 +83,10 @@ const orgSchema = {
   </head>
 
   <body class="font-body">
+    {ANALYTICS.gtm && (
+      <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtm}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
+    )}
+
     <!-- Google Translate (hidden widget; driven by the navbar language picker) -->
     <div id="google_translate_element" aria-hidden="true"></div>
     <script is:inline define:vars={{ includedLanguages }}>

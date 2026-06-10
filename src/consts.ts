@@ -15,9 +15,13 @@ export const SITE = {
 };
 
 export const ANALYTICS = {
-  ga4: "G-D8GZTVSLZX", // Google Analytics 4 measurement ID
-  googleTag: "GT-WB72GKFN", // Google tag (gtag) ID
-  clarity: "", // TODO: Microsoft Clarity project ID (Settings → Setup)
+  // GTM container — the single source of truth. GA4, the Custom HTML tag and
+  // Microsoft Clarity all fire from inside this container, so the site only
+  // needs the GTM snippet (no direct gtag/clarity, to avoid double-counting).
+  gtm: "GTM-N9SZ4WPZ",
+  ga4: "G-D8GZTVSLZX", // (managed inside GTM — kept for reference)
+  googleTag: "GT-WB72GKFN", // (managed inside GTM — kept for reference)
+  clarity: "vt1zxn7czc", // Microsoft Clarity project (fired via GTM — kept for reference)
 };
 
 export const CONTACT = {

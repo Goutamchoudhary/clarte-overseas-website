@@ -1,10 +1,14 @@
 ---
-// Google tag (GA4 / Google Ads) + Microsoft Clarity.
-// IDs come from src/consts.ts. Each block only renders when its ID is set,
-// so there are no broken requests before you supply (e.g.) the Clarity ID.
+// Analytics loader.
+// Preferred: a single Google Tag Manager container (ANALYTICS.gtm) — GA4,
+// Microsoft Clarity and any other tags live inside GTM, so the page only
+// needs the GTM snippet. If no GTM id is set, we fall back to firing the
+// Google tag / GA4 (and Clarity) directly.
 import { ANALYTICS } from "../consts";
-const { ga4, googleTag, clarity } = ANALYTICS;
+const { gtm, ga4, googleTag, clarity } = ANALYTICS;
 const gtagId = googleTag || ga4;
+
+const gtmHead = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtm}');`;
 
 const gtagInit = `
   window.dataLayer = window.dataLayer || [];
@@ -13,11 +17,16 @@ const gtagInit = `
   ${googleTag ? `gtag('config','${googleTag}');` : ""}
   ${ga4 ? `gtag('config','${ga4}');` : ""}
 `;
-
 const clarityInit = `
   (function(c,l,a,r,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};var t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${clarity}");
 `;
 ---
-{gtagId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`} />}
-{gtagId && <script is:inline set:html={gtagInit} />}
-{clarity && <script is:inline set:html={clarityInit} />}
+{gtm ? (
+  <script is:inline set:html={gtmHead} />
+) : (
+  <Fragment>
+    {gtagId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`} />}
+    {gtagId && <script is:inline set:html={gtagInit} />}
+    {clarity && <script is:inline set:html={clarityInit} />}
+  </Fragment>
+)}
