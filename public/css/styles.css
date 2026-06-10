@@ -1012,3 +1012,8 @@ font.goog-text-highlight { background: none !important; box-shadow: none !import
   .enq-card, .pd-lightbox, .enq-modal { animation: none; }
   .pd-img { transition: none !important; }
 }
+
+/* Make a product/category card fully clickable via its card-link */
+.product-card { position: relative; }
+.card-stretch::before { content: ""; position: absolute; inset: 0; z-index: 1; }
+.product-card .p-6 { position: relative; }

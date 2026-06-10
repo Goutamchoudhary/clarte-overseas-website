@@ -1,0 +1,43 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/our-products", "destination": "/products", "permanent": true },
+    { "source": "/our-products/dehydrated-fruit-powder-ingredients-exporter-supplier-", "destination": "/products/fruit-powders", "permanent": true },
+    { "source": "/our-products/herbal-leaf-powders-bulk-export-supplier-", "destination": "/products/herbal-leaf-powders", "permanent": true },
+    { "source": "/our-products/hydrocolloids-food-additives-bulk-export", "destination": "/products/hydrocolloids-food-additives", "permanent": true },
+
+    { "source": "/pages/about-us", "destination": "/about", "permanent": true },
+    { "source": "/pages/who-we-are", "destination": "/about", "permanent": true },
+    { "source": "/pages/certifications-compliance", "destination": "/certifications", "permanent": true },
+    { "source": "/pages/packaging-logistics", "destination": "/how-we-export", "permanent": true },
+    { "source": "/pages/sourcing-procurement", "destination": "/how-we-export", "permanent": true },
+    { "source": "/pages/sustainability", "destination": "/how-we-export", "permanent": true },
+    { "source": "/pages/privacy-policy", "destination": "/", "permanent": true },
+    { "source": "/pages/terms-and-conditions", "destination": "/", "permanent": true },
+
+    { "source": "/blog/why-indian-dehydrated-fruits-amp-vegetables-are-gaining-popularity-worldwide", "destination": "/blogs/india-dehydrated-food-exports-growth", "permanent": true },
+    { "source": "/blog/why-importers-choose-clarte-overseas-the-benefits-of-sourcing-quality-products-from-india", "destination": "/blogs/building-a-reliable-india-sourcing-strategy", "permanent": true },
+    { "source": "/blog/herbal-and-leaf-based-powders-moringa-and-spinach-as-superfood-ingredients-for-global-buyers", "destination": "/blogs", "permanent": true },
+    { "source": "/blog/why-international-buyers-prefer-indian-dehydrated-powders", "destination": "/blogs/india-dehydrated-food-exports-growth", "permanent": true },
+    { "source": "/blog/quality-and-packaging-standards-for-export-buyers-sourcing-from-india", "destination": "/blogs/how-to-read-a-dehydrated-ingredient-spec-sheet", "permanent": true },
+
+    { "source": "/products/banana-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850831", "destination": "/products/fruit-powders/banana-powder", "permanent": true },
+    { "source": "/products/mango-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850832", "destination": "/products/fruit-powders/mango-powder", "permanent": true },
+    { "source": "/products/strawberry-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850833", "destination": "/products/fruit-powders", "permanent": true },
+    { "source": "/products/apple-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850834", "destination": "/products/fruit-powders/apple-powder", "permanent": true },
+    { "source": "/products/pineapple-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850835", "destination": "/products/fruit-powders/pineapple-powder", "permanent": true },
+    { "source": "/products/moringa-leaf-powder-bulk-supplier-nutritional-ingredient-for-b2b-buyers-12850836", "destination": "/products/herbal-leaf-powders/moringa-powder", "permanent": true },
+    { "source": "/products/onion-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers-12850837", "destination": "/products/culinary-spice-powders/red-onion-powder", "permanent": true },
+    { "source": "/products/garlic-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers-12850838", "destination": "/products/culinary-spice-powders/garlic-powder", "permanent": true },
+    { "source": "/products/ginger-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers-12850839", "destination": "/products/culinary-spice-powders/ginger-powder", "permanent": true },
+    { "source": "/products/beetroot-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850841", "destination": "/products/functional-nutritional-powders/beetroot-powder", "permanent": true },
+    { "source": "/products/carrot-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850842", "destination": "/products/functional-nutritional-powders/carrot-powder", "permanent": true },
+    { "source": "/products/tomato-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850843", "destination": "/products/functional-nutritional-powders/tomato-powder", "permanent": true },
+    { "source": "/products/lemon-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850844", "destination": "/products/functional-nutritional-powders/lemon-powder", "permanent": true },
+    { "source": "/products/guar-gum-powder-bulk-supplier-for-b2b-natural-thickener-stabilizer-12850845", "destination": "/products/hydrocolloids-food-additives/guar-gum-powder", "permanent": true },
+    { "source": "/products/green-chilli-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers", "destination": "/products/culinary-spice-powders/green-chilli-powder", "permanent": true },
+    { "source": "/products/guava-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage", "destination": "/products/fruit-powders/guava-powder", "permanent": true },
+    { "source": "/products/tamarind-powder-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers", "destination": "/products/fruit-powders/tamarind-powder", "permanent": true },
+    { "source": "/products/premium-amla-powder-bulk-supplier-nutrient-dense-indian-gooseberry-powder", "destination": "/products/fruit-powders/amla-powder", "permanent": true }
+  ]
+}
