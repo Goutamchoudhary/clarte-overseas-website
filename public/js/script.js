@@ -60,7 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const setLabel = (lang) => {
       const item = document.querySelector('.lang-dd-item[data-lang="' + lang + '"]');
       const label = document.getElementById("langLabel");
+      const flagEl = document.getElementById("langFlag");
+      const globeEl = document.getElementById("langGlobe");
       if (label) label.textContent = item ? item.getAttribute("data-short") || "EN" : "EN";
+      const flag = item ? item.querySelector(".lang-flag")?.textContent : null;
+      const isNonDefault = lang && lang !== "en";
+      if (flagEl) {
+        flagEl.textContent = flag || "🌐";
+        flagEl.classList.toggle("hidden", !isNonDefault);
+      }
+      if (globeEl) globeEl.classList.toggle("hidden", isNonDefault);
       document.querySelectorAll(".lang-dd-item").forEach((b) =>
         b.classList.toggle("active", b.getAttribute("data-lang") === lang)
       );
