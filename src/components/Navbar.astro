@@ -13,7 +13,7 @@ const isExport = path === "/how-we-export";
 <header id="navbar" class="nav-bar sticky top-0 z-50 w-full">
     <nav class="max-w-7xl mx-auto px-5 lg:px-10 flex items-center justify-between gap-4 py-3">
       <!-- Logo (larger) -->
-      <a href="#home" class="flex items-center shrink-0" aria-label="Clarté Overseas home">
+      <a href="#home" class="flex items-center shrink-0 mr-4" aria-label="Clarté Overseas home">
         <img src="/assets/logo/logo-horizontal.svg" alt="Clarté Overseas" class="h-12 lg:h-14 w-auto" />
       </a>
 
@@ -32,9 +32,9 @@ const isExport = path === "/how-we-export";
             </div>
           </div>
         </div>
-        <a href="/about" class={`nav-link text-[15px] ${isAbout ? "active" : ""}`}>About Us</a>
         <a href="/how-we-export" class={`nav-link text-[15px] ${isExport ? "active" : ""}`}>How We Export</a>
         <a href="/certifications" class={`nav-link text-[15px] ${isCert ? "active" : ""}`}>Certifications</a>
+        <a href="/about" class={`nav-link text-[15px] ${isAbout ? "active" : ""}`}>About Us</a>
         <a href="/blogs" class={`nav-link text-[15px] ${isBlog ? "active" : ""}`}>Blogs</a>
       </div>
 
@@ -88,9 +88,9 @@ const isExport = path === "/how-we-export";
           <a href={`/products/${c.slug}`} class="mobile-sub">{c.name}</a>
         ))}
       </div>
-      <a href="/about" class="mobile-link">About Us</a>
       <a href="/how-we-export" class="mobile-link">How We Export</a>
       <a href="/certifications" class="mobile-link">Certifications</a>
+      <a href="/about" class="mobile-link">About Us</a>
       <a href="/blogs" class="mobile-link">Blogs</a>
       <select id="langSelect" class="lang-select" translate="no" aria-label="Select language">
         {LANGUAGES.map((l) => <option value={l.code}>{l.flag}  {l.label}</option>)}
