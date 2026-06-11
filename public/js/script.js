@@ -93,9 +93,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       obs.observe(document.body, { childList: true, subtree: true });
     };
+    const fireChange = (el) => {
+      try {
+        el.dispatchEvent(new Event("change", { bubbles: true }));
+      } catch (e) {
+        const ev = document.createEvent("HTMLEvents");
+        ev.initEvent("change", true, true);
+        el.dispatchEvent(ev);
+      }
+    };
     const applyLang = (lang, combo) => {
-      combo.value = lang;
-      combo.dispatchEvent(new Event("change"));
+      if (combo.value !== lang) combo.value = lang;
+      fireChange(combo);
       setLabel(lang);
     };
     const translateTo = (lang) => {
@@ -104,9 +113,12 @@ document.addEventListener("DOMContentLoaded", () => {
         location.reload();
         return;
       }
+      // Set the googtrans cookie, then reload: Google Translate reads the
+      // cookie on init and translates the page. This is far more reliable
+      // than poking the hidden .goog-te-combo, and the reload also closes
+      // the language dropdown cleanly.
       setCookie(lang);
-      setLabel(lang); // update label instantly on click
-      whenCombo((combo) => applyLang(lang, combo));
+      location.reload();
     };
     document.querySelectorAll(".lang-dd-item").forEach((b) =>
       b.addEventListener("click", () => translateTo(b.getAttribute("data-lang")))
