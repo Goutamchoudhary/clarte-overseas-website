@@ -49,11 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---- Language picker (JSON i18n — no reload) ----------------------- */
   (function () {
+    const dd = document.querySelector(".lang-dd");
+    const btn = document.getElementById("langBtn");
+    const closeDD = () => dd && dd.classList.remove("open");
+    if (btn) btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      dd && dd.classList.toggle("open");
+    });
+    document.addEventListener("click", closeDD);
+
     // Wire up desktop dropdown buttons
     document.querySelectorAll(".lang-dd-item").forEach((b) =>
       b.addEventListener("click", () => {
         const lang = b.getAttribute("data-lang");
         if (window.i18n) window.i18n.setLang(lang);
+        closeDD();
       })
     );
     // Wire up mobile select
