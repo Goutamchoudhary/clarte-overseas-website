@@ -166,8 +166,8 @@ const faqLd = {
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl reveal">
-        <span class="eyebrow">Our Credentials</span>
-        <h2 class="tg-1 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight">Registered, licensed, downloadable</h2>
+        <span class="eyebrow"><span data-i18n="cert.our_eyebrow">Our Credentials</span></span>
+        <h2 class="tg-1 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight"><span data-i18n="cert.our_heading">Registered, licensed, downloadable</span></h2>
         <p class="text-slate-500 text-lg mt-4">Hover a card to inspect it, then download the certificate. These are the documents that let us trade and that buyers ask for first.</p>
       </div>
 
@@ -181,7 +181,7 @@ const faqLd = {
               </span>
               <span class="verified">
                 <svg class="vcheck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
-                Verified
+                <span data-i18n="cert.verified">Verified</span>
               </span>
             </div>
             <h3 class="cred-name">{c.name}</h3>
@@ -190,7 +190,7 @@ const faqLd = {
             <div class="cred-actions">
               <a href={c.file} target="_blank" rel="noopener" class="cred-dl" download>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
-                Download
+                <span data-i18n="cert.download">Download</span>
               </a>
               <a href={c.file} target="_blank" rel="noopener" class="cred-view">
                 View <span class="cred-kind">{c.kind}</span>
@@ -213,8 +213,8 @@ const faqLd = {
   <section class="py-20 lg:py-24 std-section">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
-        <span class="eyebrow center">Across Our Network</span>
-        <h2 class="tg-5 font-extrabold text-3xl sm:text-4xl mt-4">Standards held by our partner facilities</h2>
+        <span class="eyebrow center"><span data-i18n="cert.partner_eyebrow">Across Our Network</span></span>
+        <h2 class="tg-5 font-extrabold text-3xl sm:text-4xl mt-4"><span data-i18n="cert.partner_heading">Standards held by our partner facilities</span></h2>
         <p class="text-slate-500 text-lg mt-4">Beyond our own licences, the manufacturers we work with operate to internationally recognised food-safety standards. Open a panel to see what each one means.</p>
       </div>
 
@@ -270,7 +270,7 @@ const faqLd = {
   <section id="quote" class="py-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="hero rounded-[2rem] px-8 py-16 sm:px-16 text-center relative overflow-hidden">
-        <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal">Compliance sorted. Let's talk product.</h2>
+        <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal"><span data-i18n="cert.cta_heading">Compliance sorted. Let's talk product.</span></h2>
         <p class="text-slate-300 text-lg mt-5 max-w-xl mx-auto reveal d1">Tell us what you need and where it is headed. We'll reply with specs, samples and the certificates your market calls for.</p>
         <div class="flex flex-wrap justify-center gap-4 mt-9 reveal d2">
           <a href="#" data-wa class="btn btn-wa">Chat on WhatsApp

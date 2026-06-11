@@ -47,97 +47,36 @@ document.addEventListener("DOMContentLoaded", () => {
     el.addEventListener("click", (e) => e.preventDefault())
   );
 
-  /* ---- Language picker (Google Translate) ---------------------------- */
+  /* ---- Language picker (JSON i18n — no reload) ----------------------- */
   (function () {
-    const readCookie = (n) => {
-      const m = document.cookie.match(new RegExp("(?:^|; )" + n + "=([^;]*)"));
-      return m ? decodeURIComponent(m[1]) : "";
-    };
-    const currentLang = () => {
-      const parts = (readCookie("googtrans") || "").split("/");
-      return parts.length === 3 && parts[2] ? parts[2] : "en";
-    };
-    const setLabel = (lang) => {
-      const item = document.querySelector('.lang-dd-item[data-lang="' + lang + '"]');
-      const label = document.getElementById("langLabel");
-      const flagEl = document.getElementById("langFlag");
-      const globeEl = document.getElementById("langGlobe");
-      if (label) label.textContent = item ? item.getAttribute("data-short") || "EN" : "EN";
-      const flag = item ? item.querySelector(".lang-flag")?.textContent : null;
-      const isNonDefault = lang && lang !== "en";
-      if (flagEl) {
-        flagEl.textContent = flag || "🌐";
-        flagEl.classList.toggle("hidden", !isNonDefault);
-      }
-      if (globeEl) globeEl.classList.toggle("hidden", isNonDefault);
-      document.querySelectorAll(".lang-dd-item").forEach((b) =>
-        b.classList.toggle("active", b.getAttribute("data-lang") === lang)
-      );
-      const sel = document.getElementById("langSelect");
-      if (sel) sel.value = lang;
-    };
-    const setCookie = (lang) => {
-      const host = location.hostname;
-      const root = host.replace(/^www\./, "");
-      const val = "/en/" + lang;
-      document.cookie = "googtrans=" + val + "; path=/";
-      try { document.cookie = "googtrans=" + val + "; path=/; domain=" + host; } catch (e) {}
-      try { document.cookie = "googtrans=" + val + "; path=/; domain=." + root; } catch (e) {}
-    };
-    const clearCookie = () => {
-      const host = location.hostname;
-      const root = host.replace(/^www\./, "");
-      const exp = "; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-      document.cookie = "googtrans=; path=/" + exp;
-      document.cookie = "googtrans=; path=/; domain=" + host + exp;
-      document.cookie = "googtrans=; path=/; domain=." + root + exp;
-    };
-    // Instant callback when .goog-te-combo appears in the DOM
-    const whenCombo = (cb) => {
-      const el = document.querySelector(".goog-te-combo");
-      if (el) { cb(el); return; }
-      const obs = new MutationObserver(() => {
-        const c = document.querySelector(".goog-te-combo");
-        if (c) { obs.disconnect(); cb(c); }
-      });
-      obs.observe(document.body, { childList: true, subtree: true });
-    };
-    const fireChange = (el) => {
-      try {
-        el.dispatchEvent(new Event("change", { bubbles: true }));
-      } catch (e) {
-        const ev = document.createEvent("HTMLEvents");
-        ev.initEvent("change", true, true);
-        el.dispatchEvent(ev);
-      }
-    };
-    const applyLang = (lang, combo) => {
-      if (combo.value !== lang) combo.value = lang;
-      fireChange(combo);
-      setLabel(lang);
-    };
-    const translateTo = (lang) => {
-      if (!lang || lang === "en") {
-        clearCookie();
-        location.reload();
-        return;
-      }
-      // Set the googtrans cookie, then reload: Google Translate reads the
-      // cookie on init and translates the page. This is far more reliable
-      // than poking the hidden .goog-te-combo, and the reload also closes
-      // the language dropdown cleanly.
-      setCookie(lang);
-      location.reload();
-    };
+    // Wire up desktop dropdown buttons
     document.querySelectorAll(".lang-dd-item").forEach((b) =>
-      b.addEventListener("click", () => translateTo(b.getAttribute("data-lang")))
+      b.addEventListener("click", () => {
+        const lang = b.getAttribute("data-lang");
+        if (window.i18n) window.i18n.setLang(lang);
+      })
     );
+    // Wire up mobile select
     const sel = document.getElementById("langSelect");
-    if (sel) sel.addEventListener("change", () => translateTo(sel.value));
-    // Re-apply saved language on every page load (persists across navigation)
-    const saved = currentLang();
-    setLabel(saved);
-    if (saved && saved !== "en") whenCombo((combo) => applyLang(saved, combo));
+    if (sel) sel.addEventListener("change", () => {
+      if (window.i18n) window.i18n.setLang(sel.value);
+    });
+    // Sync label/flag on load from saved preference (i18n.js also calls this,
+    // but script.js runs after DOMContentLoaded so we refresh to be safe)
+    const saved = (window.i18n && window.i18n.getLang()) || localStorage.getItem("site-lang") || "en";
+    const item = document.querySelector('.lang-dd-item[data-lang="' + saved + '"]');
+    const label = document.getElementById("langLabel");
+    const flagEl = document.getElementById("langFlag");
+    const globeEl = document.getElementById("langGlobe");
+    const isNonDefault = saved && saved !== "en";
+    if (label) label.textContent = item ? (item.getAttribute("data-short") || "EN") : "EN";
+    const flag = item ? (item.querySelector(".lang-flag") || {}).textContent : null;
+    if (flagEl) { flagEl.textContent = flag || "🌐"; flagEl.classList.toggle("hidden", !isNonDefault); }
+    if (globeEl) globeEl.classList.toggle("hidden", isNonDefault);
+    document.querySelectorAll(".lang-dd-item").forEach((b) =>
+      b.classList.toggle("active", b.getAttribute("data-lang") === saved)
+    );
+    if (sel) sel.value = saved;
   })();
 
   /* ---- Scroll-to-top -------------------------------------------------- */

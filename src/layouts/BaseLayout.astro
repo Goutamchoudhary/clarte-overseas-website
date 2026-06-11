@@ -2,9 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
-import { SITE, LANGUAGES, ANALYTICS } from "../consts";
-
-const includedLanguages = LANGUAGES.map((l) => l.code).join(",");
+import { SITE, ANALYTICS } from "../consts";
 
 interface Props {
   title?: string;
@@ -80,28 +78,13 @@ const orgSchema = {
 
     <slot name="head" />
     <Analytics />
+    <script is:inline src="/js/i18n.js"></script>
   </head>
 
   <body class="font-body">
     {ANALYTICS.gtm && (
       <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtm}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
     )}
-
-    <!-- Google Translate (hidden widget; driven by the navbar language picker) -->
-    <div id="google_translate_element" aria-hidden="true"></div>
-    <script is:inline define:vars={{ includedLanguages }}>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: includedLanguages,
-            autoDisplay: false,
-          },
-          "google_translate_element"
-        );
-      }
-    </script>
-    <script is:inline src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <Navbar />
     <slot />

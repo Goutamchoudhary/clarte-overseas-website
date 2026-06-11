@@ -800,15 +800,6 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 .lang-select option { color: #0d1a36; }
 
-/* Suppress Google Translate's banner + branding; keep the widget functional but off-screen */
-#google_translate_element { position: fixed !important; top: -3000px !important; left: -3000px !important; }
-body { position: static !important; }
-.goog-te-banner-frame, .goog-te-banner-frame.skiptranslate { display: none !important; }
-.goog-te-gadget-icon { display: none !important; }
-body { top: 0 !important; }
-.skiptranslate > iframe { visibility: hidden !important; height: 0 !important; }
-#goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
-font.goog-text-highlight { background: none !important; box-shadow: none !important; }
 
 /* Export-footprint legend — flag chips */
 .market-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin-top: 2rem; }
