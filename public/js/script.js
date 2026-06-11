@@ -81,17 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       const host = location.hostname;
+      const rootHost = host.replace(/^www\./, "");
       const val = "/en/" + lang;
       document.cookie = "googtrans=" + val + "; path=/";
-      try { document.cookie = "googtrans=" + val + "; path=/; domain=." + host; } catch (e) {}
-      const combo = document.querySelector(".goog-te-combo");
-      if (combo) {
-        combo.value = lang;
-        combo.dispatchEvent(new Event("change"));
-        setLabel(lang);
-      } else {
-        location.reload();
-      }
+      try { document.cookie = "googtrans=" + val + "; path=/; domain=" + host; } catch (e) {}
+      try { document.cookie = "googtrans=" + val + "; path=/; domain=." + rootHost; } catch (e) {}
+      let attempts = 0;
+      const tryCombo = () => {
+        const combo = document.querySelector(".goog-te-combo");
+        if (combo) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event("change"));
+          setLabel(lang);
+        } else if (attempts++ < 10) {
+          setTimeout(tryCombo, 300);
+        } else {
+          location.reload();
+        }
+      };
+      tryCombo();
     };
     document.querySelectorAll(".lang-dd-item").forEach((b) =>
       b.addEventListener("click", () => translateTo(b.getAttribute("data-lang")))
