@@ -55,6 +55,9 @@ const incoterms = [
     cover: 9,
     hand: "Collected at the source",
     desc: "You take charge right at the source. We make the goods ready; you arrange pickup, export clearance and everything onward. Maximum control for buyers with their own India logistics.",
+    frName: "Franco Départ",
+    frHand: "Réceptionné à la source",
+    frDesc: "Vous prenez en charge dès la source. Nous préparons les marchandises ; vous organisez l'enlèvement, le dédouanement à l'exportation et tout ce qui suit. Un contrôle maximum pour les acheteurs disposant de leur propre logistique en Inde.",
   },
   {
     code: "FOB",
@@ -62,6 +65,9 @@ const incoterms = [
     cover: 38,
     hand: "Handed over once loaded at the origin port",
     desc: "We handle everything up to and including loading your goods onto the vessel at the Indian port. From there, ocean freight and risk are yours. The term most of our buyers choose.",
+    frName: "Franco à Bord",
+    frHand: "Remis une fois chargé au port d'origine",
+    frDesc: "Nous gérons tout jusqu'au chargement de vos marchandises à bord du navire dans le port indien. À partir de là, le fret maritime et les risques sont à votre charge. C'est l'incoterm que choisissent la plupart de nos acheteurs.",
   },
   {
     code: "CFR",
@@ -69,6 +75,9 @@ const incoterms = [
     cover: 66,
     hand: "Sea freight paid to your port",
     desc: "We cover the goods plus the sea freight to your destination port. Risk passes once loaded at origin, so you insure the voyage. Useful when you'd rather we book the shipping line.",
+    frName: "Coût et Fret",
+    frHand: "Fret maritime payé jusqu'à votre port",
+    frDesc: "Nous couvrons les marchandises et le fret maritime jusqu'à votre port de destination. Le risque passe une fois chargé à l'origine, vous assurez donc le voyage. Utile quand vous préférez que nous réservions la compagnie maritime.",
   },
   {
     code: "CIF",
@@ -77,6 +86,9 @@ const incoterms = [
     ins: true,
     hand: "Freight + marine insurance to your port",
     desc: "Everything in CFR, plus we arrange marine insurance for the voyage to your destination port. The most hands-off term — you simply take over at the destination quay.",
+    frName: "Coût, Assurance et Fret",
+    frHand: "Fret + assurance maritime jusqu'à votre port",
+    frDesc: "Tout ce qui est prévu dans le CFR, plus nous souscrivons une assurance maritime pour le voyage jusqu'à votre port de destination. L'incoterm le plus simple — vous prenez simplement en charge au quai de destination.",
   },
 ];
 
@@ -139,6 +151,8 @@ const faqLd = {
 
   <!-- ===================== HERO (blueprint) ===================== -->
   <PageHero
+    i18nPrefix="export"
+    i18nCrumb="nav.how_we_export"
     crumb="How We Export"
     eyebrow="The Export Journey"
     watermark="Export"
@@ -156,7 +170,7 @@ const faqLd = {
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center"><span data-i18n="export.journey_eyebrow">Stage by Stage</span></span>
         <h2 class="tg-1 font-extrabold text-3xl sm:text-4xl mt-4"><span data-i18n="export.journey_heading">Follow the route</span></h2>
-        <p class="text-slate-500 text-lg mt-4">Scroll down and the road draws itself. Each stop lights up as your shipment reaches it.</p>
+        <p class="text-slate-500 text-lg mt-4" data-i18n="export.journey_sub">Scroll down and the road draws itself. Each stop lights up as your shipment reaches it.</p>
       </div>
 
       <div class="journey mt-16" id="journey">
@@ -173,9 +187,9 @@ const faqLd = {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={s.svg} />
                 </span>
                 <div class="jstep-text">
-                  {s.final && <span class="jstep-flag">After-sales</span>}
-                  <h3 class="jstep-title">{s.t}</h3>
-                  <p class="jstep-desc">{s.d}</p>
+                  {s.final && <span class="jstep-flag" data-i18n="export.journey_final_flag">After-sales</span>}
+                  <h3 class="jstep-title" data-i18n={`export.journey_s${i + 1}_title`}>{s.t}</h3>
+                  <p class="jstep-desc" data-i18n={`export.journey_s${i + 1}_body`}>{s.d}</p>
                 </div>
               </div>
             </li>
@@ -185,13 +199,13 @@ const faqLd = {
 
       <div class="hx-aftercare reveal">
         <div class="hx-aftercare-glow" aria-hidden="true"></div>
-        <p class="hx-aftercare-kicker">Deal closed? Not quite.</p>
-        <p class="hx-aftercare-line">
+        <p class="hx-aftercare-kicker" data-i18n="export.aftercare_kicker">Deal closed? Not quite.</p>
+        <p class="hx-aftercare-line" data-i18n="export.aftercare_body">
           A lot of exporters wave goodbye at the port. We see the loaded container as a beginning — because
           the next order, and the one after that, are built on how we show up after this one lands.
         </p>
         <div class="flex flex-wrap justify-center gap-4 mt-8">
-          <a href="#" data-wa class="btn btn-wa">Talk to us on WhatsApp
+          <a href="#" data-wa class="btn btn-wa"><span data-i18n="export.aftercare_wa_btn">Talk to us on WhatsApp</span>
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
           </a>
         </div>
@@ -205,7 +219,7 @@ const faqLd = {
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center"><span data-i18n="export.incoterms_eyebrow">Delivery Terms</span></span>
         <h2 class="tg-5 font-extrabold text-3xl sm:text-4xl mt-4"><span data-i18n="export.incoterms_heading">Incoterms, without the jargon</span></h2>
-        <p class="text-slate-500 text-lg mt-4">Pick a term and see exactly how far we carry the shipment — and where you take over.</p>
+        <p class="text-slate-500 text-lg mt-4" data-i18n="export.incoterms_sub">Pick a term and see exactly how far we carry the shipment — and where you take over.</p>
       </div>
 
       <div class="inco reveal d1" id="inco">
@@ -219,6 +233,9 @@ const faqLd = {
               data-desc={t.desc}
               data-ins={t.ins ? "1" : "0"}
               data-hand={t.hand}
+              data-fr-name={t.frName}
+              data-fr-hand={t.frHand}
+              data-fr-desc={t.frDesc}
             >{t.code}</button>
           ))}
         </div>
@@ -226,15 +243,15 @@ const faqLd = {
         <div class="inco-bar">
           <span class="inco-cover"></span>
           <span class="inco-flag"><span class="inco-flag-pole"></span></span>
-          <div class="inco-seg" style="flex:18"><span>Source</span></div>
-          <div class="inco-seg" style="flex:20"><span>Origin port</span></div>
-          <div class="inco-seg" style="flex:28"><span>Ocean freight</span></div>
-          <div class="inco-seg" style="flex:18"><span>Your port</span></div>
-          <div class="inco-seg" style="flex:16"><span>You</span></div>
+          <div class="inco-seg" style="flex:18"><span data-i18n="export.inco_seg_source">Source</span></div>
+          <div class="inco-seg" style="flex:20"><span data-i18n="export.inco_seg_origin">Origin port</span></div>
+          <div class="inco-seg" style="flex:28"><span data-i18n="export.inco_seg_ocean">Ocean freight</span></div>
+          <div class="inco-seg" style="flex:18"><span data-i18n="export.inco_seg_port">Your port</span></div>
+          <div class="inco-seg" style="flex:16"><span data-i18n="export.inco_seg_you">You</span></div>
         </div>
         <div class="inco-legend">
-          <span class="inco-legend-item inco-legend-we">We cover this</span>
-          <span class="inco-legend-item inco-legend-you">You take over here</span>
+          <span class="inco-legend-item inco-legend-we" data-i18n="export.inco_legend_we">We cover this</span>
+          <span class="inco-legend-item inco-legend-you" data-i18n="export.inco_legend_you">You take over here</span>
         </div>
 
         <div class="inco-detail">
@@ -252,7 +269,7 @@ const faqLd = {
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center"><span data-i18n="export.payment_eyebrow">Payment, Made Simple</span></span>
         <h2 class="tg-3 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight"><span data-i18n="export.payment_heading">Clear terms, no surprises</span></h2>
-        <p class="text-slate-500 text-lg mt-4">A few small things that make paying — and getting paid — straightforward on both sides.</p>
+        <p class="text-slate-500 text-lg mt-4" data-i18n="export.payment_sub">A few small things that make paying — and getting paid — straightforward on both sides.</p>
       </div>
 
       <div class="pay-bento mt-12">
@@ -262,8 +279,8 @@ const faqLd = {
           <span class="pay-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M9 13h6M9 17h3"/></svg>
           </span>
-          <h3 class="pay-title">Proforma first</h3>
-          <p class="pay-desc">Every order opens with a clear proforma invoice — quantity, grade, price and terms set out in writing, before anything moves.</p>
+          <h3 class="pay-title" data-i18n="export.pay_proforma_title">Proforma first</h3>
+          <p class="pay-desc" data-i18n="export.pay_proforma_desc">Every order opens with a clear proforma invoice — quantity, grade, price and terms set out in writing, before anything moves.</p>
           <div class="pay-deco" aria-hidden="true"><span></span><span></span><span></span></div>
         </article>
 
@@ -273,12 +290,12 @@ const faqLd = {
           <span class="pay-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9M10 20V4M16 20v-7M22 20H2"/></svg>
           </span>
-          <h3 class="pay-title">Costs laid bare</h3>
-          <p class="pay-desc">FOB or CIF, broken down line by line — you see exactly what each part costs, with nothing hidden.</p>
+          <h3 class="pay-title" data-i18n="export.pay_costs_title">Costs laid bare</h3>
+          <p class="pay-desc" data-i18n="export.pay_costs_desc">FOB or CIF, broken down line by line — you see exactly what each part costs, with nothing hidden.</p>
           <div class="pay-split">
-            <span class="ps ps1" style="flex:55">Goods</span>
-            <span class="ps ps2" style="flex:30">Freight</span>
-            <span class="ps ps3" style="flex:15">Insurance</span>
+            <span class="ps ps1" style="flex:55" data-i18n="export.pay_split_goods">Goods</span>
+            <span class="ps ps2" style="flex:30" data-i18n="export.pay_split_freight">Freight</span>
+            <span class="ps ps3" style="flex:15" data-i18n="export.pay_split_ins">Insurance</span>
           </div>
         </article>
 
@@ -287,9 +304,9 @@ const faqLd = {
           <span class="pay-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h3"/></svg>
           </span>
-          <h3 class="pay-title">Advance T/T</h3>
-          <p class="pay-desc">A telegraphic-transfer deposit confirms your order and books production.</p>
-          <span class="pay-tag">Deposit to start</span>
+          <h3 class="pay-title" data-i18n="export.pay_tt_title">Advance T/T</h3>
+          <p class="pay-desc" data-i18n="export.pay_tt_desc">A telegraphic-transfer deposit confirms your order and books production.</p>
+          <span class="pay-tag" data-i18n="export.pay_tt_tag">Deposit to start</span>
         </article>
 
         <!-- L/C at sight -->
@@ -297,9 +314,9 @@ const faqLd = {
           <span class="pay-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 8 9 6 9-6"/></svg>
           </span>
-          <h3 class="pay-title">L/C at sight</h3>
-          <p class="pay-desc">Irrevocable letters of credit for larger or first-time contracts.</p>
-          <span class="pay-tag">Bank-backed</span>
+          <h3 class="pay-title" data-i18n="export.pay_lc_title">L/C at sight</h3>
+          <p class="pay-desc" data-i18n="export.pay_lc_desc">Irrevocable letters of credit for larger or first-time contracts.</p>
+          <span class="pay-tag" data-i18n="export.pay_lc_tag">Bank-backed</span>
         </article>
 
         <!-- Flexible -->
@@ -307,9 +324,9 @@ const faqLd = {
           <span class="pay-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
           </span>
-          <h3 class="pay-title">Flexible for regulars</h3>
-          <p class="pay-desc">Balance against a copy of the bill of lading, and other terms we tune for repeat buyers.</p>
-          <span class="pay-tag">Copy of BL · balance</span>
+          <h3 class="pay-title" data-i18n="export.pay_flex_title">Flexible for regulars</h3>
+          <p class="pay-desc" data-i18n="export.pay_flex_desc">Balance against a copy of the bill of lading, and other terms we tune for repeat buyers.</p>
+          <span class="pay-tag" data-i18n="export.pay_flex_tag">Copy of BL · balance</span>
         </article>
 
         <!-- Currencies -->
@@ -317,7 +334,7 @@ const faqLd = {
           <span class="pay-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
           </span>
-          <h3 class="pay-title">Billed in your currency</h3>
+          <h3 class="pay-title" data-i18n="export.pay_cur_title">Billed in your currency</h3>
           <div class="pay-cur">
             <span><b>$</b> USD</span><span><b>€</b> EUR</span><span><b>£</b> GBP</span><span><b>₹</b> INR</span>
           </div>
@@ -335,7 +352,7 @@ const faqLd = {
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center eyebrow-green"><span data-i18n="export.sustain_eyebrow">Doing It Responsibly</span></span>
         <h2 class="tg-green font-extrabold text-3xl sm:text-4xl mt-4 leading-tight"><span data-i18n="export.sustain_heading">Trade that respects the source</span></h2>
-        <p class="text-slate-500 text-lg mt-4">Exporting well isn't only about speed and price. A few principles we hold to from field to port.</p>
+        <p class="text-slate-500 text-lg mt-4" data-i18n="export.sustain_sub">Exporting well isn't only about speed and price. A few principles we hold to from field to port.</p>
       </div>
       <div class="sus-grid mt-12">
         {sustain.map((s, i) => (
@@ -345,8 +362,8 @@ const faqLd = {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={s.svg} />
               </span>
             </span>
-            <h3 class="sus-title">{s.t}</h3>
-            <p class="sus-desc">{s.d}</p>
+            <h3 class="sus-title" data-i18n={`export.sustain_s${i + 1}_title`}>{s.t}</h3>
+            <p class="sus-desc" data-i18n={`export.sustain_s${i + 1}_body`}>{s.d}</p>
           </article>
         ))}
       </div>
@@ -359,18 +376,18 @@ const faqLd = {
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
       <div class="text-center reveal">
-        <span class="eyebrow center">FAQ</span>
-        <h2 class="tg-2 font-extrabold text-3xl sm:text-4xl mt-4">Exporting with us, answered</h2>
-        <p class="text-slate-500 text-lg mt-4">The practical questions buyers ask before the first shipment.</p>
+        <span class="eyebrow center" data-i18n="export.faq_eyebrow">FAQ</span>
+        <h2 class="tg-2 font-extrabold text-3xl sm:text-4xl mt-4" data-i18n="export.faq_heading">Exporting with us, answered</h2>
+        <p class="text-slate-500 text-lg mt-4" data-i18n="export.faq_sub">The practical questions buyers ask before the first shipment.</p>
       </div>
       <div class="mt-12 reveal d1">
-        {exportFaqs.map((f) => (
+        {exportFaqs.map((f, i) => (
           <details class="faq-item">
             <summary>
-              {f.q}
+              <span data-i18n={`export.faq${i + 1}_q`}>{f.q}</span>
               <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <div class="faq-body">{f.a}</div>
+            <div class="faq-body" data-i18n={`export.faq${i + 1}_a`}>{f.a}</div>
           </details>
         ))}
       </div>
@@ -387,7 +404,7 @@ const faqLd = {
           <a href="#" data-wa class="btn btn-wa"><span data-i18n="export.cta_btn_whatsapp">Chat on WhatsApp</span>
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
           </a>
-          <a href="/contact" class="btn btn-ghost">Enquire Us</a>
+          <a href="/contact" class="btn btn-ghost"><span data-i18n="export.cta_btn_enquire">Enquire Us</span></a>
         </div>
       </div>
     </div>
@@ -668,17 +685,30 @@ const faqLd = {
     const desc = inco.querySelector(".inco-desc") as HTMLElement;
     const tabs = Array.from(inco.querySelectorAll(".inco-tab")) as HTMLElement[];
     const select = (btn: HTMLElement) => {
+      const lang = localStorage.getItem("site-lang") || "en";
+      const getVal = (key: string): string => {
+        if (lang !== "en") {
+          const loc = btn.getAttribute(`data-${lang}-${key}`);
+          if (loc) return loc;
+        }
+        return btn.dataset[key] || "";
+      };
       tabs.forEach((t) => t.classList.toggle("active", t === btn));
       const cv = btn.dataset.cover || "0";
       cover.style.width = cv + "%";
       flag.style.left = cv + "%";
-      name.textContent = btn.dataset.name || "";
-      hand.textContent = btn.dataset.hand || "";
-      desc.textContent = btn.dataset.desc || "";
+      name.textContent = getVal("name");
+      hand.textContent = getVal("hand");
+      desc.textContent = getVal("desc");
       inco.classList.toggle("has-ins", btn.dataset.ins === "1");
     };
     tabs.forEach((t) => t.addEventListener("click", () => select(t)));
     const def = tabs.find((t) => t.classList.contains("active")) || tabs[0];
     if (def) select(def);
+    // Re-populate detail panel whenever i18n switches language
+    document.addEventListener("i18nApplied", () => {
+      const active = tabs.find((t) => t.classList.contains("active")) || tabs[0];
+      if (active) select(active);
+    });
   }
 </script>

@@ -20,6 +20,8 @@ const cats = categories.map((c) => {
 
 <BaseLayout title={title} description={description}>
   <PageHero
+    i18nPrefix="products"
+    i18nCrumb="nav.products"
     crumb="Products"
     eyebrow="Our Range"
     watermark="Products"
@@ -37,14 +39,14 @@ const cats = categories.map((c) => {
               <span class="cat-index">{String(i + 1).padStart(2, "0")}</span>
               <span class="cat-emoji">{c.emoji}</span>
             </div>
-            <h2 class="cat-name">{c.name}</h2>
-            <p class="cat-desc">{c.description}</p>
+            <h2 class="cat-name" data-i18n={`products.cat_${c.slug.replace(/-/g, '_')}_name`}>{c.name}</h2>
+            <p class="cat-desc" data-i18n={`products.cat_${c.slug.replace(/-/g, '_')}_desc`}>{c.description}</p>
             <div class="cat-row-foot">
               <a href={`/products/${c.slug}`} class="cat-cta">
-                Explore range
+                <span data-i18n="products.cat_explore">Explore range</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
-              <span class="cat-count">{c.count} products</span>
+              <span class="cat-count">{c.count}&nbsp;<span data-i18n="products.cat_count_unit">products</span></span>
             </div>
           </div>
           <a href={`/products/${c.slug}`} class="cat-row-media reveal d1" aria-label={c.name}>

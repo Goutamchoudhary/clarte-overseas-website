@@ -51,19 +51,19 @@ const listLd = {
       : <span class="cathero-motif" aria-hidden="true">{cat.emoji}</span>}
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <nav class="crumb crumb-on-dark text-sm reveal" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span class="mx-1 opacity-50">/</span>
-        <a href="/products">Products</a> <span class="mx-1 opacity-50">/</span>
+        <a href="/" data-i18n="nav.home">Home</a> <span class="mx-1 opacity-50">/</span>
+        <a href="/products" data-i18n="nav.products">Products</a> <span class="mx-1 opacity-50">/</span>
         <span class="opacity-80">{cat.name}</span>
       </nav>
       <span class="cathero-emoji reveal d1">{cat.emoji}</span>
       <h1 class="cathero-title reveal d1">{cat.name}</h1>
       <p class="cathero-sub reveal d2">{cat.description}</p>
       <div class="cathero-meta reveal d3">
-        <span>{items.length} products</span>
+        <span>{items.length}&nbsp;<span data-i18n="cat.meta_count_unit">products</span></span>
         <span class="dotsep">•</span>
-        <span>Export-grade, India</span>
+        <span data-i18n="cat.meta_origin">Export-grade, India</span>
         <span class="dotsep">•</span>
-        <span>Private label ready</span>
+        <span data-i18n="cat.meta_private">Private label ready</span>
       </div>
     </div>
   </section>
@@ -79,17 +79,17 @@ const listLd = {
               {p.image
                 ? <img src={p.image} alt={p.name} loading="lazy" />
                 : <span class="prod-emoji">{p.emoji}</span>}
-              {p.forms && <span class="prod-badge">{p.forms.length} forms</span>}
+              {p.forms && <span class="prod-badge">{p.forms.length}&nbsp;<span data-i18n="products.forms_unit">forms</span></span>}
             </a>
             <div class="prod-body">
               <span class="prod-hsn">HSN {p.hsn}</span>
               <h2 class="prod-name"><a href={`/products/${cat.slug}/${p.slug}`}>{p.name}</a></h2>
               <p class="prod-tag">{p.tagline}</p>
               <div class="prod-actions">
-                <a href={`/products/${cat.slug}/${p.slug}`} class="prod-view">View details
+                <a href={`/products/${cat.slug}/${p.slug}`} class="prod-view"><span data-i18n="products.view_details">View details</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
-                <button type="button" class="prod-enq" data-open-enquire data-product={p.name} data-category={cat.name}>Enquire</button>
+                <button type="button" class="prod-enq" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="products.enquire">Enquire</span></button>
               </div>
             </div>
           </article>

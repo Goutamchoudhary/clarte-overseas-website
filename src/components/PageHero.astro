@@ -8,8 +8,10 @@ interface Props {
   watermark: string;        // large faded background word
   subtitle?: string;
   chips?: string[];
+  i18nPrefix?: string;      // e.g. "export" → uses export.hero_eyebrow, .hero_heading, etc.
+  i18nCrumb?: string;       // data-i18n key for the crumb label, e.g. "nav.how_we_export"
 }
-const { crumb, eyebrow, heading, watermark, subtitle, chips = [] } = Astro.props;
+const { crumb, eyebrow, heading, watermark, subtitle, chips = [], i18nPrefix, i18nCrumb } = Astro.props;
 ---
 <section class="page-hero blueprint">
   <span class="bp-plus" style="top:16%;left:7%"></span>
@@ -18,20 +20,20 @@ const { crumb, eyebrow, heading, watermark, subtitle, chips = [] } = Astro.props
   <span class="bp-plus" style="top:72%;right:17%"></span>
   <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
     <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
-      <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
-      <span class="text-slate-500">{crumb}</span>
+      <a href="/" data-i18n="nav.home">Home</a> <span class="text-slate-300 mx-1">/</span>
+      <span class="text-slate-500" data-i18n={i18nCrumb || undefined}>{crumb}</span>
     </nav>
     <div class="ph-stack reveal d1">
       <span class="ph-watermark" aria-hidden="true">{watermark}</span>
       <div class="ph-fore">
-        <span class="eyebrow center">{eyebrow}</span>
-        <h1 class="ph-h1 font-extrabold mt-4" set:html={heading}></h1>
+        <span class="eyebrow center" data-i18n={i18nPrefix ? `${i18nPrefix}.hero_eyebrow` : undefined}>{eyebrow}</span>
+        <h1 class="ph-h1 font-extrabold mt-4" data-i18n-html={i18nPrefix ? `${i18nPrefix}.hero_heading` : undefined} set:html={heading}></h1>
         {subtitle && (
-          <p class="text-slate-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
+          <p class="text-slate-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed" data-i18n={i18nPrefix ? `${i18nPrefix}.hero_sub` : undefined}>{subtitle}</p>
         )}
         {chips.length > 0 && (
           <div class="ph-chips mt-8">
-            {chips.map((c) => <span class="ph-chip">{c}</span>)}
+            {chips.map((c, idx) => <span class="ph-chip" data-i18n={i18nPrefix ? `${i18nPrefix}.hero_chip${idx + 1}` : undefined}>{c}</span>)}
           </div>
         )}
       </div>

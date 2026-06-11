@@ -17,15 +17,15 @@ const title = `${p.name} — ${cat.name} | HSN ${p.hsn} | Clarté Overseas`;
 const description = `${p.tagline} ${p.description}`.slice(0, 180);
 const url = `${SITE.url}/products/${cat.slug}/${p.slug}`;
 
-const specs = [
-  ["HSN code", p.hsn],
-  ["Botanical name", p.botanical || "—"],
-  ["Available forms", p.forms ? p.forms.join(", ") : "Powder"],
-  ["Processing", p.drying || "Dehydrated"],
-  ["Shelf life", "18–24 months"],
-  ["Packaging", "25 kg kraft bags with food-grade liner (custom packing available)"],
-  ["MOQ", "Trial quantities available, scaling to full containers"],
-  ["Origin", "India"],
+const specs: [string, string, string][] = [
+  ["HSN code", p.hsn, "prod.spec_hsn"],
+  ["Botanical name", p.botanical || "—", "prod.spec_botanical"],
+  ["Available forms", p.forms ? p.forms.join(", ") : "Powder", "prod.spec_forms"],
+  ["Processing", p.drying || "Dehydrated", "prod.spec_processing"],
+  ["Shelf life", "18–24 months", "prod.spec_shelf"],
+  ["Packaging", "25 kg kraft bags with food-grade liner (custom packing available)", "prod.spec_packaging"],
+  ["MOQ", "Trial quantities available, scaling to full containers", "prod.spec_moq"],
+  ["Origin", "India", "prod.spec_origin"],
 ];
 
 const productLd = {
@@ -62,8 +62,8 @@ const breadcrumbLd = {
   <section class="pd-top" style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span class="text-slate-300 mx-1">/</span>
-        <a href="/products">Products</a> <span class="text-slate-300 mx-1">/</span>
+        <a href="/" data-i18n="nav.home">Home</a> <span class="text-slate-300 mx-1">/</span>
+        <a href="/products" data-i18n="nav.products">Products</a> <span class="text-slate-300 mx-1">/</span>
         <a href={`/products/${cat.slug}`}>{cat.name}</a> <span class="text-slate-300 mx-1">/</span>
         <span class="text-slate-500">{p.name}</span>
       </nav>
@@ -76,12 +76,12 @@ const breadcrumbLd = {
             {p.image
               ? <img src={p.image} alt={p.name} id="pdImg" class="pd-img" />
               : <span class="pd-emoji">{p.emoji}</span>}
-            {p.image && <span class="pd-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg> Hover to zoom · click to enlarge</span>}
+            {p.image && <span class="pd-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg> <span data-i18n="prod.zoom_hint">Hover to zoom · click to enlarge</span></span>}
           </div>
 
           {p.forms && (
             <div class="pd-forms">
-              <span class="pd-forms-label">Available in</span>
+              <span class="pd-forms-label" data-i18n="prod.available_in">Available in</span>
               <div class="pd-forms-toggle" role="tablist">
                 {p.forms.map((f, i) => (
                   <button type="button" class={`pd-form-btn${i === 0 ? " active" : ""}`} data-form={f}>{f}</button>
@@ -104,20 +104,20 @@ const breadcrumbLd = {
 
           <div class="pd-cta">
             <button type="button" class="btn btn-primary" data-open-enquire data-product={p.name} data-category={cat.name}>
-              Enquire / Request a quote
+              <span data-i18n="prod.enquire_btn">Enquire / Request a quote</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
             <a href="#" data-wa class="btn btn-wa">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
-              WhatsApp
+              <span data-i18n="prod.whatsapp_btn">WhatsApp</span>
             </a>
           </div>
 
           <!-- quick specs -->
           <dl class="pd-quickspec">
-            <div><dt>Form selected</dt><dd id="pdSelForm">{p.forms ? p.forms[0] : "Powder"}</dd></div>
-            <div><dt>Processing</dt><dd>{p.drying || "Dehydrated"}</dd></div>
-            <div><dt>Origin</dt><dd>India</dd></div>
+            <div><dt data-i18n="prod.quickspec_form">Form selected</dt><dd id="pdSelForm">{p.forms ? p.forms[0] : "Powder"}</dd></div>
+            <div><dt data-i18n="prod.quickspec_processing">Processing</dt><dd>{p.drying || "Dehydrated"}</dd></div>
+            <div><dt data-i18n="prod.quickspec_origin">Origin</dt><dd data-i18n="prod.origin_value">India</dd></div>
           </dl>
         </div>
       </div>
@@ -129,7 +129,7 @@ const breadcrumbLd = {
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-3 gap-10 lg:gap-14">
       <div class="lg:col-span-2 space-y-10">
         <div class="reveal">
-          <h2 class="pd-h2">Key features</h2>
+          <h2 class="pd-h2" data-i18n="prod.features_heading">Key features</h2>
           <div class="pd-feat-grid">
             {p.features.map((f) => (
               <div class="pd-feat">
@@ -141,14 +141,14 @@ const breadcrumbLd = {
         </div>
 
         <div class="reveal">
-          <h2 class="pd-h2">Where it's used</h2>
+          <h2 class="pd-h2" data-i18n="prod.uses_heading">Where it's used</h2>
           <div class="pd-use-grid">
             {p.uses.map((u) => <span class="pd-use">{u}</span>)}
           </div>
         </div>
 
         <div class="reveal">
-          <h2 class="pd-h2">Typical grades</h2>
+          <h2 class="pd-h2" data-i18n="prod.grades_heading">Typical grades</h2>
           <div class="pd-use-grid">
             {p.grades.map((g) => <span class="pd-grade">{g}</span>)}
           </div>
@@ -158,14 +158,14 @@ const breadcrumbLd = {
       <!-- spec sidebar -->
       <aside class="reveal d1">
         <div class="pd-spec-card">
-          <h2 class="pd-spec-title">Specifications</h2>
+          <h2 class="pd-spec-title" data-i18n="prod.spec_heading">Specifications</h2>
           <dl class="pd-spec">
-            {specs.map(([k, v]) => (
-              <div class="pd-spec-row"><dt>{k}</dt><dd>{v}</dd></div>
+            {specs.map(([k, v, i18nKey]) => (
+              <div class="pd-spec-row"><dt data-i18n={i18nKey}>{k}</dt><dd>{v}</dd></div>
             ))}
           </dl>
-          <button type="button" class="btn btn-primary w-full mt-5" data-open-enquire data-product={p.name} data-category={cat.name}>Get pricing &amp; samples</button>
-          <p class="pd-spec-note">Specs are indicative and can be tailored to your formulation. Full COA and spec sheet shared on request.</p>
+          <button type="button" class="btn btn-primary w-full mt-5" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="prod.get_pricing">Get pricing &amp; samples</span></button>
+          <p class="pd-spec-note" data-i18n="prod.spec_note">Specs are indicative and can be tailored to your formulation. Full COA and spec sheet shared on request.</p>
         </div>
       </aside>
     </div>
@@ -176,8 +176,8 @@ const breadcrumbLd = {
     <section class="py-14 lg:py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex items-end justify-between gap-4 mb-8 reveal">
-          <h2 class="tg-1 font-extrabold text-2xl sm:text-3xl">More from {cat.name}</h2>
-          <a href={`/products/${cat.slug}`} class="read-link">View all
+          <h2 class="tg-1 font-extrabold text-2xl sm:text-3xl"><span data-i18n="prod.related_prefix">More from</span> {cat.name}</h2>
+          <a href={`/products/${cat.slug}`} class="read-link"><span data-i18n="prod.view_all">View all</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>

@@ -56,6 +56,7 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         applyTranslations(data);
+        document.dispatchEvent(new CustomEvent("i18nApplied", { detail: { lang: lang } }));
         if (callback) callback();
       })
       .catch(function (e) {

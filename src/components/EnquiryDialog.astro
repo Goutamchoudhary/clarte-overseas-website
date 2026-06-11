@@ -11,9 +11,9 @@ import { CONTACT } from "../consts";
     </button>
 
     <div class="enq-main" id="enqMain">
-      <span class="eyebrow">Enquiry</span>
-      <h3 id="enqTitle" class="enq-title">Request a quote</h3>
-      <p class="enq-sub">Tell us a little about your requirement — we reply within one business day, often the same day.</p>
+      <span class="eyebrow" data-i18n="enq.eyebrow">Enquiry</span>
+      <h3 id="enqTitle" class="enq-title" data-i18n="enq.title">Request a quote</h3>
+      <p class="enq-sub" data-i18n="enq.sub">Tell us a little about your requirement — we reply within one business day, often the same day.</p>
 
       <div class="enq-chip" id="enqChip" hidden>
         <span class="enq-chip-dot"></span>
@@ -29,29 +29,29 @@ import { CONTACT } from "../consts";
         <input type="hidden" name="product" id="enqProduct" value="" />
 
         <div class="enq-2col">
-          <label class="enq-field"><span>Name <i>*</i></span>
-            <input name="name" type="text" required placeholder="Your name" />
+          <label class="enq-field"><span><span data-i18n="enq.field_name">Name</span> <i>*</i></span>
+            <input name="name" type="text" required data-i18n-ph="enq.ph_name" placeholder="Your name" />
           </label>
-          <label class="enq-field"><span>Company <i>*</i></span>
-            <input name="company" type="text" required placeholder="Company" />
+          <label class="enq-field"><span><span data-i18n="enq.field_company">Company</span> <i>*</i></span>
+            <input name="company" type="text" required data-i18n-ph="enq.ph_company" placeholder="Company" />
           </label>
         </div>
         <div class="enq-2col">
-          <label class="enq-field"><span>Email <i>*</i></span>
-            <input name="email" type="email" required placeholder="you@company.com" />
+          <label class="enq-field"><span><span data-i18n="enq.field_email">Email</span> <i>*</i></span>
+            <input name="email" type="email" required data-i18n-ph="enq.ph_email" placeholder="you@company.com" />
           </label>
-          <label class="enq-field"><span>Phone / WhatsApp <i>*</i></span>
-            <input name="phone" type="tel" required placeholder="+1 555 000 0000" />
+          <label class="enq-field"><span><span data-i18n="enq.field_phone">Phone / WhatsApp</span> <i>*</i></span>
+            <input name="phone" type="tel" required data-i18n-ph="enq.ph_phone" placeholder="+1 555 000 0000" />
           </label>
         </div>
-        <label class="enq-field"><span>Destination country <i>*</i></span>
-          <input name="country" type="text" required placeholder="Where it's headed" />
+        <label class="enq-field"><span><span data-i18n="enq.field_country">Destination country</span> <i>*</i></span>
+          <input name="country" type="text" required data-i18n-ph="enq.ph_country" placeholder="Where it's headed" />
         </label>
-        <label class="enq-field"><span>Your requirement <i>*</i></span>
-          <textarea name="message" required placeholder="Quantity, grade, form, destination country, target price…"></textarea>
+        <label class="enq-field"><span><span data-i18n="enq.field_requirement">Your requirement</span> <i>*</i></span>
+          <textarea name="message" required data-i18n-ph="enq.ph_requirement" placeholder="Quantity, grade, form, destination country, target price…"></textarea>
         </label>
         <button type="submit" class="enq-submit">
-          Send enquiry
+          <span data-i18n="enq.submit">Send enquiry</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
       </form>
@@ -59,12 +59,16 @@ import { CONTACT } from "../consts";
 
     <div class="enq-done" id="enqDone" hidden>
       <span class="enq-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>
-      <h3 class="enq-title">Enquiry sent — thank you!</h3>
-      <p class="enq-sub">We've received your message and will reply within one business day.</p>
-      <button type="button" class="enq-submit" data-enq-close>Done</button>
+      <h3 class="enq-title" data-i18n="enq.done_title">Enquiry sent — thank you!</h3>
+      <p class="enq-sub" data-i18n="enq.done_body">We've received your message and will reply within one business day.</p>
+      <button type="button" class="enq-submit" data-enq-close><span data-i18n="enq.done_btn">Done</span></button>
     </div>
   </div>
 </div>
+
+<!-- Hidden strings used by JS (translated at runtime via i18n engine) -->
+<span id="enqStrSending" data-i18n="enq.sending" hidden>Sending…</span>
+<span id="enqStrGeneral" data-i18n="enq.general" hidden>General enquiry</span>
 
 <script>
   const modal = document.getElementById("enqModal");
@@ -77,13 +81,15 @@ import { CONTACT } from "../consts";
     const chipCat = document.getElementById("enqChipCat");
     const fCat = document.getElementById("enqCategory") as HTMLInputElement;
     const fProd = document.getElementById("enqProduct") as HTMLInputElement;
+    const strSending = () => document.getElementById("enqStrSending")?.textContent || "Sending…";
+    const strGeneral = () => document.getElementById("enqStrGeneral")?.textContent || "General enquiry";
 
     const open = (product, category) => {
       fProd.value = product || "";
       fCat.value = category || "";
       if (product || category) {
         chip.hidden = false;
-        chipProduct.textContent = product || "General enquiry";
+        chipProduct.textContent = product || strGeneral();
         chipCat.textContent = category ? "  ·  " + category : "";
       } else {
         chip.hidden = true;
@@ -111,7 +117,7 @@ import { CONTACT } from "../consts";
       if (!form.reportValidity()) return;
       const btn = form.querySelector(".enq-submit") as HTMLButtonElement;
       const original = btn.innerHTML;
-      btn.disabled = true; btn.textContent = "Sending…";
+      btn.disabled = true; btn.textContent = strSending();
       try {
         const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
         const data = await res.json().catch(() => null);
