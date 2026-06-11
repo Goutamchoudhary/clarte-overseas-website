@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return m ? decodeURIComponent(m[1]) : "";
     };
     const currentLang = () => {
-      const parts = (readCookie("googtrans") || "").split("/"); // /en/<lang>
+      const parts = (readCookie("googtrans") || "").split("/");
       return parts.length === 3 && parts[2] ? parts[2] : "en";
     };
     const setLabel = (lang) => {
@@ -67,12 +67,36 @@ document.addEventListener("DOMContentLoaded", () => {
       const sel = document.getElementById("langSelect");
       if (sel) sel.value = lang;
     };
+    const setCookie = (lang) => {
+      const host = location.hostname;
+      const root = host.replace(/^www\./, "");
+      const val = "/en/" + lang;
+      document.cookie = "googtrans=" + val + "; path=/";
+      try { document.cookie = "googtrans=" + val + "; path=/; domain=" + host; } catch (e) {}
+      try { document.cookie = "googtrans=" + val + "; path=/; domain=." + root; } catch (e) {}
+    };
     const clearCookie = () => {
       const host = location.hostname;
+      const root = host.replace(/^www\./, "");
       const exp = "; expires=Thu, 01 Jan 1970 00:00:00 GMT";
       document.cookie = "googtrans=; path=/" + exp;
       document.cookie = "googtrans=; path=/; domain=" + host + exp;
-      document.cookie = "googtrans=; path=/; domain=." + host + exp;
+      document.cookie = "googtrans=; path=/; domain=." + root + exp;
+    };
+    // Instant callback when .goog-te-combo appears in the DOM
+    const whenCombo = (cb) => {
+      const el = document.querySelector(".goog-te-combo");
+      if (el) { cb(el); return; }
+      const obs = new MutationObserver(() => {
+        const c = document.querySelector(".goog-te-combo");
+        if (c) { obs.disconnect(); cb(c); }
+      });
+      obs.observe(document.body, { childList: true, subtree: true });
+    };
+    const applyLang = (lang, combo) => {
+      combo.value = lang;
+      combo.dispatchEvent(new Event("change"));
+      setLabel(lang);
     };
     const translateTo = (lang) => {
       if (!lang || lang === "en") {
@@ -80,33 +104,19 @@ document.addEventListener("DOMContentLoaded", () => {
         location.reload();
         return;
       }
-      const host = location.hostname;
-      const rootHost = host.replace(/^www\./, "");
-      const val = "/en/" + lang;
-      document.cookie = "googtrans=" + val + "; path=/";
-      try { document.cookie = "googtrans=" + val + "; path=/; domain=" + host; } catch (e) {}
-      try { document.cookie = "googtrans=" + val + "; path=/; domain=." + rootHost; } catch (e) {}
-      let attempts = 0;
-      const tryCombo = () => {
-        const combo = document.querySelector(".goog-te-combo");
-        if (combo) {
-          combo.value = lang;
-          combo.dispatchEvent(new Event("change"));
-          setLabel(lang);
-        } else if (attempts++ < 10) {
-          setTimeout(tryCombo, 300);
-        } else {
-          location.reload();
-        }
-      };
-      tryCombo();
+      setCookie(lang);
+      setLabel(lang); // update label instantly on click
+      whenCombo((combo) => applyLang(lang, combo));
     };
     document.querySelectorAll(".lang-dd-item").forEach((b) =>
       b.addEventListener("click", () => translateTo(b.getAttribute("data-lang")))
     );
     const sel = document.getElementById("langSelect");
     if (sel) sel.addEventListener("change", () => translateTo(sel.value));
-    setLabel(currentLang());
+    // Re-apply saved language on every page load (persists across navigation)
+    const saved = currentLang();
+    setLabel(saved);
+    if (saved && saved !== "en") whenCombo((combo) => applyLang(saved, combo));
   })();
 
   /* ---- Scroll-to-top -------------------------------------------------- */
