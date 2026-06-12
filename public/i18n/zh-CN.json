@@ -1,0 +1,2012 @@
+{
+  "nav.home": "首页",
+
+  "nav.products": "产品",
+
+  "nav.how_we_export": "出口流程",
+
+  "nav.certifications": "资质认证",
+
+  "nav.about": "关于我们",
+
+  "nav.blogs": "博客",
+
+  "nav.contact": "联系我们",
+
+
+  "footer.description": "脱水果蔬及粉末产品专业贸易出口商，将印度丰收的物产带往全球各地的餐桌。",
+
+  "footer.col_company": "公司",
+
+  "footer.col_products": "产品",
+
+  "footer.col_quote": "获取报价",
+
+  "footer.quote_body": "请告知所需产品及目标市场，我们将及时回复规格和报价。",
+
+  "footer.btn_quote": "请求报价",
+
+  "footer.btn_whatsapp": "WhatsApp 咨询",
+
+  "footer.copyright": "Clarté Overseas。版权所有。",
+
+  "footer.tagline": "自豪地从印度出口",
+
+
+  "home.hero_eyebrow": "脱水食品贸易出口商 · 印度",
+
+  "home.hero_tagline": "印度物产，守鲜于世界。",
+
+  "home.hero_sub": "我们将新鲜采收的印度农产品加工成货架期长的片状、颗粒及粉末产品，适合长途运输。全球食品生产商、香精香料企业及经销商依赖我们稳定的供应与一致的品质。",
+
+  "home.hero_cta_explore": "浏览产品",
+
+  "home.hero_cta_quote": "请求报价",
+
+  "home.hero_stat1_label": "脱水SKU及规格",
+
+  "home.hero_stat2_label": "覆盖国家和地区",
+
+  "home.hero_stat3_label": "质检批次",
+
+
+  "home.products_eyebrow": "产品系列",
+
+  "home.products_heading": "适用于各类配方的粉末原料",
+
+  "home.products_sub": "印度种植的农产品，经干燥研磨制成洁净粉末及食品级原料。每种规格均针对长货架期、真实风味及配方稳定性而生产。",
+
+  "home.card_view": "查看产品",
+
+  "home.card6_link": "联系我们",
+
+  "home.card1_title": "草本叶粉",
+
+  "home.card1_desc": "辣木、咖喱叶、菠菜等叶类草本，经低温慢干后研磨成洁净深绿色粉末，适用于茶饮、膳食补充剂及调味料。",
+
+  "home.card2_title": "脱水蔬菜粉——烹饪与调味应用",
+
+  "home.card2_desc": "洋葱、大蒜、番茄、辣椒等粉末，将真实风味融入厨房、复合调味料及鲜咸口味混合料中。",
+
+  "home.card3_title": "脱水蔬菜粉——功能与营养型",
+
+  "home.card3_desc": "甜菜根、胡萝卜、南瓜、菠菜等粉末，以天然色素、膳食纤维及营养素为主要卖点。",
+
+  "home.card4_title": "脱水果粉原料",
+
+  "home.card4_desc": "芒果、香蕉、菠萝、浆果等粉末，专为烘焙、谷物、乳制品及饮料配方而生产。",
+
+  "home.card5_title": "水胶体及食品添加剂",
+
+  "home.card5_desc": "瓜尔胶、阿拉伯胶及相关食品添加剂，为配方提供质构、黏结和稳定性。",
+
+  "home.card6_title": "定制混合料",
+
+  "home.card6_desc": "贴牌混合料及定制规格产品，围绕您的配方需求定制，按您的要求包装。",
+
+
+  "home.why_dehydrated_eyebrow": "为何选择脱水产品",
+
+  "home.why_dehydrated_heading": "更轻便、更小巧、保质期更长",
+
+  "home.why_dehydrated_sub": "去除水分，在保留营养精华的同时降低物流成本与复杂度。",
+
+  "home.why_d_shelf_title": "超长保质期",
+
+  "home.why_d_shelf_body": "无需冷链，保质期12至24个月。",
+
+  "home.why_d_light_title": "运输更轻便",
+
+  "home.why_d_light_body": "重量更轻，运费更低。",
+
+  "home.why_d_clean_title": "全年稳定供应",
+
+  "home.why_d_clean_body": "不受季节限制，供应延伸至收获季之外。",
+
+  "home.why_d_colour_title": "品质稳定",
+
+  "home.why_d_colour_body": "每批次风味与色泽保持一致。",
+
+
+  "home.industries_eyebrow": "服务对象",
+
+  "home.industries_heading": "我们服务的行业",
+
+  "home.industries_sub": "我们向以下行业客户供应脱水原料，助力其产品风味创造：",
+
+  "home.industries_list1": "食品饮料生产商",
+
+  "home.industries_list2": "香精香料企业及原料混合商",
+
+  "home.industries_list3": "调味料及配方公司",
+
+  "home.industries_list4": "烘焙及糖果企业",
+
+  "home.industries_list5": "保健品及健康食品品牌",
+
+  "home.industries_list6": "餐饮连锁（HoReCa）及贴牌零售商",
+
+  "home.industries_body": "我们的使命是为这些行业提供可靠的食品级原料，为其终端产品创造真实价值。",
+
+
+  "home.edge_eyebrow": "Clarté 优势",
+
+  "home.edge_heading": "采购商选择 Clarté Overseas 的理由",
+
+  "home.edge_c1_title": "合规保障",
+
+  "home.edge_c1_body": "从FSSAI和ISO 22000到HACCP和APEDA，每批货物均附带目标市场所需的认证资质及出口文件。",
+
+  "home.edge_c2_title": "直采自农场",
+
+  "home.edge_c2_body": "我们直接从印度种植商及经审核的加工厂采购，无中间商，品质从农场到包装全程可追溯。",
+
+  "home.edge_c3_title": "无缝出口物流",
+
+  "home.edge_c3_body": "依托战略性港口资源、可靠的货运合作伙伴及出口级包装，确保每批货物安全准时抵达全球各地。",
+
+  "home.edge_c4_title": "批次追溯系统",
+
+  "home.edge_c4_body": "每批货物均有追踪编码，从原料到发货全程可查，让审核及召回工作简单高效。",
+
+  "home.edge_c5_title": "诚信与透明",
+
+  "home.edge_c5_body": "每笔订单均以坦诚的沟通、透明的定价和道德贸易为原则。无隐性条款，无意外惊喜。",
+
+  "home.edge_c6_title": "长期合作伙伴关系",
+
+  "home.edge_c6_body": "我们更看重长期合作，而非一次性订单，因此我们在信任和稳健增长上持续投入。",
+
+
+  "home.quality_eyebrow": "我们的流程",
+
+  "home.quality_heading": "批批严控，品质如一。",
+
+  "home.quality_sub": "每批产品均在卫生达标、通过认证的生产设施中完成，实施严格质量控制。我们对原料分级、检测水分及微生物指标、进行金属探测，最终完成发货前的最终检验。",
+
+  "home.quality_proc_head": "每批次的必经环节",
+
+  "home.quality_step1_title": "原料分级",
+
+  "home.quality_step1_body": "原料到达后立即进行分拣和分级。",
+
+  "home.quality_step2_title": "水分与微生物检测",
+
+  "home.quality_step2_body": "每批次按规格检测合格后方可进入加工流程。",
+
+  "home.quality_step3_title": "金属探测",
+
+  "home.quality_step3_body": "每批产品均经过金属探测仪检测，无一例外。",
+
+  "home.quality_step4_title": "最终检验与封装",
+
+  "home.quality_step4_body": "签字确认后进行密封包装，备货出口。",
+
+  "home.quality_stat1_label": "质量检验",
+
+  "home.quality_stat2_label": "添加防腐剂",
+
+  "home.quality_stat3_label": "典型保质期",
+
+  "home.quality_stat4_label": "SKU及规格",
+
+
+  "home.markets_eyebrow": "出口版图",
+
+  "home.markets_heading": "我们的产品销往哪里",
+
+  "home.markets_sub": "从美国、英国到海湾地区、澳大利亚及东南亚，Clarté Overseas向多大洲的进口商、加工商和经销商供货，出口版图持续扩大。",
+
+
+  "home.working_eyebrow": "与我们合作",
+
+  "home.working_heading": "采购，简单高效",
+
+  "home.working_sub": "从首次试订单到整柜重复采购，我们始终保持灵活、清晰且随时可出口的状态。",
+
+  "home.working_c1_title": "试订单友好型MOQ",
+
+  "home.working_c1_body": "从小批量测试订单开始，随需求增长逐步扩量。",
+
+  "home.working_c2_title": "以您的货币报价",
+
+  "home.working_c2_body": "以美元、欧元、英镑或阿联酋迪拉姆提供清晰、逐项列明的报价，无任何隐性费用。",
+
+  "home.working_c3_title": "贴牌与定制包装",
+
+  "home.working_c3_body": "按您的品牌和规格，提供零售装或散装格式。",
+
+  "home.working_c4_title": "2至4周发货",
+
+  "home.working_c4_body": "从确认订单到货物到港，快速周转。",
+
+  "home.working_c5_title": "门到港口货运",
+
+  "home.working_c5_body": "依托可靠的货运合作伙伴，确保全球准时交付。",
+
+  "home.working_c6_title": "完整出口文件",
+
+  "home.working_c6_body": "发票、装箱单、原产地证书及各类认证，全程一站式处理。",
+
+
+  "home.certs_eyebrow": "标准与信誉",
+
+  "home.certs_heading": "认证齐全，合规经营",
+
+  "home.certs_sub": "完备的出口文件与认证资质，助力货物快速清关，让采购商无后顾之忧。",
+
+  "home.certs_regs_label": "我们的注册资质",
+
+  "home.certs_quality_label": "品质与合作方认证",
+
+  "home.certs_disclaimer": "官方认证标志及文件将在您提供后替换当前图标。",
+
+
+  "home.cta_heading": "准备好从印度采购了吗？",
+
+  "home.cta_sub": "告知我们您的需求及目标市场，我们将回复产品规格、样品信息及您所在货币的报价。",
+
+  "home.cta_btn_whatsapp": "WhatsApp 咨询",
+
+  "home.cta_btn_enquire": "发送询盘",
+
+
+  "about.hero_eyebrow": "关于我们",
+
+  "about.hero_heading": "将印度物产带给全球食品企业",
+
+  "about.hero_sub": "Clarté Overseas是一家总部位于新德里的脱水果蔬及食品级原料贸易出口商。我们帮助食品品牌、生产商及经销商顺畅地从印度采购，免去繁琐环节。",
+
+  "about.hero_chip1": "印度新德里",
+
+  "about.hero_chip2": "贸易出口商",
+
+  "about.hero_chip3": "全球发货",
+
+
+  "about.who_eyebrow": "我们是谁",
+
+  "about.who_heading": "从印度采购，简单便捷",
+
+  "about.who_body1": "我们于2025年创立Clarté Overseas，目标明确：让全球食品企业能够便捷地从印度采购可靠的脱水原料。印度出产品类繁多的农产品和植物原料，然而对于海外采购商而言，要找到一家品质稳定、合规达标且真正易于合作的供应商，至今仍非易事。填补这一空白，正是我们存在的全部意义。",
+
+  "about.who_body2": "我们是贸易出口商，而非单一工厂。我们与全国各地经过审核的生产商及加工厂建立合作网络，这使我们能够提供丰富的规格和形态，同时对品质、文件和交付保持严格把控。从原料筛选和实验室检测，到包装和出口报关，每批货物均以同等标准处理，无论是首次试订单还是重复整柜采购。",
+
+  "about.who_body3": "我们的工作方式归结为三个习惯：沟通清晰透明、遵守各目标市场的合规标准，以及稳定一致的供应——让贵公司的生产计划有所依托。",
+
+
+  "about.glance_heading": "公司概况",
+
+  "about.glance_established": "成立年份",
+
+  "about.glance_established_val": "2025年",
+
+  "about.glance_location": "总部地址",
+
+  "about.glance_location_val": "印度新德里",
+
+  "about.glance_type": "企业类型",
+
+  "about.glance_type_val": "贸易出口商",
+
+  "about.glance_reg": "注册状态",
+
+  "about.glance_categories": "产品线",
+
+  "about.glance_categories_val": "5大原料品类",
+
+  "about.glance_markets": "目标市场",
+
+  "about.glance_markets_val": "15+个国家和地区",
+
+  "about.glance_team": "团队",
+
+  "about.glance_team_val": "精干专业",
+
+
+  "about.stats_categories": "原料品类",
+
+  "about.stats_markets": "在拓市场",
+
+  "about.stats_continents": "覆盖大洲",
+
+  "about.stats_lots": "质检批次",
+
+
+  "about.purpose_eyebrow": "我们的使命",
+
+  "about.purpose_heading": "打造全球首选原料合作伙伴",
+
+  "about.purpose_sub": "我们不只是履行订单，我们正在将Clarté Overseas打造成全球食品企业可完全信赖的采购品牌。",
+
+  "about.mission_label": "使命",
+
+  "about.mission_body": "为食品品牌和生产商提供可完全依赖的脱水原料合作伙伴：品质稳定、来源诚信、每笔订单准时到货。",
+
+  "about.vision_label": "愿景",
+
+  "about.vision_body": "成为全球规模最大、最受信赖的脱水食品原料出口商，尽可能多地覆盖各国采购商。",
+
+
+  "about.goals_heading": "我们的发展目标",
+
+  "about.goal1_title": "覆盖全球",
+
+  "about.goal1_body": "服务各大洲采购商，并逐年持续拓展市场版图。",
+
+  "about.goal2_title": "可靠性第一",
+
+  "about.goal2_body": "成为客户无需催促的供应商，批次接批次，始终如一。",
+
+  "about.goal3_title": "全程可追溯、负责任",
+
+  "about.goal3_body": "从农场到港口，实现完整溯源与公平、可持续采购。",
+
+  "about.goal4_title": "可扩展的能力",
+
+  "about.goal4_body": "产能、体系和认证资质随市场需求同步增长。",
+
+
+  "about.markets_heading": "我们的目标方向",
+
+  "about.markets_sub": "正在积极拓展的市场",
+
+  "about.markets_body": "我们已与英国、欧洲、海湾地区和澳大利亚的采购商建立合作，并正积极开拓更多市场，以下是我们重点布局的方向。",
+
+
+  "about.values_eyebrow": "我们的差异化优势",
+
+  "about.values_sub": "我们的工作理念",
+
+  "about.val1_title": "品质一致",
+
+  "about.val1_body": "每批次规格稳定如一，贵公司生产线无需频繁调整。",
+
+  "about.val2_title": "合规经营",
+
+  "about.val2_body": "文件和标准精准匹配每个目标销售市场的要求。",
+
+  "about.val3_title": "透明流程",
+
+  "about.val3_body": "报价清晰，时间表明确，进度更新无需主动询问。",
+
+  "about.val4_title": "以客户为中心",
+
+  "about.val4_body": "规格、形态和包装均围绕贵公司的配方需求定制，而非我们自己。",
+
+  "about.val5_title": "供应稳定",
+
+  "about.val5_body": "依托经审核的供应网络和完善的计划，确保重复订单持续稳定。",
+
+  "about.val6_title": "长期合作",
+
+  "about.val6_body": "我们更愿与您共同成长，而不是追求一次性订单。",
+
+
+  "about.partners_eyebrow": "与我们合作",
+
+  "about.partners_sub": "我们的合作伙伴类型",
+
+  "about.partners_body": "无论您从事食品原料的采购、分销、生产还是市场开拓，我们均有合作空间。",
+
+  "about.partner1_tag": "进口商与经销商",
+
+  "about.partner2_tag": "代理商与分销商",
+
+  "about.partner3_tag": "委托加工",
+
+  "about.partner4_tag": "贴牌品牌商",
+
+  "about.partner5_tag": "业务拓展合作",
+
+  "about.partner_cta": "有其他合作意向？",
+
+
+  "about.faq_eyebrow": "常见问题",
+
+  "about.faq_heading": "关于 Clarté Overseas 的常见问题",
+
+  "about.faq_sub": "以下是采购商联系我们前最常想了解的问题。",
+
+  "about.faq1_q": "Clarté Overseas 总部在哪里？",
+
+  "about.faq1_a": "我们总部位于印度新德里，向全球各地的采购商发货。总部设在重要的贸易物流枢纽，有助于简化报关、货运和统筹协调工作。",
+
+  "about.faq2_q": "贵公司是生产商还是出口商？",
+
+  "about.faq2_a": "我们是贸易出口商。我们不只依托单一工厂，而是与全印度经过审核的生产商及加工厂组成合作网络，由此得以提供丰富的规格和产品形态，同时对品质和文件保持严格把控。",
+
+  "about.faq3_q": "贵公司经营多久了？",
+
+  "about.faq3_a": "Clarté Overseas成立于2025年。我们是一家年轻、专注的企业，专门为海外采购商提供简便、可靠的印度脱水原料采购服务。",
+
+  "about.faq4_q": "贵公司与其他出口商有何不同？",
+
+  "about.faq4_a": "我们在多个原料品类进行整合采购，对每批货物进行品质管控和实验室检测，提供完整的批次溯源，沟通透明，并真诚地以长期合作为导向，而非一次性订单。",
+
+  "about.faq5_q": "贵公司只接受大客户订单吗？",
+
+  "about.faq5_a": "不是的。我们设置了试订单友好型MOQ，小型进口商、生产商及贴牌品牌商均可从测试订单开始，随合作深入逐步扩量。",
+
+  "about.faq6_q": "贵公司持有哪些注册资质和认证？",
+
+  "about.faq6_a": "我们已完成GST、IEC和RCMC注册，持有FSSAI和ISO 9001认证，并随每批货物提供完整的出口文件。",
+
+  "about.faq7_q": "如何开始合作？",
+
+  "about.faq7_a": "请通过报价表单或WhatsApp告知所需产品、形态及目标市场，我们将回复产品规格、视情提供样品，并附上以您所在货币计价的报价。",
+
+
+  "about.cta_heading": "携手共建，共创未来",
+
+  "about.cta_sub": "告知我们您的需求和目标市场，我们将回复规格、样品及以您货币计价的报价。",
+
+  "about.cta_btn": "WhatsApp 咨询",
+
+  "about.cta_btn_enquire": "发送询盘",
+
+
+  "export.hero_eyebrow": "出口全流程",
+
+  "export.hero_heading": "您的订单如何从印度抵达目的港",
+
+  "export.hero_sub": "全程透明，无黑箱操作。以下是每批Clarté Overseas货物的完整路径——从原料产地到装船出发，以及货物到港后持续跟进的售后服务。",
+
+  "export.hero_chip1": "印度采购与审核",
+
+  "export.hero_chip2": "逐批质量检验",
+
+  "export.hero_chip3": "包含售后服务",
+
+
+  "export.journey_eyebrow": "逐阶段解析",
+
+  "export.journey_heading": "追踪全程路径",
+
+  "export.journey_sub": "向下滚动，路线逐步呈现。每个节点在货物到达时亮起。",
+
+  "export.journey_s1_title": "采购合适原料",
+
+  "export.journey_s1_body": "一切从上游开始。我们将您的需求匹配到印度各地经过审核的种植商、加工厂和生产商，根据产区、加工能力和历史记录逐一筛选。",
+
+  "export.journey_s2_title": "围绕您的需求采购",
+
+  "export.journey_s2_body": "先定规格，再备货。我们按您的规格、目数、水分、包装尺寸和数量采购，先确认简报、样品和时间表，确保我们采购的正是您真正需要的产品。",
+
+  "export.journey_s3_title": "质量检验与合规审核",
+
+  "export.journey_s3_body": "不达标不放行。每批货物均进行分级和实验室检测——水分、微生物指标、异物、金属探测——并匹配目标销售市场监管要求出具完整文件。",
+
+  "export.journey_s4_title": "专业包装，适应长途运输",
+
+  "export.journey_s4_body": "食品级内衬、坚固出口外箱或包装袋、清晰的批次标识及规范托盘——专为远洋运输和仓库便捷操作而设计。",
+
+  "export.journey_s5_title": "文件齐全，顺畅清关",
+
+  "export.journey_s5_body": "商业发票、装箱单、原产地证书、植物检疫证书及实验室检测报告——准确及时出具，确保货物无阻清关。",
+
+  "export.journey_s6_title": "装箱上船",
+
+  "export.journey_s6_body": "按双方约定的贸易术语完成订舱、监督装柜和发运，同步分享追踪信息，让您随时掌握货物在途状态。",
+
+  "export.journey_s7_title": "货出之后，我们依然在",
+
+  "export.journey_s7_body": "集装箱启航，似乎交易已告一段落。对我们而言，这才是合作关系真正开始的地方——我们持续追踪至您的仓库，协助处理清关疑问，确认货物到货状态，并着手推进您的下一笔订单。",
+
+  "export.journey_final_flag": "售后服务",
+
+  "export.aftercare_kicker": "交易结束了？还没有。",
+
+  "export.aftercare_body": "许多出口商在港口就挥手告别。我们将装满货物的集装箱视为起点——因为下一笔订单乃至更多后续合作，正是建立在这批货到港之后我们的表现上。",
+
+  "export.aftercare_wa_btn": "WhatsApp 联系我们",
+
+
+  "export.incoterms_eyebrow": "交货条款",
+
+  "export.incoterms_heading": "贸易术语，一看就懂",
+
+  "export.incoterms_sub": "选择一种贸易术语，即可清晰了解我们的责任范围及贵方的接管节点。",
+
+  "export.inco_seg_source": "货源地",
+
+  "export.inco_seg_origin": "出口港",
+
+  "export.inco_seg_ocean": "海运",
+
+  "export.inco_seg_port": "目的港",
+
+  "export.inco_seg_you": "贵方",
+
+  "export.inco_legend_we": "我方负责",
+
+  "export.inco_legend_you": "贵方接管",
+
+
+  "export.payment_eyebrow": "付款方式",
+
+  "export.payment_heading": "条款清晰，无意外",
+
+  "export.payment_sub": "以下几点小细节，让双方的付款与收款都更顺畅。",
+
+  "export.pay_proforma_title": "先出形式发票",
+
+  "export.pay_proforma_desc": "每笔订单均以清晰的形式发票开始——数量、规格、价格和条款以书面形式确认，货物移动之前一切明确。",
+
+  "export.pay_costs_title": "费用逐项列明",
+
+  "export.pay_costs_desc": "FOB或CIF均逐行细分——您可清楚看到每项费用的构成，无任何隐性收费。",
+
+  "export.pay_split_goods": "货款",
+
+  "export.pay_split_freight": "运费",
+
+  "export.pay_split_ins": "保险费",
+
+  "export.pay_tt_title": "预付T/T电汇",
+
+  "export.pay_tt_desc": "电汇定金确认订单并启动生产。",
+
+  "export.pay_tt_tag": "定金启动",
+
+  "export.pay_lc_title": "即期信用证L/C",
+
+  "export.pay_lc_desc": "适用于较大金额或首次合作的不可撤销信用证。",
+
+  "export.pay_lc_tag": "银行保障",
+
+  "export.pay_flex_title": "老客户灵活付款",
+
+  "export.pay_flex_desc": "凭提单副本付余款，以及其他针对重复采购商定制的付款条款。",
+
+  "export.pay_flex_tag": "提单副本 · 余款",
+
+  "export.pay_cur_title": "以您的货币开票",
+
+
+  "export.sustain_eyebrow": "负责任的贸易",
+
+  "export.sustain_heading": "尊重源头的贸易",
+
+  "export.sustain_sub": "出口不只是速度和价格。以下是我们从产地到港口始终坚守的几项原则。",
+
+  "export.sustain_s1_title": "负责任采购",
+
+  "export.sustain_s1_body": "我们优先选择对土地和劳工公平对待的种植商与加工厂。",
+
+  "export.sustain_s2_title": "低浪费包装",
+
+  "export.sustain_s2_body": "尺寸适宜的食品级包装，在充分保护产品的同时减少过度包装。",
+
+  "export.sustain_s3_title": "优化装载方案",
+
+  "export.sustain_s3_body": "整合规划装运方案，减少空载里程和排放。",
+
+
+  "export.faq_eyebrow": "常见问题",
+
+  "export.faq_heading": "与我们合作出口，解答您的疑问",
+
+  "export.faq_sub": "采购商在首次发货前最常询问的实务问题。",
+
+  "export.faq1_q": "贵公司的最小起订量是多少？",
+
+  "export.faq1_a": "视产品和包装而定，但我们保持试订单友好型MOQ，初次合作的采购商可从测试订单开始，合作关系确立后再逐步扩量。请告知具体产品和目标数量，我们将确认可操作的方案。",
+
+  "export.faq2_q": "正式下单前能否申请样品？",
+
+  "export.faq2_a": "可以。大多数产品均可安排代表性样品，供您在提交订单前对规格、色泽、目数和香气进行核验。",
+
+  "export.faq3_q": "贵公司支持哪些贸易术语？",
+
+  "export.faq3_a": "常用EXW、FOB、CFR和CIF。FOB是大多数采购商的选择，但若您希望我们负责订舱付运费（及保险），CFR或CIF同样可行。上方的贸易术语图解清晰展示了每种术语下我们的责任范围。",
+
+  "export.faq4_q": "典型货运周期是多长？",
+
+  "export.faq4_a": "订单确认后，生产和发货前检验通常需要数周，海运时间则取决于目的港。我们会随报价附上预估时间表，并在时间节点确认后及时更新进度。",
+
+  "export.faq5_q": "接受哪些付款方式？",
+
+  "export.faq5_a": "每笔订单均以形式发票开始。我们通常采用预付T/T定金、凭提单副本付余款的方式，同时接受大额或首次合作的即期不可撤销信用证。重复采购商的付款条款可灵活商议。",
+
+  "export.faq6_q": "货物附带哪些单证？",
+
+  "export.faq6_a": "标准单证包括商业发票、装箱单和原产地证书，以及产品规格说明书、实验室检测报告/分析报告，以及您的进口商所需的目标市场专项证书。",
+
+  "export.faq7_q": "能否按我们的规格提供包装和贴牌服务？",
+
+  "export.faq7_a": "可以。我们标准供货为食品级散装包装，同时可按需安排定制包装规格、零售包装及贴牌服务——只需提供简报即可。",
+
+  "export.faq8_q": "货物发出后如何跟进？",
+
+  "export.faq8_a": "我们不会在港口消失。我们持续追踪货物至您的仓库，协助处理清关问题，确认货物到货状态，并随时准备规划您的下一笔订单。合作关系本身才是最重要的。",
+
+
+  "export.cta_heading": "准备好启程了吗？",
+
+  "export.cta_sub": "告知我们产品、形态和目的地，我们将规划路线、贸易条款和报价，并全程陪伴您。",
+
+  "export.cta_btn_whatsapp": "WhatsApp 咨询",
+
+  "export.cta_btn_enquire": "发送询盘",
+
+
+  "cert.hero_eyebrow": "合规与信誉",
+
+  "cert.hero_heading": "可查阅、可阅读、可核验的资质证书",
+
+  "cert.hero_sub": "我们更愿意展示文件，而非空口承诺。以下每项注册资质和许可证均以Clarté Overseas名义持有——欢迎下载原件自行核查。",
+
+  "cert.hero_chip1": "6项可核验证书",
+
+  "cert.hero_chip2": "均以公司名义持有",
+
+  "cert.hero_chip3": "ISO 9001:2015认证",
+
+
+  "cert.our_eyebrow": "我们的资质",
+
+  "cert.our_heading": "已注册、已许可、可下载",
+
+  "cert.our_sub": "悬停查看证书详情，即可下载原件。这些是我们开展贸易所需、采购商首先核查的文件。",
+
+
+  "cert.cred1_authority": "印度食品安全与标准局",
+
+  "cert.cred1_desc": "我们的中央FSSAI许可证证明Clarté Overseas作为食品贸易商和出口商，在印度食品安全法律框架内合规运营——确保我们经手的每批产品均符合监管要求。",
+
+  "cert.cred2_authority": "商业部工业司对外贸易总局",
+
+  "cert.cred2_desc": "进出口商编码（IEC）是授权我们跨越印度国境进行货物贸易的许可证。任何货物出境均需此证——我们的编码处于有效状态且以公司名义持有。",
+
+  "cert.cred3_authority": "农业和加工食品出口发展局",
+
+  "cert.cred3_desc": "APEDA注册及其颁发的注册会员证（RCMC）标志着我们是获认可的农产品及加工食品出口商，覆盖我们全部原料品类。",
+
+  "cert.cred4_authority": "质量管理体系",
+
+  "cert.cred4_desc": "ISO 9001:2015认证表明我们的质量管理体系经过文件化、外部审核，并以一致性为目标构建——这套严谨的流程贯穿每一笔订单的始终。",
+
+  "cert.cred5_authority": "印度政府",
+
+  "cert.cred5_desc": "我们的商品及服务税（GST）注册确认Clarté Overseas是印度合规的纳税登记商业实体——这是每位合法出口商应具备的基本资质。",
+
+  "cert.cred6_authority": "微型、小型及中型企业部",
+
+  "cert.cred6_desc": "我们的Udyam注册使Clarté Overseas获印度中小微企业（MSME）框架认定，可享受针对成长型出口商的贸易便利化和融资支持优先政策。",
+
+
+  "cert.view": "查看",
+
+  "cert.verified": "已核验",
+
+  "cert.download": "下载",
+
+  "cert.file_note": "文件将在新标签页中打开。如需盖章或更新版本以备存档，请告知我们。",
+
+
+  "cert.partner_eyebrow": "合作网络",
+
+  "cert.partner_heading": "合作工厂持有的认证标准",
+
+  "cert.partner_sub": "除我们自身的资质许可外，我们合作的生产商均按国际公认的食品安全标准运营。展开面板查看每项认证的含义。",
+
+
+  "cert.std1_line": "食品安全管理",
+
+  "cert.std1_desc": "一项食品安全管理标准，在完整管理体系之上叠加HACCP原则——适用于加工我们原料的生产设施。",
+
+  "cert.std2_line": "危害控制",
+
+  "cert.std2_desc": "危害分析关键控制点（HACCP）：识别并控制加工各环节食品安全风险的预防性框架。",
+
+  "cert.std3_line": "零售级标准",
+
+  "cert.std3_desc": "GFSI认可的全球食品安全与质量标准，在欧洲及全球范围内被零售商和品牌商广泛要求。",
+
+  "cert.std4_line": "美国市场准入",
+
+  "cert.std4_desc": "供应美国市场产品的合作工厂持有美国FDA食品设施注册，满足进口美国的合规要求。",
+
+  "cert.std5_line": "清真认证市场",
+
+  "cert.std5_desc": "合作工厂持有清真认证，服务穆斯林主流市场和社区的采购商——按需安排。",
+
+  "cert.std6_line": "专项供应",
+
+  "cert.std6_desc": "通过合作工厂提供犹太洁食认证，满足市场有犹太洁食供应要求的采购商。",
+
+
+  "cert.std_note": "上述认证由我们经审核的生产合作伙伴在工厂层面持有和维护。我们会确认并安排您的订单和市场所需的具体认证——相关工厂证书可应要求提供。",
+
+
+  "cert.faq_eyebrow": "常见问题",
+
+  "cert.faq_heading": "认证与合规问答",
+
+  "cert.faq_sub": "采购商核查合作对象时最常询问的问题。",
+
+  "cert.faq1_q": "下单前能否查看贵公司证书？",
+
+  "cert.faq1_a": "可以。本页面上的每项公司资质均可直接下载——文件均为以Clarté Overseas名义颁发的正式证书。我们也欢迎通过邮件或WhatsApp分享最新副本或解答具体合规问题。",
+
+  "cert.faq2_q": "这些注册资质均以公司自身名义持有吗？",
+
+  "cert.faq2_a": "是的。GST、IEC、Udyam（MSME）、FSSAI、APEDA和ISO 9001:2015均以Clarté Overseas名义注册——并非借用第三方。可下载的证书原件清楚证明这一点。",
+
+  "cert.faq3_q": "贵公司产品是否持有食品安全认证？",
+
+  "cert.faq3_a": "我们作为食品出口商持有中央FSSAI许可证，我们合作的生产设施按ISO 22000、HACCP和BRCGS等公认标准运营。工厂级证书可应订单要求提供。",
+
+  "cert.faq4_q": "能否提供清真或犹太洁食认证产品？",
+
+  "cert.faq4_a": "可以，通过持有相关认证的合作工厂供货。请告知产品、目标市场及所需认证机构，我们将在您确认前核实可供性。",
+
+  "cert.faq5_q": "订单随货附带哪些文件？",
+
+  "cert.faq5_a": "标准出口文件包括商业发票、装箱单和原产地证书，以及产品规格说明书、实验室检测报告/分析报告，以及您的进口商所需的目标市场专项证书。",
+
+  "cert.faq6_q": "能否满足特定进口国的认证要求？",
+
+  "cert.faq6_a": "通常可以。请提供目的国和具体要求，我们将告知可行方案、所需文件及通过我们网络的安排方式。",
+
+  "cert.faq7_q": "贵公司的质量体系是否经过独立审核？",
+
+  "cert.faq7_a": "是的。我们运行ISO 9001:2015质量管理体系，对每批货物进行质量控制和实验室检测，并保持从原料到发货的完整批次溯源记录。",
+
+
+  "cert.cta_heading": "合规已就绪，谈谈产品吧。",
+
+  "cert.cta_sub": "告知我们您的需求及目标市场，我们将回复规格、样品以及贵方市场所需的认证资质。",
+
+  "cert.cta_btn_whatsapp": "WhatsApp 咨询",
+
+  "cert.cta_btn_enquire": "发送询盘",
+
+
+  "contact.hero_eyebrow": "联系我们",
+
+  "contact.hero_heading": "推进您的订单",
+
+  "contact.hero_sub": "无论您有具体的产品需求，还是想了解我们的供货范围，我们随时为您服务。",
+
+  "contact.info_office": "办公及发货",
+
+  "contact.info_email_label": "电子邮件",
+
+  "contact.info_phone_label": "电话及WhatsApp",
+
+  "contact.info_hours_label": "服务时间",
+
+  "contact.info_hours_val": "周一至周六，上午9时至晚7时（印度标准时间）",
+
+  "contact.form_eyebrow": "询盘表单",
+
+  "contact.form_heading": "请求报价",
+
+  "contact.form_name": "姓名",
+
+  "contact.form_company": "公司",
+
+  "contact.form_email": "电子邮件",
+
+  "contact.form_phone": "电话 / WhatsApp",
+
+  "contact.form_country": "目标国家/地区",
+
+  "contact.form_qty": "预计采购量",
+
+  "contact.form_category": "产品类别",
+
+  "contact.form_product": "具体产品",
+
+  "contact.form_requirement": "您的需求",
+
+  "contact.form_submit": "提交询盘",
+
+  "contact.talk_heading": "与真人沟通",
+
+  "contact.talk_sub": "选择您方便的方式联系我们，我们通常在工作时间内数小时内回复。",
+
+  "contact.talk_whatsapp": "WhatsApp 咨询",
+
+  "contact.map_badge": "印度新德里",
+
+  "contact.map_directions": "获取路线",
+
+  "contact.success_heading": "消息已发送——感谢您！",
+
+  "contact.success_body": "我们已收到您的询盘，将在24小时内回复。",
+
+  "contact.success_close": "关闭",
+
+
+  "products.hero_eyebrow": "我们的产品系列",
+
+  "products.hero_heading": "脱水粉末原料，专为全球食品生产商研磨",
+
+  "products.hero_sub": "五大专注品类，均在印度种植和加工，实现纯净风味、真实色泽及可靠的规格驱动供应。选择品类查看完整系列。",
+
+  "products.hero_chip1": "100%天然",
+
+  "products.hero_chip2": "规格驱动供应",
+
+  "products.hero_chip3": "支持贴牌",
+
+  "products.cat_herbal_leaf_powders_name": "草本叶粉",
+
+  "products.cat_herbal_leaf_powders_desc": "印度各地种植的叶类草本，经低温慢干以保留深绿色泽和天然活性成分，研磨成洁净均匀的粉末，适用于膳食补充剂、功能性食品和调味料。",
+
+  "products.cat_culinary_spice_powders_name": "烹饪与香辛料粉",
+
+  "products.cat_culinary_spice_powders_desc": "洋葱、大蒜、生姜和辣椒——全球厨房和食品工厂的主力军。辛辣度稳定，风味纯正，提供从细粉到碎片在内的全系列规格。",
+
+  "products.cat_functional_nutritional_powders_name": "功能与营养型粉末",
+
+  "products.cat_functional_nutritional_powders_desc": "甜菜根、番茄、胡萝卜、柠檬等——精选具有天然色素、营养价值和清洁标签功能的蔬果粉末，适用于膳食补充剂、调味料、汤品和方便食品。",
+
+  "products.cat_fruit_powders_name": "脱水果粉",
+
+  "products.cat_fruit_powders_desc": "印度单一产地水果，经温和干燥研磨成流动性好的粉末，保留色泽、酸甜口感和天然甜度——专为饮料、烘焙、乳制品、糖果和保健品而生产。",
+
+  "products.cat_hydrocolloids_food_additives_name": "水胶体及食品添加剂",
+
+  "products.cat_hydrocolloids_food_additives_desc": "印度是全球植物胶和膳食纤维的核心产地。我们供应瓜尔胶、车前子胶、罗望子籽胶和决明胶衍生物，适用于食品、饮料、医药和工业应用。",
+
+
+  "products.cat_explore": "浏览系列",
+
+  "products.cat_count_unit": "个产品",
+
+  "products.forms_unit": "种形态",
+
+  "products.view_details": "查看详情",
+
+  "products.enquire": "发送询盘",
+
+
+  "cat.meta_count_unit": "个产品",
+
+  "cat.meta_origin": "出口级，产自印度",
+
+  "cat.meta_private": "支持贴牌",
+
+
+  "cat.prod_guava_powder_name": "番石榴粉",
+
+  "cat.prod_guava_powder_tagline": "热带芳香与柔和粉白色泽，易于分散。",
+
+  "cat.prod_pineapple_powder_name": "菠萝粉",
+
+  "cat.prod_pineapple_powder_tagline": "阳光甜酸口感与金黄色泽，稳定的粉末形态。",
+
+  "cat.prod_banana_powder_name": "香蕉粉",
+
+  "cat.prod_banana_powder_tagline": "顺滑温润甜感，天然饱腹感。",
+
+  "cat.prod_apple_powder_name": "苹果粉",
+
+  "cat.prod_apple_powder_tagline": "清脆果园鲜甜，持久保存。",
+
+  "cat.prod_mango_powder_name": "芒果粉",
+
+  "cat.prod_mango_powder_tagline": "水果之王，在最佳成熟度时定格。",
+
+  "cat.prod_amla_powder_name": "余甘子粉（印度醋栗粉）",
+
+  "cat.prod_amla_powder_tagline": "印度醋栗——维生素C的强效来源。",
+
+  "cat.prod_tamarind_powder_name": "罗望子果肉粉",
+
+  "cat.prod_tamarind_powder_tagline": "浓郁酸甜口感，适用于酱汁和调味料。",
+
+  "cat.prod_papaya_powder_name": "木瓜粉",
+
+  "cat.prod_papaya_powder_tagline": "温和甜润的热带水果，含天然酶。",
+
+  "cat.prod_red_onion_powder_name": "红洋葱粉",
+
+  "cat.prod_red_onion_powder_tagline": "浓郁风味的印度红洋葱——每种形态均带来丰富鲜咸感。",
+
+  "cat.prod_pink_onion_powder_name": "粉洋葱粉",
+
+  "cat.prod_pink_onion_powder_tagline": "印度精致粉洋葱——温和甜润，用途极为广泛。",
+
+  "cat.prod_white_onion_powder_name": "白洋葱粉",
+
+  "cat.prod_white_onion_powder_tagline": "洁净温和洋葱风味，浅色中性色泽。",
+
+  "cat.prod_garlic_powder_name": "大蒜粉",
+
+  "cat.prod_garlic_powder_tagline": "浓郁印度大蒜，提供干燥、片状和粉末多种形态。",
+
+  "cat.prod_ginger_powder_name": "生姜粉",
+
+  "cat.prod_ginger_powder_tagline": "印度生姜带来温暖辛辣芳香。",
+
+  "cat.prod_green_chilli_powder_name": "青辣椒粉",
+
+  "cat.prod_green_chilli_powder_tagline": "片状和细粉中保留的清新绿色辛辣感。",
+
+  "cat.prod_fried_onion_name": "炸洋葱",
+
+  "cat.prod_fried_onion_tagline": "香脆金黄、浓郁鲜咸——随时可用于装饰或混合。",
+
+  "cat.prod_lemon_powder_name": "柠檬粉",
+
+  "cat.prod_lemon_powder_tagline": "清爽柑橘酸香，精准定量添加。",
+
+  "cat.prod_beetroot_powder_name": "甜菜根粉",
+
+  "cat.prod_beetroot_powder_tagline": "天然深红色泽，富含土香营养。",
+
+  "cat.prod_tomato_powder_name": "番茄粉",
+
+  "cat.prod_tomato_powder_tagline": "浓缩番茄风味与色泽。",
+
+  "cat.prod_carrot_powder_name": "胡萝卜粉",
+
+  "cat.prod_carrot_powder_tagline": "甘甜橙红色泽，富含天然β-胡萝卜素。",
+
+  "cat.prod_jackfruit_powder_name": "菠萝蜜粉",
+
+  "cat.prod_jackfruit_powder_tagline": "印度超级水果——甘甜饱腹，深受市场追捧。",
+
+  "cat.prod_moringa_powder_name": "辣木粉",
+
+  "cat.prod_moringa_powder_tagline": "\"奇迹树\"叶片，干燥后保留翠绿色泽。",
+
+  "cat.prod_curry_leaf_powder_name": "咖喱叶粉",
+
+  "cat.prod_curry_leaf_powder_tagline": "南印度芳香叶片，干燥研磨而成。",
+
+  "cat.prod_tulsi_powder_name": "圣罗勒粉（图尔西粉）",
+
+  "cat.prod_tulsi_powder_tagline": "印度神圣适应原草本。",
+
+  "cat.prod_guar_gum_powder_name": "瓜尔胶粉",
+
+  "cat.prod_guar_gum_powder_tagline": "印度旗舰增稠剂——从冰淇淋到油田均有应用。",
+
+  "cat.prod_psyllium_husk_powder_name": "车前子壳粉（洋车前子）",
+
+  "cat.prod_psyllium_husk_powder_tagline": "全球首选可溶性膳食纤维，产自印度。",
+
+  "cat.prod_tamarind_kernel_powder_name": "罗望子籽粉",
+
+  "cat.prod_tamarind_kernel_powder_tagline": "多功能天然增稠剂和上浆剂。",
+
+  "cat.prod_cassia_gum_powder_name": "决明胶粉",
+
+  "cat.prod_cassia_gum_powder_tagline": "适用于食品和宠物食品的凝胶与稳定胶体。",
+
+
+  "prod.zoom_hint": "悬停放大 · 点击查看大图",
+
+  "prod.available_in": "可供形态",
+
+  "prod.enquire_btn": "询盘 / 请求报价",
+
+  "prod.whatsapp_btn": "WhatsApp",
+
+  "prod.quickspec_form": "已选形态",
+
+  "prod.quickspec_processing": "加工方式",
+
+  "prod.quickspec_origin": "产地",
+
+  "prod.origin_value": "印度",
+
+  "prod.features_heading": "核心特点",
+
+  "prod.uses_heading": "适用领域",
+
+  "prod.grades_heading": "常见规格",
+
+  "prod.spec_heading": "产品规格",
+
+  "prod.spec_hsn": "HSN编码",
+
+  "prod.spec_botanical": "植物学名",
+
+  "prod.spec_forms": "可供形态",
+
+  "prod.spec_processing": "加工方式",
+
+  "prod.spec_shelf": "保质期",
+
+  "prod.spec_packaging": "包装",
+
+  "prod.spec_moq": "MOQ",
+
+  "prod.spec_origin": "产地",
+
+  "prod.get_pricing": "获取报价及样品",
+
+  "prod.spec_note": "规格为参考值，可根据贵方配方需求调整。完整COA及规格表可应要求提供。",
+
+  "prod.related_prefix": "更多来自",
+
+  "prod.view_all": "查看全部",
+
+
+  "enq.eyebrow": "询盘",
+
+  "enq.title": "请求报价",
+
+  "enq.sub": "简要描述您的需求——我们通常在一个工作日内回复，当天回复亦属常见。",
+
+  "enq.field_name": "姓名",
+
+  "enq.field_company": "公司",
+
+  "enq.field_email": "电子邮件",
+
+  "enq.field_phone": "电话 / WhatsApp",
+
+  "enq.field_country": "目标国家/地区",
+
+  "enq.field_requirement": "您的需求",
+
+  "enq.ph_name": "您的姓名",
+
+  "enq.ph_company": "公司名称",
+
+  "enq.ph_email": "you@company.com",
+
+  "enq.ph_phone": "+86 XXX XXXX XXXX",
+
+  "enq.ph_country": "货物目的地",
+
+  "enq.ph_requirement": "数量、规格、形态、目标国家/地区、目标价格……",
+
+  "enq.submit": "提交询盘",
+
+  "enq.sending": "发送中……",
+
+  "enq.general": "一般询盘",
+
+  "enq.done_title": "询盘已发送——感谢您！",
+
+  "enq.done_body": "我们已收到您的留言，将在一个工作日内回复。",
+
+  "enq.done_btn": "完成",
+
+
+  "blog.hero_eyebrow": "Clarté 博客",
+
+  "blog.hero_heading": "关于脱水食品、原料及印度出口的实用资讯",
+
+  "blog.hero_sub": "为从事干制食品原料买卖的各界人士提供实用参考：市场动态、采购指南及全球供应链经验分享。",
+
+  "blog.hero_chip1": "采购指南",
+
+  "blog.hero_chip2": "品质与规格",
+
+  "blog.hero_chip3": "市场趋势",
+
+  "blog.post_dehydrated_foods_future_of_food_manufacturing_title": "为何脱水食品正悄然成为食品制造业的核心支柱",
+
+  "blog.post_dehydrated_foods_future_of_food_manufacturing_excerpt": "粉末和片状产品曾是折中之选，如今已跻身现代食品生产的核心地位。以下是这一转变背后的原因。",
+
+  "blog.post_india_dehydrated_food_exports_growth_title": "印度脱水食品出口快速增长，背后驱动因素解析",
+
+  "blog.post_india_dehydrated_food_exports_growth_excerpt": "从作物多样性到加工能力升级，多重力量正推动印度在脱水果蔬和粉末原料的全球市场中持续攀升。",
+
+  "blog.post_flake_granule_or_powder_choosing_the_right_form_title": "片状、颗粒还是粉末？如何为您的配方选择合适的形态",
+
+  "blog.post_flake_granule_or_powder_choosing_the_right_form_excerpt": "同一种蔬菜可以片状、颗粒或细粉的形式供货。选对形态可节省成本、减少浪费，省去不少麻烦。",
+
+  "blog.post_how_to_read_a_dehydrated_ingredient_spec_sheet_title": "如何读懂脱水原料规格表（无需穿实验室外套）",
+
+  "blog.post_how_to_read_a_dehydrated_ingredient_spec_sheet_excerpt": "水分、目数、微生物指标——用通俗语言解读那些真正决定原料是否适合您的数据。",
+
+  "blog.post_building_a_reliable_india_sourcing_strategy_title": "如何建立可靠的印度食品原料采购策略",
+
+  "blog.post_building_a_reliable_india_sourcing_strategy_excerpt": "从印度采购可以顺畅，也可以充满压力。差异通常在于首批订单出货前的几个早期决策。",
+
+  "blog.read_article": "阅读全文",
+
+  "blog.more_posts": "更多博客文章",
+
+  "blog.read_btn": "阅读",
+
+  "blog.faq_eyebrow": "常见问题",
+
+  "blog.faq_heading": "采购商常问我们的问题",
+
+  "blog.faq_sub": "进口商和生产商在联系我们前最常想了解的问题。",
+
+  "blog.faq1_q": "Clarté Overseas 出口哪些产品？",
+
+  "blog.faq1_a": "脱水果蔬（片状和粉末形态）、草本叶粉、烹饪与香辛料粉、功能与营养型粉末、果粉原料，以及水胶体和食品添加剂。",
+
+  "blog.faq2_q": "批量下单前能否寄送样品？",
+
+  "blog.faq2_a": "可以。我们鼓励先进行试订单或索取样品，以便在提交整柜订单前，以小批量测试产品品质、文件规范和我们的沟通效率。",
+
+  "blog.faq3_q": "能提供哪些形态和规格？",
+
+  "blog.faq3_a": "片状、颗粒和细粉，可根据您的配方定制目数和规格。如不确定哪种形态适合您的产品，我们乐意提供专业建议。",
+
+  "blog.faq4_q": "贵公司服务哪些市场？",
+
+  "blog.faq4_a": "我们与英国、欧洲、海湾地区和澳大利亚的采购商合作，并正积极开拓全球更多市场。",
+
+  "blog.faq5_q": "贵公司提供哪些认证和文件？",
+
+  "blog.faq5_a": "我们已完成GST、IEC和RCMC注册，持有FSSAI和ISO 9001认证，并处理完整的出口文件，包括商业发票、装箱单和原产地证书。",
+
+  "blog.faq6_q": "最小起订量和交货周期如何？",
+
+  "blog.faq6_a": "我们保持试订单友好型MOQ，支持小批量起订，从确认订单到发货的典型周期为两至四周。贴牌和定制包装可应要求提供。",
+
+  "blog.cta_heading": "有采购相关问题？",
+
+  "blog.cta_sub": "告知我们产品和目标市场，我们将回复规格、样品及以您货币计价的报价。",
+
+  "blog.cta_btn_whatsapp": "WhatsApp 咨询",
+
+  "blog.cta_btn_enquire": "发送询盘",
+
+  "blog.back": "返回博客",
+
+  "blog.keep_reading": "继续阅读",
+
+  "blog.detail_cta_heading": "聊聊原料采购",
+
+  "blog.detail_cta_sub": "告知我们您的采购需求及目标市场，我们将回复规格、样品及报价。",
+
+
+  "prod.drying_fruit": "喷雾干燥、冷冻干燥或滚筒干燥——按规格定制",
+
+  "prod.drying_culinary": "热风干燥、喷雾干燥或冷冻干燥——按规格定制",
+
+  "prod.drying_herbal": "遮阴干燥、热风干燥或冷冻干燥——按规格定制",
+
+  "prod.drying_milled": "机械研磨至规格要求",
+
+  "prod.drying_default": "脱水",
+
+  "prod.spec_shelf_value": "18至24个月",
+
+  "prod.spec_packaging_value": "25公斤牛皮纸袋附食品级内衬（可定制包装）",
+
+  "prod.spec_moq_value": "提供试订单数量，可扩展至整柜",
+
+
+  "prod.guava_powder_desc": "采用成熟印度番石榴制成，我们的番石榴粉在任何配方中均能保留水果的麝香甜香和温和酸度。复水洁净，混合不结块，让您在配方中获得真实的番石榴特征，而无需承担鲜果的水分或短保质期问题。",
+
+  "prod.guava_powder_f1": "100%水果，无添加糖或色素",
+
+  "prod.guava_powder_f2": "天然番石榴香气鲜明",
+
+  "prod.guava_powder_f3": "流动性好，易于分散",
+
+  "prod.guava_powder_f4": "保质期长，品质稳定",
+
+  "prod.guava_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.guava_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.guava_powder_u1": "果汁、花蜜和冰沙混合料",
+
+  "prod.guava_powder_u2": "烘焙馅料和糖果",
+
+  "prod.guava_powder_u3": "风味乳制品和冰淇淋",
+
+  "prod.guava_powder_u4": "保健品和婴儿食品混合料",
+
+  "prod.guava_powder_g1": "食品级",
+
+  "prod.guava_powder_g2": "80至100目（可定制）",
+
+  "prod.guava_powder_g3": "含水量 ≤ 5%",
+
+  "prod.guava_powder_g4": "贴牌 / 散装",
+
+
+  "prod.pineapple_powder_desc": "我们的菠萝粉以货架稳定的形态浓缩了热带菠萝明亮酸甜的风味特征。在不适合使用液态菠萝的场景中，它是理想选择，为产品提供真实风味和温暖金黄色调。",
+
+  "prod.pineapple_powder_f1": "真实菠萝酸甜口感和香气",
+
+  "prod.pineapple_powder_f2": "天然金黄色泽",
+
+  "prod.pineapple_powder_f3": "快速溶于水",
+
+  "prod.pineapple_powder_f4": "无人工添加剂",
+
+  "prod.pineapple_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.pineapple_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.pineapple_powder_u1": "饮料和鸡尾酒预混料",
+
+  "prod.pineapple_powder_u2": "烘焙、甜点和淋酱",
+
+  "prod.pineapple_powder_u3": "酸奶和乳制品调味",
+
+  "prod.pineapple_powder_u4": "腌料和调味汁",
+
+  "prod.pineapple_powder_g1": "食品级",
+
+  "prod.pineapple_powder_g2": "80至100目（可定制）",
+
+  "prod.pineapple_powder_g3": "含水量 ≤ 5%",
+
+  "prod.pineapple_powder_g4": "贴牌 / 散装",
+
+
+  "prod.banana_powder_desc": "由成熟香蕉研磨而成，这款粉末为配方带来温润甜感和奶油般的口感，并具有天然增稠效果。凭借温和风味和易消化特性，它深受婴幼儿营养和运动配方领域的青睐。",
+
+  "prod.banana_powder_f1": "天然甜味，无添加糖",
+
+  "prod.banana_powder_f2": "增添饱腹感和顺滑质构",
+
+  "prod.banana_powder_f3": "易于复水",
+
+  "prod.banana_powder_f4": "甜咸两用，用途广泛",
+
+  "prod.banana_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.banana_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.banana_powder_u1": "婴幼儿营养食品",
+
+  "prod.banana_powder_u2": "冰沙和蛋白质混合料",
+
+  "prod.banana_powder_u3": "烘焙和松饼预混料",
+
+  "prod.banana_powder_u4": "谷物和休闲食品涂层",
+
+  "prod.banana_powder_g1": "食品级",
+
+  "prod.banana_powder_g2": "80至100目（可定制）",
+
+  "prod.banana_powder_g3": "含水量 ≤ 5%",
+
+  "prod.banana_powder_g4": "贴牌 / 散装",
+
+
+  "prod.apple_powder_desc": "我们的苹果粉以便捷的干粉形态呈现鲜苹果标志性的甜酸口感，易于融入干混料和烘焙产品，为配方增添果味、天然风味和一抹果胶的饱满感。",
+
+  "prod.apple_powder_f1": "苹果甜酸风味特征鲜明",
+
+  "prod.apple_powder_f2": "清洁标签，单一原料",
+
+  "prod.apple_powder_f3": "在干混料中分布均匀",
+
+  "prod.apple_powder_f4": "保质期长",
+
+  "prod.apple_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.apple_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.apple_powder_u1": "谷物、麦片和营养棒",
+
+  "prod.apple_powder_u2": "烘焙和麦脆混合料",
+
+  "prod.apple_powder_u3": "茶饮和速溶饮料",
+
+  "prod.apple_powder_u4": "酱汁和婴幼儿食品",
+
+  "prod.apple_powder_g1": "食品级",
+
+  "prod.apple_powder_g2": "80至100目（可定制）",
+
+  "prod.apple_powder_g3": "含水量 ≤ 5%",
+
+  "prod.apple_powder_g4": "贴牌 / 散装",
+
+
+  "prod.mango_powder_desc": "由香甜、完全成熟的印度芒果压榨而成，这款粉末保留了芒果独特的馥郁香气和深金黄色泽。它是需要真实芒果特征的饮料、甜点和乳制品的自然之选。",
+
+  "prod.mango_powder_f1": "成熟阿尔方索/托塔普里芒果风味",
+
+  "prod.mango_powder_f2": "色泽鲜亮，天然金黄",
+
+  "prod.mango_powder_f3": "溶解性优异",
+
+  "prod.mango_powder_f4": "无添加糖或香精",
+
+  "prod.mango_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.mango_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.mango_powder_u1": "芒果拉西、果汁和奶昔",
+
+  "prod.mango_powder_u2": "冰淇淋和乳制甜点",
+
+  "prod.mango_powder_u3": "烘焙、馅料和糖果",
+
+  "prod.mango_powder_u4": "营养和早餐混合料",
+
+  "prod.mango_powder_g1": "食品级",
+
+  "prod.mango_powder_g2": "80至100目（可定制）",
+
+  "prod.mango_powder_g3": "含水量 ≤ 5%",
+
+  "prod.mango_powder_g4": "贴牌 / 散装",
+
+
+  "prod.amla_powder_desc": "余甘子（即印度醋栗）是阿育吠陀中最珍贵的果实之一。我们的余甘子粉保留其天然酸涩特征，因其抗氧化美誉而被广泛应用于膳食补充剂、护发护肤品及功能性食品。",
+
+  "prod.amla_powder_f1": "天然维生素C含量丰富",
+
+  "prod.amla_powder_f2": "独特酸涩口感鲜明",
+
+  "prod.amla_powder_f3": "受信赖的阿育吠陀原料",
+
+  "prod.amla_powder_f4": "洁净单一原料",
+
+  "prod.amla_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.amla_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.amla_powder_u1": "膳食补充剂和片剂",
+
+  "prod.amla_powder_u2": "发油和化妆品",
+
+  "prod.amla_powder_u3": "功能饮料和传统药粉",
+
+  "prod.amla_powder_u4": "草本混合料和茶饮",
+
+  "prod.amla_powder_g1": "食品级/保健品级",
+
+  "prod.amla_powder_g2": "80至100目（可定制）",
+
+  "prod.amla_powder_g3": "含水量 ≤ 7%",
+
+  "prod.amla_powder_g4": "贴牌 / 散装",
+
+
+  "prod.tamarind_powder_desc": "我们的罗望子果肉粉将罗望子浆的浓郁酸甜风味浓缩为易于定量添加的干粉形态。免去果膏和果籽的处理麻烦，同时为酱汁、辣酱和香辛料混合料提供稳定的酸度。",
+
+  "prod.tamarind_powder_f1": "浓缩酸甜风味",
+
+  "prod.tamarind_powder_f2": "酸度稳定，无果籽",
+
+  "prod.tamarind_powder_f3": "易于称量和分散",
+
+  "prod.tamarind_powder_f4": "保质期长",
+
+  "prod.tamarind_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.tamarind_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.tamarind_powder_u1": "酱汁、辣酱和番茄酱",
+
+  "prod.tamarind_powder_u2": "香辛料和调味料混合",
+
+  "prod.tamarind_powder_u3": "汤品、肉汤和速溶混合料",
+
+  "prod.tamarind_powder_u4": "糖果和饮料",
+
+  "prod.tamarind_powder_g1": "食品级",
+
+  "prod.tamarind_powder_g2": "60至80目（可定制）",
+
+  "prod.tamarind_powder_g3": "含水量 ≤ 7%",
+
+  "prod.tamarind_powder_g4": "贴牌 / 散装",
+
+
+  "prod.papaya_powder_desc": "木瓜粉带来温和甜润的热带风味，同时含有水果中天然存在的酶。它适用于营养混合料和消化类配方，并为饮料和甜点增添轻柔的果香。",
+
+  "prod.papaya_powder_f1": "温和甜润的木瓜口感",
+
+  "prod.papaya_powder_f2": "含天然酶",
+
+  "prod.papaya_powder_f3": "质地顺滑细腻",
+
+  "prod.papaya_powder_f4": "洁净单一原料标签",
+
+  "prod.papaya_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.papaya_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.papaya_powder_u1": "消化和营养混合料",
+
+  "prod.papaya_powder_u2": "冰沙和饮料",
+
+  "prod.papaya_powder_u3": "护肤品和化妆品",
+
+  "prod.papaya_powder_u4": "甜点和烘焙",
+
+  "prod.papaya_powder_g1": "食品级",
+
+  "prod.papaya_powder_g2": "80至100目（可定制）",
+
+  "prod.papaya_powder_g3": "含水量 ≤ 5%",
+
+  "prod.papaya_powder_g4": "贴牌 / 散装",
+
+
+  "prod.red_onion_powder_desc": "我们的红洋葱粉采用印度深红大洋葱制成，以其强烈辛辣和深厚色泽著称。它为调味料、酱汁和方便食品带来浓郁复合的洋葱风味——从细粉到碎片全系列可选，结果一致，无需处理或浪费。",
+
+  "prod.red_onion_powder_f1": "强烈浓郁的红洋葱辛辣感",
+
+  "prod.red_onion_powder_f2": "色泽深厚，批次间一致",
+
+  "prod.red_onion_powder_f3": "提供五种切割规格",
+
+  "prod.red_onion_powder_f4": "无需剥皮、切割，不会腐坏",
+
+  "prod.red_onion_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.red_onion_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.red_onion_powder_u1": "调味料和香辛料混合",
+
+  "prod.red_onion_powder_u2": "休闲食品、酱汁和沙拉酱",
+
+  "prod.red_onion_powder_u3": "方便食品、汤品和浓汁",
+
+  "prod.red_onion_powder_u4": "肉类腌料和抹料",
+
+  "prod.red_onion_powder_g1": "食品级",
+
+  "prod.red_onion_powder_g2": "定制目数 / 切割规格",
+
+  "prod.red_onion_powder_g3": "含水量 ≤ 6%",
+
+  "prod.red_onion_powder_g4": "贴牌 / 散装",
+
+
+  "prod.pink_onion_powder_desc": "采用印度珍贵粉洋葱制成——比深红品种色泽更浅、风味更温和——这款粉末为追求细腻口感的产品带来温和均衡的甜味。其淡粉色调适用于不希望被深色洋葱粉影响外观的浅色调味料、沙拉酱和奶油酱汁。",
+
+  "prod.pink_onion_powder_f1": "温和均衡的甜味",
+
+  "prod.pink_onion_powder_f2": "淡粉色泽——不会使产品变暗",
+
+  "prod.pink_onion_powder_f3": "提供五种切割规格",
+
+  "prod.pink_onion_powder_f4": "风味温和，适合精致调味料",
+
+  "prod.pink_onion_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.pink_onion_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.pink_onion_powder_u1": "沙拉酱、蘸酱和浅色酱汁",
+
+  "prod.pink_onion_powder_u2": "调味料和香辛料混合",
+
+  "prod.pink_onion_powder_u3": "汤品和奶油基菜肴",
+
+  "prod.pink_onion_powder_u4": "休闲食品和咸味涂层",
+
+  "prod.pink_onion_powder_g1": "食品级",
+
+  "prod.pink_onion_powder_g2": "定制目数 / 切割规格",
+
+  "prod.pink_onion_powder_g3": "含水量 ≤ 6%",
+
+  "prod.pink_onion_powder_g4": "贴牌 / 散装",
+
+
+  "prod.white_onion_powder_desc": "白洋葱粉风味更洁净温和，色泽浅白，不会为浅色产品带来色差。它是白色酱汁、汤品、沙拉酱及调味料混合中外观与口感同样重要时的首选。",
+
+  "prod.white_onion_powder_f1": "温和洁净的洋葱风味",
+
+  "prod.white_onion_powder_f2": "浅色，适合浅色产品",
+
+  "prod.white_onion_powder_f3": "提供五种切割规格",
+
+  "prod.white_onion_powder_f4": "供应均匀稳定",
+
+  "prod.white_onion_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.white_onion_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.white_onion_powder_u1": "白色酱汁和奶油汤品",
+
+  "prod.white_onion_powder_u2": "沙拉酱和蘸酱",
+
+  "prod.white_onion_powder_u3": "调味料和休闲食品混合",
+
+  "prod.white_onion_powder_u4": "烘焙和咸味馅料",
+
+  "prod.white_onion_powder_g1": "食品级",
+
+  "prod.white_onion_powder_g2": "定制目数 / 切割规格",
+
+  "prod.white_onion_powder_g3": "含水量 ≤ 6%",
+
+  "prod.white_onion_powder_g4": "贴牌 / 散装",
+
+
+  "prod.garlic_powder_desc": "我们的大蒜经脱水处理以锁住其鲜辣咸香，提供整粒干蒜、蒜片和蒜粉多种形态。它为任何配方带来即时大蒜风味，强度稳定，外观洁白。",
+
+  "prod.garlic_powder_f1": "辛辣，真实大蒜风味",
+
+  "prod.garlic_powder_f2": "提供干燥、片状和粉末形态",
+
+  "prod.garlic_powder_f3": "色泽洁白",
+
+  "prod.garlic_powder_f4": "保质期长，品质稳定",
+
+  "prod.garlic_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.garlic_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.garlic_powder_u1": "调味料和香辛料混合",
+
+  "prod.garlic_powder_u2": "酱汁、浓汁和腌料",
+
+  "prod.garlic_powder_u3": "休闲食品和咸味涂层",
+
+  "prod.garlic_powder_u4": "方便食品和速食产品",
+
+  "prod.garlic_powder_g1": "食品级",
+
+  "prod.garlic_powder_g2": "定制目数 / 切割规格",
+
+  "prod.garlic_powder_g3": "含水量 ≤ 6%",
+
+  "prod.garlic_powder_g4": "贴牌 / 散装",
+
+
+  "prod.ginger_powder_desc": "印度生姜以其温热感和高辛辣度享誉全球。我们提供干燥和细粉两种形态，将根茎的辛辣热感和柑橘香气融入饮料、烘焙、香辛料混合料和健康产品中。",
+
+  "prod.ginger_powder_f1": "温热辛辣，香气浓郁",
+
+  "prod.ginger_powder_f2": "提供干燥和粉末形态",
+
+  "prod.ginger_powder_f3": "挥发油含量高",
+
+  "prod.ginger_powder_f4": "食品和健康领域用途广泛",
+
+  "prod.ginger_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.ginger_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.ginger_powder_u1": "香辛料混合和咖喱粉",
+
+  "prod.ginger_powder_u2": "茶饮、拿铁和饮料",
+
+  "prod.ginger_powder_u3": "烘焙、饼干和姜饼",
+
+  "prod.ginger_powder_u4": "膳食补充剂和草本混合料",
+
+  "prod.ginger_powder_g1": "食品级",
+
+  "prod.ginger_powder_g2": "80至100目（可定制）",
+
+  "prod.ginger_powder_g3": "含水量 ≤ 8%",
+
+  "prod.ginger_powder_g4": "贴牌 / 散装",
+
+
+  "prod.green_chilli_powder_desc": "脱水青辣椒保留其鲜亮的草香辛辣感和天然绿色。提供片状和细粉两种形态，为调味料、休闲食品和酱汁带来洁净、可控的辛辣感，无鲜辣椒的水分困扰。",
+
+  "prod.green_chilli_powder_f1": "鲜绿色泽，清新辛辣",
+
+  "prod.green_chilli_powder_f2": "提供片状和粉末形态",
+
+  "prod.green_chilli_powder_f3": "辛辣度可控，批次一致",
+
+  "prod.green_chilli_powder_f4": "避免鲜辣椒腐坏损耗",
+
+  "prod.green_chilli_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.green_chilli_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.green_chilli_powder_u1": "调味料和休闲食品涂层",
+
+  "prod.green_chilli_powder_u2": "酱汁、蘸酱和辣酱",
+
+  "prod.green_chilli_powder_u3": "腌料和抹料",
+
+  "prod.green_chilli_powder_u4": "速食和方便食品",
+
+  "prod.green_chilli_powder_g1": "食品级",
+
+  "prod.green_chilli_powder_g2": "片状 / 60至80目",
+
+  "prod.green_chilli_powder_g3": "含水量 ≤ 8%",
+
+  "prod.green_chilli_powder_g4": "贴牌 / 散装",
+
+
+  "prod.fried_onion_desc": "我们的炸洋葱选用优质印度洋葱，切片后油炸至深金黄色，带来浓郁焦糖化风味，无任何苦涩感。提供酥脆片状用于装饰，以及细粉用于混合调味料、酱汁和方便食品，无需烹饪即可增添即时层次感。",
+
+  "prod.fried_onion_f1": "深金黄色泽，焦糖化风味",
+
+  "prod.fried_onion_f2": "提供片状和粉末形态",
+
+  "prod.fried_onion_f3": "即用型，无需烹饪",
+
+  "prod.fried_onion_f4": "保质期长",
+
+  "prod.fried_onion_f5": "可按需定制目数、包装及贴牌",
+
+  "prod.fried_onion_u1": "米饭、印度香米饭和面条的装饰",
+
+  "prod.fried_onion_u2": "调味料和香辛料混合",
+
+  "prod.fried_onion_u3": "方便食品和速溶汤",
+
+  "prod.fried_onion_u4": "酱汁、浓汁和沙拉酱",
+
+  "prod.fried_onion_g1": "食品级",
+
+  "prod.fried_onion_g2": "片状 / 60至80目粉末",
+
+  "prod.fried_onion_g3": "含水量 ≤ 5%",
+
+  "prod.fried_onion_g4": "贴牌 / 散装",
+
+
+  "prod.lemon_powder_desc": "柠檬粉为干混料带来洁净清爽的柑橘酸味和香气，无需加入液体。适用于需要精准稳定柠檬风味的调味料、饮料和烘焙产品。",
+
+  "prod.lemon_powder_f1": "清新天然柑橘酸香",
+
+  "prod.lemon_powder_f2": "干粉形态，定量便捷",
+
+  "prod.lemon_powder_f3": "分散性好",
+
+  "prod.lemon_powder_f4": "无添加酸味剂",
+
+  "prod.lemon_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.lemon_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.lemon_powder_u1": "调味料和香辛料腌料",
+
+  "prod.lemon_powder_u2": "速溶饮料和茶饮",
+
+  "prod.lemon_powder_u3": "烘焙和糖果",
+
+  "prod.lemon_powder_u4": "腌料和沙拉酱",
+
+  "prod.lemon_powder_g1": "食品级",
+
+  "prod.lemon_powder_g2": "80至100目（可定制）",
+
+  "prod.lemon_powder_g3": "含水量 ≤ 5%",
+
+  "prod.lemon_powder_g4": "贴牌 / 散装",
+
+
+  "prod.beetroot_powder_desc": "甜菜根粉带来醒目的天然深红色泽，以及根茎的土香甜味和丰富营养。它是清洁标签天然着色、运动营养和功能性食品的热门选择。",
+
+  "prod.beetroot_powder_f1": "鲜艳天然红色",
+
+  "prod.beetroot_powder_f2": "清洁标签天然着色剂",
+
+  "prod.beetroot_powder_f3": "土香微甜口感",
+
+  "prod.beetroot_powder_f4": "运动营养领域广受欢迎",
+
+  "prod.beetroot_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.beetroot_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.beetroot_powder_u1": "天然食品着色",
+
+  "prod.beetroot_powder_u2": "运动和营养混合料",
+
+  "prod.beetroot_powder_u3": "烘焙、意面和休闲食品",
+
+  "prod.beetroot_powder_u4": "冰沙和拿铁",
+
+  "prod.beetroot_powder_g1": "食品级",
+
+  "prod.beetroot_powder_g2": "80至100目（可定制）",
+
+  "prod.beetroot_powder_g3": "含水量 ≤ 6%",
+
+  "prod.beetroot_powder_g4": "贴牌 / 散装",
+
+
+  "prod.tomato_powder_desc": "由成熟红番茄制成，这款粉末以货架稳定的形态浓缩了番茄咸鲜甜美的风味和浓郁色泽。可复水成酱或浓汁，是汤品、调味料和方便食品的主力原料。",
+
+  "prod.tomato_powder_f1": "浓郁鲜味番茄风味",
+
+  "prod.tomato_powder_f2": "深红天然色泽",
+
+  "prod.tomato_powder_f3": "可复水成酱汁或酱料",
+
+  "prod.tomato_powder_f4": "节省空间和成本",
+
+  "prod.tomato_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.tomato_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.tomato_powder_u1": "汤品、酱汁和番茄酱",
+
+  "prod.tomato_powder_u2": "调味料和休闲食品粉料",
+
+  "prod.tomato_powder_u3": "方便食品和速食产品",
+
+  "prod.tomato_powder_u4": "烘焙和咸味混合料",
+
+  "prod.tomato_powder_g1": "食品级",
+
+  "prod.tomato_powder_g2": "60至100目（可定制）",
+
+  "prod.tomato_powder_g3": "含水量 ≤ 5%",
+
+  "prod.tomato_powder_g4": "贴牌 / 散装",
+
+
+  "prod.carrot_powder_desc": "胡萝卜粉带来蔬菜天然甜味和温暖橙红色泽，以及众所周知的β-胡萝卜素。广泛应用于婴幼儿食品、汤品、调味料和天然着色。",
+
+  "prod.carrot_powder_f1": "天然橙红色泽",
+
+  "prod.carrot_powder_f2": "β-胡萝卜素来源",
+
+  "prod.carrot_powder_f3": "甘甜温和口感",
+
+  "prod.carrot_powder_f4": "洁净单一原料",
+
+  "prod.carrot_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.carrot_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.carrot_powder_u1": "婴幼儿食品和营养",
+
+  "prod.carrot_powder_u2": "汤品、蔬菜泥和酱汁",
+
+  "prod.carrot_powder_u3": "烘焙和休闲食品",
+
+  "prod.carrot_powder_u4": "天然着色",
+
+  "prod.carrot_powder_g1": "食品级",
+
+  "prod.carrot_powder_g2": "80至100目（可定制）",
+
+  "prod.carrot_powder_g3": "含水量 ≤ 6%",
+
+  "prod.carrot_powder_g4": "贴牌 / 散装",
+
+
+  "prod.jackfruit_powder_desc": "菠萝蜜粉将印度最受关注的水果之一转化为多功能原料。成熟菠萝蜜带来甜润热带风味，适用于饮料和营养配方，而水果中的膳食纤维和抗性淀粉使其成为热门的功能性和面粉替代原料。",
+
+  "prod.jackfruit_powder_f1": "甘甜热带风味",
+
+  "prod.jackfruit_powder_f2": "富含膳食纤维",
+
+  "prod.jackfruit_powder_f3": "趋势功能性水果",
+
+  "prod.jackfruit_powder_f4": "无麸质面粉替代品",
+
+  "prod.jackfruit_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.jackfruit_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.jackfruit_powder_u1": "营养和餐食混合料",
+
+  "prod.jackfruit_powder_u2": "烘焙和无麸质面粉",
+
+  "prod.jackfruit_powder_u3": "冰沙和饮料",
+
+  "prod.jackfruit_powder_u4": "休闲食品和谷物",
+
+  "prod.jackfruit_powder_g1": "食品级",
+
+  "prod.jackfruit_powder_g2": "80至100目（可定制）",
+
+  "prod.jackfruit_powder_g3": "含水量 ≤ 6%",
+
+  "prod.jackfruit_powder_g4": "贴牌 / 散装",
+
+
+  "prod.moringa_powder_desc": "辣木叶是地球上营养密度最高的绿叶之一。我们精心干燥以保护其鲜艳色泽和营养价值，研磨成细粉，在全球范围内广泛用于膳食补充剂、绿色混合料和功能性食品。",
+
+  "prod.moringa_powder_f1": "翠绿色泽，精心干燥",
+
+  "prod.moringa_powder_f2": "天然营养密度高",
+
+  "prod.moringa_powder_f3": "细腻均匀的粒径",
+
+  "prod.moringa_powder_f4": "受信赖的超级食品原料",
+
+  "prod.moringa_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.moringa_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.moringa_powder_u1": "胶囊、片剂和膳食补充剂",
+
+  "prod.moringa_powder_u2": "绿色饮料和冰沙混合料",
+
+  "prod.moringa_powder_u3": "功能性食品和营养棒",
+
+  "prod.moringa_powder_u4": "茶饮和草本混合料",
+
+  "prod.moringa_powder_g1": "食品级/保健品级",
+
+  "prod.moringa_powder_g2": "80至100目（可定制）",
+
+  "prod.moringa_powder_g3": "含水量 ≤ 7%",
+
+  "prod.moringa_powder_g4": "贴牌 / 散装",
+
+
+  "prod.curry_leaf_powder_desc": "咖喱叶粉以稳定、易用的形态保留鲜咖喱叶的独特香气。它既是烹饪调味料，也是传统健康原料，尤其适用于护发和消化健康领域。",
+
+  "prod.curry_leaf_powder_f1": "正宗咖喱叶香气",
+
+  "prod.curry_leaf_powder_f2": "保留绿色色泽",
+
+  "prod.curry_leaf_powder_f3": "烹饪和健康两用",
+
+  "prod.curry_leaf_powder_f4": "保质期长",
+
+  "prod.curry_leaf_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.curry_leaf_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.curry_leaf_powder_u1": "香辛料混合和调味料",
+
+  "prod.curry_leaf_powder_u2": "护发和化妆品",
+
+  "prod.curry_leaf_powder_u3": "草本和健康混合料",
+
+  "prod.curry_leaf_powder_u4": "休闲食品和咸味食品",
+
+  "prod.curry_leaf_powder_g1": "食品级",
+
+  "prod.curry_leaf_powder_g2": "80至100目（可定制）",
+
+  "prod.curry_leaf_powder_g3": "含水量 ≤ 7%",
+
+  "prod.curry_leaf_powder_g4": "贴牌 / 散装",
+
+
+  "prod.tulsi_powder_desc": "图尔西（即圣罗勒）是阿育吠陀中最受推崇的草本之一，以适应原效果著称。我们温和干燥的圣罗勒粉保留其香气和活性成分，适用于茶饮、膳食补充剂和健康混合料。",
+
+  "prod.tulsi_powder_f1": "经典阿育吠陀适应原",
+
+  "prod.tulsi_powder_f2": "香气浓郁，草本气息",
+
+  "prod.tulsi_powder_f3": "温和干燥，保留活性成分",
+
+  "prod.tulsi_powder_f4": "洁净单一原料",
+
+  "prod.tulsi_powder_f5": "根据您的需求选择干燥工艺",
+
+  "prod.tulsi_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.tulsi_powder_u1": "草本茶饮和花草茶",
+
+  "prod.tulsi_powder_u2": "膳食补充剂和胶囊",
+
+  "prod.tulsi_powder_u3": "健康和免疫力混合料",
+
+  "prod.tulsi_powder_u4": "化妆品",
+
+  "prod.tulsi_powder_g1": "食品级/保健品级",
+
+  "prod.tulsi_powder_g2": "80至100目（可定制）",
+
+  "prod.tulsi_powder_g3": "含水量 ≤ 7%",
+
+  "prod.tulsi_powder_g4": "贴牌 / 散装",
+
+
+  "prod.guar_gum_powder_desc": "瓜尔胶是从瓜尔豆中提取的天然半乳甘露聚糖，印度供应全球大部分产量。它是高效的冷水增稠剂和稳定剂，提供食品级、药品级和工业级，包括用于油气井钻探和水力压裂的高黏度衍生产品。",
+
+  "prod.guar_gum_powder_f1": "低用量高黏度",
+
+  "prod.guar_gum_powder_f2": "冷水可溶，天然来源",
+
+  "prod.guar_gum_powder_f3": "食品级、药品级和工业级",
+
+  "prod.guar_gum_powder_f4": "提供油田/压裂级产品",
+
+  "prod.guar_gum_powder_f5": "衍生产品（羟丙基、羧甲基）",
+
+  "prod.guar_gum_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.guar_gum_powder_u1": "乳制品、冰淇淋、酱汁和烘焙",
+
+  "prod.guar_gum_powder_u2": "饮料、沙拉酱和无麸质食品",
+
+  "prod.guar_gum_powder_u3": "油气井钻探和水力压裂",
+
+  "prod.guar_gum_powder_u4": "纺织、造纸、采矿、炸药和宠物食品",
+
+  "prod.guar_gum_powder_g1": "食品级/药品级",
+
+  "prod.guar_gum_powder_g2": "工业级/油田级",
+
+  "prod.guar_gum_powder_g3": "多种黏度规格",
+
+  "prod.guar_gum_powder_g4": "100至200目 · 含水量 ≤ 12%",
+
+
+  "prod.psyllium_husk_powder_desc": "印度种植了全球几乎所有的车前子。车前子壳是优质可溶性膳食纤维来源，遇水形成凝胶，是消化健康产品、膳食纤维补充剂和无麸质烘焙的主要原料。",
+
+  "prod.psyllium_husk_powder_f1": "可溶性膳食纤维含量极高",
+
+  "prod.psyllium_husk_powder_f2": "遇水形成凝胶",
+
+  "prod.psyllium_husk_powder_f3": "清洁标签消化助剂",
+
+  "prod.psyllium_husk_powder_f4": "无麸质烘焙黏结剂",
+
+  "prod.psyllium_husk_powder_f5": "85%至99%纯度规格",
+
+  "prod.psyllium_husk_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.psyllium_husk_powder_u1": "纤维素和通便类补充剂",
+
+  "prod.psyllium_husk_powder_u2": "功能性食品和饮料",
+
+  "prod.psyllium_husk_powder_u3": "无麸质烘焙",
+
+  "prod.psyllium_husk_powder_u4": "药品配方",
+
+  "prod.psyllium_husk_powder_g1": "食品级/药品级",
+
+  "prod.psyllium_husk_powder_g2": "85%至99%纯度",
+
+  "prod.psyllium_husk_powder_g3": "壳状 / 粉末",
+
+  "prod.psyllium_husk_powder_g4": "含水量 ≤ 10%",
+
+
+  "prod.tamarind_kernel_powder_desc": "罗望子籽粉（TKP）是由罗望子种籽研磨而成的多糖胶体。它是食品、纺织及其他行业中高性价比的增稠、凝胶和上浆剂，与其他水胶体具有良好的协同效果。",
+
+  "prod.tamarind_kernel_powder_f1": "天然多糖胶体",
+
+  "prod.tamarind_kernel_powder_f2": "优良的增稠和凝胶效果",
+
+  "prod.tamarind_kernel_powder_f3": "性价比高",
+
+  "prod.tamarind_kernel_powder_f4": "普通级和脱油级",
+
+  "prod.tamarind_kernel_powder_f5": "与其他胶体具有协同效果",
+
+  "prod.tamarind_kernel_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.tamarind_kernel_powder_u1": "食品增稠和凝胶",
+
+  "prod.tamarind_kernel_powder_u2": "纺织和黄麻上浆",
+
+  "prod.tamarind_kernel_powder_u3": "造纸和黏合剂",
+
+  "prod.tamarind_kernel_powder_u4": "工业应用",
+
+  "prod.tamarind_kernel_powder_g1": "食品级/工业级",
+
+  "prod.tamarind_kernel_powder_g2": "普通级和脱油级",
+
+  "prod.tamarind_kernel_powder_g3": "100至200目",
+
+  "prod.tamarind_kernel_powder_g4": "含水量 ≤ 10%",
+
+
+  "prod.cassia_gum_powder_desc": "决明胶是从决明子种籽中提取的半乳甘露聚糖，常与其他胶体协同使用以实现凝胶和稳定效果。它作为宠物食品和特定食品应用中的增稠剂获得广泛认可。",
+
+  "prod.cassia_gum_powder_f1": "与其他胶体具有协同效果",
+
+  "prod.cassia_gum_powder_f2": "凝胶和稳定效果强",
+
+  "prod.cassia_gum_powder_f3": "植物源半乳甘露聚糖",
+
+  "prod.cassia_gum_powder_f4": "提供宠物食品级和食品级",
+
+  "prod.cassia_gum_powder_f5": "多种黏度规格",
+
+  "prod.cassia_gum_powder_f6": "可按需定制目数、包装及贴牌",
+
+  "prod.cassia_gum_powder_u1": "宠物食品和动物饲料",
+
+  "prod.cassia_gum_powder_u2": "奶酪、乳制品和冷冻甜点",
+
+  "prod.cassia_gum_powder_u3": "肉类和禽类产品",
+
+  "prod.cassia_gum_powder_u4": "工业应用",
+
+  "prod.cassia_gum_powder_g1": "食品级/宠物食品级",
+
+  "prod.cassia_gum_powder_g2": "多种黏度规格",
+
+  "prod.cassia_gum_powder_g3": "100至200目",
+
+  "prod.cassia_gum_powder_g4": "含水量 ≤ 12%"
+
+}
