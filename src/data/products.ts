@@ -275,6 +275,18 @@ export const products: Product[] = [
     forms: ["Powder", "Flakes"],
     drying: DRY.culinary,
   },
+  {
+    slug: "fried-onion", name: "Fried Onion", category: "culinary-spice-powders",
+    emoji: "🧅", hsn: "2005 99 90", botanical: "Allium cepa",
+    tagline: "Crispy, golden and intensely savoury — ready to garnish or blend.",
+    description:
+      "Our fried onion is made from select Indian onions, sliced and fried to a deep golden colour that delivers a rich, caramelised flavour without any bitterness. Available as crispy flakes for garnishing or as a fine powder for blending into seasonings, sauces and ready meals, it adds instant depth with no cooking required.",
+    features: ["Deep golden colour, caramelised flavour", "Flakes and powder forms", "Ready-to-use, no cooking needed", "Long shelf life", F_CUSTOM],
+    uses: ["Garnish for rice, biryani and noodles", "Seasoning and spice blends", "Ready meals and instant soups", "Sauces, gravies and dressings"],
+    grades: ["Food grade", "Flakes / 60–80 mesh powder", "Moisture ≤ 5%", "Private label / bulk"],
+    forms: ["Flakes", "Powder"],
+    drying: DRY.culinary,
+  },
 
   // ------------------------------------------------ FUNCTIONAL & NUTRITIONAL
   {
