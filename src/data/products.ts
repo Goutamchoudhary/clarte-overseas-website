@@ -169,7 +169,7 @@ export const products: Product[] = [
     drying: DRY.fruit,
   },
   {
-    slug: "amla-powder", name: "Amla Powder", category: "fruit-powders",
+    slug: "amla-powder", name: "Amla Powder", category: "herbal-leaf-powders",
     image: IMG("14909743"), emoji: "🫒", hsn: "0813 40 90", botanical: "Phyllanthus emblica",
     tagline: "Indian gooseberry — a vitamin-C powerhouse.",
     description:
@@ -177,10 +177,10 @@ export const products: Product[] = [
     features: ["Naturally rich in vitamin C", "Sharp, characteristic tartness", "Trusted Ayurvedic ingredient", "Clean single ingredient", F_DRY, F_CUSTOM],
     uses: ["Dietary supplements and tablets", "Hair oils and cosmetics", "Functional drinks and churnas", "Herbal blends and teas"],
     grades: ["Food / nutraceutical grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
-    drying: DRY.fruit,
+    drying: DRY.herbal,
   },
   {
-    slug: "tamarind-powder", name: "Tamarind Powder", category: "fruit-powders",
+    slug: "tamarind-powder", name: "Tamarind Pulp Powder", category: "fruit-powders",
     image: IMG("14909745"), emoji: "🟤", hsn: "0813 40 90", botanical: "Tamarindus indica",
     tagline: "Deep, sour-sweet tang for sauces and seasonings.",
     description:
@@ -206,11 +206,23 @@ export const products: Product[] = [
   {
     slug: "red-onion-powder", name: "Red Onion Powder", category: "culinary-spice-powders",
     image: IMG("14850506"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
-    tagline: "Pink-red Indian onion — sweet, pungent, deeply savoury.",
+    tagline: "Bold, deeply flavoured Indian red onion — rich savouriness in every form.",
     description:
-      "Dehydrated from India's prized pink-red onions, this powder delivers the sweet-sharp pungency that defines great savoury cooking. Available from fine powder right through to kibbled flakes, it gives food manufacturers consistent onion flavour with none of the prep, waste or storage of fresh bulbs.",
-    features: ["Strong, sweet-pungent flavour", "Consistent pungency, batch to batch", "Available in five cut sizes", "No peeling, chopping or spoilage", F_DRY, F_CUSTOM],
+      "Our red onion powder is made from India's robust, dark-red onions, prized for their strong pungency and deep colour. It delivers rich, complex onion flavour to seasonings, sauces and ready meals — available as fine powder right through to kibbled flakes for consistent results with no prep or waste.",
+    features: ["Strong, complex red-onion pungency", "Deep colour, batch-to-batch consistency", "Available in five cut sizes", "No peeling, chopping or spoilage", F_DRY, F_CUSTOM],
     uses: ["Seasoning and spice blends", "Snacks, sauces and dressings", "Ready meals, soups and gravies", "Meat rubs and marinades"],
+    grades: ["Food grade", "Custom mesh / cut sizes", "Moisture ≤ 6%", "Private label / bulk"],
+    forms: POWDER_FORMS,
+    drying: DRY.culinary,
+  },
+  {
+    slug: "pink-onion-powder", name: "Pink Onion Powder", category: "culinary-spice-powders",
+    emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
+    tagline: "India's delicate pink onion — mild, sweet and universally versatile.",
+    description:
+      "Made from India's prized pink onions — lighter in colour and milder in flavour than deep red varieties — this powder brings a gentle, balanced sweetness to products where subtlety matters more than bold pungency. Its pale blush tone suits light-coloured seasonings, dressings and cream sauces where a dark onion powder would show.",
+    features: ["Mild, balanced sweetness", "Pale blush colour — won't darken products", "Available in five cut sizes", "Gentle flavour for refined seasonings", F_DRY, F_CUSTOM],
+    uses: ["Dressings, dips and light sauces", "Seasoning and spice blends", "Soups and cream-based dishes", "Snacks and savoury coatings"],
     grades: ["Food grade", "Custom mesh / cut sizes", "Moisture ≤ 6%", "Private label / bulk"],
     forms: POWDER_FORMS,
     drying: DRY.culinary,
@@ -300,7 +312,7 @@ export const products: Product[] = [
   },
   {
     slug: "carrot-powder", name: "Carrot Powder", category: "functional-nutritional-powders",
-    emoji: "🥕", hsn: "0712 90 90", botanical: "Daucus carota",
+    image: IMG("14850477"), emoji: "🥕", hsn: "0712 90 90", botanical: "Daucus carota",
     tagline: "Sweet, orange and rich in natural beta-carotene.",
     description:
       "Carrot powder carries the vegetable's natural sweetness and warm orange colour, plus its well-known beta-carotene. It is widely used in baby food, soups, seasonings and natural colouring applications.",
