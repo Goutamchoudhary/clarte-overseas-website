@@ -27,7 +27,7 @@ const isExport = path === "/how-we-export";
           <div class="nav-dd-menu">
             <div class="nav-dd-card">
               {categories.map((c) => (
-                <a href={`/products/${c.slug}`} class="nav-dd-item">{c.navName}</a>
+                <a href={`/products/${c.slug}`} class="nav-dd-item" data-i18n={`products.cat_${c.slug.replace(/-/g,'_')}_name`}>{c.name}</a>
               ))}
             </div>
           </div>
@@ -86,7 +86,7 @@ const isExport = path === "/how-we-export";
       <a href="/products" class="mobile-link"><span data-i18n="nav.products">Products</span></a>
       <div class="flex flex-col items-center gap-2.5 -mt-3 mb-1 px-6 text-center">
         {categories.map((c) => (
-          <a href={`/products/${c.slug}`} class="mobile-sub">{c.name}</a>
+          <a href={`/products/${c.slug}`} class="mobile-sub" data-i18n={`products.cat_${c.slug.replace(/-/g,'_')}_name`}>{c.name}</a>
         ))}
       </div>
       <a href="/how-we-export" class="mobile-link"><span data-i18n="nav.how_we_export">How We Export</span></a>
