@@ -17,15 +17,23 @@ const title = `${p.name} — ${cat.name} | HSN ${p.hsn} | Clarté Overseas`;
 const description = `${p.tagline} ${p.description}`.slice(0, 180);
 const url = `${SITE.url}/products/${cat.slug}/${p.slug}`;
 
-const specs: [string, string, string][] = [
+const DRYING_KEYS: Record<string, string> = {
+  "Spray, freeze or drum-dried — to your grade": "prod.drying_fruit",
+  "Air, spray or freeze-dried — to your grade": "prod.drying_culinary",
+  "Shade, air or freeze-dried — to your grade": "prod.drying_herbal",
+  "Mechanically milled to specification": "prod.drying_milled",
+};
+const dryingI18n = DRYING_KEYS[p.drying || ""] || "prod.drying_default";
+
+const specs: [string, string, string, string?][] = [
   ["HSN code", p.hsn, "prod.spec_hsn"],
   ["Botanical name", p.botanical || "—", "prod.spec_botanical"],
   ["Available forms", p.forms ? p.forms.join(", ") : "Powder", "prod.spec_forms"],
-  ["Processing", p.drying || "Dehydrated", "prod.spec_processing"],
-  ["Shelf life", "18–24 months", "prod.spec_shelf"],
-  ["Packaging", "25 kg kraft bags with food-grade liner (custom packing available)", "prod.spec_packaging"],
-  ["MOQ", "Trial quantities available, scaling to full containers", "prod.spec_moq"],
-  ["Origin", "India", "prod.spec_origin"],
+  ["Processing", p.drying || "Dehydrated", "prod.spec_processing", dryingI18n],
+  ["Shelf life", "18–24 months", "prod.spec_shelf", "prod.spec_shelf_value"],
+  ["Packaging", "25 kg kraft bags with food-grade liner (custom packing available)", "prod.spec_packaging", "prod.spec_packaging_value"],
+  ["MOQ", "Trial quantities available, scaling to full containers", "prod.spec_moq", "prod.spec_moq_value"],
+  ["Origin", "India", "prod.spec_origin", "prod.origin_value"],
 ];
 
 const productLd = {
@@ -64,14 +72,14 @@ const breadcrumbLd = {
       <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
         <a href="/" data-i18n="nav.home">Home</a> <span class="text-slate-300 mx-1">/</span>
         <a href="/products" data-i18n="nav.products">Products</a> <span class="text-slate-300 mx-1">/</span>
-        <a href={`/products/${cat.slug}`}>{cat.name}</a> <span class="text-slate-300 mx-1">/</span>
-        <span class="text-slate-500">{p.name}</span>
+        <a href={`/products/${cat.slug}`} data-i18n={`products.cat_${cat.slug.replace(/-/g,'_')}_name`}>{cat.name}</a> <span class="text-slate-300 mx-1">/</span>
+        <span class="text-slate-500" data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_name`}>{p.name}</span>
       </nav>
 
       <div class="pd-grid">
         <!-- Media -->
         <div class="pd-media reveal">
-          <span class="pd-cat-pill">{cat.emoji} {cat.name}</span>
+          <span class="pd-cat-pill">{cat.emoji} <span data-i18n={`products.cat_${cat.slug.replace(/-/g,'_')}_name`}>{cat.name}</span></span>
           <div class={`pd-frame${p.image ? "" : " no-img"}`} id="pdFrame">
             {p.image
               ? <img src={p.image} alt={p.name} id="pdImg" class="pd-img" />
@@ -93,14 +101,14 @@ const breadcrumbLd = {
 
         <!-- Info -->
         <div class="pd-info reveal d1">
-          <h1 class="pd-title">{p.name}</h1>
+          <h1 class="pd-title" data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_name`}>{p.name}</h1>
           {p.botanical && <p class="pd-botanical">{p.botanical}</p>}
-          <p class="pd-tagline">{p.tagline}</p>
+          <p class="pd-tagline" data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_tagline`}>{p.tagline}</p>
           <div class="pd-chips">
             <span class="pd-chip pd-chip-hsn">HSN {p.hsn}</span>
-            {p.grades.slice(0, 2).map((g) => <span class="pd-chip">{g}</span>)}
+            {p.grades.slice(0, 2).map((g, i) => <span class="pd-chip" data-i18n={`prod.${p.slug.replace(/-/g,'_')}_g${i+1}`}>{g}</span>)}
           </div>
-          <p class="pd-desc">{p.description}</p>
+          <p class="pd-desc" data-i18n={`prod.${p.slug.replace(/-/g,'_')}_desc`}>{p.description}</p>
 
           <div class="pd-cta">
             <button type="button" class="btn btn-primary" data-open-enquire data-product={p.name} data-category={cat.name}>
@@ -116,7 +124,7 @@ const breadcrumbLd = {
           <!-- quick specs -->
           <dl class="pd-quickspec">
             <div><dt data-i18n="prod.quickspec_form">Form selected</dt><dd id="pdSelForm">{p.forms ? p.forms[0] : "Powder"}</dd></div>
-            <div><dt data-i18n="prod.quickspec_processing">Processing</dt><dd>{p.drying || "Dehydrated"}</dd></div>
+            <div><dt data-i18n="prod.quickspec_processing">Processing</dt><dd data-i18n={dryingI18n}>{p.drying || "Dehydrated"}</dd></div>
             <div><dt data-i18n="prod.quickspec_origin">Origin</dt><dd data-i18n="prod.origin_value">India</dd></div>
           </dl>
         </div>
@@ -131,10 +139,10 @@ const breadcrumbLd = {
         <div class="reveal">
           <h2 class="pd-h2" data-i18n="prod.features_heading">Key features</h2>
           <div class="pd-feat-grid">
-            {p.features.map((f) => (
+            {p.features.map((f, i) => (
               <div class="pd-feat">
                 <span class="pd-feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>
-                <span>{f}</span>
+                <span data-i18n={`prod.${p.slug.replace(/-/g,'_')}_f${i+1}`}>{f}</span>
               </div>
             ))}
           </div>
@@ -143,14 +151,14 @@ const breadcrumbLd = {
         <div class="reveal">
           <h2 class="pd-h2" data-i18n="prod.uses_heading">Where it's used</h2>
           <div class="pd-use-grid">
-            {p.uses.map((u) => <span class="pd-use">{u}</span>)}
+            {p.uses.map((u, i) => <span class="pd-use" data-i18n={`prod.${p.slug.replace(/-/g,'_')}_u${i+1}`}>{u}</span>)}
           </div>
         </div>
 
         <div class="reveal">
           <h2 class="pd-h2" data-i18n="prod.grades_heading">Typical grades</h2>
           <div class="pd-use-grid">
-            {p.grades.map((g) => <span class="pd-grade">{g}</span>)}
+            {p.grades.map((g, i) => <span class="pd-grade" data-i18n={`prod.${p.slug.replace(/-/g,'_')}_g${i+1}`}>{g}</span>)}
           </div>
         </div>
       </div>
@@ -160,8 +168,8 @@ const breadcrumbLd = {
         <div class="pd-spec-card">
           <h2 class="pd-spec-title" data-i18n="prod.spec_heading">Specifications</h2>
           <dl class="pd-spec">
-            {specs.map(([k, v, i18nKey]) => (
-              <div class="pd-spec-row"><dt data-i18n={i18nKey}>{k}</dt><dd>{v}</dd></div>
+            {specs.map(([k, v, i18nKey, vKey]) => (
+              <div class="pd-spec-row"><dt data-i18n={i18nKey}>{k}</dt><dd data-i18n={vKey}>{v}</dd></div>
             ))}
           </dl>
           <button type="button" class="btn btn-primary w-full mt-5" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="prod.get_pricing">Get pricing &amp; samples</span></button>
@@ -176,7 +184,7 @@ const breadcrumbLd = {
     <section class="py-14 lg:py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex items-end justify-between gap-4 mb-8 reveal">
-          <h2 class="tg-1 font-extrabold text-2xl sm:text-3xl"><span data-i18n="prod.related_prefix">More from</span> {cat.name}</h2>
+          <h2 class="tg-1 font-extrabold text-2xl sm:text-3xl"><span data-i18n="prod.related_prefix">More from</span> <span data-i18n={`products.cat_${cat.slug.replace(/-/g,'_')}_name`}>{cat.name}</span></h2>
           <a href={`/products/${cat.slug}`} class="read-link"><span data-i18n="prod.view_all">View all</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -190,8 +198,8 @@ const breadcrumbLd = {
               </a>
               <div class="prod-body">
                 <span class="prod-hsn">HSN {r.hsn}</span>
-                <h3 class="prod-name"><a href={`/products/${cat.slug}/${r.slug}`}>{r.name}</a></h3>
-                <p class="prod-tag">{r.tagline}</p>
+                <h3 class="prod-name"><a href={`/products/${cat.slug}/${r.slug}`} data-i18n={`cat.prod_${r.slug.replace(/-/g,'_')}_name`}>{r.name}</a></h3>
+                <p class="prod-tag" data-i18n={`cat.prod_${r.slug.replace(/-/g,'_')}_tagline`}>{r.tagline}</p>
               </div>
             </article>
           ))}
