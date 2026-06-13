@@ -63,6 +63,5 @@ export const LANGUAGES = [
   { code: "vi",    short: "VI", label: "Tiếng Việt",  flag: "🇻🇳" },
   { code: "th",    short: "TH", label: "ไทย",          flag: "🇹🇭" },
   { code: "id",    short: "ID", label: "Indonesia",   flag: "🇮🇩" },
-  { code: "hi",    short: "HI", label: "हिन्दी",        flag: "🇮🇳" },
   { code: "sv",    short: "SV", label: "Svenska",     flag: "🇸🇪" },
 ];
