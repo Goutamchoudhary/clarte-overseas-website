@@ -52,8 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const dd = document.querySelector(".lang-dd");
     const btn = document.getElementById("langBtn");
     const closeDD = () => dd && dd.classList.remove("open");
+
+    // Hint that points at the language selector (shown on each home visit)
+    const hint = document.getElementById("langHint");
+    const dismissHint = () => { if (hint) hint.hidden = true; };
+
     if (btn) btn.addEventListener("click", (e) => {
       e.stopPropagation();
+      dismissHint();
       dd && dd.classList.toggle("open");
     });
     document.addEventListener("click", closeDD);
@@ -63,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       b.addEventListener("click", () => {
         const lang = b.getAttribute("data-lang");
         if (window.i18n) window.i18n.setLang(lang);
+        dismissHint();
         closeDD();
       })
     );
@@ -87,6 +94,21 @@ document.addEventListener("DOMContentLoaded", () => {
       b.classList.toggle("active", b.getAttribute("data-lang") === saved)
     );
     if (sel) sel.value = saved;
+
+    // Show the "choose your language" hint on the home page, only while the
+    // visitor is still on the default language and hasn't dismissed it this
+    // session. Auto-hides after a few seconds.
+    (function () {
+      if (!hint) return;
+      const onHome = location.pathname === "/" || location.pathname === "/index.html";
+      if (!onHome || saved !== "en") return;
+
+      const closeBtn = document.getElementById("langHintClose");
+      if (closeBtn) closeBtn.addEventListener("click", (e) => { e.stopPropagation(); dismissHint(); });
+
+      setTimeout(() => { hint.hidden = false; }, 900);
+      setTimeout(dismissHint, 8000);
+    })();
   })();
 
   /* ---- Scroll-to-top -------------------------------------------------- */

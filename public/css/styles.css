@@ -788,8 +788,52 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   font-size: .9rem; color: #334155; font-family: var(--font-body); transition: background .15s ease, color .15s ease;
 }
 .lang-dd-item:hover { background: var(--brand-100); color: var(--brand); }
-.lang-dd-item.active { background: var(--brand-100); color: var(--brand); font-weight: 600; }
-.lang-flag { font-size: 1.1rem; line-height: 1; }
+.lang-flag { font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
+.lang-name { white-space: nowrap; }
+/* English name, muted, pushed to the right */
+.lang-en { margin-left: auto; font-size: .72rem; color: #94a3b8; white-space: nowrap; }
+.lang-dd-item:hover .lang-en { color: var(--brand); opacity: .7; }
+/* Checkmark only on the currently selected language */
+.lang-check { width: 15px; height: 15px; margin-left: .4rem; flex-shrink: 0; }
+.lang-en + .lang-check { margin-left: .45rem; }
+.lang-dd-item .lang-check { display: none; }
+.lang-dd-item.active .lang-check { display: block; }
+/* Selected language: clean brand gradient fill with white text */
+.lang-dd-item.active,
+.lang-dd-item.active:hover {
+  background: linear-gradient(135deg, #2b57b0, #1f4693);
+  color: #fff; font-weight: 600;
+  box-shadow: 0 10px 20px -12px rgba(31,70,147,.7);
+}
+.lang-dd-item.active .lang-en { color: rgba(255,255,255,.8); opacity: 1; }
+.lang-dd-item.active .lang-check { color: #fff; }
+
+/* ---- First-visit "choose your language" hint ---------------------------- */
+.lang-hint {
+  position: absolute; top: calc(100% + 10px); right: 0; z-index: 70;
+  display: flex; align-items: center; gap: .5rem;
+  background: var(--brand); color: #fff; padding: .5rem .5rem .5rem .8rem;
+  border-radius: .7rem; box-shadow: 0 18px 40px -16px rgba(13,26,54,.55);
+  font: 600 .82rem/1 var(--font-body); white-space: nowrap;
+  animation: langHintIn .35s ease both;
+}
+.lang-hint[hidden] { display: none; }
+.lang-hint::before {
+  content: ""; position: absolute; bottom: 100%; right: 18px;
+  border: 7px solid transparent; border-bottom-color: var(--brand);
+}
+.lang-hint-close {
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%; border: none; cursor: pointer;
+  background: rgba(255,255,255,.18); color: #fff;
+}
+.lang-hint-close:hover { background: rgba(255,255,255,.32); }
+.lang-hint-close svg { width: 12px; height: 12px; }
+@keyframes langHintIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) { .lang-hint { animation: none; } }
 
 /* Mobile language select */
 .lang-select {
