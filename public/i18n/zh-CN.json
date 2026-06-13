@@ -521,6 +521,18 @@
   "export.inco_legend_we": "我方负责",
 
   "export.inco_legend_you": "贵方接管",
+  "export.inco_exw_name": "工厂交货 (EXW)",
+  "export.inco_exw_hand": "在产地提货",
+  "export.inco_exw_desc": "您从产地起即承担一切。我们备妥货物；由您安排提货、出口清关及之后的所有事宜。适合在印度拥有自有物流的买家，掌控度最高。",
+  "export.inco_fob_name": "船上交货 (FOB)",
+  "export.inco_fob_hand": "在起运港装船后交付",
+  "export.inco_fob_desc": "我们负责直至在印度港口将货物装上船舶的全部事宜（含装船）。此后的海运及风险由您承担。这是我们大多数买家选择的术语。",
+  "export.inco_cfr_name": "成本加运费 (CFR)",
+  "export.inco_cfr_hand": "海运费付至您的港口",
+  "export.inco_cfr_desc": "我们承担货物以及运至您目的港的海运费。风险在起运港装船后转移，因此由您为航程投保。当您希望由我们预订船公司时尤为适用。",
+  "export.inco_cif_name": "成本、保险加运费 (CIF)",
+  "export.inco_cif_hand": "运费 + 海运保险付至您的港口",
+  "export.inco_cif_desc": "涵盖 CFR 的全部内容，并由我们为运至您目的港的航程办理海运保险。最省心的术语——您只需在目的港码头接收货物。",
 
 
   "export.payment_eyebrow": "付款方式",
@@ -768,7 +780,10 @@
 
   "contact.hero_heading": "推进您的订单",
 
-  "contact.hero_sub": "无论您有具体的产品需求，还是想了解我们的供货范围，我们随时为您服务。",
+  "contact.hero_sub": "请告诉我们产品、形态和您的市场。我们将回复规格、必要时提供样品，并以您的货币报价——通常在一个工作日内。",
+  "contact.hero_chip1": "1 个工作日内回复",
+  "contact.hero_chip2": "样品可按需提供",
+  "contact.hero_chip3": "以您的货币报价",
 
   "contact.info_office": "办公及发货",
 
@@ -803,6 +818,8 @@
   "contact.form_requirement": "您的需求",
 
   "contact.form_submit": "提交询盘",
+  "contact.form_sub": "您提供的信息越多，报价越精准。标有 <span class=\"req\">*</span> 的字段为必填项。",
+  "contact.form_note": "我们仅使用您的信息回复此次询价，绝不发送垃圾邮件。",
 
   "contact.talk_heading": "与真人沟通",
 
@@ -813,6 +830,9 @@
   "contact.map_badge": "印度新德里",
 
   "contact.map_directions": "获取路线",
+  "contact.map_eyebrow": "找到我们",
+  "contact.map_heading": "印度新德里——所有货物的发运地",
+  "contact.map_sub": "立足首都运营，让单证、货运与协调畅通无阻。",
 
   "contact.success_heading": "消息已发送——感谢您！",
 

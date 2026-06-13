@@ -27,6 +27,8 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
 <BaseLayout title={title} description={description}>
   <!-- ===================== HERO ===================== -->
   <PageHero
+    i18nPrefix="contact"
+    i18nCrumb="nav.contact"
     crumb="Contact"
     eyebrow="Get in Touch"
     watermark="Contact"
@@ -94,7 +96,7 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
         <!-- Form panel -->
         <div class="cc-form">
           <h2 class="cc-form-h"><span data-i18n="contact.form_heading">Request a quote</span></h2>
-          <p class="cc-form-sub">The more you tell us, the sharper the quote. Fields marked <span class="req">*</span> are required.</p>
+          <p class="cc-form-sub" data-i18n-html="contact.form_sub">The more you tell us, the sharper the quote. Fields marked <span class="req">*</span> are required.</p>
 
           <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST" class="cc-fields" data-sheet={CONTACT.sheetWebhook}>
             <!-- Web3Forms config -->
@@ -171,7 +173,7 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
               <span data-i18n="contact.form_submit">Send enquiry</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
-            <p class="cc-note">We'll only use your details to reply to this enquiry. No spam, ever.</p>
+            <p class="cc-note" data-i18n="contact.form_note">We'll only use your details to reply to this enquiry. No spam, ever.</p>
           </form>
         </div>
       </div>
@@ -185,9 +187,9 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
     <span class="bp-plus" style="top:24%;right:16%"></span>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <div class="map-head reveal">
-        <span class="eyebrow center">Find Us</span>
-        <h2 class="tg-6 font-extrabold text-3xl sm:text-4xl mt-4">New Delhi, India — where it all ships from</h2>
-        <p class="text-slate-500 text-lg mt-4">Working from the capital keeps documentation, freight and coordination moving without friction.</p>
+        <span class="eyebrow center" data-i18n="contact.map_eyebrow">Find Us</span>
+        <h2 class="tg-6 font-extrabold text-3xl sm:text-4xl mt-4" data-i18n="contact.map_heading">New Delhi, India — where it all ships from</h2>
+        <p class="text-slate-500 text-lg mt-4" data-i18n="contact.map_sub">Working from the capital keeps documentation, freight and coordination moving without friction.</p>
       </div>
       <div class="map-shell reveal d1">
         <span class="map-badge">
