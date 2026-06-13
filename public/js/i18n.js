@@ -110,10 +110,20 @@
     if (sel) sel.value = lang;
   }
 
+  /* Right-to-left languages. Set <html dir>/<html lang> so the whole layout
+     mirrors for Arabic (and any future RTL locale). */
+  var RTL_LANGS = ["ar", "he", "fa", "ur"];
+  function applyDirection(lang) {
+    var rtl = RTL_LANGS.indexOf(lang) !== -1;
+    document.documentElement.setAttribute("dir", rtl ? "rtl" : "ltr");
+    document.documentElement.setAttribute("lang", lang || "en");
+  }
+
   /* Public API */
   function setLang(lang) {
     saveOriginals();
     localStorage.setItem(STORAGE_KEY, lang);
+    applyDirection(lang);
     if (!lang || lang === "en") {
       restoreOriginals();
       // Notify dynamic widgets (e.g. Incoterms explorer) so they re-render
@@ -142,6 +152,7 @@
   function init() {
     saveOriginals();
     const saved = getLang();
+    applyDirection(saved);
     if (saved && saved !== "en") {
       fetchAndApply(saved, function () { updateNavLabel(saved); });
     }
