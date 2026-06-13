@@ -7,6 +7,7 @@
 
   const STORAGE_KEY = "site-lang";
   let _originals = null; // Map<element, {textContent|innerHTML|placeholder}>
+  let _strings = null;   // last-loaded translations object (null when English)
 
   /* Save originals from data-i18n, data-i18n-html, data-i18n-ph */
   function saveOriginals() {
@@ -25,6 +26,7 @@
 
   /* Apply a translations object to the DOM */
   function applyTranslations(strings) {
+    _strings = strings;
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (strings[key] !== undefined) el.textContent = strings[key];
@@ -41,6 +43,7 @@
 
   /* Restore English originals */
   function restoreOriginals() {
+    _strings = null;
     if (!_originals) return;
     _originals.forEach((orig, el) => {
       if (!document.contains(el)) return;
@@ -92,6 +95,9 @@
     localStorage.setItem(STORAGE_KEY, lang);
     if (!lang || lang === "en") {
       restoreOriginals();
+      // Notify dynamic widgets (e.g. Incoterms explorer) so they re-render
+      // their English fallback — restoreOriginals only resets [data-i18n] nodes.
+      document.dispatchEvent(new CustomEvent("i18nApplied", { detail: { lang: "en" } }));
     } else {
       fetchAndApply(lang);
     }
@@ -102,7 +108,14 @@
     return localStorage.getItem(STORAGE_KEY) || "en";
   }
 
-  window.i18n = { setLang: setLang, getLang: getLang };
+  /* Look up a single translated string for the active language.
+     Returns undefined when English (default) or when the key is missing,
+     so callers can fall back to their own English text. */
+  function t(key) {
+    return _strings ? _strings[key] : undefined;
+  }
+
+  window.i18n = { setLang: setLang, getLang: getLang, t: t };
 
   /* On DOMContentLoaded: save originals, then apply saved language if not English */
   function init() {

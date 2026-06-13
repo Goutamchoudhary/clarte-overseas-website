@@ -51,44 +51,36 @@ const journey = [
 const incoterms = [
   {
     code: "EXW",
+    key: "exw",
     name: "Ex Works",
     cover: 9,
     hand: "Collected at the source",
     desc: "You take charge right at the source. We make the goods ready; you arrange pickup, export clearance and everything onward. Maximum control for buyers with their own India logistics.",
-    frName: "Franco Départ",
-    frHand: "Réceptionné à la source",
-    frDesc: "Vous prenez en charge dès la source. Nous préparons les marchandises ; vous organisez l'enlèvement, le dédouanement à l'exportation et tout ce qui suit. Un contrôle maximum pour les acheteurs disposant de leur propre logistique en Inde.",
   },
   {
     code: "FOB",
+    key: "fob",
     name: "Free on Board",
     cover: 38,
     hand: "Handed over once loaded at the origin port",
     desc: "We handle everything up to and including loading your goods onto the vessel at the Indian port. From there, ocean freight and risk are yours. The term most of our buyers choose.",
-    frName: "Franco à Bord",
-    frHand: "Remis une fois chargé au port d'origine",
-    frDesc: "Nous gérons tout jusqu'au chargement de vos marchandises à bord du navire dans le port indien. À partir de là, le fret maritime et les risques sont à votre charge. C'est l'incoterm que choisissent la plupart de nos acheteurs.",
   },
   {
     code: "CFR",
+    key: "cfr",
     name: "Cost & Freight",
     cover: 66,
     hand: "Sea freight paid to your port",
     desc: "We cover the goods plus the sea freight to your destination port. Risk passes once loaded at origin, so you insure the voyage. Useful when you'd rather we book the shipping line.",
-    frName: "Coût et Fret",
-    frHand: "Fret maritime payé jusqu'à votre port",
-    frDesc: "Nous couvrons les marchandises et le fret maritime jusqu'à votre port de destination. Le risque passe une fois chargé à l'origine, vous assurez donc le voyage. Utile quand vous préférez que nous réservions la compagnie maritime.",
   },
   {
     code: "CIF",
+    key: "cif",
     name: "Cost, Insurance & Freight",
     cover: 66,
     ins: true,
     hand: "Freight + marine insurance to your port",
     desc: "Everything in CFR, plus we arrange marine insurance for the voyage to your destination port. The most hands-off term — you simply take over at the destination quay.",
-    frName: "Coût, Assurance et Fret",
-    frHand: "Fret + assurance maritime jusqu'à votre port",
-    frDesc: "Tout ce qui est prévu dans le CFR, plus nous souscrivons une assurance maritime pour le voyage jusqu'à votre port de destination. L'incoterm le plus simple — vous prenez simplement en charge au quai de destination.",
   },
 ];
 
@@ -233,9 +225,7 @@ const faqLd = {
               data-desc={t.desc}
               data-ins={t.ins ? "1" : "0"}
               data-hand={t.hand}
-              data-fr-name={t.frName}
-              data-fr-hand={t.frHand}
-              data-fr-desc={t.frDesc}
+              data-key={t.key}
             >{t.code}</button>
           ))}
         </div>
@@ -685,13 +675,11 @@ const faqLd = {
     const desc = inco.querySelector(".inco-desc") as HTMLElement;
     const tabs = Array.from(inco.querySelectorAll(".inco-tab")) as HTMLElement[];
     const select = (btn: HTMLElement) => {
-      const lang = localStorage.getItem("site-lang") || "en";
-      const getVal = (key: string): string => {
-        if (lang !== "en") {
-          const loc = btn.getAttribute(`data-${lang}-${key}`);
-          if (loc) return loc;
-        }
-        return btn.dataset[key] || "";
+      const i18nT = (window as any).i18n && (window as any).i18n.t;
+      const code = btn.dataset.key || "";
+      const getVal = (field: string): string => {
+        const loc = i18nT ? i18nT(`export.inco_${code}_${field}`) : undefined;
+        return loc || btn.dataset[field] || "";
       };
       tabs.forEach((t) => t.classList.toggle("active", t === btn));
       const cv = btn.dataset.cover || "0";
