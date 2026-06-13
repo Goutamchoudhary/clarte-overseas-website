@@ -24,20 +24,33 @@
     });
   }
 
-  /* Apply a translations object to the DOM */
+  /* Restore a single element to its saved English original */
+  function restoreOne(el) {
+    if (!_originals || !_originals.has(el)) return;
+    const o = _originals.get(el);
+    if (o.type === "text") el.textContent = o.val;
+    else if (o.type === "html") el.innerHTML = o.val;
+    else if (o.type === "ph") el.setAttribute("placeholder", o.val);
+  }
+
+  /* Apply a translations object to the DOM. Any key missing from the
+     supplied strings falls back to the element's English original. */
   function applyTranslations(strings) {
     _strings = strings;
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (strings[key] !== undefined) el.textContent = strings[key];
+      else restoreOne(el);
     });
     document.querySelectorAll("[data-i18n-html]").forEach((el) => {
       const key = el.getAttribute("data-i18n-html");
       if (strings[key] !== undefined) el.innerHTML = strings[key];
+      else restoreOne(el);
     });
     document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
       const key = el.getAttribute("data-i18n-ph");
       if (strings[key] !== undefined) el.setAttribute("placeholder", strings[key]);
+      else restoreOne(el);
     });
   }
 
@@ -56,14 +69,22 @@
   /* Fetch a JSON file and apply it */
   function fetchAndApply(lang, callback) {
     fetch("/i18n/" + lang + ".json?v=" + (window._i18nBust || "1"))
-      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
       .then(function (data) {
         applyTranslations(data);
         document.dispatchEvent(new CustomEvent("i18nApplied", { detail: { lang: lang } }));
         if (callback) callback();
       })
       .catch(function (e) {
-        console.warn("[i18n] Failed to load", lang, e);
+        // No translation file (or it failed to parse): fall back to English
+        // so the page never shows a half-translated or stale state.
+        console.warn("[i18n] Failed to load", lang, "— falling back to English", e);
+        restoreOriginals();
+        document.dispatchEvent(new CustomEvent("i18nApplied", { detail: { lang: "en" } }));
+        if (callback) callback();
       });
   }
 
