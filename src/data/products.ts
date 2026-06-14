@@ -394,7 +394,7 @@ export const products: Product[] = [
   },
   {
     slug: "psyllium-husk-powder", name: "Psyllium Husk Powder (Isabgol)", category: "hydrocolloids-food-additives",
-    emoji: "🌾", hsn: "1211 90 12", botanical: "Plantago ovata",
+    image: IMG("14935100"), emoji: "🌾", hsn: "1211 90 12", botanical: "Plantago ovata",
     tagline: "The world's go-to soluble-fibre, grown in India.",
     description:
       "India grows almost all of the world's psyllium. The husk is an exceptional source of soluble dietary fibre that forms a gel in water, making it a staple in digestive health products, fibre supplements and gluten-free baking.",
