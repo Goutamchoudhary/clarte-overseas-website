@@ -3,17 +3,18 @@
    ========================================================================= */
 
 /* ----------------------------------------------------------------------
-   CONFIG — edit these values (placeholders for now)
+   CONFIG
    ---------------------------------------------------------------------- */
-const CONFIG = {
-  // Dummy WhatsApp link — replace 910000000000 with the real number (country code, no +)
-  whatsapp: "https://wa.me/910000000000?text=Hi%20Clart%C3%A9%20Overseas%2C%20I%27d%20like%20a%20quote.",
-};
+const WA_NUMBER = "919818915310"; // India country code + number, no +
+const WA_DEFAULT = "Hi Clarté Overseas, I'd like to know more about your products.";
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* ---- WhatsApp links ------------------------------------------------- */
+  /* ---- WhatsApp links (per-CTA pre-filled messages) ------------------- */
   document.querySelectorAll("[data-wa]").forEach((el) => {
-    el.setAttribute("href", CONFIG.whatsapp);
+    let msg = el.dataset.waMsg || WA_DEFAULT;
+    const product = el.dataset.waProduct;
+    if (product) msg = msg.replace("{product}", product);
+    el.setAttribute("href", `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
   });
