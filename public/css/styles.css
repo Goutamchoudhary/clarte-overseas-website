@@ -783,6 +783,7 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   border-radius: 1rem; box-shadow: 0 26px 54px -22px rgba(13,26,54,.4); padding: .5rem;
 }
 .lang-dd-item {
+  position: relative; overflow: hidden;
   display: flex; align-items: center; gap: .65rem; width: 100%; text-align: left;
   padding: .55rem .7rem; border-radius: .6rem; cursor: pointer; border: none; background: none;
   font-size: .9rem; color: #334155; font-family: var(--font-body); transition: background .15s ease, color .15s ease;
@@ -798,15 +799,28 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .lang-en + .lang-check { margin-left: .45rem; }
 .lang-dd-item .lang-check { display: none; }
 .lang-dd-item.active .lang-check { display: block; }
-/* Selected language: clean brand gradient fill with white text */
+/* Selected language: white bg with blue text + continuous shine sweep */
 .lang-dd-item.active,
 .lang-dd-item.active:hover {
-  background: linear-gradient(135deg, #2b57b0, #1f4693);
-  color: #fff; font-weight: 600;
-  box-shadow: 0 10px 20px -12px rgba(31,70,147,.7);
+  background: #fff;
+  color: #1f4693; font-weight: 600;
+  border: 1.5px solid #c7d9ff;
+  box-shadow: 0 4px 18px -8px rgba(31,70,147,.22);
 }
-.lang-dd-item.active .lang-en { color: rgba(255,255,255,.8); opacity: 1; }
-.lang-dd-item.active .lang-check { color: #fff; }
+.lang-dd-item.active .lang-en { color: #6b8fc7; opacity: 1; }
+.lang-dd-item.active .lang-check { color: #1f4693; }
+/* Continuous shimmer sweep (top-left → bottom-right), pauses between passes */
+.lang-dd-item.active::after {
+  content: ""; position: absolute; top: 0; left: -110%; width: 55%; height: 100%;
+  pointer-events: none; transform: skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(79,142,245,.18), rgba(255,255,255,.72), rgba(79,142,245,.18), transparent);
+  animation: lang-active-sheen 3.5s ease-in-out infinite;
+}
+@keyframes lang-active-sheen {
+  0%    { left: -110%; }
+  28%   { left: 130%; }
+  29%, 100% { left: -110%; }
+}
 
 /* ---- First-visit "choose your language" hint ---------------------------- */
 .lang-hint {
