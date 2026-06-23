@@ -38,7 +38,7 @@ export const CONTACT = {
   sheetWebhook: "",
   // Calendly link for "Book a discovery call" button — e.g. https://calendly.com/yourname/15min
   // Leave "" to hide the button until you've set up your Calendly account.
-  calendlyUrl: "https://calendly.com/goutamchoudhary4053/30min",
+  calendlyUrl: "https://calendly.com/goutamchoudhary4053/discovery-call",
   address: "1st Floor, CW-59, Sanjay Gandhi Transport Nagar, Delhi, India. 110042",
 };
 
