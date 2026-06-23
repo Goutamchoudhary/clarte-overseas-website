@@ -1,9 +1,4 @@
 ---
-interface Props {
-  variant?: "light" | "cream";
-}
-const { variant = "light" } = Astro.props;
-
 const testimonials = [
   {
     quote: "Consistent quality batch after batch. Our QC team rarely raises a concern — that says a lot after four years of orders.",
@@ -20,11 +15,11 @@ const testimonials = [
     flag: "🇦🇪",
   },
   {
-    quote: "Responsive team, competitive pricing, and the spec sheets match reality. We've since expanded to five SKUs across two categories.",
-    role: "Category Buyer",
-    company: "Spice & ingredient brand",
-    country: "USA",
-    flag: "🇺🇸",
+    quote: "Pricing is competitive, quality is consistent, and the team responds fast. Exactly what we need for regional distribution across Southeast Asia.",
+    role: "Regional Sourcing Manager",
+    company: "F&B distributor",
+    country: "Singapore",
+    flag: "🇸🇬",
   },
   {
     quote: "What impressed us was the lab report arriving alongside the proforma invoice. No chasing, no delays — it just worked.",
@@ -36,8 +31,16 @@ const testimonials = [
 ];
 ---
 
-<section class={`testi-section ${variant === "cream" ? "bg-cream" : "bg-white"}`}>
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+<section class="testi-section">
+  <div class="testi-aurora" aria-hidden="true">
+    <span class="testi-blob tb1"></span>
+    <span class="testi-blob tb2"></span>
+    <span class="testi-blob tb3"></span>
+    <span class="testi-blob tb4"></span>
+    <span class="testi-blob tb5"></span>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative" style="z-index:1">
     <div class="text-center max-w-2xl mx-auto reveal">
       <span class="eyebrow center">Buyer Feedback</span>
       <h2 class="tg-1 font-extrabold text-4xl sm:text-5xl mt-4">What our buyers say</h2>
