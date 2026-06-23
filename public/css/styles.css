@@ -1212,10 +1212,10 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   50%       { box-shadow: 0 0 0 5px rgba(34,197,94,.08); }
 }
 /* Unavailable variant */
-.pd-stock.pd-stock-out { color: #b91c1c; background: #fef2f2; border-color: #fecaca; }
+.pd-stock.pd-stock-out { color: #c2410c; background: #fff7ed; border-color: #fed7aa; }
 .pd-stock-dot-out {
-  width: 7px; height: 7px; border-radius: 50%; background: #ef4444; flex-shrink: 0;
-  box-shadow: 0 0 0 2.5px rgba(239,68,68,.2);
+  width: 7px; height: 7px; border-radius: 50%; background: #f97316; flex-shrink: 0;
+  box-shadow: 0 0 0 2.5px rgba(249,115,22,.2);
 }
 
 /* =============================================================================
@@ -1228,7 +1228,7 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   animation: stock-pulse 2.5s ease-in-out infinite;
 }
 .prod-avail-dot.out {
-  background: #ef4444; box-shadow: 0 0 0 2.5px rgba(239,68,68,.2);
+  background: #f97316; box-shadow: 0 0 0 2.5px rgba(249,115,22,.2);
   animation: none;
 }
 
