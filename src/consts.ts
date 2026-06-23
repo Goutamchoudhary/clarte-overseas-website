@@ -38,7 +38,7 @@ export const CONTACT = {
   sheetWebhook: "",
   // Calendly link for "Book a discovery call" button — e.g. https://calendly.com/yourname/15min
   // Leave "" to hide the button until you've set up your Calendly account.
-  calendlyUrl: "",
+  calendlyUrl: "https://calendly.com/clarteoverseas/30min",
   address: "1st Floor, CW-59, Sanjay Gandhi Transport Nagar, Delhi, India. 110042",
 };
 
@@ -47,6 +47,15 @@ export const SOCIAL = {
   linkedin: "https://www.linkedin.com/company/clart%C3%A9-overseas/",
   facebook: "https://www.facebook.com/share/1EqVT8eMpo/",
 };
+
+// Products that are temporarily out of stock — shown with a red "Currently unavailable"
+// badge on the product page and a red dot on category listing cards.
+// Update this list as inventory changes; use the product slug (URL segment).
+export const UNAVAILABLE_PRODUCTS = new Set([
+  "curry-leaf-powder",
+  "tulsi-powder",
+  "cassia-gum-powder",
+]);
 
 // Languages offered in the navbar translator (Google Translate codes).
 // Native labels stay in their own script so they're recognizable in any locale.

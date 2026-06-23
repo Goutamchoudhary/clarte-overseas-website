@@ -2,7 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EnquiryDialog from "../../../components/EnquiryDialog.astro";
 import { categories, productsByCategory, getCategory } from "../../../data/products";
-import { SITE } from "../../../consts";
+import { SITE, UNAVAILABLE_PRODUCTS } from "../../../consts";
 
 export function getStaticPaths() {
   return categories.map((c) => ({ params: { category: c.slug } }));
@@ -82,7 +82,10 @@ const listLd = {
               {p.forms && <span class="prod-badge">{p.forms.length}&nbsp;<span data-i18n="products.forms_unit">forms</span></span>}
             </a>
             <div class="prod-body">
-              <span class="prod-hsn">HSN {p.hsn}</span>
+              <div class="prod-hsn-row">
+                <span class="prod-hsn">HSN {p.hsn}</span>
+                <span class={`prod-avail-dot ${UNAVAILABLE_PRODUCTS.has(p.slug) ? "out" : ""}`} title={UNAVAILABLE_PRODUCTS.has(p.slug) ? "Currently unavailable" : "In stock"}></span>
+              </div>
               <h2 class="prod-name"><a href={`/products/${cat.slug}/${p.slug}`} data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_name`}>{p.name}</a></h2>
               <p class="prod-tag" data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_tagline`}>{p.tagline}</p>
               <div class="prod-actions">

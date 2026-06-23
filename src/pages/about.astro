@@ -270,6 +270,8 @@ const aboutFaqs = [
     </div>
   </section>
 
+  <Testimonials variant="light" />
+
   <!-- ===================== FAQ ===================== -->
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
@@ -292,8 +294,6 @@ const aboutFaqs = [
     </div>
   </section>
 
-  <Testimonials variant="light" />
-
   <!-- ===================== CTA ===================== -->
   <section id="quote" class="py-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
@@ -306,7 +306,7 @@ const aboutFaqs = [
           </a>
           <a href="/contact" class="btn btn-ghost" data-i18n="about.cta_btn_enquire">Enquire Us</a>
           {CONTACT.calendlyUrl && (
-            <a href={CONTACT.calendlyUrl} target="_blank" rel="noopener" class="btn btn-ghost-light">
+            <a href={CONTACT.calendlyUrl} onclick={`Calendly.initPopupWidget({url:'${CONTACT.calendlyUrl}'});return false;`} class="btn btn-ghost-light">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
               Book a 15-min call
             </a>
