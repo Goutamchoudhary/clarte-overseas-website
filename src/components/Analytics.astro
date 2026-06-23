@@ -41,6 +41,6 @@ const { gtm, ga4, googleTag, clarity } = ANALYTICS;
     }
   }
   window.__initAnalytics = loadAnalytics;
-  try { if (localStorage.getItem("cookie-consent") === "accepted") loadAnalytics(); } catch (e) {}
+  try { var _c = localStorage.getItem("cookie-consent"); if (_c === "accepted" || _c === "not-required") loadAnalytics(); } catch (e) {}
 })();
 </script>

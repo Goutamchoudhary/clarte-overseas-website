@@ -1,7 +1,8 @@
 ---
-// GDPR cookie consent banner.
-// Shows on first visit; stores choice in localStorage.
-// Accepts → calls window.__initAnalytics() (defined in Analytics.astro).
+// Cookie consent banner — shown only to visitors from countries that require it
+// (EU / EEA / UK under GDPR/UK-GDPR). All other visitors get analytics loaded
+// silently without interruption, stored as "not-required" to skip the check
+// on future visits. Accepts → calls window.__initAnalytics() from Analytics.astro.
 ---
 <div id="cookieBanner" class="cookie-banner" hidden>
   <div class="cookie-inner">
@@ -28,11 +29,13 @@
 <script>
   (function () {
     var banner = document.getElementById("cookieBanner");
-    try {
-      if (!localStorage.getItem("cookie-consent")) banner.hidden = false;
-    } catch (e) {
-      banner.hidden = false;
-    }
+
+    // EU 27 + EEA non-EU (IS, LI, NO) + UK — all require explicit cookie consent
+    var CONSENT_COUNTRIES = {
+      AT:1,BE:1,BG:1,CY:1,CZ:1,DE:1,DK:1,EE:1,ES:1,FI:1,FR:1,GR:1,HR:1,
+      HU:1,IE:1,IT:1,LT:1,LU:1,LV:1,MT:1,NL:1,PL:1,PT:1,RO:1,SE:1,SI:1,
+      SK:1,IS:1,LI:1,NO:1,GB:1
+    };
 
     function dismiss() {
       banner.classList.add("cookie-hide");
@@ -49,5 +52,34 @@
       try { localStorage.setItem("cookie-consent", "declined"); } catch (e) {}
       dismiss();
     });
+
+    // Return-visit fast path: already have a stored decision
+    var stored;
+    try { stored = localStorage.getItem("cookie-consent"); } catch (e) {}
+    if (stored === "accepted" || stored === "not-required" || stored === "declined") return;
+
+    // First visit — detect country, show banner only for EU/EEA/UK
+    var resolved = false;
+
+    function onCountry(code) {
+      if (resolved) return;
+      resolved = true;
+      if (code && CONSENT_COUNTRIES[code]) {
+        // Visitor is in a consent-required country → show banner
+        banner.hidden = false;
+      } else {
+        // No consent required — fire analytics silently
+        try { localStorage.setItem("cookie-consent", "not-required"); } catch (e) {}
+        if (typeof window.__initAnalytics === "function") window.__initAnalytics();
+      }
+    }
+
+    // 2-second safety timeout — if geo API is slow, show banner (conservative)
+    var timeout = setTimeout(function () { onCountry(null); }, 2000);
+
+    fetch("https://api.country.is/")
+      .then(function (r) { return r.json(); })
+      .then(function (d) { clearTimeout(timeout); onCountry(d && d.country); })
+      .catch(function () { clearTimeout(timeout); onCountry(null); });
   })();
 </script>
