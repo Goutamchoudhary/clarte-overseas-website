@@ -1294,23 +1294,6 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .testi-disclaimer { position: relative; z-index: 1; text-align: center; color: #94a3b8; font-size: .78rem; margin-top: 2rem; }
 
 /* =============================================================================
-   WHO WE ARE — warm aurora background (about page)
-   ============================================================================= */
-.wwa-section { position: relative; overflow: hidden; background: #fdf8ff; }
-.wwa-aurora { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-.wwa-blob { position: absolute; border-radius: 50%; filter: blur(80px); animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate; }
-.wb1 { width: 480px; height: 210px; background: rgba(167,139,250,.13); top: -60px; left: -80px; animation: wb1 9s infinite alternate; }
-.wb2 { width: 380px; height: 180px; background: rgba(251,113,133,.09); top: -30px; right: -60px; animation: wb2 11s infinite alternate; }
-.wb3 { width: 320px; height: 160px; background: rgba(251,191,36,.08); top: 50px; left: 35%; animation: wb3 13s infinite alternate; }
-.wb4 { width: 280px; height: 140px; background: rgba(129,140,248,.09); bottom: 20px; left: 5%; animation: wb4 10s infinite alternate; }
-.wb5 { width: 300px; height: 150px; background: rgba(249,168,212,.1); bottom: 10px; right: 8%; animation: wb5 8s infinite alternate; }
-@keyframes wb1 { from { transform: translate(0,0) scaleX(1); } to { transform: translate(45px,20px) scaleX(1.1); } }
-@keyframes wb2 { from { transform: translate(0,0); } to { transform: translate(-35px,25px); } }
-@keyframes wb3 { from { transform: translate(0,0); } to { transform: translate(30px,-18px); } }
-@keyframes wb4 { from { transform: translate(0,0) scale(1); } to { transform: translate(38px,-12px) scale(1.07); } }
-@keyframes wb5 { from { transform: translate(0,0); } to { transform: translate(-28px,15px); } }
-
-/* =============================================================================
    CERTIFICATIONS — market trust signals
    ============================================================================= */
 .mkt-grid {
