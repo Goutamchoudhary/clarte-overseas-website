@@ -22,6 +22,9 @@ export const ANALYTICS = {
   ga4: "G-D8GZTVSLZX", // (managed inside GTM — kept for reference)
   googleTag: "GT-WB72GKFN", // (managed inside GTM — kept for reference)
   clarity: "vt1zxn7czc", // Microsoft Clarity project (fired via GTM — kept for reference)
+  // LinkedIn Insight Tag partner ID — get this from LinkedIn Campaign Manager
+  // → Analyze → Insight Tag → copy the 7-digit partner ID. Leave "" to disable.
+  linkedinPartnerId: "",
 };
 
 export const CONTACT = {
@@ -33,6 +36,9 @@ export const CONTACT = {
   turnstileSiteKey: "",
   // Google Apps Script Web App URL (saves leads to a Sheet + WhatsApp alert) — paste the /exec URL
   sheetWebhook: "",
+  // Calendly link for "Book a discovery call" button — e.g. https://calendly.com/yourname/15min
+  // Leave "" to hide the button until you've set up your Calendly account.
+  calendlyUrl: "",
   address: "1st Floor, CW-59, Sanjay Gandhi Transport Nagar, Delhi, India. 110042",
 };
 

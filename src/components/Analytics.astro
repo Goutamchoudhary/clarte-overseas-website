@@ -3,9 +3,9 @@
 // On first visit nothing fires; CookieBanner calls window.__initAnalytics() on accept.
 // On return visits with stored consent, analytics fires immediately.
 import { ANALYTICS } from "../consts";
-const { gtm, ga4, googleTag, clarity } = ANALYTICS;
+const { gtm, ga4, googleTag, clarity, linkedinPartnerId } = ANALYTICS;
 ---
-<script is:inline define:vars={{ gtm, ga4, googleTag, clarity }}>
+<script is:inline define:vars={{ gtm, ga4, googleTag, clarity, linkedinPartnerId }}>
 (function () {
   function loadAnalytics() {
     if (window.__analyticsLoaded) return;
@@ -38,6 +38,20 @@ const { gtm, ga4, googleTag, clarity } = ANALYTICS;
           var y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", clarity);
       }
+    }
+    // LinkedIn Insight Tag — fires alongside GTM/GA4 after consent
+    if (linkedinPartnerId) {
+      window._linkedin_partner_id = linkedinPartnerId;
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(linkedinPartnerId);
+      if (!window.lintrk) {
+        window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); };
+        window.lintrk.q = [];
+      }
+      var li = document.createElement("script");
+      li.type = "text/javascript"; li.async = true;
+      li.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      document.head.appendChild(li);
     }
   }
   window.__initAnalytics = loadAnalytics;

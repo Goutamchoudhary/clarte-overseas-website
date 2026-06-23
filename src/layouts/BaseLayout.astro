@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
 import CookieBanner from "../components/CookieBanner.astro";
-import { SITE, ANALYTICS } from "../consts";
+import { SITE, ANALYTICS, SOCIAL } from "../consts";
 
 interface Props {
   title?: string;
@@ -42,6 +42,7 @@ const orgSchema = {
     contactType: "customer service",
     availableLanguage: "English",
   },
+  sameAs: [SOCIAL.linkedin, SOCIAL.instagram, SOCIAL.facebook],
 };
 ---
 

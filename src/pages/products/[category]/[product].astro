@@ -110,6 +110,11 @@ const breadcrumbLd = {
           </div>
           <p class="pd-desc" data-i18n={`prod.${p.slug.replace(/-/g,'_')}_desc`}>{p.description}</p>
 
+          <div class="pd-stock">
+            <span class="pd-stock-dot" aria-hidden="true"></span>
+            <span>In stock &middot; Ships within 14 days</span>
+          </div>
+
           <div class="pd-cta">
             <button type="button" class="btn btn-primary" data-open-enquire data-product={p.name} data-category={cat.name}>
               <span data-i18n="prod.enquire_btn">Enquire / Request a quote</span>

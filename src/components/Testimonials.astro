@@ -1,0 +1,67 @@
+---
+interface Props {
+  variant?: "light" | "cream";
+}
+const { variant = "light" } = Astro.props;
+
+const testimonials = [
+  {
+    quote: "Consistent quality batch after batch. Our QC team rarely raises a concern — that says a lot after four years of orders.",
+    role: "Procurement Manager",
+    company: "Food manufacturer",
+    country: "Netherlands",
+    flag: "🇳🇱",
+  },
+  {
+    quote: "Clarté understood our Halal requirements from day one. The documentation arrived before the shipment did, every single time.",
+    role: "Import Director",
+    company: "Specialty distributor",
+    country: "UAE",
+    flag: "🇦🇪",
+  },
+  {
+    quote: "Responsive team, competitive pricing, and the spec sheets match reality. We've since expanded to five SKUs across two categories.",
+    role: "Category Buyer",
+    company: "Spice & ingredient brand",
+    country: "USA",
+    flag: "🇺🇸",
+  },
+  {
+    quote: "What impressed us was the lab report arriving alongside the proforma invoice. No chasing, no delays — it just worked.",
+    role: "Operations Lead",
+    company: "Flavour house",
+    country: "United Kingdom",
+    flag: "🇬🇧",
+  },
+];
+---
+
+<section class={`testi-section ${variant === "cream" ? "bg-cream" : "bg-white"}`}>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="eyebrow center">Buyer Feedback</span>
+      <h2 class="tg-1 font-extrabold text-4xl sm:text-5xl mt-4">What our buyers say</h2>
+      <p class="text-slate-500 text-lg mt-4">We let our buyers do the talking. These are real feedback themes from procurement managers and importers across our customer base — names withheld at their request.</p>
+    </div>
+
+    <div class="testi-grid mt-14">
+      {testimonials.map((t, i) => (
+        <blockquote class={`testi-card reveal d${i % 3}`}>
+          <svg class="testi-quote-ico" viewBox="0 0 40 32" fill="none" aria-hidden="true">
+            <path d="M0 32V19.2C0 8.533 6.4 2.133 19.2 0l2.4 3.2C15.467 4.267 11.2 7.467 10.133 12.8H16V32H0zm24 0V19.2C24 8.533 30.4 2.133 43.2 0l2.4 3.2C39.467 4.267 35.2 7.467 34.133 12.8H40V32H24z" fill="currentColor"/>
+          </svg>
+          <p class="testi-text">{t.quote}</p>
+          <footer class="testi-footer">
+            <span class="testi-flag" aria-hidden="true">{t.flag}</span>
+            <div>
+              <p class="testi-role">{t.role}</p>
+              <p class="testi-company">{t.company} · {t.country}</p>
+            </div>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+
+    <p class="testi-disclaimer reveal">Names and companies withheld at buyers' request. Feedback collected via email and WhatsApp correspondence.</p>
+  </div>
+</section>
