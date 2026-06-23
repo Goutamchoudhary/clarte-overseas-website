@@ -11,9 +11,9 @@ import { CONTACT } from "../consts";
     </button>
 
     <div class="enq-main" id="enqMain">
-      <span class="eyebrow" data-i18n="enq.eyebrow">Enquiry</span>
+      <span class="eyebrow" id="enqEyebrow" data-i18n="enq.eyebrow">Enquiry</span>
       <h3 id="enqTitle" class="enq-title" data-i18n="enq.title">Request a quote</h3>
-      <p class="enq-sub" data-i18n="enq.sub">Tell us a little about your requirement — we reply within one business day, often the same day.</p>
+      <p class="enq-sub" id="enqSub" data-i18n="enq.sub">Tell us a little about your requirement — we reply within one business day, often the same day.</p>
 
       <div class="enq-chip" id="enqChip" hidden>
         <span class="enq-chip-dot"></span>
@@ -22,7 +22,7 @@ import { CONTACT } from "../consts";
 
       <form id="enqForm" action="https://api.web3forms.com/submit" method="POST" class="enq-form">
         <input type="hidden" name="access_key" value={CONTACT.web3formsKey} />
-        <input type="hidden" name="subject" value="Product enquiry — Clarté Overseas website" />
+        <input type="hidden" name="subject" id="enqSubject" value="Product enquiry — Clarté Overseas website" />
         <input type="hidden" name="from_name" value="Clarté Overseas website" />
         <input type="checkbox" name="botcheck" class="enq-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <input type="hidden" name="category" id="enqCategory" value="" />
@@ -81,15 +81,36 @@ import { CONTACT } from "../consts";
     const chipCat = document.getElementById("enqChipCat");
     const fCat = document.getElementById("enqCategory") as HTMLInputElement;
     const fProd = document.getElementById("enqProduct") as HTMLInputElement;
+    const fSubject = document.getElementById("enqSubject") as HTMLInputElement;
     const strSending = () => document.getElementById("enqStrSending")?.textContent || "Sending…";
     const strGeneral = () => document.getElementById("enqStrGeneral")?.textContent || "General enquiry";
 
-    const open = (product, category) => {
+    const open = (product: string, category: string, isSample = false) => {
       fProd.value = product || "";
       fCat.value = category || "";
+
+      const title = document.getElementById("enqTitle");
+      const eyebrow = document.getElementById("enqEyebrow");
+      const sub = document.getElementById("enqSub");
+      const msgArea = form.querySelector("textarea[name='message']") as HTMLTextAreaElement;
+
+      if (isSample) {
+        if (fSubject) fSubject.value = "Sample request — Clarté Overseas website";
+        if (eyebrow) eyebrow.textContent = "Free Sample";
+        if (title) title.textContent = "Request a free sample";
+        if (sub) sub.textContent = "Fill in your details and we'll arrange a sample shipment to evaluate quality before you commit to an order.";
+        if (msgArea && product) msgArea.value = `I would like to request a free sample of ${product}. Please let me know the quantities available and any shipping or courier charges that may apply.`;
+      } else {
+        if (fSubject) fSubject.value = "Product enquiry — Clarté Overseas website";
+        if (eyebrow) eyebrow.textContent = "Enquiry";
+        if (title) title.textContent = "Request a quote";
+        if (sub) sub.textContent = "Tell us a little about your requirement — we reply within one business day, often the same day.";
+        if (msgArea && !msgArea.value) msgArea.value = "";
+      }
+
       if (product || category) {
         chip.hidden = false;
-        chipProduct.textContent = product || strGeneral();
+        chipProduct.textContent = (isSample ? "Sample: " : "") + (product || strGeneral());
         chipCat.textContent = category ? "  ·  " + category : "";
       } else {
         chip.hidden = true;
@@ -99,11 +120,21 @@ import { CONTACT } from "../consts";
       modal.hidden = false;
       document.body.style.overflow = "hidden";
     };
-    const close = () => { modal.hidden = true; document.body.style.overflow = ""; };
+    const close = () => {
+      modal.hidden = true;
+      document.body.style.overflow = "";
+      // reset sample-mode overrides so next open starts clean
+      const msgArea = form.querySelector("textarea[name='message']") as HTMLTextAreaElement;
+      if (msgArea) msgArea.value = "";
+    };
 
     document.querySelectorAll("[data-open-enquire]").forEach((b) =>
       b.addEventListener("click", () =>
-        open(b.getAttribute("data-product") || "", b.getAttribute("data-category") || "")
+        open(
+          b.getAttribute("data-product") || "",
+          b.getAttribute("data-category") || "",
+          b.getAttribute("data-is-sample") === "true"
+        )
       )
     );
     modal.addEventListener("click", (e) => {

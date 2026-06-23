@@ -1,0 +1,53 @@
+---
+// GDPR cookie consent banner.
+// Shows on first visit; stores choice in localStorage.
+// Accepts → calls window.__initAnalytics() (defined in Analytics.astro).
+---
+<div id="cookieBanner" class="cookie-banner" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-content">
+      <svg class="cookie-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="8.5" cy="10" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="14" cy="8" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="15.5" cy="14" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="9.5" cy="15" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <div>
+        <p class="cookie-title">We use cookies</p>
+        <p class="cookie-desc">We use analytics cookies (Google Analytics &amp; Microsoft Clarity) to understand how visitors use our site and improve your experience. No personal data is sold or shared with third parties.</p>
+      </div>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookieDecline" class="cookie-decline" type="button">Decline</button>
+      <button id="cookieAccept" class="cookie-accept" type="button">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var banner = document.getElementById("cookieBanner");
+    try {
+      if (!localStorage.getItem("cookie-consent")) banner.hidden = false;
+    } catch (e) {
+      banner.hidden = false;
+    }
+
+    function dismiss() {
+      banner.classList.add("cookie-hide");
+      setTimeout(function () { banner.hidden = true; }, 320);
+    }
+
+    document.getElementById("cookieAccept").addEventListener("click", function () {
+      try { localStorage.setItem("cookie-consent", "accepted"); } catch (e) {}
+      dismiss();
+      if (typeof window.__initAnalytics === "function") window.__initAnalytics();
+    });
+
+    document.getElementById("cookieDecline").addEventListener("click", function () {
+      try { localStorage.setItem("cookie-consent", "declined"); } catch (e) {}
+      dismiss();
+    });
+  })();
+</script>

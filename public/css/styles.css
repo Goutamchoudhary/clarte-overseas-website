@@ -1082,3 +1082,101 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .product-card { position: relative; }
 .card-stretch::before { content: ""; position: absolute; inset: 0; z-index: 1; }
 .product-card .p-6 { position: relative; }
+
+/* =============================================================================
+   COOKIE CONSENT BANNER
+   ============================================================================= */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: #fff; border-top: 1px solid #e4e8f0;
+  box-shadow: 0 -8px 32px -12px rgba(13,26,54,.14);
+  padding: 1rem 1.5rem;
+  animation: cookieSlideIn .35s ease both;
+}
+.cookie-banner.cookie-hide { animation: cookieSlideOut .32s ease both; }
+.cookie-inner {
+  max-width: 72rem; margin: 0 auto;
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+}
+.cookie-content {
+  flex: 1; min-width: 0; display: flex; align-items: flex-start; gap: .75rem;
+}
+.cookie-ico {
+  width: 22px; height: 22px; flex-shrink: 0; color: var(--brand); margin-top: 2px;
+}
+.cookie-title { font-weight: 700; font-size: .9rem; color: #1e293b; }
+.cookie-desc { font-size: .82rem; color: #64748b; margin-top: .2rem; line-height: 1.55; }
+.cookie-actions { display: flex; gap: .6rem; flex-shrink: 0; align-items: center; }
+.cookie-decline {
+  padding: .48rem 1rem; border-radius: 999px; font-size: .85rem; font-weight: 600;
+  border: 1.5px solid #cbd5e1; background: transparent; color: #64748b; cursor: pointer;
+  font-family: var(--font-body); transition: border-color .15s ease, color .15s ease;
+}
+.cookie-decline:hover { border-color: #94a3b8; color: #334155; }
+.cookie-accept {
+  padding: .48rem 1.2rem; border-radius: 999px; font-size: .85rem; font-weight: 600;
+  border: none; background: var(--brand); color: #fff; cursor: pointer;
+  font-family: var(--font-body); transition: background .15s ease;
+}
+.cookie-accept:hover { background: #2b57b0; }
+@keyframes cookieSlideIn { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes cookieSlideOut { from { transform: translateY(0); } to { transform: translateY(110%); } }
+@media (max-width: 600px) {
+  .cookie-inner { flex-direction: column; gap: .75rem; }
+  .cookie-actions { width: 100%; justify-content: flex-end; }
+}
+
+/* =============================================================================
+   404 PAGE
+   ============================================================================= */
+.notfound-section {
+  min-height: 80vh; display: flex; align-items: center; justify-content: center;
+  padding: 5rem 1.5rem;
+}
+.notfound-inner { text-align: center; max-width: 540px; }
+.notfound-num {
+  font-family: var(--font-head); font-size: clamp(7rem, 22vw, 13rem);
+  font-weight: 800; line-height: 1; color: var(--brand); opacity: .1;
+  margin-bottom: -1.5rem; user-select: none;
+}
+.notfound-title {
+  font-family: var(--font-head); font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700; color: #16265a;
+}
+.notfound-sub {
+  color: #64748b; font-size: 1.05rem; margin-top: 1rem; line-height: 1.7;
+}
+.notfound-links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .85rem; margin-top: 2.25rem;
+}
+.notfound-link {
+  font-weight: 600; font-size: .95rem; color: var(--brand);
+  text-decoration: underline; text-underline-offset: 3px;
+  padding: .6rem 1rem; border-radius: .5rem;
+  transition: background .15s ease;
+}
+.notfound-link:hover { background: var(--brand-100); }
+
+/* =============================================================================
+   SAMPLE REQUEST BUTTON (product page)
+   ============================================================================= */
+.btn-sample-req {
+  display: inline-flex; align-items: center; gap: .5rem; margin-top: .85rem;
+  font-family: var(--font-body); font-size: .85rem; font-weight: 600;
+  color: var(--brand); background: var(--brand-100); border: 1.5px solid #c7d9ff;
+  padding: .55rem 1.15rem; border-radius: 999px; cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.btn-sample-req:hover { background: #d4e6ff; border-color: var(--brand); }
+.btn-sample-req svg { flex-shrink: 0; }
+
+/* =============================================================================
+   CONTACT PAGE — phone numbers
+   ============================================================================= */
+.cc-value-phones { display: flex; flex-direction: column; gap: .2rem; }
+.cc-wa-badge {
+  display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .03em;
+  background: #dcfce7; color: #15803d; border-radius: 4px; padding: .05rem .35rem;
+  vertical-align: middle; margin-left: .3rem;
+}
+.cc-phone-alt { color: #94a3b8; font-size: .88em; }

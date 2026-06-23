@@ -8,8 +8,10 @@ const title = "Contact Clarté Overseas — Request a Quote | Dehydrated Food Ex
 const description =
   "Get in touch with Clarté Overseas for quotes, samples and sourcing enquiries on dehydrated fruits, vegetables and powders. Based in New Delhi, shipping worldwide.";
 
-const phoneDisplay = "(+91) 8800242156";
-const phoneHref = "tel:+918800242156";
+const phoneWa = "(+91) 98189 15310";
+const phoneWaHref = "tel:+919818915310";
+const phoneAlt = "(+91) 8800242156";
+const phoneAltHref = "tel:+918800242156";
 
 const categories = [...catData.map((c) => c.name), "Something else / Not sure yet"];
 // Products grouped by category for the optgroup select
@@ -69,7 +71,10 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
             <span class="cc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <div>
               <span class="cc-label"><span data-i18n="contact.info_phone_label">Phone &amp; WhatsApp</span></span>
-              <span class="cc-value"><a href={phoneHref}>{phoneDisplay}</a></span>
+              <span class="cc-value cc-value-phones">
+                <a href={phoneWaHref}>{phoneWa} <span class="cc-wa-badge">WhatsApp</span></a>
+                <a href={phoneAltHref} class="cc-phone-alt">{phoneAlt}</a>
+              </span>
             </div>
           </div>
 

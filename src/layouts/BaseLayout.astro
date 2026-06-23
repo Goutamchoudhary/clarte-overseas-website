@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 import { SITE, ANALYTICS } from "../consts";
 
 interface Props {
@@ -33,6 +34,13 @@ const orgSchema = {
     addressLocality: "Delhi",
     postalCode: "110042",
     addressCountry: "IN",
+  },
+  telephone: "+919818915310",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+919818915310",
+    contactType: "customer service",
+    availableLanguage: "English",
   },
 };
 ---
@@ -89,6 +97,7 @@ const orgSchema = {
     <Navbar />
     <slot />
     <Footer />
+    <CookieBanner />
     <script is:inline src="/js/script.js"></script>
   </body>
 </html>

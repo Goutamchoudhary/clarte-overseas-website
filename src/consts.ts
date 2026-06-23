@@ -26,9 +26,7 @@ export const ANALYTICS = {
 
 export const CONTACT = {
   email: "info@clarteoverseas.com",
-  // TODO: replace with the real WhatsApp number (country code, no +)
-  whatsapp:
-    "https://wa.me/910000000000?text=Hi%20Clart%C3%A9%20Overseas%2C%20I%27d%20like%20a%20quote.",
+  whatsapp: "https://wa.me/919818915310",
   // Web3Forms access key — paste the key emailed to you from web3forms.com
   web3formsKey: "c15bc0d8-19b2-42dd-a385-5a15dd3a7883",
   // Cloudflare Turnstile site key (optional spam protection) — leave empty to disable

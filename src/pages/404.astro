@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Page Not Found — Clarté Overseas"
+  description="The page you're looking for doesn't exist. Browse our products or get in touch."
+  noindex={true}
+>
+  <section class="notfound-section">
+    <div class="notfound-inner">
+      <p class="notfound-num" aria-hidden="true">404</p>
+      <h1 class="notfound-title">Page not found</h1>
+      <p class="notfound-sub">
+        The page you're looking for doesn't exist or may have moved.<br />
+        Here's where you can go instead:
+      </p>
+      <div class="notfound-links">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/products" class="notfound-link">Browse Products</a>
+        <a href="/contact" class="notfound-link">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
