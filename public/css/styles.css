@@ -1294,6 +1294,61 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .testi-disclaimer { position: relative; z-index: 1; text-align: center; color: #94a3b8; font-size: .78rem; margin-top: 2rem; }
 
 /* =============================================================================
+   AURORA BACKGROUNDS — reusable pastel / northern-lights section backdrops
+   Add `.aurora` + one palette class (.aurora-mint / -lavender / -peach / -sky
+   / -blush) to any <section>. No extra markup needed — the glow is layered
+   radial-gradients. Keep section content above it (it sits at z-index 0).
+   ============================================================================= */
+.aurora { position: relative; overflow: hidden; }
+.aurora > * { position: relative; z-index: 1; }
+
+/* 1 · Mint — fresh cool greens & aqua (calm, clean) */
+.aurora-mint {
+  background:
+    radial-gradient(46% 56% at 12% 6%,  rgba(0,210,160,.15),  transparent 68%),
+    radial-gradient(42% 52% at 90% 0%,  rgba(120,200,255,.11), transparent 70%),
+    radial-gradient(52% 60% at 72% 100%, rgba(150,230,200,.14), transparent 72%),
+    radial-gradient(40% 50% at 22% 102%, rgba(0,200,180,.09),  transparent 70%),
+    linear-gradient(180deg, #f0fbf8, #eef9ff);
+}
+/* 2 · Lavender — violet, soft rose & periwinkle (warm, premium) */
+.aurora-lavender {
+  background:
+    radial-gradient(46% 56% at 10% 6%,  rgba(167,139,250,.15), transparent 68%),
+    radial-gradient(42% 52% at 92% 2%,  rgba(244,114,182,.10), transparent 70%),
+    radial-gradient(52% 60% at 74% 100%, rgba(129,140,248,.12), transparent 72%),
+    radial-gradient(40% 50% at 20% 102%, rgba(196,140,250,.09), transparent 70%),
+    linear-gradient(180deg, #f8f5ff, #fdf4fb);
+}
+/* 3 · Peach — warm coral, apricot & soft pink (inviting, energetic) */
+.aurora-peach {
+  background:
+    radial-gradient(46% 56% at 12% 6%,  rgba(251,146,120,.13), transparent 68%),
+    radial-gradient(42% 52% at 90% 0%,  rgba(253,200,140,.13), transparent 70%),
+    radial-gradient(52% 60% at 74% 100%, rgba(244,160,200,.10), transparent 72%),
+    radial-gradient(40% 50% at 22% 102%, rgba(252,180,160,.10), transparent 70%),
+    linear-gradient(180deg, #fff7f2, #fff4f7);
+}
+/* 4 · Sky — brand-aligned blues & cyan (trust, corporate) */
+.aurora-sky {
+  background:
+    radial-gradient(46% 56% at 12% 6%,  rgba(96,165,250,.15),  transparent 68%),
+    radial-gradient(42% 52% at 90% 0%,  rgba(125,211,252,.13), transparent 70%),
+    radial-gradient(52% 60% at 72% 100%, rgba(56,189,248,.10),  transparent 72%),
+    radial-gradient(40% 50% at 22% 102%, rgba(99,102,241,.07),  transparent 70%),
+    linear-gradient(180deg, #f1f7ff, #eef4ff);
+}
+/* 5 · Blush — pink, lilac & pale blue (the classic aurora ribbon) */
+.aurora-blush {
+  background:
+    radial-gradient(46% 56% at 10% 6%,  rgba(244,114,182,.11), transparent 68%),
+    radial-gradient(42% 52% at 92% 0%,  rgba(192,132,252,.12), transparent 70%),
+    radial-gradient(52% 60% at 74% 100%, rgba(147,197,253,.12), transparent 72%),
+    radial-gradient(40% 50% at 20% 102%, rgba(216,180,254,.09), transparent 70%),
+    linear-gradient(180deg, #fdf4fb, #f4f6ff);
+}
+
+/* =============================================================================
    CERTIFICATIONS — market trust signals
    ============================================================================= */
 .mkt-grid {
