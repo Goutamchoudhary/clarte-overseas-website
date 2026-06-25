@@ -1352,11 +1352,12 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
    CERTIFICATIONS — market trust signals
    ============================================================================= */
 .mkt-grid {
-  display: grid; gap: 1.25rem;
-  grid-template-columns: 1fr;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem;
 }
-@media (min-width: 640px)  { .mkt-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1024px) { .mkt-grid { grid-template-columns: repeat(4, 1fr); } }
+.mkt-card { flex: 1 1 100%; }
+@media (min-width: 640px)  { .mkt-card { flex-basis: calc(50% - 0.625rem); } }
+/* 3 across — 5 cards wrap to a centered 3 + 2 layout */
+@media (min-width: 1024px) { .mkt-card { flex-basis: calc(33.333% - 0.834rem); max-width: 360px; } }
 
 .mkt-card {
   background: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem 1.4rem;
