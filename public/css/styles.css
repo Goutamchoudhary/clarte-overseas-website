@@ -1355,9 +1355,9 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem;
 }
 .mkt-card { flex: 1 1 100%; }
-@media (min-width: 640px)  { .mkt-card { flex-basis: calc(50% - 0.625rem); } }
-/* 3 across — 5 cards wrap to a centered 3 + 2 layout */
-@media (min-width: 1024px) { .mkt-card { flex-basis: calc(33.333% - 0.834rem); max-width: 360px; } }
+@media (min-width: 640px)  { .mkt-card { flex: 0 1 calc(50% - 0.625rem); } }
+/* 4 across — 7 markets wrap to a centered 4 + 3 layout */
+@media (min-width: 1024px) { .mkt-card { flex: 0 1 calc(25% - 0.94rem); max-width: 300px; } }
 
 .mkt-card {
   background: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem 1.4rem;
@@ -1365,8 +1365,9 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   transition: box-shadow .2s ease, transform .2s ease;
 }
 .mkt-card:hover { box-shadow: 0 8px 28px -10px rgba(31,70,147,.15); transform: translateY(-2px); }
-.mkt-flag { font-size: 2rem; line-height: 1; margin-bottom: .6rem; }
-.mkt-title { font: 700 1rem "Sora", sans-serif; color: #1f4693; margin-bottom: .75rem; }
+.mkt-flags { font-size: 1.3rem; line-height: 1; letter-spacing: .12rem; margin-bottom: .5rem; }
+.mkt-title { font: 700 1rem "Sora", sans-serif; color: #1f4693; margin-bottom: .25rem; }
+.mkt-countries { font-size: .72rem; color: #94a3b8; line-height: 1.35; margin-bottom: .85rem; }
 .mkt-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .4rem; }
 .mkt-list li { display: flex; align-items: flex-start; gap: .5rem; font-size: .83rem; color: #475569; line-height: 1.4; }
 .mkt-check { color: #16a34a; font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
