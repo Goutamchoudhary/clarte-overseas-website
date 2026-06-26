@@ -12,7 +12,11 @@ const cats = categories.map((c) => {
   return {
     ...c,
     count: items.length,
-    thumbs: items.filter((p) => p.image).slice(0, 4),
+    thumbs: c.thumbSlugs
+      ? c.thumbSlugs
+          .map((slug) => items.find((p) => p.slug === slug))
+          .filter((p) => p && p.image)
+      : items.filter((p) => p.image).slice(0, 4),
     fallback: items.slice(0, 4),
   };
 });

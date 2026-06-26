@@ -7,6 +7,7 @@
 // =============================================================================
 
 const IMG = (id: string) => `https://lsmedia.linker-cdn.net/1059756/2026/${id}.png`;
+const IMGJ = (id: string) => `https://lsmedia.linker-cdn.net/1059756/2026/${id}.jpeg`;
 
 // Flexible drying lines by category — we supply the method the buyer's grade needs.
 const DRY = {
@@ -27,6 +28,7 @@ export interface Category {
   accentFrom: string;
   accentTo: string;
   heroImage?: string; // optional right-side hero photo (replaces the emoji motif)
+  thumbSlugs?: string[]; // optional: pin which products appear in the 4-image preview grid
 }
 
 export interface Product {
@@ -66,6 +68,7 @@ export const categories: Category[] = [
     tagline: "The savoury backbone of every kitchen",
     description:
       "Onion, garlic, ginger and chilli — the workhorses of kitchens and food plants worldwide. Consistent pungency, clean flavour and a full range of cuts, from fine powder to kibbled flakes.",
+    thumbSlugs: ["red-onion-powder", "ginger-powder", "garlic-powder", "green-chilli-powder"],
     accentFrom: "#c2410c",
     accentTo: "#9a3412",
     heroImage: "/assets/img/categories/culinary-spice.jpg",
@@ -192,7 +195,7 @@ export const products: Product[] = [
   },
   {
     slug: "papaya-powder", name: "Papaya Powder", category: "fruit-powders",
-    emoji: "🟠", hsn: "1106 30 10", botanical: "Carica papaya",
+    image: IMGJ("14969248"), emoji: "🟠", hsn: "1106 30 10", botanical: "Carica papaya",
     tagline: "Mild, sweet tropical fruit with natural enzymes.",
     description:
       "Papaya powder offers a soft, sweet tropical flavour along with the fruit's naturally occurring enzymes. It works well in nutrition blends and digestive formulations, and adds a gentle fruitiness to beverages and desserts.",
@@ -205,7 +208,7 @@ export const products: Product[] = [
   // ----------------------------------------------------- CULINARY & SPICE
   {
     slug: "red-onion-powder", name: "Red Onion Powder", category: "culinary-spice-powders",
-    image: IMG("14850506"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
+    image: IMGJ("14969273"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
     tagline: "Bold, deeply flavoured Indian red onion — rich savouriness in every form.",
     description:
       "Our red onion powder is made from India's robust, dark-red onions, prized for their strong pungency and deep colour. It delivers rich, complex onion flavour to seasonings, sauces and ready meals — available as fine powder right through to kibbled flakes for consistent results with no prep or waste.",
@@ -217,7 +220,7 @@ export const products: Product[] = [
   },
   {
     slug: "pink-onion-powder", name: "Pink Onion Powder", category: "culinary-spice-powders",
-    emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
+    image: IMGJ("14969274"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
     tagline: "India's delicate pink onion — mild, sweet and universally versatile.",
     description:
       "Made from India's prized pink onions — lighter in colour and milder in flavour than deep red varieties — this powder brings a gentle, balanced sweetness to products where subtlety matters more than bold pungency. Its pale blush tone suits light-coloured seasonings, dressings and cream sauces where a dark onion powder would show.",
@@ -229,7 +232,7 @@ export const products: Product[] = [
   },
   {
     slug: "white-onion-powder", name: "White Onion Powder", category: "culinary-spice-powders",
-    emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
+    image: IMGJ("14969275"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
     tagline: "Clean, milder onion with a pale, neutral colour.",
     description:
       "White onion powder offers a cleaner, slightly milder profile and a pale colour that won't tint light-coloured products. It is the go-to choice for white sauces, soups, dressings and seasoning blends where appearance matters as much as taste.",
@@ -335,7 +338,7 @@ export const products: Product[] = [
   },
   {
     slug: "jackfruit-powder", name: "Jackfruit Powder", category: "functional-nutritional-powders",
-    emoji: "🟡", hsn: "1106 30 10", botanical: "Artocarpus heterophyllus",
+    image: IMGJ("14969247"), emoji: "🟡", hsn: "1106 30 10", botanical: "Artocarpus heterophyllus",
     tagline: "India's super-fruit — sweet, filling, on-trend.",
     description:
       "Jackfruit powder turns one of India's most talked-about fruits into a versatile ingredient. Ripe jackfruit gives a sweet, tropical flavour for beverages and nutrition, while the fruit's fibre and resistant starch make it a popular functional and flour ingredient.",
@@ -405,7 +408,7 @@ export const products: Product[] = [
   },
   {
     slug: "tamarind-kernel-powder", name: "Tamarind Kernel Powder", category: "hydrocolloids-food-additives",
-    emoji: "🟤", hsn: "1302 32 90", botanical: "Tamarindus indica",
+    image: IMGJ("14969249"), emoji: "🟤", hsn: "1302 32 90", botanical: "Tamarindus indica",
     tagline: "A versatile natural thickener and sizing agent.",
     description:
       "Tamarind kernel powder (TKP) is a polysaccharide gum milled from tamarind seeds. It is a cost-effective thickening, gelling and sizing agent used in food, textiles and other industries, and pairs well with other hydrocolloids.",
