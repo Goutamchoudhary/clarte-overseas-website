@@ -48,13 +48,19 @@ export const SOCIAL = {
   facebook: "https://www.facebook.com/share/1EqVT8eMpo/",
 };
 
-// Products that are temporarily out of stock — shown with a red "Currently unavailable"
-// badge on the product page and a red dot on category listing cards.
-// Update this list as inventory changes; use the product slug (URL segment).
+// Product availability flags — drive the badge on the product page and the
+// dot on category listing cards. Use the product slug (URL segment).
+//   UNAVAILABLE  → red "Currently Unavailable" (temporarily out of stock)
+//   COMING_SOON  → orange "Coming Soon" (not launched yet)
+// A slug should appear in at most one set.
 export const UNAVAILABLE_PRODUCTS = new Set([
+  "apple-powder",
+]);
+export const COMING_SOON_PRODUCTS = new Set([
   "curry-leaf-powder",
   "tulsi-powder",
   "cassia-gum-powder",
+  "tamarind-kernel-powder",
 ]);
 
 // Languages offered in the navbar translator (Google Translate codes).

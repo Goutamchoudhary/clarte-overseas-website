@@ -2,6 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import { categories, productsByCategory } from "../../data/products";
+import { COMING_SOON_PRODUCTS, UNAVAILABLE_PRODUCTS } from "../../consts";
+
+const hiddenFromThumbs = (slug: string) =>
+  COMING_SOON_PRODUCTS.has(slug) || UNAVAILABLE_PRODUCTS.has(slug);
 
 const title = "Products — Dehydrated Fruit, Vegetable, Herbal & Spice Powders | Clarté Overseas";
 const description =
@@ -15,8 +19,8 @@ const cats = categories.map((c) => {
     thumbs: c.thumbSlugs
       ? c.thumbSlugs
           .map((slug) => items.find((p) => p.slug === slug))
-          .filter((p) => p && p.image)
-      : items.filter((p) => p.image).slice(0, 4),
+          .filter((p) => p && p.image && !hiddenFromThumbs(p.slug))
+      : items.filter((p) => p.image && !hiddenFromThumbs(p.slug)).slice(0, 4),
     fallback: items.slice(0, 4),
   };
 });

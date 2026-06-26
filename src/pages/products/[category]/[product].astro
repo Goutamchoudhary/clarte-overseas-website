@@ -2,7 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EnquiryDialog from "../../../components/EnquiryDialog.astro";
 import { products, productsByCategory, getCategory, getProduct } from "../../../data/products";
-import { SITE, UNAVAILABLE_PRODUCTS } from "../../../consts";
+import { SITE, UNAVAILABLE_PRODUCTS, COMING_SOON_PRODUCTS } from "../../../consts";
 
 export function getStaticPaths() {
   return products.map((p) => ({ params: { category: p.category, product: p.slug } }));
@@ -13,6 +13,9 @@ const cat = getCategory(category)!;
 const p = getProduct(product)!;
 const related = productsByCategory(category).filter((x) => x.slug !== p.slug).slice(0, 4);
 const isUnavailable = UNAVAILABLE_PRODUCTS.has(p.slug);
+const isComingSoon = COMING_SOON_PRODUCTS.has(p.slug);
+const isOut = isUnavailable || isComingSoon;
+const stockLabel = isUnavailable ? "Currently Unavailable" : isComingSoon ? "Coming Soon" : "In stock · Ships within 14 days";
 
 const title = `${p.name} — ${cat.name} | HSN ${p.hsn} | Clarté Overseas`;
 const description = `${p.tagline} ${p.description}`.slice(0, 180);
@@ -111,9 +114,9 @@ const breadcrumbLd = {
           </div>
           <p class="pd-desc" data-i18n={`prod.${p.slug.replace(/-/g,'_')}_desc`}>{p.description}</p>
 
-          <div class={`pd-stock${isUnavailable ? " pd-stock-out" : ""}`}>
-            <span class={isUnavailable ? "pd-stock-dot-out" : "pd-stock-dot"} aria-hidden="true"></span>
-            <span>{isUnavailable ? "Coming Soon" : "In stock · Ships within 14 days"}</span>
+          <div class={`pd-stock${isUnavailable ? " pd-stock-unavail" : isComingSoon ? " pd-stock-out" : ""}`}>
+            <span class={isUnavailable ? "pd-stock-dot-unavail" : isComingSoon ? "pd-stock-dot-out" : "pd-stock-dot"} aria-hidden="true"></span>
+            <span>{stockLabel}</span>
           </div>
 
           <div class="pd-cta">

@@ -973,6 +973,9 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .prod-card:hover .prod-media img { transform: scale(1.07); }
 .prod-emoji { position: relative; z-index: 1; font-size: 3rem; }
 .prod-badge { position: absolute; top: .7rem; right: .7rem; z-index: 2; font: 700 .62rem "Sora", sans-serif; letter-spacing: .04em; color: #16265a; background: rgba(255,255,255,.92); border: 1px solid #e2e9f5; padding: .22rem .55rem; border-radius: 999px; }
+.prod-status { position: absolute; top: .7rem; left: .7rem; z-index: 2; font: 700 .62rem "Sora", sans-serif; letter-spacing: .03em; padding: .22rem .55rem; border-radius: 999px; }
+.prod-status-unavail { color: #b91c1c; background: rgba(254,242,242,.95); border: 1px solid #fecaca; }
+.prod-status-soon { color: #c2410c; background: rgba(255,247,237,.95); border: 1px solid #fed7aa; }
 .prod-body { padding: 1.1rem 1.2rem 1.2rem; display: flex; flex-direction: column; flex: 1; }
 .prod-hsn { font: 700 .62rem "Sora", sans-serif; letter-spacing: .06em; color: #8a97b2; }
 .prod-name { font: 700 1.05rem "Sora", sans-serif; color: #16265a; margin-top: .3rem; }
@@ -1217,6 +1220,11 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   width: 7px; height: 7px; border-radius: 50%; background: #f97316; flex-shrink: 0;
   box-shadow: 0 0 0 2.5px rgba(249,115,22,.2);
 }
+.pd-stock.pd-stock-unavail { color: #b91c1c; background: #fef2f2; border-color: #fecaca; }
+.pd-stock-dot-unavail {
+  width: 7px; height: 7px; border-radius: 50%; background: #ef4444; flex-shrink: 0;
+  box-shadow: 0 0 0 2.5px rgba(239,68,68,.2);
+}
 
 /* =============================================================================
    CATEGORY LISTING — availability dot on product card
@@ -1229,6 +1237,10 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 .prod-avail-dot.out {
   background: #f97316; box-shadow: 0 0 0 2.5px rgba(249,115,22,.2);
+  animation: none;
+}
+.prod-avail-dot.unavail {
+  background: #ef4444; box-shadow: 0 0 0 2.5px rgba(239,68,68,.2);
   animation: none;
 }
 

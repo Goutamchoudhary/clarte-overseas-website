@@ -2,7 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EnquiryDialog from "../../../components/EnquiryDialog.astro";
 import { categories, productsByCategory, getCategory } from "../../../data/products";
-import { SITE, UNAVAILABLE_PRODUCTS } from "../../../consts";
+import { SITE, UNAVAILABLE_PRODUCTS, COMING_SOON_PRODUCTS } from "../../../consts";
 
 export function getStaticPaths() {
   return categories.map((c) => ({ params: { category: c.slug } }));
@@ -80,11 +80,13 @@ const listLd = {
                 ? <img src={p.image} alt={p.name} loading="lazy" />
                 : <span class="prod-emoji">{p.emoji}</span>}
               {p.forms && <span class="prod-badge">{p.forms.length}&nbsp;<span data-i18n="products.forms_unit">forms</span></span>}
+              {UNAVAILABLE_PRODUCTS.has(p.slug) && <span class="prod-status prod-status-unavail">Currently Unavailable</span>}
+              {COMING_SOON_PRODUCTS.has(p.slug) && <span class="prod-status prod-status-soon">Coming Soon</span>}
             </a>
             <div class="prod-body">
               <div class="prod-hsn-row">
                 <span class="prod-hsn">HSN {p.hsn}</span>
-                <span class={`prod-avail-dot ${UNAVAILABLE_PRODUCTS.has(p.slug) ? "out" : ""}`} title={UNAVAILABLE_PRODUCTS.has(p.slug) ? "Coming Soon" : "In stock"}></span>
+                <span class={`prod-avail-dot ${UNAVAILABLE_PRODUCTS.has(p.slug) ? "unavail" : COMING_SOON_PRODUCTS.has(p.slug) ? "out" : ""}`} title={UNAVAILABLE_PRODUCTS.has(p.slug) ? "Currently Unavailable" : COMING_SOON_PRODUCTS.has(p.slug) ? "Coming Soon" : "In stock"}></span>
               </div>
               <h2 class="prod-name"><a href={`/products/${cat.slug}/${p.slug}`} data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_name`}>{p.name}</a></h2>
               <p class="prod-tag" data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_tagline`}>{p.tagline}</p>

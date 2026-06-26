@@ -92,6 +92,7 @@ export const categories: Category[] = [
     tagline: "India's fruit, locked into a free-flowing powder",
     description:
       "Single-origin Indian fruits, gently dried and milled into free-flowing powders that hold their colour, tang and natural sweetness — built for beverages, bakery, dairy, confectionery and nutraceuticals.",
+    thumbSlugs: ["guava-powder", "papaya-powder", "banana-powder", "tamarind-powder"],
     accentFrom: "#d97706",
     accentTo: "#b45309",
   },
@@ -183,6 +184,17 @@ export const products: Product[] = [
     drying: DRY.herbal,
   },
   {
+    slug: "amchur-powder", name: "Amchur Powder", category: "herbal-leaf-powders",
+    emoji: "🥭", hsn: "0813 40 90", botanical: "Mangifera indica (unripe)",
+    tagline: "Dried green mango — a traditional Ayurvedic digestive.",
+    description:
+      "Amchur is made from sun-dried unripe green mango, long valued in Ayurveda for its sharp, cooling character and digestive (deepana-pachana) properties. Unlike the ripe mango powder used as a sweet flavouring, our amchur is positioned for herbal and nutraceutical formulations — naturally rich in vitamin C, antioxidants and plant acids that support digestion and the absorption of nutrients like iron.",
+    features: ["From sun-dried unripe green mango", "Trusted Ayurvedic digestive", "Naturally rich in vitamin C & antioxidants", "Sharp, cooling tartness", F_DRY, F_CUSTOM],
+    uses: ["Digestive churnas and supplements", "Ayurvedic and herbal formulations", "Nutraceutical tablets and capsules", "Functional blends and tonics"],
+    grades: ["Food / nutraceutical grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
+    drying: DRY.herbal,
+  },
+  {
     slug: "tamarind-powder", name: "Tamarind Pulp Powder", category: "fruit-powders",
     image: IMG("14909745"), emoji: "🟤", hsn: "0813 40 90", botanical: "Tamarindus indica",
     tagline: "Deep, sour-sweet tang for sauces and seasonings.",
@@ -202,6 +214,17 @@ export const products: Product[] = [
     features: ["Mild, sweet papaya taste", "Source of natural enzymes", "Smooth, fine texture", "Clean single-ingredient label", F_DRY, F_CUSTOM],
     uses: ["Digestive and nutrition blends", "Smoothies and beverages", "Skincare and cosmetics", "Desserts and bakery"],
     grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 5%", "Private label / bulk"],
+    drying: DRY.fruit,
+  },
+  {
+    slug: "pomegranate-powder", name: "Pomegranate Powder", category: "fruit-powders",
+    emoji: "🔴", hsn: "0813 40 90", botanical: "Punica granatum",
+    tagline: "Premium antioxidant fruit for nutraceutical formulations.",
+    description:
+      "Made from carefully dried pomegranate, our powder is positioned as a premium antioxidant ingredient for nutraceuticals and functional nutrition. Pomegranate is prized for its polyphenols and ellagitannins (punicalagins), giving formulators a clean, plant-based source of antioxidant activity with a naturally tart, ruby-red character.",
+    features: ["Rich in polyphenols & punicalagins", "Premium antioxidant positioning", "Naturally tart, ruby-red colour", "Clean single ingredient", F_DRY, F_CUSTOM],
+    uses: ["Antioxidant supplements and capsules", "Functional and sports nutrition", "Nutraceutical and wellness blends", "Premium beverages and smoothies"],
+    grades: ["Food / nutraceutical grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
     drying: DRY.fruit,
   },
 
