@@ -559,15 +559,15 @@
 
   "export.pay_tt_title": "预付T/T电汇",
 
-  "export.pay_tt_desc": "电汇定金确认订单并启动生产。",
+  "export.pay_tt_desc": "至少 40% 的电汇预付款用于确认订单并安排生产。",
 
-  "export.pay_tt_tag": "定金启动",
+  "export.pay_tt_tag": "至少 40% 预付",
 
   "export.pay_lc_title": "即期信用证L/C",
 
-  "export.pay_lc_desc": "适用于较大金额或首次合作的不可撤销信用证。",
+  "export.pay_lc_desc": "余款凭即期不可撤销信用证支付——适合大额或首次合作的合同。",
 
-  "export.pay_lc_tag": "银行保障",
+  "export.pay_lc_tag": "余款凭信用证",
 
   "export.pay_flex_title": "老客户灵活付款",
 
