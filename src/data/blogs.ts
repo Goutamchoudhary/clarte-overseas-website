@@ -433,6 +433,258 @@ export const posts: Post[] = [
 <p>If papaya fits your formulation, <a href="/products/fruit-powders/papaya-powder">view the papaya powder product page</a> or <a href="/contact">tell us what you need</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
 `,
   },
+  {
+    id: "guar-gum-oil-and-gas-biggest-application",
+    title: "Guar gum in oil and gas: the biggest application you've never heard about",
+    excerpt:
+      "Most people think of ice cream or sauces when they hear guar gum. In reality, the single largest industrial use is hydraulic fracturing — and it quietly sets the global price for every other buyer.",
+    category: "Industrial Applications",
+    date: "12 June 2026",
+    read: "9 min read",
+    author: "Gautam Choudhary",
+    emoji: "🛢️",
+    accent: "linear-gradient(135deg,#1f2937,#475569)",
+    body: `
+<p>Mention guar gum and most people think of ice cream, gluten-free bread or a thickener on an ingredient label. They are not wrong, but they are looking at the smaller end of the market. For decades, the single biggest application of guar gum has not been food at all. It has been oil and gas — specifically, hydraulic fracturing. In a strong year, drilling and stimulation work can account for more global guar demand than the food, pharma and personal care industries put together. If you buy guar gum and want to understand why prices move the way they do, this is the half of the story most articles leave out.</p>
+
+<h2>Why oilfield work needs guar gum</h2>
+<p>Hydraulic fracturing — the process that unlocks oil and gas from tight rock formations — pumps millions of gallons of water down a well at very high pressure, carrying sand or another proppant to hold open the fractures it creates. Plain water cannot do that job. It is too thin to suspend the proppant, and it loses energy too quickly to make the fractures travel far. Operators need to thicken it, hold the proppant in suspension, then break that thickness on demand once the work is finished.</p>
+<p>Guar gum is the workhorse that does this. A small percentage by weight turns water into a viscous, proppant-carrying gel that performs predictably under pressure. It is cheap relative to synthetic alternatives, it gels in cold water without heat, and once a chemical breaker is added downhole the gel reverts to a thin fluid that can be flowed back out of the well. No other natural polymer combines those properties at this price point and at this scale.</p>
+
+<h2>It is not the food-grade powder going downhole</h2>
+<p>Here is where most general articles get it wrong. The guar that drilling fluids use is not the same product that ends up in your sauce or supplement. Food, pharma and personal care use native guar gum powder — the milled, refined seed endosperm. Oilfield work mostly uses derivatised grades: hydroxypropyl guar (HPG), carboxymethyl hydroxypropyl guar (CMHPG), and similar chemical modifications. These derivatives carry functional groups that improve performance under high temperature, high pressure and a wider range of water chemistries than native guar can handle on its own.</p>
+<p>That distinction matters commercially. The oilfield market drives demand for a specific class of high-viscosity, low-residue, derivatised products. The food market drives demand for clean, food-safe native grades milled to defined mesh sizes. Both come from the same agricultural raw material, but they pass through different downstream chains and end up at different customers. When oilfield demand spikes, it pulls on the same seed but produces a different end-product.</p>
+
+<h2>India is the engine of global supply</h2>
+<p>India produces roughly 80 percent of the world's guar. Almost all of it grows in two states — Rajasthan and Gujarat — on rain-fed land where guar is one of the few cash crops that tolerates dry, sandy conditions. When fracking activity surged in North America in the early 2010s, the entire global supply chain felt it. Guar split prices ran up more than tenfold inside two years, then crashed when shale activity contracted. Procurement teams who had bought on spot terms learned the hard way that a hardy bean grown in western India had become a strategic input for oilfields half a world away.</p>
+<p>The lesson for any buyer today is that oilfield demand sits in the background of every guar price quotation, even if your end use is a yoghurt or a baby food. When North American rig counts move, your contract moves with them.</p>
+
+<h2>What specifications matter for oilfield grades</h2>
+<p>If you are sourcing guar for stimulation work, the spec sheet looks very different from a food order. Buyers pay attention to:</p>
+<ul>
+<li><strong>Viscosity development.</strong> How quickly the polymer hydrates in cold water, and what peak viscosity it delivers at a defined concentration. This is the headline number on most oilfield datasheets.</li>
+<li><strong>Residue.</strong> The insoluble fraction left behind after hydration. Lower residue means cleaner fractures, less damage to the rock formation and better long-term well productivity.</li>
+<li><strong>Temperature stability.</strong> Wells get hot. Derivatised grades are chosen specifically because they hold viscosity at downhole temperatures that would break native guar down.</li>
+<li><strong>Particle size and dispersibility.</strong> Field crews mix on site in seconds. The powder has to wet out and hydrate without lumping.</li>
+<li><strong>Crosslinker compatibility.</strong> Most jobs use borate or zirconate crosslinkers that boost viscosity further. The base polymer must crosslink cleanly and break on cue.</li>
+</ul>
+<p>These are not the same numbers a food formulator cares about. A yoghurt buyer is looking at mesh, microbial counts and clean label suitability; an oilfield buyer is looking at FANN viscometer readings and high-temperature retention. Both are valid; they just describe different products built from the same crop.</p>
+
+<h2>What this means for non-oilfield buyers</h2>
+<p>If you are buying guar for food, pharma or personal care, two practical takeaways follow from understanding the oilfield side of the market. First, when you sign an annual contract, your supplier is also reading oilfield demand signals. A multi-year fixed price feels safer in volatile periods than chasing the spot market. Second, derivatised oilfield grades and food grades are produced by different processors with different certifications. A good supplier should be able to tell you exactly which chain of custody your product comes from, which facility milled it and what the food-safety and microbial spec is. Anyone vague on that is worth more questions.</p>
+<p>At Clarté Overseas we work with both ends of the market — food, pharma and personal-care buyers who need clean native grades, and industrial buyers looking at derivatised products and partner-facility tonnage. If guar gum is on your sourcing list, <a href="/products/hydrocolloids-food-additives/guar-gum-powder">view the guar gum product page</a> or <a href="/contact">get in touch</a> and we will come back with the grade, spec and pricing that fits your application.</p>
+`,
+  },
+  {
+    id: "guar-gum-plant-based-dairy-meat",
+    title: "Guar gum's quiet revolution in plant-based dairy and meat",
+    excerpt:
+      "Behind every smooth oat-milk latte and convincing vegan burger sits a small amount of plant gum doing very precise work. Here is how guar earned its place on plant-based ingredient decks.",
+    category: "Industry Trends",
+    date: "5 June 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "🥛",
+    accent: "linear-gradient(135deg,#16a34a,#84cc16)",
+    body: `
+<p>Walk into a supermarket today and the plant-based aisle looks nothing like it did five years ago. Oat milks now compete on creaminess, not novelty. Vegan ice creams scoop without crystallising. Plant-based burgers brown, bite and bleed in a way that would have seemed impossible to a 2015 formulator. A surprising amount of that progress comes down to a small ingredient list of hydrocolloids — and guar gum is on almost every one of them. If you are formulating in this category, or sourcing for someone who is, here is why.</p>
+
+<h2>The problem plant-based products are quietly solving</h2>
+<p>Dairy and meat owe most of their texture to two things plant systems do not naturally have in the same form: caseins and animal fats. Caseins do extraordinary work in milk and cheese, suspending fat, binding water and gelling under acid. Animal fats melt at body temperature, carry flavour and lubricate the bite. Take those out of the equation and a formulator is suddenly responsible for rebuilding texture from scratch using whatever plant inputs are on hand.</p>
+<p>That is where hydrocolloids earn their keep. They cannot replace casein or animal fat one-for-one, but in carefully chosen blends they can mimic enough of the functional behaviour — viscosity, water binding, mouthfeel, freeze-thaw stability — to make a finished product that consumers actually want to buy a second time. Guar gum tends to show up in those blends because it does several things well at the same time, at very low dose, without an off-taste.</p>
+
+<h2>Oat, almond and soy milks: creaminess without dairy</h2>
+<p>Plant milks have a problem that dairy never had: their fat particles settle. A bottle of oat milk left on a shelf will separate within days if nothing is holding the suspension together. Guar gum, often paired with a small dose of gellan or carrageenan, builds a gentle network in the fluid that keeps fat droplets and starches in suspension between shakes. The amount used is tiny — typically 0.05 to 0.15 percent — but the difference at retail is the difference between a clean glass pour and a chalky residue at the bottom.</p>
+<p>For barista editions, guar plays a second role. The right dose builds enough viscosity that the milk steams into firm microfoam without collapsing, which is what makes oat milk lattes work. Get the guar level wrong and the foam either does not form or collapses into the espresso within seconds. This is one of the quieter formulation arts in plant dairy.</p>
+
+<h2>Vegan ice cream: smaller crystals, smoother scoop</h2>
+<p>Ice cream is mostly water frozen into ice crystals, separated by air and fat. The smaller and more uniform the crystals, the smoother the scoop feels in the mouth. Dairy ice cream uses milk proteins to control crystal growth. Vegan ice cream has to rebuild that control with plant-based stabilisers — and guar gum, often paired with locust bean gum and carrageenan, is one of the most reliable choices.</p>
+<p>Guar holds water tightly enough during the initial freeze that it limits how large the ice crystals can grow. It also helps during the freeze-thaw cycles that any ice cream survives between factory and freezer at home, where temperature fluctuations would otherwise let crystals re-grow into a grainy texture. A well-stabilised vegan ice cream made with guar in the blend scoops months after manufacture roughly the way it did on day one.</p>
+
+<h2>Plant-based meat: holding it together at heat</h2>
+<p>Meat analogues have a tougher hydrocolloid brief. The product needs to bind into a patty or sausage at room temperature, survive cooking without falling apart, and end up with a fibrous bite that consumers register as meat. Guar gum sits in many of these formulations as part of a binder system — usually alongside methylcellulose, which does the heavy lifting on heat-set gelation, and a smaller amount of pectin or alginate depending on the target texture.</p>
+<p>Guar's specific contribution is cold-water hydration and water binding during mixing. Adding the dry blend to chilled water gives a controllable thickening that lets the formulator pull the rest of the ingredients into a homogeneous mix without overworking the system. It also reduces cook-loss — the amount of fat and water that leaches out during frying or grilling — which is one of the most visible quality issues in plant burgers.</p>
+
+<h2>Vegan cheese, yoghurt and dips</h2>
+<p>The newer wave of vegan cheeses and yoghurts uses fermentation, starches and oils to rebuild mouthfeel, with hydrocolloids tuning the final body. Guar gum at low inclusion gives spoonable yoghurts the right consistency and helps slice-style vegan cheeses develop a clean cut. In dips and dressings, it stabilises emulsions and prevents oil separation at retail. The thread across all of these is the same: guar does a lot of work at low cost, with no flavour to clean up.</p>
+
+<h2>What to look for when sourcing for plant-based</h2>
+<p>If you are formulating in this category, the spec sheet questions go beyond viscosity. You want a food-grade native guar with:</p>
+<ul>
+<li>A defined mesh and viscosity range that matches the rest of your stabiliser blend, so batch-to-batch behaviour stays predictable.</li>
+<li>Low microbial counts, since plant-based products often sit in long ambient supply chains before refrigeration.</li>
+<li>Clean documentation for allergen and label declarations — plant-based buyers are reading labels more carefully than anyone.</li>
+<li>Halal and kosher certification if you ship into markets where vegan products often cross-list against religious standards.</li>
+</ul>
+<p>At Clarté Overseas we supply food-grade guar gum into plant-based dairy, vegan ice cream and meat-analogue formulators worldwide, with documentation built around the specs these categories actually need. If you are designing a plant-based product, <a href="/products/hydrocolloids-food-additives/guar-gum-powder">see the guar gum product page</a> or <a href="/contact">tell us what you are building</a> and we will reply with a sample and the spec sheet to test against your blend.</p>
+`,
+  },
+  {
+    id: "pharma-grade-guar-gum-phgg-soluble-fibre",
+    title: "Pharma-grade guar gum and PHGG: from tablet binder to soluble fibre therapy",
+    excerpt:
+      "Pharmaceutical buyers value guar for very different reasons than food formulators. Here is how the same crop becomes a controlled-release matrix, a clinical fibre and a quietly important nutraceutical.",
+    category: "Pharma & Nutraceuticals",
+    date: "29 May 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "💊",
+    accent: "linear-gradient(135deg,#7c3aed,#6366f1)",
+    body: `
+<p>In food, guar gum earns its place by being a cheap, effective thickener and stabiliser. In pharmaceuticals and nutraceuticals it does something different — it becomes part of how a drug is delivered, how a tablet survives, and in one important case, how a clinical fibre regulates digestion. The same agricultural crop ends up serving very different industries with very different documentation requirements. If you have only encountered guar in food spec sheets, the pharma side is worth understanding.</p>
+
+<h2>From food grade to pharma grade</h2>
+<p>The base material is the same — galactomannan extracted from the guar bean — but pharma-grade guar gum is held to a tighter set of standards. It typically conforms to a recognised pharmacopoeia such as USP, BP or EP, with controlled limits for heavy metals, residual solvents, microbial load and identity testing. The viscosity is specified in a tighter band so that batch-to-batch behaviour in a tablet press or a controlled-release matrix stays predictable. Manufacturing is documented under GMP, and certificates of analysis are issued against each lot with the test methods explicitly referenced.</p>
+<p>None of this changes what guar gum is. It changes how it is produced, tested and documented. The difference matters because regulatory dossiers and customer audits read those documents carefully, and a food-grade certificate cannot substitute for a pharmacopoeial one.</p>
+
+<h2>As a binder and disintegrant in tablets</h2>
+<p>Most tablets need an excipient that holds the active ingredient together at the pressing stage and then releases it predictably once swallowed. Guar gum has a useful dual character here. At modest inclusion levels it acts as a binder, giving the granulation enough cohesion to compress into hard tablets that survive packaging and transport without crumbling. At higher inclusion levels, and depending on the formulation, it can act as a disintegrant — swelling on contact with gastrointestinal fluid and helping the tablet break apart so the active ingredient is released into solution.</p>
+<p>Compared to synthetic alternatives, guar's appeal is that it is plant-derived, non-ionic, low cost and well tolerated. It is not the headline ingredient on any drug, but it sits in plenty of finished formulations as part of the excipient deck.</p>
+
+<h2>Controlled-release matrices</h2>
+<p>Where guar gum becomes more interesting pharmaceutically is in controlled-release dosage forms, particularly colon-targeted delivery. Native guar resists digestion in the small intestine but is fermented by bacteria in the colon. That property has been used to design matrix tablets where the drug is embedded in a guar-based hydrogel that holds the active compound in place until the formulation reaches the colon, where bacterial enzymes break the matrix down and release the drug locally. This is particularly useful for treatments aimed at conditions like inflammatory bowel disease, where you want the active delivered to the lower gut rather than absorbed earlier.</p>
+<p>This is not a generic application — it requires careful viscosity selection, formulation engineering and clinical validation — but it is a real and growing use of the polymer. The pharma-grade guar that goes into these systems is specified down to a level of detail that food formulators rarely see.</p>
+
+<h2>Partially hydrolysed guar gum: a clinical fibre</h2>
+<p>The most prominent nutraceutical form of guar gum is partially hydrolysed guar gum, often abbreviated to PHGG and sold under brand names such as Sunfiber. PHGG is produced by enzymatically breaking native guar down into shorter chains. The result is a soluble fibre that is almost transparent in water, has very low viscosity, and is well tolerated at therapeutic doses — three properties that native guar does not share.</p>
+<p>PHGG has a substantial body of clinical evidence behind it, with published studies on its role in:</p>
+<ul>
+<li><strong>Glycaemic control</strong> — moderating the post-meal blood glucose response.</li>
+<li><strong>Lipid management</strong> — helping reduce LDL cholesterol as part of a soluble fibre intake.</li>
+<li><strong>Gut microbiota</strong> — acting as a prebiotic that selectively supports beneficial bacteria such as Bifidobacterium and Lactobacillus.</li>
+<li><strong>Functional bowel disorders</strong> — improving stool consistency and frequency in patients with IBS and chronic constipation.</li>
+</ul>
+<p>The result is that PHGG sits in fibre supplements, medical nutrition formulas, infant nutrition and an expanding range of functional beverages. It is one of the highest-value derivatives of the original crop, and demand for it has grown faster than any other guar segment over the last decade.</p>
+
+<h2>What buyers should ask for</h2>
+<p>If you are sourcing for pharma or nutraceutical use, your supplier should be able to provide:</p>
+<ul>
+<li>Pharmacopoeial conformance documentation (USP / BP / EP, as appropriate to your market).</li>
+<li>A current GMP certificate for the manufacturing facility.</li>
+<li>Lot-specific certificates of analysis with viscosity, moisture, particle size, heavy metals, microbial counts and identity testing.</li>
+<li>Allergen and animal-origin statements (relevant for vegan, vegetarian, kosher and halal documentation).</li>
+<li>Stability data and a clear retest period, particularly if the material is going into long-shelf-life finished products.</li>
+</ul>
+<p>For PHGG specifically, supply is more concentrated than native guar — the enzymatic processing is held by a smaller number of producers. Clarity on origin and process chain is important, since regulators and major customers will want to trace it through the dossier.</p>
+
+<h2>Where this market is heading</h2>
+<p>Two trends are pulling pharma and nutraceutical guar gum forward at the same time. The first is colon-targeted drug delivery, where guar-based matrices continue to show up in new product filings for inflammatory bowel disease and other lower-gut indications. The second, and the bigger one commercially, is the broader move of soluble fibre from niche supplement into mainstream functional food. PHGG is increasingly formulated into protein drinks, fibre-fortified bakery, meal-replacement powders and even early-life nutrition, where its low viscosity, neutral taste and tolerance at therapeutic doses give it a real edge over older fibres like inulin and psyllium that come with more digestive trade-offs.</p>
+<p>The result is that pharma and nutraceutical buyers are increasingly competing for the same upstream crop as the rest of the industry, but they pay considerably more per kilo for the documentation and processing chain their dossiers require. Knowing where on that spectrum your product sits — and ordering the right grade for it — matters more every year as the category grows.</p>
+
+<p>At Clarté Overseas we supply native pharma-grade guar gum and source PHGG through partner facilities for nutraceutical and clinical-nutrition buyers. If you are formulating a controlled-release product, a fibre supplement or a functional food with a soluble-fibre claim, <a href="/products/hydrocolloids-food-additives/guar-gum-powder">view the guar gum product page</a> or <a href="/contact">contact us</a> and we will come back with specs, documentation samples and the right grade for your dossier.</p>
+`,
+  },
+  {
+    id: "gluten-free-baking-with-guar-gum-formulator-guide",
+    title: "Mastering gluten-free baking with guar gum: a formulator's guide",
+    excerpt:
+      "Most gluten-free guides oversimplify guar gum down to 'use a quarter teaspoon per cup of flour'. This is the technical version — hydration, dose, when to choose guar over xanthan, and what actually fails.",
+    category: "Formulation",
+    date: "22 May 2026",
+    read: "9 min read",
+    author: "Gautam Choudhary",
+    emoji: "🍞",
+    accent: "linear-gradient(135deg,#d97706,#f59e0b)",
+    body: `
+<p>The most common piece of advice in gluten-free baking — "just add a quarter teaspoon of guar gum per cup of flour" — is right often enough that home bakers rarely question it, and wrong often enough that commercial bakeries lose entire production runs to it. Gluten-free baking is genuinely difficult, and the choice of hydrocolloid, the dose, the hydration technique and the interaction with starches will decide whether a loaf rises and slices or sits dense and crumbles. If you formulate at scale, here is the longer version.</p>
+
+<h2>What gluten actually does, and what you are replacing</h2>
+<p>Gluten is a protein network that traps gas and gives dough its elasticity. When yeast or chemical leaveners produce carbon dioxide, gluten holds onto it. When you knead dough, gluten develops structure. When you bake, gluten sets into the crumb that holds the loaf together. Take wheat out and none of that happens automatically. The starch-and-water systems used in gluten-free flours have no equivalent network unless you build one.</p>
+<p>That is the job hydrocolloids do. Guar gum, xanthan gum, psyllium and methylcellulose all play this role differently. Guar's contribution is cold-water hydration, gentle viscosity development and excellent water binding — which is exactly the toolkit a gluten-free dough needs to hold gas, stay together during mixing and finish with a soft crumb.</p>
+
+<h2>Guar versus xanthan: when to choose which</h2>
+<p>The two are not interchangeable, even though many recipes treat them as if they were. A few practical distinctions:</p>
+<ul>
+<li><strong>Guar gum</strong> hydrates quickly in cold water, builds viscosity smoothly and is non-ionic. It performs best in batter-style and quick-bread applications — pancakes, muffins, cakes, cookies — and in cold-process products like ice cream and frostings.</li>
+<li><strong>Xanthan gum</strong> is more shear-stable and gives a slightly more elastic, stringy structure that mimics gluten more closely in yeasted breads. It also holds up better in acidic systems.</li>
+<li><strong>A blend</strong> often outperforms either alone. A common starting point in yeasted gluten-free bread is roughly 60 percent xanthan and 40 percent guar by weight of the total hydrocolloid, giving both elasticity and water binding.</li>
+</ul>
+<p>The simple test is whether your product needs elasticity (lean yeast bread, pizza dough, pasta) or water binding and softness (cake, muffin, brownie, cookie). Elasticity-driven products lean on xanthan; softness-driven products lean on guar.</p>
+
+<h2>Dosage by product</h2>
+<p>The standard recipe-book number — about 0.5 percent of total flour weight for cakes, around 1 percent for bread — is a workable starting point but always needs tuning to your specific flour blend. Higher-protein blends (containing sorghum, chickpea, oat) generally need less hydrocolloid. Starch-dominant blends (rice flour, tapioca, potato starch) need more, because there is less native structure to support gas retention.</p>
+<p>Working ranges to test from, on a flour-weight basis:</p>
+<ul>
+<li>Cookies, brownies: 0.3 to 0.6 percent guar.</li>
+<li>Cakes, muffins, quick breads: 0.5 to 0.8 percent guar.</li>
+<li>Yeasted bread: 0.5 to 1.0 percent guar plus 0.5 to 1.0 percent xanthan.</li>
+<li>Pasta and noodles: 1.0 to 2.0 percent total hydrocolloid, typically xanthan-led.</li>
+<li>Pancake and waffle mixes: 0.2 to 0.4 percent guar.</li>
+</ul>
+<p>Overdosing is a more common failure mode than underdosing. Too much guar produces a gummy, dense crumb that gets worse on day two as the polymer continues to hydrate. The product feels heavier than it should, and the chew goes from tender to elastic in an unpleasant way.</p>
+
+<h2>Hydration technique matters more than people realise</h2>
+<p>Guar gum hydrates quickly in cold water, which is normally a feature but can be a problem in dry-mix applications. If a dry consumer mix sees moisture from packaging or the bowl before the rest of the ingredients are incorporated, the guar lumps. Once lumped, it is almost impossible to disperse without high-shear mixing.</p>
+<p>Two practical fixes work well at industrial scale. First, predisperse the guar in sugar or a starch before adding water — the inert carrier physically separates the particles so they hydrate individually. Second, use a slightly larger mesh size for dry-blend applications; the larger particle wets out more slowly and gives the rest of the system time to come together. Lump-prone formulations often improve dramatically with a single mesh-size change.</p>
+
+<h2>What goes wrong, and how to read the failure</h2>
+<p>A few common gluten-free baking failures and what they tell you about your hydrocolloid setup:</p>
+<ul>
+<li><strong>Crumbly loaf that falls apart.</strong> Not enough hydrocolloid, or the wrong type. Try increasing total gum content by 25 percent or shifting the balance toward xanthan.</li>
+<li><strong>Gummy, undercooked-feeling centre.</strong> Too much hydrocolloid binding too much water, so the centre never sets properly. Reduce gum, increase bake time slightly, or shift toward a less water-binding blend.</li>
+<li><strong>Dense product with no rise.</strong> Often the leavening rather than the gum, but if structure is collapsing on cooling, the gum is not holding the gas. Try a small increase in xanthan.</li>
+<li><strong>Stale, hard texture by day two.</strong> Insufficient water-binding agent. Guar shines here — a small bump can dramatically improve shelf softness without changing day-one performance.</li>
+<li><strong>Lumpy batter or gritty mouthfeel.</strong> Hydration problem during mixing. Predisperse the gum in a dry carrier, or change mesh size.</li>
+</ul>
+
+<h2>What to specify when sourcing</h2>
+<p>For gluten-free baking at commercial scale, your guar specification should call out viscosity range (commonly measured at 1 percent solution after a defined hydration time), particle size, moisture content and microbial counts. Allergen documentation is critical — gluten-free product buyers are reading labels carefully, and a clean allergen statement on your guar is part of the trust you sell.</p>
+
+<p>At Clarté Overseas we supply food-grade guar gum into gluten-free bakeries, vegan formulators and clean-label brands worldwide. If you are designing a gluten-free product and want a sample and a spec sheet to test against your existing blend, <a href="/products/hydrocolloids-food-additives/guar-gum-powder">view the guar gum product page</a> or <a href="/contact">tell us what you are building</a> and we will get back with mesh, viscosity and documentation tuned to your formulation.</p>
+`,
+  },
+  {
+    id: "guar-gum-economics-why-india-sets-the-world-price",
+    title: "The economics of guar gum: why India sets the world price",
+    excerpt:
+      "Roughly 80 percent of the world's guar grows in two Indian states. A procurement team that understands the monsoon calendar, the oilfield demand cycle and how export pricing is built has a real advantage.",
+    category: "Sourcing",
+    date: "15 May 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "📊",
+    accent: "linear-gradient(135deg,#0891b2,#06b6d4)",
+    body: `
+<p>If you are buying guar gum anywhere in the world, you are participating in a market whose price is set by weather in two Indian states and demand from oilfields in another country entirely. That is an unusual combination, and it makes guar one of the more interesting commodities to procure. Understanding how the supply and demand sides actually work is the difference between a calm sourcing year and one full of surprises. This is a short tour of the dynamics every guar buyer should have in their head.</p>
+
+<h2>Why the crop is so concentrated</h2>
+<p>Guar is grown commercially almost only in India, and within India almost only in Rajasthan and Gujarat, with smaller volumes from Haryana and a handful of districts in Pakistan. India accounts for somewhere in the range of 80 percent of global production in a normal year. The reason is agronomic: guar is a hardy legume that tolerates dry, sandy, low-fertility soils where most other cash crops fail. The arid belt of north-western India is one of the few large agricultural geographies where guar reliably outperforms alternatives.</p>
+<p>That concentration is the single most important fact about the market. The world does not have a deep second source. When the Indian crop is good, the world has guar at a reasonable price. When it is poor, every buyer feels it within weeks.</p>
+
+<h2>The monsoon decides your year</h2>
+<p>Guar is sown in June and July with the arrival of the south-west monsoon, and harvested from October onwards. That four to five-month window between planting and harvest is when most of the year's supply is decided. A good monsoon — well distributed, neither too early nor too late, with adequate rainfall through August — gives a strong crop. A weak or erratic monsoon gives a weak crop. Because guar is mostly rain-fed, there is very little irrigation buffer.</p>
+<p>The practical implication is that the most important price-forming events in the guar calendar happen between June and October. By the time the new crop arrives at mandis in late autumn, the market already has a strong view on the size of the harvest. Buyers who wait for that view to settle before negotiating annual contracts often pay more than buyers who lock terms in earlier — but those early commitments carry their own risk if the crop comes in worse than expected.</p>
+
+<h2>The two demand engines</h2>
+<p>On the demand side, two very different industries pull on the same crop. The first is the global food, pharma and personal-care market — broadly steady, growing modestly year on year, and relatively price-inelastic at the volumes individual buyers take. The second is oil and gas, specifically hydraulic fracturing in North America, which buys derivatised grades but ultimately competes for the same agricultural raw material.</p>
+<p>Oilfield demand is the volatile variable. Rig counts respond to oil prices, and when fracking activity ramps up the call on guar derivatives can shift quickly. This is what produced the famous price spike of 2011 to 2012, when guar split prices ran up more than tenfold inside two years before collapsing as shale activity contracted. The food and personal-care buyers caught in that cycle were paying many times the normal price for a thickener that had not changed in any other way.</p>
+<p>The market today is more orderly than it was during that boom, but the same dynamic is still in the background. A sustained rise in North American oilfield activity will tighten the global guar market regardless of what is happening in food.</p>
+
+<h2>How export pricing is actually built</h2>
+<p>A guar gum quotation from India sits on top of several layered costs. From the bottom up, roughly:</p>
+<ul>
+<li><strong>Raw seed price</strong> at the mandi, driven by monsoon outcome and demand signal.</li>
+<li><strong>Splitting and milling cost</strong> at the processor, which moves slowly except in periods of energy-price stress.</li>
+<li><strong>Quality premium</strong> for higher-mesh, lower-residue or pharma-grade material.</li>
+<li><strong>Documentation and certification cost</strong> — FSSAI, COA per lot, USP/BP conformance if applicable, halal, kosher, organic.</li>
+<li><strong>Logistics</strong> — inland transport to port, container availability, ocean freight, which has been a volatile contributor in recent years.</li>
+<li><strong>Currency</strong> — most exports are billed in USD, so the INR/USD rate flows directly into your landed price.</li>
+</ul>
+<p>When a price moves, it usually helps to know which of these layers moved. A spike in ocean freight feels exactly the same on the invoice as a spike in raw seed, but the right response from a buyer is very different in each case.</p>
+
+<h2>A simple procurement playbook</h2>
+<p>A few habits that consistently distinguish well-run guar procurement programmes from reactive ones:</p>
+<ul>
+<li><strong>Plan around the monsoon calendar.</strong> Have a clear view of how much cover you need by October each year, and what your fallback looks like if the crop is weak.</li>
+<li><strong>Mix term and spot.</strong> A blend of fixed-price annual contracts for base volume and spot purchases for top-up gives you more stability than either approach alone.</li>
+<li><strong>Watch oilfield signals.</strong> A small monthly check on North American rig counts is enough to give early warning of the most volatile demand variable.</li>
+<li><strong>Pre-qualify a second supplier.</strong> Even if you do not use them every year, having a documented alternative shortens reaction time when the primary source is constrained.</li>
+<li><strong>Specify clearly.</strong> A tight, written specification is your best protection in a tight market — it stops a supplier from substituting a marginally different grade when prices are running.</li>
+</ul>
+
+<p>At Clarté Overseas we work with food, pharma, personal-care and industrial buyers across the world, with sourcing built around exactly the dynamics described above. If you are setting up or reviewing your guar gum programme, <a href="/products/hydrocolloids-food-additives/guar-gum-powder">view the guar gum product page</a> or <a href="/contact">get in touch</a> and we will share current pricing, a sample and a recommendation tuned to your application and contract horizon.</p>
+`,
+  },
 ];
 
 export const faqs = [
