@@ -218,7 +218,7 @@ export const products: Product[] = [
   },
   {
     slug: "pomegranate-powder", name: "Pomegranate Powder", category: "fruit-powders",
-    emoji: "🔴", hsn: "0813 40 90", botanical: "Punica granatum",
+    image: IMGJ("14972115"), emoji: "🔴", hsn: "0813 40 90", botanical: "Punica granatum",
     tagline: "Premium antioxidant fruit for nutraceutical formulations.",
     description:
       "Made from carefully dried pomegranate, our powder is positioned as a premium antioxidant ingredient for nutraceuticals and functional nutrition. Pomegranate is prized for its polyphenols and ellagitannins (punicalagins), giving formulators a clean, plant-based source of antioxidant activity with a naturally tart, ruby-red character.",
@@ -303,7 +303,7 @@ export const products: Product[] = [
   },
   {
     slug: "fried-onion", name: "Fried Onion", category: "culinary-spice-powders",
-    emoji: "🧅", hsn: "2005 99 90", botanical: "Allium cepa",
+    image: IMGJ("14972114"), emoji: "🧅", hsn: "2005 99 90", botanical: "Allium cepa",
     tagline: "Crispy, golden and intensely savoury — ready to garnish or blend.",
     description:
       "Our fried onion is made from select Indian onions, sliced and fried to a deep golden colour that delivers a rich, caramelised flavour without any bitterness. Available as crispy flakes for garnishing or as a fine powder for blending into seasonings, sauces and ready meals, it adds instant depth with no cooking required.",
