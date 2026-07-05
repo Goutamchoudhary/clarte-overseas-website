@@ -77,7 +77,10 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   background: #fff;
   border-bottom-left-radius: var(--nav-radius, 42px);
   border-bottom-right-radius: var(--nav-radius, 42px);
-  box-shadow: 0 6px 20px -14px rgba(13,26,54,.35);
+  /* No drop-shadow at rest: over the bright hero, a shadow that follows the
+     rounded bottom corners curves away at the extreme corner and leaves a
+     bright un-shadowed wedge of the photo showing — reads as a pale blue
+     strip. The shadow only appears once scrolled (over lighter sections). */
   transition: box-shadow .35s ease;
 }
 .nav-bar.scrolled { box-shadow: 0 14px 34px -18px rgba(13,26,54,.4); }
@@ -1403,3 +1406,43 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   transition: opacity .2s ease, transform .15s ease, box-shadow .2s ease;
 }
 .btn-calendly:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(167,139,250,.55); }
+
+/* =========================================================================
+   IMMERSIVE SCROLL EXPERIENCE (homepage — driven by /js/home-fx.js)
+   When GSAP takes over it adds .fx-on to <html>; the legacy .reveal
+   transitions are neutralised so the two systems never fight.
+   ========================================================================= */
+html.fx-on .reveal { opacity: 1; transform: none; transition: none; }
+
+/* Lenis smooth-scroll housekeeping (per Lenis docs) */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ---- Scroll progress bar ---------------------------------------------- */
+.fx-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 2000;
+  transform: scaleX(0); transform-origin: 0 50%; pointer-events: none;
+  background: linear-gradient(90deg, #1f4693, #5b82d6, #e0a234);
+}
+
+/* ---- Hero floating depth objects --------------------------------------- */
+.fx-orbs { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.fx-orb { position: absolute; will-change: transform; }
+.fx-orb-i {
+  display: grid; place-items: center; font-size: 1.55rem;
+  width: 3.4rem; height: 3.4rem; border-radius: 1.1rem;
+  background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px -18px rgba(0,0,0,.55);
+  transform: rotate(-6deg);
+}
+.fx-orb.is-blob .fx-orb-i {
+  width: 17rem; height: 17rem; border-radius: 50%;
+  background: radial-gradient(circle at 32% 32%, rgba(91,130,214,.5), rgba(31,70,147,0) 68%);
+  border: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+  filter: blur(6px);
+}
+@media (max-width: 1023px) {
+  .fx-orb:not(.is-blob) { display: none; } /* keep small screens clean */
+}

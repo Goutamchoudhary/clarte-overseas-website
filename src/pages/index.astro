@@ -16,7 +16,17 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
     <!-- Optional photo layer (loads when online; gradient shows otherwise) -->
     <img class="hero-photo" data-src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80" alt="" aria-hidden="true" />
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <!-- Floating depth objects (parallax layers, animated by /js/home-fx.js) -->
+    <div class="fx-orbs" aria-hidden="true">
+      <span class="fx-orb is-blob" data-depth="0.2"  style="top:-8%;left:-5%"><span class="fx-orb-i"></span></span>
+      <span class="fx-orb is-blob" data-depth="0.35" style="bottom:-12%;right:-6%"><span class="fx-orb-i"></span></span>
+      <span class="fx-orb" data-depth="0.6"  style="top:14%;right:8%"><span class="fx-orb-i">🧅</span></span>
+      <span class="fx-orb" data-depth="0.85" style="top:47%;right:3%"><span class="fx-orb-i">🥭</span></span>
+      <span class="fx-orb" data-depth="0.5"  style="top:11%;left:34%"><span class="fx-orb-i">🌿</span></span>
+      <span class="fx-orb" data-depth="1"    style="bottom:14%;left:4%"><span class="fx-orb-i">🍅</span></span>
+    </div>
+
+    <div class="relative z-[1] max-w-7xl mx-auto px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       <!-- Content (now on the RIGHT on desktop) -->
       <div class="lg:order-2 lg:col-span-7">
         <span class="badge-pill reveal">🌿 <span data-i18n="home.hero_eyebrow">Merchant exporter of dehydrated foods · India</span></span>
@@ -295,7 +305,7 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
   <!-- =====================================================================
        QUALITY & SUSTAINABILITY MISSION (dark split)
        ===================================================================== -->
-  <section class="py-24 bg-process">
+  <section id="process" class="py-24 bg-process">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <!-- Quality-check stepper (modern, reflects the actual process) -->
       <div class="reveal from-right lg:order-2">
@@ -507,4 +517,10 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
       </div>
     </div>
   </section>
+
+  <!-- Immersive scroll experience (homepage only) — GSAP + ScrollTrigger + Lenis -->
+  <script is:inline defer src="/js/vendor/gsap.min.js"></script>
+  <script is:inline defer src="/js/vendor/ScrollTrigger.min.js"></script>
+  <script is:inline defer src="/js/vendor/lenis.min.js"></script>
+  <script is:inline defer src="/js/home-fx.js"></script>
 </BaseLayout>
