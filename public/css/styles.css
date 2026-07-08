@@ -1046,6 +1046,69 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .pd-spec-row dd { font: 600 .82rem "Inter", sans-serif; color: #16265a; text-align: right; }
 .pd-spec-note { font-size: .78rem; color: #94a0b7; margin-top: .9rem; line-height: 1.5; }
 
+/* ---- Product spec-sheet: lead-gated (blurred preview + unlock) ---- */
+.pd-speclock {
+  margin-top: 1.15rem; padding: .9rem; text-align: center;
+  border: 1px solid #e2e9f6; border-radius: 1rem;
+  background: linear-gradient(180deg, #f8faff, #eef3fd);
+}
+/* The blurred "document" — decorative skeleton only (no real data in the DOM,
+   so removing the blur reveals nothing). */
+.pd-speclock-doc {
+  position: relative; overflow: hidden; height: 118px;
+  border-radius: .7rem; background: #fff; border: 1px solid #e6ecf8;
+  padding: 0; text-align: left; box-shadow: inset 0 -18px 30px -22px rgba(31,70,147,.25);
+}
+.pd-speclock-band {
+  display: flex; align-items: center; gap: .4rem;
+  font: 700 .62rem "Sora", sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  color: #fff; background: var(--brand, #1f4693); padding: .4rem .6rem;
+}
+.pd-speclock-band svg { width: .8rem; height: .8rem; }
+.pd-speclock-rows { display: flex; flex-wrap: wrap; gap: .32rem .5rem; padding: .6rem; filter: blur(2.5px); opacity: .55; }
+.pd-speclock-rows .l { height: .5rem; border-radius: 3px; background: linear-gradient(90deg, #cfd9ee, #e6ecf8); }
+.pd-speclock-rows .w35 { width: 35%; } .pd-speclock-rows .w40 { width: 40%; }
+.pd-speclock-rows .w50 { width: 46%; } .pd-speclock-rows .w55 { width: 52%; }
+.pd-speclock-rows .w65 { width: 60%; } .pd-speclock-rows .w75 { width: 44%; }
+.pd-speclock-rows .w80 { width: 55%; } .pd-speclock-rows .w90 { width: 62%; }
+.pd-speclock-frost {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background: linear-gradient(180deg, rgba(248,250,255,.35), rgba(238,243,253,.75));
+  backdrop-filter: blur(1.5px);
+}
+.pd-speclock-badge {
+  display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  color: #fff; background: linear-gradient(135deg, #2b57b0, #1f4693);
+  box-shadow: 0 12px 26px -10px rgba(31,70,147,.7); border: 3px solid #fff;
+}
+.pd-speclock-badge svg { width: 1.2rem; height: 1.2rem; }
+.pd-speclock-cap { margin-top: .8rem; }
+.pd-speclock-title { display: block; font: 700 .9rem "Sora", sans-serif; color: #16265a; }
+.pd-speclock-sub { display: block; font: 500 .74rem "Inter", sans-serif; color: #8a97b2; margin-top: .1rem; }
+.pd-speclock-btn { width: 100%; justify-content: center; margin-top: .85rem; padding: .7rem 1rem; font-size: .88rem; }
+.pd-speclock-btn[aria-busy="true"] { opacity: .7; cursor: progress; }
+.pd-speclock-note { display: block; font: 500 .7rem "Inter", sans-serif; color: #9aa6bd; margin-top: .55rem; }
+
+/* Shared pill-button (used by the unlock button) */
+.pd-spec-btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font: 600 .8rem "Inter", sans-serif; color: var(--brand, #1f4693);
+  padding: .5rem .8rem; border-radius: .65rem;
+  background: #fff; border: 1px solid #d6e0f4; cursor: pointer;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+}
+.pd-spec-btn svg { width: 1rem; height: 1rem; }
+.pd-spec-btn:hover { border-color: var(--brand, #1f4693); background: #f4f7fe; transform: translateY(-1px); }
+.pd-spec-btn.primary { background: var(--brand, #1f4693); color: #fff; border-color: var(--brand, #1f4693); }
+.pd-spec-btn.primary:hover { background: #16306e; border-color: #16306e; color: #fff; }
+
+/* Spec-sheet dialog extras (reuses .enq-* styles) */
+.ss-error { color: #c0392b; font: 600 .8rem "Inter", sans-serif; background: #fdecea; border: 1px solid #f5c6c0; border-radius: .55rem; padding: .5rem .7rem; margin-bottom: .6rem; }
+.ss-error[hidden] { display: none; }
+.ss-fineprint { text-align: center; font: 500 .72rem "Inter", sans-serif; color: #9aa6bd; margin-top: .7rem; }
+.ss-link { display: inline-block; background: none; border: none; cursor: pointer; color: #64708a; font: 600 .85rem "Inter", sans-serif; text-decoration: underline; }
+.ss-link:hover { color: #1f4693; }
+
 /* ---- Lightbox ---- */
 .pd-lightbox { position: fixed; inset: 0; z-index: 130; display: grid; place-items: center; padding: 2rem; background: rgba(13,26,54,.85); backdrop-filter: blur(4px); animation: pd-fade .25s ease; }
 .pd-lightbox[hidden] { display: none; }

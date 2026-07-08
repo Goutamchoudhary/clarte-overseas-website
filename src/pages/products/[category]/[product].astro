@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EnquiryDialog from "../../../components/EnquiryDialog.astro";
+import SpecSheetDialog from "../../../components/SpecSheetDialog.astro";
 import { products, productsByCategory, getCategory, getProduct } from "../../../data/products";
 import { SITE, UNAVAILABLE_PRODUCTS, COMING_SOON_PRODUCTS } from "../../../consts";
 
@@ -185,7 +186,37 @@ const breadcrumbLd = {
               <div class="pd-spec-row"><dt data-i18n={i18nKey}>{k}</dt><dd data-i18n={vKey}>{v}</dd></div>
             ))}
           </dl>
-          <button type="button" class="btn btn-primary w-full mt-5" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="prod.get_pricing">Get pricing &amp; samples</span></button>
+          <!-- Product-specific spec sheet (PDF) — lead-gated download -->
+          <div class="pd-speclock">
+            <div class="pd-speclock-doc" aria-hidden="true">
+              <span class="pd-speclock-band">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                Technical Data Sheet
+              </span>
+              <div class="pd-speclock-rows">
+                <span class="l w75"></span><span class="l w40"></span>
+                <span class="l w90"></span><span class="l w55"></span>
+                <span class="l w80"></span><span class="l w35"></span>
+                <span class="l w65"></span><span class="l w50"></span>
+              </div>
+              <div class="pd-speclock-frost">
+                <span class="pd-speclock-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="pd-speclock-cap">
+              <span class="pd-speclock-title">{p.name} spec sheet</span>
+              <span class="pd-speclock-sub">PDF · full technical data sheet</span>
+            </div>
+            <button type="button" class="pd-spec-btn primary pd-speclock-btn" data-open-specsheet data-slug={p.slug} data-product={p.name} data-category={cat.name} aria-label={`Download ${p.name} spec sheet`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+              <span class="pd-spec-btn-label">Download spec sheet</span>
+            </button>
+            <span class="pd-speclock-note">Free · share a few details to unlock the PDF</span>
+          </div>
+
+          <button type="button" class="btn btn-primary w-full mt-4" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="prod.get_pricing">Get pricing &amp; samples</span></button>
           <p class="pd-spec-note" data-i18n="prod.spec_note">Specs are indicative and can be tailored to your formulation. Full COA and spec sheet shared on request.</p>
         </div>
       </aside>
@@ -222,6 +253,7 @@ const breadcrumbLd = {
   )}
 
   <EnquiryDialog />
+  <SpecSheetDialog />
 
   <!-- Lightbox -->
   {p.image && (

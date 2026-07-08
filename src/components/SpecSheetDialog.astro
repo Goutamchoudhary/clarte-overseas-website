@@ -1,0 +1,199 @@
+---
+// Lead-gated spec-sheet download. Any [data-open-specsheet] trigger (with
+// data-slug / data-product / data-category) opens this dialog. On submit it
+// POSTs to /api/spec-sheet, which validates + logs the lead and streams the
+// PDF back — there is no public URL for the file. Once a visitor has unlocked
+// once, their details are remembered (localStorage) and further downloads skip
+// the form. Reuses the .enq-* styles for visual consistency.
+---
+<div class="enq-modal" id="ssModal" hidden>
+  <div class="enq-card" role="dialog" aria-modal="true" aria-labelledby="ssTitle">
+    <button type="button" class="enq-x" data-ss-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+
+    <div class="enq-main" id="ssMain">
+      <span class="eyebrow">Spec Sheet</span>
+      <h3 id="ssTitle" class="enq-title">Download the spec sheet</h3>
+      <p class="enq-sub">Tell us a little about you and the PDF downloads right away. We use this only to understand who's sourcing from us — no spam.</p>
+
+      <div class="enq-chip" id="ssChip" hidden>
+        <span class="enq-chip-dot"></span>
+        <span><strong id="ssChipProduct"></strong><span id="ssChipCat" class="enq-chip-cat"></span></span>
+      </div>
+
+      <form id="ssForm" class="enq-form" novalidate>
+        <!-- honeypots: humans never see these -->
+        <input type="text" name="website" class="enq-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="hidden" name="slug" id="ssSlug" value="" />
+
+        <div class="enq-2col">
+          <label class="enq-field"><span>Name <i>*</i></span>
+            <input name="name" type="text" required placeholder="Your name" autocomplete="name" />
+          </label>
+          <label class="enq-field"><span>Company <i>*</i></span>
+            <input name="company" type="text" required placeholder="Company" autocomplete="organization" />
+          </label>
+        </div>
+        <label class="enq-field"><span>Work email <i>*</i></span>
+          <input name="email" type="email" required placeholder="you@company.com" autocomplete="email" />
+        </label>
+        <label class="enq-field"><span>Your requirement <i>*</i></span>
+          <textarea name="requirement" required placeholder="What you're looking for — product, grade, form, approx. quantity, destination country…"></textarea>
+        </label>
+
+        <p class="ss-error" id="ssError" hidden></p>
+        <button type="submit" class="enq-submit" id="ssSubmit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+          <span>Download spec sheet</span>
+        </button>
+        <p class="ss-fineprint">🔒 Secure · your spec sheet downloads instantly after submitting.</p>
+      </form>
+    </div>
+
+    <div class="enq-done" id="ssDone" hidden>
+      <span class="enq-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>
+      <h3 class="enq-title">Your spec sheet is downloading</h3>
+      <p class="enq-sub">If it didn't start automatically, use the button below. Thanks — we'll be in touch about your requirement.</p>
+      <button type="button" class="enq-submit" id="ssRetry" style="margin-bottom:.6rem"><span>Download again</span></button>
+      <button type="button" class="ss-link" data-ss-close>Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("ssModal");
+  if (modal) {
+    const form = document.getElementById("ssForm") as HTMLFormElement;
+    const main = document.getElementById("ssMain")!;
+    const done = document.getElementById("ssDone")!;
+    const chip = document.getElementById("ssChip")!;
+    const chipProduct = document.getElementById("ssChipProduct")!;
+    const chipCat = document.getElementById("ssChipCat")!;
+    const slugInput = document.getElementById("ssSlug") as HTMLInputElement;
+    const errEl = document.getElementById("ssError")!;
+    const submitBtn = document.getElementById("ssSubmit") as HTMLButtonElement;
+    const retryBtn = document.getElementById("ssRetry") as HTMLButtonElement;
+    const LS_KEY = "co_spec_lead";
+
+    let ctx = { slug: "", product: "", category: "" };
+    let lastPayload: Record<string, string> | null = null;
+
+    const getLead = () => { try { return JSON.parse(localStorage.getItem(LS_KEY) || "null"); } catch { return null; } };
+
+    const setBtn = (btn: HTMLButtonElement, busy: boolean, label?: string) => {
+      btn.disabled = busy;
+      const span = btn.querySelector("span");
+      if (span && label) span.textContent = label;
+    };
+
+    // Trigger the browser download from the streamed PDF blob.
+    async function download(payload: Record<string, string>): Promise<{ ok: boolean; error?: string }> {
+      const res = await fetch("/api/spec-sheet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/pdf" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok || !(res.headers.get("content-type") || "").includes("application/pdf")) {
+        let msg = "Something went wrong. Please try again.";
+        try { const j = await res.json(); if (j && j.error) msg = j.error; } catch {}
+        return { ok: false, error: msg };
+      }
+      const cd = res.headers.get("content-disposition") || "";
+      const m = cd.match(/filename="?([^"]+)"?/);
+      const filename = m ? m[1] : `Clarte-Overseas-${(ctx.product || "product").replace(/[^\w]+/g, "-")}-Spec-Sheet.pdf`;
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+      return { ok: true };
+    }
+
+    const openModal = (prefill = true) => {
+      errEl.hidden = true;
+      main.hidden = false; done.hidden = true;
+      if (ctx.product || ctx.category) {
+        chip.hidden = false;
+        chipProduct.textContent = ctx.product || "Spec sheet";
+        chipCat.textContent = ctx.category ? "  ·  " + ctx.category : "";
+      } else chip.hidden = true;
+      const lead = prefill ? getLead() : null;
+      if (lead) {
+        (form.elements.namedItem("name") as HTMLInputElement).value = lead.name || "";
+        (form.elements.namedItem("company") as HTMLInputElement).value = lead.company || "";
+        (form.elements.namedItem("email") as HTMLInputElement).value = lead.email || "";
+        (form.elements.namedItem("requirement") as HTMLTextAreaElement).value = lead.requirement || "";
+      }
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => { modal.hidden = true; document.body.style.overflow = ""; };
+
+    // Wire every trigger. Returning visitors (details remembered) skip the form.
+    document.querySelectorAll("[data-open-specsheet]").forEach((b) =>
+      b.addEventListener("click", async () => {
+        ctx = {
+          slug: b.getAttribute("data-slug") || "",
+          product: b.getAttribute("data-product") || "",
+          category: b.getAttribute("data-category") || "",
+        };
+        slugInput.value = ctx.slug;
+        const lead = getLead();
+        if (lead && lead.email) {
+          const trigger = b as HTMLButtonElement;
+          const span = trigger.querySelector(".pd-spec-btn-label") || trigger.querySelector("span");
+          const orig = span ? span.textContent : "";
+          if (span) span.textContent = "Preparing…";
+          trigger.setAttribute("aria-busy", "true");
+          const r = await download({ ...lead, slug: ctx.slug });
+          if (span) span.textContent = orig || "Download spec sheet";
+          trigger.removeAttribute("aria-busy");
+          if (!r.ok) openModal(true); // fall back to the form on any issue
+          return;
+        }
+        openModal(true);
+      })
+    );
+
+    modal.addEventListener("click", (e) => {
+      const t = e.target as HTMLElement;
+      if (t === modal || t.closest("[data-ss-close]")) close();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errEl.hidden = true;
+      if (!form.reportValidity()) return;
+      const fd = new FormData(form);
+      if (String(fd.get("website") || "").trim()) return; // honeypot
+      const payload = {
+        slug: ctx.slug,
+        name: String(fd.get("name") || "").trim(),
+        company: String(fd.get("company") || "").trim(),
+        email: String(fd.get("email") || "").trim(),
+        requirement: String(fd.get("requirement") || "").trim(),
+      };
+      setBtn(submitBtn, true, "Preparing…");
+      const r = await download(payload);
+      setBtn(submitBtn, false, "Download spec sheet");
+      if (r.ok) {
+        lastPayload = payload;
+        const { slug, ...lead } = payload;
+        try { localStorage.setItem(LS_KEY, JSON.stringify(lead)); } catch {}
+        main.hidden = true; done.hidden = false;
+      } else {
+        errEl.textContent = r.error || "Something went wrong.";
+        errEl.hidden = false;
+      }
+    });
+
+    retryBtn.addEventListener("click", async () => {
+      if (!lastPayload) return;
+      setBtn(retryBtn, true, "Preparing…");
+      await download(lastPayload);
+      setBtn(retryBtn, false, "Download again");
+    });
+  }
+</script>
