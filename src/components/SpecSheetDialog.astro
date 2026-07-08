@@ -1,10 +1,13 @@
 ---
 // Lead-gated spec-sheet download. Any [data-open-specsheet] trigger (with
-// data-slug / data-product / data-category) opens this dialog. On submit it
-// POSTs to /api/spec-sheet, which validates + logs the lead and streams the
-// PDF back — there is no public URL for the file. Once a visitor has unlocked
-// once, their details are remembered (localStorage) and further downloads skip
-// the form. Reuses the .enq-* styles for visual consistency.
+// data-slug / data-product / data-category) opens this dialog. On submit it:
+//   1. logs the lead to Web3Forms from the BROWSER (their free plan rejects
+//      server-side POSTs), same backend as the enquiry form; and
+//   2. POSTs to /api/spec-sheet, which validates + streams the PDF back —
+//      there is no public URL for the file.
+// Once a visitor has unlocked once, their details are remembered
+// (localStorage) and further downloads skip the form. Reuses .enq-* styles.
+import { CONTACT } from "../consts";
 ---
 <div class="enq-modal" id="ssModal" hidden>
   <div class="enq-card" role="dialog" aria-modal="true" aria-labelledby="ssTitle">
@@ -26,6 +29,7 @@
         <!-- honeypots: humans never see these -->
         <input type="text" name="website" class="enq-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <input type="hidden" name="slug" id="ssSlug" value="" />
+        <input type="hidden" id="ssKey" value={CONTACT.web3formsKey} />
 
         <div class="enq-2col">
           <label class="enq-field"><span>Name <i>*</i></span>
@@ -87,6 +91,25 @@
       if (span && label) span.textContent = label;
     };
 
+    // Log the lead to Web3Forms from the browser (their free plan rejects
+    // server-side POSTs). Same backend as the enquiry form. Best-effort.
+    function logLead(payload: Record<string, string>) {
+      const key = (document.getElementById("ssKey") as HTMLInputElement)?.value;
+      if (!key) return;
+      const fd = new FormData();
+      fd.append("access_key", key);
+      fd.append("subject", `Spec-sheet download — ${ctx.product || payload.slug}`);
+      fd.append("from_name", "Clarté Overseas — Spec Sheet");
+      fd.append("name", payload.name);
+      fd.append("email", payload.email);
+      fd.append("company", payload.company);
+      fd.append("requirement", payload.requirement);
+      fd.append("product", ctx.product || "");
+      fd.append("category", ctx.category || "");
+      fd.append("botcheck", "");
+      fetch("https://api.web3forms.com/submit", { method: "POST", body: fd, headers: { Accept: "application/json" } }).catch(() => {});
+    }
+
     // Trigger the browser download from the streamed PDF blob.
     async function download(payload: Record<string, string>): Promise<{ ok: boolean; error?: string }> {
       const res = await fetch("/api/spec-sheet", {
@@ -146,6 +169,7 @@
           const orig = span ? span.textContent : "";
           if (span) span.textContent = "Preparing…";
           trigger.setAttribute("aria-busy", "true");
+          logLead({ ...lead, slug: ctx.slug });
           const r = await download({ ...lead, slug: ctx.slug });
           if (span) span.textContent = orig || "Download spec sheet";
           trigger.removeAttribute("aria-busy");
@@ -176,6 +200,7 @@
         requirement: String(fd.get("requirement") || "").trim(),
       };
       setBtn(submitBtn, true, "Preparing…");
+      logLead(payload);
       const r = await download(payload);
       setBtn(submitBtn, false, "Download spec sheet");
       if (r.ok) {

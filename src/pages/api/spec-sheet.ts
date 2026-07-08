@@ -1,15 +1,18 @@
 // =============================================================================
 // Gated spec-sheet delivery.  POST { slug, name, email, company, requirement }
-//   → validates + logs the lead (Web3Forms) → streams the PDF back.
+//   → validates the fields → streams the PDF back.
 // The PDFs live in /spec-pdfs (outside public/), so there is NO public URL to
 // guess or share — this function is the only way to obtain a sheet.
 // GET is refused, so the endpoint can't be browsed to.
+//
+// Lead logging happens on the CLIENT (SpecSheetDialog → Web3Forms): Web3Forms'
+// free plan rejects server-side POSTs, so the browser submits the lead the same
+// way the enquiry form does.
 // =============================================================================
 import type { APIRoute } from "astro";
 import fs from "node:fs";
 import path from "node:path";
 import { products } from "../../data/products";
-import { CONTACT, SITE } from "../../consts";
 
 export const prerender = false;
 
@@ -30,22 +33,6 @@ function readPdf(slug: string): Buffer | null {
     try { if (fs.existsSync(p)) return fs.readFileSync(p); } catch { /* try next */ }
   }
   return null;
-}
-
-async function logLead(fields: Record<string, string>) {
-  if (!CONTACT.web3formsKey) return;
-  try {
-    await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        access_key: CONTACT.web3formsKey,
-        subject: `Spec-sheet download — ${fields.product}`,
-        from_name: "Clarté Overseas — Spec Sheet Gate",
-        ...fields,
-      }),
-    });
-  } catch { /* best-effort: never block the download on a logging failure */ }
 }
 
 export const POST: APIRoute = async ({ request }) => {
@@ -77,14 +64,8 @@ export const POST: APIRoute = async ({ request }) => {
   const pdf = readPdf(slug);
   if (!pdf) return json({ ok: false, error: "Spec sheet is temporarily unavailable." }, 404);
 
-  // Log the lead (with product context) — best-effort, doesn't block delivery.
-  await logLead({
-    name, email, company, requirement,
-    product: product.name,
-    hsn: product.hsn,
-    page: `${SITE.url}/products/${product.category}/${slug}`,
-  });
-
+  // The lead is logged client-side (Web3Forms rejects server-side POSTs); this
+  // function's job is to validate and serve the gated file.
   const safe = product.name.replace(/[^\w]+/g, "-").replace(/^-+|-+$/g, "");
   return new Response(new Uint8Array(pdf), {
     status: 200,
