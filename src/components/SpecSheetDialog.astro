@@ -96,16 +96,21 @@ import { CONTACT } from "../consts";
     function logLead(payload: Record<string, string>) {
       const key = (document.getElementById("ssKey") as HTMLInputElement)?.value;
       if (!key) return;
+      const productName = ctx.product || payload.slug;
       const fd = new FormData();
       fd.append("access_key", key);
-      fd.append("subject", `Spec-sheet download — ${ctx.product || payload.slug}`);
+      fd.append("subject", `Spec-sheet download — ${productName}`);
       fd.append("from_name", "Clarté Overseas — Spec Sheet");
       fd.append("name", payload.name);
       fd.append("email", payload.email);
       fd.append("company", payload.company);
-      fd.append("requirement", payload.requirement);
-      fd.append("product", ctx.product || "");
+      fd.append("product", productName);
       fd.append("category", ctx.category || "");
+      // Lead the message with the product so it's clear in the Web3Forms email
+      // which sheet was downloaded.
+      fd.append("message",
+        `Spec sheet downloaded: ${productName}${ctx.category ? ` (${ctx.category})` : ""}\n\n` +
+        `Requirement: ${payload.requirement || "—"}`);
       fd.append("botcheck", "");
       fetch("https://api.web3forms.com/submit", { method: "POST", body: fd, headers: { Accept: "application/json" } }).catch(() => {});
     }
