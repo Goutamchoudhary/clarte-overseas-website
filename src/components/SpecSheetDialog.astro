@@ -42,9 +42,6 @@ import { CONTACT } from "../consts";
         <label class="enq-field"><span>Work email <i>*</i></span>
           <input name="email" type="email" required placeholder="you@company.com" autocomplete="email" />
         </label>
-        <label class="enq-field"><span>Your requirement <i>*</i></span>
-          <textarea name="requirement" required placeholder="What you're looking for — product, grade, form, approx. quantity, destination country…"></textarea>
-        </label>
 
         <p class="ss-error" id="ssError" hidden></p>
         <button type="submit" class="enq-submit" id="ssSubmit">
@@ -58,7 +55,7 @@ import { CONTACT } from "../consts";
     <div class="enq-done" id="ssDone" hidden>
       <span class="enq-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>
       <h3 class="enq-title">Your spec sheet is downloading</h3>
-      <p class="enq-sub">If it didn't start automatically, use the button below. Thanks — we'll be in touch about your requirement.</p>
+      <p class="enq-sub">If it didn't start automatically, use the button below. Thanks — we'll be in touch soon.</p>
       <button type="button" class="enq-submit" id="ssRetry" style="margin-bottom:.6rem"><span>Download again</span></button>
       <button type="button" class="ss-link" data-ss-close>Done</button>
     </div>
@@ -106,11 +103,10 @@ import { CONTACT } from "../consts";
       fd.append("company", payload.company);
       fd.append("product", productName);
       fd.append("category", ctx.category || "");
-      // Lead the message with the product so it's clear in the Web3Forms email
-      // which sheet was downloaded.
+      // Silently record which sheet was downloaded, in the message block that
+      // the Web3Forms email highlights.
       fd.append("message",
-        `Spec sheet downloaded: ${productName}${ctx.category ? ` (${ctx.category})` : ""}\n\n` +
-        `Requirement: ${payload.requirement || "—"}`);
+        `Downloaded the spec sheet for: ${productName}${ctx.category ? ` (${ctx.category})` : ""}`);
       fd.append("botcheck", "");
       fetch("https://api.web3forms.com/submit", { method: "POST", body: fd, headers: { Accept: "application/json" } }).catch(() => {});
     }
@@ -151,7 +147,6 @@ import { CONTACT } from "../consts";
         (form.elements.namedItem("name") as HTMLInputElement).value = lead.name || "";
         (form.elements.namedItem("company") as HTMLInputElement).value = lead.company || "";
         (form.elements.namedItem("email") as HTMLInputElement).value = lead.email || "";
-        (form.elements.namedItem("requirement") as HTMLTextAreaElement).value = lead.requirement || "";
       }
       modal.hidden = false;
       document.body.style.overflow = "hidden";
@@ -202,7 +197,6 @@ import { CONTACT } from "../consts";
         name: String(fd.get("name") || "").trim(),
         company: String(fd.get("company") || "").trim(),
         email: String(fd.get("email") || "").trim(),
-        requirement: String(fd.get("requirement") || "").trim(),
       };
       setBtn(submitBtn, true, "Preparing…");
       logLead(payload);

@@ -1,5 +1,5 @@
 // =============================================================================
-// Gated spec-sheet delivery.  POST { slug, name, email, company, requirement }
+// Gated spec-sheet delivery.  POST { slug, name, email, company }
 //   → validates the fields → streams the PDF back.
 // The PDFs live in /spec-pdfs (outside public/), so there is NO public URL to
 // guess or share — this function is the only way to obtain a sheet.
@@ -54,10 +54,9 @@ export const POST: APIRoute = async ({ request }) => {
   const name = String(body.name || "").trim();
   const email = String(body.email || "").trim();
   const company = String(body.company || "").trim();
-  const requirement = String(body.requirement || "").trim();
 
   if (!slugs.has(slug)) return json({ ok: false, error: "Unknown product." }, 400);
-  if (!name || !company || !requirement) return json({ ok: false, error: "Please complete all fields." }, 400);
+  if (!name || !company) return json({ ok: false, error: "Please complete all fields." }, 400);
   if (!EMAIL_RE.test(email)) return json({ ok: false, error: "Please enter a valid email." }, 400);
 
   const product = products.find((p) => p.slug === slug)!;
