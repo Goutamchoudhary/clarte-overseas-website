@@ -63,7 +63,10 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
             <span class="cc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
             <div>
               <span class="cc-label"><span data-i18n="contact.info_email_label">Email</span></span>
-              <span class="cc-value"><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></span>
+              <span class="cc-value cc-value-phones">
+                <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+                <a href={`mailto:${CONTACT.personalEmail}`} class="cc-phone-alt">{CONTACT.personalEmail} <span class="cc-founder-badge">Founder</span></a>
+              </span>
             </div>
           </div>
 

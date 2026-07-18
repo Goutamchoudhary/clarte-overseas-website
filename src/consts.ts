@@ -29,6 +29,9 @@ export const ANALYTICS = {
 
 export const CONTACT = {
   email: "info@clarteoverseas.com",
+  // Founder's personal alias — shown alongside the general inbox on the
+  // contact page's "Talk to a real person" panel.
+  personalEmail: "goutam@clarteoverseas.com",
   whatsapp: "https://wa.me/919818915310",
   // Web3Forms access key — paste the key emailed to you from web3forms.com
   web3formsKey: "c15bc0d8-19b2-42dd-a385-5a15dd3a7883",
