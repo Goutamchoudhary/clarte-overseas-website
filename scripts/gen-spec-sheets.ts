@@ -7,14 +7,15 @@
 // and writes one branded, product-specific PDF per product into
 // public/assets/specs/<slug>-spec-sheet.pdf.
 //
-// Pure Node + pdfkit — no headless browser, no network. Safe to re-run any time
-// the catalogue or specs change; output is deterministic.
+// Pure Node + pdfkit (+ resvg for one logo raster) — no headless browser, no
+// network. Safe to re-run any time the catalogue or specs change; output is
+// deterministic.
 // =============================================================================
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import PDFDocument from "pdfkit";
-import SVGtoPDF from "svg-to-pdfkit";
+import { Resvg } from "@resvg/resvg-js";
 import { products, getCategory } from "../src/data/products.ts";
 import { productSpecs, categoryDefaults, type KV } from "../src/data/specs.ts";
 
@@ -23,7 +24,23 @@ const ROOT = path.resolve(__dirname, "..");
 // PRIVATE — outside public/ so the PDFs have no guessable URL. They are served
 // only by the gated /api/spec-sheet function (bundled via includeFiles).
 const OUT_DIR = path.join(ROOT, "spec-pdfs");
-const LOGO_SVG = path.join(ROOT, "public", "assets", "logo", "logo-horizontal-white.svg");
+const LOGO_SVG = path.join(ROOT, "public", "assets", "logo", "logo-horizontal.svg");
+
+// The Inkscape-exported logo SVG does not render reliably through
+// svg-to-pdfkit (it silently drew nothing), so we rasterize the brand
+// wordmark to a crisp transparent PNG once and embed that with doc.image().
+let LOGO_PNG: Buffer | null | undefined;
+function logoPng(): Buffer | null {
+  if (LOGO_PNG !== undefined) return LOGO_PNG;
+  try {
+    const svg = fs.readFileSync(LOGO_SVG, "utf8");
+    const r = new Resvg(svg, { fitTo: { mode: "width", value: 600 }, background: "rgba(0,0,0,0)" });
+    LOGO_PNG = Buffer.from(r.render().asPng());
+  } catch {
+    LOGO_PNG = null;
+  }
+  return LOGO_PNG;
+}
 
 // --- Brand palette -----------------------------------------------------------
 const BRAND = "#1f4693";
@@ -41,7 +58,7 @@ const CO = {
   site: "www.clarteoverseas.com",
   email: "info@clarteoverseas.com",
   phone: "+91 98189 15310",
-  address: "1st Floor, CW-59, Sanjay Gandhi Transport Nagar, Delhi 110042, India",
+  address: "1st Floor, CW-59, Sanjay Gandhi Transport Nagar, New Delhi 110042, India",
 };
 
 // --- Page geometry ------------------------------------------------------------
@@ -170,22 +187,24 @@ function chipRow(doc: Doc, items: string[]) {
 
 // ---- header band + footer ---------------------------------------------------
 function header(doc: Doc, productName: string, sub: string) {
-  const bandH = 84;
-  doc.rect(0, 0, PAGE.w, bandH).fill(BRAND);
+  // Clean white header (matches the site navbar): brand logo on white, a
+  // brand-blue document label on the right, and a slim gold accent rule
+  // beneath to frame it.
+  const bandH = 78;
   doc.rect(0, bandH, PAGE.w, 3).fill(GOLD);
-  // logo (SVG, white) with graceful fallback to a wordmark
-  try {
-    const svg = fs.readFileSync(LOGO_SVG, "utf8");
-    SVGtoPDF(doc, svg, M.left, 20, { width: 190, assumePt: true });
-  } catch {
-    doc.fillColor(WHITE).font("Helvetica-Bold").fontSize(20)
+  // logo (rasterized brand wordmark) with graceful fallback to a text wordmark
+  const logo = logoPng();
+  if (logo) {
+    doc.image(logo, M.left, 20, { width: 178 });
+  } else {
+    doc.fillColor(BRAND).font("Helvetica-Bold").fontSize(20)
       .text("CLARTÉ OVERSEAS", M.left, 30, { characterSpacing: 1 });
   }
   // right-side document label
-  doc.fillColor("#cdd9f5").font("Helvetica-Bold").fontSize(9)
-    .text("PRODUCT SPECIFICATION", PAGE.w - M.right - 200, 26, { width: 200, align: "right", characterSpacing: 1.2 });
-  doc.fillColor("#9fb6e6").font("Helvetica").fontSize(8)
-    .text("Technical Data Sheet · Typical values", PAGE.w - M.right - 200, 40, { width: 200, align: "right" });
+  doc.fillColor(BRAND).font("Helvetica-Bold").fontSize(9)
+    .text("PRODUCT SPECIFICATION", PAGE.w - M.right - 200, 28, { width: 200, align: "right", characterSpacing: 1.2 });
+  doc.fillColor(MUTED).font("Helvetica").fontSize(8)
+    .text("Technical Data Sheet · Typical values", PAGE.w - M.right - 200, 42, { width: 200, align: "right" });
   // product title strip
   doc.fillColor(INK).font("Helvetica-Bold").fontSize(19)
     .text(sx(productName), M.left, bandH + 16, { width: CW });
