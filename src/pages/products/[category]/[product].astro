@@ -191,7 +191,7 @@ const breadcrumbLd = {
             <div class="pd-speclock-doc" aria-hidden="true">
               <span class="pd-speclock-band">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-                Technical Data Sheet
+                <span data-i18n="prod.spec_card_label">Technical Data Sheet</span>
               </span>
               <div class="pd-speclock-rows">
                 <span class="l w75"></span><span class="l w40"></span>
@@ -206,14 +206,14 @@ const breadcrumbLd = {
               </div>
             </div>
             <div class="pd-speclock-cap">
-              <span class="pd-speclock-title">{p.name} spec sheet</span>
-              <span class="pd-speclock-sub">PDF · full technical data sheet</span>
+              <span class="pd-speclock-title">{p.name} <span data-i18n="prod.spec_sheet_word">spec sheet</span></span>
+              <span class="pd-speclock-sub" data-i18n="prod.spec_pdf_sub">PDF · full technical data sheet</span>
             </div>
             <button type="button" class="pd-spec-btn primary pd-speclock-btn" data-open-specsheet data-slug={p.slug} data-product={p.name} data-category={cat.name} aria-label={`Download ${p.name} spec sheet`}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
-              <span class="pd-spec-btn-label">Download spec sheet</span>
+              <span class="pd-spec-btn-label" data-i18n="prod.spec_download_btn">Download spec sheet</span>
             </button>
-            <span class="pd-speclock-note">Free · share a few details to unlock the PDF</span>
+            <span class="pd-speclock-note" data-i18n="prod.spec_free_note">Free · share a few details to unlock the PDF</span>
           </div>
 
           <button type="button" class="btn btn-primary w-full mt-4" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="prod.get_pricing">Get pricing &amp; samples</span></button>

@@ -1044,6 +1044,11 @@
   "prod.spec_origin": "产地",
 
   "prod.get_pricing": "获取报价及样品",
+  "prod.spec_card_label": "技术数据表",
+  "prod.spec_sheet_word": "技术规格表",
+  "prod.spec_pdf_sub": "PDF·完整技术数据表",
+  "prod.spec_download_btn": "下载技术规格表",
+  "prod.spec_free_note": "免费·分享几项信息即可解锁PDF",
 
   "prod.spec_note": "规格为参考值，可根据贵方配方需求调整。完整COA及规格表可应要求提供。",
 
