@@ -16,9 +16,9 @@ import { CONTACT } from "../consts";
     </button>
 
     <div class="enq-main" id="ssMain">
-      <span class="eyebrow">Spec Sheet</span>
-      <h3 id="ssTitle" class="enq-title">Download the spec sheet</h3>
-      <p class="enq-sub">Tell us a little about you and the PDF downloads right away. We use this only to understand who's sourcing from us — no spam.</p>
+      <span class="eyebrow" data-i18n="prod.ss_eyebrow">Spec Sheet</span>
+      <h3 id="ssTitle" class="enq-title" data-i18n="prod.ss_title">Download the spec sheet</h3>
+      <p class="enq-sub" data-i18n="prod.ss_sub">Tell us a little about you and the PDF downloads right away. We use this only to understand who's sourcing from us — no spam.</p>
 
       <div class="enq-chip" id="ssChip" hidden>
         <span class="enq-chip-dot"></span>
@@ -32,35 +32,42 @@ import { CONTACT } from "../consts";
         <input type="hidden" id="ssKey" value={CONTACT.web3formsKey} />
 
         <div class="enq-2col">
-          <label class="enq-field"><span>Name <i>*</i></span>
-            <input name="name" type="text" required placeholder="Your name" autocomplete="name" />
+          <label class="enq-field"><span><span data-i18n="enq.field_name">Name</span> <i>*</i></span>
+            <input name="name" type="text" required data-i18n-ph="enq.ph_name" placeholder="Your name" autocomplete="name" />
           </label>
-          <label class="enq-field"><span>Company <i>*</i></span>
-            <input name="company" type="text" required placeholder="Company" autocomplete="organization" />
+          <label class="enq-field"><span><span data-i18n="enq.field_company">Company</span> <i>*</i></span>
+            <input name="company" type="text" required data-i18n-ph="enq.ph_company" placeholder="Company" autocomplete="organization" />
           </label>
         </div>
-        <label class="enq-field"><span>Work email <i>*</i></span>
-          <input name="email" type="email" required placeholder="you@company.com" autocomplete="email" />
+        <label class="enq-field"><span><span data-i18n="prod.ss_field_email">Work email</span> <i>*</i></span>
+          <input name="email" type="email" required data-i18n-ph="enq.ph_email" placeholder="you@company.com" autocomplete="email" />
         </label>
 
         <p class="ss-error" id="ssError" hidden></p>
         <button type="submit" class="enq-submit" id="ssSubmit">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
-          <span>Download spec sheet</span>
+          <span data-i18n="prod.spec_download_btn">Download spec sheet</span>
         </button>
-        <p class="ss-fineprint">🔒 Secure · your spec sheet downloads instantly after submitting.</p>
+        <p class="ss-fineprint" data-i18n="prod.ss_fineprint">🔒 Secure · your spec sheet downloads instantly after submitting.</p>
       </form>
     </div>
 
     <div class="enq-done" id="ssDone" hidden>
       <span class="enq-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>
-      <h3 class="enq-title">Your spec sheet is downloading</h3>
-      <p class="enq-sub">If it didn't start automatically, use the button below. Thanks — we'll be in touch soon.</p>
-      <button type="button" class="enq-submit" id="ssRetry" style="margin-bottom:.6rem"><span>Download again</span></button>
-      <button type="button" class="ss-link" data-ss-close>Done</button>
+      <h3 class="enq-title" data-i18n="prod.ss_done_title">Your spec sheet is downloading</h3>
+      <p class="enq-sub" data-i18n="prod.ss_done_body">If it didn't start automatically, use the button below. Thanks — we'll be in touch soon.</p>
+      <button type="button" class="enq-submit" id="ssRetry" style="margin-bottom:.6rem"><span data-i18n="prod.ss_download_again">Download again</span></button>
+      <button type="button" class="ss-link" data-ss-close data-i18n="enq.done_btn">Done</button>
     </div>
   </div>
 </div>
+
+<!-- Hidden strings used by JS (translated at runtime via i18n engine) -->
+<span id="ssStrPreparing" data-i18n="prod.ss_preparing" hidden>Preparing…</span>
+<span id="ssStrDownloadBtn" data-i18n="prod.spec_download_btn" hidden>Download spec sheet</span>
+<span id="ssStrDownloadAgain" data-i18n="prod.ss_download_again" hidden>Download again</span>
+<span id="ssStrError" data-i18n="prod.ss_error_generic" hidden>Something went wrong. Please try again.</span>
+<span id="ssStrGenericLabel" data-i18n="prod.ss_generic_label" hidden>Spec sheet</span>
 
 <script>
   const modal = document.getElementById("ssModal");
@@ -76,6 +83,12 @@ import { CONTACT } from "../consts";
     const submitBtn = document.getElementById("ssSubmit") as HTMLButtonElement;
     const retryBtn = document.getElementById("ssRetry") as HTMLButtonElement;
     const LS_KEY = "co_spec_lead";
+
+    const strPreparing = () => document.getElementById("ssStrPreparing")?.textContent || "Preparing…";
+    const strDownloadBtn = () => document.getElementById("ssStrDownloadBtn")?.textContent || "Download spec sheet";
+    const strDownloadAgain = () => document.getElementById("ssStrDownloadAgain")?.textContent || "Download again";
+    const strError = () => document.getElementById("ssStrError")?.textContent || "Something went wrong. Please try again.";
+    const strGenericLabel = () => document.getElementById("ssStrGenericLabel")?.textContent || "Spec sheet";
 
     let ctx = { slug: "", product: "", category: "" };
     let lastPayload: Record<string, string> | null = null;
@@ -119,7 +132,7 @@ import { CONTACT } from "../consts";
         body: JSON.stringify(payload),
       });
       if (!res.ok || !(res.headers.get("content-type") || "").includes("application/pdf")) {
-        let msg = "Something went wrong. Please try again.";
+        let msg = strError();
         try { const j = await res.json(); if (j && j.error) msg = j.error; } catch {}
         return { ok: false, error: msg };
       }
@@ -139,7 +152,7 @@ import { CONTACT } from "../consts";
       main.hidden = false; done.hidden = true;
       if (ctx.product || ctx.category) {
         chip.hidden = false;
-        chipProduct.textContent = ctx.product || "Spec sheet";
+        chipProduct.textContent = ctx.product || strGenericLabel();
         chipCat.textContent = ctx.category ? "  ·  " + ctx.category : "";
       } else chip.hidden = true;
       const lead = prefill ? getLead() : null;
@@ -167,11 +180,11 @@ import { CONTACT } from "../consts";
           const trigger = b as HTMLButtonElement;
           const span = trigger.querySelector(".pd-spec-btn-label") || trigger.querySelector("span");
           const orig = span ? span.textContent : "";
-          if (span) span.textContent = "Preparing…";
+          if (span) span.textContent = strPreparing();
           trigger.setAttribute("aria-busy", "true");
           logLead({ ...lead, slug: ctx.slug });
           const r = await download({ ...lead, slug: ctx.slug });
-          if (span) span.textContent = orig || "Download spec sheet";
+          if (span) span.textContent = orig || strDownloadBtn();
           trigger.removeAttribute("aria-busy");
           if (!r.ok) openModal(true); // fall back to the form on any issue
           return;
@@ -198,26 +211,26 @@ import { CONTACT } from "../consts";
         company: String(fd.get("company") || "").trim(),
         email: String(fd.get("email") || "").trim(),
       };
-      setBtn(submitBtn, true, "Preparing…");
+      setBtn(submitBtn, true, strPreparing());
       logLead(payload);
       const r = await download(payload);
-      setBtn(submitBtn, false, "Download spec sheet");
+      setBtn(submitBtn, false, strDownloadBtn());
       if (r.ok) {
         lastPayload = payload;
         const { slug, ...lead } = payload;
         try { localStorage.setItem(LS_KEY, JSON.stringify(lead)); } catch {}
         main.hidden = true; done.hidden = false;
       } else {
-        errEl.textContent = r.error || "Something went wrong.";
+        errEl.textContent = r.error || strError();
         errEl.hidden = false;
       }
     });
 
     retryBtn.addEventListener("click", async () => {
       if (!lastPayload) return;
-      setBtn(retryBtn, true, "Preparing…");
+      setBtn(retryBtn, true, strPreparing());
       await download(lastPayload);
-      setBtn(retryBtn, false, "Download again");
+      setBtn(retryBtn, false, strDownloadAgain());
     });
   }
 </script>
