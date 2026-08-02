@@ -1044,6 +1044,7 @@
   "prod.spec_origin": "产地",
 
   "prod.get_pricing": "获取报价及样品",
+  "prod.sample_req_btn": "申请免费样品",
   "prod.spec_card_label": "技术数据表",
   "prod.spec_sheet_word": "技术规格表",
   "prod.spec_pdf_sub": "PDF·完整技术数据表",
@@ -1109,6 +1110,13 @@
   "enq.done_body": "我们已收到您的留言，将在一个工作日内回复。",
 
   "enq.done_btn": "完成",
+  "enq.sample_eyebrow": "免费样品",
+  "enq.sample_title": "申请免费样品",
+  "enq.sample_sub": "填写您的信息，我们将安排样品寄送，以便您在下单前评估质量。",
+  "enq.sample_message": "我想申请{product}的免费样品。请告知可提供的数量以及可能产生的运费或快递费用。",
+  "enq.sample_prefix": "样品：",
+  "enq.error_generic": "出了点问题，请发送邮件至 info@clarteoverseas.com。",
+  "enq.error_network": "网络错误——请重试或发送邮件至 info@clarteoverseas.com。",
 
 
   "blog.hero_eyebrow": "Clarté 博客",

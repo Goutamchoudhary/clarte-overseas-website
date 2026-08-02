@@ -69,6 +69,16 @@ import { CONTACT } from "../consts";
 <!-- Hidden strings used by JS (translated at runtime via i18n engine) -->
 <span id="enqStrSending" data-i18n="enq.sending" hidden>Sending…</span>
 <span id="enqStrGeneral" data-i18n="enq.general" hidden>General enquiry</span>
+<span id="enqStrEyebrow" data-i18n="enq.eyebrow" hidden>Enquiry</span>
+<span id="enqStrTitle" data-i18n="enq.title" hidden>Request a quote</span>
+<span id="enqStrSub" data-i18n="enq.sub" hidden>Tell us a little about your requirement — we reply within one business day, often the same day.</span>
+<span id="enqStrSampleEyebrow" data-i18n="enq.sample_eyebrow" hidden>Free Sample</span>
+<span id="enqStrSampleTitle" data-i18n="enq.sample_title" hidden>Request a free sample</span>
+<span id="enqStrSampleSub" data-i18n="enq.sample_sub" hidden>Fill in your details and we'll arrange a sample shipment to evaluate quality before you commit to an order.</span>
+<span id="enqStrSampleMessage" data-i18n="enq.sample_message" hidden>I would like to request a free sample of {"{product}"}. Please let me know the quantities available and any shipping or courier charges that may apply.</span>
+<span id="enqStrSamplePrefix" data-i18n="enq.sample_prefix" hidden>Sample: </span>
+<span id="enqStrErrorGeneric" data-i18n="enq.error_generic" hidden>Something went wrong. Please email info@clarteoverseas.com.</span>
+<span id="enqStrErrorNetwork" data-i18n="enq.error_network" hidden>Network error — please try again or email info@clarteoverseas.com.</span>
 
 <script>
   const modal = document.getElementById("enqModal");
@@ -84,6 +94,19 @@ import { CONTACT } from "../consts";
     const fSubject = document.getElementById("enqSubject") as HTMLInputElement;
     const strSending = () => document.getElementById("enqStrSending")?.textContent || "Sending…";
     const strGeneral = () => document.getElementById("enqStrGeneral")?.textContent || "General enquiry";
+    const strEyebrow = () => document.getElementById("enqStrEyebrow")?.textContent || "Enquiry";
+    const strTitle = () => document.getElementById("enqStrTitle")?.textContent || "Request a quote";
+    const strSub = () => document.getElementById("enqStrSub")?.textContent || "Tell us a little about your requirement — we reply within one business day, often the same day.";
+    const strSampleEyebrow = () => document.getElementById("enqStrSampleEyebrow")?.textContent || "Free Sample";
+    const strSampleTitle = () => document.getElementById("enqStrSampleTitle")?.textContent || "Request a free sample";
+    const strSampleSub = () => document.getElementById("enqStrSampleSub")?.textContent || "Fill in your details and we'll arrange a sample shipment to evaluate quality before you commit to an order.";
+    const strSampleMessage = (product: string) =>
+      (document.getElementById("enqStrSampleMessage")?.textContent ||
+        "I would like to request a free sample of {product}. Please let me know the quantities available and any shipping or courier charges that may apply."
+      ).replace("{product}", product);
+    const strSamplePrefix = () => document.getElementById("enqStrSamplePrefix")?.textContent || "Sample: ";
+    const strErrorGeneric = () => document.getElementById("enqStrErrorGeneric")?.textContent || "Something went wrong. Please email info@clarteoverseas.com.";
+    const strErrorNetwork = () => document.getElementById("enqStrErrorNetwork")?.textContent || "Network error — please try again or email info@clarteoverseas.com.";
 
     const open = (product: string, category: string, isSample = false) => {
       fProd.value = product || "";
@@ -96,21 +119,21 @@ import { CONTACT } from "../consts";
 
       if (isSample) {
         if (fSubject) fSubject.value = "Sample request — Clarté Overseas website";
-        if (eyebrow) eyebrow.textContent = "Free Sample";
-        if (title) title.textContent = "Request a free sample";
-        if (sub) sub.textContent = "Fill in your details and we'll arrange a sample shipment to evaluate quality before you commit to an order.";
-        if (msgArea && product) msgArea.value = `I would like to request a free sample of ${product}. Please let me know the quantities available and any shipping or courier charges that may apply.`;
+        if (eyebrow) eyebrow.textContent = strSampleEyebrow();
+        if (title) title.textContent = strSampleTitle();
+        if (sub) sub.textContent = strSampleSub();
+        if (msgArea && product) msgArea.value = strSampleMessage(product);
       } else {
         if (fSubject) fSubject.value = "Product enquiry — Clarté Overseas website";
-        if (eyebrow) eyebrow.textContent = "Enquiry";
-        if (title) title.textContent = "Request a quote";
-        if (sub) sub.textContent = "Tell us a little about your requirement — we reply within one business day, often the same day.";
+        if (eyebrow) eyebrow.textContent = strEyebrow();
+        if (title) title.textContent = strTitle();
+        if (sub) sub.textContent = strSub();
         if (msgArea && !msgArea.value) msgArea.value = "";
       }
 
       if (product || category) {
         chip.hidden = false;
-        chipProduct.textContent = (isSample ? "Sample: " : "") + (product || strGeneral());
+        chipProduct.textContent = (isSample ? strSamplePrefix() : "") + (product || strGeneral());
         chipCat.textContent = category ? "  ·  " + category : "";
       } else {
         chip.hidden = true;
@@ -153,8 +176,8 @@ import { CONTACT } from "../consts";
         const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
         const data = await res.json().catch(() => null);
         if (res.ok && data && data.success) { form.reset(); main.hidden = true; done.hidden = false; }
-        else { alert((data && data.message) || "Something went wrong. Please email info@clarteoverseas.com."); }
-      } catch { alert("Network error — please try again or email info@clarteoverseas.com."); }
+        else { alert((data && data.message) || strErrorGeneric()); }
+      } catch { alert(strErrorNetwork()); }
       finally { btn.disabled = false; btn.innerHTML = original; }
     });
   }
