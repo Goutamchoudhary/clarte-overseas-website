@@ -317,6 +317,22 @@ export const productSpecs: Record<string, ProductSpec> = {
     nutrition: { energy: 350, protein: 5, fat: 1, carb: 84, sugars: 45, fibre: 8, sodium: 10 },
     nutritionNote: "Natural source of potassium and vitamin C.",
   },
+  "coriander-leaf-powder": {
+    appearance: "Fine leaf powder", colour: "Vivid green",
+    odour: "Fresh, citrusy coriander (cilantro)", taste: "Herbaceous, bright citrusy",
+    mesh: "80–100 mesh (custom available)",
+    params: [{ k: "Volatile aroma oils", v: "Native" }],
+    nutrition: { energy: 330, protein: 20, fat: 5, carb: 50, sugars: 6, fibre: 22, sodium: 40 },
+    nutritionNote: "Source of vitamin A, vitamin K and iron; carries the leaf's fresh aroma oils.",
+  },
+  "mint-powder": {
+    appearance: "Fine leaf powder", colour: "Deep green",
+    odour: "Cooling, fresh mint (menthol)", taste: "Cooling, minty with mild bitterness",
+    mesh: "80–100 mesh (custom available)",
+    params: [{ k: "Menthol / volatile oils", v: "Native" }],
+    nutrition: { energy: 320, protein: 18, fat: 5, carb: 52, sugars: 6, fibre: 24, sodium: 45 },
+    nutritionNote: "Carries the leaf's natural menthol and volatile aroma oils; source of vitamin A.",
+  },
 
   // ---------------------------------------------------------------- HYDROCOLLOIDS
   "guar-gum-powder": {

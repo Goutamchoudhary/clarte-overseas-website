@@ -370,6 +370,28 @@ export const products: Product[] = [
     grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 6%", "Private label / bulk"],
     drying: DRY.functional,
   },
+  {
+    slug: "coriander-leaf-powder", name: "Coriander Leaf Powder", category: "functional-nutritional-powders",
+    emoji: "🌱", hsn: "0712 90 90", botanical: "Coriandrum sativum",
+    tagline: "Fresh, citrusy coriander leaf in a stable powder.",
+    description:
+      "Coriander leaf powder captures the bright, citrusy character of fresh coriander (cilantro) in a dried, easy-to-dose form. It brings the same clean green colour and herbaceous flavour to seasonings, sauces and nutrition blends without the shelf life limits of fresh leaf.",
+    features: ["Bright, citrusy coriander flavour", "Retained green colour", "No chopping or spoilage", "Consistent batch to batch", F_DRY, F_CUSTOM],
+    uses: ["Spice and seasoning blends", "Sauces, chutneys and marinades", "Soups and ready meals", "Nutrition and green blends"],
+    grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
+    drying: DRY.functional,
+  },
+  {
+    slug: "mint-powder", name: "Mint Powder", category: "functional-nutritional-powders",
+    emoji: "🌿", hsn: "1211 90 99", botanical: "Mentha spicata",
+    tagline: "Cooling mint leaf, dried to hold its aroma.",
+    description:
+      "Mint powder is made from carefully dried mint (pudina) leaves, milled to preserve the cooling aroma and fresh flavour buyers expect. It is a versatile functional ingredient for chutneys, beverages, confectionery and wellness blends.",
+    features: ["Cooling, fresh mint aroma", "Vivid green colour", "Concentrated, easy to dose", "Long shelf life", F_DRY, F_CUSTOM],
+    uses: ["Chutneys, dips and marinades", "Beverages and mocktails", "Confectionery and desserts", "Herbal and wellness blends"],
+    grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
+    drying: DRY.functional,
+  },
 
   // ------------------------------------------------------- HERBAL & LEAF
   {

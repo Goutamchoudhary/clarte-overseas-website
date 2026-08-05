@@ -17,6 +17,7 @@ const isUnavailable = UNAVAILABLE_PRODUCTS.has(p.slug);
 const isComingSoon = COMING_SOON_PRODUCTS.has(p.slug);
 const isOut = isUnavailable || isComingSoon;
 const stockLabel = isUnavailable ? "Currently Unavailable" : isComingSoon ? "Coming Soon" : "In stock · Ships within 14 days";
+const stockI18n = isUnavailable ? "prod.stock_unavailable" : isComingSoon ? "prod.stock_coming_soon" : "prod.stock_in";
 
 const title = `${p.name} — ${cat.name} | HSN ${p.hsn} | Clarté Overseas`;
 const description = `${p.tagline} ${p.description}`.slice(0, 180);
@@ -117,7 +118,7 @@ const breadcrumbLd = {
 
           <div class={`pd-stock${isUnavailable ? " pd-stock-unavail" : isComingSoon ? " pd-stock-out" : ""}`}>
             <span class={isUnavailable ? "pd-stock-dot-unavail" : isComingSoon ? "pd-stock-dot-out" : "pd-stock-dot"} aria-hidden="true"></span>
-            <span>{stockLabel}</span>
+            <span data-i18n={stockI18n}>{stockLabel}</span>
           </div>
 
           <div class="pd-cta">

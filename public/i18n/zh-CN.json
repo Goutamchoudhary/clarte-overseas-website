@@ -974,6 +974,10 @@
 
   "cat.prod_jackfruit_powder_tagline": "印度超级水果——甘甜饱腹，深受市场追捧。",
 
+  "cat.prod_coriander_leaf_powder_name": "香菜叶粉",
+  "cat.prod_coriander_leaf_powder_tagline": "清新柑橘香气的香菜叶,制成稳定的粉末。",
+  "cat.prod_mint_powder_name": "薄荷粉",
+  "cat.prod_mint_powder_tagline": "清凉薄荷叶,经干燥保留其香气。",
   "cat.prod_moringa_powder_name": "辣木粉",
 
   "cat.prod_moringa_powder_tagline": "\"奇迹树\"叶片，干燥后保留翠绿色泽。",
@@ -1007,6 +1011,9 @@
 
   "prod.available_in": "可供形态",
 
+  "prod.stock_in": "现货 · 14天内发货",
+  "prod.stock_unavailable": "暂时缺货",
+  "prod.stock_coming_soon": "即将上市",
   "prod.enquire_btn": "询盘 / 请求报价",
 
   "prod.whatsapp_btn": "WhatsApp",
@@ -1873,6 +1880,36 @@
   "prod.jackfruit_powder_g4": "贴牌 / 散装",
 
 
+  "prod.coriander_leaf_powder_desc": "香菜叶粉将新鲜香菜明亮的柑橘香气保留在干燥、易于配量的形态中。它为调味料、酱汁和营养混合物带来同样清新的绿色和草本风味,且不受鲜叶保质期的限制。",
+  "prod.coriander_leaf_powder_f1": "明亮的柑橘香菜风味",
+  "prod.coriander_leaf_powder_f2": "保留绿色",
+  "prod.coriander_leaf_powder_f3": "无需切碎,不易变质",
+  "prod.coriander_leaf_powder_f4": "批次间品质一致",
+  "prod.coriander_leaf_powder_f5": "根据您的需求选择干燥工艺",
+  "prod.coriander_leaf_powder_f6": "可按需定制目数、包装及贴牌",
+  "prod.coriander_leaf_powder_u1": "香料和调味混合物",
+  "prod.coriander_leaf_powder_u2": "酱汁、酸辣酱和腌料",
+  "prod.coriander_leaf_powder_u3": "汤品和即食餐",
+  "prod.coriander_leaf_powder_u4": "营养和绿色混合物",
+  "prod.coriander_leaf_powder_g1": "食品级",
+  "prod.coriander_leaf_powder_g2": "80至100目（可定制）",
+  "prod.coriander_leaf_powder_g3": "含水量 ≤ 7%",
+  "prod.coriander_leaf_powder_g4": "贴牌 / 散装",
+  "prod.mint_powder_desc": "薄荷粉由精心干燥的薄荷叶研磨而成,保留了买家期待的清凉香气和清新风味。它是一种用途广泛的功能性配料,适用于酸辣酱、饮料、糖果和健康养生混合物。",
+  "prod.mint_powder_f1": "清凉新鲜的薄荷香气",
+  "prod.mint_powder_f2": "鲜艳的绿色",
+  "prod.mint_powder_f3": "浓缩,易于配量",
+  "prod.mint_powder_f4": "保质期长",
+  "prod.mint_powder_f5": "根据您的需求选择干燥工艺",
+  "prod.mint_powder_f6": "可按需定制目数、包装及贴牌",
+  "prod.mint_powder_u1": "酸辣酱、蘸酱和腌料",
+  "prod.mint_powder_u2": "饮料和无酒精鸡尾酒",
+  "prod.mint_powder_u3": "糖果和甜点",
+  "prod.mint_powder_u4": "草本和健康养生混合物",
+  "prod.mint_powder_g1": "食品级",
+  "prod.mint_powder_g2": "80至100目（可定制）",
+  "prod.mint_powder_g3": "含水量 ≤ 7%",
+  "prod.mint_powder_g4": "贴牌 / 散装",
   "prod.moringa_powder_desc": "辣木叶是地球上营养密度最高的绿叶之一。我们精心干燥以保护其鲜艳色泽和营养价值，研磨成细粉，在全球范围内广泛用于膳食补充剂、绿色混合料和功能性食品。",
 
   "prod.moringa_powder_f1": "翠绿色泽，精心干燥",
