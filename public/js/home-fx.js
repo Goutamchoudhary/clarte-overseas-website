@@ -27,10 +27,15 @@
 
     // Load intro: the scene assembles piece by piece out of depth
     gsap.timeline({ defaults: { ease: "power3.out" } })
-      .from("#home .badge-pill", { y: 26, autoAlpha: 0, duration: 0.6 }, 0.15)
-      .from("#home h1", { y: 80, autoAlpha: 0, duration: 0.9 }, "-=0.35")
-      .from("#home p", { y: 44, autoAlpha: 0, duration: 0.7 }, "-=0.6")
-      .from("#home .btn", { y: 26, autoAlpha: 0, duration: 0.5, stagger: 0.08 }, "-=0.45")
+      .from("#home .badge-pill", { y: 26, autoAlpha: 0, duration: 0.6, clearProps: "transform" }, 0.15)
+      .from("#home h1", { y: 80, autoAlpha: 0, duration: 0.9, clearProps: "transform" }, "-=0.35")
+      .from("#home p", { y: 44, autoAlpha: 0, duration: 0.7, clearProps: "transform" }, "-=0.6")
+      // clearProps is essential here: without it GSAP leaves an inline
+      // `transform: translate(0, 26px)` on the buttons after the intro
+      // finishes, which (being inline) permanently outranks the CSS
+      // `.btn:hover { transform: translateY(-2px) }` rule — killing the
+      // hover lift even though the button is fully visible and in place.
+      .from("#home .btn", { y: 26, autoAlpha: 0, duration: 0.5, stagger: 0.08, clearProps: "transform" }, "-=0.45")
       .from(".hero-stat", {
         x: -70, rotateY: 22, z: -160, autoAlpha: 0, transformPerspective: 900,
         duration: 0.8, stagger: 0.12, clearProps: "transform",
@@ -69,7 +74,11 @@
         },
       });
       tl.to("#home .hero-photo", { scale: 1.15, ease: "none" }, 0)
-        .to("#home .max-w-7xl", { yPercent: -16, autoAlpha: 0, ease: "power1.in" }, 0);
+        .to("#home .max-w-7xl", { yPercent: -16, autoAlpha: 0, ease: "power1.in" }, 0)
+        // Fade the brown center shade out with the text — it sits behind the
+        // copy, not inside .max-w-7xl, so without this it would be left
+        // visibly floating over the photo once the text has scrolled away.
+        .to("#home .hero-center-shade", { autoAlpha: 0, ease: "power1.in" }, 0);
       orbs.forEach((o) => tl.to(o, { y: -260 * depth(o), ease: "none" }, 0));
     });
 
