@@ -1518,3 +1518,97 @@ html.lenis, html.lenis body { height: auto; }
 @media (max-width: 1023px) {
   .fx-orb:not(.is-blob) { display: none; } /* keep small screens clean */
 }
+
+/* =========================================================================
+   HOME HERO — full-bleed close-up photo, centered copy, bottom stats bar
+   Scoped to #home so the shared .hero / .hero-photo / .hero-stat rules used
+   elsewhere (the quote-band CTA, category-page hero, GSAP hooks) are
+   untouched — this only raises specificity for the homepage instance.
+   ========================================================================= */
+#home.hero-flatlay {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 100vh; /* always full viewport height — never shrunk on short screens */
+  background: linear-gradient(160deg, #0d1a36 0%, #122a52 55%, #1f4693 130%); /* shows before the photo loads */
+}
+/* Narrow phones: the uppercase 3-line headline needs a bit less size so the
+   page doesn't get excessively tall; the image itself still fills 100vh. */
+@media (max-width: 480px) {
+  #home .hero-flatlay-title { font-size: 1.85rem; line-height: 1.16; }
+  #home .hero-flatlay-sub { font-size: .9rem; line-height: 1.5; }
+  #home .hero-cta-row { margin-top: 1rem; gap: .6rem !important; }
+  #home .hero-cta-row .btn { padding: .68rem 1.2rem; font-size: .88rem; }
+  #home .hero-stats-row { margin-top: 1.75rem; gap: .5rem; }
+  #home .hero-stat--bar { padding: .6rem .8rem; gap: .55rem; }
+  #home .hero-stat--bar .hs-ico { width: 32px; height: 32px; }
+  #home .hero-stat--bar .stat-num-dark { font-size: 1.05rem; }
+  #home .hero-stat--bar .hero-stat-label { font-size: .66rem; }
+}
+/* Bring the real photo up to near-full strength (base .hero-photo default
+   is a dim .45 tint meant for the abstract gradient hero) so it reads at
+   full brightness, like the reference. */
+#home.hero-flatlay .hero-photo.loaded { opacity: .98; filter: saturate(1.02); }
+
+/* Very light, uniform veil — a gentle top-to-bottom gradient across the
+   FULL width (never just a patch behind the text), tuned low enough that
+   it isn't perceptible as a shape, just enough for white text to sit on
+   comfortably wherever it happens to fall on the photo. */
+.hero-flatlay-veil {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(13,26,54,.4) 0%, rgba(13,26,54,.18) 20%, rgba(13,26,54,.18) 78%, rgba(13,26,54,.38) 100%);
+}
+
+/* Warm-brown blur behind the center text column — matches the wood tone in
+   the photo and softly blurs it, rather than sitting on top as a tinted
+   panel. Feathered on every edge (radial mask) so there's no visible
+   rectangle/blob outline, just a gentle thickening of contrast down the
+   middle of the frame. */
+.hero-center-shade {
+  position: absolute; inset: 0; z-index: -1;
+  backdrop-filter: blur(20px) saturate(1.05);
+  -webkit-backdrop-filter: blur(20px) saturate(1.05);
+  background: rgba(46, 30, 17, .4);
+  -webkit-mask-image: radial-gradient(ellipse 30% 58% at 50% 46%, #000 0%, #000 35%, transparent 78%);
+          mask-image: radial-gradient(ellipse 30% 58% at 50% 46%, #000 0%, #000 35%, transparent 78%);
+}
+@media (max-width: 768px) {
+  .hero-center-shade {
+    -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 46%, #000 0%, #000 35%, transparent 78%);
+            mask-image: radial-gradient(ellipse 60% 55% at 50% 46%, #000 0%, #000 35%, transparent 78%);
+  }
+}
+
+.hero-flatlay-title {
+  font-family: var(--font-head); font-weight: 800; letter-spacing: -.03em;
+  color: #fff; line-height: 1.1; text-transform: uppercase;
+  font-size: clamp(2.1rem, 4.8vw, 3.7rem);
+  text-shadow: 0 2px 6px rgba(13,26,54,.85), 0 10px 30px rgba(13,26,54,.7), 0 1px 0 rgba(13,26,54,.9);
+}
+.hero-flatlay-sub {
+  font-family: var(--font-body); font-weight: 400;
+  color: #f5f7fc; font-size: 1.1rem; line-height: 1.65;
+  max-width: 620px; margin-left: auto; margin-right: auto;
+  text-shadow: 0 1px 4px rgba(13,26,54,.85), 0 6px 18px rgba(13,26,54,.6);
+}
+
+/* ---- Stats — three separate compact cards, close under the buttons ---- */
+.hero-stats-row {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .85rem;
+}
+.hero-stat--bar {
+  background: rgba(255,255,255,.94); border: 1px solid rgba(255,255,255,.7);
+  border-radius: 1rem;
+  box-shadow: 0 10px 26px -12px rgba(13,26,54,.55), 0 2px 8px -2px rgba(13,26,54,.18);
+  padding: .8rem 1.1rem; gap: .7rem;
+  flex: 0 1 auto;
+}
+.hero-stat--bar:hover { background: #fff; transform: translateY(-3px); }
+.hero-stat--bar .hs-ico { width: 38px; height: 38px; border-radius: 10px; }
+.hero-stat--bar .stat-num-dark {
+  font-family: var(--font-head); font-weight: 800; line-height: 1;
+  font-size: 1.25rem; color: var(--navy);
+}
+.hero-stat--bar .hero-stat-label { font-size: .72rem; font-weight: 500; color: #4a5573; }
+@media (max-width: 480px) {
+  .hero-stats-row { flex-direction: column; width: 100%; }
+  .hero-stat--bar { width: 100%; }
+}
