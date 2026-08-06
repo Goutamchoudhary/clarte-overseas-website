@@ -22,45 +22,43 @@
   function heroScene() {
     const hero = $("#home");
     if (!hero) return;
-    const orbs = $$(".fx-orb", hero);
-    const depth = (el) => parseFloat(el.dataset.depth || 0.5);
 
-    // Load intro: the scene assembles piece by piece out of depth
+    // Load intro: the whole scene settles into place — the photo eases
+    // back from a gentle zoom, the veil/warm center shade breathe in
+    // underneath, then the copy rises and fades in piece by piece, and
+    // the stat cards land last with a light bounce. Runs on every full
+    // page load of the homepage (first visit or arriving from any other
+    // page), since this is a classic multi-page site with no client-side
+    // routing to persist state across navigations.
     gsap.timeline({ defaults: { ease: "power3.out" } })
-      .from("#home .badge-pill", { y: 26, autoAlpha: 0, duration: 0.6, clearProps: "transform" }, 0.15)
-      .from("#home h1", { y: 80, autoAlpha: 0, duration: 0.9, clearProps: "transform" }, "-=0.35")
-      .from("#home p", { y: 44, autoAlpha: 0, duration: 0.7, clearProps: "transform" }, "-=0.6")
+      .from("#home .hero-photo", { scale: 1.1, duration: 1.8, ease: "power2.out" }, 0)
+      .from("#home .hero-flatlay-veil", { autoAlpha: 0, duration: 1.6, ease: "power1.out" }, 0)
+      .from("#home .badge-pill", { y: 26, autoAlpha: 0, duration: 0.6, clearProps: "transform" }, 0.35)
+      // The brown center shade sits directly behind the headline/subhead —
+      // it must arrive WITH them (same start, "<"), not earlier on its own,
+      // or it reads as an unexplained smudge appearing before any text.
+      .from("#home .hero-center-shade", { autoAlpha: 0, duration: 0.9, ease: "power1.out" }, "<")
+      .from("#home h1", { y: 70, autoAlpha: 0, duration: 0.9, clearProps: "transform" }, "-=0.35")
+      .from("#home p", { y: 40, autoAlpha: 0, duration: 0.7, clearProps: "transform" }, "-=0.6")
       // clearProps is essential here: without it GSAP leaves an inline
       // `transform: translate(0, 26px)` on the buttons after the intro
       // finishes, which (being inline) permanently outranks the CSS
       // `.btn:hover { transform: translateY(-2px) }` rule — killing the
       // hover lift even though the button is fully visible and in place.
-      .from("#home .btn", { y: 26, autoAlpha: 0, duration: 0.5, stagger: 0.08, clearProps: "transform" }, "-=0.45")
+      .from("#home .btn", { y: 24, autoAlpha: 0, duration: 0.55, stagger: 0.1, clearProps: "transform" }, "-=0.4")
+      // The glass stats bar has its own .reveal class, which the CSS
+      // fallback system (html.fx-on .reveal) snaps to visible instantly —
+      // bypassing GSAP entirely, so the empty frosted bar used to flash in
+      // well before its icons/numbers did. Animating it explicitly here,
+      // starting together with the cards ("<"), keeps bar and content
+      // arriving as one piece.
+      .from("#home .hero-stats-row", { autoAlpha: 0, duration: 0.7, ease: "power2.out" }, "-=0.3")
       .from(".hero-stat", {
-        x: -70, rotateY: 22, z: -160, autoAlpha: 0, transformPerspective: 900,
-        duration: 0.8, stagger: 0.12, clearProps: "transform",
-      }, "-=0.55")
-      .from(orbs, { scale: 0, autoAlpha: 0, duration: 0.7, stagger: 0.06, ease: "back.out(1.6)" }, "-=0.7");
-
-    // Idle float lives on the inner element so it never fights scroll parallax
-    $$(".fx-orb-i", hero).forEach((o, i) => {
-      gsap.to(o, {
-        y: "+=" + (10 + (i % 3) * 7),
-        x: "+=" + (i % 2 ? 9 : -9),
-        rotation: i % 2 ? 5 : -5,
-        duration: 3.2 + i * 0.7,
-        yoyo: true, repeat: -1, ease: "sine.inOut",
-      });
-    });
-
-    // Mouse parallax (x-axis only — scroll parallax owns the y-axis)
-    if (window.matchMedia("(pointer: fine)").matches && orbs.length) {
-      const xTos = orbs.map((o) => gsap.quickTo(o, "x", { duration: 0.9, ease: "power3.out" }));
-      hero.addEventListener("pointermove", (e) => {
-        const nx = e.clientX / window.innerWidth - 0.5;
-        orbs.forEach((o, i) => xTos[i](nx * depth(o) * 70));
-      });
-    }
+        y: 34, autoAlpha: 0, duration: 0.65,
+        stagger: { each: 0.1, from: "center" },
+        ease: "back.out(1.5)",
+        clearProps: "transform",
+      }, "<");
 
     const mm = gsap.matchMedia();
 
@@ -79,14 +77,14 @@
         // copy, not inside .max-w-7xl, so without this it would be left
         // visibly floating over the photo once the text has scrolled away.
         .to("#home .hero-center-shade", { autoAlpha: 0, ease: "power1.in" }, 0);
-      orbs.forEach((o) => tl.to(o, { y: -260 * depth(o), ease: "none" }, 0));
     });
 
     // Mobile / tablet: light parallax only, no pinning
     mm.add("(max-width: 1023px)", () => {
-      const st = () => ({ trigger: hero, start: "top top", end: "bottom top", scrub: true });
-      gsap.to("#home .hero-photo", { yPercent: 14, ease: "none", scrollTrigger: st() });
-      orbs.forEach((o) => gsap.to(o, { y: -120 * depth(o), ease: "none", scrollTrigger: st() }));
+      gsap.to("#home .hero-photo", {
+        yPercent: 14, ease: "none",
+        scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true },
+      });
     });
   }
 
