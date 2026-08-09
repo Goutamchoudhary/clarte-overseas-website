@@ -152,16 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* ---- Hero photo (online enhancement) ------------------------------- */
-  const heroPhoto = document.querySelector(".hero-photo");
-  if (heroPhoto && heroPhoto.dataset.src) {
-    const img = new Image();
-    img.onload = () => {
-      heroPhoto.src = heroPhoto.dataset.src;
-      heroPhoto.classList.add("loaded");
-    };
-    img.src = heroPhoto.dataset.src;
-  }
+  /* Hero photo now loads eagerly via a plain <img src> with an inline
+     onload handler (see index.astro) so the browser's preload scanner can
+     fetch it immediately instead of waiting on this script — no JS needed
+     here any more. */
 
   /* ---- Animated stat counters ---------------------------------------- */
   const animateCount = (el) => {
@@ -236,14 +230,15 @@ function buildWorldMap() {
 
   host.classList.add("map-wrap");
 
-  // borderless terrain base (true equirectangular). If it fails to load,
+  // borderless terrain base (true equirectangular), self-hosted — this used
+  // to be fetched from upload.wikimedia.org, which is blocked outright in
+  // some countries and slow to reach from many more. If it fails to load,
   // the dotted brand panel (CSS) remains — pins stay accurate either way.
   const base = new Image();
   base.alt = "World map";
   base.className = "map-img";
   base.onload = () => base.classList.add("loaded");
-  base.src =
-    "https://upload.wikimedia.org/wikipedia/commons/8/83/Equirectangular_projection_SW.jpg";
+  base.src = "/assets/img/misc/world-map.webp";
   host.appendChild(base);
 
   // connecting lines from India (origin) to each market — subtle, modern

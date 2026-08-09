@@ -13,8 +13,25 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
        HERO
        ===================================================================== -->
   <section id="home" class="hero hero-flatlay relative flex items-center min-h-screen pt-16 pb-28">
-    <!-- Full-bleed close-up photo (loads when online; navy gradient shows otherwise) -->
-    <img class="hero-photo" data-src="/assets/img/hero/spice-flatlay-center.jpg" alt="" aria-hidden="true" />
+    <!-- Full-bleed close-up photo. Loaded directly (not gated behind JS) with
+         fetchpriority="high" so the browser's preload scanner can start
+         fetching it the moment it parses this tag — this is the page's LCP
+         element, so waiting on a script to swap in a data-src was actively
+         working against load speed. WebP first (~365KB vs the 1.3MB source
+         JPEG), JPEG fallback for the handful of browsers that don't support
+         it. The navy gradient behind it (see .hero-flatlay CSS) still shows
+         through the fade-in transition on first paint either way. -->
+    <picture>
+      <source srcset="/assets/img/hero/spice-flatlay-center.webp" type="image/webp" />
+      <img
+        class="hero-photo"
+        src="/assets/img/hero/spice-flatlay-center.jpg"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+        onload="this.classList.add('loaded')"
+      />
+    </picture>
     <!-- Very light, uniform veil — just enough for text contrast, no visible shape -->
     <div class="hero-flatlay-veil" aria-hidden="true"></div>
     <!-- Soft warm-brown blur behind the center text column, feathered so it

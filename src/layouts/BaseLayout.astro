@@ -4,6 +4,10 @@ import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
 import CookieBanner from "../components/CookieBanner.astro";
 import { SITE, ANALYTICS, SOCIAL, CONTACT } from "../consts";
+// Real-user performance monitoring (Core Web Vitals from actual visitors,
+// broken down by country, in the Vercel dashboard). Cookie-free, so it
+// doesn't need to sit behind the cookie-consent gate the way GA/Clarity do.
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title?: string;
@@ -71,13 +75,12 @@ const orgSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts — self-hosted (mirrors Google's own Sora/Inter files+unicode
+         ranges exactly, just served from our own origin). Removes a
+         render-blocking dependency on fonts.googleapis.com/fonts.gstatic.com,
+         which is slow or outright blocked from some countries — the whole
+         page used to stall behind that request. -->
+    <link rel="stylesheet" href="/fonts/fonts.css" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -124,5 +127,6 @@ const orgSchema = {
     <Footer />
     <CookieBanner />
     <script is:inline src="/js/script.js"></script>
+    <SpeedInsights />
   </body>
 </html>
