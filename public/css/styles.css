@@ -21,6 +21,13 @@
 
 * { -webkit-font-smoothing: antialiased; }
 
+/* overflow-x:hidden does NOT belong here too: the CSS overflow spec forces
+   overflow-y to compute as `auto` on any box whose overflow-x isn't
+   `visible`, which turns html into its own scroll container and breaks
+   `position: sticky` for every descendant (#navbar included — it started
+   scrolling away with the page instead of freezing). body's overflow-x:
+   hidden below is enough on its own; the real fix for horizontal overflow
+   is not letting anything overflow the layout in the first place. */
 html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
 
 body {
