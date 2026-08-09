@@ -564,6 +564,10 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .trust-item .t-label { font-size: .8rem; color: #9fb0c9; margin-top: 2px; }
 .footer-link { color: #aebbd0; transition: color .2s ease, padding-left .2s ease; }
 .footer-link:hover { color: #fff; padding-left: 4px; }
+/* The two phone/WhatsApp links sit close together with small text — pad
+   their tap area out a bit so they meet touch-target size guidelines
+   without changing how the text itself looks. */
+.footer-link-tap { display: inline-block; padding: 4px 0; margin: -4px 0; }
 
 /* =======================================================================
    ABOUT PAGE

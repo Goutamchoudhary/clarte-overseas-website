@@ -55,6 +55,20 @@ const { gtm, ga4, googleTag, clarity, linkedinPartnerId } = ANALYTICS;
     }
   }
   window.__initAnalytics = loadAnalytics;
-  try { var _c = localStorage.getItem("cookie-consent"); if (_c === "accepted" || _c === "not-required") loadAnalytics(); } catch (e) {}
+  // Defer to idle time (falling back to a short timeout on browsers without
+  // requestIdleCallback, e.g. Safari) instead of firing the instant this
+  // script runs. GTM's container loads several tags of its own (GA4,
+  // Clarity, etc.) once gtm.js executes, and having all of that compete
+  // with the page's own GSAP/ScrollTrigger init for the main thread at the
+  // exact same moment shows up as extra Total Blocking Time — this doesn't
+  // reduce the work, just lets the critical rendering path go first.
+  function schedule(fn) {
+    if (window.requestIdleCallback) window.requestIdleCallback(fn, { timeout: 2000 });
+    else setTimeout(fn, 1500);
+  }
+  try {
+    var _c = localStorage.getItem("cookie-consent");
+    if (_c === "accepted" || _c === "not-required") schedule(loadAnalytics);
+  } catch (e) {}
 })();
 </script>
