@@ -87,10 +87,28 @@ const orgSchema = {
 
     <slot name="head" />
     <Analytics />
-    <script is:inline src="/js/i18n.js"></script>
+    <!-- defer: i18n.js only needs the DOM to exist (it already waits for
+         DOMContentLoaded internally) — it doesn't need to block HTML
+         parsing. Blocking here was pushing the page's own Tailwind
+         stylesheet further down the load queue, which is what visitors on
+         slow connections were seeing as an unstyled flash (oversized logo,
+         broken nav) for several seconds before everything caught up. -->
+    <script is:inline defer src="/js/i18n.js"></script>
     {CONTACT.calendlyUrl && (
       <>
-        <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+        <!-- Calendly's popup CSS is only needed if someone actually opens
+             that widget — it's never part of the initial page, so it
+             shouldn't block first paint on every page load. The
+             media="print" swap is the standard no-JS-framework way to load
+             a stylesheet without it blocking rendering. -->
+        <link rel="preconnect" href="https://assets.calendly.com" />
+        <link
+          rel="stylesheet"
+          href="https://assets.calendly.com/assets/external/widget.css"
+          media="print"
+          onload="this.media='all'"
+        />
+        <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" /></noscript>
         <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </>
     )}
