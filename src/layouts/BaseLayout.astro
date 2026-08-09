@@ -8,6 +8,10 @@ import { SITE, ANALYTICS, SOCIAL, CONTACT } from "../consts";
 // broken down by country, in the Vercel dashboard). Cookie-free, so it
 // doesn't need to sit behind the cookie-consent gate the way GA/Clarity do.
 import SpeedInsights from "@vercel/speed-insights/astro";
+// Vercel Web Analytics — page views/visitor counts by page and country,
+// also cookie-free. Named VercelAnalytics to avoid clashing with our own
+// GTM/GA4/Clarity loader component, which is already imported as Analytics.
+import VercelAnalytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string;
@@ -128,5 +132,6 @@ const orgSchema = {
     <CookieBanner />
     <script is:inline src="/js/script.js"></script>
     <SpeedInsights />
+    <VercelAnalytics />
   </body>
 </html>
