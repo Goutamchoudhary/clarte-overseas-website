@@ -118,6 +118,15 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   box-shadow: 0 10px 24px -10px rgba(31,70,147,.7);
   transition: transform .2s ease, box-shadow .25s ease;
 }
+/* Below sm (640px) the pill sits next to the hamburger with no desktop nav
+   links to give it room, so it shrinks rather than getting hidden or
+   pushing the row wider than the viewport — the mobile-menu already has
+   its own full-size Contact Us button for a roomier tap target. Desktop
+   (sm and up) is untouched. */
+@media (max-width: 639px) {
+  .btn-quote { padding: .48rem .68rem; font-size: .7rem; gap: .28rem; }
+  .btn-quote .qarrow { width: .8rem; height: .8rem; }
+}
 .btn-quote:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(31,70,147,.85); }
 .btn-quote .qarrow { transition: transform .2s ease; }
 .btn-quote:hover .qarrow { transform: translateX(3px); }
