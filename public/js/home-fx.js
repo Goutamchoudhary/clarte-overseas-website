@@ -23,42 +23,40 @@
     const hero = $("#home");
     if (!hero) return;
 
-    // Load intro: the whole scene settles into place — the photo eases
-    // back from a gentle zoom, the veil/warm center shade breathe in
-    // underneath, then the copy rises and fades in piece by piece, and
-    // the stat cards land last with a light bounce. Runs on every full
-    // page load of the homepage (first visit or arriving from any other
-    // page), since this is a classic multi-page site with no client-side
-    // routing to persist state across navigations.
-    gsap.timeline({ defaults: { ease: "power3.out" } })
-      .from("#home .hero-photo", { scale: 1.1, duration: 1.8, ease: "power2.out" }, 0)
-      .from("#home .hero-flatlay-veil", { autoAlpha: 0, duration: 1.6, ease: "power1.out" }, 0)
-      .from("#home .badge-pill", { y: 26, autoAlpha: 0, duration: 0.6, clearProps: "transform" }, 0.35)
-      // The brown center shade sits directly behind the headline/subhead —
-      // it must arrive WITH them (same start, "<"), not earlier on its own,
-      // or it reads as an unexplained smudge appearing before any text.
-      .from("#home .hero-center-shade", { autoAlpha: 0, duration: 0.9, ease: "power1.out" }, "<")
-      .from("#home h1", { y: 70, autoAlpha: 0, duration: 0.9, clearProps: "transform" }, "-=0.35")
-      .from("#home p", { y: 40, autoAlpha: 0, duration: 0.7, clearProps: "transform" }, "-=0.6")
+    // Load intro: one quick, unified fade-in rather than a long sequential
+    // reveal. The photo settles from a barely-there zoom, the veil/warm
+    // center shade fade in alongside it, and the copy + CTAs + stats bar
+    // rise and fade in together as a single wave (a hair of stagger for
+    // smoothness, not a multi-second cascade). Whole thing wraps in ~1s.
+    // Runs on every full page load of the homepage (first visit or
+    // arriving from any other page), since this is a classic multi-page
+    // site with no client-side routing to persist state across navigations.
+    gsap.timeline({ defaults: { ease: "power2.out" } })
+      .from("#home .hero-photo", { scale: 1.04, duration: 0.6 }, 0)
+      // The veil + brown center shade are background layers, not content —
+      // they fade in place (no y-movement) right under everything else.
+      .from("#home .hero-flatlay-veil, #home .hero-center-shade", { autoAlpha: 0, duration: 0.55 }, 0)
       // clearProps is essential here: without it GSAP leaves an inline
-      // `transform: translate(0, 26px)` on the buttons after the intro
-      // finishes, which (being inline) permanently outranks the CSS
-      // `.btn:hover { transform: translateY(-2px) }` rule — killing the
-      // hover lift even though the button is fully visible and in place.
-      .from("#home .btn", { y: 24, autoAlpha: 0, duration: 0.55, stagger: 0.1, clearProps: "transform" }, "-=0.4")
-      // The glass stats bar has its own .reveal class, which the CSS
-      // fallback system (html.fx-on .reveal) snaps to visible instantly —
-      // bypassing GSAP entirely, so the empty frosted bar used to flash in
-      // well before its icons/numbers did. Animating it explicitly here,
-      // starting together with the cards ("<"), keeps bar and content
-      // arriving as one piece.
-      .from("#home .hero-stats-row", { autoAlpha: 0, duration: 0.7, ease: "power2.out" }, "-=0.3")
+      // `transform: translate(0, 14px)` on these elements after the intro
+      // finishes, which (being inline) permanently outranks CSS `:hover`
+      // transform rules (e.g. `.btn:hover { transform: translateY(-2px) }`).
+      .from(
+        [
+          "#home .badge-pill",
+          "#home h1",
+          "#home p",
+          "#home .hero-cta-row",
+          "#home .hero-stats-row",
+        ],
+        { y: 14, autoAlpha: 0, duration: 0.55, stagger: 0.05, clearProps: "transform" },
+        0.08,
+      )
+      // Stat cards get one last, brief micro-stagger so the bar doesn't
+      // feel like a flat cut — but it overlaps heavily with the copy above
+      // instead of waiting for it, so it still reads as one smooth beat.
       .from(".hero-stat", {
-        y: 34, autoAlpha: 0, duration: 0.65,
-        stagger: { each: 0.1, from: "center" },
-        ease: "back.out(1.5)",
-        clearProps: "transform",
-      }, "<");
+        y: 10, autoAlpha: 0, duration: 0.4, stagger: 0.05, clearProps: "transform",
+      }, "-=0.35");
 
     const mm = gsap.matchMedia();
 
