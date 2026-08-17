@@ -1291,24 +1291,21 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
    404 PAGE
    ============================================================================= */
 .notfound-section {
-  min-height: 80vh; display: flex; align-items: center; justify-content: center;
-  padding: 5rem 1.5rem;
+  min-height: 60vh; display: flex; align-items: center; justify-content: center;
+  padding: 2.5rem 1.5rem 4rem;
 }
 .notfound-inner { text-align: center; max-width: 540px; }
 
-.notfound-eyebrow { margin-bottom: 0; }
-
-/* The illustration gets its own generously-padded stage, with a soft glow
-   behind it, instead of sitting flush against the page copy — that's what
-   was reading as "no room to breathe". */
-.notfound-art {
-  position: relative; margin: 2.75rem auto 3rem;
-  width: 220px; height: 220px; display: flex; align-items: center; justify-content: center;
+/* The "404" lives behind the illustration, the same way each page's own
+   name sits behind its PageHero heading (.ph-watermark) — one shared
+   language instead of a one-off giant number. The crate sits right on
+   top of it, so the two read as one layered piece, not two stacked
+   elements needing their own separate breathing room. */
+.notfound-stage {
+  position: relative; margin: 0 auto 1.5rem;
+  width: 240px; height: 190px; display: flex; align-items: center; justify-content: center;
 }
-.nf-glow {
-  position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
-  background: radial-gradient(circle, var(--brand-100) 0%, transparent 70%);
-}
+.notfound-watermark { top: 50%; font-size: clamp(6.5rem, 26vw, 11rem); }
 .notfound-crate { width: 168px; height: auto; position: relative; z-index: 1; }
 .nf-crate-rim { fill: #fff; stroke: #a7b3c9; stroke-width: 2.5; stroke-linejoin: round; }
 .nf-crate-wall { fill: #f3f5fa; stroke: #a7b3c9; stroke-width: 2.5; stroke-linejoin: round; }
