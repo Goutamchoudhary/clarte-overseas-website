@@ -240,7 +240,7 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
       <span class="cc-modal-ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path class="cc-modal-tick" d="m5 13 4 4L19 7"/></svg>
       </span>
       <h3 id="ccModalTitle" class="cc-modal-title"><span data-i18n="contact.success_heading">Message sent — thank you!</span></h3>
       <p class="cc-modal-text"><span data-i18n="contact.success_body">We've received your enquiry and will get back to you within one business day, usually sooner.</span></p>
@@ -381,10 +381,20 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
   .cc-modal-x svg { width: 16px; height: 16px; }
   .cc-modal-x:hover { background: #e2e9f5; color: #1f4693; }
   .cc-modal-ico {
-    width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto;
+    position: relative; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto;
     color: #fff; background: linear-gradient(150deg, #18a86f, #0f7a52); box-shadow: 0 14px 28px -10px rgba(15,122,82,.6);
+    animation: cc-ico-in .5s cubic-bezier(.34,1.56,.64,1) .1s both;
   }
   .cc-modal-ico svg { width: 30px; height: 30px; }
+  /* Pulse ring + tick draw-in, sequenced just after the badge settles */
+  .cc-modal-ico::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #18a86f;
+    opacity: 0; animation: cc-ico-pulse 1.4s ease-out .45s;
+  }
+  .cc-modal-tick { stroke-dasharray: 20; stroke-dashoffset: 20; animation: cc-tick-draw .45s ease .4s forwards; }
+  @keyframes cc-ico-in { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+  @keyframes cc-ico-pulse { from { transform: scale(.85); opacity: .6; } to { transform: scale(1.5); opacity: 0; } }
+  @keyframes cc-tick-draw { to { stroke-dashoffset: 0; } }
   .cc-modal-title { font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.25rem; color: #16265a; margin-top: 1.1rem; }
   .cc-modal-text { color: #54627d; font-size: .95rem; line-height: 1.6; margin-top: .5rem; }
   .cc-modal-btn {
@@ -395,6 +405,11 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
   .cc-modal-btn:hover { transform: translateY(-2px); }
   @keyframes cc-fade { from { opacity: 0; } to { opacity: 1; } }
   @keyframes cc-pop { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .cc-modal-ico { animation: none; }
+    .cc-modal-ico::after { animation: none; opacity: 0; }
+    .cc-modal-tick { animation: none; stroke-dashoffset: 0; }
+  }
 </style>
 
 <script>
