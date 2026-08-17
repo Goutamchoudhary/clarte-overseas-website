@@ -274,10 +274,28 @@ const faqLd = {
   <!-- ===================== COMPANY CREDENTIALS (downloadable) ===================== -->
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-2xl reveal">
-        <span class="eyebrow"><span data-i18n="cert.our_eyebrow">Our Credentials</span></span>
-        <h2 class="tg-1 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight"><span data-i18n="cert.our_heading">Registered, licensed, downloadable</span></h2>
-        <p class="text-slate-500 text-lg mt-4" data-i18n="cert.our_sub">Hover a card to inspect it, then download the certificate. These are the documents that let us trade and that buyers ask for first.</p>
+      <div class="cred-intro">
+        <div class="cred-seal-stage reveal" aria-hidden="true">
+          <svg class="cred-seal" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="cred-seal-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#e6bb5c"></stop>
+                <stop offset="100%" stop-color="#b6791f"></stop>
+              </linearGradient>
+            </defs>
+            <circle class="cred-seal-spin" cx="60" cy="60" r="52" fill="none"></circle>
+            <g class="cred-seal-badge">
+              <circle class="cred-seal-ring" cx="60" cy="60" r="34"></circle>
+              <path class="cred-seal-check" d="M46 60 L56 70 L76 48"></path>
+            </g>
+            <polygon class="cred-seal-notch" points="60,98 50,116 60,109 70,116"></polygon>
+          </svg>
+        </div>
+        <div class="max-w-2xl reveal d1">
+          <span class="eyebrow"><span data-i18n="cert.our_eyebrow">Our Credentials</span></span>
+          <h2 class="tg-1 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight"><span data-i18n="cert.our_heading">Registered, licensed, downloadable</span></h2>
+          <p class="text-slate-500 text-lg mt-4" data-i18n="cert.our_sub">Hover a card to inspect it, then download the certificate. These are the documents that let us trade and that buyers ask for first.</p>
+        </div>
       </div>
 
       <div class="cred-grid mt-12">
@@ -401,6 +419,34 @@ const faqLd = {
 <style is:global>
   /* ====================== CERTIFICATIONS PAGE ====================== */
 
+  /* ---- Seal: the section's own visual anchor, not just an icon tweak ---- */
+  .cred-intro { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem 2.6rem; }
+  .cred-seal-stage { flex: none; width: 110px; height: 110px; }
+  .cred-seal { width: 100%; height: 100%; overflow: visible; }
+  .cred-seal-spin {
+    stroke: var(--gold, #c79a32); stroke-width: 1.4; stroke-dasharray: 3 6; opacity: .55;
+    transform-origin: 60px 60px; animation: cred-seal-rotate 22s linear infinite;
+  }
+  .cred-seal-badge { transform-origin: 60px 60px; opacity: 0; }
+  .reveal.in .cred-seal-badge { animation: cred-seal-settle .7s cubic-bezier(.34,1.56,.64,1) .15s forwards; }
+  .cred-seal-ring { fill: url(#cred-seal-grad); stroke: #c79a32; stroke-width: 1.5; }
+  .cred-seal-check {
+    fill: none; stroke: #fff; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 34; stroke-dashoffset: 34;
+  }
+  .reveal.in .cred-seal-check { animation: cred-seal-draw .5s ease .55s forwards; }
+  .cred-seal-notch { fill: #b6791f; opacity: 0; transform-origin: 60px 98px; }
+  .reveal.in .cred-seal-notch { animation: cred-seal-drop .4s ease .5s forwards; }
+  @keyframes cred-seal-rotate { to { transform: rotate(360deg); } }
+  @keyframes cred-seal-settle { from { opacity: 0; transform: scale(.35) rotate(-25deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
+  @keyframes cred-seal-draw { to { stroke-dashoffset: 0; } }
+  @keyframes cred-seal-drop { from { opacity: 0; transform: translateY(-6px) scaleY(.4); } to { opacity: 1; transform: translateY(0) scaleY(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    .cred-seal-spin { animation: none; }
+    .cred-seal-badge, .cred-seal-check, .cred-seal-notch { animation: none; opacity: 1; stroke-dashoffset: 0; transform: none; }
+  }
+  @media (max-width: 640px) { .cred-intro { justify-content: center; text-align: center; } }
+
   /* ---- Credential cards (cursor-tilt + holographic sheen) ---- */
   .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.4rem; }
   .cred-card {
@@ -429,11 +475,24 @@ const faqLd = {
 
   .cred-top { display: flex; align-items: center; justify-content: space-between; }
   .cred-ico {
+    position: relative; overflow: hidden;
     width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; color: #fff;
     background: linear-gradient(150deg, #2b57b0, #1f4693);
     box-shadow: 0 10px 20px -10px rgba(31,70,147,.6);
   }
   .cred-ico svg { width: 26px; height: 26px; }
+  /* Settle-in + a single light sweep as the card scrolls into view — reads
+     as the credential being "stamped" rather than just fading up like the
+     rest of the card. */
+  .reveal.in .cred-ico { animation: cred-ico-settle .6s cubic-bezier(.34,1.56,.64,1) .12s both; }
+  .cred-ico::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.6) 50%, transparent 60%);
+    transform: translateX(-140%);
+  }
+  .reveal.in .cred-ico::after { animation: cred-ico-shine 1s ease .4s; }
+  @keyframes cred-ico-settle { from { transform: scale(.5) rotate(-14deg); opacity: 0; } to { transform: scale(1) rotate(0deg); opacity: 1; } }
+  @keyframes cred-ico-shine { from { transform: translateX(-140%); } to { transform: translateX(140%); } }
   .verified {
     display: inline-flex; align-items: center; gap: .35rem;
     font: 700 .72rem "Sora", sans-serif; letter-spacing: .03em; color: #0f7a52;
@@ -524,6 +583,8 @@ const faqLd = {
     .cred-card { transform: none !important; transition: box-shadow .3s ease; }
     .cred-card:hover .cred-shine { animation: none; opacity: 0; }
     .reveal.in .verified .vcheck { animation: none; stroke-dashoffset: 0; }
+    .reveal.in .cred-ico { animation: none; }
+    .reveal.in .cred-ico::after { animation: none; opacity: 0; }
     .std-desc { transition: opacity .3s ease; }
   }
 </style>

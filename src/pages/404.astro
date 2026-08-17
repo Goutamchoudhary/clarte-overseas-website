@@ -8,7 +8,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <section class="notfound-section">
     <div class="notfound-inner">
-      <p class="notfound-num" aria-hidden="true">404</p>
+      <span class="eyebrow center notfound-eyebrow">Error 404</span>
+
+      <div class="notfound-art">
+        <span class="nf-glow" aria-hidden="true"></span>
+        <svg class="notfound-crate" viewBox="0 0 200 190" aria-hidden="true">
+          <!-- Open rim (the crate's mouth, looking down into it) -->
+          <path class="nf-crate-rim" d="M100 45 L152 73 L100 101 L48 73 Z"></path>
+          <!-- Left wall -->
+          <path class="nf-crate-wall" d="M48 73 L100 101 L100 156 L48 128 Z"></path>
+          <!-- Right wall -->
+          <path class="nf-crate-wall" d="M152 73 L100 101 L100 156 L152 128 Z"></path>
+          <!-- Plank seams -->
+          <path class="nf-crate-seam" d="M62 80.5 L62 135.5 M76 88 L76 143 M124 88 L124 143 M138 80.5 L138 135.5"></path>
+          <g class="nf-glass-group">
+            <line class="nf-glass-handle" x1="118" y1="60" x2="132" y2="74"></line>
+            <circle class="nf-glass-ring" cx="104" cy="46" r="17"></circle>
+          </g>
+        </svg>
+      </div>
+
       <h1 class="notfound-title">Page not found</h1>
       <p class="notfound-sub">
         The page you're looking for doesn't exist or may have moved.<br />

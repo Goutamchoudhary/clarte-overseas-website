@@ -237,6 +237,27 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   background: var(--brand-100); color: var(--brand);
 }
 
+/* ---- Icon settle-in + light sweep, shared by "The Clarté Edge" and
+   "Working With Us" icon tiles — same trick as the certifications page's
+   credential icons, so it reads as one consistent site-wide language
+   rather than a one-off. ---- */
+.edge-ico, .trade-ico { position: relative; overflow: hidden; }
+.reveal.in .edge-ico, .reveal.in .trade-ico {
+  animation: icon-settle .6s cubic-bezier(.34,1.56,.64,1) .1s both;
+}
+.edge-ico::after, .trade-ico::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.7) 50%, transparent 60%);
+  transform: translateX(-140%);
+}
+.reveal.in .edge-ico::after, .reveal.in .trade-ico::after { animation: icon-shine 1s ease .35s; }
+@keyframes icon-settle { from { transform: scale(.5) rotate(-14deg); opacity: 0; } to { transform: scale(1) rotate(0deg); opacity: 1; } }
+@keyframes icon-shine { from { transform: translateX(-140%); } to { transform: translateX(140%); } }
+@media (prefers-reduced-motion: reduce) {
+  .reveal.in .edge-ico, .reveal.in .trade-ico { animation: none; }
+  .reveal.in .edge-ico::after, .reveal.in .trade-ico::after { animation: none; opacity: 0; }
+}
+
 /* ---- Blurred product backdrop on the quality card --------------------- */
 .img-ph.dark { position: relative; }
 .img-ph.dark .bg-blur {
@@ -484,10 +505,25 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 
 /* ---- Purpose / goals (editorial, no boxed cards) --------------------- */
-.goal-bar { display: block; width: 34px; height: 3px; border-radius: 3px; background: var(--grad-deep); margin-bottom: .9rem; }
+/* Each bar draws itself in — rightward for the short goal markers, downward
+   for the tall mission/vision rule — instead of just fading up with the
+   text around it. A different, quieter signature than the icon-settle used
+   on the icon-grid sections elsewhere on the site. */
+.goal-bar {
+  display: block; width: 34px; height: 3px; border-radius: 3px; background: var(--grad-deep);
+  margin-bottom: .9rem; transform: scaleX(0); transform-origin: left; transition: transform .5s ease .1s;
+}
+.reveal.in .goal-bar { transform: scaleX(1); }
 
 /* Mission & Vision — vertical accent bar + plain gradient label + soft text */
-.mv-bar { width: 4px; border-radius: 4px; background: var(--grad-deep); flex: none; }
+.mv-bar {
+  width: 4px; border-radius: 4px; background: var(--grad-deep); flex: none;
+  transform: scaleY(0); transform-origin: top; transition: transform .7s ease .15s;
+}
+.reveal.in .mv-bar { transform: scaleY(1); }
+@media (prefers-reduced-motion: reduce) {
+  .goal-bar, .mv-bar { transform: none; transition: none; }
+}
 .mv-label {
   display: inline-block; margin-bottom: .9rem;
   font-family: var(--font-head); font-weight: 700; font-size: .82rem;
@@ -936,7 +972,16 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   .cat-row[data-side="r"] .cat-row-text { order: 2; }
 }
 .cat-row-head { display: flex; align-items: center; gap: .8rem; }
-.cat-index { font: 800 1.5rem "Sora", sans-serif; color: var(--from); opacity: .55; }
+.cat-index { position: relative; font: 800 1.5rem "Sora", sans-serif; color: var(--from); opacity: .55; }
+/* The index number gets its own underline draw, in the row's own accent
+   colour (--from) — ties it to the category's media panel below, which
+   uses the same colour variable for its tint. */
+.cat-index::after {
+  content: ""; position: absolute; left: 1px; right: 1px; bottom: -4px; height: 2px;
+  background: var(--from); border-radius: 2px; transform: scaleX(0); transform-origin: left;
+  transition: transform .5s ease .15s;
+}
+.reveal.in .cat-index::after { transform: scaleX(1); }
 .cat-emoji { font-size: 1.8rem; }
 .cat-name { font: 800 clamp(1.4rem,2.6vw,1.9rem)/1.1 "Sora", sans-serif; color: #16265a; margin-top: .7rem; }
 .cat-desc { color: #54627d; margin-top: .7rem; line-height: 1.65; }
@@ -947,9 +992,25 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .cat-count { font: 600 .85rem "Inter", sans-serif; color: #8a97b2; }
 .cat-row-media { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; border-radius: 1.2rem; overflow: hidden; padding: 1.1rem; }
 .cat-media-tint { position: absolute; inset: 0; background: linear-gradient(150deg, var(--from), var(--to)); opacity: .09; }
-.cat-thumb { position: relative; z-index: 1; aspect-ratio: 1; background: #fff; border: 1px solid #eef1f7; border-radius: .9rem; display: grid; place-items: center; overflow: hidden; box-shadow: 0 8px 18px -14px rgba(13,26,54,.45); }
+.cat-thumb {
+  position: relative; z-index: 1; aspect-ratio: 1; background: #fff; border: 1px solid #eef1f7;
+  border-radius: .9rem; display: grid; place-items: center; overflow: hidden;
+  box-shadow: 0 8px 18px -14px rgba(13,26,54,.45);
+  opacity: 0; transform: scale(.75) translateY(10px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+/* Thumbnails deal in one at a time rather than arriving as a flat block —
+   matches the 2x2 grid they already sit in. */
+.reveal.in .cat-thumb { opacity: 1; transform: none; }
+.cat-thumb:nth-child(1) { transition-delay: .05s; }
+.cat-thumb:nth-child(2) { transition-delay: .16s; }
+.cat-thumb:nth-child(3) { transition-delay: .27s; }
+.cat-thumb:nth-child(4) { transition-delay: .38s; }
 .cat-thumb img { width: 80%; height: 80%; object-fit: contain; }
 .cat-thumb-emoji { font-size: 2.1rem; }
+@media (prefers-reduced-motion: reduce) {
+  .cat-thumb { opacity: 1; transform: none; transition: none; }
+}
 
 /* ---- Category hero ---- */
 .cathero { position: relative; overflow: hidden; isolation: isolate; padding: 3.5rem 0 3rem; color: #fff;
@@ -1234,10 +1295,33 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
   padding: 5rem 1.5rem;
 }
 .notfound-inner { text-align: center; max-width: 540px; }
-.notfound-num {
-  font-family: var(--font-head); font-size: clamp(7rem, 22vw, 13rem);
-  font-weight: 800; line-height: 1; color: var(--brand); opacity: .1;
-  margin-bottom: -1.5rem; user-select: none;
+
+.notfound-eyebrow { margin-bottom: 0; }
+
+/* The illustration gets its own generously-padded stage, with a soft glow
+   behind it, instead of sitting flush against the page copy — that's what
+   was reading as "no room to breathe". */
+.notfound-art {
+  position: relative; margin: 2.75rem auto 3rem;
+  width: 220px; height: 220px; display: flex; align-items: center; justify-content: center;
+}
+.nf-glow {
+  position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, var(--brand-100) 0%, transparent 70%);
+}
+.notfound-crate { width: 168px; height: auto; position: relative; z-index: 1; }
+.nf-crate-rim { fill: #fff; stroke: #a7b3c9; stroke-width: 2.5; stroke-linejoin: round; }
+.nf-crate-wall { fill: #f3f5fa; stroke: #a7b3c9; stroke-width: 2.5; stroke-linejoin: round; }
+.nf-crate-seam { fill: none; stroke: #c2cbdd; stroke-width: 1.5; stroke-linecap: round; }
+.nf-glass-group { animation: nf-glass-search 3.8s ease-in-out infinite; transform-origin: 104px 46px; }
+.nf-glass-ring { fill: #fff; stroke: var(--brand); stroke-width: 4; }
+.nf-glass-handle { stroke: var(--brand); stroke-width: 4; stroke-linecap: round; }
+@keyframes nf-glass-search {
+  0%, 100% { transform: translate(-12px,-5px) rotate(-8deg); }
+  50% { transform: translate(12px,4px) rotate(6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nf-glass-group { animation: none; }
 }
 .notfound-title {
   font-family: var(--font-head); font-size: clamp(1.75rem, 5vw, 2.5rem);
@@ -1400,6 +1484,17 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 
 .testi-quote-ico { width: 28px; height: 22px; color: #06b6d4; opacity: .65; flex-shrink: 0; }
+/* The quote mark drops into place as its card reveals — a different beat
+   (a fall, not a pop) so the four sections that now animate on this site
+   don't all move identically. */
+.reveal.in .testi-quote-ico { animation: testi-quote-drop .5s cubic-bezier(.25,.8,.4,1.2) .1s both; }
+@keyframes testi-quote-drop {
+  from { opacity: 0; transform: translateY(-10px) rotate(-8deg); }
+  to { opacity: .65; transform: translateY(0) rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal.in .testi-quote-ico { animation: none; }
+}
 .testi-text { font-size: .93rem; color: #334155; line-height: 1.65; flex: 1; font-style: italic; }
 .testi-footer { display: flex; align-items: center; gap: .7rem; margin-top: auto; }
 .testi-flag { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
