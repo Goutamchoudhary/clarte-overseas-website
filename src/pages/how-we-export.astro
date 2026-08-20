@@ -723,12 +723,19 @@ const faqLd = {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!reduce) journey.classList.add("journey-anim");
 
+    // Cached on load/resize only, never read inside the scroll-driven
+    // update() itself: on mobile, window.innerHeight shifts by however much
+    // the browser's URL bar collapses/expands *while you're actively
+    // scrolling*, so re-reading it every frame fed that jitter straight
+    // into --p and made the fill bar visibly stutter instead of tracking
+    // the scroll smoothly.
+    let vh = window.innerHeight;
     let ticking = false;
     const update = () => {
       ticking = false;
       const rect = journey.getBoundingClientRect();
       const h = journey.offsetHeight || 1;
-      const startAt = window.innerHeight * 0.6;
+      const startAt = vh * 0.6;
       let p = (startAt - rect.top) / h;
       p = Math.max(0, Math.min(1, p));
       journey.style.setProperty("--p", p.toFixed(4));
@@ -740,9 +747,10 @@ const faqLd = {
       });
     };
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    const onResize = () => { vh = window.innerHeight; update(); };
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", update);
+    window.addEventListener("resize", onResize);
   }
 
   // ---- Incoterms explorer ----
