@@ -105,12 +105,31 @@ const isExport = path === "/how-we-export";
     </div>
     <nav class="flex flex-col items-center justify-center gap-7 h-[80%] text-white font-head text-2xl">
       <a href="/" class="mobile-link"><span data-i18n="nav.home">Home</span></a>
-      <a href="/products" class="mobile-link"><span data-i18n="nav.products">Products</span></a>
-      <div class="flex flex-col items-center gap-2.5 -mt-3 mb-1 px-6 text-center">
-        {categories.map((c) => (
-          <a href={`/products/${c.slug}`} class="mobile-sub" data-i18n={`products.cat_${c.slug.replace(/-/g,'_')}_name`}>{c.name}</a>
-        ))}
+
+      <!-- Products is collapsed by default — its subcategory list used to
+           render open at all times, which is what was pushing Home off the
+           top of the screen (the always-expanded list made the whole menu
+           taller than its box, and centering doesn't clip, so the overflow
+           spilled upward behind the header). Tapping the label still goes
+           straight to /products, same as every other item; the caret is a
+           separate tap target that reveals the subcategories in place,
+           mirroring how the desktop nav reveals them on hover. -->
+      <div class="mobile-cat-group">
+        <div class="mobile-cat-row">
+          <a href="/products" class="mobile-link"><span data-i18n="nav.products">Products</span></a>
+          <button type="button" class="mobile-cat-toggle" id="mobileCatToggle" aria-expanded="false" aria-controls="mobileCatList" aria-label="Show product categories">
+            <svg class="mobile-cat-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+        <div class="mobile-cat-list" id="mobileCatList">
+          <div class="mobile-cat-list-inner">
+            {categories.map((c) => (
+              <a href={`/products/${c.slug}`} class="mobile-sub" data-i18n={`products.cat_${c.slug.replace(/-/g,'_')}_name`}>{c.name}</a>
+            ))}
+          </div>
+        </div>
       </div>
+
       <a href="/how-we-export" class="mobile-link"><span data-i18n="nav.how_we_export">How We Export</span></a>
       <a href="/certifications" class="mobile-link"><span data-i18n="nav.certifications">Certifications</span></a>
       <a href="/about" class="mobile-link"><span data-i18n="nav.about">About Us</span></a>

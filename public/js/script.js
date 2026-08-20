@@ -35,13 +35,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---- Mobile menu ---------------------------------------------------- */
   const menu = document.getElementById("mobileMenu");
+  const catToggle = document.getElementById("mobileCatToggle");
+  const catList = document.getElementById("mobileCatList");
+  const catNav = catList ? catList.closest("nav") : null;
+  const collapseCats = () => {
+    if (!catToggle || !catList) return;
+    catToggle.setAttribute("aria-expanded", "false");
+    catList.classList.remove("open");
+    if (catNav) catNav.classList.remove("cats-open");
+  };
   const open = () => menu.classList.remove("hidden-menu");
-  const close = () => menu.classList.add("hidden-menu");
+  const close = () => {
+    menu.classList.add("hidden-menu");
+    // Reset Products back to collapsed so it doesn't reopen pre-expanded
+    // (and pushing Home off-screen again) next time the menu is opened.
+    collapseCats();
+  };
   document.getElementById("menuBtn").addEventListener("click", open);
   document.getElementById("menuClose").addEventListener("click", close);
   document.querySelectorAll(".mobile-link, #mobileMenu a").forEach((a) =>
     a.addEventListener("click", close)
   );
+  if (catToggle && catList) {
+    catToggle.addEventListener("click", () => {
+      const expanded = catToggle.getAttribute("aria-expanded") === "true";
+      catToggle.setAttribute("aria-expanded", String(!expanded));
+      catList.classList.toggle("open", !expanded);
+      // Expanding the list can make the menu's content taller than its box
+      // on shorter screens — switch that one state to a top-aligned,
+      // scrollable nav so nothing goes behind the header, instead of
+      // letting the centered layout overflow upward. Collapsed (the
+      // default) stays exactly as it was: centered, no scroll.
+      if (catNav) catNav.classList.toggle("cats-open", !expanded);
+    });
+  }
 
   /* ---- Placeholder nav links (dedicated pages come later) ------------ */
   document.querySelectorAll("[data-nolink]").forEach((el) =>
