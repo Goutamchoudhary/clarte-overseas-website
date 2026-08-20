@@ -124,8 +124,8 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
    its own full-size Contact Us button for a roomier tap target. Desktop
    (sm and up) is untouched. */
 @media (max-width: 639px) {
-  .btn-quote { padding: .48rem .68rem; font-size: .7rem; gap: .28rem; }
-  .btn-quote .qarrow { width: .8rem; height: .8rem; }
+  .btn-quote { padding: .38rem .48rem; font-size: .6rem; gap: .2rem; }
+  .btn-quote .qarrow { width: .62rem; height: .62rem; }
 }
 .btn-quote:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(31,70,147,.85); }
 .btn-quote .qarrow { transition: transform .2s ease; }

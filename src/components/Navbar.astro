@@ -22,7 +22,7 @@ const isExport = path === "/how-we-export";
            of the desktop nav links to share the row with, the full-size
            mark was the biggest single contributor to the row not fitting. -->
       <a href="/" class="flex items-center shrink-0 relative lg:-left-[35px]" aria-label="Clarté Overseas home">
-        <img src="/assets/logo/logo-horizontal.svg" alt="Clarté Overseas" width="186" height="48" class="h-10 sm:h-12 lg:h-14 w-auto" />
+        <img src="/assets/logo/logo-horizontal.svg" alt="Clarté Overseas" width="186" height="48" class="h-11 sm:h-12 lg:h-14 w-auto" />
       </a>
 
       <!-- Desktop links (non-navigating placeholders) -->
@@ -103,7 +103,13 @@ const isExport = path === "/how-we-export";
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
-    <nav class="flex flex-col items-center justify-center gap-7 h-[80%] text-white font-head text-2xl">
+    <!-- data-lenis-prevent: Lenis owns wheel/touch scrolling globally, so
+         without this it was swallowing touch-drag gestures inside this
+         nav instead of letting them scroll it natively — meaning once the
+         expanded Products list made the nav taller than its box (see
+         .cats-open below), Contact Us at the bottom became genuinely
+         unreachable, not just visually cut off. -->
+    <nav class="flex flex-col items-center justify-center gap-7 h-[80%] text-white font-head text-2xl" data-lenis-prevent>
       <a href="/" class="mobile-link"><span data-i18n="nav.home">Home</span></a>
 
       <!-- Products is collapsed by default — its subcategory list used to
