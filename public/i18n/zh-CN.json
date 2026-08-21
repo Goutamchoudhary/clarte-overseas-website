@@ -466,6 +466,9 @@
   "export.journey_heading": "追踪全程路径",
 
   "export.journey_sub": "向下滚动，路线逐步呈现。每个节点在货物到达时亮起。",
+  "export.route_india": "印度",
+  "export.route_port": "您的港口",
+  "export.route_caption": "下方七个环节,一目了然——在印度采购,逐批检验,直至运抵您的港口。",
 
   "export.journey_s1_title": "采购合适原料",
 
