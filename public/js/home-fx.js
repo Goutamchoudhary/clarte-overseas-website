@@ -161,7 +161,7 @@
      6 · CERTIFICATION CHIPS — pop in from the centre outwards
      ====================================================================== */
   function chipsScene() {
-    const chips = $$("#certifications .cert-chip");
+    const chips = $$("#certifications .cert-logo-tile");
     if (!chips.length) return;
     gsap.set(chips, { autoAlpha: 0, scale: 0.6, y: 18 });
     ScrollTrigger.batch(chips, {
