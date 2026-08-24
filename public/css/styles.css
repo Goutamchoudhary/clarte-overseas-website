@@ -430,18 +430,27 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 .filter-tab.active, .filter-tab:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
 
-/* ---- Cert chips ------------------------------------------------------- */
-.cert-chip {
-  display: inline-flex; align-items: center; gap: .6rem;
-  font-family: var(--font-head); font-weight: 600; font-size: .85rem; color: #2b3a5c;
-  padding: .65rem 1.05rem; border-radius: .8rem; border: 1px solid #dbe2f0; background: #fff;
-  transition: all .2s ease;
+/* ---- Certification logo tiles ------------------------------------------
+   Square cards holding each certifying body's own mark — real artwork, not
+   something we redraw, so the tile is just a consistent frame: white card,
+   the logo centred and scaled to fit, sized the same regardless of each
+   mark's native aspect ratio. */
+.cert-logo-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem;
+  max-width: 640px; margin: 0 auto;
 }
-.cert-chip svg { width: 18px; height: 18px; color: var(--brand); flex: none; }
-.cert-chip:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); box-shadow: 0 10px 22px -14px rgba(31,70,147,.6); }
-/* partner certs — subtly distinct (soft brand-tinted fill) */
-.cert-chip.alt { background: #eef3fc; border-color: #d7e2f5; }
-.cert-chip.alt svg { color: var(--brand-600); }
+@media (min-width: 640px)  { .cert-logo-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 900px)  { .cert-logo-grid { grid-template-columns: repeat(7, 1fr); max-width: 860px; } }
+.cert-logo-tile {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  padding: .9rem; border-radius: 1rem; background: #fff; border: 1px solid #e7edf7;
+  box-shadow: 0 8px 20px -16px rgba(31,70,147,.35);
+  transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.cert-logo-tile:hover { transform: translateY(-3px); border-color: #cfddf5; box-shadow: 0 14px 28px -16px rgba(31,70,147,.5); }
+.cert-logo-tile img { width: 100%; height: 100%; object-fit: contain; }
+/* partner certs — same frame, a hair quieter so the eye still reads "ours" first */
+.cert-logo-grid.partner .cert-logo-tile { background: #fafbfe; }
 
 /* ---- World map dots --------------------------------------------------- */
 .map-dot { fill: var(--gold); }

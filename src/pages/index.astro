@@ -7,6 +7,28 @@ import Testimonials from '../components/Testimonials.astro';
 import { SITE, CONTACT } from '../consts';
 const title = 'Clarté Overseas — Premium Dehydrated Fruits, Vegetables & Powders | Indian Exporter';
 const description = 'Clarté Overseas is an India-based merchant exporter of premium dehydrated fruits, vegetables, flakes and powders, supplying food manufacturers, flavour houses and distributors worldwide.';
+
+// Certification logo tiles — real artwork lives in /public/assets/certifications/
+// (each cert body's own official mark, not something we're free to redraw).
+// Split into the two groups the certifications page itself uses: registrations
+// held in Clarté's own name, vs. standards held by our manufacturing partners.
+const directCerts = [
+  { file: "iec.jpg", alt: "IEC — Import Export Code" },
+  { file: "apeda.png", alt: "APEDA registered exporter" },
+  { file: "fssai.png", alt: "FSSAI licensed" },
+  { file: "gst.jpeg", alt: "GST registered" },
+  { file: "spices_board_rcmc.jpeg", alt: "Spices Board of India RCMC" },
+  { file: "msme-udyam.png", alt: "MSME / Udyam registered" },
+  { file: "iso-9001.jpg", alt: "ISO 9001:2015 certified" },
+];
+const partnerCerts = [
+  { file: "iso-22000.png", alt: "ISO 22000 — partner facility" },
+  { file: "haccp.webp", alt: "HACCP — partner facility" },
+  { file: "brcgs.jpeg", alt: "BRCGS — partner facility" },
+  { file: "fda.png", alt: "US FDA registered — partner facility" },
+  { file: "halal.png", alt: "Halal certified — partner facility" },
+  { file: "kosher.avif", alt: "Kosher certified — partner facility" },
+];
 ---
 <BaseLayout title={title} description={description}>
 <!-- =====================================================================
@@ -470,30 +492,26 @@ const description = 'Clarté Overseas is an India-based merchant exporter of pre
       </div>
 
       <div class="mt-14 reveal">
-        <p class="text-center font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400 mb-5" data-i18n="home.certs_regs_label">Our Registrations</p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>IEC</span>
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>APEDA</span>
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>FSSAI</span>
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>GST</span>
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>RCMC</span>
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>MSME / Udyam</span>
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>Spices Board</span>
-          <span class="cert-chip"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>ISO 9001:2015</span>
+        <p class="text-center font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400 mb-6" data-i18n="home.certs_regs_label">Our Registrations</p>
+        <div class="cert-logo-grid">
+          {directCerts.map((c) => (
+            <span class="cert-logo-tile">
+              <img src={`/assets/certifications/${c.file}`} alt={c.alt} loading="lazy" width="96" height="96" />
+            </span>
+          ))}
         </div>
       </div>
 
       <div class="mt-12 reveal d1">
-        <p class="text-center font-head font-semibold text-xs tracking-[0.18em] uppercase text-brand/70 mb-5" data-i18n="home.certs_quality_label">Quality &amp; Partner Certifications</p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>ISO 22000</span>
-          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>HACCP</span>
-          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>BRCGS</span>
-          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>FDA Registered</span>
-          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Halal</span>
-          <span class="cert-chip alt"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Kosher</span>
+        <p class="text-center font-head font-semibold text-xs tracking-[0.18em] uppercase text-brand/70 mb-6" data-i18n="home.certs_quality_label">Quality &amp; Partner Certifications</p>
+        <div class="cert-logo-grid partner">
+          {partnerCerts.map((c) => (
+            <span class="cert-logo-tile">
+              <img src={`/assets/certifications/${c.file}`} alt={c.alt} loading="lazy" width="96" height="96" />
+            </span>
+          ))}
         </div>
-        <p class="text-center text-slate-400 text-sm mt-7" data-i18n="home.certs_disclaimer">Official certification logos &amp; documents will replace these icons as you provide them.</p>
+        <p class="text-center text-slate-400 text-sm mt-7" data-i18n="home.certs_disclaimer">Held by our vetted manufacturing partners — arranged per order, on request.</p>
       </div>
     </div>
   </section>
