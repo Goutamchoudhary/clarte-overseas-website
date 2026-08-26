@@ -719,6 +719,33 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .blog-card-link:hover .blog-title { color: var(--brand); }
 .blog-title { transition: color .2s ease; }
 
+/* ---- Pager (blog list, 15 posts/page) ---- */
+.blog-pager { display: flex; align-items: center; justify-content: center; gap: .9rem; flex-wrap: wrap; margin-top: 3.5rem; }
+.pager-arrow {
+  display: inline-flex; align-items: center; gap: .45rem; text-decoration: none;
+  font-family: var(--font-head); font-weight: 600; font-size: .85rem; color: var(--brand);
+  background: #fff; border: 1px solid #e7edf7; border-radius: 999px; padding: .65rem 1.15rem;
+  box-shadow: 0 8px 20px -16px rgba(31,70,147,.35);
+  transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease, color .25s ease;
+}
+.pager-arrow svg { width: 16px; height: 16px; transition: transform .2s ease; }
+.pager-arrow:hover { transform: translateY(-2px); border-color: #cfddf5; box-shadow: 0 14px 28px -16px rgba(31,70,147,.5); background: var(--brand-100); }
+.pager-arrow:hover svg { transform: translateX(-2px); }
+.pager-arrow:last-child:hover svg { transform: translateX(2px); }
+.pager-arrow.is-disabled { color: #b6c0d6; border-color: #eef1f7; box-shadow: none; pointer-events: none; }
+.pager-pages { display: flex; align-items: center; gap: .4rem; }
+.pager-pill {
+  display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+  min-width: 40px; height: 40px; padding: 0 .3rem; border-radius: 999px;
+  font-family: var(--font-head); font-weight: 700; font-size: .85rem; color: #51607a;
+  border: 1px solid transparent; transition: transform .2s ease, background .25s ease, color .25s ease, border-color .25s ease;
+}
+.pager-pill:hover { background: var(--brand-100); color: var(--brand); transform: translateY(-2px); }
+.pager-pill.is-active { background: linear-gradient(135deg,#2b57b0,#1f4693); color: #fff; box-shadow: 0 10px 22px -12px rgba(31,70,147,.8); }
+.pager-pill.is-active:hover { transform: none; }
+.pager-gap { color: #b6c0d6; font-weight: 700; padding: 0 .2rem; user-select: none; }
+@media (max-width: 480px) { .pager-arrow-label { display: none; } .pager-arrow { padding: .65rem; } }
+
 /* FAQ accordion (native details) */
 .faq-item { border: 1px solid #e7ecf6; border-radius: 1rem; background: #fff; transition: box-shadow .2s ease; }
 .faq-item + .faq-item { margin-top: .8rem; }

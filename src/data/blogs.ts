@@ -958,6 +958,19 @@ export const posts: Post[] = [
   },
 ];
 
+// Newest-first — this is the order the list page, pagination and "keep
+// reading" rails use. `date` is a human string ("28 May 2026"); Date can
+// parse that format directly, so no separate sortable field is needed.
+export const sortedPosts: Post[] = [...posts].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+// Cards per page on /blogs (in addition to the single featured post on page
+// 1). Exported from here — rather than declared in the page's frontmatter —
+// because Astro's getStaticPaths runs in an isolated scope that can only see
+// imports, not sibling consts from the rest of the file.
+export const BLOG_PAGE_SIZE = 15;
+
 export const faqs = [
   {
     q: "What products does Clarté Overseas export?",

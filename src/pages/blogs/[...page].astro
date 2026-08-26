@@ -1,15 +1,42 @@
 ---
+import type { GetStaticPathsOptions, Page } from "astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import SlantDivider from "../../components/SlantDivider.astro";
-import { posts, faqs } from "../../data/blogs";
+import { sortedPosts, BLOG_PAGE_SIZE, faqs, type Post } from "../../data/blogs";
 import { CONTACT } from "../../consts";
 
-const title = "Blog — Dehydrated Foods, Ingredients & India Export Insights | Clarté Overseas";
+// Page 1 keeps a big "featured" post above the grid (always the most recent
+// post); the grid itself — 15 cards per page — is paginated from everything
+// after that. So /blogs shows 1 featured + 15 cards, and /blogs/2, /blogs/3…
+// show 15 cards each, oldest pages last.
+const [featured] = sortedPosts;
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const [, ...rest] = sortedPosts;
+  return paginate(rest, { pageSize: BLOG_PAGE_SIZE });
+}
+
+const { page } = Astro.props as { page: Page<Post> };
+const isFirstPage = page.currentPage === 1;
+
+// Windowed page numbers: first, last, current ±1, with "…" gaps — stays
+// readable even once the blog grows well past a handful of pages.
+const pageNumbers: (number | "gap")[] = [];
+for (let n = 1; n <= page.lastPage; n++) {
+  if (n === 1 || n === page.lastPage || Math.abs(n - page.currentPage) <= 1) {
+    pageNumbers.push(n);
+  } else if (pageNumbers[pageNumbers.length - 1] !== "gap") {
+    pageNumbers.push("gap");
+  }
+}
+const pageHref = (n: number) => (n === 1 ? "/blogs" : `/blogs/${n}`);
+
+const title = isFirstPage
+  ? "Blog — Dehydrated Foods, Ingredients & India Export Insights | Clarté Overseas"
+  : `Blog — Page ${page.currentPage} | Clarté Overseas`;
 const description =
   "Practical reads on dehydrated food ingredients, buying powders and flakes, India's export market and sourcing well. From the team at Clarté Overseas.";
-
-const [featured, ...rest] = posts;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -25,34 +52,41 @@ const [featured, ...rest] = posts;
     chips={["Sourcing guides", "Quality & specs", "Market trends"]}
   />
 
-  <!-- ===================== FEATURED ===================== -->
-  <section class="py-14 lg:py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <a href={`/blogs/${featured.id}`} class="blog-card-link card overflow-hidden grid lg:grid-cols-2 reveal">
-        <div class="blog-banner h-60 lg:h-full min-h-[260px]" style={`background:${featured.accent}`}>
-          <span class="b-emoji">{featured.emoji}</span>
-        </div>
-        <div class="p-8 lg:p-10 flex flex-col justify-center">
-          <div class="flex items-center gap-3 flex-wrap">
-            <span class="blog-cat">{featured.category}</span>
-            <span class="blog-meta">{featured.date} · {featured.read}</span>
+  <!-- ===================== FEATURED (page 1 only) ===================== -->
+  {isFirstPage && (
+    <section class="py-14 lg:py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <a href={`/blogs/${featured.id}`} class="blog-card-link card overflow-hidden grid lg:grid-cols-2 reveal">
+          <div class="blog-banner h-60 lg:h-full min-h-[260px]" style={`background:${featured.accent}`}>
+            <span class="b-emoji">{featured.emoji}</span>
           </div>
-          <h2 class="blog-title font-head font-extrabold text-2xl sm:text-3xl text-navy mt-4 leading-tight" data-i18n={`blog.post_${featured.id.replace(/-/g,'_')}_title`}>{featured.title}</h2>
-          <p class="text-slate-500 mt-4 leading-relaxed" data-i18n={`blog.post_${featured.id.replace(/-/g,'_')}_excerpt`}>{featured.excerpt}</p>
-          <span class="read-link mt-6"><span data-i18n="blog.read_article">Read article</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </div>
-      </a>
-    </div>
-  </section>
+          <div class="p-8 lg:p-10 flex flex-col justify-center">
+            <div class="flex items-center gap-3 flex-wrap">
+              <span class="blog-cat">{featured.category}</span>
+              <span class="blog-meta">{featured.date} · {featured.read}</span>
+            </div>
+            <h2 class="blog-title font-head font-extrabold text-2xl sm:text-3xl text-navy mt-4 leading-tight" data-i18n={`blog.post_${featured.id.replace(/-/g,'_')}_title`}>{featured.title}</h2>
+            <p class="text-slate-500 mt-4 leading-relaxed" data-i18n={`blog.post_${featured.id.replace(/-/g,'_')}_excerpt`}>{featured.excerpt}</p>
+            <span class="read-link mt-6"><span data-i18n="blog.read_article">Read article</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
 
-  <!-- ===================== LATEST GRID ===================== -->
-  <section class="pb-20 lg:pb-24 bg-white">
+  <!-- ===================== GRID + PAGINATION ===================== -->
+  <section class={isFirstPage ? "pb-16 lg:pb-20 bg-white" : "pt-14 lg:pt-16 pb-16 lg:pb-20 bg-white"}>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <p class="font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400 mb-8 reveal" data-i18n="blog.more_posts">More from the blog</p>
+      <div class="flex items-end justify-between flex-wrap gap-3 mb-8 reveal">
+        <p class="font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400" data-i18n="blog.more_posts">More from the blog</p>
+        <p class="blog-meta">
+          <span data-i18n="blog.pager_showing">Showing</span> {page.start + 1}–{page.end + 1} <span data-i18n="blog.pager_of">of</span> {page.total}
+        </p>
+      </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-        {rest.map((p, i) => (
+        {page.data.map((p, i) => (
           <a href={`/blogs/${p.id}`} class={`blog-card-link card overflow-hidden flex flex-col reveal ${["", "d1", "d2"][i % 3]}`}>
             <div class="blog-banner h-44" style={`background:${p.accent}`}>
               <span class="b-emoji">{p.emoji}</span>
@@ -73,9 +107,53 @@ const [featured, ...rest] = posts;
           </a>
         ))}
       </div>
+
+      <!-- ===== Pager ===== -->
+      {page.lastPage > 1 && (
+        <nav class="blog-pager reveal" aria-label="Blog pagination">
+          {page.url.prev ? (
+            <a href={page.url.prev} class="pager-arrow" aria-label="Previous page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+              <span class="pager-arrow-label" data-i18n="blog.pager_prev">Previous</span>
+            </a>
+          ) : (
+            <span class="pager-arrow is-disabled" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+              <span class="pager-arrow-label" data-i18n="blog.pager_prev">Previous</span>
+            </span>
+          )}
+
+          <div class="pager-pages">
+            {pageNumbers.map((n) =>
+              n === "gap" ? (
+                <span class="pager-gap">···</span>
+              ) : (
+                <a
+                  href={pageHref(n)}
+                  class={`pager-pill ${n === page.currentPage ? "is-active" : ""}`}
+                  aria-current={n === page.currentPage ? "page" : undefined}
+                >{n}</a>
+              )
+            )}
+          </div>
+
+          {page.url.next ? (
+            <a href={page.url.next} class="pager-arrow" aria-label="Next page">
+              <span class="pager-arrow-label" data-i18n="blog.pager_next">Next</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+          ) : (
+            <span class="pager-arrow is-disabled" aria-hidden="true">
+              <span class="pager-arrow-label" data-i18n="blog.pager_next">Next</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </span>
+          )}
+        </nav>
+      )}
     </div>
   </section>
 
+  {isFirstPage && (<>
   <SlantDivider topColor="#ffffff" bottomColor="#f7f8fb" flip={true} />
 
   <!-- ===================== FAQ ===================== -->
@@ -99,6 +177,7 @@ const [featured, ...rest] = posts;
       </div>
     </div>
   </section>
+  </>)}
 
   <!-- ===================== CTA ===================== -->
   <section id="quote" class="py-20">

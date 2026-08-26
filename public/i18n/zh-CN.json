@@ -1198,6 +1198,10 @@
   "blog.read_article": "阅读全文",
 
   "blog.more_posts": "更多博客文章",
+  "blog.pager_prev": "上一页",
+  "blog.pager_next": "下一页",
+  "blog.pager_showing": "显示",
+  "blog.pager_of": "/",
 
   "blog.read_btn": "阅读",
 
