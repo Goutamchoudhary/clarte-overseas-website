@@ -94,6 +94,9 @@ const orgSchema = {
 
     <slot name="head" />
     <Analytics />
+    <!-- Instantly (Leadsy) website-visitor identification pixel — async, no
+         render-blocking impact. -->
+    <script id="vtag-ai-js" is:inline async src="https://r2.leadsy.ai/tag.js" data-pid="6vZuTdMWjDA7rrrb" data-version="062024"></script>
     <!-- defer: i18n.js only needs the DOM to exist (it already waits for
          DOMContentLoaded internally) — it doesn't need to block HTML
          parsing. Blocking here was pushing the page's own Tailwind
