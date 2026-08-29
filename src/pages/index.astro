@@ -42,8 +42,13 @@ const partnerCerts = [
          working against load speed. WebP first (~365KB vs the 1.3MB source
          JPEG), JPEG fallback for the handful of browsers that don't support
          it. The navy gradient behind it (see .hero-flatlay CSS) still shows
-         through the fade-in transition on first paint either way. -->
+         through the fade-in transition on first paint either way. A
+         separate, smaller source below 768px: object-fit:cover only ever
+         needs viewport-width resolution, so mobile has no business
+         downloading the same 2400px-wide asset desktop does — that gap was
+         most of the LCP delta between the two. -->
     <picture>
+      <source media="(max-width: 768px)" srcset="/assets/img/hero/spice-flatlay-center-mobile.webp" type="image/webp" />
       <source srcset="/assets/img/hero/spice-flatlay-center.webp" type="image/webp" />
       <img
         class="hero-photo"
@@ -119,7 +124,7 @@ const partnerCerts = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mt-14">
         <!-- Card 1 -->
         <article class="card product-card reveal">
-          <div class="ph-wrap img-ph h-48" data-emoji="🌿" data-img="/assets/img/categories/herbal-leaf.jpg">
+          <div class="ph-wrap img-ph h-48" data-emoji="🌿" data-img="/assets/img/categories/herbal-leaf.webp">
             <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>
           </div>
           <div class="p-6">
@@ -133,7 +138,7 @@ const partnerCerts = [
         </article>
         <!-- Card 2 -->
         <article class="card product-card reveal d1">
-          <div class="ph-wrap img-ph h-48" data-emoji="🌶️" data-img="/assets/img/categories/culinary-spice-category.jpg">
+          <div class="ph-wrap img-ph h-48" data-emoji="🌶️" data-img="/assets/img/categories/culinary-spice-category.webp">
             <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>
           </div>
           <div class="p-6">
@@ -147,7 +152,7 @@ const partnerCerts = [
         </article>
         <!-- Card 3 -->
         <article class="card product-card reveal d2">
-          <div class="ph-wrap img-ph h-48" data-emoji="🥦" data-img="/assets/img/categories/dehydrated-veg-powder.jpg">
+          <div class="ph-wrap img-ph h-48" data-emoji="🥦" data-img="/assets/img/categories/dehydrated-veg-powder.webp">
             <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4 2.2-.2 3.9.2 5.5.6zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>
           </div>
           <div class="p-6">
@@ -161,7 +166,7 @@ const partnerCerts = [
         </article>
         <!-- Card 4 -->
         <article class="card product-card reveal">
-          <div class="ph-wrap img-ph h-48" data-emoji="🍓" data-img="/assets/img/categories/dehydrated-fruits-powder.jpg">
+          <div class="ph-wrap img-ph h-48" data-emoji="🍓" data-img="/assets/img/categories/dehydrated-fruits-powder.webp">
             <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06z"/><path d="M10 2c1 .5 2 2 2 5"/></svg></span>
           </div>
           <div class="p-6">
@@ -175,7 +180,7 @@ const partnerCerts = [
         </article>
         <!-- Card 5 -->
         <article class="card product-card reveal d1">
-          <div class="ph-wrap img-ph h-48" data-emoji="🧪" data-img="/assets/img/categories/hydrocolloids-additives.jpg">
+          <div class="ph-wrap img-ph h-48" data-emoji="🧪" data-img="/assets/img/categories/hydrocolloids-additives.webp">
             <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10 2v7.31L4.7 17.6a2 2 0 0 0 1.7 3h11.2a2 2 0 0 0 1.7-3L14 9.3V2"/><path d="M8.5 2h7M7 16h10"/></svg></span>
           </div>
           <div class="p-6">
@@ -189,7 +194,7 @@ const partnerCerts = [
         </article>
         <!-- Card 6 -->
         <article class="card product-card reveal d2">
-          <div class="ph-wrap img-ph h-48" data-emoji="➕" data-img="/assets/img/categories/custom-blend.jpg">
+          <div class="ph-wrap img-ph h-48" data-emoji="➕" data-img="/assets/img/categories/custom-blend.webp">
             <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 4H14M10 4H3M21 12H12M8 12H3M21 20H16M12 20H3M14 2v4M8 10v4M16 18v4"/></svg></span>
           </div>
           <div class="p-6">
@@ -250,7 +255,7 @@ const partnerCerts = [
   <section id="industries" class="py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="reveal from-left">
-        <div class="img-ph rounded-3xl h-[300px] sm:h-[420px]" data-emoji="🥘" data-img="/assets/img/misc/industries-we-serve-v2.jpg"></div>
+        <div class="img-ph rounded-3xl h-[300px] sm:h-[420px]" data-emoji="🥘" data-img="/assets/img/misc/industries-we-serve-v2.webp"></div>
       </div>
       <div class="reveal d1 from-right">
         <span class="eyebrow"><span data-i18n="home.industries_eyebrow">Who We Serve</span></span>
