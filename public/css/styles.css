@@ -443,6 +443,12 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.8rem, 3vw, 2.4rem); }
   color: var(--brand); backdrop-filter: blur(6px);
   box-shadow: 0 6px 18px -12px rgba(31,70,147,.5);
 }
+/* At 375px this text wraps to two lines at the desktop size, which turns it
+   into a wide two-line blob sitting over two rows of the hero photo — it
+   reads as oversized because nothing here scales down for the viewport. */
+@media (max-width: 480px) {
+  .badge-pill { font-size: .72rem; padding: .4rem .8rem; gap: .4rem; }
+}
 
 /* ---- Image placeholder (premium gradient + emoji) -------------------- */
 .img-ph {
@@ -1824,18 +1830,24 @@ html.lenis, html.lenis body { height: auto; }
   min-height: 100svh;
   display: flex; align-items: center;
 }
-/* Phones: a shorter hero. Filling a 0.46-aspect screen means showing a 0.46
-   slice of the photo whatever crop you feed it, and at full height that
-   magnifies three chillies to fill the viewport. Backing off to ~72svh shows
-   the portrait crop close to its full width, so the framing reads — and it
-   brings the torn edge into view near the fold, which suits a phone. */
+/* Phones: match the section to the mobile photo's own aspect ratio (1000/1792,
+   same technique as the desktop rule above) instead of forcing a fixed
+   min-height with object-fit:cover. A forced height crops top and bottom to
+   fill it — and since the photo's two ingredient bands aren't perfectly
+   symmetric around its centre, a symmetric crop ate unevenly into them,
+   showing two full rows at the top and only a sliver of one at the bottom.
+   Sizing to the image's own ratio shows the whole photo: no crop, so nothing
+   to be inconsistent. */
 @media (max-width: 640px) {
-  #home.hero-flatlay { min-height: 72svh; }
+  #home.hero-flatlay { min-height: 0; aspect-ratio: 1000 / 1792; max-height: 92svh; padding: 2rem 0; }
 }
-/* Narrow phones: the uppercase 3-line headline needs a bit less size so the
-   page doesn't get excessively tall; the image itself still fills 100vh. */
 @media (max-width: 480px) {
-  #home .hero-flatlay-title { font-size: 1.85rem; line-height: 1.16; }
+  /* No title override here any more: that was sized for the old white
+     uppercase Sora headline. #home .hero-flatlay-title (ID-qualified) beat
+     .hero-flatlay-title's own clamp() on specificity regardless of source
+     order, silently crushing the script headline to 29.6px — smaller than
+     the eyebrow pill below it, which inverted the intended hierarchy. The
+     clamp already handles narrow screens on its own. */
   #home .hero-cta-row { margin-top: 1rem; gap: .6rem !important; }
   #home .hero-cta-row .btn { padding: .68rem 1.2rem; font-size: .88rem; }
   .hero-stat--bar { padding: .7rem .9rem; gap: .55rem; }

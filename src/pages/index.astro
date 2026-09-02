@@ -44,12 +44,11 @@ const partnerCerts = [
          load speed. Separate smaller source below 768px — object-fit:cover
          only ever needs viewport-width resolution. -->
     <picture>
-      <!-- Phones get a portrait crop, not just a smaller copy of the wide one.
-           A 21:9 frame can't fill a 9:19.5 screen without magnifying a couple
-           of chillies to fill the whole viewport; the portrait slice keeps the
-           top and bottom ingredient bands at a sane scale, with the empty
-           centre the copy sits in. -->
-      <source media="(max-width: 640px)" srcset="/assets/img/hero/hero-flatlay-2026-portrait.webp" type="image/webp" />
+      <!-- Phones get a natively-composed portrait shot (ingredients banded top
+           and bottom, ~9:16), not a crop of the wide one — a 21:9 frame can't
+           fill a 9:19.5 screen without magnifying a couple of chillies to fill
+           the whole viewport. -->
+      <source media="(max-width: 640px)" srcset="/assets/img/hero/hero-flatlay-2026-mobile-portrait.webp" type="image/webp" />
       <source media="(max-width: 1024px)" srcset="/assets/img/hero/hero-flatlay-2026-mobile.webp" type="image/webp" />
       <source srcset="/assets/img/hero/hero-flatlay-2026.webp" type="image/webp" />
       <img
