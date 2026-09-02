@@ -23,53 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 
-  /* ---- Navbar: rides up with the hero, then drops back in ------------- */
-  /* Two modes, no layout changes in either:
-       ride   — transform tracks scroll 1:1, so the bar travels up with the
-                page exactly as a static header would.
-       docked — pinned at translateY(0) with a transition, so the switch
-                animates as a slide down.
-     The handover happens at 90% of the bar's height: late enough that it has
-     genuinely gone, early enough that it drops back "right as it leaves"
-     rather than after a gap. Release is at the very top, where the docked and
-     ride positions coincide, so there's nothing to jump. */
+  /* ---- Navbar: solid on scroll --------------------------------------- */
   const navbar = document.getElementById("navbar");
-  const navSpacer = document.getElementById("navSpacer");
-  let docked = false;
-
-  // The bar floats inset from the top, so it has to travel its own height
-  // PLUS that gap before it's clear of the viewport.
-  const navGap = () => parseFloat(getComputedStyle(navbar).top) || 0;
-  const hideDistance = () => navbar.offsetHeight + navGap();
-
-  const syncSpacer = () => {
-    // Gap above and an equal breathing space below.
-    if (navSpacer) navSpacer.style.height = navbar.offsetHeight + navGap() * 2 + "px";
-  };
-  syncSpacer();
-  window.addEventListener("resize", syncSpacer, { passive: true });
-
   const onScroll = () => {
-    const y = window.scrollY;
-    const hide = hideDistance();
-    navbar.classList.toggle("scrolled", y > 20);
-
-    if (!docked) {
-      if (y >= hide * 0.9) {
-        docked = true;
-        navbar.classList.add("is-docked");
-        navbar.style.transform = "translateY(0)";
-      } else {
-        // 1:1 with the scroll — no transition, or it would lag the page.
-        navbar.style.transform = "translateY(" + -y + "px)";
-      }
-    } else if (y < 8) {
-      docked = false;
-      navbar.classList.remove("is-docked");
-      navbar.style.transform = "translateY(" + -y + "px)";
-    }
-
-    document.getElementById("toTop").classList.toggle("show", y > 500);
+    if (window.scrollY > 20) navbar.classList.add("scrolled");
+    else navbar.classList.remove("scrolled");
+    document.getElementById("toTop").classList.toggle("show", window.scrollY > 500);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();

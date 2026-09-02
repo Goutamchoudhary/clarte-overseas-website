@@ -136,50 +136,18 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.8rem, 3vw, 2.4rem); }
 }
 
 /* ---- Navbar (full-width white band, rounded bottom corners) ----------- */
-/* Always fixed, with a spacer holding its place in the flow. The bar then
-   rides up under transform as you scroll — nothing about the layout changes,
-   which is what keeps it smooth: the previous version swapped position and
-   patched body padding mid-scroll, and Lenis (which tracks document height)
-   hitched every time it did. */
-/* Always fixed, with a spacer holding its place in the flow. The bar rides up
-   under transform as you scroll — nothing about the layout changes, which is
-   what keeps it smooth: an earlier version swapped position and patched body
-   padding mid-scroll, and Lenis (which tracks document height) hitched every
-   time it did. */
 .nav-bar {
-  position: fixed; top: 0; left: 0; right: 0;
-  will-change: transform;
+  position: relative;
   background: #fff;
   border-bottom-left-radius: var(--nav-radius, 42px);
   border-bottom-right-radius: var(--nav-radius, 42px);
   /* No drop-shadow at rest: over the bright hero, a shadow that follows the
      rounded bottom corners curves away at the extreme corner and leaves a
      bright un-shadowed wedge of the photo showing — reads as a pale strip.
-     The shadow only appears once scrolled. */
+     The shadow only appears once scrolled (over lighter sections). */
   transition: box-shadow .35s ease;
 }
 .nav-bar.scrolled { box-shadow: 0 14px 34px -18px rgba(13,26,54,.4); }
-
-/* ---- Navbar: rides up with the hero, then drops back in -------------- */
-/* The spacer reserves the bar's height in the flow. CSS values match the
-   logo sizes at each breakpoint (py-3 plus h-11 / h-12 / h-14) so there's no
-   jump before JS measures the real height. */
-/* Matches the logo sizes at each breakpoint (py-3 plus h-11 / h-12 / h-14) so
-   there's no jump before JS measures the real height. */
-.nav-spacer { height: 68px; }
-@media (min-width: 640px)  { .nav-spacer { height: 72px; } }
-@media (min-width: 1024px) { .nav-spacer { height: 80px; } }
-
-/* While riding, script.js writes transform every scroll frame and must not be
-   animated — the transform IS the scroll position. The transition only comes
-   on once docked, which is what makes the drop read as a deliberate slide
-   rather than a jump. */
-.nav-bar.is-docked {
-  transition: transform .38s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .nav-bar.is-docked { transition: box-shadow .35s ease; }
-}
 
 /* ---- Torn-paper edge ------------------------------------------------- */
 /* A strip painted the colour of whatever comes next, masked so its top edge
