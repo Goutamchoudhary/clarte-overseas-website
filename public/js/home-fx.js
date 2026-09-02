@@ -60,13 +60,16 @@
 
     const mm = gsap.matchMedia();
 
-    // Desktop: pin the hero briefly while its layers separate at different
-    // speeds — the "camera pulling away from a 3D scene" moment
+    // Desktop: the hero's layers separate at different speeds as it
+    // scrolls past — the "camera pulling away from a 3D scene" moment.
+    // Scrubbed to the hero's own natural scroll distance (no pin), so
+    // scroll speed here matches every other page rather than locking the
+    // viewport for an extra beat while the effect plays out.
     mm.add("(min-width: 1024px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: hero, start: "top top", end: "+=55%",
-          scrub: true, pin: true, anticipatePin: 1,
+          trigger: hero, start: "top top", end: "bottom top",
+          scrub: true,
         },
       });
       tl.to("#home .hero-photo", { scale: 1.15, ease: "none" }, 0)
