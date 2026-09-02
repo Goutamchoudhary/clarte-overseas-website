@@ -72,12 +72,11 @@
           scrub: true,
         },
       });
-      tl.to("#home .hero-photo", { scale: 1.15, ease: "none" }, 0)
-        .to("#home .max-w-7xl", { yPercent: -16, autoAlpha: 0, ease: "power1.in" }, 0)
-        // Fade the brown center shade out with the text — it sits behind the
-        // copy, not inside .max-w-7xl, so without this it would be left
-        // visibly floating over the photo once the text has scrolled away.
-        .to("#home .hero-center-shade", { autoAlpha: 0, ease: "power1.in" }, 0);
+      // A restrained drift only. The hero is now roughly half its old height,
+      // so the old 1.15 zoom plus a full text fade-out ran their whole course
+      // within a flick of the wheel and read as the page lurching.
+      tl.to("#home .hero-photo", { scale: 1.06, ease: "none" }, 0)
+        .to("#home .max-w-7xl", { yPercent: -8, ease: "none" }, 0);
     });
 
     // Mobile / tablet: light parallax only, no pinning
@@ -183,7 +182,11 @@
 
     // Smooth inertial scroll — the "buttery" feel under everything
     if (window.Lenis) {
-      const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+      // lerp is how much of the remaining distance the page covers each
+      // frame — lower means more smoothing but more perceptible lag between
+      // the wheel moving and the page moving. 0.09 read as floaty; 0.2 keeps
+      // the smoothing without the delay.
+      const lenis = new Lenis({ lerp: 0.2, smoothWheel: true });
       window.lenis = lenis; // programmatic scrolls must go through Lenis
       lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.add((t) => lenis.raf(t * 1000));

@@ -11,12 +11,31 @@
   --navy: #0d1a36;
   --navy-800: #122a52;
   --gold: #e0a234;
-  --cream: #f7f8fb;
+  /* Warm cream, not the cool blue-grey this used to be. #f7f8fb read as a
+     software UI ground; food brands sit on paper. Kept light — at full
+     strength it sat too heavy across a whole section. Must stay in step with
+     `cream` in tailwind.config.mjs, since the torn edge is painted this
+     colour to meet the bg-cream section beneath it. */
+  --cream: #faf6ec;
   --font-head: "Sora", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
-  /* Modern brand gradients (replace the old gold accent) */
-  --grad-bright: linear-gradient(95deg, #5eead4 0%, #38bdf8 48%, #818cf8 100%); /* for dark backgrounds */
-  --grad-deep: linear-gradient(95deg, #1f4693 0%, #5b3fd6 55%, #8b5cf6 100%);   /* for light backgrounds */
+  /* Hand-drawn display face, used only where warmth is the point — the hero
+     headline and section eyebrows. Never on body copy or controls. */
+  --font-display: "Caveat Brush", "Bradley Hand", cursive;
+
+  /* Warm food palette. Introduced on the hero first; the plan is to let
+     these lead the storytelling sections while --brand keeps doing the
+     institutional-trust work on certifications, compliance and documents. */
+  --olive: #6F8630;
+  --terracotta: #BE4E2B;
+  --turmeric: #D6982A;
+  --forest: #15352A;
+  --paper: #F3EBDC;
+  /* Spice gradients. The old teal→indigo and blue→violet pair were the house
+     style of B2B software, not food — these run the turmeric-to-chilli range
+     the products actually occupy. */
+  --grad-bright: linear-gradient(95deg, #e7b455 0%, #d6982a 48%, #c9663a 100%); /* for dark backgrounds */
+  --grad-deep: linear-gradient(95deg, #6f8630 0%, #a8842c 45%, #be4e2b 100%);   /* for light backgrounds */
 }
 
 * { -webkit-font-smoothing: antialiased; }
@@ -52,14 +71,52 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 .text-grad { background-image: var(--grad-bright); }
 .text-grad-deep { background-image: var(--grad-deep); }
 /* Per-title gradients (each distinct, all readable on light backgrounds) */
-.tg-1 { background-image: linear-gradient(95deg, #1f4693, #4f46e5); } /* Product Range */
-.tg-2 { background-image: linear-gradient(95deg, #0e7490, #1f4693); } /* Portfolio */
-.tg-3 { background-image: linear-gradient(95deg, #4338ca, #7c3aed); } /* Why buyers */
-.tg-4 { background-image: linear-gradient(95deg, #1d4ed8, #0891b2); } /* Industries */
-.tg-5 { background-image: linear-gradient(95deg, #6d28d9, #be185d); } /* Mission & Vision */
-.tg-6 { background-image: linear-gradient(95deg, #1f4693, #0284c7); } /* Markets */
-.tg-7 { background-image: linear-gradient(95deg, #0d9488, #047857); } /* Sourcing */
-.tg-8 { background-image: linear-gradient(95deg, #1e3a8a, #7c3aed); } /* Certified */
+/* Spice-range gradients. These were the last of the indigo/violet pairs —
+   the same B2B-software palette the two --grad-* tokens carried. */
+.tg-1 { background-image: linear-gradient(95deg, #6f8630, #c08b23); } /* Product Range */
+.tg-2 { background-image: linear-gradient(95deg, #2f5d3a, #6f8630); } /* Portfolio */
+.tg-3 { background-image: linear-gradient(95deg, #d6982a, #be4e2b); } /* Why buyers */
+.tg-4 { background-image: linear-gradient(95deg, #6f8630, #2f5d3a); } /* Industries */
+.tg-5 { background-image: linear-gradient(95deg, #a8842c, #be4e2b); } /* Mission & Vision */
+.tg-6 { background-image: linear-gradient(95deg, #3f6f4a, #6f8630); } /* Markets */
+.tg-7 { background-image: linear-gradient(95deg, #4f7d33, #2f5d3a); } /* Sourcing */
+.tg-8 { background-image: linear-gradient(95deg, #a8842c, #6f8630); } /* Certified */
+
+/* Hand-drawn heading. Applied per-heading rather than to .tg-* wholesale,
+   because those gradient classes are shared with headings that stay on Sora.
+   Element+class specificity so it beats Tailwind's font-extrabold utility —
+   Caveat Brush ships a single 400 weight, and a faux-bold of a brush script
+   turns to mud. The size bump compensates for its much smaller apparent
+   x-height at the same point size. */
+/* Indian flag, clipped to the word. Hard stops rather than a blend, so it
+   reads as the tiranga and not as a sunset gradient. */
+.tricolour {
+  background-image: linear-gradient(180deg,
+    #ff9933 0%, #ff9933 33.3%,
+    #ffffff 33.3%, #ffffff 66.6%,
+    #138808 66.6%, #138808 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+
+h1.tg-script, h2.tg-script, h3.tg-script {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.14;
+  /* Absolute, not em: em resolves against the parent, which collapsed these
+     to 20px rather than scaling the heading's own Tailwind size. The step up
+     from the text-4xl/5xl they replace compensates for the script face's much
+     smaller apparent x-height. */
+  font-size: clamp(2.5rem, 4.6vw, 3.8rem);
+}
+/* Two smaller tiers, mirroring the Tailwind sizes these headings carried
+   before the swap — without them every script heading flattens to the same
+   scale and the page loses its hierarchy.
+     --md  for the text-3xl/4xl headings
+     --sm  for the text-2xl/3xl sub-headings */
+h2.tg-script--md, h3.tg-script--md { font-size: clamp(2rem, 3.4vw, 2.9rem); }
+h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.8rem, 3vw, 2.4rem); }
 
 /* ---- Eyebrow label — pill/chip style with a dot ----------------------- */
 .eyebrow {
@@ -79,18 +136,68 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 
 /* ---- Navbar (full-width white band, rounded bottom corners) ----------- */
+/* Always fixed, with a spacer holding its place in the flow. The bar then
+   rides up under transform as you scroll — nothing about the layout changes,
+   which is what keeps it smooth: the previous version swapped position and
+   patched body padding mid-scroll, and Lenis (which tracks document height)
+   hitched every time it did. */
+/* Always fixed, with a spacer holding its place in the flow. The bar rides up
+   under transform as you scroll — nothing about the layout changes, which is
+   what keeps it smooth: an earlier version swapped position and patched body
+   padding mid-scroll, and Lenis (which tracks document height) hitched every
+   time it did. */
 .nav-bar {
-  position: relative;
+  position: fixed; top: 0; left: 0; right: 0;
+  will-change: transform;
   background: #fff;
   border-bottom-left-radius: var(--nav-radius, 42px);
   border-bottom-right-radius: var(--nav-radius, 42px);
   /* No drop-shadow at rest: over the bright hero, a shadow that follows the
      rounded bottom corners curves away at the extreme corner and leaves a
-     bright un-shadowed wedge of the photo showing — reads as a pale blue
-     strip. The shadow only appears once scrolled (over lighter sections). */
+     bright un-shadowed wedge of the photo showing — reads as a pale strip.
+     The shadow only appears once scrolled. */
   transition: box-shadow .35s ease;
 }
 .nav-bar.scrolled { box-shadow: 0 14px 34px -18px rgba(13,26,54,.4); }
+
+/* ---- Navbar: rides up with the hero, then drops back in -------------- */
+/* The spacer reserves the bar's height in the flow. CSS values match the
+   logo sizes at each breakpoint (py-3 plus h-11 / h-12 / h-14) so there's no
+   jump before JS measures the real height. */
+/* Matches the logo sizes at each breakpoint (py-3 plus h-11 / h-12 / h-14) so
+   there's no jump before JS measures the real height. */
+.nav-spacer { height: 68px; }
+@media (min-width: 640px)  { .nav-spacer { height: 72px; } }
+@media (min-width: 1024px) { .nav-spacer { height: 80px; } }
+
+/* While riding, script.js writes transform every scroll frame and must not be
+   animated — the transform IS the scroll position. The transition only comes
+   on once docked, which is what makes the drop read as a deliberate slide
+   rather than a jump. */
+.nav-bar.is-docked {
+  transition: transform .38s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-bar.is-docked { transition: box-shadow .35s ease; }
+}
+
+/* ---- Torn-paper edge ------------------------------------------------- */
+/* A strip painted the colour of whatever comes next, masked so its top edge
+   is ragged — it sits over the foot of the section above, so the tear reads
+   against that section's imagery rather than against flat colour. */
+.torn-edge {
+  position: absolute; left: 0; right: 0; bottom: -1px;
+  /* Tall enough for the deep bites in the mask to actually land — at 34px
+     they were clipped down to a ripple. */
+  height: 58px; z-index: 2; pointer-events: none;
+  -webkit-mask-image: url("/assets/img/torn-edge.svg");
+          mask-image: url("/assets/img/torn-edge.svg");
+  -webkit-mask-size: 100% 100%;  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+.torn-edge--cream { background: var(--cream); }
+.torn-edge--white { background: #fff; }
+@media (min-width: 1024px) { .torn-edge { height: 78px; } }
 
 /* ---- Navbar right cluster (language · WhatsApp · quote) -------------- */
 .lang-chip {
@@ -358,11 +465,15 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
    reads as a moody backdrop rather than a bright stock image. */
 .hero-photo.loaded { opacity: .45; filter: saturate(.92); }
 
+/* Sits on the hero photo's white centre, so it's a light pill with a brand
+   tint rather than the translucent-white-on-dark treatment it had when the
+   hero was a navy gradient. */
 .badge-pill {
   display: inline-flex; align-items: center; gap: .55rem;
   padding: .5rem 1rem; border-radius: 999px; font-size: .82rem; font-weight: 500;
-  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
-  color: #dbe4f7; backdrop-filter: blur(6px);
+  background: rgba(255,255,255,.82); border: 1px solid #dbe5f6;
+  color: var(--brand); backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px -12px rgba(31,70,147,.5);
 }
 
 /* ---- Image placeholder (premium gradient + emoji) -------------------- */
@@ -1053,7 +1164,9 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 .reveal.in .cat-index::after { transform: scaleX(1); }
 .cat-emoji { font-size: 1.8rem; }
-.cat-name { font: 800 clamp(1.4rem,2.6vw,1.9rem)/1.1 "Sora", sans-serif; color: #16265a; margin-top: .7rem; }
+/* Category headings on /products carry the display face, sized up to hold the
+   same weight as the Sora setting they replace. */
+.cat-name { font: 400 clamp(1.9rem,3.5vw,2.6rem)/1.12 var(--font-display); color: #16265a; margin-top: .7rem; }
 .cat-desc { color: #54627d; margin-top: .7rem; line-height: 1.65; }
 .cat-row-foot { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .cat-cta { display: inline-flex; align-items: center; gap: .5rem; font: 600 .95rem "Sora", sans-serif; color: #fff; background: linear-gradient(135deg, var(--from), var(--to)); padding: .7rem 1.3rem; border-radius: 999px; transition: transform .2s ease, box-shadow .25s ease; box-shadow: 0 14px 26px -14px rgba(13,26,54,.5); }
@@ -1728,21 +1841,39 @@ html.lenis, html.lenis body { height: auto; }
    ========================================================================= */
 #home.hero-flatlay {
   position: relative; isolation: isolate; overflow: hidden;
-  min-height: 100vh; /* always full viewport height — never shrunk on short screens */
-  background: linear-gradient(160deg, #0d1a36 0%, #122a52 55%, #1f4693 130%); /* shows before the photo loads */
+  background: #fff; /* shows before the photo loads — the photo is white-ground */
+  padding: 2.5rem 0 3.5rem;
+  /* Fills everything below the navbar. The photo carries its own white margin
+     at the right and bottom edges; sizing the section to the viewport rather
+     than to the image's aspect ratio lets object-fit:cover crop that margin
+     away, so ingredients run to all four edges. The section runs a full 100vh
+     while the navbar (~80px) sits above it in normal flow, which puts the
+     torn bottom edge just below the fold — you only meet it once you scroll. */
+  min-height: 100vh;
+  /* svh keeps mobile browsers honest: plain vh measures the viewport with the
+     URL bar retracted, so the hero overshoots the visible area on first paint
+     and the copy drifts below the fold. */
+  min-height: 100svh;
+  display: flex; align-items: center;
+}
+/* Phones: a shorter hero. Filling a 0.46-aspect screen means showing a 0.46
+   slice of the photo whatever crop you feed it, and at full height that
+   magnifies three chillies to fill the viewport. Backing off to ~72svh shows
+   the portrait crop close to its full width, so the framing reads — and it
+   brings the torn edge into view near the fold, which suits a phone. */
+@media (max-width: 640px) {
+  #home.hero-flatlay { min-height: 72svh; }
 }
 /* Narrow phones: the uppercase 3-line headline needs a bit less size so the
    page doesn't get excessively tall; the image itself still fills 100vh. */
 @media (max-width: 480px) {
   #home .hero-flatlay-title { font-size: 1.85rem; line-height: 1.16; }
-  #home .hero-flatlay-sub { font-size: .9rem; line-height: 1.5; }
   #home .hero-cta-row { margin-top: 1rem; gap: .6rem !important; }
   #home .hero-cta-row .btn { padding: .68rem 1.2rem; font-size: .88rem; }
-  #home .hero-stats-row { margin-top: 1.75rem; gap: .5rem; }
-  #home .hero-stat--bar { padding: .6rem .8rem; gap: .55rem; }
-  #home .hero-stat--bar .hs-ico { width: 32px; height: 32px; }
-  #home .hero-stat--bar .stat-num-dark { font-size: 1.05rem; }
-  #home .hero-stat--bar .hero-stat-label { font-size: .66rem; }
+  .hero-stat--bar { padding: .7rem .9rem; gap: .55rem; }
+  .hero-stat--bar .hs-ico { width: 32px; height: 32px; }
+  .hero-stat--bar .stat-num-dark { font-size: 1.05rem; }
+  .hero-stat--bar .hero-stat-label { font-size: .66rem; }
 }
 /* Bring the real photo up to near-full strength (base .hero-photo default
    is a dim .45 tint meant for the abstract gradient hero) so it reads at
@@ -1750,7 +1881,10 @@ html.lenis, html.lenis body { height: auto; }
 /* A very light blur across the whole photo (not just the center shade)
    softens it just enough to sit behind the copy comfortably, without
    losing the "close-up ingredients" detail the shot is chosen for. */
-#home.hero-flatlay .hero-photo.loaded { opacity: .98; filter: saturate(1.02) blur(1.5px); }
+/* Full strength, no blur and no scrim: the copy sits in the photo's empty
+   centre, so nothing needs to be dimmed to make type readable. */
+#home.hero-flatlay .hero-photo.loaded { opacity: 1; filter: none; }
+#home.hero-flatlay .hero-photo { object-position: center; }
 
 /* Very light, uniform veil — a gentle top-to-bottom gradient across the
    FULL width (never just a patch behind the text), tuned low enough that
@@ -1781,15 +1915,16 @@ html.lenis, html.lenis body { height: auto; }
   }
 }
 
+/* Hand-drawn display face, in the olive green the reference sites use for
+   their headline. Uppercase is dropped — a brush script set in caps loses the
+   ascender/descender rhythm that makes it read as handwriting — and the size
+   goes up accordingly, since script faces have a much smaller apparent
+   x-height than Sora at the same point size. */
 .hero-flatlay-title {
-  font-family: var(--font-head); font-weight: 800; letter-spacing: -.03em;
-  color: #fff; line-height: 1.1; text-transform: uppercase;
-  font-size: clamp(2.1rem, 4.8vw, 3.7rem);
-  /* Tight near-glyph shadow first (a soft "outline") to guard against
-     bright hot-spots in the photo — e.g. a pale bowl rim sitting right
-     behind a letter — followed by the wider ambient shadows for depth. */
-  text-shadow: 0 0 3px rgba(13,26,54,.9), 0 1px 3px rgba(13,26,54,.9),
-    0 2px 6px rgba(13,26,54,.8), 0 10px 30px rgba(13,26,54,.7);
+  font-family: var(--font-display); font-weight: 400; letter-spacing: 0;
+  color: var(--olive); line-height: 1.02; text-transform: none;
+  font-size: clamp(3rem, 7.4vw, 6.2rem);
+  text-shadow: 0 1px 0 rgba(255,255,255,.75);
 }
 .hero-flatlay-sub {
   font-family: var(--font-body); font-weight: 400;
@@ -1800,14 +1935,15 @@ html.lenis, html.lenis body { height: auto; }
 }
 
 /* ---- Stats — one frosted glass strip, blurred photo showing through --- */
+/* The stats sit on the cream band under the hero now, not over the photo,
+   so this is a light card rather than dark frosted glass. */
+.hero-stats-band { padding: 2.25rem 0 .5rem; }
 .hero-stats-row {
   display: flex; flex-wrap: wrap; justify-content: center;
-  background: rgba(20, 26, 36, .3);
-  border: 1px solid rgba(255,255,255,.2);
+  background: #fff;
+  border: 1px solid #e7edf7;
   border-radius: 1.25rem;
-  backdrop-filter: blur(18px) saturate(1.3);
-  -webkit-backdrop-filter: blur(18px) saturate(1.3);
-  box-shadow: 0 18px 44px -20px rgba(0,0,0,.55);
+  box-shadow: 0 14px 34px -24px rgba(31,70,147,.45);
 }
 .hero-stat--bar {
   background: transparent; border: none; box-shadow: none; backdrop-filter: none;
@@ -1817,18 +1953,16 @@ html.lenis, html.lenis body { height: auto; }
 }
 .hero-stat--bar:not(:first-child)::before {
   content: ""; position: absolute; left: 0; top: 22%; bottom: 22%; width: 1px;
-  background: rgba(255,255,255,.22);
+  background: #e7edf7;
 }
-.hero-stat--bar:hover { background: rgba(255,255,255,.07); transform: none; }
+.hero-stat--bar:hover { background: #f8fafe; transform: none; }
 .hero-stat--bar .hs-ico { width: 38px; height: 38px; border-radius: 10px; }
 .hero-stat--bar .stat-num-dark {
   font-family: var(--font-head); font-weight: 800; line-height: 1;
-  font-size: 1.25rem; color: #cfe3fb;
-  text-shadow: 0 1px 8px rgba(0,0,0,.4);
+  font-size: 1.25rem; color: var(--brand);
 }
 .hero-stat--bar .hero-stat-label {
-  font-size: .72rem; font-weight: 500; color: rgba(255,255,255,.88);
-  text-shadow: 0 1px 6px rgba(0,0,0,.35);
+  font-size: .72rem; font-weight: 500; color: #64748b;
 }
 @media (max-width: 480px) {
   .hero-stats-row { flex-direction: column; width: 100%; }

@@ -10,7 +10,8 @@ const isBlog = path === "/blogs" || path.startsWith("/blogs/");
 const isCert = path === "/certifications";
 const isExport = path === "/how-we-export";
 ---
-<header id="navbar" class="nav-bar sticky top-0 z-50 w-full">
+<div id="navSpacer" class="nav-spacer" aria-hidden="true"></div>
+<header id="navbar" class="nav-bar z-50 w-full">
     <nav class="max-w-7xl mx-auto px-2 sm:px-5 lg:px-10 flex items-center justify-between gap-1.5 sm:gap-4 py-3">
       <!-- Logo (larger). The negative left-offset compensates for built-in
            padding in the SVG artwork so the mark visually lines up with the

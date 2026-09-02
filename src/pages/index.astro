@@ -35,36 +35,32 @@ const partnerCerts = [
 <!-- =====================================================================
        HERO
        ===================================================================== -->
-  <section id="home" class="hero hero-flatlay relative flex items-center min-h-screen pt-16 pb-28">
-    <!-- Full-bleed close-up photo. Loaded directly (not gated behind JS) with
-         fetchpriority="high" so the browser's preload scanner can start
-         fetching it the moment it parses this tag — this is the page's LCP
-         element, so waiting on a script to swap in a data-src was actively
-         working against load speed. WebP first (~365KB vs the 1.3MB source
-         JPEG), JPEG fallback for the handful of browsers that don't support
-         it. The navy gradient behind it (see .hero-flatlay CSS) still shows
-         through the fade-in transition on first paint either way. A
-         separate, smaller source below 768px: object-fit:cover only ever
-         needs viewport-width resolution, so mobile has no business
-         downloading the same 2400px-wide asset desktop does — that gap was
-         most of the LCP delta between the two. -->
+  <section id="home" class="hero hero-flatlay relative flex items-center">
+    <!-- Light flat-lay hero. The composition is a border of ingredients around
+         an intentionally empty centre, which is where the copy sits — so the
+         photo needs no scrim and the type is dark rather than white. Loaded
+         directly (not behind JS) with fetchpriority="high": it's the LCP
+         element, so waiting on a script to swap in a data-src worked against
+         load speed. Separate smaller source below 768px — object-fit:cover
+         only ever needs viewport-width resolution. -->
     <picture>
-      <source media="(max-width: 768px)" srcset="/assets/img/hero/spice-flatlay-center-mobile.webp" type="image/webp" />
-      <source srcset="/assets/img/hero/spice-flatlay-center.webp" type="image/webp" />
+      <!-- Phones get a portrait crop, not just a smaller copy of the wide one.
+           A 21:9 frame can't fill a 9:19.5 screen without magnifying a couple
+           of chillies to fill the whole viewport; the portrait slice keeps the
+           top and bottom ingredient bands at a sane scale, with the empty
+           centre the copy sits in. -->
+      <source media="(max-width: 640px)" srcset="/assets/img/hero/hero-flatlay-2026-portrait.webp" type="image/webp" />
+      <source media="(max-width: 1024px)" srcset="/assets/img/hero/hero-flatlay-2026-mobile.webp" type="image/webp" />
+      <source srcset="/assets/img/hero/hero-flatlay-2026.webp" type="image/webp" />
       <img
         class="hero-photo"
-        src="/assets/img/hero/spice-flatlay-center.jpg"
+        src="/assets/img/hero/hero-flatlay-2026.jpg"
         alt=""
         aria-hidden="true"
         fetchpriority="high"
         onload="this.classList.add('loaded')"
       />
     </picture>
-    <!-- Very light, uniform veil — just enough for text contrast, no visible shape -->
-    <div class="hero-flatlay-veil" aria-hidden="true"></div>
-    <!-- Soft warm-brown blur behind the center text column, feathered so it
-         blends into the wood rather than reading as a distinct panel -->
-    <div class="hero-center-shade" aria-hidden="true"></div>
 
     <div class="relative z-[1] max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col items-center text-center">
       <span class="badge-pill reveal">🌿 <span data-i18n="home.hero_eyebrow">Merchant exporter of dehydrated foods · India</span></span>
@@ -72,44 +68,20 @@ const partnerCerts = [
       <h1 class="hero-flatlay-title reveal d1 mt-5">
         <span data-i18n="home.hero_tagline">India's Harvest,<br />Preserved for the<br />World.</span>
       </h1>
-      <p class="hero-flatlay-sub reveal d2 mt-4">
-        <span data-i18n="home.hero_sub">Freshly harvested Indian produce, turned into shelf-stable flakes,
-        granules and powders — trusted worldwide for steady supply and consistent quality.</span>
-      </p>
 
-      <div class="hero-cta-row reveal d3 flex flex-wrap gap-4 mt-7 justify-center">
+      <div class="hero-cta-row reveal d2 flex flex-wrap gap-4 mt-7 justify-center">
         <a href="/products" class="btn btn-primary"><span data-i18n="home.hero_cta_explore">Explore Products</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a href="/contact" class="btn btn-ghost"><span data-i18n="home.hero_cta_quote">Request a Quote</span></a>
       </div>
-
-      <!-- Stats — three separate cards, well clear of the buttons above -->
-      <div class="hero-stats-row reveal d4 mt-16">
-        <div class="hero-stat hero-stat--bar">
-          <span class="hs-ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg></span>
-          <div class="text-left">
-            <div class="stat-num-dark" data-count="40" data-suffix="+">0</div>
-            <div class="hero-stat-label"><span data-i18n="home.hero_stat1_label">Dehydrated SKUs &amp; grades</span></div>
-          </div>
-        </div>
-        <div class="hero-stat hero-stat--bar">
-          <span class="hs-ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>
-          <div class="text-left">
-            <div class="stat-num-dark" data-count="5" data-suffix="+">0</div>
-            <div class="hero-stat-label"><span data-i18n="home.hero_stat2_label">Countries served worldwide</span></div>
-          </div>
-        </div>
-        <div class="hero-stat hero-stat--bar">
-          <span class="hs-ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-          <div class="text-left">
-            <div class="stat-num-dark">100%</div>
-            <div class="hero-stat-label"><span data-i18n="home.hero_stat3_label">Quality-checked batches</span></div>
-          </div>
-        </div>
-      </div>
     </div>
+
+    <!-- Torn-paper edge: a strip the colour of the section below, masked so its
+         top edge is ragged, sitting over the foot of the photo. -->
+    <div class="torn-edge torn-edge--cream" aria-hidden="true"></div>
   </section>
+
 
   <!-- =====================================================================
        WHAT WE EXPORT
@@ -118,7 +90,7 @@ const partnerCerts = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl reveal">
         <span class="eyebrow"><span data-i18n="home.products_eyebrow">Product Range</span></span>
-        <h2 class="tg-1 font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.products_heading">Powders and ingredients for every formulation</span></h2>
+        <h2 class="tg-1 tg-script font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.products_heading">Powders and ingredients for every formulation</span></h2>
         <p class="text-slate-500 text-lg mt-4"><span data-i18n="home.products_sub">Indian-grown produce, dried and milled into clean powders and food-grade ingredients. Each grade is made for long shelf life, true flavour and reliable performance in your recipes.</span></p>
       </div>
 
@@ -220,7 +192,7 @@ const partnerCerts = [
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div class="lg:col-span-4">
             <span class="eyebrow"><span data-i18n="home.why_dehydrated_eyebrow">Why Dehydrated</span></span>
-            <h2 class="tg-2 font-extrabold text-3xl sm:text-4xl mt-4 leading-tight"><span data-i18n="home.why_dehydrated_heading">Smaller, lighter, longer&#8209;lasting</span></h2>
+            <h2 class="tg-2 tg-script tg-script--md font-extrabold text-3xl sm:text-4xl mt-4 leading-tight"><span data-i18n="home.why_dehydrated_heading">Smaller, lighter, longer&#8209;lasting</span></h2>
             <p class="text-slate-500 mt-3 leading-relaxed"><span data-i18n="home.why_dehydrated_sub">Take out the water and you keep the goodness while cutting the cost and hassle of moving it.</span></p>
           </div>
           <div class="lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -253,14 +225,14 @@ const partnerCerts = [
   <!-- =====================================================================
        INDUSTRIES WE SERVE (split — image left, list right)
        ===================================================================== -->
-  <section id="industries" class="py-24 bg-cream">
+  <section id="industries" class="py-24 bg-mist">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="reveal from-left">
         <div class="img-ph rounded-3xl h-[300px] sm:h-[420px]" data-emoji="🥘" data-img="/assets/img/misc/industries-we-serve-v2.webp"></div>
       </div>
       <div class="reveal d1 from-right">
         <span class="eyebrow"><span data-i18n="home.industries_eyebrow">Who We Serve</span></span>
-        <h2 class="tg-4 font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.industries_heading">Industries we serve</span></h2>
+        <h2 class="tg-4 tg-script font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.industries_heading">Industries we serve</span></h2>
         <p class="text-slate-500 text-lg mt-4"><span data-i18n="home.industries_sub">We supply dehydrated ingredients to businesses that build flavour into their products:</span></p>
         <ul class="mt-6 space-y-3 text-slate-600">
           <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="home.industries_list1">Food &amp; beverage manufacturers</span></li>
@@ -283,7 +255,7 @@ const partnerCerts = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center"><span data-i18n="home.edge_eyebrow">The Clarté Edge</span></span>
-        <h2 class="tg-3 font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.edge_heading">Why buyers choose Clarté Overseas</span></h2>
+        <h2 class="tg-3 tg-script font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.edge_heading">Why buyers choose Clarté Overseas</span></h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-7 mt-14">
@@ -382,7 +354,7 @@ const partnerCerts = [
       <!-- Copy + stats (now on the left) -->
       <div class="reveal d1 from-left lg:order-1">
         <span class="eyebrow light" data-i18n="home.quality_eyebrow">Our Process</span>
-        <h2 class="text-white font-extrabold text-3xl sm:text-4xl mt-4 leading-tight" data-i18n="home.quality_heading">Quality controlled,<br class="hidden sm:block" /> batch by batch.</h2>
+        <h2 class="tg-script tg-script--md text-white font-extrabold text-3xl sm:text-4xl mt-4 leading-tight" data-i18n="home.quality_heading">Quality controlled,<br class="hidden sm:block" /> batch by batch.</h2>
         <p class="text-slate-300 mt-5 leading-relaxed" data-i18n="home.quality_sub">
           Every lot is made in hygienic, certified facilities under tight quality control. We grade the raw material, test moisture and microbial counts, run metal detection, then do a final check before it leaves for dispatch.
         </p>
@@ -414,12 +386,12 @@ const partnerCerts = [
   <!-- =====================================================================
        MARKETS WE SERVE
        ===================================================================== -->
-  <section id="markets" class="py-24 bg-cream">
+  <section id="markets" class="py-24 bg-mist">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="sec-wm text-center max-w-2xl mx-auto reveal">
         <span class="sec-wm-word" aria-hidden="true">Global</span>
         <span class="eyebrow center"><span data-i18n="home.markets_eyebrow">Export Footprint</span></span>
-        <h2 class="tg-6 font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.markets_heading">Where our produce travels</span></h2>
+        <h2 class="tg-6 tg-script font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.markets_heading">Where our produce travels</span></h2>
         <p class="text-slate-500 text-lg mt-4"><span data-i18n="home.markets_sub">From the US and UK to the Gulf, Australia and South-East Asia, Clarté Overseas supplies importers, processors and distributors across multiple continents, and the map keeps growing.</span></p>
       </div>
 
@@ -445,7 +417,7 @@ const partnerCerts = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center"><span data-i18n="home.working_eyebrow">Working With Us</span></span>
-        <h2 class="tg-7 font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.working_heading">Sourcing made simple</span></h2>
+        <h2 class="tg-7 tg-script font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.working_heading">Sourcing made simple</span></h2>
         <p class="text-slate-500 text-lg mt-4"><span data-i18n="home.working_sub">From a first trial order to repeat container loads, we keep things flexible, clear and ready for export.</span></p>
       </div>
 
@@ -493,7 +465,7 @@ const partnerCerts = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center"><span data-i18n="home.certs_eyebrow">Standards &amp; Trust</span></span>
-        <h2 class="tg-8 font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.certs_heading">Certified &amp; compliant</span></h2>
+        <h2 class="tg-8 tg-script font-extrabold text-4xl sm:text-5xl mt-4"><span data-i18n="home.certs_heading">Certified &amp; compliant</span></h2>
         <p class="text-slate-500 text-lg mt-4"><span data-i18n="home.certs_sub">The paperwork and certifications that move your shipments through customs faster and give buyers one less thing to worry about.</span></p>
       </div>
 
@@ -530,7 +502,12 @@ const partnerCerts = [
   <section id="quote" class="py-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="hero rounded-[2rem] px-8 py-16 sm:px-16 text-center relative overflow-hidden">
-        <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal"><span data-i18n="home.cta_heading">Ready to source from India?</span></h2>
+        <!-- data-i18n-html (not data-i18n) so the tricolour span survives in
+             the English default. Translations replace the innerHTML with plain
+             text, so they fall back to white — the word for India sits in a
+             different position in each language, and hand-placing the span
+             across 17 locales would be far more fragile than losing a flourish. -->
+        <h2 class="text-white font-extrabold text-3xl sm:text-5xl reveal"><span data-i18n-html="home.cta_heading">Ready to source from <span class="tricolour">India</span>?</span></h2>
         <p class="text-slate-300 text-lg mt-5 max-w-xl mx-auto reveal d1"><span data-i18n="home.cta_sub">Tell us what you need and where it is headed. We will reply with specs, samples and a quote in your currency.</span></p>
         <div class="flex flex-wrap justify-center gap-4 mt-9 reveal d2">
           <a href="#" data-wa data-wa-msg="Hi Clarté Overseas, I visited your website and I'm interested in importing your dehydrated fruits, vegetables or powders. Can we discuss?" class="btn btn-wa"><span data-i18n="home.cta_btn_whatsapp">Chat on WhatsApp</span>
