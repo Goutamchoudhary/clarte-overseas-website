@@ -18,7 +18,7 @@
   "footer.tagline": "Exportant fièrement depuis l'Inde",
 
   "home.hero_eyebrow": "Exportateur de produits alimentaires déshydratés · Inde",
-  "home.hero_tagline": "La Récolte de l'Inde, Préservée pour le Monde.",
+  "home.hero_tagline": "<span class=\"hero-tagline-highlight\">La Récolte de l'Inde</span>,<br />Préservée pour le Monde.",
   "home.hero_sub": "Produits indiens fraîchement récoltés, transformés en flocons, granulés et poudres stables — fiabilité et qualité constante, reconnues dans le monde entier.",
   "home.hero_cta_explore": "Explorer les Produits",
   "home.hero_cta_quote": "Demander un Devis",

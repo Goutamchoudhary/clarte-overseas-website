@@ -18,7 +18,7 @@
   "footer.tagline": "Hindistan'dan gururla ihracat",
 
   "home.hero_eyebrow": "Kurutulmuş gıdaların ticari ihracatçısı · Hindistan",
-  "home.hero_tagline": "Hindistan'ın Hasadı, Dünya İçin Korunuyor.",
+  "home.hero_tagline": "<span class=\"hero-tagline-highlight\">Hindistan'ın Hasadı</span>,<br />Dünya İçin Korunuyor.",
   "home.hero_sub": "Taze hasat edilmiş Hint ürünleri, raf ömrü uzun pul, granül ve toz hâline getirilir — dünya çapında güvenilir tedarik ve tutarlı kalite için tercih edilir.",
   "home.hero_cta_explore": "Ürünleri Keşfedin",
   "home.hero_cta_quote": "Teklif İsteyin",

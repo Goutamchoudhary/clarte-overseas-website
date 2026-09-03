@@ -18,7 +18,7 @@
   "footer.tagline": "Con orgoglio, esportiamo dall'India",
 
   "home.hero_eyebrow": "Merchant exporter di alimenti disidratati · India",
-  "home.hero_tagline": "Il Raccolto dell'India, Conservato per il Mondo.",
+  "home.hero_tagline": "<span class=\"hero-tagline-highlight\">Il Raccolto dell'India</span>,<br />Conservato per il Mondo.",
   "home.hero_sub": "Prodotti indiani appena raccolti, trasformati in fiocchi, granuli e polveri stabili — affidabilità globale per una fornitura costante e una qualità uniforme.",
   "home.hero_cta_explore": "Esplora i Prodotti",
   "home.hero_cta_quote": "Richiedi un Preventivo",

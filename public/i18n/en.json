@@ -18,7 +18,7 @@
   "footer.tagline": "Proudly exporting from India",
 
   "home.hero_eyebrow": "Merchant exporter of dehydrated foods · India",
-  "home.hero_tagline": "India's Harvest, Preserved for the World.",
+  "home.hero_tagline": "<span class=\"hero-tagline-highlight\">India's Harvest</span>,<br />Preserved for the World.",
   "home.hero_sub": "Freshly harvested Indian produce, turned into shelf-stable flakes, granules and powders — trusted worldwide for steady supply and consistent quality.",
   "home.hero_cta_explore": "Explore Products",
   "home.hero_cta_quote": "Request a Quote",

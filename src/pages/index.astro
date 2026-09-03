@@ -64,8 +64,11 @@ const partnerCerts = [
     <div class="relative z-[1] max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col items-center text-center">
       <span class="badge-pill reveal">🌿 <span data-i18n="home.hero_eyebrow">Merchant exporter of dehydrated foods · India</span></span>
 
+      <!-- data-i18n-html (not data-i18n) so the terracotta highlight on the
+           opening clause, and the line breaks, survive a language switch —
+           data-i18n only ever carries plain text. -->
       <h1 class="hero-flatlay-title reveal d1 mt-5">
-        <span data-i18n="home.hero_tagline">India's Harvest,<br />Preserved for the<br />World.</span>
+        <span data-i18n-html="home.hero_tagline"><span class="hero-tagline-highlight">India's Harvest</span>,<br />Preserved for the<br />World.</span>
       </h1>
 
       <div class="hero-cta-row reveal d2 flex flex-wrap gap-4 mt-7 justify-center">

@@ -18,7 +18,7 @@
   "footer.tagline": "نُصدّر من الهند بكل فخر",
 
   "home.hero_eyebrow": "مصدّر تجاري للأغذية المجففة · الهند",
-  "home.hero_tagline": "حصاد الهند، محفوظ من أجل العالم.",
+  "home.hero_tagline": "<span class=\"hero-tagline-highlight\">حصاد الهند</span>،<br />محفوظ من أجل العالم.",
   "home.hero_sub": "منتجات هندية طازجة الحصاد، تُحوَّل إلى رقائق وحبيبات ومساحيق ثابتة — موثوقة عالميًا لإمداد ثابت وجودة متسقة.",
   "home.hero_cta_explore": "استكشف المنتجات",
   "home.hero_cta_quote": "اطلب عرض سعر",

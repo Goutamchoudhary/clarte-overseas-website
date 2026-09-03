@@ -1963,6 +1963,9 @@ html.lenis, html.lenis body { height: auto; }
   font-size: clamp(3rem, 7.4vw, 6.2rem);
   text-shadow: 0 1px 0 rgba(255,255,255,.75);
 }
+/* The opening clause only ("India's Harvest") — same font and weight as the
+   rest of the title, just the terracotta brand color in place of olive. */
+.hero-tagline-highlight { color: var(--terracotta); }
 .hero-flatlay-sub {
   font-family: var(--font-body); font-weight: 400;
   color: #f5f7fc; font-size: 1.1rem; line-height: 1.65;

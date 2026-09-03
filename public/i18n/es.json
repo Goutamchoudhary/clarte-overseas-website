@@ -18,7 +18,7 @@
   "footer.tagline": "Exportando con orgullo desde India",
 
   "home.hero_eyebrow": "Exportador mayorista de alimentos deshidratados · India",
-  "home.hero_tagline": "La cosecha de India, conservada para el mundo.",
+  "home.hero_tagline": "<span class=\"hero-tagline-highlight\">La cosecha de India</span>,<br />conservada para el mundo.",
   "home.hero_sub": "Producto indio recién cosechado, transformado en escamas, gránulos y polvos estables — confianza mundial en suministro constante y calidad uniforme.",
   "home.hero_cta_explore": "Explorar Productos",
   "home.hero_cta_quote": "Solicitar Cotización",
