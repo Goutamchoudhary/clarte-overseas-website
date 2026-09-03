@@ -19,9 +19,10 @@
   --cream: #faf6ec;
   --font-head: "Sora", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
-  /* Hand-drawn display face. Now the HERO HEADLINE ONLY — at section-heading
-     sizes and repeated down the page it read as childish. */
-  --font-display: "Caveat Brush", "Bradley Hand", cursive;
+  /* Hero headline face. Was Caveat Brush (hand-drawn) — read as childish, so
+     the hero now shares Fraunces with the rest of the page, in italic to
+     still read as a headline rather than a subhead. */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   /* Section headings. Fraunces is a soft, slightly wonky serif built for
      food and drink — warm and characterful without the marker-pen feel. */
   --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
@@ -1961,15 +1962,18 @@ html.lenis, html.lenis body { height: auto; }
   }
 }
 
-/* Hand-drawn display face, in the olive green the reference sites use for
-   their headline. Uppercase is dropped — a brush script set in caps loses the
-   ascender/descender rhythm that makes it read as handwriting — and the size
-   goes up accordingly, since script faces have a much smaller apparent
-   x-height than Sora at the same point size. */
+/* Fraunces Italic — the same serif already carrying every section heading,
+   just in italic and a heavier weight so the hero still reads as THE
+   headline rather than a large subhead. font-size comes down from the old
+   handwritten-script clamp: a serif at that size read oversized, since
+   serifs have a much larger apparent x-height than a script face does at
+   the same point size. */
 .hero-flatlay-title {
-  font-family: var(--font-display); font-weight: 400; letter-spacing: 0;
-  color: var(--olive); line-height: 1.02; text-transform: none;
-  font-size: clamp(3rem, 7.4vw, 6.2rem);
+  font-family: var(--font-display); font-weight: 560; font-style: italic;
+  font-optical-sizing: auto; font-variation-settings: "SOFT" 40, "WONK" 0;
+  letter-spacing: -.01em;
+  color: var(--olive); line-height: 1.05; text-transform: none;
+  font-size: clamp(2.4rem, 5.8vw, 4.7rem);
   text-shadow: 0 1px 0 rgba(255,255,255,.75);
 }
 /* The opening clause only ("India's Harvest") — same font and weight as the
