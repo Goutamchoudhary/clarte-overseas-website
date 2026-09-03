@@ -1921,6 +1921,15 @@ html.lenis, html.lenis body { height: auto; }
   width: 100%;
   height: var(--hero-h, 100svh);
   object-position: center;
+  transition: transform .5s ease;
+}
+/* The one-time lift itself — see the onEnter/onLeaveBack pair in
+   home-fx.js. A transform, so it stays compositor-only like the fixed
+   positioning above it; small, because the point is just to unstick the
+   navbar's rounded corners from a static-looking image, not to reintroduce
+   a moving background. */
+#home.hero-flatlay.curtain-started .hero-photo {
+  transform: translateY(-18px);
 }
 
 /* Very light, uniform veil — a gentle top-to-bottom gradient across the

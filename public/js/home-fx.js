@@ -36,7 +36,12 @@
     // arriving from any other page), since this is a classic multi-page
     // site with no client-side routing to persist state across navigations.
     gsap.timeline({ defaults: { ease: "power2.out" } })
-      .from("#home .hero-photo", { scale: 1.04, duration: 0.6 }, 0)
+      // clearProps here too: GSAP's .from() leaves an inline transform on
+      // the element once the tween ends, and — being inline — it outranks
+      // any later CSS transform at any specificity, including the
+      // curtain-started lift below. Without this the intro tween silently
+      // pins the photo at scale(1.04) forever and the lift never applies.
+      .from("#home .hero-photo", { scale: 1.04, duration: 0.6, clearProps: "transform" }, 0)
       // The veil + brown center shade are background layers, not content —
       // they fade in place (no y-movement) right under everything else.
       .from("#home .hero-flatlay-veil, #home .hero-center-shade", { autoAlpha: 0, duration: 0.55 }, 0)
@@ -124,6 +129,19 @@
       scrollTrigger: {
         trigger: hero, start: "top top", end: "66% top",
         scrub: true,
+        // A small one-time lift on the still photo, not more scrubbing: at
+        // rest the navbar's rounded bottom corners sit against whatever the
+        // photo shows there, which reads fine while nothing is moving — but
+        // the instant you scroll, the copy above starts sliding/fading and
+        // the frozen photo underneath the corners looks inert by contrast,
+        // like the curtain effect forgot the top of the frame. onEnter/
+        // onLeaveBack fire once each at this same "top top" boundary — the
+        // instant the curtain effect begins/reverses — flipping a class that
+        // CSS eases with its own transition, so this is a single class
+        // toggle, not per-frame work, and can't reintroduce the scrub jank
+        // the fixed photo was built to avoid.
+        onEnter: () => hero.classList.add("curtain-started"),
+        onLeaveBack: () => hero.classList.remove("curtain-started"),
       },
     });
   }
