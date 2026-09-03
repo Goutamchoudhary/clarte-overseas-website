@@ -1825,6 +1825,12 @@ html.lenis, html.lenis body { height: auto; }
    ========================================================================= */
 #home.hero-flatlay {
   position: relative; isolation: isolate; overflow: hidden;
+  /* clip-path, not just overflow:hidden, because the curtain photo is
+     position:fixed and overflow doesn't clip fixed descendants. clip-path
+     does — and, unlike transform/filter/will-change, it does NOT make this
+     element a containing block for them, so the photo stays anchored to the
+     viewport. That distinction is the whole trick; see .hero-photo below. */
+  clip-path: inset(0);
   background: #fff; /* shows before the photo loads — the photo is white-ground */
   padding: 2.5rem 0 3.5rem;
   /* Fills everything below the navbar. The photo carries its own white margin
@@ -1889,7 +1895,33 @@ html.lenis, html.lenis body { height: auto; }
   opacity: 1;
   filter: blur(.6px);
 }
-#home.hero-flatlay .hero-photo { object-position: center; }
+
+/* The curtain: the photo holds still while the section scrolls up over it,
+   so the torn bottom edge rises like a curtain being drawn.
+
+   position:fixed, not a GSAP transform. On a phone, touch scrolling and its
+   momentum run on the compositor thread, while a JS-driven counter-transform
+   is computed on the main thread — the two drift a frame or more apart on
+   every flick, so an image that is supposed to look perfectly still instead
+   wobbles by the frame-to-frame scroll delta. A fixed element is held in
+   place by the compositor itself, so there is nothing to fall behind and no
+   per-frame work at all (which also stops the blur above being
+   re-rasterised on every frame).
+
+   Fixed means viewport-relative, so it has to be told where the hero
+   actually sits: --hero-top is the hero's offset below the navbar and
+   --hero-h its height, both written once by home-fx.js and refreshed only on
+   a real resize. The fallbacks keep the framing sane if that script never
+   runs. */
+#home.hero-flatlay .hero-photo {
+  position: fixed;
+  inset: auto;
+  top: var(--hero-top, 0px);
+  left: 0;
+  width: 100%;
+  height: var(--hero-h, 100svh);
+  object-position: center;
+}
 
 /* Very light, uniform veil — a gentle top-to-bottom gradient across the
    FULL width (never just a patch behind the text), tuned low enough that

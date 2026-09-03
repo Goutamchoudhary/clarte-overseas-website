@@ -12,6 +12,10 @@
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   gsap.registerPlugin(ScrollTrigger);
+  // Mobile browsers fire resize every time the URL bar slides in or out, and
+  // a ScrollTrigger refresh mid-scroll snaps every scrubbed tween to freshly
+  // measured positions — which reads as the page juddering while you drag.
+  ScrollTrigger.config({ ignoreMobileResize: true });
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
   const html = document.documentElement;
@@ -61,47 +65,67 @@
     /* Curtain reveal.
 
        The photo holds still while the section scrolls up over it, so the torn
-       bottom edge rises like a curtain being drawn up.
+       bottom edge rises like a curtain being drawn up. No pinning and no
+       scroll-jacking — the page scrolls at its normal 1:1 rate, the section's
+       clip-path does the revealing, and the visible slice of the photo shrinks
+       from the bottom as the section's lower edge (and the torn strip pinned
+       to it) travels up the screen.
 
-       No pinning involved — the page scrolls at its normal 1:1 rate. The photo
-       just counter-translates: the section moves up by `scrollY`, the image
-       moves down by the same amount, so it lands back in the same place on
-       screen and reads as stationary. The section's own overflow:hidden then
-       does the revealing — the visible slice of the photo shrinks from the
-       bottom as the section's lower edge (and the torn strip pinned to it)
-       travels up the screen.
+       The photo itself is held still by CSS position:fixed rather than by a
+       scrubbed counter-transform. The transform version wobbled badly on
+       phones: touch scrolling runs on the compositor, the tween ran on the
+       main thread, and the gap between them showed up as the "still" image
+       vibrating on every flick. See the .hero-photo rule in styles.css.
 
-       Same behaviour at every breakpoint: the effect is about the image
-       holding still, which doesn't need to differ between phone and desktop. */
-    const tl = gsap.timeline({
+       All that's left for JS is telling the fixed photo where the hero is,
+       and fading the copy. */
+    const syncHeroBox = () => {
+      hero.style.setProperty("--hero-top", `${hero.offsetTop}px`);
+      hero.style.setProperty("--hero-h", `${hero.offsetHeight}px`);
+    };
+    syncHeroBox();
+    // A ResizeObserver rather than a window resize listener, for two reasons.
+    // It fires when the boxes genuinely change — including late settling from
+    // fonts and image decode, which a one-off measurement at startup misses —
+    // and it stays quiet while the mobile URL bar slides in and out, because
+    // the hero is sized in svh and so doesn't actually move when that chrome
+    // does. Re-measuring on every one of those resize events would put the
+    // mid-scroll jump straight back. The navbar is observed too: it sits above
+    // the hero in normal flow, so its height is the hero's top offset, and it
+    // can rewrap without the hero's own height changing.
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(syncHeroBox);
+      ro.observe(hero);
+      const nav = $("#navbar");
+      if (nav) ro.observe(nav);
+    }
+    // Belt and braces alongside the observer, which is delivered as part of
+    // the rendering steps and so can't run in a tab that isn't being painted.
+    // These are event-driven, cover the cases that actually move the hero, and
+    // syncHeroBox is two style writes, so running it twice costs nothing.
+    // The resize handler is deliberately gated on a real width change: on
+    // mobile the URL bar sliding away fires resize continuously at a stable
+    // width, and re-measuring mid-scroll is what the fixed photo exists to
+    // avoid.
+    window.addEventListener("load", syncHeroBox);
+    window.addEventListener("orientationchange", syncHeroBox);
+    let lastW = window.innerWidth;
+    window.addEventListener("resize", () => {
+      if (window.innerWidth === lastW) return;
+      lastW = window.innerWidth;
+      syncHeroBox();
+    });
+
+    // Copy fades out over the first two-thirds of the hero's travel, so it's
+    // gone before the curtain closes rather than clipping mid-word at the
+    // torn edge.
+    gsap.to("#home .max-w-7xl", {
+      autoAlpha: 0, y: -40, ease: "none",
       scrollTrigger: {
-        trigger: hero, start: "top top", end: "bottom top",
+        trigger: hero, start: "top top", end: "66% top",
         scrub: true,
-        // Recompute on resize: the travel distance is the hero's own height,
-        // which changes with the breakpoint and with mobile URL-bar chrome.
-        invalidateOnRefresh: true,
       },
     });
-    tl.to("#home .hero-photo", {
-      // yPercent, not a pixel value read from hero.offsetHeight: the photo is
-      // inset:0 inside the hero, so its own height IS the hero's height, and
-      // 100% of it is exactly the distance the section travels. A px value
-      // captured from offsetHeight measures before layout has settled (fonts,
-      // image decode, mobile URL-bar chrome) and locks in the wrong distance —
-      // it was overshooting by ~32%, so the photo drifted instead of holding.
-      yPercent: 100,
-      ease: "none",
-      // Explicit duration:1. Without it this tween takes GSAP's default 0.5s
-      // while the copy fade below takes 0.66s, so the timeline's total length
-      // is 0.66 and the photo runs 0.66/0.5 = 1.32x too fast — it overshot
-      // and drifted instead of holding still.
-      duration: 1,
-    }, 0)
-      // Copy fades out over the first two-thirds, so it's gone before the
-      // curtain closes rather than clipping mid-word at the torn edge.
-      .to("#home .max-w-7xl", {
-        autoAlpha: 0, y: -40, ease: "none", duration: 0.66,
-      }, 0);
   }
 
   /* ======================================================================
