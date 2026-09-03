@@ -58,34 +58,50 @@
         y: 10, autoAlpha: 0, duration: 0.4, stagger: 0.05, clearProps: "transform",
       }, "-=0.35");
 
-    const mm = gsap.matchMedia();
+    /* Curtain reveal.
 
-    // Desktop: the hero's layers separate at different speeds as it
-    // scrolls past — the "camera pulling away from a 3D scene" moment.
-    // Scrubbed to the hero's own natural scroll distance (no pin), so
-    // scroll speed here matches every other page rather than locking the
-    // viewport for an extra beat while the effect plays out.
-    mm.add("(min-width: 1024px)", () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: hero, start: "top top", end: "bottom top",
-          scrub: true,
-        },
-      });
-      // A restrained drift only. The hero is now roughly half its old height,
-      // so the old 1.15 zoom plus a full text fade-out ran their whole course
-      // within a flick of the wheel and read as the page lurching.
-      tl.to("#home .hero-photo", { scale: 1.06, ease: "none" }, 0)
-        .to("#home .max-w-7xl", { yPercent: -8, ease: "none" }, 0);
-    });
+       The photo holds still while the section scrolls up over it, so the torn
+       bottom edge rises like a curtain being drawn up.
 
-    // Mobile / tablet: light parallax only, no pinning
-    mm.add("(max-width: 1023px)", () => {
-      gsap.to("#home .hero-photo", {
-        yPercent: 14, ease: "none",
-        scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true },
-      });
+       No pinning involved — the page scrolls at its normal 1:1 rate. The photo
+       just counter-translates: the section moves up by `scrollY`, the image
+       moves down by the same amount, so it lands back in the same place on
+       screen and reads as stationary. The section's own overflow:hidden then
+       does the revealing — the visible slice of the photo shrinks from the
+       bottom as the section's lower edge (and the torn strip pinned to it)
+       travels up the screen.
+
+       Same behaviour at every breakpoint: the effect is about the image
+       holding still, which doesn't need to differ between phone and desktop. */
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: hero, start: "top top", end: "bottom top",
+        scrub: true,
+        // Recompute on resize: the travel distance is the hero's own height,
+        // which changes with the breakpoint and with mobile URL-bar chrome.
+        invalidateOnRefresh: true,
+      },
     });
+    tl.to("#home .hero-photo", {
+      // yPercent, not a pixel value read from hero.offsetHeight: the photo is
+      // inset:0 inside the hero, so its own height IS the hero's height, and
+      // 100% of it is exactly the distance the section travels. A px value
+      // captured from offsetHeight measures before layout has settled (fonts,
+      // image decode, mobile URL-bar chrome) and locks in the wrong distance —
+      // it was overshooting by ~32%, so the photo drifted instead of holding.
+      yPercent: 100,
+      ease: "none",
+      // Explicit duration:1. Without it this tween takes GSAP's default 0.5s
+      // while the copy fade below takes 0.66s, so the timeline's total length
+      // is 0.66 and the photo runs 0.66/0.5 = 1.32x too fast — it overshot
+      // and drifted instead of holding still.
+      duration: 1,
+    }, 0)
+      // Copy fades out over the first two-thirds, so it's gone before the
+      // curtain closes rather than clipping mid-word at the torn edge.
+      .to("#home .max-w-7xl", {
+        autoAlpha: 0, y: -40, ease: "none", duration: 0.66,
+      }, 0);
   }
 
   /* ======================================================================

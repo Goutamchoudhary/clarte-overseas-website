@@ -19,9 +19,12 @@
   --cream: #faf6ec;
   --font-head: "Sora", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
-  /* Hand-drawn display face, used only where warmth is the point — the hero
-     headline and section eyebrows. Never on body copy or controls. */
+  /* Hand-drawn display face. Now the HERO HEADLINE ONLY — at section-heading
+     sizes and repeated down the page it read as childish. */
   --font-display: "Caveat Brush", "Bradley Hand", cursive;
+  /* Section headings. Fraunces is a soft, slightly wonky serif built for
+     food and drink — warm and characterful without the marker-pen feel. */
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
 
   /* Warm food palette. Introduced on the hero first; the plan is to let
      these lead the storytelling sections while --brand keeps doing the
@@ -100,23 +103,27 @@ h1, h2, h3, h4, .font-head { font-family: var(--font-head); letter-spacing: -0.0
 }
 
 h1.tg-script, h2.tg-script, h3.tg-script {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -.015em;
   line-height: 1.14;
+  /* SOFT rounds the terminals slightly and WONK enables the angled variants —
+     the two axes that give Fraunces its warmth. Without them it reads as a
+     fairly ordinary serif. */
+  font-variation-settings: "SOFT" 60, "WONK" 1;
   /* Absolute, not em: em resolves against the parent, which collapsed these
-     to 20px rather than scaling the heading's own Tailwind size. The step up
-     from the text-4xl/5xl they replace compensates for the script face's much
-     smaller apparent x-height. */
-  font-size: clamp(2.5rem, 4.6vw, 3.8rem);
+     to 20px rather than scaling the heading's own Tailwind size. Sized down
+     from the script face's clamp — Fraunces has a far larger apparent
+     x-height, so it needs less point size for the same presence. */
+  font-size: clamp(2.1rem, 3.7vw, 2.9rem);
 }
 /* Two smaller tiers, mirroring the Tailwind sizes these headings carried
    before the swap — without them every script heading flattens to the same
    scale and the page loses its hierarchy.
      --md  for the text-3xl/4xl headings
      --sm  for the text-2xl/3xl sub-headings */
-h2.tg-script--md, h3.tg-script--md { font-size: clamp(2rem, 3.4vw, 2.9rem); }
-h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+h2.tg-script--md, h3.tg-script--md { font-size: clamp(1.75rem, 3vw, 2.35rem); }
+h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.5rem, 2.5vw, 1.95rem); }
 
 /* ---- Eyebrow label — pill/chip style with a dot ----------------------- */
 .eyebrow {
@@ -1138,9 +1145,12 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.8rem, 3vw, 2.4rem); }
 }
 .reveal.in .cat-index::after { transform: scaleX(1); }
 .cat-emoji { font-size: 1.8rem; }
-/* Category headings on /products carry the display face, sized up to hold the
-   same weight as the Sora setting they replace. */
-.cat-name { font: 400 clamp(1.9rem,3.5vw,2.6rem)/1.12 var(--font-display); color: #16265a; margin-top: .7rem; }
+/* Category headings on /products, matching the section-heading serif. */
+.cat-name {
+  font: 600 clamp(1.6rem,2.9vw,2.15rem)/1.15 var(--font-serif);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  letter-spacing: -.015em; color: #16265a; margin-top: .7rem;
+}
 .cat-desc { color: #54627d; margin-top: .7rem; line-height: 1.65; }
 .cat-row-foot { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .cat-cta { display: inline-flex; align-items: center; gap: .5rem; font: 600 .95rem "Sora", sans-serif; color: #fff; background: linear-gradient(135deg, var(--from), var(--to)); padding: .7rem 1.3rem; border-radius: 999px; transition: transform .2s ease, box-shadow .25s ease; box-shadow: 0 14px 26px -14px rgba(13,26,54,.5); }
@@ -1873,10 +1883,25 @@ html.lenis, html.lenis body { height: auto; }
 /* A very light blur across the whole photo (not just the center shade)
    softens it just enough to sit behind the copy comfortably, without
    losing the "close-up ingredients" detail the shot is chosen for. */
-/* Full strength, no blur and no scrim: the copy sits in the photo's empty
-   centre, so nothing needs to be dimmed to make type readable. */
-#home.hero-flatlay .hero-photo.loaded { opacity: 1; filter: none; }
+/* Quieted down: at full strength the flat lay was loud enough to compete with
+   the type sitting in its centre. Saturation does most of the work — that's
+   where the brightness actually comes from — with only a fractional blur to
+   take the edge off. Deliberately under 1px: at 1.5px the powders started to
+   lose their texture, which is the thing worth showing. */
+#home.hero-flatlay .hero-photo.loaded {
+  opacity: 1;
+  filter: saturate(.68) blur(.6px);
+}
 #home.hero-flatlay .hero-photo { object-position: center; }
+
+/* Soft white veil between photo and copy. A pseudo-element rather than a
+   markup change; sits above the photo (z-index -2) and below the copy (z-1),
+   and travels with the section so it always covers the visible slice as the
+   curtain closes. */
+#home.hero-flatlay::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: rgba(255, 255, 255, .34);
+}
 
 /* Very light, uniform veil — a gentle top-to-bottom gradient across the
    FULL width (never just a patch behind the text), tuned low enough that
