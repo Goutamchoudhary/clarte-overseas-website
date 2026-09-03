@@ -1883,25 +1883,13 @@ html.lenis, html.lenis body { height: auto; }
 /* A very light blur across the whole photo (not just the center shade)
    softens it just enough to sit behind the copy comfortably, without
    losing the "close-up ingredients" detail the shot is chosen for. */
-/* Quieted down: at full strength the flat lay was loud enough to compete with
-   the type sitting in its centre. Saturation does most of the work — that's
-   where the brightness actually comes from — with only a fractional blur to
-   take the edge off. Deliberately under 1px: at 1.5px the powders started to
-   lose their texture, which is the thing worth showing. */
+/* Blur only — the photo keeps its own colour. Deliberately a fraction of a
+   pixel: past roughly 1px the powders lose the texture that's worth showing. */
 #home.hero-flatlay .hero-photo.loaded {
   opacity: 1;
-  filter: saturate(.68) blur(.6px);
+  filter: blur(.6px);
 }
 #home.hero-flatlay .hero-photo { object-position: center; }
-
-/* Soft white veil between photo and copy. A pseudo-element rather than a
-   markup change; sits above the photo (z-index -2) and below the copy (z-1),
-   and travels with the section so it always covers the visible slice as the
-   curtain closes. */
-#home.hero-flatlay::after {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: rgba(255, 255, 255, .34);
-}
 
 /* Very light, uniform veil — a gentle top-to-bottom gradient across the
    FULL width (never just a patch behind the text), tuned low enough that
