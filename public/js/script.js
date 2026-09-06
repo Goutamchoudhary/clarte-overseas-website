@@ -250,9 +250,9 @@ function buildWorldMap() {
     { name: "United States", flag: "🇺🇸", lon: -98, lat: 39, origin: false, label: "below" },
     { name: "United Kingdom", flag: "🇬🇧", lon: -2, lat: 54, origin: false, label: "above" },
     { name: "UAE", flag: "🇦🇪", lon: 54, lat: 24, origin: false, label: "below" },
-    { name: "India", flag: "🇮🇳", lon: 78, lat: 22, origin: true, label: "below" },
+    { name: "India", flag: "🇮🇳", lon: 78, lat: 22, origin: true, label: "above" },
     { name: "Australia", flag: "🇦🇺", lon: 134, lat: -25, origin: false, label: "below" },
-    { name: "South East Asia", flag: "🌏", lon: 108, lat: 14, origin: false, label: "above" },
+    { name: "South East Asia", flag: "🌏", lon: 108, lat: 14, origin: false, label: "below" },
   ];
 
   host.classList.add("map-wrap");
