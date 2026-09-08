@@ -1,5 +1,41 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+
+  "//": "Cache-Control for everything served out of public/. Without this block Vercel defaults those files to `max-age=0, must-revalidate`, which tells the browser never to reuse an asset without asking first — so a visitor returning after a few days re-validates (and often re-downloads) the fonts, the vendor JS and the ~370KB hero before anything paints. Astro's own _astro/* output is content-hashed and Vercel already serves it immutable; these rules bring the rest up to the same standard. Patterns are deliberately non-overlapping so there is no ambiguity about which rule wins.",
+
+  "headers": [
+    {
+      "//": "Content-stable: a woff2, a pinned vendor library, or an image is replaced by publishing a new filename, never by editing the bytes behind an existing one. Safe to freeze for a year.",
+      "source": "/fonts/(.*).woff2",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/js/vendor/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/assets/img/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "//": "Our own source, which keeps its filename across deploys and so must never be frozen. stale-while-revalidate is the compromise: fresh for 5 minutes, then the browser paints instantly from cache and fetches the new copy in the background for next time. A returning visitor gets an immediate render; the deploy still reaches them. Safari ignores SWR and simply revalidates, i.e. today's behaviour.",
+      "source": "/css/styles.css",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=604800" }]
+    },
+    {
+      "source": "/fonts/fonts.css",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=604800" }]
+    },
+    {
+      "source": "/js/(script|i18n|home-fx).js",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=604800" }]
+    },
+    {
+      "source": "/i18n/(.*).json",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=604800" }]
+    }
+  ],
+
   "redirects": [
     { "source": "/our-products", "destination": "/products", "permanent": true },
     { "source": "/our-products/dehydrated-fruit-powder-ingredients-exporter-supplier-", "destination": "/products/fruit-powders", "permanent": true },
