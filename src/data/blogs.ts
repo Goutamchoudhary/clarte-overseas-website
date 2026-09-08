@@ -974,7 +974,7 @@ export const BLOG_PAGE_SIZE = 15;
 export const faqs = [
   {
     q: "What products does Clarté Overseas export?",
-    a: "Dehydrated fruits and vegetables in flake and powder form, herbal and leaf powders, culinary and spice powders, functional and nutritional powders, fruit powder ingredients, and hydrocolloids and food additives.",
+    a: "Herbal and leaf powders, culinary and spice powders, functional and nutritional powders, dehydrated fruit powders, and hydrocolloids and food additives — across flakes, granules and fine powders.",
   },
   {
     q: "Do you send samples before a bulk order?",
@@ -986,14 +986,14 @@ export const faqs = [
   },
   {
     q: "Which markets do you serve?",
-    a: "We work with buyers across the UK, Europe, the Gulf and Australia, and we are actively opening up more markets across the world.",
+    a: "We work with buyers across the United States, United Kingdom, UAE and the wider Middle East, Australia and South East Asia, and we are actively opening up more markets across the world.",
   },
   {
     q: "What certifications and documentation do you provide?",
-    a: "We are GST, IEC and RCMC registered, with FSSAI and ISO 9001 in place, and we handle full export documentation including the commercial invoice, packing list and certificate of origin.",
+    a: "We are registered for ISO 9001:2015, APEDA, the Spices Board of India (RCMC), FSSAI, Udyam (MSME), IEC and GST, and we handle full export documentation including the commercial invoice, packing list and certificate of origin.",
   },
   {
     q: "What about minimum order quantities and lead times?",
-    a: "We keep MOQs trial-friendly so you can start small, with a typical despatch window of two to four weeks from a confirmed order. Private label and custom packaging are available on request.",
+    a: "We keep MOQs trial-friendly so you can start small, with a typical despatch window of 15–21 days from a confirmed order. Private label and custom packaging are available on request.",
   },
 ];
