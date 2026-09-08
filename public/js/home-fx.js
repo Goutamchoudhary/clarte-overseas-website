@@ -49,15 +49,21 @@
       // `transform: translate(0, 14px)` on these elements after the intro
       // finishes, which (being inline) permanently outranks CSS `:hover`
       // transform rules (e.g. `.btn:hover { transform: translateY(-2px) }`).
+      // No autoAlpha here, deliberately. These elements are the LCP content and
+      // are no longer .reveal-gated, so they paint with the stylesheet; fading
+      // them from 0 would hand that head start straight back, and .from()
+      // records whatever opacity it finds as the value to return to — which was
+      // 0 whenever this ran before the observer had added .in, leaving an inline
+      // opacity:0 that outranked it and hid the hero for good. Moving them is
+      // enough of an entrance.
       .from(
         [
           "#home .badge-pill",
           "#home h1",
           "#home p",
           "#home .hero-cta-row",
-          "#home .hero-stats-row",
         ],
-        { y: 14, autoAlpha: 0, duration: 0.55, stagger: 0.05, clearProps: "transform" },
+        { y: 14, duration: 0.55, stagger: 0.05, clearProps: "transform" },
         0.08,
       )
       // Stat cards get one last, brief micro-stagger so the bar doesn't

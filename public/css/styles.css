@@ -606,6 +606,20 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.5rem, 2.5vw, 1.95rem); }
   transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
   will-change: opacity, transform;
 }
+/* Failsafe. .reveal hides ~50 elements and hands the only way to un-hide them
+   to JavaScript, so any failure to load script.js used to leave a permanently
+   blank page. script.js stamps html.js-ready the moment it executes; if that
+   hasn't happened within 3s, show everything regardless.
+
+   The :not() guard is what keeps this from fighting GSAP: when the scripts are
+   healthy the class lands almost immediately, this rule stops matching and no
+   animation is ever created. That matters because a running CSS animation
+   outranks inline styles, so an unguarded version would override GSAP's own
+   entrance tweens three seconds into every visit. */
+html:not(.js-ready) .reveal {
+  animation: reveal-failsafe 0s linear 3s forwards;
+}
+@keyframes reveal-failsafe { to { opacity: 1; transform: none; } }
 .reveal.from-left { transform: translateX(-40px); }
 .reveal.from-right { transform: translateX(40px); }
 .reveal.zoom { transform: scale(.94); }
@@ -1832,7 +1846,12 @@ html.lenis, html.lenis body { height: auto; }
      element a containing block for them, so the photo stays anchored to the
      viewport. That distinction is the whole trick; see .hero-photo below. */
   clip-path: inset(0);
-  background: #fff; /* shows before the photo loads — the photo is white-ground */
+  /* Low-quality image placeholder: the hero photo itself at 24px wide, inlined
+     as 212 bytes of base64. It arrives inside this stylesheet, so it costs no
+     request and nothing to wait for — the hero shows its real colours and
+     composition the instant CSS lands, instead of a white box, and the full
+     ~370KB photo cross-fades over it. Scaled up and blurred by the browser. */
+  background: #fff url("data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAACwBACdASoYAAsAPulgqE0pJaOiMAgBIB0JZACdMoAlrhP40yUzTkS4sSEZBPFAAP7IlijBxvpBs/3Edq7oUqY9sZu0SwOS7y7b2/Idl0mUQbnt5JuFgslPsLW7XxyiFpmXl01aAHA1fwYQFLJvhn1nEKWFWVc8lsuCABTiB+QaspBzzmhHdmoH+u79lWCd2Km+k/XeDhHpkcaIXsIlifsP//i6Rfn126c8QvrHGkLxwncaM7Vqrb3x9n3fwIQQAAA=") center / cover no-repeat;
   padding: 2.5rem 0 3.5rem;
   /* Fills everything below the navbar. The photo carries its own white margin
      at the right and bottom edges; sizing the section to the viewport rather
@@ -1857,6 +1876,7 @@ html.lenis, html.lenis body { height: auto; }
    to be inconsistent. */
 @media (max-width: 640px) {
   #home.hero-flatlay {
+    background-image: url("data:image/webp;base64,UklGRkgBAABXRUJQVlA4IDwBAAAQBwCdASoUACQAPulssVGpJaSipWmZIB0JQBajeMa/r/4lbai02Acl0VJttaY5vy06HAfO+WmaGKVA1tBLPT8qIAD+14i1ZU9s4IGTdGLZnysTnfSQs5liPp6JwaTXW4ifMB/nx1PBEHGkqDZm7NvK9tJdmVfO2pBTimmTlm9HaHz9PRrx7bM+tcRcuT+9vndfac0RqNdq6sKKhCrcZqN25nI30IYpBgFhd3yUDjdyqz2xp61byp5o1E41bZY6YdjLFfEdSiU5M0o5yu0HS0MXP0zNmV48kxMKZFzTzqilzLg0dU0fLweYnq5PRcOjAUe0yHFagAdHLG88e6ZuGv+b7W4rum5oAj5ZNAFjk7O/x0wM3Qf58zozzAV8b/kln0zL5HTDGEaekwYouTKG+5ZJ4CbattNqXnlvsAAA");
     min-height: 0;
     aspect-ratio: 1000 / 1792;
     /* width MUST be explicit here. With width:auto, a max-height clamp makes
@@ -1922,7 +1942,13 @@ html.lenis, html.lenis body { height: auto; }
   width: 100%;
   height: var(--hero-h, 100svh);
   object-position: center;
-  transition: transform .5s ease;
+  /* Both transitions live in this one declaration on purpose: the shorthand is
+     all-or-nothing, so a second `transition:` on an equally specific selector
+     silently discards whichever of the two it doesn't mention. The opacity leg
+     is the photo fading in over the inlined placeholder — quicker than the 1.2s
+     base rule, since it now lands on a matching blurred image rather than on
+     white, and a long fade there just delays the sharp version. */
+  transition: transform .5s ease, opacity .45s ease;
 }
 /* The one-time lift itself — see the onEnter/onLeaveBack pair in
    home-fx.js. A transform, so it stays compositor-only like the fixed

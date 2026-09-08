@@ -2,6 +2,15 @@
    CLARTÉ OVERSEAS — Homepage interactions
    ========================================================================= */
 
+/* Claim the reveal system before anything else in this file runs — not inside
+   DOMContentLoaded, which would be too late to matter. Every .reveal element
+   sits at opacity:0 waiting for the observer below to add .in, so if this file
+   never arrives (a network failure, a proxy stripping scripts, a syntax error
+   in a browser we didn't test) the page stays blank forever. The stylesheet
+   watches for this class: no class within 3s and it shows the content anyway.
+   Setting it here means the failsafe only ever fires when we genuinely failed. */
+document.documentElement.classList.add("js-ready");
+
 /* ----------------------------------------------------------------------
    CONFIG
    ---------------------------------------------------------------------- */
