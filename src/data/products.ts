@@ -185,6 +185,7 @@ export const products: Product[] = [
   },
   {
     slug: "amchur-powder", name: "Amchur Powder", category: "herbal-leaf-powders",
+    image: "/assets/img/products/amchur-powder.webp",
     emoji: "🥭", hsn: "0813 40 90", botanical: "Mangifera indica (unripe)",
     tagline: "Dried green mango — a traditional Ayurvedic digestive.",
     description:
@@ -372,6 +373,7 @@ export const products: Product[] = [
   },
   {
     slug: "coriander-leaf-powder", name: "Coriander Leaf Powder", category: "functional-nutritional-powders",
+    image: "/assets/img/products/coriander-leaf-powder.webp",
     emoji: "🌱", hsn: "0712 90 90", botanical: "Coriandrum sativum",
     tagline: "Fresh, citrusy coriander leaf in a stable powder.",
     description:
@@ -383,6 +385,7 @@ export const products: Product[] = [
   },
   {
     slug: "mint-powder", name: "Mint Powder", category: "functional-nutritional-powders",
+    image: "/assets/img/products/mint-powder.webp",
     emoji: "🌿", hsn: "1211 90 99", botanical: "Mentha spicata",
     tagline: "Cooling mint leaf, dried to hold its aroma.",
     description:
@@ -407,6 +410,7 @@ export const products: Product[] = [
   },
   {
     slug: "curry-leaf-powder", name: "Curry Leaf Powder", category: "herbal-leaf-powders",
+    image: "/assets/img/products/curry-leaf-powder.webp",
     emoji: "🍃", hsn: "1211 90 99", botanical: "Murraya koenigii",
     tagline: "Aromatic South-Indian leaf, dried and milled.",
     description:
@@ -418,6 +422,7 @@ export const products: Product[] = [
   },
   {
     slug: "tulsi-powder", name: "Tulsi (Holy Basil) Powder", category: "herbal-leaf-powders",
+    image: "/assets/img/products/tulsi-powder.webp",
     emoji: "🌱", hsn: "1211 90 99", botanical: "Ocimum sanctum",
     tagline: "India's sacred adaptogenic herb.",
     description:
