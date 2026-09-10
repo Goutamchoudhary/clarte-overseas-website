@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/serverless";
+import { sitemapSerialize } from "./scripts/sitemap-meta.mjs";
 
 // Private spec-sheet PDFs live OUTSIDE public/ so they have no guessable URL —
 // they're only served by the gated /api/spec-sheet function. Bundle them into
@@ -19,7 +20,12 @@ export default defineConfig({
   // `export const prerender = false` (the spec-sheet API) run as functions.
   output: "hybrid",
   adapter: vercel({ includeFiles: specPdfs }),
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    // serialize() adds <lastmod> to every known route and <image:image> to
+    // product pages — see scripts/sitemap-meta.mjs.
+    sitemap({ serialize: sitemapSerialize }),
+  ],
   // 'directory' format → clean URLs (/about-us/ instead of /about-us.html)
   build: { format: "directory" },
 });
