@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "乾燥フルーツパウダー",
   "products.cat_fruit_powders_desc": "単一産地のインド産果実を丁寧に乾燥・粉砕し、色、酸味、自然な甘さを保つ流動性の高いパウダーに——飲料、製パン、乳製品、製菓、ニュートラシューティカルのために作られています。",
   "products.cat_hydrocolloids_food_additives_name": "ハイドロコロイド・食品添加物",
-  "products.cat_hydrocolloids_food_additives_desc": "インドは植物由来のガムと食物繊維の世界的拠点です。食品、飲料、医薬、産業用途向けに、グアーガム、サイリウム、タマリンドカーネル、カッシア誘導体を供給します。",
+  "products.cat_hydrocolloids_food_additives_desc": "インドは植物由来のガムと食物繊維の世界的拠点です。食品、飲料、医薬、産業用途向けに、グアーガム、サイリウム、タマリンドカーネル誘導体を供給します。",
 
   "products.cat_explore": "ラインナップを見る",
   "products.cat_count_unit": "製品",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "インドで栽培される、世界で頼られる水溶性食物繊維。",
   "cat.prod_tamarind_kernel_powder_name": "タマリンドカーネルパウダー",
   "cat.prod_tamarind_kernel_powder_tagline": "多用途の天然増粘剤・サイジング剤。",
-  "cat.prod_cassia_gum_powder_name": "カッシアガムパウダー",
-  "cat.prod_cassia_gum_powder_tagline": "食品とペットフード向けのゲル化・安定化ガム。",
 
   "prod.zoom_hint": "ホバーで拡大 · クリックで拡大表示",
   "prod.available_in": "提供形態",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "食品 / 工業グレード",
   "prod.tamarind_kernel_powder_g2": "通常・脱脂",
   "prod.tamarind_kernel_powder_g3": "100〜200メッシュ",
-  "prod.tamarind_kernel_powder_g4": "水分 ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "カッシアガムはカッシアトラの種子から得られるガラクトマンナンで、ゲル化・安定化のために他のガムと相乗的に使われることが多くあります。ペットフードや一部の食品用途で増粘剤として広く認可されています。",
-  "prod.cassia_gum_powder_f1": "他のガムと相乗効果",
-  "prod.cassia_gum_powder_f2": "強力なゲル化・安定化",
-  "prod.cassia_gum_powder_f3": "植物由来のガラクトマンナン",
-  "prod.cassia_gum_powder_f4": "ペットフード・食品グレード",
-  "prod.cassia_gum_powder_f5": "各種粘度",
-  "prod.cassia_gum_powder_f6": "ご要望に応じてカスタムメッシュ・包装・プライベートラベル",
-  "prod.cassia_gum_powder_u1": "ペットフードと飼料",
-  "prod.cassia_gum_powder_u2": "チーズ、乳製品、冷凍デザート",
-  "prod.cassia_gum_powder_u3": "食肉・鶏肉製品",
-  "prod.cassia_gum_powder_u4": "産業用途",
-  "prod.cassia_gum_powder_g1": "食品 / ペットフードグレード",
-  "prod.cassia_gum_powder_g2": "各種粘度",
-  "prod.cassia_gum_powder_g3": "100〜200メッシュ",
-  "prod.cassia_gum_powder_g4": "水分 ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "水分 ≤ 10%"
 }

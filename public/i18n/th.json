@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "ผงผลไม้อบแห้ง",
   "products.cat_fruit_powders_desc": "ผลไม้อินเดียจากแหล่งเดียว อบแห้งและบดอย่างนุ่มนวลเป็นผงที่ไหลตัวดี ซึ่งคงสี รสเปรี้ยว และความหวานตามธรรมชาติไว้ — สร้างขึ้นสำหรับเครื่องดื่ม เบเกอรี่ ผลิตภัณฑ์นม ขนมหวาน และผลิตภัณฑ์เสริมอาหาร",
   "products.cat_hydrocolloids_food_additives_name": "ไฮโดรคอลลอยด์และวัตถุเจือปนอาหาร",
-  "products.cat_hydrocolloids_food_additives_desc": "อินเดียเป็นศูนย์กลางของโลกสำหรับกัมและใยอาหารจากพืช เราจัดหากัวร์กัม ไซเลียม นิวมะขาม และอนุพันธ์แคสเซียสำหรับการใช้งานด้านอาหาร เครื่องดื่ม ยา และอุตสาหกรรม",
+  "products.cat_hydrocolloids_food_additives_desc": "อินเดียเป็นศูนย์กลางของโลกสำหรับกัมและใยอาหารจากพืช เราจัดหากัวร์กัม ไซเลียม และอนุพันธ์นิวมะขามสำหรับการใช้งานด้านอาหาร เครื่องดื่ม ยา และอุตสาหกรรม",
 
   "products.cat_explore": "สำรวจกลุ่มผลิตภัณฑ์",
   "products.cat_count_unit": "ผลิตภัณฑ์",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "ใยอาหารละลายน้ำที่ทั่วโลกเลือกใช้ ปลูกในอินเดีย",
   "cat.prod_tamarind_kernel_powder_name": "ผงนิวมะขาม",
   "cat.prod_tamarind_kernel_powder_tagline": "สารเพิ่มความข้นและสารลงแป้งธรรมชาติอเนกประสงค์",
-  "cat.prod_cassia_gum_powder_name": "ผงแคสเซียกัม",
-  "cat.prod_cassia_gum_powder_tagline": "กัมที่ทำให้เกิดเจลและคงตัวสำหรับอาหารและอาหารสัตว์เลี้ยง",
 
   "prod.zoom_hint": "เลื่อนเมาส์เพื่อขยาย · คลิกเพื่อดูใหญ่ขึ้น",
   "prod.available_in": "มีในรูปแบบ",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "เกรดอาหาร / เทคนิค",
   "prod.tamarind_kernel_powder_g2": "ธรรมดาและสกัดน้ำมันออก",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "ความชื้น ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "แคสเซียกัมเป็นกาแลกโตแมนแนนที่ได้จากเมล็ดแคสเซียโทรา มักใช้เสริมฤทธิ์กับกัมอื่นๆ เพื่อการทำเจลและการคงตัว ได้รับการอนุมัติอย่างกว้างขวางในฐานะสารเพิ่มความข้นในอาหารสัตว์เลี้ยงและการใช้งานอาหารบางประเภท",
-  "prod.cassia_gum_powder_f1": "เสริมฤทธิ์กับกัมอื่นๆ",
-  "prod.cassia_gum_powder_f2": "การทำเจล / การคงตัวที่แข็งแกร่ง",
-  "prod.cassia_gum_powder_f3": "กาแลกโตแมนแนนจากพืช",
-  "prod.cassia_gum_powder_f4": "เกรดอาหารสัตว์เลี้ยงและอาหาร",
-  "prod.cassia_gum_powder_f5": "ความหนืดหลากหลาย",
-  "prod.cassia_gum_powder_f6": "ปรับ mesh บรรจุภัณฑ์ และฉลากส่วนตัวตามคำขอ",
-  "prod.cassia_gum_powder_u1": "อาหารสัตว์เลี้ยงและอาหารสัตว์",
-  "prod.cassia_gum_powder_u2": "ชีส ผลิตภัณฑ์นม และของหวานแช่แข็ง",
-  "prod.cassia_gum_powder_u3": "ผลิตภัณฑ์เนื้อสัตว์และสัตว์ปีก",
-  "prod.cassia_gum_powder_u4": "การใช้งานอุตสาหกรรม",
-  "prod.cassia_gum_powder_g1": "เกรดอาหาร / อาหารสัตว์เลี้ยง",
-  "prod.cassia_gum_powder_g2": "ความหนืดหลากหลาย",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "ความชื้น ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "ความชื้น ≤ 10%"
 }

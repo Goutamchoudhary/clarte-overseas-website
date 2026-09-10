@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Kurutulmuş Meyve Tozları",
   "products.cat_fruit_powders_desc": "Tek menşeli Hint meyveleri, renklerini, ekşiliklerini ve doğal tatlılıklarını koruyan, serbest akışlı tozlara nazikçe kurutulup öğütülür — içecekler, fırıncılık, süt ürünleri, şekerleme ve nutrasötikler için üretilmiştir.",
   "products.cat_hydrocolloids_food_additives_name": "Hidrokolloidler ve Gıda Katkıları",
-  "products.cat_hydrocolloids_food_additives_desc": "Hindistan, bitki bazlı sakızlar ve liflerin dünya merkezidir. Gıda, içecek, ilaç ve endüstriyel uygulamalar için guar sakızı, psyllium, demirhindi çekirdeği ve cassia türevleri tedarik ediyoruz.",
+  "products.cat_hydrocolloids_food_additives_desc": "Hindistan, bitki bazlı sakızlar ve liflerin dünya merkezidir. Gıda, içecek, ilaç ve endüstriyel uygulamalar için guar sakızı, psyllium ve demirhindi çekirdeği türevleri tedarik ediyoruz.",
 
   "products.cat_explore": "Yelpazeyi keşfedin",
   "products.cat_count_unit": "ürün",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "Hindistan'da yetiştirilen, dünyanın başvurduğu çözünür lif.",
   "cat.prod_tamarind_kernel_powder_name": "Demirhindi Çekirdeği Tozu",
   "cat.prod_tamarind_kernel_powder_tagline": "Çok yönlü doğal bir kıvam artırıcı ve apre maddesi.",
-  "cat.prod_cassia_gum_powder_name": "Cassia Sakızı Tozu",
-  "cat.prod_cassia_gum_powder_tagline": "Gıda ve evcil hayvan maması için jelleştirici ve stabilize edici bir sakız.",
 
   "prod.zoom_hint": "Yakınlaştırmak için üzerine gelin · büyütmek için tıklayın",
   "prod.available_in": "Mevcut formlar",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Gıda / teknik sınıf",
   "prod.tamarind_kernel_powder_g2": "Düz ve yağı alınmış",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Nem ≤ %10",
-
-  "prod.cassia_gum_powder_desc": "Cassia sakızı, cassia tora tohumundan elde edilen bir galaktomannandır ve genellikle jelleştirme ve stabilize etme için diğer sakızlarla sinerji içinde kullanılır. Evcil hayvan maması ve seçili gıda uygulamalarında kıvam artırıcı olarak yaygın şekilde onaylanmıştır.",
-  "prod.cassia_gum_powder_f1": "Diğer sakızlarla sinerjik",
-  "prod.cassia_gum_powder_f2": "Güçlü jelleştirme / stabilize etme",
-  "prod.cassia_gum_powder_f3": "Bitki bazlı galaktomannan",
-  "prod.cassia_gum_powder_f4": "Evcil hayvan maması ve gıda sınıfları",
-  "prod.cassia_gum_powder_f5": "Çeşitli viskoziteler",
-  "prod.cassia_gum_powder_f6": "Talep üzerine özel mesh, paketleme ve özel etiket",
-  "prod.cassia_gum_powder_u1": "Evcil hayvan maması ve hayvan yemi",
-  "prod.cassia_gum_powder_u2": "Peynir, süt ürünleri ve dondurulmuş tatlılar",
-  "prod.cassia_gum_powder_u3": "Et ve kümes hayvanı ürünleri",
-  "prod.cassia_gum_powder_u4": "Endüstriyel kullanımlar",
-  "prod.cassia_gum_powder_g1": "Gıda / evcil hayvan maması sınıfı",
-  "prod.cassia_gum_powder_g2": "Çeşitli viskoziteler",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "Nem ≤ %12"
+  "prod.tamarind_kernel_powder_g4": "Nem ≤ %10"
 }

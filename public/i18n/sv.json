@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Dehydrerade fruktpulver",
   "products.cat_fruit_powders_desc": "Singel-ursprungsfrukter från Indien, skonsamt torkade och malda till lättflytande pulver som behåller sin färg, syrlighet och naturliga sötma — framtagna för drycker, bageri, mejeri, konfektyr och nutraceutiska produkter.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrokolloider och livsmedelstillsatser",
-  "products.cat_hydrocolloids_food_additives_desc": "Indien är världens nav för växtbaserade gummin och fibrer. Vi levererar guargummi, psyllium, tamarindkärnpulver och cassiatuvor för livsmedels-, dryckes-, läkemedels- och industriella tillämpningar.",
+  "products.cat_hydrocolloids_food_additives_desc": "Indien är världens nav för växtbaserade gummin och fibrer. Vi levererar guargummi, psyllium och tamarindkärnpulver-derivat för livsmedels-, dryckes-, läkemedels- och industriella tillämpningar.",
 
   "products.cat_explore": "Utforska sortiment",
   "products.cat_count_unit": "produkter",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "Världens främsta lösliga fiber, odlad i Indien.",
   "cat.prod_tamarind_kernel_powder_name": "Tamarindkärnpulver",
   "cat.prod_tamarind_kernel_powder_tagline": "Ett mångsidigt naturligt förtjockningsmedel och stärkelsemedel.",
-  "cat.prod_cassia_gum_powder_name": "Cassiatuv­pulver",
-  "cat.prod_cassia_gum_powder_tagline": "Ett gelnings- och stabiliseringsgummi för livsmedel och djurmat.",
 
   "prod.zoom_hint": "Håll muspekaren för att zooma · klicka för att förstora",
   "prod.available_in": "Tillgänglig i",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Livsmedels-/teknisk kvalitet",
   "prod.tamarind_kernel_powder_g2": "Obehandlad och oljeavlägsnad",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Fukt ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "Cassiatuv är ett galaktomannan utvunnet ur cassiatora-frön, ofta använt i synergi med andra gummin för gelning och stabilisering. Det är allmänt godkänt som förtjockningsmedel i djurmat och utvalda livsmedelsapplikationer.",
-  "prod.cassia_gum_powder_f1": "Synergistiskt med andra gummin",
-  "prod.cassia_gum_powder_f2": "Stark gelning och stabilisering",
-  "prod.cassia_gum_powder_f3": "Växtbaserat galaktomannan",
-  "prod.cassia_gum_powder_f4": "Djurmat- och livsmedelskvaliteter",
-  "prod.cassia_gum_powder_f5": "Olika viskositeter",
-  "prod.cassia_gum_powder_f6": "Anpassad malningsgrad, förpackning och privat märke på begäran",
-  "prod.cassia_gum_powder_u1": "Djurmat och djurfoder",
-  "prod.cassia_gum_powder_u2": "Ost, mejeri och frysta desserter",
-  "prod.cassia_gum_powder_u3": "Kött- och fjäderfäprodukter",
-  "prod.cassia_gum_powder_u4": "Industriella användningar",
-  "prod.cassia_gum_powder_g1": "Livsmedels-/djurmatskvalitet",
-  "prod.cassia_gum_powder_g2": "Olika viskositeter",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "Fukt ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "Fukt ≤ 10%"
 }

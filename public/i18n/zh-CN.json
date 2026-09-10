@@ -878,7 +878,7 @@
 
   "products.cat_hydrocolloids_food_additives_name": "水胶体及食品添加剂",
 
-  "products.cat_hydrocolloids_food_additives_desc": "印度是全球植物胶和膳食纤维的核心产地。我们供应瓜尔胶、车前子胶、罗望子籽胶和决明胶衍生物，适用于食品、饮料、医药和工业应用。",
+  "products.cat_hydrocolloids_food_additives_desc": "印度是全球植物胶和膳食纤维的核心产地。我们供应瓜尔胶、车前子胶和罗望子籽胶衍生物，适用于食品、饮料、医药和工业应用。",
 
 
   "products.cat_explore": "浏览系列",
@@ -1006,10 +1006,6 @@
   "cat.prod_tamarind_kernel_powder_name": "罗望子籽粉",
 
   "cat.prod_tamarind_kernel_powder_tagline": "多功能天然增稠剂和上浆剂。",
-
-  "cat.prod_cassia_gum_powder_name": "决明胶粉",
-
-  "cat.prod_cassia_gum_powder_tagline": "适用于食品和宠物食品的凝胶与稳定胶体。",
 
 
   "prod.zoom_hint": "悬停放大 · 点击查看大图",
@@ -2102,37 +2098,5 @@
 
   "prod.tamarind_kernel_powder_g3": "100至200目",
 
-  "prod.tamarind_kernel_powder_g4": "含水量 ≤ 10%",
-
-
-  "prod.cassia_gum_powder_desc": "决明胶是从决明子种籽中提取的半乳甘露聚糖，常与其他胶体协同使用以实现凝胶和稳定效果。它作为宠物食品和特定食品应用中的增稠剂获得广泛认可。",
-
-  "prod.cassia_gum_powder_f1": "与其他胶体具有协同效果",
-
-  "prod.cassia_gum_powder_f2": "凝胶和稳定效果强",
-
-  "prod.cassia_gum_powder_f3": "植物源半乳甘露聚糖",
-
-  "prod.cassia_gum_powder_f4": "提供宠物食品级和食品级",
-
-  "prod.cassia_gum_powder_f5": "多种黏度规格",
-
-  "prod.cassia_gum_powder_f6": "可按需定制目数、包装及贴牌",
-
-  "prod.cassia_gum_powder_u1": "宠物食品和动物饲料",
-
-  "prod.cassia_gum_powder_u2": "奶酪、乳制品和冷冻甜点",
-
-  "prod.cassia_gum_powder_u3": "肉类和禽类产品",
-
-  "prod.cassia_gum_powder_u4": "工业应用",
-
-  "prod.cassia_gum_powder_g1": "食品级/宠物食品级",
-
-  "prod.cassia_gum_powder_g2": "多种黏度规格",
-
-  "prod.cassia_gum_powder_g3": "100至200目",
-
-  "prod.cassia_gum_powder_g4": "含水量 ≤ 12%"
-
+  "prod.tamarind_kernel_powder_g4": "含水量 ≤ 10%"
 }

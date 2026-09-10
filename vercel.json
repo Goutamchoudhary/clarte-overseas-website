@@ -70,6 +70,8 @@
     { "source": "/products/green-chilli-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers", "destination": "/products/culinary-spice-powders/green-chilli-powder", "permanent": true },
     { "source": "/products/guava-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage", "destination": "/products/fruit-powders/guava-powder", "permanent": true },
     { "source": "/products/tamarind-powder-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers", "destination": "/products/fruit-powders/tamarind-powder", "permanent": true },
-    { "source": "/products/premium-amla-powder-bulk-supplier-nutrient-dense-indian-gooseberry-powder", "destination": "/products/fruit-powders/amla-powder", "permanent": true }
+    { "source": "/products/premium-amla-powder-bulk-supplier-nutrient-dense-indian-gooseberry-powder", "destination": "/products/fruit-powders/amla-powder", "permanent": true },
+
+    { "source": "/products/hydrocolloids-food-additives/cassia-gum-powder", "destination": "/products/hydrocolloids-food-additives", "permanent": true }
   ]
 }

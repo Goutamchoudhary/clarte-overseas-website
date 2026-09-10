@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Bột trái cây sấy khô",
   "products.cat_fruit_powders_desc": "Trái cây Ấn Độ một nguồn gốc, được sấy nhẹ nhàng và nghiền thành bột tơi chảy giữ nguyên màu sắc, vị chua và độ ngọt tự nhiên — được tạo ra cho đồ uống, bánh, sữa, bánh kẹo và thực phẩm chức năng.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrocolloid và phụ gia thực phẩm",
-  "products.cat_hydrocolloids_food_additives_desc": "Ấn Độ là trung tâm của thế giới về gôm và chất xơ từ thực vật. Chúng tôi cung cấp gôm guar, psyllium, nhân me và các dẫn xuất cassia cho ứng dụng thực phẩm, đồ uống, dược phẩm và công nghiệp.",
+  "products.cat_hydrocolloids_food_additives_desc": "Ấn Độ là trung tâm của thế giới về gôm và chất xơ từ thực vật. Chúng tôi cung cấp gôm guar, psyllium và các dẫn xuất nhân me cho ứng dụng thực phẩm, đồ uống, dược phẩm và công nghiệp.",
 
   "products.cat_explore": "Khám phá danh mục",
   "products.cat_count_unit": "sản phẩm",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "Chất xơ hòa tan được cả thế giới tìm đến, trồng tại Ấn Độ.",
   "cat.prod_tamarind_kernel_powder_name": "Bột Nhân Me",
   "cat.prod_tamarind_kernel_powder_tagline": "Chất làm đặc và hồ tự nhiên đa năng.",
-  "cat.prod_cassia_gum_powder_name": "Bột Gôm Cassia",
-  "cat.prod_cassia_gum_powder_tagline": "Gôm tạo gel và ổn định cho thực phẩm và thức ăn thú cưng.",
 
   "prod.zoom_hint": "Di chuột để phóng to · nhấp để xem lớn",
   "prod.available_in": "Có ở dạng",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Phẩm cấp thực phẩm / kỹ thuật",
   "prod.tamarind_kernel_powder_g2": "Thường và đã khử dầu",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Độ ẩm ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "Gôm cassia là một galactomannan có nguồn gốc từ hạt cassia tora, thường được dùng hiệp đồng với các loại gôm khác để tạo gel và ổn định. Nó được phê duyệt rộng rãi làm chất làm đặc trong thức ăn thú cưng và một số ứng dụng thực phẩm chọn lọc.",
-  "prod.cassia_gum_powder_f1": "Hiệp đồng với các loại gôm khác",
-  "prod.cassia_gum_powder_f2": "Tạo gel / ổn định mạnh",
-  "prod.cassia_gum_powder_f3": "Galactomannan từ thực vật",
-  "prod.cassia_gum_powder_f4": "Phẩm cấp thức ăn thú cưng và thực phẩm",
-  "prod.cassia_gum_powder_f5": "Nhiều độ nhớt khác nhau",
-  "prod.cassia_gum_powder_f6": "Mesh, đóng gói và nhãn riêng tùy chỉnh theo yêu cầu",
-  "prod.cassia_gum_powder_u1": "Thức ăn thú cưng và thức ăn chăn nuôi",
-  "prod.cassia_gum_powder_u2": "Phô mai, sữa và món tráng miệng đông lạnh",
-  "prod.cassia_gum_powder_u3": "Sản phẩm thịt và gia cầm",
-  "prod.cassia_gum_powder_u4": "Ứng dụng công nghiệp",
-  "prod.cassia_gum_powder_g1": "Phẩm cấp thực phẩm / thức ăn thú cưng",
-  "prod.cassia_gum_powder_g2": "Nhiều độ nhớt khác nhau",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "Độ ẩm ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "Độ ẩm ≤ 10%"
 }

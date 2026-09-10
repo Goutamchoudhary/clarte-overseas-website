@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "مساحيق الفواكه المجففة",
   "products.cat_fruit_powders_desc": "فواكه هندية أحادية المنشأ، مجففة برفق ومطحونة إلى مساحيق حرّة الانسياب تحتفظ بلونها وحموضتها وحلاوتها الطبيعية — مُعَدّة للمشروبات والمخبوزات ومنتجات الألبان والحلويات والمكمّلات الغذائية.",
   "products.cat_hydrocolloids_food_additives_name": "الغرويات المائية والمضافات الغذائية",
-  "products.cat_hydrocolloids_food_additives_desc": "الهند هي المركز العالمي للصموغ والألياف النباتية. نورّد صمغ الغوار والسيليوم ومشتقّات نواة التمر الهندي والكاسيا لتطبيقات الأغذية والمشروبات والأدوية والصناعة.",
+  "products.cat_hydrocolloids_food_additives_desc": "الهند هي المركز العالمي للصموغ والألياف النباتية. نورّد صمغ الغوار والسيليوم ومشتقّات نواة التمر الهندي لتطبيقات الأغذية والمشروبات والأدوية والصناعة.",
 
   "products.cat_explore": "استكشف التشكيلة",
   "products.cat_count_unit": "منتجات",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "أبرز ألياف العالم الذائبة، مزروعة في الهند.",
   "cat.prod_tamarind_kernel_powder_name": "مسحوق نواة التمر الهندي",
   "cat.prod_tamarind_kernel_powder_tagline": "مُكثّف طبيعي متعدّد الاستخدامات وعامل تنشية.",
-  "cat.prod_cassia_gum_powder_name": "مسحوق صمغ الكاسيا",
-  "cat.prod_cassia_gum_powder_tagline": "صمغ مُجلِّن ومُثبِّت للأغذية وأغذية الحيوانات الأليفة.",
 
   "prod.zoom_hint": "مرّر للتكبير · انقر للتوسيع",
   "prod.available_in": "متوفر بأشكال",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "صنف غذائي / تقني",
   "prod.tamarind_kernel_powder_g2": "عادي ومنزوع الزيت",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "الرطوبة ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "صمغ الكاسيا جالاكتومانان مستخلَص من بذرة الكاسيا تورا، يُستخدم غالبًا بالتآزر مع صموغ أخرى للتجليل والتثبيت. وهو معتمد على نطاق واسع كمُكثّف في أغذية الحيوانات الأليفة وتطبيقات غذائية مختارة.",
-  "prod.cassia_gum_powder_f1": "متآزر مع صموغ أخرى",
-  "prod.cassia_gum_powder_f2": "تجليل / تثبيت قوي",
-  "prod.cassia_gum_powder_f3": "جالاكتومانان نباتي",
-  "prod.cassia_gum_powder_f4": "أصناف لأغذية الحيوانات الأليفة والأغذية",
-  "prod.cassia_gum_powder_f5": "لزوجات متنوّعة",
-  "prod.cassia_gum_powder_f6": "درجة طحن وتعبئة وعلامة خاصة حسب الطلب",
-  "prod.cassia_gum_powder_u1": "أغذية الحيوانات الأليفة والأعلاف",
-  "prod.cassia_gum_powder_u2": "الجبن والألبان والحلويات المجمّدة",
-  "prod.cassia_gum_powder_u3": "منتجات اللحوم والدواجن",
-  "prod.cassia_gum_powder_u4": "الاستخدامات الصناعية",
-  "prod.cassia_gum_powder_g1": "صنف غذائي / أغذية حيوانات أليفة",
-  "prod.cassia_gum_powder_g2": "لزوجات متنوّعة",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "الرطوبة ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "الرطوبة ≤ 10%"
 }

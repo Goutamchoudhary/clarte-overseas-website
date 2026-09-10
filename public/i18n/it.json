@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Polveri di Frutta Disidratata",
   "products.cat_fruit_powders_desc": "Frutta indiana di singola origine, delicatamente essiccata e macinata in polveri fluide che mantengono colore, acidità e dolcezza naturale — adatte a bevande, panetteria, prodotti lattiero-caseari, dolciumi e nutraceutici.",
   "products.cat_hydrocolloids_food_additives_name": "Idrocolloidi e Additivi Alimentari",
-  "products.cat_hydrocolloids_food_additives_desc": "L'India è il principale hub mondiale per gomme e fibre di origine vegetale. Forniamo gomma di guar, psyllium, farina di semi di tamarindo e derivati della cassia per applicazioni alimentari, bevande, farmaceutiche e industriali.",
+  "products.cat_hydrocolloids_food_additives_desc": "L'India è il principale hub mondiale per gomme e fibre di origine vegetale. Forniamo gomma di guar, psyllium e derivati della farina di semi di tamarindo per applicazioni alimentari, bevande, farmaceutiche e industriali.",
 
   "products.cat_explore": "Esplora la gamma",
   "products.cat_count_unit": "prodotti",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "La fibra solubile di riferimento nel mondo, coltivata in India.",
   "cat.prod_tamarind_kernel_powder_name": "Polvere di Semi di Tamarindo",
   "cat.prod_tamarind_kernel_powder_tagline": "Un addensante naturale versatile e agente di dimensionamento.",
-  "cat.prod_cassia_gum_powder_name": "Polvere di Gomma di Cassia",
-  "cat.prod_cassia_gum_powder_tagline": "Una gomma gelificante e stabilizzante per alimenti e pet food.",
 
   "prod.zoom_hint": "Passa il mouse per ingrandire · clicca per espandere",
   "prod.available_in": "Disponibile in",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Grade alimentare / tecnico",
   "prod.tamarind_kernel_powder_g2": "Normale e de-oliato",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Umidità ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "La gomma di cassia è un galattomanano derivato dal seme di cassia tora, spesso usato in sinergia con altre gomme per gelificazione e stabilizzazione. È ampiamente approvata come addensante nel pet food e in determinate applicazioni alimentari.",
-  "prod.cassia_gum_powder_f1": "Sinergica con altre gomme",
-  "prod.cassia_gum_powder_f2": "Forte gelificazione / stabilizzazione",
-  "prod.cassia_gum_powder_f3": "Galattomanano di origine vegetale",
-  "prod.cassia_gum_powder_f4": "Grade per pet food e alimentare",
-  "prod.cassia_gum_powder_f5": "Varie viscosità",
-  "prod.cassia_gum_powder_f6": "Granulometria, confezionamento e marchio privato su richiesta",
-  "prod.cassia_gum_powder_u1": "Pet food e mangimi per animali",
-  "prod.cassia_gum_powder_u2": "Formaggi, latticini e dessert surgelati",
-  "prod.cassia_gum_powder_u3": "Prodotti a base di carne e pollame",
-  "prod.cassia_gum_powder_u4": "Usi industriali",
-  "prod.cassia_gum_powder_g1": "Grade alimentare / pet food",
-  "prod.cassia_gum_powder_g2": "Varie viscosità",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "Umidità ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "Umidità ≤ 10%"
 }

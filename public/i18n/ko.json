@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "건조 과일 분말",
   "products.cat_fruit_powders_desc": "단일 산지의 인도산 과일을 부드럽게 건조·분쇄하여 색상, 산미, 자연스러운 단맛을 유지하는 흐름성이 좋은 분말로——음료, 베이커리, 유제품, 제과, 건강기능식품을 위해 만들어졌습니다.",
   "products.cat_hydrocolloids_food_additives_name": "하이드로콜로이드 및 식품 첨가물",
-  "products.cat_hydrocolloids_food_additives_desc": "인도는 식물성 검과 식이섬유의 세계적 거점입니다. 식품, 음료, 제약, 산업 용도를 위해 구아검, 차전자, 타마린드 커널, 카시아 유도체를 공급합니다.",
+  "products.cat_hydrocolloids_food_additives_desc": "인도는 식물성 검과 식이섬유의 세계적 거점입니다. 식품, 음료, 제약, 산업 용도를 위해 구아검, 차전자, 타마린드 커널 유도체를 공급합니다.",
 
   "products.cat_explore": "라인업 둘러보기",
   "products.cat_count_unit": "제품",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "인도에서 재배되는, 세계가 찾는 수용성 식이섬유.",
   "cat.prod_tamarind_kernel_powder_name": "타마린드 커널 분말",
   "cat.prod_tamarind_kernel_powder_tagline": "다재다능한 천연 증점제이자 호제.",
-  "cat.prod_cassia_gum_powder_name": "카시아검 분말",
-  "cat.prod_cassia_gum_powder_tagline": "식품과 반려동물 사료를 위한 겔화·안정화 검.",
 
   "prod.zoom_hint": "마우스를 올려 확대 · 클릭하여 크게 보기",
   "prod.available_in": "제공 형태",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "식품 / 공업 등급",
   "prod.tamarind_kernel_powder_g2": "일반 및 탈지",
   "prod.tamarind_kernel_powder_g3": "100~200메쉬",
-  "prod.tamarind_kernel_powder_g4": "수분 ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "카시아검은 카시아 토라 씨앗에서 얻는 갈락토만난으로, 겔화와 안정화를 위해 다른 검과 상승적으로 사용되는 경우가 많습니다. 반려동물 사료와 일부 식품 용도에서 증점제로 널리 승인되어 있습니다.",
-  "prod.cassia_gum_powder_f1": "다른 검과 상승 작용",
-  "prod.cassia_gum_powder_f2": "강력한 겔화 / 안정화",
-  "prod.cassia_gum_powder_f3": "식물성 갈락토만난",
-  "prod.cassia_gum_powder_f4": "반려동물 사료·식품 등급",
-  "prod.cassia_gum_powder_f5": "다양한 점도",
-  "prod.cassia_gum_powder_f6": "요청 시 맞춤 메쉬·포장·자체 브랜드",
-  "prod.cassia_gum_powder_u1": "반려동물 사료와 가축 사료",
-  "prod.cassia_gum_powder_u2": "치즈, 유제품, 냉동 디저트",
-  "prod.cassia_gum_powder_u3": "육류·가금류 제품",
-  "prod.cassia_gum_powder_u4": "산업 용도",
-  "prod.cassia_gum_powder_g1": "식품 / 반려동물 사료 등급",
-  "prod.cassia_gum_powder_g2": "다양한 점도",
-  "prod.cassia_gum_powder_g3": "100~200메쉬",
-  "prod.cassia_gum_powder_g4": "수분 ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "수분 ≤ 10%"
 }

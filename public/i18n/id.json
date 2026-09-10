@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Bubuk Buah Kering",
   "products.cat_fruit_powders_desc": "Buah India satu asal, dikeringkan dengan lembut dan digiling menjadi bubuk yang mudah mengalir yang mempertahankan warna, rasa asam, dan manis alaminya — dibuat untuk minuman, bakeri, produk susu, gula-gula, dan nutrasetikal.",
   "products.cat_hydrocolloids_food_additives_name": "Hidrokoloid & Aditif Pangan",
-  "products.cat_hydrocolloids_food_additives_desc": "India adalah pusat dunia untuk gum dan serat nabati. Kami memasok guar gum, psyllium, biji asam jawa, dan turunan cassia untuk aplikasi pangan, minuman, farmasi, dan industri.",
+  "products.cat_hydrocolloids_food_additives_desc": "India adalah pusat dunia untuk gum dan serat nabati. Kami memasok guar gum, psyllium, dan turunan biji asam jawa untuk aplikasi pangan, minuman, farmasi, dan industri.",
 
   "products.cat_explore": "Jelajahi rangkaian",
   "products.cat_count_unit": "produk",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "Serat larut andalan dunia, ditanam di India.",
   "cat.prod_tamarind_kernel_powder_name": "Bubuk Biji Asam Jawa",
   "cat.prod_tamarind_kernel_powder_tagline": "Pengental alami dan agen kanji yang serbaguna.",
-  "cat.prod_cassia_gum_powder_name": "Bubuk Cassia Gum",
-  "cat.prod_cassia_gum_powder_tagline": "Gum penggumpal dan penstabil untuk pangan dan pakan hewan peliharaan.",
 
   "prod.zoom_hint": "Arahkan untuk memperbesar · klik untuk perbesaran",
   "prod.available_in": "Tersedia dalam",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Kelas pangan / teknis",
   "prod.tamarind_kernel_powder_g2": "Biasa & tanpa minyak",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Kadar air ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "Cassia gum adalah galaktomanan yang berasal dari biji cassia tora, sering digunakan secara sinergis dengan gum lain untuk penggumpalan dan penstabilan. Ia disetujui secara luas sebagai pengental dalam pakan hewan peliharaan dan aplikasi pangan tertentu.",
-  "prod.cassia_gum_powder_f1": "Sinergis dengan gum lain",
-  "prod.cassia_gum_powder_f2": "Penggumpalan / penstabilan yang kuat",
-  "prod.cassia_gum_powder_f3": "Galaktomanan nabati",
-  "prod.cassia_gum_powder_f4": "Kelas pakan hewan peliharaan dan pangan",
-  "prod.cassia_gum_powder_f5": "Berbagai viskositas",
-  "prod.cassia_gum_powder_f6": "Mesh, kemasan, dan label pribadi khusus atas permintaan",
-  "prod.cassia_gum_powder_u1": "Pakan hewan peliharaan dan pakan ternak",
-  "prod.cassia_gum_powder_u2": "Keju, produk susu, dan makanan penutup beku",
-  "prod.cassia_gum_powder_u3": "Produk daging dan unggas",
-  "prod.cassia_gum_powder_u4": "Penggunaan industri",
-  "prod.cassia_gum_powder_g1": "Kelas pangan / pakan hewan peliharaan",
-  "prod.cassia_gum_powder_g2": "Berbagai viskositas",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "Kadar air ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "Kadar air ≤ 10%"
 }

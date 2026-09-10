@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Gedroogde fruitpoeders",
   "products.cat_fruit_powders_desc": "Indiase vruchten van enkelvoudige oorsprong, zachtjes gedroogd en gemalen tot vrij stromende poeders die kleur, frisheid en natuurlijke zoetheid behouden — ontwikkeld voor dranken, bakkerij, zuivel, banketbakkerij en nutraceutica.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrocolloïden & levensmiddelenadditieven",
-  "products.cat_hydrocolloids_food_additives_desc": "India is het wereldcentrum voor plantaardige gommen en vezels. Wij leveren guargom, psyllium, tamarindekernmeel en cassiaderivaaten voor voedings-, dranken-, farma- en industriële toepassingen.",
+  "products.cat_hydrocolloids_food_additives_desc": "India is het wereldcentrum voor plantaardige gommen en vezels. Wij leveren guargom, psyllium en tamarindekernmeel-derivaten voor voedings-, dranken-, farma- en industriële toepassingen.",
 
   "products.cat_explore": "Assortiment verkennen",
   "products.cat_count_unit": "producten",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "Wereldwijd de meest gebruikte oplosbare vezel, geteeld in India.",
   "cat.prod_tamarind_kernel_powder_name": "Tamarindekernpoeder",
   "cat.prod_tamarind_kernel_powder_tagline": "Een veelzijdig natuurlijk verdikkings- en appreturmiddel.",
-  "cat.prod_cassia_gum_powder_name": "Cassiegompoeder",
-  "cat.prod_cassia_gum_powder_tagline": "Een geleer- en stabilisatiegom voor voedings- en diervoeding.",
 
   "prod.zoom_hint": "Beweeg om te vergroten · klik om uit te vergroten",
   "prod.available_in": "Beschikbaar in",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Levensmiddelen-/technische kwaliteit",
   "prod.tamarind_kernel_powder_g2": "Onbehandeld & ontolied",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Vochtgehalte ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "Cassiegom is een galactomannan afgeleid van het cassia tora-zaad, vaak gebruikt in synergie met andere gommen voor gelering en stabilisering. Het is breed goedgekeurd als verdikkingsmiddel in diervoeding en geselecteerde levensmiddelen­toepassingen.",
-  "prod.cassia_gum_powder_f1": "Synergetisch met andere gommen",
-  "prod.cassia_gum_powder_f2": "Sterk geleer- en stabilisatievermogen",
-  "prod.cassia_gum_powder_f3": "Plantaardig galactomannan",
-  "prod.cassia_gum_powder_f4": "Diervoeding- en levensmiddelenkwaliteiten",
-  "prod.cassia_gum_powder_f5": "Diverse viscositeiten",
-  "prod.cassia_gum_powder_f6": "Aangepaste maling, verpakking en huismerk op aanvraag",
-  "prod.cassia_gum_powder_u1": "Diervoeding en veevoer",
-  "prod.cassia_gum_powder_u2": "Kaas, zuivel en bevroren desserts",
-  "prod.cassia_gum_powder_u3": "Vlees- en gevogelteprodukten",
-  "prod.cassia_gum_powder_u4": "Industriële toepassingen",
-  "prod.cassia_gum_powder_g1": "Levensmiddelen-/diervoeding-kwaliteit",
-  "prod.cassia_gum_powder_g2": "Diverse viscositeiten",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "Vochtgehalte ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "Vochtgehalte ≤ 10%"
 }

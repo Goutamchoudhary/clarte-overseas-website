@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Poudres de Fruits Déshydratés",
   "products.cat_fruit_powders_desc": "Fruits indiens d'origine unique, délicatement séchés et broyés en poudres fluides qui conservent leur couleur, leur acidité et leur douceur naturelle — conçues pour les boissons, la boulangerie, les produits laitiers, la confiserie et la nutraceutique.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrocolloïdes & Additifs Alimentaires",
-  "products.cat_hydrocolloids_food_additives_desc": "L'Inde est le centre mondial des gommes et fibres d'origine végétale. Nous fournissons de la gomme de guar, du psyllium, du noyau de tamarin et des dérivés de casse pour les applications alimentaires, boissons, pharmaceutiques et industrielles.",
+  "products.cat_hydrocolloids_food_additives_desc": "L'Inde est le centre mondial des gommes et fibres d'origine végétale. Nous fournissons de la gomme de guar, du psyllium et des dérivés de noyau de tamarin pour les applications alimentaires, boissons, pharmaceutiques et industrielles.",
 
   "products.cat_explore": "Explorer la gamme",
   "products.cat_count_unit": "produits",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "La fibre soluble préférée au monde, cultivée en Inde.",
   "cat.prod_tamarind_kernel_powder_name": "Poudre de Noyau de Tamarin",
   "cat.prod_tamarind_kernel_powder_tagline": "Un épaississant naturel polyvalent et agent d'encollage.",
-  "cat.prod_cassia_gum_powder_name": "Poudre de Gomme de Casse",
-  "cat.prod_cassia_gum_powder_tagline": "Une gomme gélifiante et stabilisante pour les aliments et l'alimentation animale.",
 
   "prod.zoom_hint": "Survolez pour zoomer · cliquez pour agrandir",
   "prod.available_in": "Disponible en",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Grade alimentaire / technique",
   "prod.tamarind_kernel_powder_g2": "Standard & déshuilé",
   "prod.tamarind_kernel_powder_g3": "100 à 200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Humidité ≤ 10 %",
-
-  "prod.cassia_gum_powder_desc": "La gomme de cassia est un galactomannane dérivé de la graine de cassia tora, souvent utilisé en synergie avec d'autres gommes pour la gélification et la stabilisation. Elle est largement approuvée comme épaississant dans les aliments pour animaux et certaines applications alimentaires.",
-  "prod.cassia_gum_powder_f1": "Synergique avec d'autres gommes",
-  "prod.cassia_gum_powder_f2": "Forte gélification / stabilisation",
-  "prod.cassia_gum_powder_f3": "Galactomannane d'origine végétale",
-  "prod.cassia_gum_powder_f4": "Grades pour aliments pour animaux et alimentaires",
-  "prod.cassia_gum_powder_f5": "Différentes viscosités",
-  "prod.cassia_gum_powder_f6": "Maillage, conditionnement et marque privée sur demande",
-  "prod.cassia_gum_powder_u1": "Aliments pour animaux de compagnie et animaux d'élevage",
-  "prod.cassia_gum_powder_u2": "Fromage, produits laitiers et desserts glacés",
-  "prod.cassia_gum_powder_u3": "Produits à base de viande et de volaille",
-  "prod.cassia_gum_powder_u4": "Usages industriels",
-  "prod.cassia_gum_powder_g1": "Grade alimentaire / pour animaux de compagnie",
-  "prod.cassia_gum_powder_g2": "Différentes viscosités",
-  "prod.cassia_gum_powder_g3": "100 à 200 mesh",
-  "prod.cassia_gum_powder_g4": "Humidité ≤ 12 %"
+  "prod.tamarind_kernel_powder_g4": "Humidité ≤ 10 %"
 }

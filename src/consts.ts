@@ -62,7 +62,6 @@ export const UNAVAILABLE_PRODUCTS = new Set([
 export const COMING_SOON_PRODUCTS = new Set([
   "curry-leaf-powder",
   "tulsi-powder",
-  "cassia-gum-powder",
   "tamarind-kernel-powder",
 ]);
 

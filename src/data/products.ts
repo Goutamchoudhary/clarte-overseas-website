@@ -103,7 +103,7 @@ export const categories: Category[] = [
     emoji: "🧪",
     tagline: "Plant-based thickeners, stabilisers & fibres",
     description:
-      "India is the world's hub for plant-based gums and fibres. We supply guar gum, psyllium, tamarind kernel and cassia derivatives for food, beverage, pharma and industrial applications.",
+      "India is the world's hub for plant-based gums and fibres. We supply guar gum, psyllium and tamarind kernel derivatives for food, beverage, pharma and industrial applications.",
     accentFrom: "#1f4693",
     accentTo: "#16306e",
   },
@@ -460,17 +460,6 @@ export const products: Product[] = [
     features: ["Natural polysaccharide gum", "Good thickening and gelling", "Cost-effective", "Plain & de-oiled grades", "Synergistic with other gums", F_CUSTOM],
     uses: ["Food thickening and gelling", "Textile and jute sizing", "Paper and adhesives", "Industrial applications"],
     grades: ["Food / technical grade", "Plain & de-oiled", "100–200 mesh", "Moisture ≤ 10%"],
-    drying: DRY.milled,
-  },
-  {
-    slug: "cassia-gum-powder", name: "Cassia Gum Powder", category: "hydrocolloids-food-additives",
-    emoji: "🟡", hsn: "1302 32 90", botanical: "Cassia tora / obtusifolia",
-    tagline: "A gelling and stabilising gum for food and pet food.",
-    description:
-      "Cassia gum is a galactomannan derived from the cassia tora seed, often used in synergy with other gums for gelling and stabilising. It is widely approved as a thickener in pet food and selected food applications.",
-    features: ["Synergistic with other gums", "Strong gelling / stabilising", "Plant-based galactomannan", "Pet-food and food grades", "Various viscosities", F_CUSTOM],
-    uses: ["Pet food and animal feed", "Cheese, dairy and frozen desserts", "Meat and poultry products", "Industrial uses"],
-    grades: ["Food / pet-food grade", "Various viscosities", "100–200 mesh", "Moisture ≤ 12%"],
     drying: DRY.milled,
   },
 ];

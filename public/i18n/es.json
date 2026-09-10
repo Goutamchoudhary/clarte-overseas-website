@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Polvos de Fruta Deshidratada",
   "products.cat_fruit_powders_desc": "Frutas indias de origen único, secadas suavemente y molidas en polvos de flujo libre que retienen su color, acidez y dulzor natural — diseñados para bebidas, panadería, lácteos, confitería y nutracéuticos.",
   "products.cat_hydrocolloids_food_additives_name": "Hidrocoloides y Aditivos Alimentarios",
-  "products.cat_hydrocolloids_food_additives_desc": "India es el centro mundial de gomas y fibras de origen vegetal. Suministramos goma guar, psyllium, semilla de tamarindo y derivados de cassia para aplicaciones alimentarias, de bebidas, farmacéuticas e industriales.",
+  "products.cat_hydrocolloids_food_additives_desc": "India es el centro mundial de gomas y fibras de origen vegetal. Suministramos goma guar, psyllium y derivados de semilla de tamarindo para aplicaciones alimentarias, de bebidas, farmacéuticas e industriales.",
 
   "products.cat_explore": "Explorar gama",
   "products.cat_count_unit": "productos",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "La fibra soluble de referencia mundial, cultivada en India.",
   "cat.prod_tamarind_kernel_powder_name": "Polvo de Semilla de Tamarindo",
   "cat.prod_tamarind_kernel_powder_tagline": "Un espesante natural versátil y agente de apresto.",
-  "cat.prod_cassia_gum_powder_name": "Goma de Cassia en Polvo",
-  "cat.prod_cassia_gum_powder_tagline": "Una goma gelificante y estabilizante para alimentos y piensos.",
 
   "prod.zoom_hint": "Pase el cursor para ampliar · haga clic para agrandar",
   "prod.available_in": "Disponible en",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Grado alimentario / técnico",
   "prod.tamarind_kernel_powder_g2": "Estándar y desgrasado",
   "prod.tamarind_kernel_powder_g3": "100–200 malla",
-  "prod.tamarind_kernel_powder_g4": "Humedad ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "La goma de cassia es un galactomanano derivado de la semilla de cassia tora, usado frecuentemente en sinergia con otras gomas para gelificación y estabilización. Está ampliamente aprobada como espesante en piensos para mascotas y determinadas aplicaciones alimentarias.",
-  "prod.cassia_gum_powder_f1": "Sinérgica con otras gomas",
-  "prod.cassia_gum_powder_f2": "Fuerte gelificación / estabilización",
-  "prod.cassia_gum_powder_f3": "Galactomanano de origen vegetal",
-  "prod.cassia_gum_powder_f4": "Grados para piensos y alimentación",
-  "prod.cassia_gum_powder_f5": "Diversas viscosidades",
-  "prod.cassia_gum_powder_f6": "Malla, envasado y marca propia bajo pedido",
-  "prod.cassia_gum_powder_u1": "Piensos para mascotas y animales de granja",
-  "prod.cassia_gum_powder_u2": "Queso, lácteos y postres helados",
-  "prod.cassia_gum_powder_u3": "Productos cárnicos y de aves",
-  "prod.cassia_gum_powder_u4": "Usos industriales",
-  "prod.cassia_gum_powder_g1": "Grado alimentario / para mascotas",
-  "prod.cassia_gum_powder_g2": "Diversas viscosidades",
-  "prod.cassia_gum_powder_g3": "100–200 malla",
-  "prod.cassia_gum_powder_g4": "Humedad ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "Humedad ≤ 10%"
 }

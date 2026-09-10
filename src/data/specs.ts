@@ -374,16 +374,4 @@ export const productSpecs: Record<string, ProductSpec> = {
     nutrition: { energy: 340, protein: 15, fat: 5, carb: 65, sugars: 5, fibre: 8, sodium: 20 },
     nutritionNote: "Plant-based thickener and sizing agent (polysaccharide-rich).",
   },
-  "cassia-gum-powder": {
-    appearance: "Free-flowing powder", colour: "Pale yellow to cream",
-    odour: "Neutral", taste: "Bland",
-    mesh: "200 mesh (custom available)",
-    params: [
-      { k: "Viscosity", v: "Grade-dependent" },
-      { k: "Purity (polysaccharide)", v: "≥ 75%" },
-      { k: "INS", v: "E427" },
-    ],
-    nutrition: { energy: 200, protein: 5, fat: 0.5, carb: 80, sugars: 0, fibre: 75, sodium: 20 },
-    nutritionNote: "Galactomannan gum used as a thickener/stabiliser (food-grade).",
-  },
 };

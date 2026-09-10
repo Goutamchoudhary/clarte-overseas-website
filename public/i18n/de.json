@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Getrocknete Fruchtpulver",
   "products.cat_fruit_powders_desc": "Indische Früchte einer Herkunft, schonend getrocknet und zu rieselfähigen Pulvern vermahlen, die ihre Farbe, Säure und natürliche Süße bewahren – gemacht für Getränke, Backwaren, Milchprodukte, Süßwaren und Nutraceuticals.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrokolloide & Lebensmittelzusätze",
-  "products.cat_hydrocolloids_food_additives_desc": "Indien ist das weltweite Zentrum für pflanzliche Gummen und Fasern. Wir liefern Guarkernmehl, Psyllium, Tamarindenkern- und Cassia-Derivate für Anwendungen in Lebensmitteln, Getränken, Pharma und Industrie.",
+  "products.cat_hydrocolloids_food_additives_desc": "Indien ist das weltweite Zentrum für pflanzliche Gummen und Fasern. Wir liefern Guarkernmehl, Psyllium und Tamarindenkern-Derivate für Anwendungen in Lebensmitteln, Getränken, Pharma und Industrie.",
 
   "products.cat_explore": "Sortiment entdecken",
   "products.cat_count_unit": "Produkte",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "Die weltweit gefragte lösliche Faser, in Indien angebaut.",
   "cat.prod_tamarind_kernel_powder_name": "Tamarindenkern-Pulver",
   "cat.prod_tamarind_kernel_powder_tagline": "Ein vielseitiges natürliches Verdickungs- und Schlichtemittel.",
-  "cat.prod_cassia_gum_powder_name": "Cassia-Gummi-Pulver",
-  "cat.prod_cassia_gum_powder_tagline": "Ein gelierendes und stabilisierendes Gummi für Lebensmittel und Tiernahrung.",
 
   "prod.zoom_hint": "Zum Zoomen darüberfahren · zum Vergrößern klicken",
   "prod.available_in": "Verfügbar in",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Lebensmittel- / technische Qualität",
   "prod.tamarind_kernel_powder_g2": "Rein & entölt",
   "prod.tamarind_kernel_powder_g3": "100–200 Mesh",
-  "prod.tamarind_kernel_powder_g4": "Feuchtigkeit ≤ 10 %",
-
-  "prod.cassia_gum_powder_desc": "Cassia-Gummi ist ein Galactomannan, das aus dem Samen der Cassia tora gewonnen wird, oft in Synergie mit anderen Gummen zur Gelierung und Stabilisierung verwendet. Es ist weithin als Verdickungsmittel in Tiernahrung und ausgewählten Lebensmittelanwendungen zugelassen.",
-  "prod.cassia_gum_powder_f1": "Synergistisch mit anderen Gummen",
-  "prod.cassia_gum_powder_f2": "Starke Gelierung / Stabilisierung",
-  "prod.cassia_gum_powder_f3": "Pflanzliches Galactomannan",
-  "prod.cassia_gum_powder_f4": "Tiernahrungs- und Lebensmittelqualitäten",
-  "prod.cassia_gum_powder_f5": "Verschiedene Viskositäten",
-  "prod.cassia_gum_powder_f6": "Individuelles Mesh, Verpackung und Eigenmarke auf Anfrage",
-  "prod.cassia_gum_powder_u1": "Heim- und Nutztiernahrung",
-  "prod.cassia_gum_powder_u2": "Käse, Milchprodukte und Tiefkühldesserts",
-  "prod.cassia_gum_powder_u3": "Fleisch- und Geflügelprodukte",
-  "prod.cassia_gum_powder_u4": "Industrielle Nutzungen",
-  "prod.cassia_gum_powder_g1": "Lebensmittel- / Tiernahrungsqualität",
-  "prod.cassia_gum_powder_g2": "Verschiedene Viskositäten",
-  "prod.cassia_gum_powder_g3": "100–200 Mesh",
-  "prod.cassia_gum_powder_g4": "Feuchtigkeit ≤ 12 %"
+  "prod.tamarind_kernel_powder_g4": "Feuchtigkeit ≤ 10 %"
 }

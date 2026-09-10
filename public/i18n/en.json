@@ -472,7 +472,7 @@
   "products.cat_fruit_powders_name": "Dehydrated Fruit Powders",
   "products.cat_fruit_powders_desc": "Single-origin Indian fruits, gently dried and milled into free-flowing powders that hold their colour, tang and natural sweetness — built for beverages, bakery, dairy, confectionery and nutraceuticals.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrocolloids & Food Additives",
-  "products.cat_hydrocolloids_food_additives_desc": "India is the world's hub for plant-based gums and fibres. We supply guar gum, psyllium, tamarind kernel and cassia derivatives for food, beverage, pharma and industrial applications.",
+  "products.cat_hydrocolloids_food_additives_desc": "India is the world's hub for plant-based gums and fibres. We supply guar gum, psyllium and tamarind kernel derivatives for food, beverage, pharma and industrial applications.",
 
   "products.cat_explore": "Explore range",
   "products.cat_count_unit": "products",
@@ -540,8 +540,6 @@
   "cat.prod_psyllium_husk_powder_tagline": "The world's go-to soluble-fibre, grown in India.",
   "cat.prod_tamarind_kernel_powder_name": "Tamarind Kernel Powder",
   "cat.prod_tamarind_kernel_powder_tagline": "A versatile natural thickener and sizing agent.",
-  "cat.prod_cassia_gum_powder_name": "Cassia Gum Powder",
-  "cat.prod_cassia_gum_powder_tagline": "A gelling and stabilising gum for food and pet food.",
 
   "prod.zoom_hint": "Hover to zoom · click to enlarge",
   "prod.available_in": "Available in",
@@ -1150,21 +1148,5 @@
   "prod.tamarind_kernel_powder_g1": "Food / technical grade",
   "prod.tamarind_kernel_powder_g2": "Plain & de-oiled",
   "prod.tamarind_kernel_powder_g3": "100–200 mesh",
-  "prod.tamarind_kernel_powder_g4": "Moisture ≤ 10%",
-
-  "prod.cassia_gum_powder_desc": "Cassia gum is a galactomannan derived from the cassia tora seed, often used in synergy with other gums for gelling and stabilising. It is widely approved as a thickener in pet food and selected food applications.",
-  "prod.cassia_gum_powder_f1": "Synergistic with other gums",
-  "prod.cassia_gum_powder_f2": "Strong gelling / stabilising",
-  "prod.cassia_gum_powder_f3": "Plant-based galactomannan",
-  "prod.cassia_gum_powder_f4": "Pet-food and food grades",
-  "prod.cassia_gum_powder_f5": "Various viscosities",
-  "prod.cassia_gum_powder_f6": "Custom mesh, packing and private label on request",
-  "prod.cassia_gum_powder_u1": "Pet food and animal feed",
-  "prod.cassia_gum_powder_u2": "Cheese, dairy and frozen desserts",
-  "prod.cassia_gum_powder_u3": "Meat and poultry products",
-  "prod.cassia_gum_powder_u4": "Industrial uses",
-  "prod.cassia_gum_powder_g1": "Food / pet-food grade",
-  "prod.cassia_gum_powder_g2": "Various viscosities",
-  "prod.cassia_gum_powder_g3": "100–200 mesh",
-  "prod.cassia_gum_powder_g4": "Moisture ≤ 12%"
+  "prod.tamarind_kernel_powder_g4": "Moisture ≤ 10%"
 }
