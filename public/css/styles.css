@@ -1284,6 +1284,16 @@ html:not(.js-ready) .reveal {
 .pd-form-btn:hover { color: #1f4693; }
 .pd-form-btn.active { color: #fff; background: linear-gradient(135deg, #2b57b0, #1f4693); box-shadow: 0 8px 18px -10px rgba(31,70,147,.7); }
 .pd-title { font: 800 clamp(1.8rem,4vw,2.6rem)/1.1 "Sora", sans-serif; color: #16265a; }
+/* Second line of the product H1 — the commercial phrase buyers search for.
+   Deliberately visible and readable (not a hidden keyword): it sits under the
+   product name as a quieter, smaller kicker so the visual hierarchy still leads
+   with the product itself. */
+.pd-title-kicker {
+  display: block; margin-top: .35rem;
+  font: 600 clamp(.82rem,1.6vw,.95rem)/1.3 var(--font-body);
+  letter-spacing: .04em; text-transform: uppercase; color: var(--olive);
+}
+.pd-faq-section { background: var(--mist, #f7f8fb); }
 .pd-botanical { font-style: italic; color: #8a97b2; margin-top: .25rem; }
 .pd-tagline { font-size: 1.1rem; color: #2b4585; font-weight: 600; margin-top: .8rem; line-height: 1.5; }
 .pd-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }

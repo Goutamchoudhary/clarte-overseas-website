@@ -19,9 +19,54 @@ const isOut = isUnavailable || isComingSoon;
 const stockLabel = isUnavailable ? "Currently Unavailable" : isComingSoon ? "Coming Soon" : "In stock · Ships within 14 days";
 const stockI18n = isUnavailable ? "prod.stock_unavailable" : isComingSoon ? "prod.stock_coming_soon" : "prod.stock_in";
 
-const title = `${p.name} — ${cat.name} | HSN ${p.hsn} | Clarté Overseas`;
-const description = `${p.tagline} ${p.description}`.slice(0, 180);
+// Title and description are written for how B2B buyers actually search, not for
+// how we file the product internally. The old title spent its opening words on
+// the category and the HSN code — nobody types "HSN 1302 32 90" into Google,
+// while "<product> exporter" and "<product> supplier india" are exactly the
+// phrases sourcing managers use. Keywords are front-loaded because Google
+// truncates the display around 60-65 characters but still indexes the whole
+// string, so the words that matter have to come first.
+const title = `${p.name} Exporter & Supplier in India | Clarté Overseas`;
+const description = (
+  `Bulk ${p.name.toLowerCase()} exporter and supplier from India. ${p.tagline} ` +
+  `Food-grade, COA with every lot, trial quantities to full containers.`
+).slice(0, 200);
 const url = `${SITE.url}/products/${cat.slug}/${p.slug}`;
+
+/* Buyer-intent Q&A. These are the questions that actually arrive by email and
+   WhatsApp before a first order, and every answer here matches what the rest of
+   the site already states (7-day samples, 15-21 day dispatch, the seven
+   registrations, 25kg kraft packing) so there is one story across the site.
+
+   English only, like the blog post bodies: the i18n engine has no interpolation,
+   so a question carrying the product name can't be expressed as a shared key —
+   and English is the language the target markets search in anyway. */
+const faqs = [
+  {
+    q: `Do you export ${p.name} to the US, UK and Europe?`,
+    a: `Yes. We ship ${p.name.toLowerCase()} from India to buyers across the United States, United Kingdom, UAE and the wider Middle East, Australia and South East Asia, with documentation matched to each destination's import requirements.`,
+  },
+  {
+    q: `What is the minimum order quantity for ${p.name}?`,
+    a: `We keep MOQs trial-friendly, so you can start with a small test quantity and scale to full container loads once the grade is proven in your formulation. Tell us the volume you are targeting and we will confirm what is workable.`,
+  },
+  {
+    q: `Can I get a sample of ${p.name} before placing a bulk order?`,
+    a: `Yes. Representative samples are typically delivered within about 7 days, so you can check grade, colour, mesh and aroma against your own specification before committing to a shipment.`,
+  },
+  {
+    q: `What certifications and documents come with ${p.name}?`,
+    a: `Every consignment ships with a full COA and specification sheet. Clarté Overseas is registered for ISO 9001:2015, APEDA, the Spices Board of India (RCMC), FSSAI, Udyam (MSME), IEC and GST, and the standard export set covers the commercial invoice, packing list and certificate of origin.`,
+  },
+  {
+    q: `How is ${p.name} packed for export?`,
+    a: `25 kg kraft bags with a food-grade liner as standard. Custom pack sizes, retail packaging and private-label branding are available on request.`,
+  },
+  {
+    q: `How quickly is ${p.name} dispatched after an order is confirmed?`,
+    a: `Bulk orders are dispatched in 15–21 days from a confirmed order. Ocean transit time on top of that depends on your destination port, and we share an indicative timeline with the quote.`,
+  },
+];
 
 const DRYING_KEYS: Record<string, string> = {
   "Spray, freeze or drum-dried — to your grade": "prod.drying_fruit",
@@ -42,6 +87,11 @@ const specs: [string, string, string, string?][] = [
   ["Origin", "India", "prod.spec_origin", "prod.origin_value"],
 ];
 
+/* Product schema. Deliberately carries no `offers`, `price` or `aggregateRating`:
+   we don't publish prices, and inventing a price or a review count to unlock a
+   rich result would be fabricating data. What's here is everything we can state
+   truthfully — origin, HSN, packing, MOQ posture, who it's sold to — which is
+   what helps Google understand the page is a real B2B supply listing. */
 const productLd = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -49,11 +99,29 @@ const productLd = {
   ...(p.image ? { image: [p.image] } : {}),
   description: p.description,
   category: cat.name,
+  sku: p.slug,
+  url,
   brand: { "@type": "Brand", name: SITE.name },
-  ...(p.botanical ? { additionalProperty: [
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  audience: { "@type": "BusinessAudience", audienceType: "Food manufacturers, flavour houses, ingredient distributors and private-label brands" },
+  additionalProperty: [
     { "@type": "PropertyValue", name: "HSN code", value: p.hsn },
-    { "@type": "PropertyValue", name: "Botanical name", value: p.botanical },
-  ] } : { additionalProperty: [{ "@type": "PropertyValue", name: "HSN code", value: p.hsn }] }),
+    ...(p.botanical ? [{ "@type": "PropertyValue", name: "Botanical name", value: p.botanical }] : []),
+    ...(p.forms?.length ? [{ "@type": "PropertyValue", name: "Available forms", value: p.forms.join(", ") }] : []),
+    { "@type": "PropertyValue", name: "Country of origin", value: "India" },
+    { "@type": "PropertyValue", name: "Packaging", value: "25 kg kraft bags with food-grade liner (custom packing available)" },
+    { "@type": "PropertyValue", name: "Minimum order quantity", value: "Trial quantities available, scaling to full containers" },
+    { "@type": "PropertyValue", name: "Shelf life", value: "18–24 months" },
+  ],
+};
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 const breadcrumbLd = {
   "@context": "https://schema.org",
@@ -71,6 +139,7 @@ const breadcrumbLd = {
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(productLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
   </Fragment>
 
   <section class="pd-top" style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
@@ -107,7 +176,15 @@ const breadcrumbLd = {
 
         <!-- Info -->
         <div class="pd-info reveal d1">
-          <h1 class="pd-title" data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_name`}>{p.name}</h1>
+          <!-- The kicker is a real, visible second line, not hidden keyword text:
+               the H1 is the strongest on-page signal Google reads, and every
+               competitor ranking for "<product> exporter" says so in theirs. The
+               product name keeps its own span so data-i18n (which overwrites
+               textContent) can't wipe the kicker. -->
+          <h1 class="pd-title">
+            <span data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_name`}>{p.name}</span>
+            <span class="pd-title-kicker" data-i18n="prod.title_kicker">Exporter &amp; Bulk Supplier in India</span>
+          </h1>
           {p.botanical && <p class="pd-botanical">{p.botanical}</p>}
           <p class="pd-tagline" data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_tagline`}>{p.tagline}</p>
           <div class="pd-chips">
@@ -221,6 +298,40 @@ const breadcrumbLd = {
           <p class="pd-spec-note" data-i18n="prod.spec_note">Specs are indicative and can be tailored to your formulation. Full COA and spec sheet shared on request.</p>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <!-- ===================== SOURCING FAQ =====================
+       Carries the sourcing language buyers search with ("exporter", "bulk
+       supplier", "MOQ", "from India") as genuine answers rather than as a
+       keyword list, and gives the page the depth the directory listings that
+       currently outrank us have. Answers are kept in step with the rest of the
+       site — same 7-day samples, 15-21 day dispatch and registration list. -->
+  <section class="py-14 lg:py-16 pd-faq-section">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="reveal">
+        <span class="eyebrow">Sourcing</span>
+        <h2 class="tg-1 tg-script tg-script--sm font-extrabold text-2xl sm:text-3xl mt-3">
+          Buying {p.name} from India
+        </h2>
+        <p class="text-slate-500 mt-4 leading-relaxed">
+          Clarté Overseas is an India-based merchant exporter and bulk supplier of {p.name.toLowerCase()},
+          shipping food-grade material to manufacturers, flavour houses, nutraceutical brands and
+          ingredient distributors worldwide. Below are the questions buyers ask most before a first order.
+        </p>
+      </div>
+
+      <div class="mt-8 reveal d1">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary>
+              <span>{f.q}</span>
+              <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-body">{f.a}</div>
+          </details>
+        ))}
+      </div>
     </div>
   </section>
 

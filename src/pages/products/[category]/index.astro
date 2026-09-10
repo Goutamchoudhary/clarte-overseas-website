@@ -12,8 +12,13 @@ const { category } = Astro.params;
 const cat = getCategory(category)!;
 const items = productsByCategory(category);
 
-const title = `${cat.name} — Indian Dehydrated Powders | Clarté Overseas`;
-const description = `${cat.description} Export-ready, spec-driven supply from Clarté Overseas, India.`;
+// Same reasoning as the product pages: lead with the words a sourcing manager
+// types, not with our internal category phrasing.
+const title = `${cat.name} — Exporter & Bulk Supplier in India | Clarté Overseas`;
+const description = (
+  `Bulk exporter and supplier of ${cat.name.toLowerCase()} from India. ${cat.description} ` +
+  `Food-grade, COA with every lot, trial quantities to full containers.`
+).slice(0, 200);
 
 const breadcrumbLd = {
   "@context": "https://schema.org",
