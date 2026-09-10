@@ -33,39 +33,28 @@ const description = (
 ).slice(0, 200);
 const url = `${SITE.url}/products/${cat.slug}/${p.slug}`;
 
-/* Buyer-intent Q&A. These are the questions that actually arrive by email and
-   WhatsApp before a first order, and every answer here matches what the rest of
-   the site already states (7-day samples, 15-21 day dispatch, the seven
-   registrations, 25kg kraft packing) so there is one story across the site.
+/* Buyer-intent Q&A — the questions that actually arrive by email and WhatsApp
+   before a first order. Every answer matches what the rest of the site already
+   states (7-day samples, 15-21 day dispatch, the seven registrations, 25kg
+   kraft) so there is one story sitewide.
 
-   English only, like the blog post bodies: the i18n engine has no interpolation,
-   so a question carrying the product name can't be expressed as a shared key —
-   and English is the language the target markets search in anyway. */
+   Deliberately phrased WITHOUT the product name so each Q and A is a fixed
+   string translated once as a shared i18n key (prod.faq1_q … prod.faq6_a),
+   exactly like the About / Certifications / How-We-Export FAQs. Any new product,
+   in any future category, gets the whole translated block for free. The product
+   keyword still saturates the page — title, meta, H1, the H1 kicker, the
+   breadcrumb, the spec table, the description, and the FAQ section heading,
+   which keeps the name via a prefix/suffix split around a data-i18n span.
+
+   This English array is also the source for the FAQPage JSON-LD below, which
+   stays English to match the default (English) server render. */
 const faqs = [
-  {
-    q: `Do you export ${p.name} to the US, UK and Europe?`,
-    a: `Yes. We ship ${p.name.toLowerCase()} from India to buyers across the United States, United Kingdom, UAE and the wider Middle East, Australia and South East Asia, with documentation matched to each destination's import requirements.`,
-  },
-  {
-    q: `What is the minimum order quantity for ${p.name}?`,
-    a: `We keep MOQs trial-friendly, so you can start with a small test quantity and scale to full container loads once the grade is proven in your formulation. Tell us the volume you are targeting and we will confirm what is workable.`,
-  },
-  {
-    q: `Can I get a sample of ${p.name} before placing a bulk order?`,
-    a: `Yes. Representative samples are typically delivered within about 7 days, so you can check grade, colour, mesh and aroma against your own specification before committing to a shipment.`,
-  },
-  {
-    q: `What certifications and documents come with ${p.name}?`,
-    a: `Every consignment ships with a full COA and specification sheet. Clarté Overseas is registered for ISO 9001:2015, APEDA, the Spices Board of India (RCMC), FSSAI, Udyam (MSME), IEC and GST, and the standard export set covers the commercial invoice, packing list and certificate of origin.`,
-  },
-  {
-    q: `How is ${p.name} packed for export?`,
-    a: `25 kg kraft bags with a food-grade liner as standard. Custom pack sizes, retail packaging and private-label branding are available on request.`,
-  },
-  {
-    q: `How quickly is ${p.name} dispatched after an order is confirmed?`,
-    a: `Bulk orders are dispatched in 15–21 days from a confirmed order. Ocean transit time on top of that depends on your destination port, and we share an indicative timeline with the quote.`,
-  },
+  { key: "faq1", q: "Which countries do you export to?", a: "We ship from India to buyers across the United States, United Kingdom, UAE and the wider Middle East, Australia and South East Asia, with documentation matched to each destination's import requirements." },
+  { key: "faq2", q: "What is the minimum order quantity?", a: "We keep MOQs trial-friendly, so you can start with a small test quantity and scale to full container loads once the grade is proven in your formulation. Tell us the volume you are targeting and we will confirm what is workable." },
+  { key: "faq3", q: "Can I get a sample before placing a bulk order?", a: "Yes. Representative samples are typically delivered within about 7 days, so you can check grade, colour, mesh and aroma against your own specification before committing to a shipment." },
+  { key: "faq4", q: "What certifications and documents come with each shipment?", a: "Every consignment ships with a full COA and specification sheet. Clarté Overseas is registered for ISO 9001:2015, APEDA, the Spices Board of India (RCMC), FSSAI, Udyam (MSME), IEC and GST, and the standard export set covers the commercial invoice, packing list and certificate of origin." },
+  { key: "faq5", q: "How is the product packed for export?", a: "25 kg kraft bags with a food-grade liner as standard. Custom pack sizes, retail packaging and private-label branding are available on request." },
+  { key: "faq6", q: "How quickly is an order dispatched after it is confirmed?", a: "Bulk orders are dispatched in 15–21 days from a confirmed order. Ocean transit time on top of that depends on your destination port, and we share an indicative timeline with the quote." },
 ];
 
 const DRYING_KEYS: Record<string, string> = {
@@ -310,14 +299,19 @@ const breadcrumbLd = {
   <section class="py-14 lg:py-16 pd-faq-section">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
       <div class="reveal">
-        <span class="eyebrow">Sourcing</span>
+        <span class="eyebrow" data-i18n="prod.faq_eyebrow">Sourcing</span>
+        <!-- The heading keeps the product name for SEO; prefix and suffix are
+             separate i18n keys so each language can put the noun where its
+             grammar needs it, and the name keeps its own data-i18n span so
+             textContent replacement can't wipe the wrapper. -->
         <h2 class="tg-1 tg-script tg-script--sm font-extrabold text-2xl sm:text-3xl mt-3">
-          Buying {p.name} from India
+          <span data-i18n="prod.faq_heading_a">Buying </span><span data-i18n={`cat.prod_${p.slug.replace(/-/g,'_')}_name`}>{p.name}</span><span data-i18n="prod.faq_heading_b"> from India</span>
         </h2>
-        <p class="text-slate-500 mt-4 leading-relaxed">
-          Clarté Overseas is an India-based merchant exporter and bulk supplier of {p.name.toLowerCase()},
-          shipping food-grade material to manufacturers, flavour houses, nutraceutical brands and
-          ingredient distributors worldwide. Below are the questions buyers ask most before a first order.
+        <p class="text-slate-500 mt-4 leading-relaxed" data-i18n="prod.faq_intro">
+          Clarté Overseas is an India-based merchant exporter and bulk supplier of dehydrated food
+          ingredients, shipping food-grade material to manufacturers, flavour houses, nutraceutical
+          brands and ingredient distributors worldwide. Below are the questions buyers ask most before
+          a first order.
         </p>
       </div>
 
@@ -325,10 +319,10 @@ const breadcrumbLd = {
         {faqs.map((f) => (
           <details class="faq-item">
             <summary>
-              <span>{f.q}</span>
+              <span data-i18n={`prod.${f.key}_q`}>{f.q}</span>
               <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
-            <div class="faq-body">{f.a}</div>
+            <div class="faq-body" data-i18n={`prod.${f.key}_a`}>{f.a}</div>
           </details>
         ))}
       </div>
