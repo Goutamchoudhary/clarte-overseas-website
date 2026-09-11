@@ -384,7 +384,7 @@ export const products: Product[] = [
     drying: DRY.functional,
   },
   {
-    slug: "coriander-leaf-powder", name: "Coriander Leaf Powder", category: "functional-nutritional-powders",
+    slug: "coriander-leaf-powder", name: "Coriander Leaf Powder", category: "culinary-spice-powders",
     image: "/assets/img/products/coriander-leaf-powder.webp",
     emoji: "🌱", hsn: "0712 90 90", botanical: "Coriandrum sativum",
     tagline: "Fresh, citrusy coriander leaf in a stable powder.",
@@ -393,10 +393,10 @@ export const products: Product[] = [
     features: ["Bright, citrusy coriander flavour", "Retained green colour", "No chopping or spoilage", "Consistent batch to batch", F_DRY, F_CUSTOM],
     uses: ["Spice and seasoning blends", "Sauces, chutneys and marinades", "Soups and ready meals", "Nutrition and green blends"],
     grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
-    drying: DRY.functional,
+    drying: DRY.culinary,
   },
   {
-    slug: "mint-powder", name: "Mint Powder", category: "functional-nutritional-powders",
+    slug: "mint-powder", name: "Mint Powder", category: "culinary-spice-powders",
     image: "/assets/img/products/mint-powder.webp",
     emoji: "🌿", hsn: "1211 90 99", botanical: "Mentha spicata",
     tagline: "Cooling mint leaf, dried to hold its aroma.",
@@ -405,7 +405,7 @@ export const products: Product[] = [
     features: ["Cooling, fresh mint aroma", "Vivid green colour", "Concentrated, easy to dose", "Long shelf life", F_DRY, F_CUSTOM],
     uses: ["Chutneys, dips and marinades", "Beverages and mocktails", "Confectionery and desserts", "Herbal and wellness blends"],
     grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
-    drying: DRY.functional,
+    drying: DRY.culinary,
   },
 
   // -------------------------------------------------- AYURVEDIC & HERBAL

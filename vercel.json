@@ -83,6 +83,9 @@
 
     { "source": "/products/functional-nutritional-powders/tomato-powder", "destination": "/products/dehydrated-vegetable-powders/tomato-powder", "permanent": true },
     { "source": "/products/functional-nutritional-powders/carrot-powder", "destination": "/products/dehydrated-vegetable-powders/carrot-powder", "permanent": true },
-    { "source": "/products/functional-nutritional-powders/jackfruit-powder", "destination": "/products/dehydrated-vegetable-powders/jackfruit-powder", "permanent": true }
+    { "source": "/products/functional-nutritional-powders/jackfruit-powder", "destination": "/products/dehydrated-vegetable-powders/jackfruit-powder", "permanent": true },
+
+    { "source": "/products/functional-nutritional-powders/coriander-leaf-powder", "destination": "/products/culinary-spice-powders/coriander-leaf-powder", "permanent": true },
+    { "source": "/products/functional-nutritional-powders/mint-powder", "destination": "/products/culinary-spice-powders/mint-powder", "permanent": true }
   ]
 }
