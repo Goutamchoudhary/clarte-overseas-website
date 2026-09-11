@@ -3045,7 +3045,7 @@ export const sortedPosts: Post[] = [...posts].sort(
 // 1). Exported from here — rather than declared in the page's frontmatter —
 // because Astro's getStaticPaths runs in an isolated scope that can only see
 // imports, not sibling consts from the rest of the file.
-export const BLOG_PAGE_SIZE = 15;
+export const BLOG_PAGE_SIZE = 12;
 
 export const faqs = [
   {
