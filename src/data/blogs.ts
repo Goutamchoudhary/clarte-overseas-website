@@ -21,7 +21,7 @@ export const posts: Post[] = [
     excerpt:
       "Powders and flakes used to be the compromise option. Today they sit at the centre of how modern food is made. Here is why that shift happened.",
     category: "Industry Trends",
-    date: "21 Jul 2025",
+    date: "16 Jun 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📈",
@@ -54,7 +54,7 @@ export const posts: Post[] = [
     excerpt:
       "From crop diversity to better processing, several forces are pushing India up the global table for dehydrated fruit, vegetable and powder ingredients.",
     category: "Market Outlook",
-    date: "1 Aug 2025",
+    date: "19 Jun 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌏",
@@ -86,7 +86,7 @@ export const posts: Post[] = [
     excerpt:
       "The same vegetable can ship as a flake, a granule or a fine powder. Picking the right one saves cost, waste and a fair bit of trouble.",
     category: "Buyer's Guide",
-    date: "2 Aug 2025",
+    date: "23 Jun 2025",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧂",
@@ -118,7 +118,7 @@ export const posts: Post[] = [
     excerpt:
       "Moisture, mesh, microbial counts. A plain-English guide to the numbers that actually decide whether an ingredient is right for you.",
     category: "Buyer's Guide",
-    date: "6 Aug 2025",
+    date: "30 Jun 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
@@ -157,7 +157,7 @@ export const posts: Post[] = [
     excerpt:
       "Sourcing from India can be smooth or stressful. The difference usually comes down to a few decisions made early, before the first order ships.",
     category: "Sourcing",
-    date: "12 Aug 2025",
+    date: "21 Jul 2025",
     read: "10 min read",
     author: "Gautam Choudhary",
     emoji: "🤝",
@@ -192,7 +192,7 @@ export const posts: Post[] = [
     excerpt:
       "Ripe Indian guava carries a musky-sweet aroma that is hard to keep once the fruit leaves the orchard. Dried into a powder, that character travels — and lasts.",
     category: "Ingredient Spotlight",
-    date: "17 Aug 2025",
+    date: "10 Aug 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍈",
@@ -227,7 +227,7 @@ export const posts: Post[] = [
     excerpt:
       "Pineapple's bright, sweet-sour profile is brilliant in a product and miserable to ship fresh. As a powder, the tang and the golden colour travel intact.",
     category: "Ingredient Spotlight",
-    date: "22 Aug 2025",
+    date: "11 Aug 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍍",
@@ -263,7 +263,7 @@ export const posts: Post[] = [
     excerpt:
       "Banana brings gentle sweetness, creamy texture and natural thickening — which is why it shows up everywhere from infant nutrition to protein blends.",
     category: "Ingredient Spotlight",
-    date: "30 Aug 2025",
+    date: "17 Aug 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍌",
@@ -299,7 +299,7 @@ export const posts: Post[] = [
     excerpt:
       "The familiar sweet-tart taste of apple, in a dry format that folds into blends and bakes — adding fruit content, natural flavour and a touch of pectin-rich body.",
     category: "Ingredient Spotlight",
-    date: "2 Sep 2025",
+    date: "20 Aug 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍎",
@@ -336,7 +336,7 @@ export const posts: Post[] = [
     excerpt:
       "Pressed from sweet, fully ripe Indian mangoes, mango powder carries the rich aroma and deep golden colour the fruit is loved for — built for products that need real mango identity.",
     category: "Ingredient Spotlight",
-    date: "9 Sep 2025",
+    date: "23 Aug 2025",
     read: "10 min read",
     author: "Gautam Choudhary",
     emoji: "🥭",
@@ -372,7 +372,7 @@ export const posts: Post[] = [
     excerpt:
       "Tamarind's bold, sour-sweet tang concentrated into a dry, easy-to-dose powder — consistent acidity for sauces, chutneys and spice blends, with no seeds or sticky paste.",
     category: "Ingredient Spotlight",
-    date: "16 Sep 2025",
+    date: "29 Aug 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🫘",
@@ -408,7 +408,7 @@ export const posts: Post[] = [
     excerpt:
       "Soft, sweet tropical flavour plus the fruit's naturally occurring enzymes — which is why papaya powder works as well in digestive and nutrition blends as in beverages and desserts.",
     category: "Ingredient Spotlight",
-    date: "23 Sep 2025",
+    date: "1 Sep 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🟠",
@@ -444,7 +444,7 @@ export const posts: Post[] = [
     excerpt:
       "Most people think of ice cream or sauces when they hear guar gum. In reality, the single largest industrial use is hydraulic fracturing — and it quietly sets the global price for every other buyer.",
     category: "Industrial Applications",
-    date: "26 Sep 2025",
+    date: "7 Sep 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🛢️",
@@ -486,7 +486,7 @@ export const posts: Post[] = [
     excerpt:
       "Behind every smooth oat-milk latte and convincing vegan burger sits a small amount of plant gum doing very precise work. Here is how guar earned its place on plant-based ingredient decks.",
     category: "Industry Trends",
-    date: "21 Oct 2025",
+    date: "9 Sep 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🥛",
@@ -530,7 +530,7 @@ export const posts: Post[] = [
     excerpt:
       "Pharmaceutical buyers value guar for very different reasons than food formulators. Here is how the same crop becomes a controlled-release matrix, a clinical fibre and a quietly important nutraceutical.",
     category: "Pharma & Nutraceuticals",
-    date: "30 Oct 2025",
+    date: "10 Sep 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -585,7 +585,7 @@ export const posts: Post[] = [
     excerpt:
       "Most gluten-free guides oversimplify guar gum down to 'use a quarter teaspoon per cup of flour'. This is the technical version — hydration, dose, when to choose guar over xanthan, and what actually fails.",
     category: "Formulation",
-    date: "3 Nov 2025",
+    date: "13 Sep 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍞",
@@ -644,7 +644,7 @@ export const posts: Post[] = [
     excerpt:
       "Roughly 80 percent of the world's guar grows in two Indian states. A procurement team that understands the monsoon calendar, the oilfield demand cycle and how export pricing is built has a real advantage.",
     category: "Sourcing",
-    date: "14 Nov 2025",
+    date: "17 Sep 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📊",
@@ -696,7 +696,7 @@ export const posts: Post[] = [
     excerpt:
       "Moringa is sold as a superfood with extraordinary nutritional numbers. The honest question for a formulator or buyer is what actually survives drying and ends up in your finished product — and what you can defensibly claim on a label.",
     category: "Pharma & Nutraceuticals",
-    date: "15 Nov 2025",
+    date: "21 Sep 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -760,7 +760,7 @@ export const posts: Post[] = [
     excerpt:
       "Pea, soy and brown rice dominate the plant-protein category by volume. So why is moringa increasingly turning up in premium blends, recovery drinks and high-end sports nutrition? Here is the technical case.",
     category: "Formulation",
-    date: "22 Nov 2025",
+    date: "28 Sep 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💪",
@@ -816,7 +816,7 @@ export const posts: Post[] = [
     excerpt:
       "Two moringa powders at the same nominal price can be very different products. Here is the procurement playbook — what to ask, what to test and where the meaningful quality lines actually sit.",
     category: "Sourcing",
-    date: "25 Nov 2025",
+    date: "21 Oct 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🔍",
@@ -872,7 +872,7 @@ export const posts: Post[] = [
     excerpt:
       "Moringa is treated very differently across the world's regulators. A buyer or brand owner needs to know which markets accept it as a food, which gate it as a novel food and which restrict claims sharply. Here is the current picture.",
     category: "Industry Trends",
-    date: "5 Dec 2025",
+    date: "26 Oct 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌏",
@@ -919,7 +919,7 @@ export const posts: Post[] = [
     excerpt:
       "Most moringa sold today goes into capsules and greens powders. The faster-growing opportunity is in everyday food formats — beverages, bakery, snacks and plant-based meat. Here is where it works, where it does not, and how to formulate around the trade-offs.",
     category: "Formulation",
-    date: "6 Dec 2025",
+    date: "28 Oct 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🥗",
@@ -967,7 +967,7 @@ export const posts: Post[] = [
     excerpt:
       "A good guava powder and a mediocre one can look almost identical on paper. Here is what to check — and what to ask your supplier — before you commit to a container.",
     category: "Buyer's Guide",
-    date: "12 Dec 2025",
+    date: "30 Oct 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1007,7 +1007,7 @@ export const posts: Post[] = [
     excerpt:
       "Acidity, variety and drying method decide whether a pineapple powder performs in your formulation or just looks fine on a data sheet. Here is what to check first.",
     category: "Buyer's Guide",
-    date: "19 Dec 2025",
+    date: "22 Nov 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📐",
@@ -1042,7 +1042,7 @@ export const posts: Post[] = [
     excerpt:
       "Banana powder sits in two of the most quality-sensitive categories there are — infant food and sports nutrition. Here is how to specify and vet it properly.",
     category: "Buyer's Guide",
-    date: "25 Dec 2025",
+    date: "27 Nov 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
@@ -1078,7 +1078,7 @@ export const posts: Post[] = [
     excerpt:
       "Apple powder looks like one of the simplest fruit powders to buy. The variety, drying method and pectin behaviour behind it are where the real differences hide.",
     category: "Buyer's Guide",
-    date: "29 Dec 2025",
+    date: "28 Nov 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🔍",
@@ -1112,7 +1112,7 @@ export const posts: Post[] = [
     excerpt:
       "Alphonso and Totapuri mango powder do not taste, look or behave the same way. Here is how to specify the variety, colour and grade you actually need.",
     category: "Buyer's Guide",
-    date: "6 Jan 2026",
+    date: "19 Dec 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "✅",
@@ -1146,7 +1146,7 @@ export const posts: Post[] = [
     excerpt:
       "Tamarind powder lives or dies on consistent acidity from batch to batch. Here is how to specify and test for it before it becomes a problem in your sauce line.",
     category: "Buyer's Guide",
-    date: "11 Jan 2026",
+    date: "21 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "⚖️",
@@ -1180,7 +1180,7 @@ export const posts: Post[] = [
     excerpt:
       "Papaya powder is often bought specifically for its natural enzyme content — which most standard spec sheets do not measure at all. Here is what to ask instead.",
     category: "Buyer's Guide",
-    date: "24 Jan 2026",
+    date: "24 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧪",
@@ -1216,7 +1216,7 @@ export const posts: Post[] = [
     excerpt:
       "Pomegranate's polyphenols and punicalagins have made it one of nutraceuticals' most sought-after fruit actives. Dried into a powder, that antioxidant profile becomes easy to dose, ship and store.",
     category: "Ingredient Spotlight",
-    date: "28 Jan 2026",
+    date: "1 Jan 2026",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🔴",
@@ -1246,7 +1246,7 @@ export const posts: Post[] = [
     excerpt:
       "Getting pomegranate's antioxidant claim onto a label takes more than adding the powder to a mix. Here is how dose, stability and application shape a formulation that actually works.",
     category: "Formulation",
-    date: "11 Feb 2026",
+    date: "4 Jan 2026",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -1282,7 +1282,7 @@ export const posts: Post[] = [
     excerpt:
       "Tulsi has been central to Ayurveda for millennia, and modern wellness brands are rediscovering why. Gently dried into a powder, its aromatic, adaptogenic character travels well beyond the garden it grew in.",
     category: "Ingredient Spotlight",
-    date: "18 Feb 2026",
+    date: "14 Jan 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌱",
@@ -1313,7 +1313,7 @@ export const posts: Post[] = [
     excerpt:
       "Tulsi's aroma is its most valuable — and most fragile — quality. Here is how to specify drying method, freshness and grade so what you buy actually smells like tulsi.",
     category: "Buyer's Guide",
-    date: "22 Feb 2026",
+    date: "17 Jan 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍵",
@@ -1349,7 +1349,7 @@ export const posts: Post[] = [
     excerpt:
       "Ashwagandha has gone from an Ayurvedic staple to a global supplement-aisle headline ingredient. Here is what makes a good root powder, and where India's supply advantage comes from.",
     category: "Ingredient Spotlight",
-    date: "27 Feb 2026",
+    date: "7 Feb 2026",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -1380,7 +1380,7 @@ export const posts: Post[] = [
     excerpt:
       "Ashwagandha is one of the most commercially pressured herbs to source honestly. Here is how to verify root-only sourcing, withanolide content and grade before you commit.",
     category: "Buyer's Guide",
-    date: "5 Mar 2026",
+    date: "20 Feb 2026",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1414,7 +1414,7 @@ export const posts: Post[] = [
     excerpt:
       "Shatavari has been a cornerstone of Ayurvedic women's-health formulation for centuries. Here is what the root is, how it is processed, and where it fits in a modern supplement line.",
     category: "Ingredient Spotlight",
-    date: "6 Mar 2026",
+    date: "24 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌱",
@@ -1445,7 +1445,7 @@ export const posts: Post[] = [
     excerpt:
       "Shatavari sourcing carries a wild-collection risk that most Ayurvedic roots do not. Here is how to evaluate consistency, grade and supply reliability before you commit.",
     category: "Buyer's Guide",
-    date: "15 Mar 2026",
+    date: "28 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
@@ -1479,7 +1479,7 @@ export const posts: Post[] = [
     excerpt:
       "Brahmi has been used in Ayurveda for centuries to support memory and mental clarity. Here is what the herb is, how it is processed, and why it has become a nootropic-category staple.",
     category: "Ingredient Spotlight",
-    date: "20 Mar 2026",
+    date: "1 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍃",
@@ -1510,7 +1510,7 @@ export const posts: Post[] = [
     excerpt:
       "Brahmi's bitterness and colour sensitivity make it one of the trickier Ayurvedic herbs to formulate around. Here is how to protect both while hitting a credible nootropic dose.",
     category: "Formulation",
-    date: "26 Mar 2026",
+    date: "5 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧠",
@@ -1546,7 +1546,7 @@ export const posts: Post[] = [
     excerpt:
       "Triphala's equal-parts blend of three native Indian fruits has anchored Ayurvedic digestive wellness for centuries. Here is what goes into it, and why blend consistency is everything.",
     category: "Ingredient Spotlight",
-    date: "18 Apr 2026",
+    date: "11 Mar 2026",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🟤",
@@ -1577,7 +1577,7 @@ export const posts: Post[] = [
     excerpt:
       "A triphala powder is only as good as the process that blended it. Here is how to verify the 1:1:1 ratio is real, and what else to check before you commit to a supplier.",
     category: "Buyer's Guide",
-    date: "23 Apr 2026",
+    date: "15 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "⚖️",
@@ -1613,7 +1613,7 @@ export const posts: Post[] = [
     excerpt:
       "Giloy has become one of the most searched Ayurvedic immunity ingredients in recent years. Here is what the vine is, how it is processed, and why stem-only sourcing matters.",
     category: "Ingredient Spotlight",
-    date: "27 Apr 2026",
+    date: "20 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -1644,7 +1644,7 @@ export const posts: Post[] = [
     excerpt:
       "Giloy's intense bitterness and stem-versus-leaf sourcing question are the two things that make or break a formulation. Here is how to handle both.",
     category: "Formulation",
-    date: "30 Apr 2026",
+    date: "22 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -1678,7 +1678,7 @@ export const posts: Post[] = [
     excerpt:
       "Neem's bitter leaf has anchored Ayurvedic skin-care and wellness formulation for generations. Here is what makes a good neem powder, and where its real applications lie.",
     category: "Ingredient Spotlight",
-    date: "13 May 2026",
+    date: "28 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍃",
@@ -1709,7 +1709,7 @@ export const posts: Post[] = [
     excerpt:
       "Neem's applications span three very different industries with three very different quality priorities. Here is how to specify the right grade for each.",
     category: "Buyer's Guide",
-    date: "18 May 2026",
+    date: "1 Apr 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📐",
@@ -1745,7 +1745,7 @@ export const posts: Post[] = [
     excerpt:
       "Black pepper, ginger and long pepper in equal parts — trikatu is Ayurveda's classic digestive-support blend, and one traditionally used to boost how well other herbs are absorbed.",
     category: "Ingredient Spotlight",
-    date: "25 May 2026",
+    date: "2 Apr 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌶️",
@@ -1776,7 +1776,7 @@ export const posts: Post[] = [
     excerpt:
       "Like triphala, trikatu's value depends on a genuine, verifiable 1:1:1 blend. Here is what to check before you commit to a supplier for your digestive-formula line.",
     category: "Buyer's Guide",
-    date: "26 May 2026",
+    date: "9 Apr 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1810,7 +1810,7 @@ export const posts: Post[] = [
     excerpt:
       "Red onion powder isn't a one-size grade. Pungency, colour depth and cut size all vary by intended use — here is how India's dark-red onions become a consistent B2B ingredient.",
     category: "Ingredient Spotlight",
-    date: "6 Jun 2026",
+    date: "14 Apr 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -1840,7 +1840,7 @@ export const posts: Post[] = [
     excerpt:
       "Buying onion powder for a production line is a different exercise than buying a retail spice jar. Here is what to verify before you commit to a full-container order.",
     category: "Buyer's Guide",
-    date: "9 Jun 2026",
+    date: "16 Apr 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1876,7 +1876,7 @@ export const posts: Post[] = [
     excerpt:
       "Pink onion sits between red and white — milder than one, more character than the other. Here is where that balance actually earns its place in a formulation.",
     category: "Ingredient Spotlight",
-    date: "14 Jun 2026",
+    date: "20 Apr 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -1906,7 +1906,7 @@ export const posts: Post[] = [
     excerpt:
       "Pink onion's biggest formulation risk is being dosed like a bolder onion powder and disappearing. Here is how to get the dose and pairing right.",
     category: "Formulation",
-    date: "22 Jun 2026",
+    date: "24 Apr 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🥗",
@@ -1940,7 +1940,7 @@ export const posts: Post[] = [
     excerpt:
       "White onion powder is the default choice wherever appearance matters as much as taste. Here is what makes a good one, and where it genuinely outperforms red or pink.",
     category: "Ingredient Spotlight",
-    date: "3 Jul 2026",
+    date: "28 Apr 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -1970,7 +1970,7 @@ export const posts: Post[] = [
     excerpt:
       "White sauces, cream soups and dairy-based dressings all need onion flavour without a colour footprint. Here is how to formulate and source for that specific requirement.",
     category: "Formulation",
-    date: "10 Jul 2026",
+    date: "29 Apr 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🥛",
@@ -2004,7 +2004,7 @@ export const posts: Post[] = [
     excerpt:
       "Garlic powder is bought in more forms than most spice ingredients — dried cloves, granules, flakes, minced and fine powder. Here is which one your formulation actually needs.",
     category: "Ingredient Spotlight",
-    date: "15 Jul 2026",
+    date: "2 May 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧄",
@@ -2034,7 +2034,7 @@ export const posts: Post[] = [
     excerpt:
       "Garlic powder that tastes right in a bench sample can still fail a production line. Here is the quality-control checklist manufacturers should run before scaling up.",
     category: "Buyer's Guide",
-    date: "16 Jul 2026",
+    date: "8 May 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🔍",
@@ -2070,7 +2070,7 @@ export const posts: Post[] = [
     excerpt:
       "Indian ginger is prized worldwide for its heat and citrusy aroma. Here is how that character survives drying, and where it earns its place across food and wellness formulations.",
     category: "Ingredient Spotlight",
-    date: "27 Jul 2026",
+    date: "12 May 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🫚",
@@ -2100,7 +2100,7 @@ export const posts: Post[] = [
     excerpt:
       "Ginger performs differently in a cold beverage than it does in a baked good or a capsule. Here is how to match grade and dose to your specific format.",
     category: "Formulation",
-    date: "29 Jul 2026",
+    date: "15 May 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍵",
@@ -2134,7 +2134,7 @@ export const posts: Post[] = [
     excerpt:
       "Green chilli powder lives or dies on two things: whether it holds its bright colour, and whether its heat is actually consistent order to order. Here is what to check.",
     category: "Ingredient Spotlight",
-    date: "1 Aug 2026",
+    date: "16 May 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌶️",
@@ -2164,7 +2164,7 @@ export const posts: Post[] = [
     excerpt:
       "A green chilli powder that varies in heat from batch to batch is a real production risk. Here is how to verify consistency before committing to a supplier.",
     category: "Buyer's Guide",
-    date: "11 Aug 2026",
+    date: "24 May 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌡️",
@@ -2198,7 +2198,7 @@ export const posts: Post[] = [
     excerpt:
       "Fried onion looks like a simple garnish ingredient. The oil, frying temperature and process behind it determine whether it reads as caramelised or burnt.",
     category: "Ingredient Spotlight",
-    date: "15 Aug 2026",
+    date: "5 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -2228,7 +2228,7 @@ export const posts: Post[] = [
     excerpt:
       "Fried onion for a visible garnish and fried onion for a blended seasoning need different specs. Here is how to source the right one for your application.",
     category: "Buyer's Guide",
-    date: "18 Aug 2026",
+    date: "23 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🍛",
@@ -2262,7 +2262,7 @@ export const posts: Post[] = [
     excerpt:
       "Curry leaf's aroma is instantly recognisable and notoriously easy to lose in processing. Here is how it is dried to hold both colour and character.",
     category: "Ingredient Spotlight",
-    date: "20 Aug 2026",
+    date: "26 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🍃",
@@ -2292,7 +2292,7 @@ export const posts: Post[] = [
     excerpt:
       "Curry leaf's traditional wellness reputation is opening doors beyond South Indian cooking. Here is how nutraceutical and flavour-house buyers are using it.",
     category: "Formulation",
-    date: "24 Aug 2026",
+    date: "30 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -2326,7 +2326,7 @@ export const posts: Post[] = [
     excerpt:
       "Coriander leaf is famous for how quickly it wilts and loses flavour fresh. Here is how drying captures that citrusy character in a form that actually keeps.",
     category: "Ingredient Spotlight",
-    date: "29 Aug 2026",
+    date: "2 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌱",
@@ -2356,7 +2356,7 @@ export const posts: Post[] = [
     excerpt:
       "Coriander leaf powder needs to be sourced with freshness and colour front of mind more than most spice powders. Here is what seasoning and RTE buyers should verify.",
     category: "Buyer's Guide",
-    date: "1 Sep 2026",
+    date: "6 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -2390,7 +2390,7 @@ export const posts: Post[] = [
     excerpt:
       "Mint's cooling aroma is driven by volatile menthol content that drying can easily destroy. Here is the balance between shelf life and genuine mint character.",
     category: "Ingredient Spotlight",
-    date: "4 Sep 2026",
+    date: "10 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -2420,7 +2420,7 @@ export const posts: Post[] = [
     excerpt:
       "Mint's cooling effect needs to be dosed and protected differently across drinks, sweets and oral-care formats. Here is what changes between them.",
     category: "Formulation",
-    date: "9 Sep 2026",
+    date: "29 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🍬",
@@ -2446,6 +2446,266 @@ export const posts: Post[] = [
 <h2>From formulation to supply</h2>
 <p>Because the right mint grade and freshness window genuinely differs across beverage, confectionery and oral-care applications, it is worth telling your supplier your specific format and processing conditions upfront, so the sample you test against is representative of what a full production run will deliver.</p>
 <p>We supply mint powder with full COA and specification sheet on every shipment and private-label options available. If you are formulating a beverage, confection or oral-care product around mint, <a href="/products/culinary-spice-powders/mint-powder">view the mint powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
+`,
+  },
+  {
+    id: "amla-powder-vitamin-c-nutritional-profile",
+    title: "Amla Powder: Indian gooseberry's remarkable vitamin C profile, dried and dosable",
+    excerpt:
+      "Few natural ingredients pack as much vitamin C per gram as amla. Here is what makes Indian gooseberry powder a staple across supplements, hair care and functional food.",
+    category: "Ingredient Spotlight",
+    date: "2 Aug 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "🫒",
+    accent: "linear-gradient(135deg,#4d7c0f,#a3e635)",
+    body: `
+<p>Amla, or Indian gooseberry, holds a distinctive place among Ayurvedic fruits: it is simultaneously one of the most nutritionally potent natural sources of vitamin C known, and a fruit with centuries of traditional use across digestion, hair care and general wellness. That combination — genuine, measurable nutritional density plus deep traditional credibility — is why amla powder has become a staple ingredient across supplement, cosmetic and functional-food formulations well beyond its South Asian origins.</p>
+<h2>Where it comes from</h2>
+<p>Amla (Phyllanthus emblica) is grown across several Indian states, with Uttar Pradesh — particularly the Pratapgarh belt — recognised as a major commercial growing region, alongside significant cultivation in Madhya Pradesh, Tamil Nadu and other states. The fruit is harvested and processed relatively quickly after picking, since its high vitamin C content is sensitive to degradation the longer raw material sits before drying.</p>
+<h2>How it's processed</h2>
+<p>Amla fruit is dried and milled into a fine powder, with drying method and speed directly affecting how much of the fruit's vitamin C content survives processing, since ascorbic acid is heat- and oxidation-sensitive. Careful, controlled drying protects more of that nutritional value than an aggressive or slow process, which is a meaningful quality differentiator in a fruit specifically valued for its vitamin content rather than primarily for flavour or colour.</p>
+<h2>Grades and specifications</h2>
+<p>Our amla powder is supplied at food / nutraceutical grade, milled to 80–100 mesh with custom sizes available, held to a moisture ceiling of 7%, for private label or bulk supply. Typical vitamin C content runs at 1.5% or above on a standard grade — a figure worth asking your supplier to confirm on the specific batch's certificate of analysis, since this is the parameter that most directly justifies amla's premium positioning over less nutritionally dense fruit powders.</p>
+<h2>Where it's used</h2>
+<p>Dietary supplements and tablets are amla powder's largest application, drawing directly on its vitamin C and antioxidant content for immune-support and general-wellness positioning. It has an equally strong presence in hair oils and cosmetics, reflecting amla's long traditional use in South Asian hair care. Functional drinks and traditional churnas make up another significant use case, and it remains a staple across broader herbal blends and teas.</p>
+<h2>Why buyers choose it</h2>
+<p>For a supplement or functional-food brand, amla offers something relatively rare: a natural, whole-fruit vitamin C source with real traditional-use credibility, rather than a purely synthetic ascorbic acid input. That "natural vitamin C" positioning has genuine consumer appeal in a market increasingly sceptical of synthetic actives, and amla's centuries of Ayurvedic use gives brands an authentic story to tell alongside the nutritional claim.</p>
+<h2>Notes for formulators</h2>
+<p>Amla's sharply sour, astringent taste is pronounced and worth planning around from the start — capsules and tablets sidestep the issue, while beverage and chewable formats typically need real flavour-masking work, often leaning on sweeter fruit flavours or significant sweetening to balance the tartness. Because vitamin C content is amla's core value proposition, it is worth requesting the certificate of analysis for the specific batch you are ordering rather than relying on a generic spec sheet figure, particularly if your formulation targets a specific labelled vitamin C claim.</p>
+<h2>Ordering and export</h2>
+<p>We supply amla powder in 25 kg kraft bags with a food-grade liner as standard, with custom packing and private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a supplement, hair-care or functional-food product around amla, <a href="/products/functional-nutritional-powders/amla-powder">view the amla powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "amla-powder-supplement-functional-food-formulation",
+    title: "Formulating with Amla Powder: dose, tartness and vitamin C stability",
+    excerpt:
+      "Getting amla's vitamin C claim to survive shelf life takes more than adding the powder to a formula. Here is how dose, processing and packaging protect it.",
+    category: "Formulation",
+    date: "11 Aug 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "💊",
+    accent: "linear-gradient(135deg,#365314,#84cc16)",
+    body: `
+<p>Amla's commercial appeal rests almost entirely on its vitamin C content, which creates a specific formulation challenge that many other functional botanicals do not face to the same degree: ascorbic acid is genuinely fragile, degrading under heat, light, oxygen and moisture over a product's shelf life. A formulation that hits its target vitamin C claim on day one but falls short by the end of shelf life is a real compliance and credibility risk, so protecting that value through formulation and packaging matters as much as the initial dose.</p>
+<h2>Dose: start from your labelled claim, not a generic reference</h2>
+<p>Because vitamin C degrades over shelf life, formulators typically need to dose amla powder above the finished product's labelled vitamin C claim to account for expected loss by the end of the shelf-life window — a practice sometimes called overage. The exact overage percentage depends on your specific formulation, packaging and shelf-life target, and is worth establishing through actual stability testing on your finished product rather than assuming a fixed industry-standard figure applies uniformly.</p>
+<h2>Processing conditions that protect vitamin C</h2>
+<p>Any heat-intensive processing step in your own formulation — pasteurisation, baking, hot-fill bottling — will degrade some portion of amla's vitamin C content beyond what was already lost during the raw powder's own drying. Where possible, incorporating amla later in a process, after the highest-heat steps are complete, protects more of the nutritional value than adding it at the start. For capsule and tablet formats, this is a smaller concern, since processing is largely mechanical rather than thermal.</p>
+<h2>Packaging as a stability lever</h2>
+<p>Light and oxygen exposure accelerate vitamin C degradation over shelf life just as much as heat does. Opaque, oxygen-barrier packaging materially extends how long a finished product holds its labelled vitamin C content compared to clear or high-permeability packaging. For products making a specific, numeric vitamin C claim on the label, packaging choice is not a cosmetic decision — it is a direct input into whether that claim remains accurate through the product's full shelf life.</p>
+<h2>Managing tartness across formats</h2>
+<p>Amla's sharp, astringent sourness needs active management in any flavoured format. In beverages and gummies, pairing amla with a sweeter, complementary fruit flavour — berries, tropical fruits, citrus — tends to balance the tartness more effectively than sugar alone, since amla's sourness reads differently on the palate than a simple acid note. In capsules and tablets, flavour is a non-issue, which is part of why that format remains the simplest, most common route to market for amla-based vitamin C supplements.</p>
+<h2>Stability testing is worth the investment</h2>
+<p>Given how directly amla's vitamin C content ties to both the product's core claim and its regulatory labelling accuracy, running genuine accelerated and real-time stability testing on your finished formulation — not just the raw powder — is worth the investment before finalising a commercial product. This is the only reliable way to confirm your overage, packaging and processing choices actually deliver the labelled claim through the stated shelf life.</p>
+<h2>Practical formulation checklist</h2>
+<ul>
+<li>Dose above your labelled vitamin C claim to account for expected degradation over shelf life — validate the exact overage through stability testing.</li>
+<li>Add amla later in any heat-intensive process step to minimise thermal degradation.</li>
+<li>Choose opaque, oxygen-barrier packaging for any product making a specific vitamin C claim.</li>
+<li>Pair with complementary sweet fruit flavours to balance tartness in beverage and chewable formats.</li>
+<li>Run real accelerated and real-time stability testing on the finished formulation, not just the raw powder.</li>
+</ul>
+<h2>From formulation to supply</h2>
+<p>Because vitamin C content and its stability through shelf life are amla's defining commercial value, it is worth discussing your specific formulation, packaging and shelf-life target with your supplier before finalising a grade, so the batch you receive is matched to what your stability testing will actually need to demonstrate.</p>
+<p>We supply amla powder with full COA and specification sheet on every shipment and private-label options available. If you are formulating a supplement or functional-food product around amla, <a href="/products/functional-nutritional-powders/amla-powder">view the amla powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
+`,
+  },
+  {
+    id: "amchur-powder-ayurvedic-digestive-culinary-role",
+    title: "Amchur Powder: dried green mango, Ayurveda's traditional digestive tang",
+    excerpt:
+      "Amchur is more than a souring agent — it carries a specific Ayurvedic digestive tradition behind its sharp, cooling tartness. Here is the full picture.",
+    category: "Ingredient Spotlight",
+    date: "17 Aug 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🥭",
+    accent: "linear-gradient(135deg,#65a30d,#facc15)",
+    body: `
+<p>Amchur occupies an interesting dual identity: in Indian kitchens it is a familiar souring spice, added to countless dishes for its sharp tang; in Ayurveda, it carries a more specific traditional role as a digestive aid, valued for its deepana-pachana properties — supporting digestive fire and the breakdown of food. Made from sun-dried unripe green mango rather than the ripe fruit used in sweet mango powder, amchur is a genuinely distinct ingredient from its ripe-mango counterpart, both in flavour and in how it is positioned commercially.</p>
+<h2>Where it comes from</h2>
+<p>Amchur is produced from unripe green mangoes, typically fruit that falls or is removed during natural thinning before full ripening, sourced from India's major mango-growing regions. Because it uses unripe fruit specifically, amchur production is somewhat less tied to the peak mango season than ripe-fruit mango powder, giving it a broader raw-material availability window.</p>
+<h2>How it's processed</h2>
+<p>Green mango is sliced and sun-dried, then milled into a fine powder that retains its sharp, sour, cooling character. This traditional sun-drying approach is part of what distinguishes amchur from more heavily processed acidulants — it is a whole-fruit product with naturally occurring plant acids and vitamin C rather than an isolated or synthesised sour compound.</p>
+<h2>Grades and specifications</h2>
+<p>Our amchur is supplied at food / nutraceutical grade, milled to 80–100 mesh with custom sizes available, held to a moisture ceiling of 7%, for private label or bulk supply. A pale beige to light tan colour and a sharp, sour green-mango odour are the markers worth checking in a sample — genuine amchur should read distinctly as green mango, not simply generic sourness.</p>
+<h2>Where it's used</h2>
+<p>Digestive churnas and supplements are amchur's core traditional application, drawing directly on its Ayurvedic digestive positioning. It remains widely used in broader Ayurvedic and herbal formulations, and increasingly appears in nutraceutical tablets and capsules as brands build products around its traditional digestive-support use. Functional blends and tonics round out its major applications, often combined with other digestive-focused botanicals.</p>
+<h2>Why buyers choose it</h2>
+<p>Amchur gives formulators access to a naturally sour ingredient with genuine antioxidant and vitamin C content, alongside a specific, well-established traditional digestive-use story that a synthetic acidulant simply cannot offer. For nutraceutical and Ayurvedic-formulation buyers specifically, that traditional positioning is often as important commercially as the flavour or acidity itself.</p>
+<h2>Notes for formulators</h2>
+<p>Because amchur's Ayurvedic positioning is distinct from ripe mango powder's sweeter, dessert-oriented use, it is worth being explicit with your supplier about which product you actually need — the two are processed from different raw material and serve different formulation purposes despite sharing a botanical origin. For digestive and nutraceutical applications specifically, amchur pairs traditionally with other Ayurvedic digestive botanicals like trikatu and ajwain, and formulators building a combination product often find these pairings align naturally with established Ayurvedic formulary logic.</p>
+<h2>Ordering and export</h2>
+<p>We supply amchur in 25 kg kraft bags with a food-grade liner as standard, with custom packing and private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a digestive supplement or Ayurvedic product around amchur, <a href="/products/functional-nutritional-powders/amchur-powder">view the amchur powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "amchur-powder-seasoning-house-sourcing-spec",
+    title: "Sourcing Amchur Powder for seasoning houses: what to verify beyond tartness",
+    excerpt:
+      "Amchur sourcing for culinary seasoning has its own risks that Ayurvedic-grade buyers do not face. Here is what seasoning-house buyers should check.",
+    category: "Buyer's Guide",
+    date: "21 Aug 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🧾",
+    accent: "linear-gradient(135deg,#4d7c0f,#eab308)",
+    body: `
+<p>Amchur sits at an interesting intersection between culinary seasoning ingredient and Ayurvedic digestive botanical, and buyers sourcing it for a seasoning blend or spice mix have somewhat different priorities than a supplement or nutraceutical buyer would. Getting the sourcing right for a culinary application means checking a slightly different set of specifications than the Ayurvedic-positioning conversation covers.</p>
+<h2>Tartness consistency, not just presence</h2>
+<p>For a seasoning house building a fixed spice-blend formulation, amchur's exact tartness level — not just its general sourness — needs to hold consistent order to order, since a shift in acidity can throw off an entire blend's flavour balance. Ask your supplier how sourness intensity is standardised across raw-material lots, since unripe mango's natural acidity can vary with harvest timing and fruit maturity at the point of drying.</p>
+<h2>Colour and visual consistency for retail-facing blends</h2>
+<p>Genuine amchur should read as a pale beige to light tan colour. For seasoning blends sold in retail or food-service packaging where visual consistency matters to brand presentation, request a colour reference and compare against previous shipments if this is a repeat order — a batch that has drifted noticeably darker may signal aged raw material or a less controlled drying process.</p>
+<h2>Mesh size for dry-blend dispersion</h2>
+<p>Standard amchur runs 80–100 mesh with custom sizes available. For a seasoning blend that needs to disperse evenly through a mix of other dry spices without clumping or settling unevenly in packaging, confirm the mesh size matches your blend's specific requirements — a finer, more uniform particle size generally blends more predictably with other fine spice powders than a coarser grind.</p>
+<h2>Distinguishing amchur from ripe mango powder at the sourcing stage</h2>
+<p>Because amchur and sweet mango powder share a botanical origin but are entirely different products in flavour and application, it is worth explicitly confirming with any new supplier that what you are being quoted is genuinely amchur — made from unripe, sun-dried green mango — rather than a mislabelled or blended product. This is a straightforward confirmation to get in writing before a first order, and avoids a costly mismatch discovered only once a batch is in production.</p>
+<h2>Moisture and shelf-life considerations for bulk seasoning production</h2>
+<p>Standard moisture ceiling is 7%. For a seasoning house holding bulk stock across a production season, confirm the actual moisture result on your specific batch's certificate of analysis, since moisture above spec accelerates clumping in storage and can shorten the usable shelf life of your finished blended product as well as the raw amchur itself.</p>
+<h2>Questions worth asking before you commit</h2>
+<ul>
+<li>How is sourness/tartness intensity standardised across raw-material lots from different harvests?</li>
+<li>Can I get a colour reference to compare against previous shipments for a repeat, branded blend?</li>
+<li>Can mesh size be adjusted to match my specific dry-blend dispersion requirements?</li>
+<li>Can the supplier confirm in writing that this is genuine sun-dried unripe green mango, not a mislabelled product?</li>
+<li>What is the moisture result on this specific batch's certificate of analysis?</li>
+</ul>
+<h2>From sample to repeat container orders</h2>
+<p>Because tartness and colour consistency are the two biggest risk factors for a fixed seasoning-blend formulation, it is worth comparing samples across two or three separate production runs before committing to a long-term supply agreement, rather than assuming a single good sample guarantees repeat consistency.</p>
+<p>We supply amchur with full COA and specification sheet on every shipment and private-label options available. To verify tartness and colour consistency before you commit, <a href="/products/functional-nutritional-powders/amchur-powder">view the amchur powder product page</a> or <a href="/contact">tell us your requirement</a> and we will send a sample sized for a real comparison.</p>
+`,
+  },
+  {
+    id: "lemon-powder-acidity-flavour-capture",
+    title: "Lemon Powder: capturing citrus brightness in a dry, dosable form",
+    excerpt:
+      "Fresh lemon juice is hard to dose precisely and doesn't travel well in a dry blend. Here is how lemon powder solves that without losing the citrus character.",
+    category: "Ingredient Spotlight",
+    date: "27 Aug 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🍋",
+    accent: "linear-gradient(135deg,#ca8a04,#fde047)",
+    body: `
+<p>Lemon's bright, zesty acidity is one of the most universally recognised flavours in food and beverage formulation, and also one of the more awkward to work with in a dry-blend format using fresh juice or liquid concentrate — liquid ingredients complicate dry-mix production, introduce moisture where formulators specifically don't want it, and are harder to dose with precision at scale. Lemon powder solves this directly, carrying citrus's characteristic tang and aroma into a dry, easily dosed format.</p>
+<h2>Where it comes from</h2>
+<p>Lemon (Citrus limon) is grown across several Indian states, with cultivation concentrated in regions suited to citrus production. The fruit is processed into powder specifically to serve dry-formulation applications — seasonings, instant beverage mixes, spice rubs and bakery — where a liquid lemon input would be impractical or would compromise the finished product's shelf stability.</p>
+<h2>How it's processed</h2>
+<p>Lemon juice or pulp is dried and milled into a fine powder that retains the fruit's bright, natural citrus tang and aroma. Careful processing protects both the acidity and the more delicate aromatic top-notes that distinguish real lemon flavour from a generic sour taste — an aggressively processed batch can retain the sourness while losing much of what actually makes it taste like lemon specifically rather than simply "acidic."</p>
+<h2>Grades and specifications</h2>
+<p>Our lemon powder is supplied at food grade, milled to 80–100 mesh with custom sizes available, held to a moisture ceiling of 5%, for private label or bulk supply. A bright, natural citrus tang with no added acidulants is the core quality marker — lemon powder's entire value proposition rests on delivering genuine citrus flavour rather than simply providing sourness, which any number of cheaper synthetic or blended acidulants could achieve instead.</p>
+<h2>Where it's used</h2>
+<p>Seasonings and spice rubs are a major application, where lemon powder's dry format blends cleanly with other dry spices without introducing moisture. Instant drinks and teas rely on it for convenient, shelf-stable citrus flavour that reconstitutes cleanly. Bakery and confectionery use lemon powder for both flavour and, in some applications, a functional acidic role, and it performs well in marinades and dressings where dry dosing is preferred over liquid citrus.</p>
+<h2>Why buyers choose it</h2>
+<p>Beyond the basic dry-versus-liquid convenience argument, lemon powder offers precise, repeatable dosing that fresh lemon juice's natural batch-to-batch acidity variation cannot match, plus a long, stable shelf life with none of fresh citrus's spoilage risk. For manufacturers running a consistent formulation across many production cycles, that dosing precision alone often justifies the switch from liquid to powder.</p>
+<h2>Notes for formulators</h2>
+<p>Lemon powder disperses readily into both dry blends and, with adequate mixing, liquid formulations, though it is worth testing dissolution in your specific base if the application is a cold beverage, since particle size affects how quickly and completely it reconstitutes. Because genuine lemon aroma is somewhat more fragile than its acidity, it is worth requesting a fresh sample if your application is aroma-forward — an instant lemon tea, for instance — rather than assuming any "lemon powder, food grade" listing delivers identical aromatic intensity.</p>
+<h2>Ordering and export</h2>
+<p>We supply lemon powder in 25 kg kraft bags with a food-grade liner as standard, with custom packing and private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a seasoning, beverage or bakery product around lemon, <a href="/products/functional-nutritional-powders/lemon-powder">view the lemon powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "lemon-powder-beverage-seasoning-formulation",
+    title: "Formulating with Lemon Powder in beverages and seasoning blends",
+    excerpt:
+      "Lemon powder performs differently as a flavour driver in a drink versus an acidification agent in a seasoning mix. Here is how to formulate for each.",
+    category: "Formulation",
+    date: "1 Sep 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🥤",
+    accent: "linear-gradient(135deg,#a16207,#fef08a)",
+    body: `
+<p>Lemon powder's two dominant applications — beverages and dry seasoning blends — ask genuinely different things of the ingredient, even though both draw on the same underlying citrus tang and aroma. In a beverage, lemon is usually the headline flavour and needs to reconstitute cleanly; in a seasoning blend, it more often plays a supporting acidification and brightness role alongside other, stronger flavours. Getting the formulation right in each means understanding which job lemon powder is actually doing.</p>
+<h2>Beverages: dissolution and aroma are the priorities</h2>
+<p>For instant drinks, teas and beverage premixes, lemon powder needs to dissolve completely and quickly in the intended liquid base, with no gritty residue and a clean, bright citrus aroma coming through in the reconstituted drink. Mesh size matters here more than in most applications — a finer, more consistent grind generally dissolves faster and more completely than a coarser one, particularly in cold-water reconstitution where dissolution is inherently slower than in warm liquid.</p>
+<h2>Seasoning blends: consistency and balance over intensity</h2>
+<p>In a dry seasoning or spice-rub formulation, lemon powder's role is often to brighten and balance other, more dominant flavours — herbs, garlic, pepper — rather than to read as the primary flavour itself. Here, batch-to-batch acidity consistency matters more than raw intensity, since a shift in lemon's tartness can throw off an entire blend's flavour balance even at a relatively low inclusion rate. Confirming acidity consistency with your supplier matters more for this application than for a beverage, where lemon's flavour is expected to dominate and minor variation is less likely to unbalance the whole product.</p>
+<h2>Dose considerations across formats</h2>
+<p>Beverage formulations typically dose lemon powder at a rate calibrated through sensory testing to hit a specific, recognisable citrus flavour target — there is no universal reference dose, since it depends heavily on the base liquid, sweetness level and other flavour components. Seasoning blends generally use a lower relative inclusion, since lemon's role there is accent rather than headline flavour, and over-dosing can push a savoury blend toward an unwanted sourness rather than the intended brightness.</p>
+<h2>Combining lemon with other flavour ingredients</h2>
+<p>In beverages, lemon pairs naturally with mint, ginger and other citrus notes, and works well as a base flavour for functional and wellness drinks where a clean, recognisable citrus profile supports the product's broader positioning. In seasoning blends, lemon commonly appears alongside pepper, garlic, herbs and other savoury spices, where its role is specifically to lift and brighten rather than to compete for dominance.</p>
+<h2>Practical formulation checklist</h2>
+<ul>
+<li>For beverages, prioritise fine mesh and fast, clean dissolution — test in your actual serving temperature and base liquid.</li>
+<li>For seasoning blends, prioritise acidity consistency across batches over raw flavour intensity.</li>
+<li>Dose beverages to a specific sensory flavour target through iterative testing; dose seasoning blends conservatively as an accent, not a headline flavour.</li>
+<li>Request a fresh sample for aroma-forward applications, since lemon's aromatic top-notes are more fragile than its acidity.</li>
+<li>Confirm mesh size matches your specific dissolution or dispersion requirement before ordering at volume.</li>
+</ul>
+<h2>From formulation to supply</h2>
+<p>Because the right lemon powder grade genuinely differs between a dissolution-critical beverage application and a balance-critical seasoning blend, it is worth telling your supplier your specific format upfront, so the sample you test against is representative of a full production run.</p>
+<p>We supply lemon powder with full COA and specification sheet on every shipment and private-label options available. If you are formulating a beverage or seasoning product around lemon, <a href="/products/functional-nutritional-powders/lemon-powder">view the lemon powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
+`,
+  },
+  {
+    id: "beetroot-powder-colour-nitrate-profile",
+    title: "Beetroot Powder: natural crimson colour and dietary nitrates, explained",
+    excerpt:
+      "Beetroot powder's deep red-purple colour and naturally occurring nitrates are two genuinely separate value propositions. Here is what buyers should know about both.",
+    category: "Ingredient Spotlight",
+    date: "5 Sep 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "🟣",
+    accent: "linear-gradient(135deg,#831843,#ec4899)",
+    body: `
+<p>Beetroot powder has become one of the most in-demand clean-label ingredients in recent years, driven by two genuinely distinct value propositions that sometimes get conflated: its striking natural red-purple colour, prized as a clean-label alternative to synthetic food dyes, and its naturally occurring dietary nitrates, which have built real commercial momentum in the sports-nutrition category. Understanding which of these two a given buyer actually needs matters for sourcing the right grade.</p>
+<h2>Where it comes from</h2>
+<p>Beetroot (Beta vulgaris) is grown across several Indian states with suitable growing conditions for root vegetables. The crop is harvested and processed into powder while fresh, since both the colour-driving betalain compounds and the nitrate content that gives beetroot its functional-nutrition appeal can degrade if raw material sits too long before drying.</p>
+<h2>How it's processed</h2>
+<p>Beetroot is dried and milled into a fine powder, with careful processing needed to protect both its colour intensity and nitrate content — the same processing-quality logic that applies across many of our fruit and vegetable powders, but with two distinct value attributes to protect simultaneously rather than one. A well-processed batch holds both its vivid colour and its nutritional profile; a poorly processed one can lose meaningful ground on either.</p>
+<h2>Grades and specifications</h2>
+<p>Our beetroot powder is supplied at food grade, milled to 80–100 mesh with custom sizes available, held to a moisture ceiling of 6%, for private label or bulk supply. A deep red-purple (magenta) colour with high tinctorial strength is the marker for colour-focused buyers, while naturally occurring nitrates are the marker for sports-nutrition and functional-beverage buyers — worth specifying which matters more to your application when requesting a sample or certificate of analysis.</p>
+<h2>Where it's used</h2>
+<p>Natural food colouring is beetroot powder's largest application by a wide margin, replacing synthetic red and purple dyes in a broad range of clean-label products. Sports and nutrition blends make up a fast-growing second category, drawing specifically on beetroot's nitrate content and its association with exercise-performance support. Bakery, pasta and snacks use it for both colour and a mild, earthy flavour contribution, and it appears increasingly in smoothies and lattes marketed on natural colour appeal.</p>
+<h2>Why buyers choose it</h2>
+<p>For colour-focused buyers, beetroot powder offers a genuinely natural, clean-label alternative to synthetic red and purple dyes, with strong tinctorial power that goes a long way at relatively low inclusion rates. For sports-nutrition buyers, its naturally occurring nitrate content aligns with a well-established (and growing) category interest in nitrate-based exercise-performance products, giving formulators a whole-food nitrate source rather than an isolated or synthesised one.</p>
+<h2>Notes for formulators</h2>
+<p>If colour is your primary reason for sourcing beetroot powder, request a colour reference and confirm tinctorial strength on your specific batch, since this can vary between suppliers even at an identical moisture and mesh specification. If nitrate content is your priority — as it typically is for sports-nutrition applications — ask your supplier whether nitrate levels are tested and can be reported, since this is not always a standard line item on a generic spec sheet. Beetroot's mildly sweet, earthy flavour is generally well tolerated across applications, though it is worth accounting for in delicately flavoured products where an earthy undertone could be noticeable.</p>
+<h2>Ordering and export</h2>
+<p>We supply beetroot powder in 25 kg kraft bags with a food-grade liner as standard, with custom packing and private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a natural-colour or sports-nutrition product around beetroot, <a href="/products/functional-nutritional-powders/beetroot-powder">view the beetroot powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "beetroot-powder-natural-colour-sports-nutrition-use",
+    title: "Beetroot Powder in natural colouring and sports nutrition: two different specs",
+    excerpt:
+      "A beetroot powder optimised for tinctorial strength and one optimised for nitrate content aren't automatically the same product. Here is how to source the right one.",
+    category: "Formulation",
+    date: "11 Sep 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🏃",
+    accent: "linear-gradient(135deg,#9f1239,#f472b6)",
+    body: `
+<p>Beetroot powder's two major commercial use cases — natural food colouring and sports-nutrition nitrate supplementation — sit close enough together that buyers sometimes assume any beetroot powder serves both equally well. In practice, the priorities and even the sourcing questions worth asking differ meaningfully depending on which application you are formulating for.</p>
+<h2>For natural colouring: tinctorial strength and hue consistency</h2>
+<p>If beetroot powder's job in your formulation is replacing a synthetic red or purple dye, tinctorial strength — how much colour a given quantity delivers — and hue consistency batch to batch are the parameters that matter most. Ask your supplier whether tinctorial strength is measured and can be reported, and request a colour reference or physical sample to compare against your current benchmark if you are switching from another colourant. A batch that reads noticeably lighter or shifted toward brown rather than a clean magenta may require a higher inclusion rate to hit the same visual target, which changes your cost-per-unit calculation.</p>
+<h2>For sports nutrition: nitrate content over colour intensity</h2>
+<p>If your formulation is built around beetroot's dietary nitrate content for an exercise-performance product, colour intensity is a secondary concern — what matters is verified, consistent nitrate levels. Ask your supplier directly whether nitrate content is tested, what the typical range is, and whether that data can be included on your certificate of analysis. This is a more specialised testing request than a standard food-grade spec sheet covers, so confirm your supplier can actually provide it before assuming any beetroot powder will meet a sports-nutrition brand's substantiation needs.</p>
+<h2>Can one grade serve both purposes?</h2>
+<p>In many cases, a single well-processed beetroot powder performs reasonably well across both applications, since good processing practice protects both colour and nitrate content simultaneously rather than trading one off against the other. The real risk is a supplier who processes primarily for one attribute — say, colour intensity — without necessarily protecting nitrate content to the same standard, or vice versa. If your application depends specifically on one attribute, it is worth confirming your supplier's processing approach protects that specific quality rather than assuming a generic "beetroot powder, food grade" listing optimises for both equally.</p>
+<h2>Dose considerations for sports-nutrition formats</h2>
+<p>Sports-nutrition products built around beetroot's nitrate content typically need meaningfully higher inclusion rates than a colour-only application would use, since the functional dose depends on delivering a specific nitrate quantity per serving rather than simply achieving a visual effect. This has real implications for flavour and texture in a beverage or gel format, since beetroot's earthy taste becomes more noticeable at the higher doses a nitrate-focused product typically requires — worth planning flavour-masking strategy around from the start rather than as an afterthought.</p>
+<h2>Practical checklist</h2>
+<ul>
+<li>For colour applications, verify tinctorial strength and request a colour reference against your current benchmark.</li>
+<li>For sports-nutrition applications, confirm nitrate content testing is available and ask for the typical range.</li>
+<li>Clarify with your supplier which attribute — colour or nitrate — their processing prioritises, if either.</li>
+<li>Plan for higher inclusion rates and stronger flavour-masking in nitrate-focused sports-nutrition formats.</li>
+<li>Request samples sized for a real trial in your specific application before committing to volume.</li>
+</ul>
+<h2>From formulation to supply</h2>
+<p>Because colour-focused and nitrate-focused beetroot sourcing genuinely ask different questions, it is worth telling your supplier explicitly which attribute your formulation depends on, so the sample and documentation you receive actually address what your product needs to prove.</p>
+<p>We supply beetroot powder with full COA and specification sheet on every shipment and private-label options available. If you are formulating a natural-colour or sports-nutrition product around beetroot, <a href="/products/functional-nutritional-powders/beetroot-powder">view the beetroot powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
 `,
   },
 ];
