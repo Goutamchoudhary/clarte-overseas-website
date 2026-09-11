@@ -428,6 +428,46 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.5rem, 2.5vw, 1.95rem); }
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 75%);
           mask-image: linear-gradient(to bottom, #000 0%, transparent 75%);
 }
+
+/* ---- CTA band colour variants ------------------------------------------
+   Every "Let's talk" band across the site (about, certifications,
+   how-we-export, blogs, and the homepage's own bottom CTA) reused the same
+   navy `.hero` gradient — and sat directly above the footer, which is that
+   same navy, so the two blocks visually merged into one long panel with no
+   seam. Each page gets its own dark, on-brand hue instead; all keep the same
+   radial-highlight + grain treatment as `.hero`, just recoloured. Compound
+   `.hero.cta-*` selectors so these win over the base `.hero` background
+   regardless of source order. */
+.hero.cta-home { /* deep royal indigo — closest to the base brand navy, since this is the flagship band */
+  background:
+    radial-gradient(900px 600px at 80% -10%, rgba(107,120,224,.4), transparent 60%),
+    radial-gradient(700px 500px at 0% 110%, rgba(63,58,173,.45), transparent 55%),
+    linear-gradient(160deg, #0d0f2b 0%, #191c52 55%, #33339e 130%);
+}
+.hero.cta-about { /* deep teal-green — company/growth story */
+  background:
+    radial-gradient(900px 600px at 80% -10%, rgba(91,214,166,.32), transparent 60%),
+    radial-gradient(700px 500px at 0% 110%, rgba(42,173,120,.4), transparent 55%),
+    linear-gradient(160deg, #071e1a 0%, #0e372e 55%, #1f7a5d 130%);
+}
+.hero.cta-export { /* deep terracotta-brown — logistics, the journey */
+  background:
+    radial-gradient(900px 600px at 80% -10%, rgba(224,140,91,.35), transparent 60%),
+    radial-gradient(700px 500px at 0% 110%, rgba(173,80,42,.45), transparent 55%),
+    linear-gradient(160deg, #21120a 0%, #45230f 55%, #9a4a1f 130%);
+}
+.hero.cta-cert { /* deep violet — trust, compliance */
+  background:
+    radial-gradient(900px 600px at 80% -10%, rgba(150,120,224,.35), transparent 60%),
+    radial-gradient(700px 500px at 0% 110%, rgba(99,58,173,.45), transparent 55%),
+    linear-gradient(160deg, #160b2c 0%, #2b1654 55%, #4c2889 130%);
+}
+.hero.cta-blogs { /* deep amber-gold — content, insight */
+  background:
+    radial-gradient(900px 600px at 80% -10%, rgba(224,180,91,.32), transparent 60%),
+    radial-gradient(700px 500px at 0% 110%, rgba(173,124,42,.4), transparent 55%),
+    linear-gradient(160deg, #221304 0%, #402506 55%, #92400e 130%);
+}
 /* Optional photo layer (loads when online, fades behind overlay).
    No mask: the photo is dimmed uniformly via opacity so it blends evenly
    into the dark navy hero gradient. (An earlier vertical mask dimmed only
