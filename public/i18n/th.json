@@ -1398,5 +1398,26 @@
   "blog.post_beetroot_powder_colour_nitrate_profile_title": "ผงบีทรูท: สีแดงเข้มตามธรรมชาติและไนเตรตในอาหาร อธิบาย",
   "blog.post_beetroot_powder_colour_nitrate_profile_excerpt": "สีแดงม่วงเข้มของผงบีทรูทและไนเตรตที่เกิดขึ้นตามธรรมชาติเป็นข้อเสนอคุณค่าที่แยกจากกันอย่างแท้จริงสองอย่าง นี่คือสิ่งที่ผู้ซื้อควรทราบเกี่ยวกับทั้งสอง",
   "blog.post_beetroot_powder_natural_colour_sports_nutrition_use_title": "ผงบีทรูทในการแต่งสีธรรมชาติและโภชนาการกีฬา: ข้อกำหนดที่แตกต่างกันสองแบบ",
-  "blog.post_beetroot_powder_natural_colour_sports_nutrition_use_excerpt": "ผงบีทรูทที่ปรับให้เหมาะกับความแรงของสีย้อมและอีกแบบที่ปรับให้เหมาะกับปริมาณไนเตรตไม่ได้เป็นผลิตภัณฑ์เดียวกันโดยอัตโนมัติ นี่คือวิธีจัดหาแบบที่ถูกต้อง"
+  "blog.post_beetroot_powder_natural_colour_sports_nutrition_use_excerpt": "ผงบีทรูทที่ปรับให้เหมาะกับความแรงของสีย้อมและอีกแบบที่ปรับให้เหมาะกับปริมาณไนเตรตไม่ได้เป็นผลิตภัณฑ์เดียวกันโดยอัตโนมัติ นี่คือวิธีจัดหาแบบที่ถูกต้อง",
+
+  "blog.post_tomato_powder_lycopene_drying_method_title": "ผงมะเขือเทศ: อูมามิเข้มข้น ไลโคปีน และสีสันจากมะเขือเทศอินเดียสุก",
+  "blog.post_tomato_powder_lycopene_drying_method_excerpt": "ผงมะเขือเทศรวมรสชาติ สีสัน และไลโคปีนไว้ในรูปแบบที่เก็บรักษาได้นานซึ่งมะเขือเทศสดหรือกระป๋องไม่สามารถเทียบได้ นี่คือวิธีที่วิธีการอบแห้งกำหนดรูปแบบผลิตภัณฑ์สุดท้าย",
+  "blog.post_tomato_powder_soup_sauce_snack_seasoning_supply_title": "การจัดหาผงมะเขือเทศสำหรับการผลิตซุป ซอส และเครื่องปรุงรสขนมขบเคี้ยว",
+  "blog.post_tomato_powder_soup_sauce_snack_seasoning_supply_excerpt": "พฤติกรรมการคืนตัว ปริมาณสารพา และความสม่ำเสมอของสีล้วนมีความสำคัญแตกต่างกันขึ้นอยู่กับว่าคุณกำลังทำฐานซอสหรือผงปรุงรสแห้ง",
+  "blog.post_carrot_powder_beta_carotene_retention_title": "ผงแครอท: ความหวานตามธรรมชาติและเบต้าแคโรทีน อบแห้งเพื่อความเสถียรในการเก็บรักษา",
+  "blog.post_carrot_powder_beta_carotene_retention_excerpt": "สีอบอุ่นของแครอทและปริมาณเบต้าแคโรทีนล้วนไวต่อทางเลือกในการแปรรูป นี่คือสิ่งที่ทำให้ผงแครอทคุณภาพดีอย่างแท้จริง",
+  "blog.post_carrot_powder_baby_food_bakery_blend_applications_title": "การพัฒนาสูตรด้วยผงแครอทในอาหารเด็ก เบเกอรี่ และส่วนผสมผัก",
+  "blog.post_carrot_powder_baby_food_bakery_blend_applications_excerpt": "ตัวแปรด้านสูตรที่ใหญ่ที่สุดของผงแครอทคือมาตรฐานด้านกฎระเบียบที่ต้องผ่าน ซึ่งเปลี่ยนแปลงอย่างมากระหว่างอาหารทารกและส่วนผสมเบเกอรี่",
+  "blog.post_jackfruit_powder_plant_based_nutrition_spotlight_title": "ผงขนุน: ซูเปอร์ฟรุตของอินเดียที่เปลี่ยนเป็นส่วนผสมเชิงฟังก์ชันอเนกประสงค์",
+  "blog.post_jackfruit_powder_plant_based_nutrition_spotlight_excerpt": "ขนุนกลายเป็นหนึ่งในส่วนผสมจากพืชที่ถูกพูดถึงมากที่สุดทั่วโลก นี่คือสิ่งที่ผงของมันมอบให้กับผู้พัฒนาสูตรอย่างแท้จริงนอกเหนือจากกระแสนิยม",
+  "blog.post_jackfruit_powder_meat_analogue_bakery_formulation_title": "การพัฒนาสูตรด้วยผงขนุน: ไฟเบอร์ แป้งทนย่อย และเบเกอรี่ปลอดกลูเตน",
+  "blog.post_jackfruit_powder_meat_analogue_bakery_formulation_excerpt": "ไฟเบอร์เชิงฟังก์ชันและแป้งทนย่อยของผงขนุนทำงานแตกต่างจากแป้งสาลี นี่คือวิธีพัฒนาสูตรให้สอดคล้องกับสิ่งนั้นแทนที่จะขัดแย้ง",
+  "blog.post_psyllium_husk_powder_soluble_fibre_purity_grades_title": "ผงเปลือกไซเลียม (อิซับกอล): วัตถุดิบไฟเบอร์หลักของโลก และเหตุใดอินเดียจึงปลูกเกือบทั้งหมด",
+  "blog.post_psyllium_husk_powder_soluble_fibre_purity_grades_excerpt": "ผลิตภัณฑ์เปลือกไซเลียมเกือบทุกชนิดที่ขายทั่วโลกมีต้นกำเนิดจากอินเดีย นี่คือสิ่งที่ทำให้ไฟเบอร์ละลายน้ำนี้มีประสิทธิภาพมาก และเกรดความบริสุทธิ์แตกต่างกันอย่างไรจริงๆ",
+  "blog.post_psyllium_husk_powder_supplement_pharma_gluten_free_baking_use_title": "เปลือกไซเลียมในผลิตภัณฑ์เสริมอาหาร ยา และเบเกอรี่ปลอดกลูเตน: จับคู่เกรดกับการใช้งาน",
+  "blog.post_psyllium_husk_powder_supplement_pharma_gluten_free_baking_use_excerpt": "ผลิตภัณฑ์เปลือกไซเลียมชนิดเดียวกันไม่ได้ให้บริการผลิตภัณฑ์เสริมอาหารเป็นยาระบาย สูตรยา และขนมปังปลอดกลูเตนในลักษณะเดียวกัน นี่คือวิธีที่ข้อกำหนดแตกต่างกัน",
+  "blog.post_tamarind_kernel_powder_thickening_sizing_chemistry_title": "ผงเมล็ดมะขาม: กัมโพลีแซคคาไรด์เบื้องหลังสารเพิ่มความข้นที่คุ้มค่า",
+  "blog.post_tamarind_kernel_powder_thickening_sizing_chemistry_excerpt": "ผงเมล็ดมะขามทำหน้าที่เพิ่มความข้นแทนกัมพรีเมียมหลายชนิดด้วยต้นทุนเพียงเสี้ยวเดียว นี่คือเคมีเบื้องหลังเหตุผลที่มันได้ผล",
+  "blog.post_tamarind_kernel_powder_food_textile_grades_gum_synergy_title": "การจัดหาผงเมล็ดมะขาม: เกรดอาหารเทียบกับเกรดเทคนิค และการทำงานร่วมกันของกัม",
+  "blog.post_tamarind_kernel_powder_food_textile_grades_gum_synergy_excerpt": "TKP เกรดอาหารและเกรดเทคนิคใช้แทนกันไม่ได้ และการผสมกับกัมชนิดอื่นสามารถลดต้นทุนได้อีก นี่คือวิธีจัดหาและผสมผสานอย่างถูกต้อง"
 }

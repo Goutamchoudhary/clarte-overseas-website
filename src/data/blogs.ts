@@ -21,7 +21,7 @@ export const posts: Post[] = [
     excerpt:
       "Powders and flakes used to be the compromise option. Today they sit at the centre of how modern food is made. Here is why that shift happened.",
     category: "Industry Trends",
-    date: "16 Jun 2025",
+    date: "8 Jun 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📈",
@@ -54,7 +54,7 @@ export const posts: Post[] = [
     excerpt:
       "From crop diversity to better processing, several forces are pushing India up the global table for dehydrated fruit, vegetable and powder ingredients.",
     category: "Market Outlook",
-    date: "19 Jun 2025",
+    date: "15 Jun 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌏",
@@ -86,7 +86,7 @@ export const posts: Post[] = [
     excerpt:
       "The same vegetable can ship as a flake, a granule or a fine powder. Picking the right one saves cost, waste and a fair bit of trouble.",
     category: "Buyer's Guide",
-    date: "23 Jun 2025",
+    date: "18 Jun 2025",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧂",
@@ -118,7 +118,7 @@ export const posts: Post[] = [
     excerpt:
       "Moisture, mesh, microbial counts. A plain-English guide to the numbers that actually decide whether an ingredient is right for you.",
     category: "Buyer's Guide",
-    date: "30 Jun 2025",
+    date: "26 Jun 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
@@ -157,7 +157,7 @@ export const posts: Post[] = [
     excerpt:
       "Sourcing from India can be smooth or stressful. The difference usually comes down to a few decisions made early, before the first order ships.",
     category: "Sourcing",
-    date: "21 Jul 2025",
+    date: "30 Jun 2025",
     read: "10 min read",
     author: "Gautam Choudhary",
     emoji: "🤝",
@@ -192,7 +192,7 @@ export const posts: Post[] = [
     excerpt:
       "Ripe Indian guava carries a musky-sweet aroma that is hard to keep once the fruit leaves the orchard. Dried into a powder, that character travels — and lasts.",
     category: "Ingredient Spotlight",
-    date: "10 Aug 2025",
+    date: "8 Jul 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍈",
@@ -227,7 +227,7 @@ export const posts: Post[] = [
     excerpt:
       "Pineapple's bright, sweet-sour profile is brilliant in a product and miserable to ship fresh. As a powder, the tang and the golden colour travel intact.",
     category: "Ingredient Spotlight",
-    date: "11 Aug 2025",
+    date: "10 Jul 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍍",
@@ -263,7 +263,7 @@ export const posts: Post[] = [
     excerpt:
       "Banana brings gentle sweetness, creamy texture and natural thickening — which is why it shows up everywhere from infant nutrition to protein blends.",
     category: "Ingredient Spotlight",
-    date: "17 Aug 2025",
+    date: "15 Jul 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍌",
@@ -299,7 +299,7 @@ export const posts: Post[] = [
     excerpt:
       "The familiar sweet-tart taste of apple, in a dry format that folds into blends and bakes — adding fruit content, natural flavour and a touch of pectin-rich body.",
     category: "Ingredient Spotlight",
-    date: "20 Aug 2025",
+    date: "29 Jul 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍎",
@@ -336,7 +336,7 @@ export const posts: Post[] = [
     excerpt:
       "Pressed from sweet, fully ripe Indian mangoes, mango powder carries the rich aroma and deep golden colour the fruit is loved for — built for products that need real mango identity.",
     category: "Ingredient Spotlight",
-    date: "23 Aug 2025",
+    date: "5 Aug 2025",
     read: "10 min read",
     author: "Gautam Choudhary",
     emoji: "🥭",
@@ -372,7 +372,7 @@ export const posts: Post[] = [
     excerpt:
       "Tamarind's bold, sour-sweet tang concentrated into a dry, easy-to-dose powder — consistent acidity for sauces, chutneys and spice blends, with no seeds or sticky paste.",
     category: "Ingredient Spotlight",
-    date: "29 Aug 2025",
+    date: "11 Aug 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🫘",
@@ -408,7 +408,7 @@ export const posts: Post[] = [
     excerpt:
       "Soft, sweet tropical flavour plus the fruit's naturally occurring enzymes — which is why papaya powder works as well in digestive and nutrition blends as in beverages and desserts.",
     category: "Ingredient Spotlight",
-    date: "1 Sep 2025",
+    date: "16 Aug 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🟠",
@@ -444,7 +444,7 @@ export const posts: Post[] = [
     excerpt:
       "Most people think of ice cream or sauces when they hear guar gum. In reality, the single largest industrial use is hydraulic fracturing — and it quietly sets the global price for every other buyer.",
     category: "Industrial Applications",
-    date: "7 Sep 2025",
+    date: "25 Aug 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🛢️",
@@ -486,7 +486,7 @@ export const posts: Post[] = [
     excerpt:
       "Behind every smooth oat-milk latte and convincing vegan burger sits a small amount of plant gum doing very precise work. Here is how guar earned its place on plant-based ingredient decks.",
     category: "Industry Trends",
-    date: "9 Sep 2025",
+    date: "31 Aug 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🥛",
@@ -530,7 +530,7 @@ export const posts: Post[] = [
     excerpt:
       "Pharmaceutical buyers value guar for very different reasons than food formulators. Here is how the same crop becomes a controlled-release matrix, a clinical fibre and a quietly important nutraceutical.",
     category: "Pharma & Nutraceuticals",
-    date: "10 Sep 2025",
+    date: "20 Sep 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -585,7 +585,7 @@ export const posts: Post[] = [
     excerpt:
       "Most gluten-free guides oversimplify guar gum down to 'use a quarter teaspoon per cup of flour'. This is the technical version — hydration, dose, when to choose guar over xanthan, and what actually fails.",
     category: "Formulation",
-    date: "13 Sep 2025",
+    date: "25 Sep 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🍞",
@@ -644,7 +644,7 @@ export const posts: Post[] = [
     excerpt:
       "Roughly 80 percent of the world's guar grows in two Indian states. A procurement team that understands the monsoon calendar, the oilfield demand cycle and how export pricing is built has a real advantage.",
     category: "Sourcing",
-    date: "17 Sep 2025",
+    date: "29 Sep 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📊",
@@ -696,7 +696,7 @@ export const posts: Post[] = [
     excerpt:
       "Moringa is sold as a superfood with extraordinary nutritional numbers. The honest question for a formulator or buyer is what actually survives drying and ends up in your finished product — and what you can defensibly claim on a label.",
     category: "Pharma & Nutraceuticals",
-    date: "21 Sep 2025",
+    date: "4 Oct 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -760,7 +760,7 @@ export const posts: Post[] = [
     excerpt:
       "Pea, soy and brown rice dominate the plant-protein category by volume. So why is moringa increasingly turning up in premium blends, recovery drinks and high-end sports nutrition? Here is the technical case.",
     category: "Formulation",
-    date: "28 Sep 2025",
+    date: "9 Oct 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💪",
@@ -816,7 +816,7 @@ export const posts: Post[] = [
     excerpt:
       "Two moringa powders at the same nominal price can be very different products. Here is the procurement playbook — what to ask, what to test and where the meaningful quality lines actually sit.",
     category: "Sourcing",
-    date: "21 Oct 2025",
+    date: "13 Oct 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🔍",
@@ -872,7 +872,7 @@ export const posts: Post[] = [
     excerpt:
       "Moringa is treated very differently across the world's regulators. A buyer or brand owner needs to know which markets accept it as a food, which gate it as a novel food and which restrict claims sharply. Here is the current picture.",
     category: "Industry Trends",
-    date: "26 Oct 2025",
+    date: "18 Oct 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌏",
@@ -967,7 +967,7 @@ export const posts: Post[] = [
     excerpt:
       "A good guava powder and a mediocre one can look almost identical on paper. Here is what to check — and what to ask your supplier — before you commit to a container.",
     category: "Buyer's Guide",
-    date: "30 Oct 2025",
+    date: "29 Oct 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1007,7 +1007,7 @@ export const posts: Post[] = [
     excerpt:
       "Acidity, variety and drying method decide whether a pineapple powder performs in your formulation or just looks fine on a data sheet. Here is what to check first.",
     category: "Buyer's Guide",
-    date: "22 Nov 2025",
+    date: "2 Nov 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📐",
@@ -1042,7 +1042,7 @@ export const posts: Post[] = [
     excerpt:
       "Banana powder sits in two of the most quality-sensitive categories there are — infant food and sports nutrition. Here is how to specify and vet it properly.",
     category: "Buyer's Guide",
-    date: "27 Nov 2025",
+    date: "4 Nov 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
@@ -1078,7 +1078,7 @@ export const posts: Post[] = [
     excerpt:
       "Apple powder looks like one of the simplest fruit powders to buy. The variety, drying method and pectin behaviour behind it are where the real differences hide.",
     category: "Buyer's Guide",
-    date: "28 Nov 2025",
+    date: "7 Nov 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🔍",
@@ -1112,7 +1112,7 @@ export const posts: Post[] = [
     excerpt:
       "Alphonso and Totapuri mango powder do not taste, look or behave the same way. Here is how to specify the variety, colour and grade you actually need.",
     category: "Buyer's Guide",
-    date: "19 Dec 2025",
+    date: "11 Nov 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "✅",
@@ -1146,7 +1146,7 @@ export const posts: Post[] = [
     excerpt:
       "Tamarind powder lives or dies on consistent acidity from batch to batch. Here is how to specify and test for it before it becomes a problem in your sauce line.",
     category: "Buyer's Guide",
-    date: "21 Dec 2025",
+    date: "17 Nov 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "⚖️",
@@ -1180,7 +1180,7 @@ export const posts: Post[] = [
     excerpt:
       "Papaya powder is often bought specifically for its natural enzyme content — which most standard spec sheets do not measure at all. Here is what to ask instead.",
     category: "Buyer's Guide",
-    date: "24 Dec 2025",
+    date: "27 Nov 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧪",
@@ -1216,7 +1216,7 @@ export const posts: Post[] = [
     excerpt:
       "Pomegranate's polyphenols and punicalagins have made it one of nutraceuticals' most sought-after fruit actives. Dried into a powder, that antioxidant profile becomes easy to dose, ship and store.",
     category: "Ingredient Spotlight",
-    date: "1 Jan 2026",
+    date: "28 Nov 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🔴",
@@ -1246,7 +1246,7 @@ export const posts: Post[] = [
     excerpt:
       "Getting pomegranate's antioxidant claim onto a label takes more than adding the powder to a mix. Here is how dose, stability and application shape a formulation that actually works.",
     category: "Formulation",
-    date: "4 Jan 2026",
+    date: "1 Dec 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -1282,7 +1282,7 @@ export const posts: Post[] = [
     excerpt:
       "Tulsi has been central to Ayurveda for millennia, and modern wellness brands are rediscovering why. Gently dried into a powder, its aromatic, adaptogenic character travels well beyond the garden it grew in.",
     category: "Ingredient Spotlight",
-    date: "14 Jan 2026",
+    date: "3 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌱",
@@ -1313,7 +1313,7 @@ export const posts: Post[] = [
     excerpt:
       "Tulsi's aroma is its most valuable — and most fragile — quality. Here is how to specify drying method, freshness and grade so what you buy actually smells like tulsi.",
     category: "Buyer's Guide",
-    date: "17 Jan 2026",
+    date: "7 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍵",
@@ -1349,7 +1349,7 @@ export const posts: Post[] = [
     excerpt:
       "Ashwagandha has gone from an Ayurvedic staple to a global supplement-aisle headline ingredient. Here is what makes a good root powder, and where India's supply advantage comes from.",
     category: "Ingredient Spotlight",
-    date: "7 Feb 2026",
+    date: "8 Dec 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -1380,7 +1380,7 @@ export const posts: Post[] = [
     excerpt:
       "Ashwagandha is one of the most commercially pressured herbs to source honestly. Here is how to verify root-only sourcing, withanolide content and grade before you commit.",
     category: "Buyer's Guide",
-    date: "20 Feb 2026",
+    date: "13 Dec 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1414,7 +1414,7 @@ export const posts: Post[] = [
     excerpt:
       "Shatavari has been a cornerstone of Ayurvedic women's-health formulation for centuries. Here is what the root is, how it is processed, and where it fits in a modern supplement line.",
     category: "Ingredient Spotlight",
-    date: "24 Feb 2026",
+    date: "17 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌱",
@@ -1445,7 +1445,7 @@ export const posts: Post[] = [
     excerpt:
       "Shatavari sourcing carries a wild-collection risk that most Ayurvedic roots do not. Here is how to evaluate consistency, grade and supply reliability before you commit.",
     category: "Buyer's Guide",
-    date: "28 Feb 2026",
+    date: "19 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
@@ -1479,7 +1479,7 @@ export const posts: Post[] = [
     excerpt:
       "Brahmi has been used in Ayurveda for centuries to support memory and mental clarity. Here is what the herb is, how it is processed, and why it has become a nootropic-category staple.",
     category: "Ingredient Spotlight",
-    date: "1 Mar 2026",
+    date: "22 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍃",
@@ -1510,7 +1510,7 @@ export const posts: Post[] = [
     excerpt:
       "Brahmi's bitterness and colour sensitivity make it one of the trickier Ayurvedic herbs to formulate around. Here is how to protect both while hitting a credible nootropic dose.",
     category: "Formulation",
-    date: "5 Mar 2026",
+    date: "27 Dec 2025",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧠",
@@ -1546,7 +1546,7 @@ export const posts: Post[] = [
     excerpt:
       "Triphala's equal-parts blend of three native Indian fruits has anchored Ayurvedic digestive wellness for centuries. Here is what goes into it, and why blend consistency is everything.",
     category: "Ingredient Spotlight",
-    date: "11 Mar 2026",
+    date: "31 Dec 2025",
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🟤",
@@ -1577,7 +1577,7 @@ export const posts: Post[] = [
     excerpt:
       "A triphala powder is only as good as the process that blended it. Here is how to verify the 1:1:1 ratio is real, and what else to check before you commit to a supplier.",
     category: "Buyer's Guide",
-    date: "15 Mar 2026",
+    date: "11 Jan 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "⚖️",
@@ -1613,7 +1613,7 @@ export const posts: Post[] = [
     excerpt:
       "Giloy has become one of the most searched Ayurvedic immunity ingredients in recent years. Here is what the vine is, how it is processed, and why stem-only sourcing matters.",
     category: "Ingredient Spotlight",
-    date: "20 Mar 2026",
+    date: "18 Jan 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -1644,7 +1644,7 @@ export const posts: Post[] = [
     excerpt:
       "Giloy's intense bitterness and stem-versus-leaf sourcing question are the two things that make or break a formulation. Here is how to handle both.",
     category: "Formulation",
-    date: "22 Mar 2026",
+    date: "29 Jan 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -1678,7 +1678,7 @@ export const posts: Post[] = [
     excerpt:
       "Neem's bitter leaf has anchored Ayurvedic skin-care and wellness formulation for generations. Here is what makes a good neem powder, and where its real applications lie.",
     category: "Ingredient Spotlight",
-    date: "28 Mar 2026",
+    date: "8 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍃",
@@ -1709,7 +1709,7 @@ export const posts: Post[] = [
     excerpt:
       "Neem's applications span three very different industries with three very different quality priorities. Here is how to specify the right grade for each.",
     category: "Buyer's Guide",
-    date: "1 Apr 2026",
+    date: "11 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📐",
@@ -1745,7 +1745,7 @@ export const posts: Post[] = [
     excerpt:
       "Black pepper, ginger and long pepper in equal parts — trikatu is Ayurveda's classic digestive-support blend, and one traditionally used to boost how well other herbs are absorbed.",
     category: "Ingredient Spotlight",
-    date: "2 Apr 2026",
+    date: "16 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🌶️",
@@ -1776,7 +1776,7 @@ export const posts: Post[] = [
     excerpt:
       "Like triphala, trikatu's value depends on a genuine, verifiable 1:1:1 blend. Here is what to check before you commit to a supplier for your digestive-formula line.",
     category: "Buyer's Guide",
-    date: "9 Apr 2026",
+    date: "20 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1810,7 +1810,7 @@ export const posts: Post[] = [
     excerpt:
       "Red onion powder isn't a one-size grade. Pungency, colour depth and cut size all vary by intended use — here is how India's dark-red onions become a consistent B2B ingredient.",
     category: "Ingredient Spotlight",
-    date: "14 Apr 2026",
+    date: "25 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -1840,7 +1840,7 @@ export const posts: Post[] = [
     excerpt:
       "Buying onion powder for a production line is a different exercise than buying a retail spice jar. Here is what to verify before you commit to a full-container order.",
     category: "Buyer's Guide",
-    date: "16 Apr 2026",
+    date: "27 Feb 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -1876,7 +1876,7 @@ export const posts: Post[] = [
     excerpt:
       "Pink onion sits between red and white — milder than one, more character than the other. Here is where that balance actually earns its place in a formulation.",
     category: "Ingredient Spotlight",
-    date: "20 Apr 2026",
+    date: "6 Mar 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -1906,7 +1906,7 @@ export const posts: Post[] = [
     excerpt:
       "Pink onion's biggest formulation risk is being dosed like a bolder onion powder and disappearing. Here is how to get the dose and pairing right.",
     category: "Formulation",
-    date: "24 Apr 2026",
+    date: "8 Mar 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🥗",
@@ -1940,7 +1940,7 @@ export const posts: Post[] = [
     excerpt:
       "White onion powder is the default choice wherever appearance matters as much as taste. Here is what makes a good one, and where it genuinely outperforms red or pink.",
     category: "Ingredient Spotlight",
-    date: "28 Apr 2026",
+    date: "13 Mar 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -1970,7 +1970,7 @@ export const posts: Post[] = [
     excerpt:
       "White sauces, cream soups and dairy-based dressings all need onion flavour without a colour footprint. Here is how to formulate and source for that specific requirement.",
     category: "Formulation",
-    date: "29 Apr 2026",
+    date: "16 Mar 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🥛",
@@ -2004,7 +2004,7 @@ export const posts: Post[] = [
     excerpt:
       "Garlic powder is bought in more forms than most spice ingredients — dried cloves, granules, flakes, minced and fine powder. Here is which one your formulation actually needs.",
     category: "Ingredient Spotlight",
-    date: "2 May 2026",
+    date: "20 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🧄",
@@ -2034,7 +2034,7 @@ export const posts: Post[] = [
     excerpt:
       "Garlic powder that tastes right in a bench sample can still fail a production line. Here is the quality-control checklist manufacturers should run before scaling up.",
     category: "Buyer's Guide",
-    date: "8 May 2026",
+    date: "27 Mar 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🔍",
@@ -2070,7 +2070,7 @@ export const posts: Post[] = [
     excerpt:
       "Indian ginger is prized worldwide for its heat and citrusy aroma. Here is how that character survives drying, and where it earns its place across food and wellness formulations.",
     category: "Ingredient Spotlight",
-    date: "12 May 2026",
+    date: "15 Apr 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🫚",
@@ -2100,7 +2100,7 @@ export const posts: Post[] = [
     excerpt:
       "Ginger performs differently in a cold beverage than it does in a baked good or a capsule. Here is how to match grade and dose to your specific format.",
     category: "Formulation",
-    date: "15 May 2026",
+    date: "16 Apr 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🍵",
@@ -2134,7 +2134,7 @@ export const posts: Post[] = [
     excerpt:
       "Green chilli powder lives or dies on two things: whether it holds its bright colour, and whether its heat is actually consistent order to order. Here is what to check.",
     category: "Ingredient Spotlight",
-    date: "16 May 2026",
+    date: "23 Apr 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌶️",
@@ -2164,7 +2164,7 @@ export const posts: Post[] = [
     excerpt:
       "A green chilli powder that varies in heat from batch to batch is a real production risk. Here is how to verify consistency before committing to a supplier.",
     category: "Buyer's Guide",
-    date: "24 May 2026",
+    date: "7 May 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌡️",
@@ -2198,7 +2198,7 @@ export const posts: Post[] = [
     excerpt:
       "Fried onion looks like a simple garnish ingredient. The oil, frying temperature and process behind it determine whether it reads as caramelised or burnt.",
     category: "Ingredient Spotlight",
-    date: "5 Jun 2026",
+    date: "11 May 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
@@ -2228,7 +2228,7 @@ export const posts: Post[] = [
     excerpt:
       "Fried onion for a visible garnish and fried onion for a blended seasoning need different specs. Here is how to source the right one for your application.",
     category: "Buyer's Guide",
-    date: "23 Jun 2026",
+    date: "13 May 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🍛",
@@ -2262,7 +2262,7 @@ export const posts: Post[] = [
     excerpt:
       "Curry leaf's aroma is instantly recognisable and notoriously easy to lose in processing. Here is how it is dried to hold both colour and character.",
     category: "Ingredient Spotlight",
-    date: "26 Jun 2026",
+    date: "22 May 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🍃",
@@ -2292,7 +2292,7 @@ export const posts: Post[] = [
     excerpt:
       "Curry leaf's traditional wellness reputation is opening doors beyond South Indian cooking. Here is how nutraceutical and flavour-house buyers are using it.",
     category: "Formulation",
-    date: "30 Jun 2026",
+    date: "1 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -2326,7 +2326,7 @@ export const posts: Post[] = [
     excerpt:
       "Coriander leaf is famous for how quickly it wilts and loses flavour fresh. Here is how drying captures that citrusy character in a form that actually keeps.",
     category: "Ingredient Spotlight",
-    date: "2 Jul 2026",
+    date: "3 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌱",
@@ -2356,7 +2356,7 @@ export const posts: Post[] = [
     excerpt:
       "Coriander leaf powder needs to be sourced with freshness and colour front of mind more than most spice powders. Here is what seasoning and RTE buyers should verify.",
     category: "Buyer's Guide",
-    date: "6 Jul 2026",
+    date: "13 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -2390,7 +2390,7 @@ export const posts: Post[] = [
     excerpt:
       "Mint's cooling aroma is driven by volatile menthol content that drying can easily destroy. Here is the balance between shelf life and genuine mint character.",
     category: "Ingredient Spotlight",
-    date: "10 Jul 2026",
+    date: "18 Jun 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🌿",
@@ -2420,7 +2420,7 @@ export const posts: Post[] = [
     excerpt:
       "Mint's cooling effect needs to be dosed and protected differently across drinks, sweets and oral-care formats. Here is what changes between them.",
     category: "Formulation",
-    date: "29 Jul 2026",
+    date: "1 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🍬",
@@ -2454,7 +2454,7 @@ export const posts: Post[] = [
     excerpt:
       "Few natural ingredients pack as much vitamin C per gram as amla. Here is what makes Indian gooseberry powder a staple across supplements, hair care and functional food.",
     category: "Ingredient Spotlight",
-    date: "2 Aug 2026",
+    date: "5 Jul 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🫒",
@@ -2484,7 +2484,7 @@ export const posts: Post[] = [
     excerpt:
       "Getting amla's vitamin C claim to survive shelf life takes more than adding the powder to a formula. Here is how dose, processing and packaging protect it.",
     category: "Formulation",
-    date: "11 Aug 2026",
+    date: "7 Jul 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
@@ -2520,7 +2520,7 @@ export const posts: Post[] = [
     excerpt:
       "Amchur is more than a souring agent — it carries a specific Ayurvedic digestive tradition behind its sharp, cooling tartness. Here is the full picture.",
     category: "Ingredient Spotlight",
-    date: "17 Aug 2026",
+    date: "11 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🥭",
@@ -2550,7 +2550,7 @@ export const posts: Post[] = [
     excerpt:
       "Amchur sourcing for culinary seasoning has its own risks that Ayurvedic-grade buyers do not face. Here is what seasoning-house buyers should check.",
     category: "Buyer's Guide",
-    date: "21 Aug 2026",
+    date: "19 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧾",
@@ -2586,7 +2586,7 @@ export const posts: Post[] = [
     excerpt:
       "Fresh lemon juice is hard to dose precisely and doesn't travel well in a dry blend. Here is how lemon powder solves that without losing the citrus character.",
     category: "Ingredient Spotlight",
-    date: "27 Aug 2026",
+    date: "21 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🍋",
@@ -2616,7 +2616,7 @@ export const posts: Post[] = [
     excerpt:
       "Lemon powder performs differently as a flavour driver in a drink versus an acidification agent in a seasoning mix. Here is how to formulate for each.",
     category: "Formulation",
-    date: "1 Sep 2026",
+    date: "27 Jul 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🥤",
@@ -2650,7 +2650,7 @@ export const posts: Post[] = [
     excerpt:
       "Beetroot powder's deep red-purple colour and naturally occurring nitrates are two genuinely separate value propositions. Here is what buyers should know about both.",
     category: "Ingredient Spotlight",
-    date: "5 Sep 2026",
+    date: "2 Aug 2026",
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🟣",
@@ -2680,7 +2680,7 @@ export const posts: Post[] = [
     excerpt:
       "A beetroot powder optimised for tinctorial strength and one optimised for nitrate content aren't automatically the same product. Here is how to source the right one.",
     category: "Formulation",
-    date: "11 Sep 2026",
+    date: "3 Aug 2026",
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🏃",
@@ -2706,6 +2706,330 @@ export const posts: Post[] = [
 <h2>From formulation to supply</h2>
 <p>Because colour-focused and nitrate-focused beetroot sourcing genuinely ask different questions, it is worth telling your supplier explicitly which attribute your formulation depends on, so the sample and documentation you receive actually address what your product needs to prove.</p>
 <p>We supply beetroot powder with full COA and specification sheet on every shipment and private-label options available. If you are formulating a natural-colour or sports-nutrition product around beetroot, <a href="/products/functional-nutritional-powders/beetroot-powder">view the beetroot powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
+`,
+  },
+  {
+    id: "tomato-powder-lycopene-drying-method",
+    title: "Tomato Powder: concentrated umami, lycopene and colour from ripe Indian tomatoes",
+    excerpt:
+      "Tomato powder concentrates flavour, colour and lycopene into a shelf-stable form fresh or canned tomato can't match. Here is how drying method shapes the final product.",
+    category: "Ingredient Spotlight",
+    date: "10 Aug 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "🍅",
+    accent: "linear-gradient(135deg,#b91c1c,#f87171)",
+    body: `
+<p>Tomato is one of the most widely used vegetables in processed food, and dehydrating it into powder solves a genuine logistics problem: fresh tomatoes are mostly water, spoil quickly and are expensive to ship at volume, while canned or paste forms add packaging weight and their own handling complexity. Tomato powder concentrates the vegetable's savoury-sweet flavour, deep red colour and lycopene content into a compact, shelf-stable form that rehydrates back into paste or sauce on demand.</p>
+<h2>Where it comes from</h2>
+<p>India grows tomatoes across several states, with significant cultivation in Madhya Pradesh, Karnataka, Andhra Pradesh and Maharashtra among others. Fully ripe, red tomatoes are used for powder production specifically, since ripeness drives both the deep colour and the concentrated umami flavour that make a good tomato powder worth sourcing over a paler, underripe alternative.</p>
+<h2>How it's processed</h2>
+<p>Tomato pulp is dried using spray or drum-drying methods, with the choice affecting both the final product's flow characteristics and whether a carrier like maltodextrin is used. Spray-dried tomato powder is typically free-flowing and disperses easily, sometimes with a small carrier addition to manage the fruit's natural sugars during processing; drum-dried tomato powder can achieve a more concentrated, carrier-free product at a different cost and texture profile. Buyers with a clean-label requirement should specify carrier-free processing explicitly rather than assuming it by default.</p>
+<h2>Grades and specifications</h2>
+<p>Our tomato powder is supplied at food grade, milled to 60–100 mesh with custom sizes available, held to a moisture ceiling of 5%, for private label or bulk supply. A red to brick-red colour and a concentrated, ripe tomato odour are the markers worth checking in a sample — genuine, well-processed tomato powder should smell distinctly of ripe tomato, not flat or muted.</p>
+<h2>Where it's used</h2>
+<p>Soups, sauces and ketchups are tomato powder's largest application, where it rehydrates into a base with real depth and colour. Seasonings and snack dusts lean on its concentrated umami flavour, and it performs well in ready meals and instant foods where a shelf-stable tomato component is needed without the water weight of paste. It also appears in bakery and savoury blends, contributing both flavour and colour.</p>
+<h2>Why buyers choose it</h2>
+<p>Beyond the standard dehydrated-ingredient advantages of stability and precise dosing, tomato powder offers a genuine space and freight saving over paste or canned tomato — removing the water weight that dominates those formats' shipping cost. For a manufacturer running tomato-based products year-round, that efficiency, combined with a long shelf life and no cold-chain requirement, often changes the sourcing calculus meaningfully in the powder's favour.</p>
+<h2>Notes for formulators</h2>
+<p>Because carrier content (or its absence) affects both label declarations and reconstitution behaviour, confirm explicitly with your supplier whether a given batch is carrier-free or contains maltodextrin, particularly if your product needs a clean-label ingredient statement. Lycopene, tomato's characteristic antioxidant carotenoid, is naturally present and contributes to the powder's red colour; buyers with a specific lycopene-content requirement for a functional positioning should ask whether it is tested and can be reported on the certificate of analysis, since this is not always a standard spec-sheet line item.</p>
+<h2>Ordering and export</h2>
+<p>We supply tomato powder in 25 kg kraft bags with a food-grade liner as standard, with custom packing and private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a soup, sauce or seasoning product around tomato, <a href="/products/dehydrated-vegetable-powders/tomato-powder">view the tomato powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "tomato-powder-soup-sauce-snack-seasoning-supply",
+    title: "Sourcing Tomato Powder for soups, sauces and snack seasoning production",
+    excerpt:
+      "Reconstitution behaviour, carrier content and colour consistency all matter differently depending on whether you're making a sauce base or a dry seasoning dust.",
+    category: "Buyer's Guide",
+    date: "19 Aug 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "🧾",
+    accent: "linear-gradient(135deg,#991b1b,#ef4444)",
+    body: `
+<p>Tomato powder's two dominant industrial applications — reconstituted liquid bases (soups, sauces) and dry seasoning dusts (snack coatings, spice blends) — put different demands on the raw ingredient, even though both draw on the same underlying red colour and umami flavour. Sourcing the right grade for each means asking somewhat different questions.</p>
+<h2>For liquid bases: reconstitution behaviour is the priority</h2>
+<p>If tomato powder is going into a soup or sauce base, how completely and evenly it reconstitutes in your process water matters more than almost any other spec. Ask your supplier whether the powder is spray-dried (generally faster-dissolving) or drum-dried (can be more concentrated but sometimes slower to fully hydrate), and request a reconstitution sample in your actual process conditions — water temperature and mixing method both affect how a given batch performs, and a bench test in warm water does not always predict cold-process behaviour.</p>
+<h2>Carrier content and clean-label requirements</h2>
+<p>Confirm explicitly whether your quoted batch contains a carrier like maltodextrin or is carrier-free. This matters for ingredient labelling on any finished product with a "just tomato" clean-label claim, and it can also affect reconstitution properties and sweetness — maltodextrin-carried tomato powder can read subtly different in a sauce base than a carrier-free equivalent, even at the same nominal tomato content.</p>
+<h2>For dry seasoning dusts: colour and moisture control</h2>
+<p>Snack seasoning and spice-blend applications depend more on visual colour consistency and moisture control than on reconstitution speed, since the powder is typically applied directly rather than rehydrated. Request a colour reference and compare against previous shipments for a repeat, branded product, and confirm the moisture result on your specific batch's certificate of analysis against the standard 5% ceiling — moisture above spec can cause clumping in a dry seasoning applicator system that a liquid-base user might not notice as readily.</p>
+<h2>Mesh size across the two applications</h2>
+<p>Standard tomato powder runs 60–100 mesh with custom sizes available. Liquid-base applications generally benefit from a finer, more uniform grind for faster, more complete dissolution; dry seasoning dusts can sometimes use a coarser cut depending on the desired coating texture on the finished snack. Confirm which end of that range best suits your specific application rather than defaulting to a mid-range standard grade.</p>
+<h2>Lycopene and functional claims</h2>
+<p>If your finished product intends to make any claim around tomato's lycopene content, ask your supplier whether lycopene levels are tested and can be documented on the certificate of analysis — this is a more specialised request than the standard food-grade spec sheet covers, and worth confirming availability before finalising a product's label claims.</p>
+<h2>Questions worth asking before you commit</h2>
+<ul>
+<li>Is this batch spray-dried or drum-dried, and how does that affect reconstitution speed in my process conditions?</li>
+<li>Is the batch carrier-free or does it contain maltodextrin, and how does that affect my label declaration?</li>
+<li>Can I get a colour reference to compare against previous shipments for a repeat, branded seasoning product?</li>
+<li>What mesh size best suits my specific application — fast dissolution versus a particular dry-coating texture?</li>
+<li>Is lycopene content tested and documentable on the certificate of analysis, if my product needs that claim?</li>
+</ul>
+<h2>From sample to volume order</h2>
+<p>Because reconstitution behaviour and colour consistency are both properties best judged in your own actual process rather than from a spec sheet, it is worth requesting a sample sized for a real production trial — a genuine batch of your sauce or seasoning blend — before committing to a full-container order.</p>
+<p>We supply tomato powder with full COA and specification sheet on every shipment and private-label options available. To validate reconstitution or colour consistency before you commit, <a href="/products/dehydrated-vegetable-powders/tomato-powder">view the tomato powder product page</a> or <a href="/contact">tell us your application</a> and we will send a sample matched to it.</p>
+`,
+  },
+  {
+    id: "carrot-powder-beta-carotene-retention",
+    title: "Carrot Powder: natural sweetness and beta-carotene, dried for shelf stability",
+    excerpt:
+      "Carrot's warm colour and beta-carotene content are both sensitive to processing choices. Here is what makes a genuinely good carrot powder.",
+    category: "Ingredient Spotlight",
+    date: "23 Aug 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🥕",
+    accent: "linear-gradient(135deg,#c2410c,#fb923c)",
+    body: `
+<p>Carrot is one of the most nutritionally recognisable root vegetables, known widely for its beta-carotene content — the pro-vitamin A compound responsible for its characteristic orange colour. Dried into powder, carrot carries both its warm colour and its natural sweetness into a stable, easily dosed format used across baby food, bakery, soups and natural colouring applications.</p>
+<h2>Where it comes from</h2>
+<p>India grows carrots across several states with suitable growing conditions for root vegetables, producing fresh raw material used for both fresh-market sale and processing into powder and other dehydrated formats. The crop's orange colour and sweet, mild flavour are consistent enough across most commercial varieties that carrot powder's quality differentiation comes down primarily to processing care rather than raw-material scarcity.</p>
+<h2>How it's processed</h2>
+<p>Carrots are dried and milled into a fine powder, with drying temperature and speed directly affecting how much beta-carotene survives processing, since this carotenoid — like many plant pigments — is somewhat heat- and oxidation-sensitive. Careful, controlled drying protects both the vivid orange colour and the nutritional profile that makes carrot powder valuable beyond simple flavour and texture contribution.</p>
+<h2>Grades and specifications</h2>
+<p>Our carrot powder is supplied at food grade, milled to 80–100 mesh with custom sizes available, held to a moisture ceiling of 6%, for private label or bulk supply. A natural orange colour and sweet, mild flavour are the core quality markers — a batch that reads dull or brownish rather than vivid orange likely indicates aged raw material or an overly aggressive drying process.</p>
+<h2>Where it's used</h2>
+<p>Baby food and infant nutrition is one of carrot powder's most significant applications, where its mild sweetness and recognisable, trusted vegetable profile make it a popular first-foods ingredient. It performs well in soups, purées and sauces, contributing both colour and flavour, and shows up in bakery and snacks for both nutritional and visual appeal. Natural colouring is a growing standalone application, where carrot powder's orange hue serves as a clean-label alternative to synthetic dyes.</p>
+<h2>Why buyers choose it</h2>
+<p>Carrot powder offers a combination that few ingredients match as cleanly: genuine nutritional substance (beta-carotene, fibre), a mild and broadly well-tolerated flavour that works across sweet and savoury applications, and a natural, recognisable colour with real clean-label appeal. For baby-food manufacturers specifically, carrot's long-established reputation as a trusted, gentle first vegetable gives it a head start that few alternative colouring or nutrition ingredients carry.</p>
+<h2>Notes for formulators</h2>
+<p>For infant-nutrition applications, confirm your supplier's processing facility and testing regime meet the tighter microbial and quality expectations that regulated infant-food markets typically require — this is worth verifying explicitly rather than assuming standard food-grade spec automatically clears that bar. For colour-focused applications, request a colour reference if visual consistency matters to your finished product, since tinctorial strength can vary somewhat between suppliers even at an identical moisture and mesh specification.</p>
+<h2>Ordering and export</h2>
+<p>We supply carrot powder in 25 kg kraft bags with a food-grade liner as standard, with custom packing and private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a baby food, soup or natural-colour product around carrot, <a href="/products/dehydrated-vegetable-powders/carrot-powder">view the carrot powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "carrot-powder-baby-food-bakery-blend-applications",
+    title: "Formulating with Carrot Powder in baby food, bakery and vegetable blends",
+    excerpt:
+      "Carrot powder's biggest formulation variable is the regulatory bar it needs to clear, which shifts sharply between infant food and a bakery mix.",
+    category: "Formulation",
+    date: "27 Aug 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🍼",
+    accent: "linear-gradient(135deg,#9a3412,#fdba74)",
+    body: `
+<p>Carrot powder's three major application categories — infant nutrition, bakery, and broader vegetable blends — sit at meaningfully different points on the regulatory-scrutiny spectrum, which is worth understanding before finalising a supplier or a formulation. What clears easily for a snack bar might not automatically clear for a jarred baby food, even though both use the same base ingredient.</p>
+<h2>Infant nutrition: the tightest bar</h2>
+<p>Baby food and infant-nutrition formulations typically face the strictest microbial, heavy-metal and contaminant testing requirements of any application carrot powder serves. Before finalising a supplier for this category specifically, confirm their processing facility, testing panel and documentation meet your target market's specific infant-food regulations — these can vary meaningfully by country, and a supplier accustomed to standard food-grade production may not automatically be set up for infant-grade requirements without an explicit conversation about what that entails.</p>
+<h2>Bakery: a considerably more forgiving format</h2>
+<p>Bakery applications — carrot cake mixes, savoury crackers, bread inclusions — are comparatively forgiving on both microbial specification (standard food-grade generally suffices) and particle size (carrot powder blends reasonably well into most dough and batter systems across a range of mesh sizes). Dose here is largely a flavour and colour decision rather than a technical constraint, and formulators have real latitude to adjust inclusion rate based on the intensity of carrot character and colour desired in the finished product.</p>
+<h2>Vegetable blends and soups: consistency matters most</h2>
+<p>For soups, purées and multi-vegetable blend products, carrot powder's main formulation consideration is batch-to-batch colour and flavour consistency, since it is typically one component among several and needs to contribute predictably to an overall blend profile rather than dominating or varying unpredictably. Requesting a consistent supplier relationship — rather than switching between suppliers opportunistically — pays off more in this application than in a single-ingredient product, since blend consistency compounds across every component.</p>
+<h2>Dose and colour intensity considerations</h2>
+<p>Carrot powder's inclusion rate across applications is largely driven by desired colour intensity and flavour strength rather than a fixed technical ceiling — a subtle carrot note in a multi-vegetable blend needs a modest dose, while a carrot-forward product like a dedicated carrot cake mix can run considerably higher. It is worth testing dose empirically in your actual finished format, since carrot's mild flavour means over- or under-dosing is more a sensory-balance question than a functional-performance one.</p>
+<h2>Practical formulation checklist</h2>
+<ul>
+<li>For infant nutrition, confirm supplier facility and testing meet your specific target market's infant-food regulations explicitly — do not assume standard food-grade automatically qualifies.</li>
+<li>For bakery, standard food-grade spec generally performs well across a range of mesh sizes and dose levels.</li>
+<li>For vegetable blends and soups, prioritise supplier consistency to protect overall blend colour and flavour stability.</li>
+<li>Set dose through sensory testing in your actual format, since carrot's mild profile makes this primarily a balance decision.</li>
+<li>Request a colour reference for any application where visual consistency across production batches matters.</li>
+</ul>
+<h2>From formulation to supply</h2>
+<p>Because the regulatory and technical bar shifts so much between infant nutrition and other carrot powder applications, it is worth being explicit with your supplier about your specific end market and any regulatory requirements from the first conversation, rather than discovering a documentation gap after a batch has already shipped.</p>
+<p>We supply carrot powder with full COA and specification sheet on every shipment and private-label options available. If you are formulating a baby food, bakery or vegetable-blend product around carrot, <a href="/products/dehydrated-vegetable-powders/carrot-powder">view the carrot powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
+`,
+  },
+  {
+    id: "jackfruit-powder-plant-based-nutrition-spotlight",
+    title: "Jackfruit Powder: India's super-fruit turned into a versatile functional ingredient",
+    excerpt:
+      "Jackfruit has become one of the more talked-about plant-based ingredients globally. Here is what its powder actually offers formulators beyond the trend.",
+    category: "Ingredient Spotlight",
+    date: "31 Aug 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "🟡",
+    accent: "linear-gradient(135deg,#ca8a04,#fef08a)",
+    body: `
+<p>Jackfruit has enjoyed a genuine surge of international attention over the past several years, driven largely by unripe jackfruit's popularity as a meat-analogue texture ingredient in plant-based cooking. That trend has brought broader attention to jackfruit as a category, and jackfruit powder — made from the ripe fruit rather than the unripe form used for texture — offers formulators a different, equally interesting value proposition built around sweetness, fibre content and functional versatility.</p>
+<h2>Where it comes from</h2>
+<p>India is one of the world's largest jackfruit producers, with the crop grown across several southern and eastern states in climates suited to the tree. Jackfruit powder is made specifically from ripe fruit, which carries the sweet, tropical flavour and characteristic aroma the powder is valued for — distinct from unripe jackfruit's neutral, fibrous character used in savoury meat-analogue applications.</p>
+<h2>How it's processed</h2>
+<p>Ripe jackfruit pulp is dried and milled into a fine, free-flowing powder that retains the fruit's sweet, tropical character. Processing care protects both flavour intensity and the powder's functional fibre and resistant-starch content, which is part of what has made jackfruit an increasingly popular functional-food and gluten-free flour ingredient beyond its flavour contribution alone.</p>
+<h2>Grades and specifications</h2>
+<p>Our jackfruit powder is supplied at food grade, milled to 80–100 mesh with custom sizes available, held to a moisture ceiling of 6%, for private label or bulk supply. A pale yellow to cream colour and a sweet, characteristic jackfruit odour are the markers worth checking directly in a sample — jackfruit's flavour is distinctive enough that most buyers can judge authenticity quickly by taste and smell alone.</p>
+<h2>Where it's used</h2>
+<p>Nutrition and meal-replacement blends are a significant application, drawing on jackfruit's fibre content and on-trend positioning. Bakery and gluten-free flours are a fast-growing use case, where jackfruit's resistant starch offers functional value beyond flavour. Smoothies and beverages benefit from its natural sweetness and tropical character, and it appears increasingly in snacks and cereals targeting a plant-based, functional-food consumer.</p>
+<h2>Why buyers choose it</h2>
+<p>Jackfruit powder gives formulators access to a genuinely on-trend, recognisable ingredient with real functional substance behind the trend appeal — fibre content and resistant starch are legitimate nutritional attributes, not just marketing language. For gluten-free formulators specifically, jackfruit's flour-alternative properties offer a plant-based, allergen-friendly option that also carries positive, trend-aligned brand positioning.</p>
+<h2>Notes for formulators</h2>
+<p>Because jackfruit powder's sweetness and tropical aroma are central to its appeal in beverage and nutrition applications, it is worth requesting a fresh sample if flavour intensity matters to your formulation, since — as with several fruit powders in our range — aroma can fade gradually even under good storage conditions. For gluten-free flour applications specifically, ask your supplier about the powder's functional behaviour in your particular baking system, since resistant starch and fibre content affect dough hydration and texture differently than conventional wheat flour, and a small test batch is worth running before committing to a full reformulation.</p>
+<h2>Ordering and export</h2>
+<p>We supply jackfruit powder in 25 kg kraft bags with a food-grade liner as standard, with custom packing and private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a nutrition, bakery or beverage product around jackfruit, <a href="/products/dehydrated-vegetable-powders/jackfruit-powder">view the jackfruit powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "jackfruit-powder-meat-analogue-bakery-formulation",
+    title: "Formulating with Jackfruit Powder: fibre, resistant starch and gluten-free baking",
+    excerpt:
+      "Jackfruit powder's functional fibre and resistant starch behave differently from wheat flour. Here is how to formulate around that rather than against it.",
+    category: "Formulation",
+    date: "5 Sep 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🍞",
+    accent: "linear-gradient(135deg,#a16207,#fde68a)",
+    body: `
+<p>Jackfruit powder's functional value — fibre and resistant starch content that supports gluten-free flour applications and functional-nutrition positioning — comes with real formulation implications that differ from how a purely flavour-and-colour fruit powder behaves. Getting the most from it means understanding how those functional properties interact with your specific process, rather than treating jackfruit powder as a drop-in flavour substitute.</p>
+<h2>Gluten-free baking: hydration and texture need real testing</h2>
+<p>Jackfruit powder's fibre and resistant starch content mean it does not behave identically to wheat flour or even to other gluten-free flour alternatives in terms of water absorption and dough structure. Rather than substituting jackfruit powder into an existing formulation at a fixed ratio, run genuine test batches at a few different inclusion levels to find the hydration adjustment your specific recipe needs — resistant starch in particular can absorb water differently than conventional starches, affecting both dough handling and finished texture.</p>
+<h2>Resistant starch and functional-nutrition claims</h2>
+<p>If your formulation aims to make a functional-fibre or resistant-starch claim, confirm with your supplier whether these parameters are tested and can be documented on the certificate of analysis, since this is a more specialised testing request than a standard food-grade spec sheet typically covers. Resistant starch content can also vary somewhat with processing method, so if a specific numeric claim matters to your product, it is worth verifying on the actual batch you are sourcing rather than a generic reference figure.</p>
+<h2>Sweetness and flavour balance in savoury applications</h2>
+<p>Because jackfruit powder is made from ripe, sweet fruit rather than the neutral unripe form used in meat-analogue texture applications, it carries a genuine sweetness that needs accounting for in any savoury formulation. If you are exploring jackfruit powder in a savoury bakery or snack context specifically for its functional fibre content, plan for that sweetness explicitly — either by balancing it with complementary savoury ingredients or by choosing formulation applications where a mild sweet note is compatible with the overall flavour profile.</p>
+<h2>Smoothies and beverages: dissolution and flavour intensity</h2>
+<p>For beverage applications, jackfruit powder's dissolution behaviour and flavour intensity are the primary considerations, similar to other tropical fruit powders in our range. A finer mesh generally disperses more cleanly in a smoothie or beverage base, and requesting a fresh sample protects against the gradual aroma fade that affects most fruit and herb powders over extended storage.</p>
+<h2>Practical formulation checklist</h2>
+<ul>
+<li>Run genuine test batches at multiple inclusion levels for gluten-free baking — do not assume a fixed substitution ratio from wheat flour.</li>
+<li>Confirm fibre and resistant-starch testing is available if your product needs a specific functional-nutrition claim.</li>
+<li>Account for jackfruit's inherent sweetness explicitly in any savoury application.</li>
+<li>Choose a finer mesh for beverage and smoothie applications requiring clean dissolution.</li>
+<li>Request a fresh sample for any aroma-sensitive application.</li>
+</ul>
+<h2>From formulation to supply</h2>
+<p>Because jackfruit powder's functional behaviour in gluten-free baking specifically depends on genuine trial-and-error in your own recipe, it is worth requesting a sample sized for real test batches rather than a small bench taste test, so you can properly evaluate hydration and texture before committing to a reformulation.</p>
+<p>We supply jackfruit powder with full COA and specification sheet on every shipment and private-label options available. If you are formulating a gluten-free bakery, nutrition or beverage product around jackfruit, <a href="/products/dehydrated-vegetable-powders/jackfruit-powder">view the jackfruit powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
+`,
+  },
+  {
+    id: "psyllium-husk-powder-soluble-fibre-purity-grades",
+    title: "Psyllium Husk Powder (Isabgol): the world's fibre staple, and why India grows almost all of it",
+    excerpt:
+      "Nearly every psyllium husk product sold worldwide traces back to India. Here is what makes this soluble fibre so effective, and how purity grades actually differ.",
+    category: "Ingredient Spotlight",
+    date: "11 Sep 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "🌾",
+    accent: "linear-gradient(135deg,#65a30d,#d9f99d)",
+    body: `
+<p>Psyllium husk, known in India as isabgol, occupies a genuinely unusual position in global trade: India grows almost the entire world's commercial supply, making origin and supplier quality less a matter of finding alternative sources and more a matter of choosing the right partner within a fairly concentrated supply base. The husk itself is prized as an exceptionally effective source of soluble dietary fibre, forming a gel when hydrated that underpins its use across digestive health, functional food and pharmaceutical applications.</p>
+<h2>Where it comes from</h2>
+<p>Psyllium (Plantago ovata) is grown predominantly in Gujarat and Rajasthan, states with the specific climate conditions the crop requires. India's near-total dominance of global psyllium production means that sourcing decisions largely come down to selecting the right processor and purity grade rather than comparing origins, since alternative growing regions supply only a small fraction of world demand.</p>
+<h2>How it's processed</h2>
+<p>Psyllium seeds are processed to separate the husk — the fibre-rich outer layer — from the seed itself, then milled to the target mesh and purity specification. Purity grading is central to psyllium's commercial value: husk purity directly determines swelling capacity and gel-forming performance, which is the functional property nearly every application depends on.</p>
+<h2>Grades and specifications</h2>
+<p>Our psyllium husk powder is supplied at food / pharma grade, in purity grades from 85% to 99%, in husk or powder form, with a moisture ceiling of 10%. Swelling volume — a direct measure of mucilage and gel-forming capacity — typically runs at 40 ml/g or above on higher grades, and is worth confirming on your specific batch's certificate of analysis if your application depends on a particular functional performance level rather than purity percentage alone.</p>
+<h2>Where it's used</h2>
+<p>Fibre and laxative supplements are psyllium's best-known application, drawing directly on its soluble-fibre and gel-forming properties for digestive health positioning. It is a staple in functional foods and drinks targeting fibre fortification, and has become an essential binder in gluten-free bakery, where it helps replicate some of the structure gluten would otherwise provide. Pharmaceutical formulations round out its major uses, often requiring the highest purity grades.</p>
+<h2>Why buyers choose it</h2>
+<p>Psyllium's soluble fibre content and gel-forming capacity are difficult to replicate with alternative fibre sources at a comparable cost and functional performance, which is a large part of why it remains the default choice across fibre-supplement and gluten-free-baking categories globally. Its clean-label, plant-based positioning also aligns well with consumer preference trends in both the supplement and functional-food spaces.</p>
+<h2>Notes for formulators</h2>
+<p>Purity grade should be matched to your specific application rather than defaulting to the highest available — pharmaceutical and premium-supplement applications typically justify 99% purity, while food and gluten-free-baking applications often perform perfectly well at more accessible 85% or 95% grades, at meaningfully better cost. Mesh size (40 or 100 mesh, specified per order) affects both hydration speed and texture in the finished product, so confirm which suits your specific process — a finer mesh generally hydrates faster but can affect mouthfeel differently in some applications.</p>
+<h2>Ordering and export</h2>
+<p>We supply psyllium husk powder in custom packing across all purity grades, with private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are formulating a fibre supplement, functional food or gluten-free product around psyllium, <a href="/products/hydrocolloids-food-additives/psyllium-husk-powder">view the psyllium husk powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "psyllium-husk-powder-supplement-pharma-gluten-free-baking-use",
+    title: "Psyllium Husk across supplements, pharma and gluten-free baking: matching grade to use",
+    excerpt:
+      "The same psyllium husk product doesn't serve a laxative supplement, a pharma formulation and a gluten-free bread the same way. Here is how the requirements diverge.",
+    category: "Formulation",
+    date: "15 Sep 2026",
+    read: "8 min read",
+    author: "Gautam Choudhary",
+    emoji: "💊",
+    accent: "linear-gradient(135deg,#4d7c0f,#bef264)",
+    body: `
+<p>Psyllium husk's three major application categories — dietary-fibre supplements, pharmaceutical formulations, and gluten-free baking — draw on the same core functional property, its exceptional soluble-fibre gel-forming capacity, but each application stresses different aspects of purity, particle size and regulatory documentation. Sourcing the right grade means understanding which of these three your formulation actually needs.</p>
+<h2>Fibre and laxative supplements: purity and swelling volume</h2>
+<p>For dietary-fibre and laxative supplement applications, purity and swelling volume (mucilage content) are the parameters that most directly determine product efficacy and consumer experience. Higher-purity grades generally deliver more consistent, predictable gel formation, which matters for a product whose entire value proposition is a specific, repeatable digestive effect. Confirm swelling volume on your specific batch's certificate of analysis rather than relying on purity percentage alone as a proxy, since the two, while correlated, are not identical measures.</p>
+<h2>Pharmaceutical formulations: the tightest documentation bar</h2>
+<p>Pharma-grade psyllium applications typically require the most rigorous purity, contaminant and documentation standards of the three categories, often needing the highest available purity grade (99%) along with a comprehensive testing and traceability package. If your application is pharmaceutical, confirm early in the sourcing conversation whether your supplier's processing and documentation genuinely meet pharma-grade requirements, rather than assuming standard food-grade psyllium can be upgraded after the fact — pharma sourcing typically needs to be built in from the start of the supply relationship.</p>
+<h2>Gluten-free baking: functional behaviour over purity percentage</h2>
+<p>In gluten-free bread, crackers and similar applications, psyllium husk is valued specifically for its ability to bind and add structure that gluten would otherwise provide — a functional role that depends more on particle size and hydration behaviour in your specific formulation than on purity percentage alone. Lower-purity grades (85% or 95%) often perform entirely adequately in this application at a meaningfully better cost than pharma-grade material, since the functional binding role does not require the same purity threshold that a supplement or pharmaceutical application does.</p>
+<h2>Mesh size and hydration speed across applications</h2>
+<p>Standard psyllium is offered at 40 or 100 mesh. A finer mesh generally hydrates faster, which can matter for a quick-mixing supplement powder or beverage application; a coarser mesh may suit a baking application where a slightly different texture or slower hydration during dough development is actually preferable. Testing both in your specific process, rather than assuming one mesh universally performs best, is worth the small upfront effort.</p>
+<h2>Practical checklist by application</h2>
+<ul>
+<li>For fibre/laxative supplements: prioritise swelling volume and purity consistency, verified on the actual batch's certificate of analysis.</li>
+<li>For pharmaceutical use: confirm your supplier's processing and documentation genuinely meet pharma-grade requirements from the start.</li>
+<li>For gluten-free baking: a lower-purity grade often performs adequately at better cost — test functional binding behaviour rather than defaulting to the highest purity available.</li>
+<li>Match mesh size to your specific hydration-speed and texture requirements through direct testing.</li>
+<li>Request the specific documentation package your application needs (supplement, pharma, or food) before finalising a supplier.</li>
+</ul>
+<h2>From formulation to supply</h2>
+<p>Because the right psyllium grade genuinely differs across supplement, pharma and baking applications, it is worth telling your supplier explicitly which category your product falls into, so the grade and documentation you receive matches what your specific regulatory and functional requirements demand.</p>
+<p>We supply psyllium husk powder with full COA and specification sheet on every shipment, purity grades from 85% to 99%, and private-label options available. If you are formulating a supplement, pharmaceutical or gluten-free product around psyllium, <a href="/products/hydrocolloids-food-additives/psyllium-husk-powder">view the psyllium husk powder product page</a> or <a href="/contact">tell us what you are building</a> and we will recommend a grade suited to it.</p>
+`,
+  },
+  {
+    id: "tamarind-kernel-powder-thickening-sizing-chemistry",
+    title: "Tamarind Kernel Powder: the polysaccharide gum behind a cost-effective thickener",
+    excerpt:
+      "Tamarind kernel powder does the thickening job of several premium gums at a fraction of the cost. Here is the chemistry behind why it works.",
+    category: "Ingredient Spotlight",
+    date: "20 Sep 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "🟤",
+    accent: "linear-gradient(135deg,#78350f,#d6b98c)",
+    body: `
+<p>Tamarind kernel powder (TKP) occupies a useful niche in the hydrocolloid world: a naturally occurring polysaccharide gum, milled from tamarind seeds, that delivers genuinely effective thickening, gelling and sizing performance at a cost point well below many premium gums. For food manufacturers and industrial buyers working to a tight cost target without sacrificing functional performance, TKP is frequently the pragmatic choice.</p>
+<h2>Where it comes from</h2>
+<p>Tamarind (Tamarindus indica) is grown across several Indian states, and kernel powder is produced from the seeds — a co-product of tamarind pulp processing rather than requiring a separate dedicated crop. This gives TKP production a genuinely efficient raw-material story, since it makes productive use of seed material that would otherwise be a processing byproduct of the pulp trade covered elsewhere in our fruit-powder range.</p>
+<h2>How it's processed</h2>
+<p>Tamarind seeds are processed and milled into a fine powder, with plain and de-oiled grades available depending on the application. The powder's polysaccharide structure is what gives it thickening and gelling capability — when hydrated, particularly with heat, it develops significant viscosity, making it functionally comparable in many applications to considerably more expensive hydrocolloids.</p>
+<h2>Grades and specifications</h2>
+<p>Our tamarind kernel powder is supplied at food / technical grade, in plain and de-oiled variants, milled to 100 mesh with custom sizes available, held to a moisture ceiling of 10%. High viscosity (grade-dependent) and characteristic cold-swelling, hot-dispersing behaviour are the core functional properties — TKP swells somewhat in cold water but reaches its full viscosity and dispersion when heated, a behaviour worth understanding and testing in your specific process.</p>
+<h2>Where it's used</h2>
+<p>Food thickening and gelling is TKP's primary application, valued for cost-effective performance across sauces, dressings and similar formats. It also has a long history in textile and jute sizing, where its polysaccharide structure serves an entirely different but chemically related function. Paper and adhesive applications draw on similar binding properties, and it appears across various other industrial applications where a natural, cost-effective thickener or binder is needed.</p>
+<h2>Why buyers choose it</h2>
+<p>The core appeal is straightforward: TKP delivers meaningful thickening and gelling performance at a cost point that undercuts many premium gums, without requiring buyers to compromise heavily on functional effectiveness. Its polysaccharide structure also pairs synergistically with several other hydrocolloids, letting formulators sometimes achieve target viscosity with a lower total gum-blend cost by combining TKP with a complementary gum rather than relying entirely on a single, more expensive ingredient.</p>
+<h2>Notes for formulators</h2>
+<p>Because TKP's viscosity develops most fully with heat, it is worth planning your process around that behaviour rather than assuming cold-water performance matches a fully hydrated hot-process result. Plain versus de-oiled grades matter for specific applications — de-oiled grades can offer more consistent performance in some formulations by removing residual seed oil that might otherwise affect texture or stability. If your application benefits from gum synergy, ask your supplier about TKP's compatibility with guar gum or other hydrocolloids in your specific target system, since combination blends are a well-established use case worth exploring for cost optimisation.</p>
+<h2>Ordering and export</h2>
+<p>We supply tamarind kernel powder in custom packing across plain and de-oiled grades, with private-label options on request. Every shipment ships with a full COA and specification sheet, and we work on FOB or CIF terms with documentation matched to your market.</p>
+<p>If you are sourcing a cost-effective thickening or sizing agent around tamarind kernel powder, <a href="/products/hydrocolloids-food-additives/tamarind-kernel-powder">view the tamarind kernel powder product page</a> or <a href="/contact">tell us your requirement</a> and we will reply with specs, a sample where useful and a quote in your currency.</p>
+`,
+  },
+  {
+    id: "tamarind-kernel-powder-food-textile-grades-gum-synergy",
+    title: "Sourcing Tamarind Kernel Powder: food versus technical grades, and gum synergy",
+    excerpt:
+      "Food-grade and technical-grade TKP aren't interchangeable, and blending it with other gums can cut costs further. Here is how to source and combine it correctly.",
+    category: "Buyer's Guide",
+    date: "21 Sep 2026",
+    read: "7 min read",
+    author: "Gautam Choudhary",
+    emoji: "⚗️",
+    accent: "linear-gradient(135deg,#57432b,#c9a876)",
+    body: `
+<p>Tamarind kernel powder's dual identity — a legitimate food-grade thickener and a widely used industrial sizing and binding agent — means buyers need to be explicit about which grade they actually need, since food and technical grades are processed and tested to different standards despite sharing a common raw material and basic chemistry.</p>
+<h2>Food grade versus technical grade: not interchangeable</h2>
+<p>Food-grade TKP undergoes processing and testing appropriate for direct food use — moisture control, microbial testing, and food-safety documentation that a technical-grade product intended for textile sizing, paper or adhesives does not necessarily carry. Confirm explicitly with your supplier which grade you are being quoted, and never assume a technical-grade product can substitute for food-grade use, regardless of price advantage — the testing and safety documentation gap is a real compliance risk, not just a formality.</p>
+<h2>Plain versus de-oiled: matching to your application</h2>
+<p>Plain and de-oiled TKP grades differ in residual seed oil content, which can affect texture, stability and sometimes flavour neutrality in sensitive food applications. Ask your supplier which grade suits your specific use case — de-oiled grades often perform more predictably in food applications where a completely neutral flavour and consistent texture matter, while plain grades may be entirely adequate, at better cost, for less sensitive industrial applications.</p>
+<h2>Viscosity consistency across batches</h2>
+<p>Because TKP's viscosity is grade-dependent and central to its functional value, ask your supplier how viscosity performance is standardised across production batches, and request a comparison sample from two separate runs if consistency is a priority for your formulation — this matters particularly for buyers running a fixed thickening specification across repeat production cycles.</p>
+<h2>Gum synergy: a genuine cost-optimisation opportunity</h2>
+<p>TKP's polysaccharide structure pairs synergistically with several other hydrocolloids, including guar gum, meaning a blended formulation can sometimes achieve a target viscosity at a lower total ingredient cost than relying on a single premium gum alone. If cost optimisation is a priority, it is worth discussing blend ratios with your supplier or a formulation specialist — TKP is rarely the sole gum in a sophisticated thickening system, and understanding its synergistic behaviour with your other hydrocolloids can meaningfully improve your cost structure without sacrificing performance.</p>
+<h2>Mesh size and dispersion behaviour</h2>
+<p>Standard TKP runs 100 mesh with custom sizes available. Confirm mesh size matches your process's dispersion requirements, and remember TKP's characteristic behaviour — swelling in cold water but reaching full viscosity with heat — when planning your process temperature profile, since this two-stage hydration behaviour is fundamental to how TKP actually performs rather than an incidental detail.</p>
+<h2>Questions worth asking before you commit</h2>
+<ul>
+<li>Is this genuinely food-grade with appropriate testing and documentation, or technical grade?</li>
+<li>Is plain or de-oiled the better fit for my specific application's flavour and texture sensitivity?</li>
+<li>How is viscosity performance standardised across production batches, and can I compare two separate runs?</li>
+<li>What gum-synergy opportunities exist for my specific thickening target, and can the supplier advise on blend ratios?</li>
+<li>What is the moisture result on this specific batch's certificate of analysis, against the 10% ceiling?</li>
+</ul>
+<h2>From sample to volume order</h2>
+<p>Because viscosity behaviour and gum synergy both benefit from real process testing, it is worth requesting a sample sized for a genuine trial in your specific formulation — including your actual heat and mixing process — before committing to a full order, particularly if you are exploring a blended-gum approach for cost optimisation.</p>
+<p>We supply tamarind kernel powder with full COA and specification sheet on every shipment, plain and de-oiled grades available, and private-label options on request. To verify grade and viscosity consistency before you commit, <a href="/products/hydrocolloids-food-additives/tamarind-kernel-powder">view the tamarind kernel powder product page</a> or <a href="/contact">tell us your requirement</a> and we will send a sample sized for a real comparison.</p>
 `,
   },
 ];
