@@ -746,7 +746,7 @@ export const posts: Post[] = [
 </ul>
 <p>The cost difference between a commodity moringa and a premium-spec moringa is meaningful but rarely the largest line item in a finished product. Paying for the better grade is usually the right call if your brand positioning depends on the moringa actually performing.</p>
 
-<p>At Clarté Overseas we supply premium moringa leaf powder into nutraceutical, functional-nutrition and clean-label brands worldwide, with documentation built around the specifications above. If moringa is on your sourcing list, <a href="/products/herbal-leaf-powders/moringa-powder">view the moringa powder product page</a> or <a href="/contact">tell us what you are building</a> and we will reply with a sample, a current spec sheet and a price tuned to your application.</p>
+<p>At Clarté Overseas we supply premium moringa leaf powder into nutraceutical, functional-nutrition and clean-label brands worldwide, with documentation built around the specifications above. If moringa is on your sourcing list, <a href="/products/ayurvedic-herbal-powders/moringa-powder">view the moringa powder product page</a> or <a href="/contact">tell us what you are building</a> and we will reply with a sample, a current spec sheet and a price tuned to your application.</p>
 `,
   },
   {
@@ -802,7 +802,7 @@ export const posts: Post[] = [
 <li>Clean allergen status — moringa itself is allergen-free, but cross-contamination at the processing site matters.</li>
 </ul>
 
-<p>At Clarté Overseas we supply premium moringa leaf powder into plant-protein, sports-nutrition and functional-beverage formulators worldwide. If moringa is on your formulation roadmap, <a href="/products/herbal-leaf-powders/moringa-powder">view the moringa powder product page</a> or <a href="/contact">share your brief</a> and we will reply with a sample and a spec sheet to test against your blend.</p>
+<p>At Clarté Overseas we supply premium moringa leaf powder into plant-protein, sports-nutrition and functional-beverage formulators worldwide. If moringa is on your formulation roadmap, <a href="/products/ayurvedic-herbal-powders/moringa-powder">view the moringa powder product page</a> or <a href="/contact">share your brief</a> and we will reply with a sample and a spec sheet to test against your blend.</p>
 `,
   },
   {
@@ -858,7 +858,7 @@ export const posts: Post[] = [
 <li>A representative sample of the actual grade being quoted — not a marketing sample.</li>
 </ul>
 
-<p>At Clarté Overseas we supply leaf-only, low-temperature dried, pasteurised moringa powder built to the procurement spec described above. If moringa is on your shortlist, <a href="/products/herbal-leaf-powders/moringa-powder">view the moringa product page</a> or <a href="/contact">tell us your spec</a> and we will send a sample and a recent certificate of analysis to compare against your current supplier.</p>
+<p>At Clarté Overseas we supply leaf-only, low-temperature dried, pasteurised moringa powder built to the procurement spec described above. If moringa is on your shortlist, <a href="/products/ayurvedic-herbal-powders/moringa-powder">view the moringa product page</a> or <a href="/contact">tell us your spec</a> and we will send a sample and a recent certificate of analysis to compare against your current supplier.</p>
 `,
   },
   {
@@ -905,7 +905,7 @@ export const posts: Post[] = [
 <h2>What this means in practice</h2>
 <p>If you are planning a multi-market launch, three practical rules of thumb help. First, anchor your formulation around leaf or leaf-powder rather than seed, root or concentrated extract — the leaf form passes more regulatory regimes more easily. Second, keep label claims descriptive rather than therapeutic for international SKUs, and build a separate stronger-claim version for markets where the regulatory path supports it. Third, invest in tight lot-level documentation and contaminant testing — heavy metals and pesticide residues are the most common reason for border holds.</p>
 
-<p>At Clarté Overseas we supply moringa leaf powder to brands launching into the UK, US, Gulf, Australia and South East Asian markets, with documentation built around the regimes described above. If you are evaluating a moringa programme for a multi-market launch, <a href="/products/herbal-leaf-powders/moringa-powder">view the moringa product page</a> or <a href="/contact">talk to us about the markets you are targeting</a> and we will put together specs, samples and a documentation pack to match.</p>
+<p>At Clarté Overseas we supply moringa leaf powder to brands launching into the UK, US, Gulf, Australia and South East Asian markets, with documentation built around the regimes described above. If you are evaluating a moringa programme for a multi-market launch, <a href="/products/ayurvedic-herbal-powders/moringa-powder">view the moringa product page</a> or <a href="/contact">talk to us about the markets you are targeting</a> and we will put together specs, samples and a documentation pack to match.</p>
 `,
   },
   {
@@ -953,7 +953,7 @@ export const posts: Post[] = [
 <li><strong>Right-size the dose.</strong> The temptation to over-include for marketing reasons usually backfires on taste. The sweet spot for most food applications sits between 0.5 percent (beverages) and 4 percent (bars, snacks).</li>
 </ul>
 
-<p>At Clarté Overseas we supply premium moringa leaf powder into functional-beverage, bakery, plant-based meat and dairy formulators worldwide, with documentation and specifications built around food-application requirements rather than supplement use. If you are designing a food product around moringa, <a href="/products/herbal-leaf-powders/moringa-powder">view the moringa powder product page</a> or <a href="/contact">tell us what you are building</a> and we will reply with a sample, a spec sheet and a recommendation tuned to your format.</p>
+<p>At Clarté Overseas we supply premium moringa leaf powder into functional-beverage, bakery, plant-based meat and dairy formulators worldwide, with documentation and specifications built around food-application requirements rather than supplement use. If you are designing a food product around moringa, <a href="/products/ayurvedic-herbal-powders/moringa-powder">view the moringa powder product page</a> or <a href="/contact">tell us what you are building</a> and we will reply with a sample, a spec sheet and a recommendation tuned to your format.</p>
 `,
   },
 ];

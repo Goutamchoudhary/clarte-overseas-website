@@ -99,7 +99,7 @@ export const categoryDefaults: Record<string, CategoryDefaults> = {
     micro: MICRO_STD, heavyMetals: HEAVY_METALS,
     packaging: PACKAGING, storage: STORAGE, allergen: ALLERGEN, compliance: COMPLIANCE,
   },
-  "herbal-leaf-powders": {
+  "ayurvedic-herbal-powders": {
     gradeLabel: "Food / nutraceutical grade",
     shelfLife: "24 months from manufacture, in unopened, properly stored packaging",
     micro: MICRO_HERBAL, heavyMetals: HEAVY_METALS,
