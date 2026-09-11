@@ -1288,5 +1288,24 @@
   "prod.trikatu_powder_g4": "プライベートラベル / バルク",
 
   "products.cat_dehydrated_vegetable_powders_name": "脱水野菜パウダー",
-  "products.cat_dehydrated_vegetable_powders_desc": "トマト、にんじん、ジャックフルーツなど — 天然の色、風味、栄養を凝縮した保存性の高い脱水野菜パウダーで、スープ、ソース、調味料、レトルト食品に。"
+  "products.cat_dehydrated_vegetable_powders_desc": "トマト、にんじん、ジャックフルーツなど — 天然の色、風味、栄養を凝縮した保存性の高い脱水野菜パウダーで、スープ、ソース、調味料、レトルト食品に。",
+
+  "blog.post_guava_powder_sourcing_spec_guide_title": "グァバパウダーの調達：本当に重要な規格書の確認ポイント",
+  "blog.post_guava_powder_sourcing_spec_guide_excerpt": "良質なグァバパウダーと平凡なものは、紙の上ではほとんど見分けがつきません。コンテナを発注する前に確認すべきこと、そしてサプライヤーに尋ねるべきことをまとめました。",
+  "blog.post_pineapple_powder_sourcing_spec_guide_title": "パイナップルパウダーの調達：発注前に規格書をどう読むか",
+  "blog.post_pineapple_powder_sourcing_spec_guide_excerpt": "酸味、品種、乾燥方法によって、パイナップルパウダーが配合で実際に機能するか、データシート上だけ良く見えるかが決まります。まず確認すべき点はこちらです。",
+  "blog.post_banana_powder_sourcing_spec_guide_title": "乳幼児栄養食品やスポーツブレンド向けバナナパウダーの調達：確認すべきこと",
+  "blog.post_banana_powder_sourcing_spec_guide_excerpt": "バナナパウダーは、品質に最も敏感な2つのカテゴリー — 乳幼児食品とスポーツ栄養 — に位置しています。適切に規格を定め、検証する方法を解説します。",
+  "blog.post_apple_powder_sourcing_spec_guide_title": "アップルパウダーの調達：メッシュ、水分、そして尋ねる価値のある質問",
+  "blog.post_apple_powder_sourcing_spec_guide_excerpt": "アップルパウダーは最も単純に購入できるフルーツパウダーの一つに見えます。実際の違いは品種、乾燥方法、ペクチンの挙動に隠れています。",
+  "blog.post_mango_powder_sourcing_spec_guide_title": "マンゴーパウダーの調達：品種特性、色の一貫性、規格管理",
+  "blog.post_mango_powder_sourcing_spec_guide_excerpt": "アルフォンソ種とトタプリ種のマンゴーパウダーは、味も見た目も挙動も同じではありません。本当に必要な品種、色、グレードを規定する方法を解説します。",
+  "blog.post_tamarind_pulp_powder_sourcing_spec_guide_title": "タマリンドパルプパウダーの調達：酸味、メッシュ、ロット間の一貫性",
+  "blog.post_tamarind_pulp_powder_sourcing_spec_guide_excerpt": "タマリンドパウダーはロットごとの酸味の一貫性で成否が決まります。ソース製造ラインで問題になる前に、規格を定めてテストする方法を解説します。",
+  "blog.post_papaya_powder_sourcing_spec_guide_title": "パパイヤパウダーの調達：酵素活性、メッシュ、水分管理",
+  "blog.post_papaya_powder_sourcing_spec_guide_excerpt": "パパイヤパウダーは、多くの標準規格書ではまったく測定されない天然の酵素含有量を目的に購入されることが少なくありません。代わりに何を尋ねるべきかを解説します。",
+  "blog.post_pomegranate_powder_antioxidant_superfruit_title": "ザクロパウダー：インドが誇るルビー色の抗酸化スーパーフルーツを濃縮",
+  "blog.post_pomegranate_powder_antioxidant_superfruit_excerpt": "ザクロに含まれるポリフェノールとプニカラギンは、ニュートラシューティカル業界で最も求められるフルーツ由来成分の一つです。パウダーに乾燥させることで、その抗酸化プロファイルは計量、出荷、保管が容易になります。",
+  "blog.post_pomegranate_powder_formulation_guide_title": "ザクロパウダーによる配合設計：ポリフェノール、プニカラギン、用量",
+  "blog.post_pomegranate_powder_formulation_guide_excerpt": "ザクロの抗酸化訴求をラベルに反映させるには、パウダーを混合に加えるだけでは不十分です。用量、安定性、用途が実際に機能する配合をどう形作るかを解説します。"
 }

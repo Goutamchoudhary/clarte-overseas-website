@@ -1288,5 +1288,24 @@
   "prod.trikatu_powder_g4": "Privat märke / bulk",
 
   "products.cat_dehydrated_vegetable_powders_name": "Dehydrerade Grönsakspulver",
-  "products.cat_dehydrated_vegetable_powders_desc": "Tomat, morot, jackfrukt och mer — dehydrerade grönsakspulver som koncentrerar naturlig färg, smak och näring till en lagringsstabil form för soppor, såser, kryddblandningar och färdigrätter."
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomat, morot, jackfrukt och mer — dehydrerade grönsakspulver som koncentrerar naturlig färg, smak och näring till en lagringsstabil form för soppor, såser, kryddblandningar och färdigrätter.",
+
+  "blog.post_guava_powder_sourcing_spec_guide_title": "Inköp av guavapulver: specifikationsfrågorna som faktiskt spelar roll",
+  "blog.post_guava_powder_sourcing_spec_guide_excerpt": "Ett bra guavapulver och ett medelmåttigt kan se nästan identiska ut på pappret. Här är vad du bör kontrollera — och fråga din leverantör om — innan du binder dig för en container.",
+  "blog.post_pineapple_powder_sourcing_spec_guide_title": "Inköp av ananaspulver: så läser du specifikationen innan du bestämmer dig",
+  "blog.post_pineapple_powder_sourcing_spec_guide_excerpt": "Syra, sort och torkmetod avgör om ett ananaspulver fungerar i din formulering eller bara ser bra ut på ett datablad. Här är vad du bör kontrollera först.",
+  "blog.post_banana_powder_sourcing_spec_guide_title": "Inköp av bananpulver för barnmat och sportblandningar: vad du bör kontrollera",
+  "blog.post_banana_powder_sourcing_spec_guide_excerpt": "Bananpulver befinner sig i två av de mest kvalitetskänsliga kategorierna som finns — barnmat och sportnutrition. Så specificerar och granskar du det på rätt sätt.",
+  "blog.post_apple_powder_sourcing_spec_guide_title": "Inköp av äppelpulver: malningsgrad, fukt och frågorna som är värda att ställa",
+  "blog.post_apple_powder_sourcing_spec_guide_excerpt": "Äppelpulver framstår som ett av de enklaste fruktpulvren att köpa. De verkliga skillnaderna döljer sig i sort, torkmetod och pektinbeteende.",
+  "blog.post_mango_powder_sourcing_spec_guide_title": "Inköp av mangopulver: sortkaraktär, färgkonsistens och specifikationskontroll",
+  "blog.post_mango_powder_sourcing_spec_guide_excerpt": "Alphonso- och Totapuri-mangopulver smakar, ser ut och beter sig inte likadant. Så specificerar du den sort, färg och kvalitet du faktiskt behöver.",
+  "blog.post_tamarind_pulp_powder_sourcing_spec_guide_title": "Inköp av tamarindfruktköttspulver: syra, malningsgrad och konsistens mellan partier",
+  "blog.post_tamarind_pulp_powder_sourcing_spec_guide_excerpt": "Tamarindpulver står och faller med jämn syra från parti till parti. Så specificerar och testar du det innan det blir ett problem i din såslinje.",
+  "blog.post_papaya_powder_sourcing_spec_guide_title": "Inköp av papayapulver: enzymaktivitet, malningsgrad och fuktkontroll",
+  "blog.post_papaya_powder_sourcing_spec_guide_excerpt": "Papayapulver köps ofta specifikt för sitt naturliga enzyminnehåll — något de flesta standardspecifikationer inte ens mäter. Här är vad du bör fråga om istället.",
+  "blog.post_pomegranate_powder_antioxidant_superfruit_title": "Granatäppelpulver: Indiens rubinröda antioxidant-superfrukt, koncentrerad",
+  "blog.post_pomegranate_powder_antioxidant_superfruit_excerpt": "Granatäpplets polyfenoler och punicalaginer har gjort det till en av nutraceuticalbranschens mest eftertraktade fruktaktiva ämnen. Torkat till pulver blir den antioxidantprofilen enkel att dosera, skicka och lagra.",
+  "blog.post_pomegranate_powder_formulation_guide_title": "Att formulera med granatäppelpulver: polyfenoler, punicalaginer och dos",
+  "blog.post_pomegranate_powder_formulation_guide_excerpt": "Att få granatäpplets antioxidantpåstående på en etikett kräver mer än att blanda i pulvret. Så formar dos, stabilitet och applikation en formulering som faktiskt fungerar."
 }

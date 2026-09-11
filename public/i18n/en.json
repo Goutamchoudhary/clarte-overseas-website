@@ -1288,5 +1288,24 @@
   "prod.trikatu_powder_g4": "Private label / bulk",
 
   "products.cat_dehydrated_vegetable_powders_name": "Dehydrated Vegetable Powders",
-  "products.cat_dehydrated_vegetable_powders_desc": "Tomato, carrot, jackfruit and more — dehydrated vegetable powders that concentrate natural colour, flavour and nutrition into a shelf-stable form for soups, sauces, seasonings and ready meals."
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomato, carrot, jackfruit and more — dehydrated vegetable powders that concentrate natural colour, flavour and nutrition into a shelf-stable form for soups, sauces, seasonings and ready meals.",
+
+  "blog.post_guava_powder_sourcing_spec_guide_title": "Sourcing Guava Powder: the spec sheet questions that actually matter",
+  "blog.post_guava_powder_sourcing_spec_guide_excerpt": "A good guava powder and a mediocre one can look almost identical on paper. Here is what to check — and what to ask your supplier — before you commit to a container.",
+  "blog.post_pineapple_powder_sourcing_spec_guide_title": "Pineapple Powder sourcing: how to read the spec before you commit",
+  "blog.post_pineapple_powder_sourcing_spec_guide_excerpt": "Acidity, variety and drying method decide whether a pineapple powder performs in your formulation or just looks fine on a data sheet. Here is what to check first.",
+  "blog.post_banana_powder_sourcing_spec_guide_title": "Sourcing Banana Powder for infant nutrition and sports blends: what to check",
+  "blog.post_banana_powder_sourcing_spec_guide_excerpt": "Banana powder sits in two of the most quality-sensitive categories there are — infant food and sports nutrition. Here is how to specify and vet it properly.",
+  "blog.post_apple_powder_sourcing_spec_guide_title": "Apple Powder sourcing: mesh, moisture and the questions worth asking",
+  "blog.post_apple_powder_sourcing_spec_guide_excerpt": "Apple powder looks like one of the simplest fruit powders to buy. The variety, drying method and pectin behaviour behind it are where the real differences hide.",
+  "blog.post_mango_powder_sourcing_spec_guide_title": "Sourcing Mango Powder: varietal character, colour consistency and spec control",
+  "blog.post_mango_powder_sourcing_spec_guide_excerpt": "Alphonso and Totapuri mango powder do not taste, look or behave the same way. Here is how to specify the variety, colour and grade you actually need.",
+  "blog.post_tamarind_pulp_powder_sourcing_spec_guide_title": "Tamarind Pulp Powder sourcing: acidity, mesh and batch consistency",
+  "blog.post_tamarind_pulp_powder_sourcing_spec_guide_excerpt": "Tamarind powder lives or dies on consistent acidity from batch to batch. Here is how to specify and test for it before it becomes a problem in your sauce line.",
+  "blog.post_papaya_powder_sourcing_spec_guide_title": "Sourcing Papaya Powder: enzyme activity, mesh and moisture control",
+  "blog.post_papaya_powder_sourcing_spec_guide_excerpt": "Papaya powder is often bought specifically for its natural enzyme content — which most standard spec sheets do not measure at all. Here is what to ask instead.",
+  "blog.post_pomegranate_powder_antioxidant_superfruit_title": "Pomegranate Powder: India's ruby-red antioxidant superfruit, concentrated",
+  "blog.post_pomegranate_powder_antioxidant_superfruit_excerpt": "Pomegranate's polyphenols and punicalagins have made it one of nutraceuticals' most sought-after fruit actives. Dried into a powder, that antioxidant profile becomes easy to dose, ship and store.",
+  "blog.post_pomegranate_powder_formulation_guide_title": "Formulating with Pomegranate Powder: polyphenols, punicalagins and dose",
+  "blog.post_pomegranate_powder_formulation_guide_excerpt": "Getting pomegranate's antioxidant claim onto a label takes more than adding the powder to a mix. Here is how dose, stability and application shape a formulation that actually works."
 }
