@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Culinaire & specerijenpoeders",
   "products.cat_culinary_spice_powders_desc": "Ui, knoflook, gember en chili — de werkpaarden van keukens en voedingsfabrieken wereldwijd. Consistente scherpte, zuivere smaak en een volledig assortiment snitten, van fijn poeder tot grove vlokken.",
   "products.cat_functional_nutritional_powders_name": "Functionele & voedingskundige poeders",
-  "products.cat_functional_nutritional_powders_desc": "Bietroot, tomaat, wortel, citroen en meer — groente- en fruitpoeders geselecteerd op natuurlijke kleur, voedingswaarde en clean-label functionaliteit in supplementen, smaakmakers, soepen en kant-en-klare maaltijden.",
+  "products.cat_functional_nutritional_powders_desc": "Rode biet, citroen, amla en meer — fruit- en kruidenpoeders gekozen om hun natuurlijke kleur, voeding en clean-label functionaliteit in supplementen, kruidenmixen, soepen en kant-en-klaarmaaltijden.",
   "products.cat_fruit_powders_name": "Gedroogde fruitpoeders",
   "products.cat_fruit_powders_desc": "Indiase vruchten van enkelvoudige oorsprong, zachtjes gedroogd en gemalen tot vrij stromende poeders die kleur, frisheid en natuurlijke zoetheid behouden — ontwikkeld voor dranken, bakkerij, zuivel, banketbakkerij en nutraceutica.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrocolloïden & levensmiddelenadditieven",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Levensmiddelen-/nutraceutische kwaliteit",
   "prod.trikatu_powder_g2": "80–120 mesh (maatwerk beschikbaar)",
   "prod.trikatu_powder_g3": "Vochtgehalte ≤ 7%",
-  "prod.trikatu_powder_g4": "Huismerk / bulk"
+  "prod.trikatu_powder_g4": "Huismerk / bulk",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Gedehydrateerde Groentepoeders",
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomaat, wortel, jackfruit en meer — gedehydrateerde groentepoeders die natuurlijke kleur, smaak en voeding concentreren in een houdbare vorm voor soepen, sauzen, kruidenmixen en kant-en-klaarmaaltijden."
 }

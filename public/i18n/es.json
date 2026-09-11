@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Polvos Culinarios y de Especias",
   "products.cat_culinary_spice_powders_desc": "Cebolla, ajo, jengibre y chile — los pilares de cocinas e industrias alimentarias en todo el mundo. Pungencia consistente, sabor limpio y una gama completa de cortes, desde polvo fino hasta copos kibbled.",
   "products.cat_functional_nutritional_powders_name": "Polvos Funcionales y Nutricionales",
-  "products.cat_functional_nutritional_powders_desc": "Remolacha, tomate, zanahoria, limón y más — polvos vegetales y de fruta seleccionados por su color natural, nutrición y funcionalidad de etiqueta limpia en suplementos, condimentos, sopas y comidas preparadas.",
+  "products.cat_functional_nutritional_powders_desc": "Remolacha, limón, amla y más — polvos de frutas y hierbas elegidos por su color natural, nutrición y funcionalidad de etiqueta limpia en suplementos, condimentos, sopas y platos preparados.",
   "products.cat_fruit_powders_name": "Polvos de Fruta Deshidratada",
   "products.cat_fruit_powders_desc": "Frutas indias de origen único, secadas suavemente y molidas en polvos de flujo libre que retienen su color, acidez y dulzor natural — diseñados para bebidas, panadería, lácteos, confitería y nutracéuticos.",
   "products.cat_hydrocolloids_food_additives_name": "Hidrocoloides y Aditivos Alimentarios",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Grado alimentario / nutracéutico",
   "prod.trikatu_powder_g2": "80–120 malla (personalizable)",
   "prod.trikatu_powder_g3": "Humedad ≤ 7%",
-  "prod.trikatu_powder_g4": "Marca propia / a granel"
+  "prod.trikatu_powder_g4": "Marca propia / a granel",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Polvos de Verduras Deshidratadas",
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomate, zanahoria, yaca y más — polvos de verduras deshidratadas que concentran el color, el sabor y la nutrición naturales en una forma estable para sopas, salsas, condimentos y platos preparados."
 }

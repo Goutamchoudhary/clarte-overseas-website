@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Mutfak ve Baharat Tozları",
   "products.cat_culinary_spice_powders_desc": "Soğan, sarımsak, zencefil ve biber — dünya genelindeki mutfakların ve gıda tesislerinin can damarları. Tutarlı keskinlik, temiz aroma ve ince tozdan kıyılmış pula kadar tam bir kesim yelpazesi.",
   "products.cat_functional_nutritional_powders_name": "Fonksiyonel ve Besleyici Tozlar",
-  "products.cat_functional_nutritional_powders_desc": "Pancar, domates, havuç, limon ve daha fazlası — takviyeler, baharatlar, çorbalar ve hazır yemeklerde doğal renk, beslenme ve temiz etiket işlevselliği için seçilen sebze ve meyve tozları.",
+  "products.cat_functional_nutritional_powders_desc": "Pancar, limon, amla ve daha fazlası — takviyeler, baharat karışımları, çorbalar ve hazır yemeklerde doğal renk, besin değeri ve temiz etiket işlevselliği için seçilen meyve ve bitki tozları.",
   "products.cat_fruit_powders_name": "Kurutulmuş Meyve Tozları",
   "products.cat_fruit_powders_desc": "Tek menşeli Hint meyveleri, renklerini, ekşiliklerini ve doğal tatlılıklarını koruyan, serbest akışlı tozlara nazikçe kurutulup öğütülür — içecekler, fırıncılık, süt ürünleri, şekerleme ve nutrasötikler için üretilmiştir.",
   "products.cat_hydrocolloids_food_additives_name": "Hidrokolloidler ve Gıda Katkıları",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Gıda / nutrasötik sınıfı",
   "prod.trikatu_powder_g2": "80–120 mesh (özel mevcut)",
   "prod.trikatu_powder_g3": "Nem ≤ %7",
-  "prod.trikatu_powder_g4": "Özel etiket / dökme"
+  "prod.trikatu_powder_g4": "Özel etiket / dökme",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Dehidre Sebze Tozları",
+  "products.cat_dehydrated_vegetable_powders_desc": "Domates, havuç, jackfruit ve daha fazlası — çorbalar, soslar, baharat karışımları ve hazır yemekler için doğal renk, lezzet ve besin değerini raf ömrü uzun bir forma yoğunlaştıran dehidre sebze tozları."
 }

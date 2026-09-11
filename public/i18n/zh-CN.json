@@ -870,7 +870,7 @@
 
   "products.cat_functional_nutritional_powders_name": "功能与营养型粉末",
 
-  "products.cat_functional_nutritional_powders_desc": "甜菜根、番茄、胡萝卜、柠檬等——精选具有天然色素、营养价值和清洁标签功能的蔬果粉末，适用于膳食补充剂、调味料、汤品和方便食品。",
+  "products.cat_functional_nutritional_powders_desc": "甜菜根、柠檬、余甘子等——因天然色泽、营养和无添加特性而入选的果蔬草本粉，适用于膳食补充剂、调味料、汤品和即食食品。",
 
   "products.cat_fruit_powders_name": "脱水果粉",
 
@@ -2235,5 +2235,8 @@
   "prod.trikatu_powder_g1": "食品级/保健品级",
   "prod.trikatu_powder_g2": "80至120目（可定制）",
   "prod.trikatu_powder_g3": "含水量 ≤ 7%",
-  "prod.trikatu_powder_g4": "贴牌 / 散装"
+  "prod.trikatu_powder_g4": "贴牌 / 散装",
+
+  "products.cat_dehydrated_vegetable_powders_name": "脱水蔬菜粉",
+  "products.cat_dehydrated_vegetable_powders_desc": "番茄、胡萝卜、菠萝蜜等——脱水蔬菜粉将天然色泽、风味和营养浓缩成保质稳定的形态，适用于汤品、酱料、调味料和即食食品。"
 }

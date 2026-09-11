@@ -78,12 +78,23 @@ export const categories: Category[] = [
     slug: "functional-nutritional-powders",
     name: "Functional & Nutritional Powders",
     navName: "Dehydrated Vegetable Powders – Functional & Nutritional",
-    emoji: "🥕",
+    emoji: "🍋",
     tagline: "Colour, nutrition and clean-label function",
     description:
-      "Beetroot, tomato, carrot, lemon and more — vegetable and fruit powders chosen for natural colour, nutrition and clean-label functionality in supplements, seasonings, soups and ready meals.",
+      "Beetroot, lemon, amla and more — fruit and herb powders chosen for natural colour, nutrition and clean-label functionality in supplements, seasonings, soups and ready meals.",
     accentFrom: "#be185d",
     accentTo: "#9d174d",
+  },
+  {
+    slug: "dehydrated-vegetable-powders",
+    name: "Dehydrated Vegetable Powders",
+    navName: "Dehydrated Vegetable Powders",
+    emoji: "🍅",
+    tagline: "Everyday vegetables, dried and milled for colour and depth",
+    description:
+      "Tomato, carrot, jackfruit and more — dehydrated vegetable powders that concentrate natural colour, flavour and nutrition into a shelf-stable form for soups, sauces, seasonings and ready meals.",
+    accentFrom: "#0d9488",
+    accentTo: "#0f766e",
   },
   {
     slug: "fruit-powders",
@@ -340,7 +351,7 @@ export const products: Product[] = [
     drying: DRY.functional,
   },
   {
-    slug: "tomato-powder", name: "Tomato Powder", category: "functional-nutritional-powders",
+    slug: "tomato-powder", name: "Tomato Powder", category: "dehydrated-vegetable-powders",
     image: IMG("14850464"), emoji: "🍅", hsn: "0712 90 90", botanical: "Solanum lycopersicum",
     tagline: "Concentrated tomato flavour and colour.",
     description:
@@ -351,7 +362,7 @@ export const products: Product[] = [
     drying: DRY.functional,
   },
   {
-    slug: "carrot-powder", name: "Carrot Powder", category: "functional-nutritional-powders",
+    slug: "carrot-powder", name: "Carrot Powder", category: "dehydrated-vegetable-powders",
     image: IMG("14850477"), emoji: "🥕", hsn: "0712 90 90", botanical: "Daucus carota",
     tagline: "Sweet, orange and rich in natural beta-carotene.",
     description:
@@ -362,7 +373,7 @@ export const products: Product[] = [
     drying: DRY.functional,
   },
   {
-    slug: "jackfruit-powder", name: "Jackfruit Powder", category: "functional-nutritional-powders",
+    slug: "jackfruit-powder", name: "Jackfruit Powder", category: "dehydrated-vegetable-powders",
     image: IMGJ("14969247"), emoji: "🟡", hsn: "1106 30 10", botanical: "Artocarpus heterophyllus",
     tagline: "India's super-fruit — sweet, filling, on-trend.",
     description:

@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Culinary & Spice Powders",
   "products.cat_culinary_spice_powders_desc": "Onion, garlic, ginger and chilli — the workhorses of kitchens and food plants worldwide. Consistent pungency, clean flavour and a full range of cuts, from fine powder to kibbled flakes.",
   "products.cat_functional_nutritional_powders_name": "Functional & Nutritional Powders",
-  "products.cat_functional_nutritional_powders_desc": "Beetroot, tomato, carrot, lemon and more — vegetable and fruit powders chosen for natural colour, nutrition and clean-label functionality in supplements, seasonings, soups and ready meals.",
+  "products.cat_functional_nutritional_powders_desc": "Beetroot, lemon, amla and more — fruit and herb powders chosen for natural colour, nutrition and clean-label functionality in supplements, seasonings, soups and ready meals.",
   "products.cat_fruit_powders_name": "Dehydrated Fruit Powders",
   "products.cat_fruit_powders_desc": "Single-origin Indian fruits, gently dried and milled into free-flowing powders that hold their colour, tang and natural sweetness — built for beverages, bakery, dairy, confectionery and nutraceuticals.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrocolloids & Food Additives",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Food / nutraceutical grade",
   "prod.trikatu_powder_g2": "80–120 mesh (custom available)",
   "prod.trikatu_powder_g3": "Moisture ≤ 7%",
-  "prod.trikatu_powder_g4": "Private label / bulk"
+  "prod.trikatu_powder_g4": "Private label / bulk",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Dehydrated Vegetable Powders",
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomato, carrot, jackfruit and more — dehydrated vegetable powders that concentrate natural colour, flavour and nutrition into a shelf-stable form for soups, sauces, seasonings and ready meals."
 }

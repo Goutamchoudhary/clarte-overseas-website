@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Polveri Culinarie e Spezie",
   "products.cat_culinary_spice_powders_desc": "Cipolla, aglio, zenzero e peperoncino — i protagonisti delle cucine e degli impianti alimentari di tutto il mondo. Pungenza costante, sapore pulito e una gamma completa di tagli, dalla polvere fine ai fiocchi in granuli.",
   "products.cat_functional_nutritional_powders_name": "Polveri Funzionali e Nutrizionali",
-  "products.cat_functional_nutritional_powders_desc": "Barbabietola, pomodoro, carota, limone e altro ancora — polveri di verdure e frutta selezionate per colore naturale, nutrizione e funzionalità clean label in integratori, condimenti, zuppe e piatti pronti.",
+  "products.cat_functional_nutritional_powders_desc": "Barbabietola, limone, amla e altro ancora — polveri di frutta ed erbe scelte per il colore naturale, la nutrizione e la funzionalità clean-label in integratori, condimenti, zuppe e piatti pronti.",
   "products.cat_fruit_powders_name": "Polveri di Frutta Disidratata",
   "products.cat_fruit_powders_desc": "Frutta indiana di singola origine, delicatamente essiccata e macinata in polveri fluide che mantengono colore, acidità e dolcezza naturale — adatte a bevande, panetteria, prodotti lattiero-caseari, dolciumi e nutraceutici.",
   "products.cat_hydrocolloids_food_additives_name": "Idrocolloidi e Additivi Alimentari",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Qualità alimentare / nutraceutica",
   "prod.trikatu_powder_g2": "80–120 mesh (personalizzabile)",
   "prod.trikatu_powder_g3": "Umidità ≤ 7%",
-  "prod.trikatu_powder_g4": "Marchio privato / sfuso"
+  "prod.trikatu_powder_g4": "Marchio privato / sfuso",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Polveri di Verdure Disidratate",
+  "products.cat_dehydrated_vegetable_powders_desc": "Pomodoro, carota, jackfruit e altro ancora — polveri di verdure disidratate che concentrano colore, sapore e nutrizione naturali in una forma stabile per zuppe, salse, condimenti e piatti pronti."
 }

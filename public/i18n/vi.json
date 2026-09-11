@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Bột ẩm thực và gia vị",
   "products.cat_culinary_spice_powders_desc": "Hành, tỏi, gừng và ớt — những nguyên liệu chủ lực của gian bếp và nhà máy thực phẩm trên toàn cầu. Độ cay nhất quán, hương vị sạch và đầy đủ các mức nghiền, từ bột mịn đến vảy thô.",
   "products.cat_functional_nutritional_powders_name": "Bột chức năng và dinh dưỡng",
-  "products.cat_functional_nutritional_powders_desc": "Củ dền, cà chua, cà rốt, chanh và hơn thế nữa — bột rau củ và trái cây được chọn vì màu tự nhiên, dinh dưỡng và tính năng nhãn sạch trong thực phẩm bổ sung, gia vị, súp và bữa ăn sẵn.",
+  "products.cat_functional_nutritional_powders_desc": "Củ dền, chanh, amla và nhiều loại khác — bột trái cây và thảo dược được chọn vì màu sắc tự nhiên, dinh dưỡng và tính năng nhãn sạch trong thực phẩm bổ sung, gia vị, súp và món ăn chế biến sẵn.",
   "products.cat_fruit_powders_name": "Bột trái cây sấy khô",
   "products.cat_fruit_powders_desc": "Trái cây Ấn Độ một nguồn gốc, được sấy nhẹ nhàng và nghiền thành bột tơi chảy giữ nguyên màu sắc, vị chua và độ ngọt tự nhiên — được tạo ra cho đồ uống, bánh, sữa, bánh kẹo và thực phẩm chức năng.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrocolloid và phụ gia thực phẩm",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Cấp thực phẩm / thực phẩm chức năng",
   "prod.trikatu_powder_g2": "80–120 mesh (có tùy chỉnh)",
   "prod.trikatu_powder_g3": "Độ ẩm ≤ 7%",
-  "prod.trikatu_powder_g4": "Nhãn riêng / số lượng lớn"
+  "prod.trikatu_powder_g4": "Nhãn riêng / số lượng lớn",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Bột Rau Củ Sấy Khô",
+  "products.cat_dehydrated_vegetable_powders_desc": "Cà chua, cà rốt, mít và nhiều loại khác — bột rau củ sấy khô cô đọng màu sắc, hương vị và dinh dưỡng tự nhiên thành dạng bền vững để dùng cho súp, nước sốt, gia vị và món ăn chế biến sẵn."
 }

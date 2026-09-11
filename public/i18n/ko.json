@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "요리 및 향신료 분말",
   "products.cat_culinary_spice_powders_desc": "양파, 마늘, 생강, 고추——전 세계 주방과 식품 공장의 주력입니다. 일관된 매운맛, 깨끗한 풍미, 그리고 고운 분말부터 거칠게 빻은 플레이크까지 다양한 절단.",
   "products.cat_functional_nutritional_powders_name": "기능성 및 영양 분말",
-  "products.cat_functional_nutritional_powders_desc": "비트, 토마토, 당근, 레몬 등——보충제, 조미료, 수프, 간편식에서 천연 색상, 영양, 클린 라벨 기능성을 위해 선택된 채소·과일 분말.",
+  "products.cat_functional_nutritional_powders_desc": "비트, 레몬, 암라 등 — 천연 색상, 영양, 클린라벨 기능성을 위해 선별된 과일 및 허브 분말로 보충제, 조미료, 수프, 즉석식품에 사용됩니다.",
   "products.cat_fruit_powders_name": "건조 과일 분말",
   "products.cat_fruit_powders_desc": "단일 산지의 인도산 과일을 부드럽게 건조·분쇄하여 색상, 산미, 자연스러운 단맛을 유지하는 흐름성이 좋은 분말로——음료, 베이커리, 유제품, 제과, 건강기능식품을 위해 만들어졌습니다.",
   "products.cat_hydrocolloids_food_additives_name": "하이드로콜로이드 및 식품 첨가물",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "식품 / 건강기능식품 등급",
   "prod.trikatu_powder_g2": "80~120메쉬 (맞춤 가능)",
   "prod.trikatu_powder_g3": "수분 ≤ 7%",
-  "prod.trikatu_powder_g4": "자체 브랜드 / 벌크"
+  "prod.trikatu_powder_g4": "자체 브랜드 / 벌크",
+
+  "products.cat_dehydrated_vegetable_powders_name": "건조 채소 분말",
+  "products.cat_dehydrated_vegetable_powders_desc": "토마토, 당근, 잭프루트 등 — 천연 색상, 풍미, 영양을 농축한 보존성 좋은 건조 채소 분말로 수프, 소스, 조미료, 즉석식품에 사용됩니다."
 }

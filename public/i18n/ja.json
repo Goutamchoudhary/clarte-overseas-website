@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "料理・スパイスパウダー",
   "products.cat_culinary_spice_powders_desc": "玉ねぎ、にんにく、しょうが、唐辛子——世界中のキッチンと食品工場の主力です。一貫した辛味、クリーンな風味、そして微粉末から粗砕フレークまで幅広いカット。",
   "products.cat_functional_nutritional_powders_name": "機能性・栄養パウダー",
-  "products.cat_functional_nutritional_powders_desc": "ビーツ、トマト、にんじん、レモンなど——サプリメント、調味料、スープ、調理済み食品での天然の色、栄養、クリーンラベルの機能性のために選ばれた野菜・果物パウダー。",
+  "products.cat_functional_nutritional_powders_desc": "ビーツ、レモン、アムラなど — 天然の色、栄養、クリーンラベル機能性のために選ばれたフルーツ・ハーブパウダーで、サプリメント、調味料、スープ、レトルト食品に。",
   "products.cat_fruit_powders_name": "乾燥フルーツパウダー",
   "products.cat_fruit_powders_desc": "単一産地のインド産果実を丁寧に乾燥・粉砕し、色、酸味、自然な甘さを保つ流動性の高いパウダーに——飲料、製パン、乳製品、製菓、ニュートラシューティカルのために作られています。",
   "products.cat_hydrocolloids_food_additives_name": "ハイドロコロイド・食品添加物",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "食品 / ニュートラシューティカルグレード",
   "prod.trikatu_powder_g2": "80〜120メッシュ(カスタム対応可)",
   "prod.trikatu_powder_g3": "水分 ≤ 7%",
-  "prod.trikatu_powder_g4": "プライベートラベル / バルク"
+  "prod.trikatu_powder_g4": "プライベートラベル / バルク",
+
+  "products.cat_dehydrated_vegetable_powders_name": "脱水野菜パウダー",
+  "products.cat_dehydrated_vegetable_powders_desc": "トマト、にんじん、ジャックフルーツなど — 天然の色、風味、栄養を凝縮した保存性の高い脱水野菜パウダーで、スープ、ソース、調味料、レトルト食品に。"
 }

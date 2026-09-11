@@ -63,8 +63,8 @@
     { "source": "/products/garlic-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers-12850838", "destination": "/products/culinary-spice-powders/garlic-powder", "permanent": true },
     { "source": "/products/ginger-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers-12850839", "destination": "/products/culinary-spice-powders/ginger-powder", "permanent": true },
     { "source": "/products/beetroot-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850841", "destination": "/products/functional-nutritional-powders/beetroot-powder", "permanent": true },
-    { "source": "/products/carrot-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850842", "destination": "/products/functional-nutritional-powders/carrot-powder", "permanent": true },
-    { "source": "/products/tomato-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850843", "destination": "/products/functional-nutritional-powders/tomato-powder", "permanent": true },
+    { "source": "/products/carrot-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850842", "destination": "/products/dehydrated-vegetable-powders/carrot-powder", "permanent": true },
+    { "source": "/products/tomato-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850843", "destination": "/products/dehydrated-vegetable-powders/tomato-powder", "permanent": true },
     { "source": "/products/lemon-powder-bulk-supplier-dehydrated-powder-ingredient-for-food-beverage-12850844", "destination": "/products/functional-nutritional-powders/lemon-powder", "permanent": true },
     { "source": "/products/guar-gum-powder-bulk-supplier-for-b2b-natural-thickener-stabilizer-12850845", "destination": "/products/hydrocolloids-food-additives/guar-gum-powder", "permanent": true },
     { "source": "/products/green-chilli-powder-flakes-bulk-supplier-dehydrated-spice-ingredient-for-food-manufacturers", "destination": "/products/culinary-spice-powders/green-chilli-powder", "permanent": true },
@@ -79,6 +79,10 @@
     { "source": "/products/herbal-leaf-powders/tulsi-powder", "destination": "/products/ayurvedic-herbal-powders/tulsi-powder", "permanent": true },
     { "source": "/products/herbal-leaf-powders/amla-powder", "destination": "/products/functional-nutritional-powders/amla-powder", "permanent": true },
     { "source": "/products/herbal-leaf-powders/amchur-powder", "destination": "/products/functional-nutritional-powders/amchur-powder", "permanent": true },
-    { "source": "/products/herbal-leaf-powders/curry-leaf-powder", "destination": "/products/culinary-spice-powders/curry-leaf-powder", "permanent": true }
+    { "source": "/products/herbal-leaf-powders/curry-leaf-powder", "destination": "/products/culinary-spice-powders/curry-leaf-powder", "permanent": true },
+
+    { "source": "/products/functional-nutritional-powders/tomato-powder", "destination": "/products/dehydrated-vegetable-powders/tomato-powder", "permanent": true },
+    { "source": "/products/functional-nutritional-powders/carrot-powder", "destination": "/products/dehydrated-vegetable-powders/carrot-powder", "permanent": true },
+    { "source": "/products/functional-nutritional-powders/jackfruit-powder", "destination": "/products/dehydrated-vegetable-powders/jackfruit-powder", "permanent": true }
   ]
 }

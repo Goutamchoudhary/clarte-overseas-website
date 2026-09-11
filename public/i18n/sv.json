@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Kulinariska kryddpulver",
   "products.cat_culinary_spice_powders_desc": "Lök, vitlök, ingefära och chili — basen i storkök och livsmedelsfabriker världen över. Konsekvent skärpa, ren smak och ett brett spektrum av malningsgrader, från fint pulver till grovmalet.",
   "products.cat_functional_nutritional_powders_name": "Funktionella och nutritionella pulver",
-  "products.cat_functional_nutritional_powders_desc": "Rödbeta, tomat, morot, citron och mer — grönsaks- och fruktpulver valda för naturlig färg, näring och clean-label-funktionalitet i kosttillskott, kryddningar, soppor och färdigrätter.",
+  "products.cat_functional_nutritional_powders_desc": "Rödbeta, citron, amla och mer — frukt- och örtpulver utvalda för naturlig färg, näring och clean-label-funktionalitet i kosttillskott, kryddblandningar, soppor och färdigrätter.",
   "products.cat_fruit_powders_name": "Dehydrerade fruktpulver",
   "products.cat_fruit_powders_desc": "Singel-ursprungsfrukter från Indien, skonsamt torkade och malda till lättflytande pulver som behåller sin färg, syrlighet och naturliga sötma — framtagna för drycker, bageri, mejeri, konfektyr och nutraceutiska produkter.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrokolloider och livsmedelstillsatser",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Livsmedels-/nutraceutisk kvalitet",
   "prod.trikatu_powder_g2": "80–120 mesh (anpassad tillgänglig)",
   "prod.trikatu_powder_g3": "Fukt ≤ 7%",
-  "prod.trikatu_powder_g4": "Privat märke / bulk"
+  "prod.trikatu_powder_g4": "Privat märke / bulk",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Dehydrerade Grönsakspulver",
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomat, morot, jackfrukt och mer — dehydrerade grönsakspulver som koncentrerar naturlig färg, smak och näring till en lagringsstabil form för soppor, såser, kryddblandningar och färdigrätter."
 }

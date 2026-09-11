@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Bubuk Kuliner & Rempah",
   "products.cat_culinary_spice_powders_desc": "Bawang bombai, bawang putih, jahe, dan cabai — andalan dapur dan pabrik pangan di seluruh dunia. Kepedasan konsisten, rasa bersih, dan rentang potongan lengkap, dari bubuk halus hingga serpihan kasar.",
   "products.cat_functional_nutritional_powders_name": "Bubuk Fungsional & Nutrisi",
-  "products.cat_functional_nutritional_powders_desc": "Bit, tomat, wortel, lemon, dan lainnya — bubuk sayuran dan buah yang dipilih untuk warna alami, nutrisi, dan fungsionalitas label bersih dalam suplemen, bumbu, sup, dan makanan siap saji.",
+  "products.cat_functional_nutritional_powders_desc": "Bit, lemon, amla, dan lainnya — bubuk buah dan herbal yang dipilih karena warna alami, nutrisi, dan fungsi clean-label dalam suplemen, bumbu, sup, dan makanan siap saji.",
   "products.cat_fruit_powders_name": "Bubuk Buah Kering",
   "products.cat_fruit_powders_desc": "Buah India satu asal, dikeringkan dengan lembut dan digiling menjadi bubuk yang mudah mengalir yang mempertahankan warna, rasa asam, dan manis alaminya — dibuat untuk minuman, bakeri, produk susu, gula-gula, dan nutrasetikal.",
   "products.cat_hydrocolloids_food_additives_name": "Hidrokoloid & Aditif Pangan",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Kelas pangan / nutrasetikal",
   "prod.trikatu_powder_g2": "80–120 mesh (khusus tersedia)",
   "prod.trikatu_powder_g3": "Kadar air ≤ 7%",
-  "prod.trikatu_powder_g4": "Label pribadi / curah"
+  "prod.trikatu_powder_g4": "Label pribadi / curah",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Bubuk Sayuran Kering",
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomat, wortel, nangka, dan lainnya — bubuk sayuran kering yang memusatkan warna, rasa, dan nutrisi alami ke dalam bentuk yang stabil untuk sup, saus, bumbu, dan makanan siap saji."
 }

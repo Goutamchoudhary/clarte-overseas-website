@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Küchen- & Gewürzpulver",
   "products.cat_culinary_spice_powders_desc": "Zwiebel, Knoblauch, Ingwer und Chili – die Arbeitstiere von Küchen und Lebensmittelbetrieben weltweit. Gleichbleibende Schärfe, reiner Geschmack und eine volle Bandbreite an Schnitten, vom feinen Pulver bis zu gehackten Flocken.",
   "products.cat_functional_nutritional_powders_name": "Funktionale & nährstoffreiche Pulver",
-  "products.cat_functional_nutritional_powders_desc": "Rote Bete, Tomate, Karotte, Zitrone und mehr – Gemüse- und Fruchtpulver, ausgewählt für natürliche Farbe, Nährwert und Clean-Label-Funktionalität in Nahrungsergänzungsmitteln, Würzungen, Suppen und Fertiggerichten.",
+  "products.cat_functional_nutritional_powders_desc": "Rote Bete, Zitrone, Amla und mehr — Frucht- und Kräuterpulver, ausgewählt für natürliche Farbe, Nährwert und Clean-Label-Funktionalität in Nahrungsergänzungsmitteln, Würzmischungen, Suppen und Fertiggerichten.",
   "products.cat_fruit_powders_name": "Getrocknete Fruchtpulver",
   "products.cat_fruit_powders_desc": "Indische Früchte einer Herkunft, schonend getrocknet und zu rieselfähigen Pulvern vermahlen, die ihre Farbe, Säure und natürliche Süße bewahren – gemacht für Getränke, Backwaren, Milchprodukte, Süßwaren und Nutraceuticals.",
   "products.cat_hydrocolloids_food_additives_name": "Hydrokolloide & Lebensmittelzusätze",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Lebensmittel- / Nutraceutical-Qualität",
   "prod.trikatu_powder_g2": "80–120 Mesh (individuell verfügbar)",
   "prod.trikatu_powder_g3": "Feuchtigkeit ≤ 7 %",
-  "prod.trikatu_powder_g4": "Eigenmarke / Großgebinde"
+  "prod.trikatu_powder_g4": "Eigenmarke / Großgebinde",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Dehydrierte Gemüsepulver",
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomate, Karotte, Jackfrucht und mehr — dehydrierte Gemüsepulver, die natürliche Farbe, Geschmack und Nährwert in eine lagerstabile Form konzentrieren, für Suppen, Saucen, Würzmischungen und Fertiggerichte."
 }

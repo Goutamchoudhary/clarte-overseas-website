@@ -468,7 +468,7 @@
   "products.cat_culinary_spice_powders_name": "Pós Culinários e de Especiarias",
   "products.cat_culinary_spice_powders_desc": "Cebola, alho, gengibre e malagueta — os pilares das cozinhas e fábricas de alimentos de todo o mundo. Pungência consistente, sabor limpo e uma gama completa de cortes, de pó fino a flocos grossos.",
   "products.cat_functional_nutritional_powders_name": "Pós Funcionais e Nutricionais",
-  "products.cat_functional_nutritional_powders_desc": "Beterraba, tomate, cenoura, limão e mais — pós de vegetais e frutas escolhidos pela cor natural, nutrição e funcionalidade clean label em suplementos, temperos, sopas e refeições prontas.",
+  "products.cat_functional_nutritional_powders_desc": "Beterraba, limão, amla e mais — pós de frutas e ervas escolhidos pela sua cor natural, nutrição e funcionalidade clean-label em suplementos, temperos, sopas e refeições prontas.",
   "products.cat_fruit_powders_name": "Pós de Frutas Desidratadas",
   "products.cat_fruit_powders_desc": "Frutas indianas de origem única, cuidadosamente secas e moídas em pós de fluxo livre que preservam a cor, o acidulante e o dulçor natural — desenvolvidos para bebidas, panificação, laticínios, confeitaria e nutracêuticos.",
   "products.cat_hydrocolloids_food_additives_name": "Hidrocolóides e Aditivos Alimentares",
@@ -1285,5 +1285,8 @@
   "prod.trikatu_powder_g1": "Grau alimentar / nutracêutico",
   "prod.trikatu_powder_g2": "80–120 mesh (personalizado disponível)",
   "prod.trikatu_powder_g3": "Humidade ≤ 7%",
-  "prod.trikatu_powder_g4": "Marca própria / granel"
+  "prod.trikatu_powder_g4": "Marca própria / granel",
+
+  "products.cat_dehydrated_vegetable_powders_name": "Pós de Vegetais Desidratados",
+  "products.cat_dehydrated_vegetable_powders_desc": "Tomate, cenoura, jaca e mais — pós de vegetais desidratados que concentram cor, sabor e nutrição naturais numa forma estável para sopas, molhos, temperos e refeições prontas."
 }
