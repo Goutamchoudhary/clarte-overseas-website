@@ -154,7 +154,13 @@ const description =
   </section>
 
   {isFirstPage && (<>
-  <SlantDivider topColor="#ffffff" bottomColor="#f7f8fb" flip={true} />
+  <!-- bottomColor must match the FAQ section's own background (bg-cream,
+       #faf6ec) — it previously used the cool-grey mist token, so the
+       diagonal ended in a different colour than the flat section right
+       below it. That mismatch reads as a hard horizontal seam sitting just
+       past the actual slanted edge, instead of the beige beginning exactly
+       on the slant. -->
+  <SlantDivider topColor="#ffffff" bottomColor="#faf6ec" flip={true} />
 
   <!-- ===================== FAQ ===================== -->
   <section class="py-20 lg:py-24 bg-cream">
