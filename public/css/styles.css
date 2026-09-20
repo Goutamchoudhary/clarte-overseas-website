@@ -1308,6 +1308,22 @@ html:not(.js-ready) .reveal {
   .cathero-photo { opacity: .18; -webkit-mask-image: none; mask-image: none; }
   .cathero.has-photo .cathero-sub { max-width: none; }
 }
+/* full-bleed category photo washed right back into the accent gradient.
+   Unlike .cathero-photo this is not a feature image — it is texture, so it sits
+   low in opacity and fades out further on the left where the copy sits. */
+.cathero-bg {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  opacity: .22; filter: saturate(.7) contrast(.95);
+  mix-blend-mode: soft-light;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.6) 40%, #000 75%);
+  mask-image: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.6) 40%, #000 75%);
+}
+@media (max-width: 860px) {
+  /* no side-by-side split on mobile, so pull it back further and drop the mask */
+  .cathero-bg { opacity: .16; -webkit-mask-image: none; mask-image: none; }
+}
+
 .crumb-on-dark, .crumb-on-dark a { color: rgba(255,255,255,.78); }
 .crumb-on-dark a:hover { color: #fff; }
 .cathero-emoji { display: block; font-size: 2.4rem; margin-top: 1.5rem; }

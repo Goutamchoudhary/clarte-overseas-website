@@ -53,7 +53,9 @@ const listLd = {
     <span class="cathero-glow" aria-hidden="true"></span>
     {cat.heroImage
       ? <span class="cathero-photo" style={`background-image:url(${cat.heroImage})`} aria-hidden="true"></span>
-      : <span class="cathero-motif" aria-hidden="true">{cat.emoji}</span>}
+      : cat.bgImage
+        ? <span class="cathero-bg" style={`background-image:url(${cat.bgImage})`} aria-hidden="true"></span>
+        : <span class="cathero-motif" aria-hidden="true">{cat.emoji}</span>}
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <nav class="crumb crumb-on-dark text-sm reveal" aria-label="Breadcrumb">
         <a href="/" data-i18n="nav.home">Home</a> <span class="mx-1 opacity-50">/</span>

@@ -31,6 +31,7 @@ export interface Category {
   accentFrom: string;
   accentTo: string;
   heroImage?: string; // optional right-side hero photo (replaces the emoji motif)
+  bgImage?: string; // optional full-bleed hero photo, washed out behind the accent gradient
   thumbSlugs?: string[]; // optional: pin which products appear in the 4-image preview grid
 }
 
@@ -63,6 +64,7 @@ export const categories: Category[] = [
     thumbSlugs: ["ashwagandha-powder", "shatavari-powder", "moringa-powder", "triphala-powder"],
     accentFrom: "#1f7a4d",
     accentTo: "#0f6b4a",
+    bgImage: "/assets/img/categories/herbal-leaf-hero.webp",
   },
   {
     slug: "culinary-spice-powders",
@@ -87,6 +89,7 @@ export const categories: Category[] = [
       "Beetroot, lemon, amla and more — fruit and herb powders chosen for natural colour, nutrition and clean-label functionality in supplements, seasonings, soups and ready meals.",
     accentFrom: "#be185d",
     accentTo: "#9d174d",
+    bgImage: "/assets/img/categories/functional-nutritional-powder-hero.webp",
   },
   {
     slug: "dehydrated-vegetable-powders",
@@ -98,6 +101,7 @@ export const categories: Category[] = [
       "Tomato, carrot, jackfruit and more — dehydrated vegetable powders that concentrate natural colour, flavour and nutrition into a shelf-stable form for soups, sauces, seasonings and ready meals.",
     accentFrom: "#0d9488",
     accentTo: "#0f766e",
+    bgImage: "/assets/img/categories/dehydrated-veg-powder-hero.webp",
   },
   {
     slug: "fruit-powders",
@@ -121,6 +125,7 @@ export const categories: Category[] = [
       "Watermelon, melon (magaz), pumpkin and chia — edible seeds and hulled kernels, machine-cleaned, colour-sorted and graded to a consistent purity and count for snacking, bakery, confectionery and nutrition brands.",
     accentFrom: "#6f8630",
     accentTo: "#4d5f21",
+    bgImage: "/assets/img/categories/edible-seeds-kernels-hero.webp",
   },
   {
     slug: "hydrocolloids-food-additives",
