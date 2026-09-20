@@ -133,7 +133,7 @@ export const categories: Category[] = [
     slug: "hydrocolloids-food-additives",
     name: "Hydrocolloids & Food Additives",
     navName: "Hydrocolloids & Food Additives",
-    emoji: "🧪",
+    emoji: "🌾",
     tagline: "Plant-based thickeners, stabilisers & fibres",
     description:
       "India is the world's hub for plant-based gums and fibres. We supply guar gum, psyllium and tamarind kernel derivatives for food, beverage, pharma and industrial applications.",
