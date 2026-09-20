@@ -122,7 +122,7 @@ export const categories: Category[] = [
     slug: "edible-seeds-kernels",
     name: "Edible Seeds & Kernels",
     navName: "Edible Seeds & Kernels",
-    emoji: "🌰",
+    emoji: "🎃",
     tagline: "Clean-sorted seeds and hulled kernels",
     description:
       "Watermelon, melon (magaz), pumpkin and chia — edible seeds and hulled kernels, machine-cleaned, colour-sorted and graded to a consistent purity and count for snacking, bakery, confectionery and nutrition brands.",
