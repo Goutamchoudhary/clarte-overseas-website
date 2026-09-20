@@ -102,6 +102,7 @@ export const categories: Category[] = [
       "Tomato, carrot, jackfruit and more — dehydrated vegetable powders that concentrate natural colour, flavour and nutrition into a shelf-stable form for soups, sauces, seasonings and ready meals.",
     accentFrom: "#0d9488",
     accentTo: "#0f766e",
+    thumbSlugs: ["tomato-powder", "carrot-powder"],
     bgImage: "/assets/img/categories/dehydrated-veg-powder-hero.webp",
   },
   {
@@ -139,6 +140,7 @@ export const categories: Category[] = [
       "India is the world's hub for plant-based gums and fibres. We supply guar gum, psyllium and tamarind kernel derivatives for food, beverage, pharma and industrial applications.",
     accentFrom: "#1f4693",
     accentTo: "#16306e",
+    bgImage: "/assets/img/categories/hydrocolloids-additives.webp",
   },
 ];
 
