@@ -78,7 +78,6 @@ export const categories: Category[] = [
     accentFrom: "#c2410c",
     accentTo: "#9a3412",
     bgImage: "/assets/img/categories/culinary-spice-category-hero.webp",
-    heroImage: "/assets/img/categories/culinary-spice.jpg",
   },
   {
     slug: "functional-nutritional-powders",
