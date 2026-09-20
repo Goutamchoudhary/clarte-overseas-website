@@ -73,10 +73,11 @@ export const categories: Category[] = [
     emoji: "🧅",
     tagline: "The savoury backbone of every kitchen",
     description:
-      "Onion, garlic, ginger and chilli — the workhorses of kitchens and food plants worldwide. Consistent pungency, clean flavour and a full range of cuts, from fine powder to kibbled flakes.",
+      "Onion, garlic, ginger, chilli, mint, coriander and curry leaf — the workhorses of kitchens and food plants worldwide. Consistent pungency, clean flavour and a full range of cuts, from fine powder to kibbled flakes.",
     thumbSlugs: ["red-onion-powder", "ginger-powder", "garlic-powder", "green-chilli-powder"],
     accentFrom: "#c2410c",
     accentTo: "#9a3412",
+    bgImage: "/assets/img/categories/culinary-spice-category-hero.webp",
     heroImage: "/assets/img/categories/culinary-spice.jpg",
   },
   {
@@ -114,6 +115,7 @@ export const categories: Category[] = [
     thumbSlugs: ["guava-powder", "papaya-powder", "banana-powder", "tamarind-powder"],
     accentFrom: "#d97706",
     accentTo: "#b45309",
+    bgImage: "/assets/img/categories/dehydrated-fruits-powder.webp",
   },
   {
     slug: "edible-seeds-kernels",
