@@ -1,5 +1,6 @@
 // @ts-check
 import fs from "node:fs";
+import crypto from "node:crypto";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -12,6 +13,19 @@ import { sitemapSerialize } from "./scripts/sitemap-meta.mjs";
 const specPdfs = fs.existsSync("./spec-pdfs")
   ? fs.readdirSync("./spec-pdfs").filter((f) => f.endsWith(".pdf")).map((f) => `./spec-pdfs/${f}`)
   : [];
+
+// Content hash of the hand-written static assets in public/. Appended to their
+// URLs (?v=...) so they can be served with a year-long immutable cache: any edit
+// changes the hash, which changes the URL, which busts every visitor's cache.
+const ASSET_V = crypto
+  .createHash("sha1")
+  .update(
+    ["css/styles.css", "fonts/fonts.css", "js/script.js", "js/i18n.js", "js/home-fx.js"]
+      .map((f) => fs.readFileSync(`./public/${f}`))
+      .join("\n"),
+  )
+  .digest("hex")
+  .slice(0, 10);
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,5 +41,6 @@ export default defineConfig({
     sitemap({ serialize: sitemapSerialize }),
   ],
   // 'directory' format → clean URLs (/about-us/ instead of /about-us.html)
-  build: { format: "directory" },
+  build: { format: "directory", inlineStylesheets: "always" },
+  vite: { define: { __ASSET_V__: JSON.stringify(ASSET_V) } },
 });

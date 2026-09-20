@@ -4,6 +4,9 @@ import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
 import CookieBanner from "../components/CookieBanner.astro";
 import { SITE, ANALYTICS, SOCIAL, CONTACT } from "../consts";
+// Inlined so the font-face rules are available on the first byte of HTML —
+// a separate stylesheet put a request between the HTML and every font file.
+import fontsCss from "../../public/fonts/fonts.css?raw";
 // Real-user performance monitoring (Core Web Vitals from actual visitors,
 // broken down by country, in the Vercel dashboard). Cookie-free, so it
 // doesn't need to sit behind the cookie-consent gate the way GA/Clarity do.
@@ -84,11 +87,11 @@ const orgSchema = {
          render-blocking dependency on fonts.googleapis.com/fonts.gstatic.com,
          which is slow or outright blocked from some countries — the whole
          page used to stall behind that request. -->
-    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <style is:inline set:html={fontsCss}></style>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href={`/css/styles.css?v=${__ASSET_V__}`} />
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchema)} />
 
@@ -103,7 +106,7 @@ const orgSchema = {
          stylesheet further down the load queue, which is what visitors on
          slow connections were seeing as an unstyled flash (oversized logo,
          broken nav) for several seconds before everything caught up. -->
-    <script is:inline defer src="/js/i18n.js"></script>
+    <script is:inline defer src={`/js/i18n.js?v=${__ASSET_V__}`}></script>
     {CONTACT.calendlyUrl && (
       <>
         <!-- Calendly's popup CSS is only needed if someone actually opens
@@ -133,7 +136,7 @@ const orgSchema = {
     <slot />
     <Footer />
     <CookieBanner />
-    <script is:inline src="/js/script.js"></script>
+    <script is:inline src={`/js/script.js?v=${__ASSET_V__}`}></script>
     <SpeedInsights />
     <VercelAnalytics />
   </body>

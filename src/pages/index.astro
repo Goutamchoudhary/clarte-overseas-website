@@ -48,7 +48,7 @@ const partnerCerts = [
            and bottom, ~9:16), not a crop of the wide one — a 21:9 frame can't
            fill a 9:19.5 screen without magnifying a couple of chillies to fill
            the whole viewport. -->
-      <source media="(max-width: 640px)" srcset="/assets/img/hero/hero-flatlay-2026-mobile-portrait.webp" type="image/webp" />
+      <source media="(max-width: 640px)" srcset="/assets/img/hero/hero-flatlay-2026-mobile-portrait-800.webp" type="image/webp" />
       <source media="(max-width: 1024px)" srcset="/assets/img/hero/hero-flatlay-2026-mobile.webp" type="image/webp" />
       <source srcset="/assets/img/hero/hero-flatlay-2026.webp" type="image/webp" />
       <img
@@ -567,5 +567,5 @@ const partnerCerts = [
   <script is:inline defer src="/js/vendor/gsap.min.js"></script>
   <script is:inline defer src="/js/vendor/ScrollTrigger.min.js"></script>
   <script is:inline defer src="/js/vendor/lenis.min.js"></script>
-  <script is:inline defer src="/js/home-fx.js"></script>
+  <script is:inline defer src={`/js/home-fx.js?v=${__ASSET_V__}`}></script>
 </BaseLayout>

@@ -55,16 +55,26 @@ const { gtm, ga4, googleTag, clarity, linkedinPartnerId } = ANALYTICS;
     }
   }
   window.__initAnalytics = loadAnalytics;
-  // Defer to idle time (falling back to a short timeout on browsers without
-  // requestIdleCallback, e.g. Safari) instead of firing the instant this
-  // script runs. GTM's container loads several tags of its own (GA4,
-  // Clarity, etc.) once gtm.js executes, and having all of that compete
-  // with the page's own GSAP/ScrollTrigger init for the main thread at the
-  // exact same moment shows up as extra Total Blocking Time — this doesn't
-  // reduce the work, just lets the critical rendering path go first.
+  // Held back until the page has finished its own loading work. GTM pulls in
+  // GA4, Clarity and gtag on top of itself (~450 KiB of script), and starting
+  // that during the hero's paint competes with the LCP image for bandwidth and
+  // with GSAP/ScrollTrigger for the main thread — it was the biggest single
+  // drag on mobile LCP and Total Blocking Time. Fires on the first sign of a
+  // real visitor (scroll, tap, key, pointer) or, failing that, 4s after load,
+  // so a visitor who reads without touching anything is still counted.
   function schedule(fn) {
-    if (window.requestIdleCallback) window.requestIdleCallback(fn, { timeout: 2000 });
-    else setTimeout(fn, 1500);
+    var done = false;
+    var evts = ["scroll", "pointerdown", "keydown", "touchstart"];
+    function go() {
+      if (done) return;
+      done = true;
+      evts.forEach(function (e) { window.removeEventListener(e, go); });
+      fn();
+    }
+    evts.forEach(function (e) { window.addEventListener(e, go, { once: true, passive: true }); });
+    function arm() { setTimeout(go, 4000); }
+    if (document.readyState === "complete") arm();
+    else window.addEventListener("load", arm, { once: true });
   }
   try {
     var _c = localStorage.getItem("cookie-consent");

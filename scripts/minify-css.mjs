@@ -1,4 +1,5 @@
-// Post-build step: minify the hand-written stylesheet in the build output.
+// Post-build step: minify the hand-written stylesheet and first-party scripts
+// (js/script.js, i18n.js, home-fx.js) in the build output.
 //
 // public/css/styles.css is served as-is by Astro (public/ is a pure
 // passthrough), so it ships to production completely unminified. We keep it
@@ -33,7 +34,22 @@ async function main() {
   console.log(`[minify-css] ${SOURCE} → ${OUTPUT}: ${(before / 1024).toFixed(1)} KiB → ${(after / 1024).toFixed(1)} KiB (-${pct}%)`);
 }
 
-main().catch((err) => {
+// Same idea for the three first-party scripts. The vendor/ files are already
+// minified, so they are left alone.
+async function minifyJs() {
+  for (const name of ["script", "i18n", "home-fx"]) {
+    const src = `public/js/${name}.js`;
+    const out = `.vercel/output/static/js/${name}.js`;
+    const js = await readFile(src, "utf8");
+    const { code } = await transform(js, { loader: "js", minify: true });
+    await writeFile(out, code, "utf8");
+    const before = Buffer.byteLength(js, "utf8");
+    const after = Buffer.byteLength(code, "utf8");
+    console.log(`[minify-js] ${src}: ${(before / 1024).toFixed(1)} KiB → ${(after / 1024).toFixed(1)} KiB`);
+  }
+}
+
+main().then(minifyJs).catch((err) => {
   console.error("[minify-css] failed:", err);
   process.exit(1);
 });

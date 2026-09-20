@@ -16,7 +16,7 @@
     },
     {
       "source": "/css/styles.css",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=604800" }]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/fonts/fonts.css",
@@ -24,7 +24,7 @@
     },
     {
       "source": "/js/(script|i18n|home-fx).js",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=604800" }]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/i18n/(.*).json",
