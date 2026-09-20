@@ -172,6 +172,39 @@ const partnerCerts = [
             <a href="/products/hydrocolloids-food-additives" class="card-link mt-5 card-stretch"><span data-i18n="home.card_view">View Products</span><span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
           </div>
         </article>
+        <!-- Card 7 — Dehydrated Vegetable Powders. Numbered 7/8 rather than
+             renumbering: card6 is Custom Blends and its i18n keys already
+             exist in all 17 locales, so reusing 6 would mean renaming keys
+             everywhere for no gain. DOM order is what the visitor sees. -->
+        <article class="card product-card reveal d2">
+          <div class="ph-wrap img-ph h-48" data-emoji="🍅" data-img="/assets/img/categories/dehydrated-veg-powder.webp">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22V12M12 12c0-3 2-5 5-5 0 3-2 5-5 5ZM12 12C12 9 10 7 7 7c0 3 2 5 5 5Z"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="font-head font-bold text-lg text-navy" data-i18n="home.card7_title">Dehydrated Vegetable Powders</h3>
+              <span class="status-dot mt-1 is-available" title="Available" aria-label="Available"></span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed" data-i18n="home.card7_desc">Tomato, carrot and jackfruit, dried and milled to concentrate natural colour, flavour and nutrition into a shelf-stable form.</p>
+            <a href="/products/dehydrated-vegetable-powders" class="card-link mt-5 card-stretch"><span data-i18n="home.card_view">View Products</span><span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+        </article>
+        <!-- Card 8 — Edible Seeds & Kernels. No category photo yet, so the
+             placeholder falls back to gradient + emoji (script.js handles a
+             missing data-img). Add data-img once a photo exists. -->
+        <article class="card product-card reveal d1">
+          <div class="ph-wrap img-ph h-48" data-emoji="🌰">
+            <span class="icon-badge on-image"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="9" cy="10" rx="3" ry="5" transform="rotate(-25 9 10)"/><ellipse cx="15" cy="14" rx="3" ry="5" transform="rotate(-25 15 14)"/></svg></span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="font-head font-bold text-lg text-navy" data-i18n="home.card8_title">Edible Seeds &amp; Kernels</h3>
+              <span class="status-dot mt-1 is-available" title="Available" aria-label="Available"></span>
+            </div>
+            <p class="text-slate-500 text-[15px] leading-relaxed" data-i18n="home.card8_desc">Watermelon, melon (magaz), pumpkin and chia — cleaned, colour-sorted and graded for snacking, bakery and nutrition brands.</p>
+            <a href="/products/edible-seeds-kernels" class="card-link mt-5 card-stretch"><span data-i18n="home.card_view">View Products</span><span class="arrow"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+        </article>
         <!-- Card 6 -->
         <article class="card product-card reveal d2">
           <div class="ph-wrap img-ph h-48" data-emoji="➕" data-img="/assets/img/categories/custom-blend.webp">

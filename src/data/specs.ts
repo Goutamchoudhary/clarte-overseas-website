@@ -80,6 +80,12 @@ const ALLERGEN =
 const COMPLIANCE =
   "Sourced from FSSAI-licensed processing units following ISO 22000 / HACCP food-safety practices. Exported by an APEDA-registered, IEC-holding merchant exporter. Kosher, Halal, BRCGS and organic certification available against specific orders. No added preservatives or synthetic colour.";
 
+// Seeds and kernels are routinely handled on lines that also run sesame and
+// tree nuts, both of which ARE declarable allergens. The generic statement
+// above would understate that, so this category gets its own.
+const ALLERGEN_SEEDS =
+  "The seeds and kernels themselves are not declarable allergens under EU Reg. 1169/2011 or US FDA FALCPA (as amended by the FASTER Act). Gluten-free, vegan and non-GMO. Processed under GMP in facilities that may also handle sesame and tree nuts; cross-contact is controlled, and segregated or dedicated-line production can be arranged against a specific order. Confirm allergen status against the batch COA and your own market's labelling rules.";
+
 export const categoryDefaults: Record<string, CategoryDefaults> = {
   "fruit-powders": {
     gradeLabel: "Food grade",
@@ -110,6 +116,14 @@ export const categoryDefaults: Record<string, CategoryDefaults> = {
     shelfLife: "24 months from manufacture, in unopened, properly stored packaging",
     micro: MICRO_HERBAL, heavyMetals: HEAVY_METALS,
     packaging: PACKAGING, storage: STORAGE, allergen: ALLERGEN, compliance: COMPLIANCE,
+  },
+  "edible-seeds-kernels": {
+    gradeLabel: "Food grade",
+    // Hulled kernels carry oil and go rancid sooner than a dried powder, so
+    // this category is deliberately shorter than the 18–24 months elsewhere.
+    shelfLife: "12 months from manufacture, in unopened, properly stored packaging",
+    micro: MICRO_STD, heavyMetals: HEAVY_METALS,
+    packaging: PACKAGING, storage: STORAGE, allergen: ALLERGEN_SEEDS, compliance: COMPLIANCE,
   },
   "hydrocolloids-food-additives": {
     gradeLabel: "Food grade (E-number where applicable)",
@@ -435,5 +449,61 @@ export const productSpecs: Record<string, ProductSpec> = {
     ],
     nutrition: { energy: 340, protein: 15, fat: 5, carb: 65, sugars: 5, fibre: 8, sodium: 20 },
     nutritionNote: "Plant-based thickener and sizing agent (polysaccharide-rich).",
+  },
+
+  // ------------------------------------------------- EDIBLE SEEDS & KERNELS
+  // "mesh" is meaningless for a whole kernel; the field is kept (the PDF and
+  // the chip row both read it) but states the format instead of a granulation.
+  "watermelon-seeds": {
+    appearance: "Whole hulled kernels", colour: "Creamy white to pale ivory",
+    odour: "Mild, characteristic nutty", taste: "Clean, mildly nutty",
+    mesh: "Whole kernels (not milled)",
+    params: [
+      { k: "Purity", v: "≥ 99%" },
+      { k: "Broken / split kernels", v: "≤ 2%" },
+      { k: "Foreign matter", v: "≤ 0.5%" },
+      { k: "Free fatty acid (as oleic)", v: "≤ 2.0%" },
+    ],
+    nutrition: { energy: 557, protein: 28, fat: 47, carb: 15, sugars: 0, fibre: 4, sodium: 99 },
+    nutritionNote: "High in plant protein, magnesium and unsaturated fats.",
+  },
+  "chia-seeds": {
+    appearance: "Whole, untreated seed", colour: "Black / grey mottled, or white",
+    odour: "Neutral, faintly nutty", taste: "Very mild, nutty",
+    mesh: "Whole seed (not milled)",
+    params: [
+      { k: "Purity", v: "≥ 99.9%" },
+      { k: "Omega-3 (ALA), typical", v: "≥ 17 g/100 g" },
+      { k: "Foreign matter", v: "≤ 0.1%" },
+      { k: "Mucilage / gel formation", v: "Forms gel on hydration" },
+    ],
+    nutrition: { energy: 486, protein: 16.5, fat: 30.7, carb: 42, sugars: 0, fibre: 34, sodium: 16 },
+    nutritionNote: "One of the densest plant sources of omega-3 ALA and soluble fibre.",
+  },
+  "pumpkin-seeds": {
+    appearance: "Whole hulled kernels (pepitas)", colour: "Deep olive-green",
+    odour: "Characteristic, nutty", taste: "Rich, roasted-nut",
+    mesh: "Whole kernels (not milled)",
+    params: [
+      { k: "Purity", v: "≥ 99%" },
+      { k: "Broken / split kernels", v: "≤ 3%" },
+      { k: "Foreign matter", v: "≤ 0.5%" },
+      { k: "Free fatty acid (as oleic)", v: "≤ 2.0%" },
+    ],
+    nutrition: { energy: 559, protein: 30, fat: 49, carb: 11, sugars: 1.4, fibre: 6, sodium: 7 },
+    nutritionNote: "High in plant protein, zinc, magnesium and unsaturated fats.",
+  },
+  "melon-seeds": {
+    appearance: "Whole hulled kernels (magaz)", colour: "Pale cream to light ivory",
+    odour: "Mild, characteristic", taste: "Delicate, mildly sweet and nutty",
+    mesh: "Whole kernels (not milled)",
+    params: [
+      { k: "Purity", v: "≥ 99%" },
+      { k: "Broken / split kernels", v: "≤ 2%" },
+      { k: "Foreign matter", v: "≤ 0.5%" },
+      { k: "Free fatty acid (as oleic)", v: "≤ 2.0%" },
+    ],
+    nutrition: { energy: 555, protein: 28, fat: 47, carb: 15, sugars: 0, fibre: 4, sodium: 20 },
+    nutritionNote: "Naturally rich in plant protein, magnesium and unsaturated fats.",
   },
 };

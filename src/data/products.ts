@@ -16,6 +16,9 @@ const DRY = {
   functional: "Air, spray or freeze-dried — to your grade",
   herbal: "Shade, air or freeze-dried — to your grade",
   milled: "Mechanically milled to specification",
+  // Seeds are not dried or milled at all — they are cleaned and graded, so the
+  // "Processing" row on their pages describes that instead.
+  seeds: "Machine-cleaned, colour-sorted and graded",
 };
 
 export interface Category {
@@ -109,6 +112,17 @@ export const categories: Category[] = [
     accentTo: "#b45309",
   },
   {
+    slug: "edible-seeds-kernels",
+    name: "Edible Seeds & Kernels",
+    navName: "Edible Seeds & Kernels",
+    emoji: "🌰",
+    tagline: "Clean-sorted seeds and hulled kernels",
+    description:
+      "Watermelon, melon (magaz), pumpkin and chia — edible seeds and hulled kernels, machine-cleaned, colour-sorted and graded to a consistent purity and count for snacking, bakery, confectionery and nutrition brands.",
+    accentFrom: "#6f8630",
+    accentTo: "#4d5f21",
+  },
+  {
     slug: "hydrocolloids-food-additives",
     name: "Hydrocolloids & Food Additives",
     navName: "Hydrocolloids & Food Additives",
@@ -126,6 +140,11 @@ const POWDER_FORMS = ["Powder", "Granules", "Minced", "Chopped / Kibbled", "Flak
 // Shared closing features used across products (kept short, appended per item)
 const F_DRY = "Drying method chosen to suit your application";
 const F_CUSTOM = "Custom mesh, packing and private label on request";
+
+// Seeds close on their own pair: they are graded and sorted rather than dried,
+// and "mesh" is meaningless for a whole kernel.
+const F_SEED_SORT = "Gravity-separated, de-stoned and colour-sorted";
+const F_SEED_CUSTOM = "Custom grades, packing and private label on request";
 
 export const products: Product[] = [
   // ---------------------------------------------------------------- FRUIT
@@ -555,6 +574,56 @@ export const products: Product[] = [
     uses: ["Food thickening and gelling", "Textile and jute sizing", "Paper and adhesives", "Industrial applications"],
     grades: ["Food / technical grade", "Plain & de-oiled", "100–200 mesh", "Moisture ≤ 10%"],
     drying: DRY.milled,
+  },
+
+  // ------------------------------------------------- EDIBLE SEEDS & KERNELS
+  {
+    slug: "watermelon-seeds", name: "Watermelon Seeds", category: "edible-seeds-kernels",
+    emoji: "🍉", hsn: "1207 70 90", botanical: "Citrullus lanatus",
+    tagline: "Crisp white kernels with a clean, nutty bite.",
+    description:
+      "Watermelon seed kernels — tarbooj magaz — are valued for their mild, nutty flavour and their protein and magnesium content. We supply them hulled and colour-sorted for snacking, bakery and nutrition blends, or in-shell where a whole-seed format suits a roasting or traditional snack line.",
+    features: ["Hulled kernels or in-shell", "Mild, clean nutty flavour", "Naturally high in protein and magnesium", "Uniform, well-sorted kernels", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Snacking and trail mixes", "Bakery toppings and breads", "Indian sweets and confectionery", "Protein and nutrition blends"],
+    grades: ["Food grade", "Kernels ≥ 99% purity (in-shell available)", "Moisture ≤ 6%", "Private label / bulk"],
+    forms: ["Kernels (hulled)", "In-shell (whole)"],
+    drying: DRY.seeds,
+  },
+  {
+    slug: "chia-seeds", name: "Chia Seeds", category: "edible-seeds-kernels",
+    emoji: "🌱", hsn: "1207 99 90", botanical: "Salvia hispanica",
+    tagline: "Omega-3 and soluble fibre in a whole, untreated seed.",
+    description:
+      "Chia is one of the densest plant sources of omega-3 ALA and soluble fibre, and it now grows well across Madhya Pradesh, Rajasthan and parts of the south. Ours is cleaned to 99.9% purity and shipped as a whole, untreated seed in black or white, ready for beverages, bakery and functional-nutrition formats.",
+    features: ["Cleaned to 99.9% purity", "Rich in omega-3 ALA and soluble fibre", "Forms a natural gel on hydration", "Black or white seed to order", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Beverages, puddings and shots", "Bakery, breads and crackers", "Cereals, granola and bars", "Functional and sports nutrition"],
+    grades: ["Food grade", "Purity 99.9%, black / white", "Moisture ≤ 8%", "Private label / bulk"],
+    forms: ["Whole seed (black)", "Whole seed (white)"],
+    drying: DRY.seeds,
+  },
+  {
+    slug: "pumpkin-seeds", name: "Pumpkin Seeds", category: "edible-seeds-kernels",
+    emoji: "🎃", hsn: "1207 99 90", botanical: "Cucurbita pepo",
+    tagline: "Deep-green hulled kernels with a rich, roasted-nut flavour.",
+    description:
+      "Hulled pumpkin seed kernels — pepitas — carry a deep green colour and a rich, nutty flavour that holds up well to roasting and baking. We supply kernels graded by size and colour for snacking, granola and seed blends, with in-shell available where a whole-seed format is wanted.",
+    features: ["Deep green hulled kernels", "Rich, roasted-nut flavour", "High in protein, zinc and magnesium", "Graded by size and colour", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Snacking and seed mixes", "Granola, bars and cereals", "Bakery toppings and breads", "Plant-protein and nutrition blends"],
+    grades: ["Food grade", "Hulled kernels, AA / A grades", "Moisture ≤ 6%", "Private label / bulk"],
+    forms: ["Kernels (hulled)", "In-shell (whole)"],
+    drying: DRY.seeds,
+  },
+  {
+    slug: "melon-seeds", name: "Melon Seeds", category: "edible-seeds-kernels",
+    emoji: "🍈", hsn: "1207 70 10", botanical: "Cucumis melo",
+    tagline: "Classic magaz kernels for sweets, gravies and garnish.",
+    description:
+      "Melon seed kernels — magaz — are a staple of Indian confectionery and rich gravies, valued for their pale colour, delicate sweetness and the body they lend when ground. We supply clean, uniformly sorted kernels for mithai, sauce bases, garnish and nutrition blends.",
+    features: ["Pale, uniformly sorted kernels", "Delicate, mildly sweet flavour", "Traditional thickener when ground", "Naturally rich in protein and healthy fats", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Indian sweets and mithai", "Rich gravies and sauce bases", "Bakery and garnish", "Snack and nutrition blends"],
+    grades: ["Food grade", "Magaz kernels ≥ 99% purity", "Moisture ≤ 6%", "Private label / bulk"],
+    forms: ["Kernels (magaz)"],
+    drying: DRY.seeds,
   },
 ];
 
