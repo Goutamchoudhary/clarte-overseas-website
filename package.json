@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "node scripts/minify-css.mjs",
+    "postbuild": "node scripts/minify-css.mjs && node scripts/fix-vercel-runtime.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "specs": "node --experimental-strip-types scripts/gen-spec-sheets.ts"
