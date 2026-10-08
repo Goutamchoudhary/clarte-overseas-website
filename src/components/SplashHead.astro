@@ -41,11 +41,16 @@ html[data-booted] #cs { pointer-events: none; }
 html[data-booted] #cs .cs-veil { opacity: 0; }
 html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 
-/* The icon alone, its own centre exactly on the viewport centre. */
-/* 80px box → the icon itself is ~77px tall (the square viewBox leaves a little air around the artwork) */
-#cs .cs-mark { position: absolute; left: 50%; top: 50%; width: 80px; height: 80px; margin: -40px 0 0 -40px; overflow: visible; }
+/* Stacked lockup: icon (~77px tall in an 80px box — the square viewBox leaves
+   a little air), a 14px gap, then the wordmark at 1.75x the icon's width.
+   The GROUP is centred on the screen: the icon is lifted by half of
+   (gap + wordmark height) = (14 + 13.2) / 2 = 13.6px. Phones scale the same
+   proportions down. */
+#cs .cs-mark { position: absolute; left: 50%; top: calc(50% - 13.6px); width: 80px; height: 80px; margin: -40px 0 0 -40px; overflow: visible; }
+#cs .cs-word { position: absolute; left: 50%; top: calc(50% + 39px); width: 138px; height: 13.2px; margin-left: -69px; overflow: visible; }
 @media (max-width: 640px) {
-  #cs .cs-mark { width: 65px; height: 65px; margin: -32.5px 0 0 -32.5px; }
+  #cs .cs-mark { top: calc(50% - 10.8px); width: 65px; height: 65px; margin: -32.5px 0 0 -32.5px; }
+  #cs .cs-word { top: calc(50% + 31.6px); width: 112px; height: 10.7px; margin-left: -56px; }
 }
 
 /* ---- "Harvest sets sail" — transform and opacity only (plus the wave's
@@ -59,6 +64,7 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 #cs .cs-box { animation: cs-drop .34s cubic-bezier(.34,1.56,.64,1) calc(.7s + var(--i) * 80ms) backwards; }
 #cs .cs-bar { transform-origin: 50% 100%; animation: cs-rise .3s cubic-bezier(.22,1,.36,1) calc(.9s + var(--i) * 90ms) backwards; }
 #cs .cs-bar-final { animation-name: cs-rise-final; } /* the final beat — Splash.astro listens for its animationend */
+#cs .cs-word { animation: cs-word .6s cubic-bezier(.22,1,.36,1) .4s backwards; }
 #cs .cs-smoke { animation: cs-fade .5s ease-out 1.2s backwards; }
 #cs .cs-drift { animation: cs-drift 1.6s ease-in-out 1.2s infinite alternate; }
 
@@ -68,6 +74,7 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 @keyframes cs-drop { from { opacity: 0; transform: translateY(-26px); } to { opacity: 1; transform: none; } }
 @keyframes cs-rise { from { transform: scaleY(0); } to { transform: none; } }
 @keyframes cs-rise-final { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes cs-word { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @keyframes cs-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes cs-drift { from { transform: none; } to { transform: translateY(-8px); } }
 
