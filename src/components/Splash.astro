@@ -17,8 +17,8 @@
 // The mark is built from the paths in /favicon.svg, regrouped by part. The
 // viewBox is a square centred on the icon's own bounding box (x 49–402,
 // y 53–401 in favicon space), so centring the <svg> centres the icon itself.
-// Animated offsets below are in the inner group's units: at 110px tall,
-// 1px ≈ 2.6 units.
+// Animated offsets (SplashHead) are in the inner group's units, so the
+// motion scales with the mark: at 77px tall, 1px ≈ 3.7 units.
 import fs from "node:fs";
 const WORDMARK = "data:image/png;base64," + fs.readFileSync("public/assets/logo/wordmark.png").toString("base64");
 ---

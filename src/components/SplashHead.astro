@@ -37,13 +37,13 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 
 /* Icon centre sits exactly on the viewport centre; the text hangs below it on
    the same vertical axis. */
-/* 114px box → the icon itself is ~110px tall (the square viewBox leaves a little air around the artwork) */
-#cs .cs-mark { position: absolute; left: 50%; top: 50%; width: 114px; height: 114px; margin: -57px 0 0 -57px; overflow: visible; }
+/* 80px box → the icon itself is ~77px tall (the square viewBox leaves a little air around the artwork) */
+#cs .cs-mark { position: absolute; left: 50%; top: 50%; width: 80px; height: 80px; margin: -40px 0 0 -40px; overflow: visible; }
 /* Wordmark artwork, cropped tight to its ink, so its box centre is its visual centre. */
-#cs .cs-word { position: absolute; left: 50%; top: calc(50% + 57px + 20px); width: 230px; height: auto; margin-left: -115px; }
+#cs .cs-word { position: absolute; left: 50%; top: calc(50% + 40px + 14px); width: 160px; height: auto; margin-left: -80px; }
 @media (max-width: 640px) {
-  #cs .cs-mark { width: 93px; height: 93px; margin: -46.5px 0 0 -46.5px; }
-  #cs .cs-word { top: calc(50% + 46.5px + 16px); width: 190px; margin-left: -95px; }
+  #cs .cs-mark { width: 65px; height: 65px; margin: -32.5px 0 0 -32.5px; }
+  #cs .cs-word { top: calc(50% + 32.5px + 11px); width: 132px; margin-left: -66px; }
 }
 
 /* ---- "Harvest sets sail" — transform and opacity only (plus the wave's
