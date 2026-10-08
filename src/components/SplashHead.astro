@@ -35,15 +35,11 @@ html[data-booted] #cs { pointer-events: none; }
 html[data-booted] #cs .cs-veil { opacity: 0; }
 html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 
-/* Icon centre sits exactly on the viewport centre; the text hangs below it on
-   the same vertical axis. */
+/* The icon alone, its own centre exactly on the viewport centre. */
 /* 80px box → the icon itself is ~77px tall (the square viewBox leaves a little air around the artwork) */
 #cs .cs-mark { position: absolute; left: 50%; top: 50%; width: 80px; height: 80px; margin: -40px 0 0 -40px; overflow: visible; }
-/* Wordmark artwork, cropped tight to its ink, so its box centre is its visual centre. */
-#cs .cs-word { position: absolute; left: 50%; top: calc(50% + 40px + 14px); width: 160px; height: auto; margin-left: -80px; }
 @media (max-width: 640px) {
   #cs .cs-mark { width: 65px; height: 65px; margin: -32.5px 0 0 -32.5px; }
-  #cs .cs-word { top: calc(50% + 32.5px + 11px); width: 132px; margin-left: -66px; }
 }
 
 /* ---- "Harvest sets sail" — transform and opacity only (plus the wave's
@@ -59,7 +55,6 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 #cs .cs-bar-final { animation-name: cs-rise-final; } /* the final beat — Splash.astro listens for its animationend */
 #cs .cs-smoke { animation: cs-fade .5s ease-out 1.2s backwards; }
 #cs .cs-drift { animation: cs-drift 1.6s ease-in-out 1.2s infinite alternate; }
-#cs .cs-word { animation: cs-text .6s cubic-bezier(.22,1,.36,1) .4s backwards; }
 
 @keyframes cs-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 @keyframes cs-glide { 0% { opacity: 0; transform: translateX(-62px); } 45% { opacity: 1; } 100% { opacity: 1; transform: none; } }
@@ -69,7 +64,6 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 @keyframes cs-rise-final { from { transform: scaleY(0); } to { transform: none; } }
 @keyframes cs-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes cs-drift { from { transform: none; } to { transform: translateY(-8px); } }
-@keyframes cs-text { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   #cs *, #cs *::before { animation: none !important; }

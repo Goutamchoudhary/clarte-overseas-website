@@ -16,11 +16,10 @@
 //
 // The mark is built from the paths in /favicon.svg, regrouped by part. The
 // viewBox is a square centred on the icon's own bounding box (x 49–402,
-// y 53–401 in favicon space), so centring the <svg> centres the icon itself.
+// y 53–401 in favicon space), so centring the <svg> centres the icon itself —
+// and the icon is the whole splash, so it sits on the exact screen centre.
 // Animated offsets (SplashHead) are in the inner group's units, so the
 // motion scales with the mark: at 77px tall, 1px ≈ 3.7 units.
-import fs from "node:fs";
-const WORDMARK = "data:image/png;base64," + fs.readFileSync("public/assets/logo/wordmark.png").toString("base64");
 ---
 <div id="cs" role="status" aria-label="Clarté Overseas is loading">
   <div class="cs-veil"></div>
@@ -51,9 +50,6 @@ const WORDMARK = "data:image/png;base64," + fs.readFileSync("public/assets/logo/
         <g class="cs-wave"><g transform="matrix(0.05,0,0,-0.05,3.63,93.68)"><path transform="translate(-5300.55,-3280.94)" d="m 7884,4038 c -140,-189 -373,-405 -584,-544 -424,-278 -1103,-489 -2095,-653 -461,-76 -726,-102 -1039,-102 -403,-1 -660,37 -941,138 -174,62 -370,167 -506,271 -39,29 -73,52 -75,50 -7,-7 157,-164 241,-231 270,-216 625,-374 1025,-457 760,-157 1543,-77 2340,237 581,229 1079,573 1454,1003 80,91 271,380 252,380 -2,0 -34,-42 -72,-92 z"/></g></g>
       </g>
     </svg>
-    <!-- The real wordmark artwork (exact logo type and colour), inlined so the
-         splash still makes no extra request and can't pop in late. -->
-    <img class="cs-word" src={WORDMARK} alt="" width="560" height="54" decoding="sync" />
   </div>
 </div>
 <script is:inline>
