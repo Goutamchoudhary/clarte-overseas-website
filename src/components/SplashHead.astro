@@ -3,10 +3,11 @@
 // Must be the first thing in <head>: it decides, before anything paints,
 // whether this page shows the splash at all.
 //
-// The splash plays only on the first page of a browsing session. Every menu
-// click on this site is a full page load, so later pages set
-// html[data-boot-gone] here and the splash stays display:none from the very
-// first frame. If sessionStorage throws (some private modes), the splash shows.
+// The splash plays on the first page of a browsing session and on every
+// browser refresh (a deliberate reload reads as a fresh start). Menu clicks and
+// back/forward are full page loads too, but those set html[data-boot-gone]
+// here, so the splash stays display:none from the very first frame. If
+// sessionStorage throws (some private modes), the splash shows.
 //
 // window.onSplashExit(fn) runs fn as the splash starts to leave, or straight
 // away when there is no splash. home-fx.js (Lenis + GSAP) and script.js (the
@@ -14,8 +15,13 @@
 ---
 <script is:inline>
 (function () {
-  var seen = false;
+  var seen = false, reload = false;
   try { seen = sessionStorage.getItem("clarte_splash_seen") === "1"; } catch (e) {}
+  try {
+    var nav = performance.getEntriesByType("navigation")[0];
+    reload = nav ? nav.type === "reload" : performance.navigation.type === 1;
+  } catch (e) {}
+  if (reload) seen = false;
   window.__splashActive = !seen;
   window.__splashQ = [];
   window.onSplashExit = function (f) { if (window.__splashActive) window.__splashQ.push(f); else f(); };
