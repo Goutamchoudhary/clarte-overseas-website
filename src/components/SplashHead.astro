@@ -1,0 +1,96 @@
+---
+// Head half of the first-visit splash (markup + exit logic: Splash.astro).
+// Must be the first thing in <head>: it decides, before anything paints,
+// whether this page shows the splash at all.
+//
+// The splash plays only on the first page of a browsing session. Every menu
+// click on this site is a full page load, so later pages set
+// html[data-boot-gone] here and the splash stays display:none from the very
+// first frame. If sessionStorage throws (some private modes), the splash shows.
+//
+// window.onSplashExit(fn) runs fn as the splash starts to leave, or straight
+// away when there is no splash. home-fx.js (Lenis + GSAP) and script.js (the
+// .reveal observer) use it so their entrances play as the page is revealed.
+---
+<script is:inline>
+(function () {
+  var seen = false;
+  try { seen = sessionStorage.getItem("clarte_splash_seen") === "1"; } catch (e) {}
+  window.__splashActive = !seen;
+  window.__splashQ = [];
+  window.onSplashExit = function (f) { if (window.__splashActive) window.__splashQ.push(f); else f(); };
+  if (seen) document.documentElement.setAttribute("data-boot-gone", "");
+})();
+</script>
+<style is:inline>
+html[data-boot-gone] #cs { display: none; }
+#cs { position: fixed; inset: 0; z-index: 2147483000; }
+#cs .cs-veil {
+  position: absolute; inset: 0; will-change: opacity;
+  background: linear-gradient(to top, rgba(31,70,147,.06), rgba(31,70,147,.015) 22%, rgba(31,70,147,0) 40%), #fff;
+  transition: opacity .55s cubic-bezier(.4,0,.2,1);
+}
+#cs .cs-stage { position: absolute; inset: 0; will-change: opacity, transform; transition: opacity .3s ease, transform .3s ease; }
+html[data-booted] #cs { pointer-events: none; }
+html[data-booted] #cs .cs-veil { opacity: 0; }
+html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
+
+/* Icon centre sits exactly on the viewport centre; the text hangs below it on
+   the same vertical axis. */
+/* 114px box → the icon itself is ~110px tall (the square viewBox leaves a little air around the artwork) */
+#cs .cs-mark { position: absolute; left: 50%; top: 50%; width: 114px; height: 114px; margin: -57px 0 0 -57px; overflow: visible; }
+#cs .cs-text { position: absolute; left: 0; right: 0; top: calc(50% + 57px + 18px); text-align: center; }
+#cs .cs-title {
+  font: 600 20px/1.2 Sora, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: .06em; color: #1f4693;
+  padding-left: .06em; /* letter-spacing trails the last glyph; balance it so the word is truly centred */
+}
+#cs .cs-cap {
+  display: grid; margin-top: 10px;
+  font: 500 11px/1.4 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: .16em; text-transform: uppercase; color: #6b7280;
+}
+#cs .cs-cap span { grid-area: 1 / 1; padding-left: .16em; opacity: 0; }
+#cs .cs-cap span:last-child { opacity: 1; }
+@media (max-width: 640px) {
+  #cs .cs-mark { width: 93px; height: 93px; margin: -46.5px 0 0 -46.5px; }
+  #cs .cs-text { top: calc(50% + 46.5px + 14px); }
+  #cs .cs-title { font-size: 17px; }
+}
+
+/* ---- "Harvest sets sail" — transform and opacity only (plus the wave's
+   clip reveal). Every rule's resting style is the finished logo; animations
+   fill backwards, so with motion reduced (animation: none) the logo is
+   simply complete. */
+#cs .cs-mark g[class] { transform-box: fill-box; }
+#cs .cs-wave { animation: cs-draw .6s cubic-bezier(.65,0,.35,1) both; }
+#cs .cs-ship { animation: cs-glide .7s cubic-bezier(.22,1,.36,1) .3s backwards; }
+#cs .cs-bob { animation: cs-bob 2.4s ease-in-out 1s infinite alternate; }
+#cs .cs-box { animation: cs-drop .34s cubic-bezier(.34,1.56,.64,1) calc(.7s + var(--i) * 80ms) backwards; }
+#cs .cs-bar { transform-origin: 50% 100%; animation: cs-rise .3s cubic-bezier(.22,1,.36,1) calc(.9s + var(--i) * 90ms) backwards; }
+#cs .cs-bar-final { animation-name: cs-rise-final; } /* the final beat — Splash.astro listens for its animationend */
+#cs .cs-smoke { animation: cs-fade .5s ease-out 1.2s backwards; }
+#cs .cs-drift { animation: cs-drift 1.6s ease-in-out 1.2s infinite alternate; }
+#cs .cs-text { animation: cs-text .6s cubic-bezier(.22,1,.36,1) .4s backwards; }
+#cs .cs-cap span { animation: cs-cap .55s linear calc(.5s + var(--n) * 450ms) backwards; }
+#cs .cs-cap span:nth-child(1) { --n: 0; }
+#cs .cs-cap span:nth-child(2) { --n: 1; }
+#cs .cs-cap span:nth-child(3) { --n: 2; }
+#cs .cs-cap span:last-child { animation: cs-fade .25s ease-out 1.85s backwards; }
+
+@keyframes cs-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes cs-glide { 0% { opacity: 0; transform: translateX(-62px); } 45% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@keyframes cs-bob { from { transform: none; } to { transform: translateY(6.5px); } }
+@keyframes cs-drop { from { opacity: 0; transform: translateY(-26px); } to { opacity: 1; transform: none; } }
+@keyframes cs-rise { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes cs-rise-final { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes cs-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cs-drift { from { transform: none; } to { transform: translateY(-8px); } }
+@keyframes cs-text { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes cs-cap { 0% { opacity: 0; } 22% { opacity: 1; } 78% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  #cs *, #cs *::before { animation: none !important; }
+  html[data-booted] #cs .cs-stage { transform: none; }
+}
+</style>

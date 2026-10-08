@@ -165,7 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.12 }
   );
-  document.querySelectorAll(".reveal").forEach((el) => revealer.observe(el));
+  // Wait for the first-visit splash to lift, so these still play in view.
+  const whenRevealed = window.onSplashExit || ((f) => f());
+  whenRevealed(() => document.querySelectorAll(".reveal").forEach((el) => revealer.observe(el)));
 
   /* ---- Image placeholders: load real photo, fall back to gradient ---- */
   document.querySelectorAll(".img-ph").forEach((ph) => {

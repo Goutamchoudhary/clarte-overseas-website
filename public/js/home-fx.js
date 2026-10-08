@@ -252,6 +252,11 @@
       // the smoothing without the delay.
       const lenis = new Lenis({ lerp: 0.2, smoothWheel: true });
       window.lenis = lenis; // programmatic scrolls must go through Lenis
+      // Held still under the first-visit splash; released as it lifts.
+      if (window.__splashActive) {
+        lenis.stop();
+        window.onSplashExit(() => lenis.start());
+      }
       lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.add((t) => lenis.raf(t * 1000));
       gsap.ticker.lagSmoothing(0);
@@ -267,6 +272,13 @@
       scaleX: 1, ease: "none",
       scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.3 },
     });
+
+    // Under the first-visit splash, hold every GSAP tween (the hero intro, the
+    // section entrances) at its start and let them play as the splash lifts.
+    if (window.__splashActive) {
+      gsap.globalTimeline.pause();
+      window.onSplashExit(() => gsap.globalTimeline.resume());
+    }
 
     heroScene();
     entrances();

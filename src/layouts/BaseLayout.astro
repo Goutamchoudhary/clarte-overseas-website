@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
 import CookieBanner from "../components/CookieBanner.astro";
+import SplashHead from "../components/SplashHead.astro";
+import Splash from "../components/Splash.astro";
 import { SITE, ANALYTICS, SOCIAL, CONTACT } from "../consts";
 // Inlined so the font-face rules are available on the first byte of HTML —
 // a separate stylesheet put a request between the HTML and every font file.
@@ -61,6 +63,7 @@ const orgSchema = {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <SplashHead />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -128,6 +131,7 @@ const orgSchema = {
   </head>
 
   <body class="font-body">
+    <Splash />
     {ANALYTICS.gtm && (
       <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtm}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
     )}
