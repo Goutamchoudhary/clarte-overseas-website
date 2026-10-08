@@ -54,7 +54,12 @@ const { gtm, ga4, googleTag, clarity, linkedinPartnerId } = ANALYTICS;
       document.head.appendChild(li);
     }
   }
-  window.__initAnalytics = loadAnalytics;
+  // CookieBanner calls this on Accept, and — for visitors outside the
+  // consent-required regions — as soon as its country lookup returns, which on
+  // a first visit is well before the page has finished loading. Routing both
+  // through schedule() keeps that ~450 KiB of tag scripts out of the initial
+  // load (and out of the load event the first-visit splash waits on).
+  window.__initAnalytics = function () { schedule(loadAnalytics); };
   // Held back until the page has finished its own loading work. GTM pulls in
   // GA4, Clarity and gtag on top of itself (~450 KiB of script), and starting
   // that during the hero's paint competes with the LCP image for bandwidth and

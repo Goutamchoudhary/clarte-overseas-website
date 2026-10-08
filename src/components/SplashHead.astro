@@ -39,23 +39,11 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
    the same vertical axis. */
 /* 114px box → the icon itself is ~110px tall (the square viewBox leaves a little air around the artwork) */
 #cs .cs-mark { position: absolute; left: 50%; top: 50%; width: 114px; height: 114px; margin: -57px 0 0 -57px; overflow: visible; }
-#cs .cs-text { position: absolute; left: 0; right: 0; top: calc(50% + 57px + 18px); text-align: center; }
-#cs .cs-title {
-  font: 600 20px/1.2 Sora, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  letter-spacing: .06em; color: #1f4693;
-  padding-left: .06em; /* letter-spacing trails the last glyph; balance it so the word is truly centred */
-}
-#cs .cs-cap {
-  display: grid; margin-top: 10px;
-  font: 500 11px/1.4 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  letter-spacing: .16em; text-transform: uppercase; color: #6b7280;
-}
-#cs .cs-cap span { grid-area: 1 / 1; padding-left: .16em; opacity: 0; }
-#cs .cs-cap span:last-child { opacity: 1; }
+/* Wordmark artwork, cropped tight to its ink, so its box centre is its visual centre. */
+#cs .cs-word { position: absolute; left: 50%; top: calc(50% + 57px + 20px); width: 230px; height: auto; margin-left: -115px; }
 @media (max-width: 640px) {
   #cs .cs-mark { width: 93px; height: 93px; margin: -46.5px 0 0 -46.5px; }
-  #cs .cs-text { top: calc(50% + 46.5px + 14px); }
-  #cs .cs-title { font-size: 17px; }
+  #cs .cs-word { top: calc(50% + 46.5px + 16px); width: 190px; margin-left: -95px; }
 }
 
 /* ---- "Harvest sets sail" — transform and opacity only (plus the wave's
@@ -71,12 +59,7 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 #cs .cs-bar-final { animation-name: cs-rise-final; } /* the final beat — Splash.astro listens for its animationend */
 #cs .cs-smoke { animation: cs-fade .5s ease-out 1.2s backwards; }
 #cs .cs-drift { animation: cs-drift 1.6s ease-in-out 1.2s infinite alternate; }
-#cs .cs-text { animation: cs-text .6s cubic-bezier(.22,1,.36,1) .4s backwards; }
-#cs .cs-cap span { animation: cs-cap .55s linear calc(.5s + var(--n) * 450ms) backwards; }
-#cs .cs-cap span:nth-child(1) { --n: 0; }
-#cs .cs-cap span:nth-child(2) { --n: 1; }
-#cs .cs-cap span:nth-child(3) { --n: 2; }
-#cs .cs-cap span:last-child { animation: cs-fade .25s ease-out 1.85s backwards; }
+#cs .cs-word { animation: cs-text .6s cubic-bezier(.22,1,.36,1) .4s backwards; }
 
 @keyframes cs-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 @keyframes cs-glide { 0% { opacity: 0; transform: translateX(-62px); } 45% { opacity: 1; } 100% { opacity: 1; transform: none; } }
@@ -87,7 +70,6 @@ html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 @keyframes cs-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes cs-drift { from { transform: none; } to { transform: translateY(-8px); } }
 @keyframes cs-text { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-@keyframes cs-cap { 0% { opacity: 0; } 22% { opacity: 1; } 78% { opacity: 1; } 100% { opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
   #cs *, #cs *::before { animation: none !important; }

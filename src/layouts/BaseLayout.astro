@@ -100,9 +100,32 @@ const orgSchema = {
 
     <slot name="head" />
     <Analytics />
-    <!-- Instantly (Leadsy) website-visitor identification pixel — async, no
-         render-blocking impact. -->
-    <script id="vtag-ai-js" is:inline async src="https://r2.leadsy.ai/tag.js" data-pid="6vZuTdMWjDA7rrrb" data-version="062024"></script>
+    <!-- Third-party widgets: Instantly (Leadsy) visitor identification and
+         Calendly's popup script + stylesheet. Injected after window "load" rather than as
+         async tags: an async script still holds the load event open, so these
+         hosts (Leadsy has taken 15s+) were deciding when the page counted as
+         loaded — and the first-visit splash waits on that event. Nothing on
+         the page needs them before load: a booking click that beats Calendly
+         simply follows the plain calendly.com link. -->
+    <script is:inline define:vars={{ calendly: !!CONTACT.calendlyUrl }}>
+      window.addEventListener("load", function () {
+        function add(src, attrs) {
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = src;
+          for (var k in attrs || {}) s.setAttribute(k, attrs[k]);
+          document.head.appendChild(s);
+        }
+        add("https://r2.leadsy.ai/tag.js", { id: "vtag-ai-js", "data-pid": "6vZuTdMWjDA7rrrb", "data-version": "062024" });
+        if (calendly) {
+          var l = document.createElement("link");
+          l.rel = "stylesheet";
+          l.href = "https://assets.calendly.com/assets/external/widget.css";
+          document.head.appendChild(l);
+          add("https://assets.calendly.com/assets/external/widget.js");
+        }
+      }, { once: true });
+    </script>
     <!-- defer: i18n.js only needs the DOM to exist (it already waits for
          DOMContentLoaded internally) — it doesn't need to block HTML
          parsing. Blocking here was pushing the page's own Tailwind
@@ -110,24 +133,6 @@ const orgSchema = {
          slow connections were seeing as an unstyled flash (oversized logo,
          broken nav) for several seconds before everything caught up. -->
     <script is:inline defer src={`/js/i18n.js?v=${__ASSET_V__}`}></script>
-    {CONTACT.calendlyUrl && (
-      <>
-        <!-- Calendly's popup CSS is only needed if someone actually opens
-             that widget — it's never part of the initial page, so it
-             shouldn't block first paint on every page load. The
-             media="print" swap is the standard no-JS-framework way to load
-             a stylesheet without it blocking rendering. -->
-        <link rel="preconnect" href="https://assets.calendly.com" />
-        <link
-          rel="stylesheet"
-          href="https://assets.calendly.com/assets/external/widget.css"
-          media="print"
-          onload="this.media='all'"
-        />
-        <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" /></noscript>
-        <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      </>
-    )}
   </head>
 
   <body class="font-body">
