@@ -88,6 +88,20 @@ const partnerCerts = [
          top edge is ragged, sitting over the foot of the photo. -->
     <div class="torn-edge torn-edge--cream" aria-hidden="true"></div>
   </section>
+  <!-- Place the fixed hero photo before the page's first paint. home-fx.js
+       (deferred) keeps --hero-top/--hero-h in sync afterwards, but it runs
+       after parsing finishes; any frame painted before that laid the photo out
+       at the CSS fallback (top: 0) and then jumped it into place — a layout
+       shift. The site stylesheet has already applied by this point (see
+       BaseLayout), so these measurements are the real ones. -->
+  <script is:inline>
+    (function () {
+      var h = document.getElementById("home");
+      if (!h) return;
+      h.style.setProperty("--hero-top", h.offsetTop + "px");
+      h.style.setProperty("--hero-h", h.offsetHeight + "px");
+    })();
+  </script>
 
 
   <!-- =====================================================================
