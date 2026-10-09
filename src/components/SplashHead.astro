@@ -42,15 +42,16 @@ html[data-booted] #cs .cs-veil { opacity: 0; }
 html[data-booted] #cs .cs-stage { opacity: 0; transform: scale(1.05); }
 
 /* Stacked lockup: icon (~77px tall in an 80px box — the square viewBox leaves
-   a little air), a 14px gap, then the wordmark at 1.75x the icon's width.
-   The GROUP is centred on the screen: the icon is lifted by half of
-   (gap + wordmark height) = (14 + 13.2) / 2 = 13.6px. Phones scale the same
-   proportions down. */
-#cs .cs-mark { position: absolute; left: 50%; top: calc(50% - 13.6px); width: 80px; height: 80px; margin: -40px 0 0 -40px; overflow: visible; }
-#cs .cs-word { position: absolute; left: 50%; top: calc(50% + 39px); width: 138px; height: 13.2px; margin-left: -69px; overflow: visible; }
+   a little air), a 14px gap, then the wordmark at 2.5x the icon's width.
+   The GROUP is centred on 47% of the viewport height — a touch above true
+   centre, where the eye reads "middle". Icon centre = group centre − 16.35px
+   (half of 77.2 + 14 + 18.7, minus the icon's own half-height); wordmark top =
+   group centre + 36.3px. Phones scale the same proportions down. */
+#cs .cs-mark { position: absolute; left: 50%; top: calc(47% - 16.35px); width: 80px; height: 80px; margin: -40px 0 0 -40px; overflow: visible; }
+#cs .cs-word { position: absolute; left: 50%; top: calc(47% + 36.3px); width: 196px; height: 18.7px; margin-left: -98px; overflow: visible; }
 @media (max-width: 640px) {
-  #cs .cs-mark { top: calc(50% - 10.8px); width: 65px; height: 65px; margin: -32.5px 0 0 -32.5px; }
-  #cs .cs-word { top: calc(50% + 31.6px); width: 112px; height: 10.7px; margin-left: -56px; }
+  #cs .cs-mark { top: calc(47% - 13.13px); width: 65px; height: 65px; margin: -32.5px 0 0 -32.5px; }
+  #cs .cs-word { top: calc(47% + 29.25px); width: 160px; height: 15.26px; margin-left: -80px; }
 }
 
 /* ---- "Harvest sets sail" — transform and opacity only (plus the wave's
