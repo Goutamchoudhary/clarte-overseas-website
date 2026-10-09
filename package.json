@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "node scripts/minify-css.mjs && node scripts/fix-vercel-runtime.mjs",
+    "postbuild": "node scripts/minify-css.mjs && node scripts/fix-vercel-runtime.mjs && node scripts/defer-site-css.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "specs": "node --experimental-strip-types scripts/gen-spec-sheets.ts"

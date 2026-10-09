@@ -94,9 +94,10 @@ const orgSchema = {
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- Fetched from the head (preload, top priority) but APPLIED in <body>,
-         just after the splash — see the note there. -->
-    <link rel="preload" as="style" href={`/css/styles.css?v=${__ASSET_V__}`} />
+    <!-- In production this link (and Astro's inlined styles that follow it)
+         is moved to just after the splash by scripts/defer-site-css.mjs, so the
+         splash can paint before this file arrives. Source and dev keep it here. -->
+    <link rel="stylesheet" href={`/css/styles.css?v=${__ASSET_V__}`} />
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchema)} />
 
@@ -139,16 +140,7 @@ const orgSchema = {
 
   <body class="font-body">
     <Splash />
-    <!-- The site stylesheet lives here, after the splash, not in <head>. A head
-         stylesheet blocks the first paint of the WHOLE page — splash included —
-         so on a slow connection visitors stared at a blank white screen until
-         this file arrived (~2s on slow 3G). Here, the splash (styled by the
-         inline CSS in SplashHead) paints as soon as the HTML lands, and the
-         empty script below holds the parser until styles.css has applied, so
-         nothing after this point can ever paint unstyled — in every browser
-         (Firefox needs the script; Chrome/Safari already wait). -->
-    <link rel="stylesheet" href={`/css/styles.css?v=${__ASSET_V__}`} />
-    <script is:inline> </script>
+    <!--clarte:site-css-->
     {ANALYTICS.gtm && (
       <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${ANALYTICS.gtm}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
     )}
