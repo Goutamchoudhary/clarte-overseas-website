@@ -85,23 +85,100 @@ or flashing on every subsequent page view on a multi-page site.
   spec-sheet serverless function responds (confirms the Node 24 runtime
   stamp deployed correctly, not just locally).
 
+## Verification results (26 Oct 2026, commit `f772189`)
+
+Run with `scripts/verify-splash.mjs` (headless Chrome over CDP, fresh
+profile per run, third-party trackers blocked). "Local" = production build
+served uncompressed by `python3 -m http.server` from `.vercel/output/static`;
+"live" = https://www.clarteoverseas.com/ (real CDN + compression).
+
+**Splash marks (ms from navigation start)**
+
+| Run | `page-loaded` | `logo-finished` | `exit-start` | Splash on screen after logo done |
+|---|---|---|---|---|
+| Live, desktop, no throttle | 547 | 2133 | 2133 | 0 |
+| Live, desktop, 4x CPU + slow 4G | ~6210 | ~2120 | ~6215 | **~4.1 s** |
+| Live, 375px, 4x CPU + slow 4G | ~4750 | ~2130 | ~4755 | **~2.6 s** |
+| Live, 375px, 4x CPU + slow 3G | never (< 15 s) | ~2500 | ~15780 (backstop) | **~13 s** |
+
+Unthrottled, the logo animation (≈2.1 s) is the long pole, as designed.
+Throttled, `load` is — and on slow 3G the 15s backstop is what ends it.
+
+**Why `load` is late:** `public/js/script.js` preloads every `.img-ph` photo
+(8 category cards + the industries image) with `new Image()` at
+DOMContentLoaded, and `buildWorldMap()` does the same for the 96 KB world
+map. None are lazy, so ~400 KB of below-the-fold imagery must finish before
+`load` fires (≈846 KB total transfers before `load` on the live home page).
+Fix proposed, not yet applied: append each `<img>` to its placeholder
+immediately with `loading="lazy"` (the CSS already keeps it absolutely
+positioned at `opacity:0` until `.loaded`), same for `.map-img`. Lazy
+images outside the viewport don't hold `load`, so the splash would exit
+close to the end of the logo even on slow connections.
+
+**Frame gaps (rAF), crossfade window = exit-start −100 ms … +800 ms**
+
+| Run | Max gap | Gaps > 33.4 ms |
+|---|---|---|
+| Live, desktop, no throttle | 16.8 ms | 0 |
+| Live, desktop, 4x CPU + slow 4G | 33.3 ms | 0 |
+| Live, 375px, 4x CPU + slow 4G | 33.4 ms | 0–1 (at the threshold) |
+| Live, 375px, 4x CPU + slow 3G | 33.3 ms | 0 |
+| Local, desktop, 4x CPU + slow 4G | 50–250 ms | 1–2 |
+
+The crossfade holds ~30 fps on a 4x-throttled CPU against the live site.
+The local-desktop gaps coincide with the late `load` work on an uncompressed
+server and didn't reproduce live. During the *logo* animation (before
+exit) there are 5–7 gaps > 33 ms under 4x CPU (up to ~130–300 ms) — page
+parsing/scripts competing with the animation on a slow CPU; not seen
+unthrottled.
+
+**Lighthouse, home page, median of 3 (local production builds;
+"before" = `8f8a020`, the last commit without the splash)**
+
+| | Score | FCP | LCP | TBT | CLS | Speed Index |
+|---|---|---|---|---|---|---|
+| Desktop before | 97 | 684 | 1227 | 0 | 0.011 | 765 |
+| Desktop after | 96 | 445 | 1150 | 0 | 0.011 | **1575** |
+| Mobile before | 71 | 3454 | 5528 | 128 | 0.013 | 3454 |
+| Mobile after | 73 | 3454 | 4810 | 0 | 0.010 | **4624** |
+
+LCP/TBT/CLS are unchanged or better. Caveat: the LCP element (the hero
+`h1`) paints *under* the opaque splash, so LCP doesn't capture the delay a
+visitor actually sees — **Speed Index does, and it regressed** (desktop
++0.8 s, mobile +1.2 s). Absolute mobile numbers are inflated by the
+uncompressed local server; the before/after delta is the meaningful part.
+"Before" also predates the third-party/PageSpeed changes in this same
+stretch, so it isn't a splash-only comparison.
+
+**Centring (on-screen ink bounds, reduced motion = resting state)**
+
+| Viewport | Icon centre − 50% vw | Wordmark centre − 50% vw | Group centre − 47% vh | Icon→word gap |
+|---|---|---|---|---|
+| 1366×768 | +0.01 px | +0.03 px | 0.00 px | 14.00 px |
+| 1920×1080 | +0.01 px | +0.03 px | 0.00 px | 14.00 px |
+| 375×812 | +0.01 px | +0.02 px | −0.02 px | 10.98 px |
+| 390×844 | +0.01 px | +0.02 px | −0.01 px | 10.98 px |
+
+The hand-computed offsets in `SplashHead.astro` are exact. Ink sizes match
+the comments (icon 77.2 px tall, wordmark 196 × 18.7 px desktop; 62.8 px /
+160 × 15.3 px on phones).
+
+**Screenshots:** captured (midway, logo drawn, after) at 1366×768 and
+375×812; all as intended. The "mid-crossfade" capture can't be caught
+reliably — Splash.astro's 650 ms timer sets `data-boot-gone`
+(`display:none`) regardless of how far the fade has got, so slowing CSS
+animations for the screenshot doesn't slow the exit. Frame timing covers
+the crossfade instead. Re-capture with `node scripts/verify-splash.mjs
+<url> shots <dir>`.
+
 ## What's left
 
-- [ ] **Run the actual verification the original spec asked for** — this
-      was never completed/recorded in this session:
-  - [ ] `performance.mark()` timings for `splash:logo-finished`,
-        `splash:page-loaded`, `splash:exit-start` on a fresh session,
-        reported back (the marks exist in the code — just needs capturing).
-  - [ ] `requestAnimationFrame` timestamp recording through the exit
-        crossfade, confirming no frame gap > 33ms.
-  - [ ] Lighthouse on the home page, before/after, confirming LCP/CLS/TBT
-        are unchanged by the splash.
-  - [ ] Screenshots: animation midway, logo fully drawn, mid-crossfade,
-        page after.
-  - [ ] Centring measurements (icon/wordmark centres) at desktop and 375px
-        — the current offsets (`#cs .cs-mark` / `#cs .cs-word` top values in
-        `SplashHead.astro`) are computed from the icon's own path bounds by
-        hand/math, not confirmed by an on-page measurement.
+- [ ] **Stop below-the-fold images holding `load`** (see "Why `load` is
+      late" above) — the splash currently sits on a finished logo for
+      2.6–4 s on slow 4G and ~13 s on slow 3G.
+- [ ] Consider whether the 15s backstop should be shorter (e.g. ~6–8 s
+      after the logo finishes) once the image fix lands and slow-3G timings
+      are re-measured.
 - [ ] Decide whether `scripts/fix-vercel-runtime.mjs` can be retired once/if
       `@astrojs/vercel` is upgraded past the Astro-4-compatible 7.x line (it
       currently only knows Node 18/20 — see Known bugs below).
@@ -138,11 +215,11 @@ or flashing on every subsequent page view on a multi-page site.
   runtimes again, or if the adapter is upgraded, this script may need
   updating or removing — check `.vc-config.json` in the build output if a
   deploy fails with a runtime error again.
-- **The 15s backstop is unverified under real slow-network conditions.** If
-  a visitor's `load` event genuinely takes longer than 15s, the splash will
-  force an exit while the page is still mid-load, revealing a part-loaded
-  page underneath. Not expected to be common (most blocking work finishes
-  well under this), but not load-tested either.
+- **The 15s backstop does fire on slow 3G** (measured Oct 2026 against the
+  live site, 375px + 4x CPU): `load` hadn't fired by 15 s, so the splash
+  forced its exit at ~15.8 s and revealed a still-loading page. See
+  "Verification results" — the cause is eagerly preloaded below-the-fold
+  images, not anything the visitor needs up front.
 - **Refresh always replays the splash by design** — if someone reports
   "the splash shows every time I reload," that's intentional, not a bug.
   Only `sessionStorage` + non-reload navigations suppress it.
@@ -168,5 +245,6 @@ or flashing on every subsequent page view on a multi-page site.
 | `scripts/defer-site-css.mjs` | **New.** Postbuild step: moves `styles.css` + the Astro `<style>` blocks that followed it (in original order) to just after the splash, so the splash paints first without breaking cascade order. |
 | `scripts/fix-vercel-runtime.mjs` | **New.** Postbuild step: rewrites each Vercel function's `.vc-config.json` to the Node major version the build ran on (needed once Vercel stopped accepting Node 20 builds and the adapter's own default runtime was retired). |
 | `package.json` | `engines.node: "24.x"`; `postbuild` now chains three scripts in order. |
+| `scripts/verify-splash.mjs` | Verification harness (CDP, no deps): marks, frame gaps, centring, screenshots, with CPU/network throttling. Not part of the build. |
 | `public/assets/logo/wordmark.png` | **Deleted** mid-session — replaced by an inline vector wordmark in `Splash.astro`. If you see references to it anywhere, they're stale. |
 | `/favicon.svg` | Source of truth for the icon's path data; the splash's SVG paths were copied/regrouped from here, not generated — if the favicon's artwork changes, the splash will drift out of sync and needs re-copying by hand. |
