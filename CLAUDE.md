@@ -6,6 +6,9 @@ that area).
 
 ## Build
 
+- Local machine (macOS) uses **nvm**; Node 24 is installed. Shell state
+  doesn't persist between commands, so prefix with
+  `source ~/.nvm/nvm.sh && nvm use 24 &&`.
 - Build on **Node 24** (`engines.node` in `package.json` is pinned to
   `24.x` because Vercel stopped accepting Node 20 builds). If a Vercel
   deploy fails with a runtime error, check
@@ -30,12 +33,17 @@ that area).
 
 ## Static assets (CSS/JS)
 
-- `public/css/styles.css`, `public/fonts/fonts.css`, and `public/js/{script,i18n,home-fx}.js`
-  are served with a **content-hash query param** (`?v=...`, computed in
+- `public/css/styles.css` and `public/js/{script,i18n,home-fx}.js` are
+  served with a **content-hash query param** (`?v=...`, computed in
   `astro.config.mjs` as `__ASSET_V__`) and cached `immutable` for a year.
   Editing one of these files is enough — the hash (and therefore the URL)
   changes automatically on the next build. You do not need to rename files
   to bust the cache for *these* assets.
+- `public/fonts/fonts.css` is **not** linked — `BaseLayout.astro` inlines it
+  into every page (`?raw` import → `<style is:inline>`), so edits ship with
+  the HTML. It's still part of the `__ASSET_V__` hash input, so editing it
+  also re-versions the files above (harmless). The `.woff2` files it points
+  to are cached `immutable` with no versioning — same rule as images below.
 - Images under `public/assets/img/` are also served `immutable` for a year,
   but have **no** content-hash versioning. If you overwrite an existing
   image file in place (same filename, new content), visitors who already
@@ -69,8 +77,17 @@ that area).
   category's products). Output goes to `spec-pdfs/` (git-tracked, **not**
   inside `public/` — served only via the gated `/api/spec-sheet` function so
   the PDFs have no guessable public URL).
-- Needs Node 22 locally for the `--experimental-strip-types` flag this
-  script uses — separate from the Node 24 the *build* now targets.
+- Runs on Node 24 (same as the build) or Node 22; both give byte-identical
+  output. Locally: `nvm use 24`.
+- Output is **deterministic**: the footer's "Issued <month>" and the PDF
+  `CreationDate` both come from the fixed `ISSUE_DATE` constant in the
+  script, not the clock. Re-running only changes sheets whose data changed.
+  When specs are genuinely revised, bump `ISSUE_DATE` (and the "Rev" in the
+  footer) deliberately.
+- The generator **never deletes** PDFs. When you remove a product from
+  `src/data/products.ts`, delete `spec-pdfs/<slug>-spec-sheet.pdf` by hand —
+  otherwise it stays bundled into the serverless function as dead weight
+  (the API's slug allowlist already refuses to serve it).
 
 ## Git / workflow
 

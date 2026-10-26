@@ -5,7 +5,8 @@
 //
 // Reads product data (src/data/products.ts) + technical specs (src/data/specs.ts)
 // and writes one branded, product-specific PDF per product into
-// public/assets/specs/<slug>-spec-sheet.pdf.
+// spec-pdfs/<slug>-spec-sheet.pdf (private — see OUT_DIR below). It never
+// deletes old files: when a product is removed, delete its PDF by hand.
 //
 // Pure Node + pdfkit (+ resvg for one logo raster) — no headless browser, no
 // network. Safe to re-run any time the catalogue or specs change; output is
@@ -67,7 +68,11 @@ const M = { top: 40, bottom: 62, left: 44, right: 44 };
 const CW = PAGE.w - M.left - M.right; // content width
 const BOTTOM_LIMIT = PAGE.h - M.bottom;
 
-const ISSUE = new Date().toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+// Printed in every footer ("Issued <month> · Rev 1"). Fixed rather than taken
+// from the clock, so re-running the generator doesn't silently re-date sheets
+// whose specs haven't changed. Bump it (and the Rev) when the specs are revised.
+const ISSUE_DATE = new Date("2026-09-01T00:00:00Z");
+const ISSUE = ISSUE_DATE.toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
 
 // pdfkit's built-in Helvetica is WinAnsi-encoded — it has no glyph for the
 // Unicode math operators (≤ U+2264 / ≥ U+2265) or subscript digits (SO₂).
@@ -245,6 +250,9 @@ function buildProduct(slug: string) {
       Author: CO.name,
       Subject: `Technical data sheet for ${p.name} (HSN ${p.hsn})`,
       Keywords: `${p.name}, ${cat.name}, spec sheet, dehydrated, powder, export, Clarté Overseas`,
+      // pdfkit stamps "now" by default, which rewrites every PDF on each run
+      // even when nothing changed. A fixed date keeps unchanged sheets byte-identical.
+      CreationDate: ISSUE_DATE,
     },
   });
 
