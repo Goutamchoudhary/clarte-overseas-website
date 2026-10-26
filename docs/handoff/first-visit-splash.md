@@ -179,9 +179,9 @@ the crossfade instead. Re-capture with `node scripts/verify-splash.mjs
 - [ ] Consider whether the 15s backstop should be shorter (e.g. ~6–8 s
       after the logo finishes) once the image fix lands and slow-3G timings
       are re-measured.
-- [ ] Decide whether `scripts/fix-vercel-runtime.mjs` can be retired once/if
-      `@astrojs/vercel` is upgraded past the Astro-4-compatible 7.x line (it
-      currently only knows Node 18/20 — see Known bugs below).
+- [ ] Retire `scripts/fix-vercel-runtime.mjs` via the Astro 5 + adapter
+      9.0.5 upgrade — scoped and trial-built, see
+      [astro-5-upgrade.md](astro-5-upgrade.md).
 - [ ] If the i18n system should translate the splash caption text (the
       original spec mentioned this as optional) — currently English-only,
       not wired to `/js/i18n.js`.

@@ -15,7 +15,12 @@ that area).
   `.vercel/output/functions/*.func/.vc-config.json` — see
   `scripts/fix-vercel-runtime.mjs` and
   [docs/handoff/first-visit-splash.md](docs/handoff/first-visit-splash.md)
-  for why that script exists and when it can be retired.
+  for why that script exists. The upgrade that retires it (Astro 5 +
+  `@astrojs/vercel` 9.0.5) is scoped in
+  [docs/handoff/astro-5-upgrade.md](docs/handoff/astro-5-upgrade.md).
+- To check splash/load-timing changes, use `scripts/verify-splash.mjs`
+  against a production build (`.claude/launch.json` → `prod-static`
+  serves `.vercel/output/static` on port 4330) or the live site.
 - `postbuild` runs three scripts in a specific order (`minify-css.mjs` →
   `fix-vercel-runtime.mjs` → `defer-site-css.mjs`). Don't reorder them —
   `defer-site-css.mjs` operates on the already-built HTML output.
