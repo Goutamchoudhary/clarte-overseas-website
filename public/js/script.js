@@ -177,16 +177,19 @@ document.addEventListener("DOMContentLoaded", () => {
     span.textContent = emoji;
     ph.appendChild(span);
 
+    // In the DOM from the start (hidden by CSS until .loaded) so loading="lazy"
+    // applies: below-the-fold photos then don't hold window "load" open, which
+    // the first-visit splash waits on.
     const src = ph.dataset.img;
     if (src) {
       const img = new Image();
       img.alt = "";
-      img.onload = () => {
-        ph.appendChild(img);
-        requestAnimationFrame(() => img.classList.add("loaded"));
-      };
-      img.onerror = () => {}; // keep gradient + emoji
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.onload = () => requestAnimationFrame(() => img.classList.add("loaded"));
+      img.onerror = () => img.remove(); // keep gradient + emoji
       img.src = src;
+      ph.appendChild(img);
     }
   });
 
@@ -275,6 +278,8 @@ function buildWorldMap() {
   const base = new Image();
   base.alt = "World map";
   base.className = "map-img";
+  base.loading = "lazy"; // far below the fold — don't hold window "load"
+  base.decoding = "async";
   base.onload = () => base.classList.add("loaded");
   base.src = "/assets/img/misc/world-map.webp";
   host.appendChild(base);

@@ -136,4 +136,4 @@ if (shots.length) out2.shots = shots;
 console.log(JSON.stringify(out2));
 ws.close(); chrome.kill();
 await sleep(500);
-fs.rmSync(prof, { recursive: true, force: true });
+fs.rmSync(prof, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });

@@ -109,11 +109,34 @@ Throttled, `load` is — and on slow 3G the 15s backstop is what ends it.
 DOMContentLoaded, and `buildWorldMap()` does the same for the 96 KB world
 map. None are lazy, so ~400 KB of below-the-fold imagery must finish before
 `load` fires (≈846 KB total transfers before `load` on the live home page).
-Fix proposed, not yet applied: append each `<img>` to its placeholder
-immediately with `loading="lazy"` (the CSS already keeps it absolutely
-positioned at `opacity:0` until `.loaded`), same for `.map-img`. Lazy
-images outside the viewport don't hold `load`, so the splash would exit
-close to the end of the logo even on slow connections.
+**Fixed (26 Oct 2026):** each `.img-ph` `<img>` is now appended to its
+placeholder immediately with `loading="lazy"` + `decoding="async"` (the
+CSS already keeps it absolutely positioned at `opacity:0` until
+`.loaded`; on error it's removed so the gradient + emoji stay), and
+`.map-img` is lazy too. Verified on a production build: none of the 10
+images is requested before `load` any more, and all 10 load and fade in
+when scrolled to. Results below under "After the lazy-image fix".
+
+**After the lazy-image fix** (local production build, uncompressed
+server — so compare against the *local* "before", not the live table
+above; the live site isn't deployed with the fix yet)
+
+| Run (local) | `load` before → after | Splash lingers after logo, before → after |
+|---|---|---|
+| Desktop, no throttle | ~130 → 173 ms | 0 → 0 |
+| Desktop, 4x CPU + slow 4G | ~7495 → ~6195 ms | ~5.4 s → **~4.1 s** |
+| 375px, 4x CPU + slow 4G | ~6013 → ~4210 ms | ~3.9 s → **~2.1 s** |
+| 375px, 4x CPU + slow 3G | never (< 15 s, backstop) → ~15690 ms | ~13.5 s → **~13.0 s** |
+
+The fix takes ~1.3–1.8 s off `load` on slow 4G, and on slow 3G `load` now
+fires on its own (just after the backstop would have). It does **not**
+make the splash leave at the end of the logo on slow networks. What still
+holds `load` is above-the-fold, genuinely needed content: the hero image
+(106 KB), five font files (~245 KB), `styles.css`, and GSAP +
+ScrollTrigger + Lenis (~128 KB uncompressed) — ~630 KB uncompressed
+before `load`, down from ~1 MB. Crossfade frame gaps are unchanged by the
+fix (desktop-throttled 50 ms locally, ~33 ms on phones; live was ~33 ms
+everywhere).
 
 **Frame gaps (rAF), crossfade window = exit-start −100 ms … +800 ms**
 
@@ -173,12 +196,19 @@ the crossfade instead. Re-capture with `node scripts/verify-splash.mjs
 
 ## What's left
 
-- [ ] **Stop below-the-fold images holding `load`** (see "Why `load` is
-      late" above) — the splash currently sits on a finished logo for
-      2.6–4 s on slow 4G and ~13 s on slow 3G.
-- [ ] Consider whether the 15s backstop should be shorter (e.g. ~6–8 s
-      after the logo finishes) once the image fix lands and slow-3G timings
-      are re-measured.
+- [x] Stop below-the-fold images holding `load` — done (lazy-image fix,
+      see "After the lazy-image fix").
+- [ ] **Re-measure on the live site** once the fix is deployed (same
+      `verify-splash.mjs` runs as the live table above).
+- [ ] **The splash still waits ~2–4 s after the logo on slow 4G, ~13 s on
+      slow 3G.** Remaining `load` blockers are needed content (hero, fonts,
+      CSS, GSAP/ScrollTrigger/Lenis). Options, none applied: (a) exit on
+      "logo done + hero image decoded + `document.fonts.ready`" instead of
+      full `load`; (b) load GSAP/ScrollTrigger/Lenis after `load` (they
+      only drive entrance/scroll effects that already wait for the splash);
+      (c) shorten the backstop to a fixed time after the logo finishes
+      (e.g. 4–6 s). (a) or (b) is the real fix; (c) only caps the worst
+      case.
 - [ ] Retire `scripts/fix-vercel-runtime.mjs` via the Astro 5 + adapter
       9.0.5 upgrade — scoped and trial-built, see
       [astro-5-upgrade.md](astro-5-upgrade.md).
@@ -240,7 +270,7 @@ the crossfade instead. Re-capture with `node scripts/verify-splash.mjs
 | `src/components/SplashHead.astro` | Session-check script (must run first in `<head>`) + all splash CSS/keyframes/positioning, inlined. |
 | `src/layouts/BaseLayout.astro` | Wires both halves into every page; moved third-party widget loading (Leadsy/Calendly) to after `window.load`; holds the `<!--clarte:site-css-->` marker. |
 | `public/js/home-fx.js` | Holds Lenis + the GSAP global timeline paused while `window.__splashActive`; resumes via `window.onSplashExit()`. |
-| `public/js/script.js` | `.reveal` intersection-observer entrances wait on `window.onSplashExit()`. |
+| `public/js/script.js` | `.reveal` intersection-observer entrances wait on `window.onSplashExit()`. Homepage `.img-ph` photos and the world map load `loading="lazy"` so they don't hold `load` (which the splash waits on) — keep them lazy. |
 | `src/components/Analytics.astro` | Unchanged in intent this session, but documented/confirmed as already keeping GTM/GA4/Clarity off the critical path (relevant because the splash also now depends on `load` timing). |
 | `scripts/defer-site-css.mjs` | **New.** Postbuild step: moves `styles.css` + the Astro `<style>` blocks that followed it (in original order) to just after the splash, so the splash paints first without breaking cascade order. |
 | `scripts/fix-vercel-runtime.mjs` | **New.** Postbuild step: rewrites each Vercel function's `.vc-config.json` to the Node major version the build ran on (needed once Vercel stopped accepting Node 20 builds and the adapter's own default runtime was retired). |
