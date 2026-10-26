@@ -3,9 +3,15 @@
   "configurations": [
     {
       "name": "astro",
-      "runtimeExecutable": "/Users/gautamchoudhary/.nvm/versions/node/v22.22.0/bin/node",
+      "runtimeExecutable": "/Users/gautamchoudhary/.nvm/versions/node/v24.22.1/bin/node",
       "runtimeArgs": ["node_modules/astro/astro.js", "dev", "--port", "4321"],
       "port": 4321
+    },
+    {
+      "name": "prod-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4330", "--bind", "127.0.0.1", "--directory", ".vercel/output/static"],
+      "port": 4330
     }
   ]
 }
