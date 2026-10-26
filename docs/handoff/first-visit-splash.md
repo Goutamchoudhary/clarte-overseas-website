@@ -22,9 +22,25 @@ or flashing on every subsequent page view on a multi-page site.
   needs no extra request.
 - **Exit condition is "last of two wins, no fixed delay":** the tallest
   growth bar's CSS animation (`cs-rise-final`) firing `animationend`, AND
-  `window.load`. Whichever finishes last triggers the exit immediately. A
-  15s `setTimeout` backstop guarantees it always leaves even if something
-  hangs.
+  the page being **ready** (mark `splash:page-ready`). Whichever finishes
+  last triggers the exit immediately. A 15s `setTimeout` backstop
+  guarantees it always leaves even if something hangs.
+  - *Ready* (since 26 Oct 2026; was `window.load` before): DOM parsed (so
+    deferred scripts — GSAP, Lenis, home-fx, i18n — have run), the
+    `/css/styles.css` link has its sheet, every `img[data-splash-hero]` is
+    loaded and `decode()`d, and `document.fonts.ready` has resolved. Each
+    step swallows errors, so a broken image or missing API skips that
+    condition rather than holding the splash. `splash:page-loaded` is still
+    marked on `load` for comparison but no longer gates anything.
+  - **`img.decode()` is capped at 300 ms after the image loads.** Uncapped,
+    it never settled in a page that isn't being painted (seen in the
+    desktop app's hidden browser pane; same for background tabs), which
+    left the splash up until the 15s backstop. Don't remove the cap.
+  - `data-splash-hero` is on the homepage hero photo
+    (`src/pages/index.astro`) and the product photo
+    (`src/pages/products/[category]/[product].astro`). **Add it to any new
+    template's above-the-fold photo**; pages without one just skip that
+    condition.
 - **Exit is opacity/transform only** (scale to 1.05 + fade over 0.3s for the
   mark/text, a 0.55s veil fade with `cubic-bezier(.4,0,.2,1)`), so it stays
   smooth even while third-party scripts are busy on the main thread.
@@ -194,21 +210,66 @@ animations for the screenshot doesn't slow the exit. Frame timing covers
 the crossfade instead. Re-capture with `node scripts/verify-splash.mjs
 <url> shots <dir>`.
 
+**Ready-based exit** (26 Oct 2026; same local production build and runs,
+375px = 4x CPU; ms from navigation start, medians where repeated)
+
+| Page, network | DOMContentLoaded | `page-ready` | `load` | Exit | Lingers after logo |
+|---|---|---|---|---|---|
+| Home, desktop, no throttle | – | 312 | 314 | 2035 | 0 |
+| Home, desktop, slow 4G | – | ~6240 | ~6200 | ~6240 | ~4.1 s |
+| Home, 375px, slow 4G | 3672 | ~4210 | ~4230 | ~4210 | ~2.1 s |
+| Home, 375px, slow 3G | – | ~15760 | ~15730 | ~15760 | ~13.0 s |
+| Product (local image), 375px, slow 4G | 1955 | ~2900 | ~2870 | ~2900 | **~0.76 s** |
+| Product (local image), 375px, slow 3G | 9518 | 11283 | 11252 | 11284 | ~8.5 s |
+| Product (380 KB third-party image), 375px, slow 4G | 1912 | 4364 | 4341 | 4364 | ~2.2 s |
+| Contact (no hero image), 375px, slow 4G | – | 2534 | 2725 | 2534 | **~0.4 s** |
+
+**Result: the exit now waits on the right things, but `page-ready` lands
+within ~±50 ms of `load`, so on its own this barely shortens the splash.**
+The per-resource breakdown (`slowest` in `verify-splash.mjs` output) shows
+why: on every page the last thing to finish is a **web font**
+(`fraunces-var-latin.woff2` 66 KB, `fraunces-italic-var-latin.woff2`
+80 KB, `inter-400-6.woff2` 47 KB). The fonts aren't requested until
+`styles.css` has arrived and layout has run — ~1.7 s in on slow 4G, ~6.3 s
+on slow 3G — and they were also what held `load` open. Once they land,
+almost nothing else is outstanding, so ready ≈ load. (The Leadsy/Calendly
+rows at the very end are the post-`load` injections, blocked by the
+harness.) Crossfade frame gaps and CLS are unchanged (CLS 0–0.0125).
+
+Next lever: preload the first-screen fonts (see "What's left").
+
 ## What's left
 
 - [x] Stop below-the-fold images holding `load` — done (lazy-image fix,
       see "After the lazy-image fix").
 - [ ] **Re-measure on the live site** once the fix is deployed (same
       `verify-splash.mjs` runs as the live table above).
-- [ ] **The splash still waits ~2–4 s after the logo on slow 4G, ~13 s on
-      slow 3G.** Remaining `load` blockers are needed content (hero, fonts,
-      CSS, GSAP/ScrollTrigger/Lenis). Options, none applied: (a) exit on
-      "logo done + hero image decoded + `document.fonts.ready`" instead of
-      full `load`; (b) load GSAP/ScrollTrigger/Lenis after `load` (they
-      only drive entrance/scroll effects that already wait for the splash);
-      (c) shorten the backstop to a fixed time after the logo finishes
-      (e.g. 4–6 s). (a) or (b) is the real fix; (c) only caps the worst
-      case.
+- [x] Exit on "logo done + page ready" (hero decoded + fonts + CSS + DOM)
+      instead of full `load` — done; see "Ready-based exit" above. On its
+      own it gains almost nothing, because fonts were the real `load`
+      blocker too.
+- [ ] **Preload the first-screen fonts** — now the single biggest lever.
+      The woff2 files are only discovered after `styles.css` arrives and
+      layout runs (~1.7 s in on slow 4G, ~6.3 s on slow 3G), and
+      `document.fonts.ready` then waits for them. A
+      `<link rel="preload" as="font" type="font/woff2" crossorigin>` in
+      `<head>` for the files the first screen uses (Fraunces upright +
+      italic, Inter latin, Sora — check which subsets each page actually
+      requests) would start them at HTML parse instead. **Head change:**
+      verify against a real `npm run build` and check
+      `scripts/defer-site-css.mjs` still captures the stylesheet correctly
+      (CLAUDE.md). Preloading too many fonts competes with the hero image on
+      slow links, so keep it to what the first screen renders.
+- [ ] Two products (mango + one other in `src/data/products.ts`) use a
+      ~380 KB image from `lsmedia.linker-cdn.net`; it gates those product
+      pages' splash. Moving them to local `.webp` like the rest would fix
+      it.
+- [ ] Not tried: loading GSAP/ScrollTrigger/Lenis after `load` (they're
+      deferred, so they do gate "DOM parsed", but on the measured pages
+      fonts finished later than DOMContentLoaded anyway); shortening the
+      backstop to a fixed time after the logo (caps the slow-3G worst case,
+      ~13 s → e.g. 4–6 s, at the cost of revealing a page whose fonts
+      haven't arrived).
 - [ ] Retire `scripts/fix-vercel-runtime.mjs` via the Astro 5 + adapter
       9.0.5 upgrade — scoped and trial-built, see
       [astro-5-upgrade.md](astro-5-upgrade.md).

@@ -18,6 +18,12 @@ that area).
   for why that script exists. The upgrade that retires it (Astro 5 +
   `@astrojs/vercel` 9.0.5) is scoped in
   [docs/handoff/astro-5-upgrade.md](docs/handoff/astro-5-upgrade.md).
+- The first-visit splash exits once the logo has finished AND the page is
+  ready (CSS applied, fonts loaded, every `img[data-splash-hero]` decoded) —
+  not on `window.load`. Put `data-splash-hero` on the above-the-fold photo
+  of any new page template, and keep below-the-fold images
+  `loading="lazy"`. Details in
+  [docs/handoff/first-visit-splash.md](docs/handoff/first-visit-splash.md).
 - To check splash/load-timing changes, use `scripts/verify-splash.mjs`
   against a production build (`.claude/launch.json` → `prod-static`
   serves `.vercel/output/static` on port 4330) or the live site.

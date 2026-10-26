@@ -108,9 +108,10 @@ if (mode === "shots") {
   await sleep(1500);
 }
 
-const res = JSON.parse(await evaluate(`JSON.stringify({ marks: Object.fromEntries(performance.getEntriesByType("mark").filter(m=>m.name.startsWith("splash")).map(m=>[m.name, Math.round(m.startTime)])), frames: window.__frames, cls: window.__cls, lcp: Math.round(window.__lcp), fcp: Math.round((performance.getEntriesByName("first-contentful-paint")[0]||{}).startTime||0), load: Math.round(performance.getEntriesByType("navigation")[0].loadEventStart), centre: window.__centre })`));
+const res = JSON.parse(await evaluate(`JSON.stringify({ marks: Object.fromEntries(performance.getEntriesByType("mark").filter(m=>m.name.startsWith("splash")).map(m=>[m.name, Math.round(m.startTime)])), frames: window.__frames, cls: window.__cls, lcp: Math.round(window.__lcp), fcp: Math.round((performance.getEntriesByName("first-contentful-paint")[0]||{}).startTime||0), load: Math.round(performance.getEntriesByType("navigation")[0].loadEventStart), dcl: Math.round(performance.getEntriesByType("navigation")[0].domContentLoadedEventEnd), res: performance.getEntriesByType("resource").filter(e => /\\.(css|woff2|js)(\\?|$)|hero|pd-img|\\/products\\//.test(e.name) && !/_vercel/.test(e.name)).map(e => [e.name.replace(location.origin, "").replace(/\\?v=.*/, ""), Math.round(e.startTime), Math.round(e.responseEnd), Math.round(e.encodedBodySize / 1024)]).sort((a, b) => b[2] - a[2]).slice(0, 8), centre: window.__centre })`));
 
-const out2 = { url, mode, viewport: `${w}x${h}`, cpu: +cpu, net, marks: res.marks, fcp: res.fcp, lcp: res.lcp, load: res.load, cls: +res.cls.toFixed(4) };
+const out2 = { url, mode, viewport: `${w}x${h}`, cpu: +cpu, net, marks: res.marks, fcp: res.fcp, lcp: res.lcp, dcl: res.dcl, load: res.load, cls: +res.cls.toFixed(4) };
+if (mode === "frames") out2.slowest = res.res; // [path, start, end, KB] — what finished last
 if (mode === "frames") {
   const ex = res.marks["splash:exit-start"];
   const win = res.frames.filter((t) => t >= ex - 100 && t <= ex + 800);

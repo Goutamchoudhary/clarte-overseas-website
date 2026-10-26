@@ -9,8 +9,14 @@
 // first byte.
 //
 // Exit rule: leave the moment BOTH the final beat (the tallest bar's
-// `cs-rise-final` animation) has ended AND window "load" has fired — whichever
-// lands last triggers it, with no extra timer. A 15s backstop guarantees it
+// `cs-rise-final` animation) has ended AND the page is ready to be seen —
+// whichever lands last triggers it, with no extra timer. "Ready" is what the
+// first screen needs, not window "load": the DOM is parsed (so deferred
+// scripts have run), the site stylesheet has applied, every image marked
+// `data-splash-hero` (the above-the-fold photo, where a page has one) is
+// decoded, and document.fonts.ready has resolved. Waiting for full "load"
+// held the splash on a finished logo for seconds on slow connections while
+// the rest of the page's resources trickled in. A 15s backstop guarantees it
 // always goes. The page's own entrance animations and Lenis wait on
 // window.onSplashExit(), so visitors still see them as the splash lifts.
 //
@@ -61,7 +67,7 @@
   if (!cs || !window.__splashActive) return;
   var mark = function (n) { try { performance.mark(n); } catch (e) {} };
   var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var beat = false, loaded = false, gone = false;
+  var beat = false, ready = false, gone = false;
 
   // The overlay is fixed, so a wheel or swipe over it would still scroll the
   // page underneath — hold the page still until the reveal.
@@ -91,7 +97,7 @@
     veil.addEventListener("transitionend", function (e) { if (e.propertyName === "opacity") release(); });
     setTimeout(function () { d.setAttribute("data-boot-gone", ""); release(); }, 650);
   }
-  function check() { if (beat && loaded) exit(); }
+  function check() { if (beat && ready) exit(); }
   function onBeat() { if (beat) return; beat = true; mark("splash:logo-finished"); check(); }
 
   // Not skipped when document.hidden: a new tab reports hidden until its first
@@ -100,9 +106,41 @@
   cs.addEventListener("animationend", function (e) {
     if (e.animationName === "cs-rise-final") onBeat();
   });
-  if (document.readyState === "complete") { loaded = true; mark("splash:page-loaded"); }
-  else window.addEventListener("load", function () { loaded = true; mark("splash:page-loaded"); check(); });
-  check();
+
+  // Page readiness. Each step resolves (never rejects), so a missing font, a
+  // broken hero image or an old browser without one of these APIs just skips
+  // that condition rather than stranding the splash until the backstop.
+  function settle(p) { return p.then(function () {}, function () {}); }
+  function domParsed() {
+    return document.readyState !== "loading" ? Promise.resolve()
+      : new Promise(function (r) { document.addEventListener("DOMContentLoaded", r, { once: true }); });
+  }
+  function cssApplied() {
+    var l = document.querySelector('link[rel="stylesheet"][href^="/css/styles.css"]');
+    if (!l || l.sheet) return Promise.resolve();
+    return new Promise(function (r) { l.addEventListener("load", r, { once: true }); l.addEventListener("error", r, { once: true }); });
+  }
+  // decode() is capped: it never settles while the page isn't being painted
+  // (a background tab, a hidden webview), which would strand the splash
+  // until the backstop. Loaded is what matters; decode only saves a hitch.
+  function heroDecoded(img) {
+    var loadedImg = img.complete ? Promise.resolve()
+      : new Promise(function (r) { img.addEventListener("load", r, { once: true }); img.addEventListener("error", r, { once: true }); });
+    return loadedImg.then(function () {
+      if (!img.naturalWidth || !img.decode) return;
+      return Promise.race([settle(img.decode()), new Promise(function (r) { setTimeout(r, 300); })]);
+    });
+  }
+  domParsed().then(function () {
+    var waits = [cssApplied()];
+    document.querySelectorAll("img[data-splash-hero]").forEach(function (img) { waits.push(heroDecoded(img)); });
+    // After parsing, so layout has requested the fonts the first screen uses.
+    if (document.fonts && document.fonts.ready) waits.push(settle(document.fonts.ready));
+    return Promise.all(waits);
+  }).then(function () { ready = true; mark("splash:page-ready"); check(); });
+  // Still recorded for comparison: it no longer gates the exit.
+  if (document.readyState === "complete") mark("splash:page-loaded");
+  else window.addEventListener("load", function () { mark("splash:page-loaded"); });
   setTimeout(exit, 15000);
 })();
 </script>
