@@ -1,13 +1,11 @@
 // =============================================================================
 // Product catalogue — categories + products.
-// Images: client-supplied CDN links. Missing ones fall back to a styled
+// Images: self-hosted WebP in public/assets/img/products/<slug>.webp (see the
+// README there for how to add one). Missing ones fall back to a styled
 // placeholder (emoji + gradient). HSN codes are standard Indian ITC-HS codes.
 // Drying method is flexible (spray / freeze / drum / air) and chosen to suit
 // the buyer's use-case and grade. All copy is original.
 // =============================================================================
-
-const IMG = (id: string) => `https://lsmedia.linker-cdn.net/1059756/2026/${id}.png`;
-const IMGJ = (id: string) => `https://lsmedia.linker-cdn.net/1059756/2026/${id}.jpeg`;
 
 // Flexible drying lines by category — we supply the method the buyer's grade needs.
 const DRY = {
@@ -158,7 +156,7 @@ export const products: Product[] = [
   // ---------------------------------------------------------------- FRUIT
   {
     slug: "guava-powder", name: "Guava Powder", category: "fruit-powders",
-    image: IMG("14909744"), emoji: "🍐", hsn: "1106 30 10", botanical: "Psidium guajava",
+    image: "/assets/img/products/guava-powder.webp", emoji: "🍐", hsn: "1106 30 10", botanical: "Psidium guajava",
     tagline: "Tropical aroma and a soft pink-cream colour, ready to disperse.",
     description:
       "Made from ripe Indian guavas, our guava powder carries the fruit's musky-sweet aroma and gentle acidity into any formulation. It rehydrates cleanly and blends without clumping, so you get true guava character without the moisture or short shelf life of the fresh fruit.",
@@ -169,7 +167,7 @@ export const products: Product[] = [
   },
   {
     slug: "pineapple-powder", name: "Pineapple Powder", category: "fruit-powders",
-    image: IMG("14850503"), emoji: "🍍", hsn: "1106 30 10", botanical: "Ananas comosus",
+    image: "/assets/img/products/pineapple-powder.webp", emoji: "🍍", hsn: "1106 30 10", botanical: "Ananas comosus",
     tagline: "Sun-sweet tang and golden colour in a stable powder.",
     description:
       "Our pineapple powder captures the bright, tangy-sweet profile of tropical pineapple in a shelf-stable form. It is ideal wherever liquid pineapple is impractical, delivering authentic flavour and a warm golden tone to your product.",
@@ -180,7 +178,7 @@ export const products: Product[] = [
   },
   {
     slug: "banana-powder", name: "Banana Powder", category: "fruit-powders",
-    image: IMG("14850495"), emoji: "🍌", hsn: "1106 30 10", botanical: "Musa paradisiaca",
+    image: "/assets/img/products/banana-powder.webp", emoji: "🍌", hsn: "1106 30 10", botanical: "Musa paradisiaca",
     tagline: "Smooth, mellow sweetness with natural body.",
     description:
       "Milled from ripe bananas, this powder brings mellow sweetness and a creamy mouthfeel to recipes, plus natural thickening. It is a favourite in infant nutrition and sports formulations for its gentle flavour and easy digestibility.",
@@ -191,7 +189,7 @@ export const products: Product[] = [
   },
   {
     slug: "apple-powder", name: "Apple Powder", category: "fruit-powders",
-    image: IMG("14850493"), emoji: "🍎", hsn: "1106 30 10", botanical: "Malus domestica",
+    image: "/assets/img/products/apple-powder.webp", emoji: "🍎", hsn: "1106 30 10", botanical: "Malus domestica",
     tagline: "Crisp, orchard-fresh sweetness that keeps.",
     description:
       "Our apple powder delivers the familiar sweet-tart taste of fresh apples in a convenient dry format. It folds easily into dry blends and bakes, adding fruit content, natural flavour and a touch of pectin-rich body.",
@@ -202,7 +200,7 @@ export const products: Product[] = [
   },
   {
     slug: "mango-powder", name: "Mango Powder", category: "fruit-powders",
-    image: IMG("14854059"), emoji: "🥭", hsn: "1106 30 10", botanical: "Mangifera indica",
+    image: "/assets/img/products/mango-powder.webp", emoji: "🥭", hsn: "1106 30 10", botanical: "Mangifera indica",
     tagline: "The king of fruits, captured at peak ripeness.",
     description:
       "Pressed from sweet, fully ripe Indian mangoes, this powder carries the rich aroma and deep golden colour the fruit is loved for. It is a natural fit for beverages, desserts and dairy that need real mango identity.",
@@ -213,7 +211,7 @@ export const products: Product[] = [
   },
   {
     slug: "amla-powder", name: "Amla Powder", category: "functional-nutritional-powders",
-    image: IMG("14909743"), emoji: "🫒", hsn: "0813 40 90", botanical: "Phyllanthus emblica",
+    image: "/assets/img/products/amla-powder.webp", emoji: "🫒", hsn: "0813 40 90", botanical: "Phyllanthus emblica",
     tagline: "Indian gooseberry — a vitamin-C powerhouse.",
     description:
       "Amla, or Indian gooseberry, is one of the most prized fruits in Ayurveda. Our amla powder retains its natural tartness and is widely used in supplements, hair and skin care, and functional foods for its antioxidant reputation.",
@@ -236,7 +234,7 @@ export const products: Product[] = [
   },
   {
     slug: "tamarind-powder", name: "Tamarind Pulp Powder", category: "fruit-powders",
-    image: IMG("14909745"), emoji: "🟤", hsn: "0813 40 90", botanical: "Tamarindus indica",
+    image: "/assets/img/products/tamarind-powder.webp", emoji: "🟤", hsn: "0813 40 90", botanical: "Tamarindus indica",
     tagline: "Deep, sour-sweet tang for sauces and seasonings.",
     description:
       "Our tamarind powder concentrates the bold, sour-sweet flavour of tamarind pulp into an easy-to-dose dry form. It removes the mess of paste and seeds while delivering consistent acidity to sauces, chutneys and spice blends.",
@@ -247,7 +245,7 @@ export const products: Product[] = [
   },
   {
     slug: "papaya-powder", name: "Papaya Powder", category: "fruit-powders",
-    image: IMGJ("14969248"), emoji: "🟠", hsn: "1106 30 10", botanical: "Carica papaya",
+    image: "/assets/img/products/papaya-powder.webp", emoji: "🟠", hsn: "1106 30 10", botanical: "Carica papaya",
     tagline: "Mild, sweet tropical fruit with natural enzymes.",
     description:
       "Papaya powder offers a soft, sweet tropical flavour along with the fruit's naturally occurring enzymes. It works well in nutrition blends and digestive formulations, and adds a gentle fruitiness to beverages and desserts.",
@@ -258,7 +256,7 @@ export const products: Product[] = [
   },
   {
     slug: "pomegranate-powder", name: "Pomegranate Powder", category: "fruit-powders",
-    image: IMGJ("14972115"), emoji: "🔴", hsn: "0813 40 90", botanical: "Punica granatum",
+    image: "/assets/img/products/pomegranate-powder.webp", emoji: "🔴", hsn: "0813 40 90", botanical: "Punica granatum",
     tagline: "Premium antioxidant fruit for nutraceutical formulations.",
     description:
       "Made from carefully dried pomegranate, our powder is positioned as a premium antioxidant ingredient for nutraceuticals and functional nutrition. Pomegranate is prized for its polyphenols and ellagitannins (punicalagins), giving formulators a clean, plant-based source of antioxidant activity with a naturally tart, ruby-red character.",
@@ -271,7 +269,7 @@ export const products: Product[] = [
   // ----------------------------------------------------- CULINARY & SPICE
   {
     slug: "red-onion-powder", name: "Red Onion Powder", category: "culinary-spice-powders",
-    image: IMGJ("14969273"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
+    image: "/assets/img/products/red-onion-powder.webp", emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
     tagline: "Bold, deeply flavoured Indian red onion — rich savouriness in every form.",
     description:
       "Our red onion powder is made from India's robust, dark-red onions, prized for their strong pungency and deep colour. It delivers rich, complex onion flavour to seasonings, sauces and ready meals — available as fine powder right through to kibbled flakes for consistent results with no prep or waste.",
@@ -283,7 +281,7 @@ export const products: Product[] = [
   },
   {
     slug: "pink-onion-powder", name: "Pink Onion Powder", category: "culinary-spice-powders",
-    image: IMGJ("14969274"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
+    image: "/assets/img/products/pink-onion-powder.webp", emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
     tagline: "India's delicate pink onion — mild, sweet and universally versatile.",
     description:
       "Made from India's prized pink onions — lighter in colour and milder in flavour than deep red varieties — this powder brings a gentle, balanced sweetness to products where subtlety matters more than bold pungency. Its pale blush tone suits light-coloured seasonings, dressings and cream sauces where a dark onion powder would show.",
@@ -295,7 +293,7 @@ export const products: Product[] = [
   },
   {
     slug: "white-onion-powder", name: "White Onion Powder", category: "culinary-spice-powders",
-    image: IMGJ("14969275"), emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
+    image: "/assets/img/products/white-onion-powder.webp", emoji: "🧅", hsn: "0712 20 00", botanical: "Allium cepa",
     tagline: "Clean, milder onion with a pale, neutral colour.",
     description:
       "White onion powder offers a cleaner, slightly milder profile and a pale colour that won't tint light-coloured products. It is the go-to choice for white sauces, soups, dressings and seasoning blends where appearance matters as much as taste.",
@@ -307,7 +305,7 @@ export const products: Product[] = [
   },
   {
     slug: "garlic-powder", name: "Garlic Powder", category: "culinary-spice-powders",
-    image: IMG("14850504"), emoji: "🧄", hsn: "0712 90 04", botanical: "Allium sativum",
+    image: "/assets/img/products/garlic-powder.webp", emoji: "🧄", hsn: "0712 90 04", botanical: "Allium sativum",
     tagline: "Bold Indian garlic in dried, flake and powder forms.",
     description:
       "Our garlic is dehydrated to lock in its sharp, savoury punch and then offered as whole dried cloves, flakes or fine powder. It brings instant garlic flavour to any recipe with consistent strength and a clean, white appearance.",
@@ -319,7 +317,7 @@ export const products: Product[] = [
   },
   {
     slug: "ginger-powder", name: "Ginger Powder", category: "culinary-spice-powders",
-    image: IMG("14850462"), emoji: "🫚", hsn: "0910 12 00", botanical: "Zingiber officinale",
+    image: "/assets/img/products/ginger-powder.webp", emoji: "🫚", hsn: "0910 12 00", botanical: "Zingiber officinale",
     tagline: "Warm, fiery aroma from Indian ginger.",
     description:
       "Indian ginger is known worldwide for its warmth and high pungency. We supply it dried and as a fine powder that carries the root's spicy heat and citrusy aroma into beverages, bakery, spice blends and wellness products.",
@@ -331,7 +329,7 @@ export const products: Product[] = [
   },
   {
     slug: "green-chilli-powder", name: "Green Chilli Powder", category: "culinary-spice-powders",
-    image: IMG("14898383"), emoji: "🌶️", hsn: "0904 22 00", botanical: "Capsicum annuum",
+    image: "/assets/img/products/green-chilli-powder.webp", emoji: "🌶️", hsn: "0904 22 00", botanical: "Capsicum annuum",
     tagline: "Fresh green heat in flakes and fine powder.",
     description:
       "Dehydrated green chillies retain their bright, grassy heat and natural green colour. Offered as flakes or fine powder, they bring clean, controllable spice to seasonings, snacks and sauces without the moisture of fresh chillies.",
@@ -343,7 +341,7 @@ export const products: Product[] = [
   },
   {
     slug: "fried-onion", name: "Fried Onion", category: "culinary-spice-powders",
-    image: IMGJ("14972114"), emoji: "🧅", hsn: "2005 99 90", botanical: "Allium cepa",
+    image: "/assets/img/products/fried-onion.webp", emoji: "🧅", hsn: "2005 99 90", botanical: "Allium cepa",
     tagline: "Crispy, golden and intensely savoury — ready to garnish or blend.",
     description:
       "Our fried onion is made from select Indian onions, sliced and fried to a deep golden colour that delivers a rich, caramelised flavour without any bitterness. Available as crispy flakes for garnishing or as a fine powder for blending into seasonings, sauces and ready meals, it adds instant depth with no cooking required.",
@@ -357,7 +355,7 @@ export const products: Product[] = [
   // ------------------------------------------------ FUNCTIONAL & NUTRITIONAL
   {
     slug: "lemon-powder", name: "Lemon Powder", category: "functional-nutritional-powders",
-    image: IMG("14850470"), emoji: "🍋", hsn: "1106 30 10", botanical: "Citrus limon",
+    image: "/assets/img/products/lemon-powder.webp", emoji: "🍋", hsn: "1106 30 10", botanical: "Citrus limon",
     tagline: "Zesty citrus brightness, ready to dose.",
     description:
       "Lemon powder brings clean, zesty citrus acidity and aroma to dry blends without added liquid. It is perfect for seasonings, beverages and bakery where a precise, consistent lemon note is needed.",
@@ -368,7 +366,7 @@ export const products: Product[] = [
   },
   {
     slug: "beetroot-powder", name: "Beetroot Powder", category: "functional-nutritional-powders",
-    image: IMG("14850468"), emoji: "🟣", hsn: "0712 90 90", botanical: "Beta vulgaris",
+    image: "/assets/img/products/beetroot-powder.webp", emoji: "🟣", hsn: "0712 90 90", botanical: "Beta vulgaris",
     tagline: "Deep natural crimson and earthy nutrition.",
     description:
       "Beetroot powder delivers a striking natural crimson colour along with the root's earthy sweetness and nutrients. It is a clean-label favourite for natural colouring, sports nutrition and functional foods.",
@@ -379,7 +377,7 @@ export const products: Product[] = [
   },
   {
     slug: "tomato-powder", name: "Tomato Powder", category: "dehydrated-vegetable-powders",
-    image: IMG("14850464"), emoji: "🍅", hsn: "0712 90 90", botanical: "Solanum lycopersicum",
+    image: "/assets/img/products/tomato-powder.webp", emoji: "🍅", hsn: "0712 90 90", botanical: "Solanum lycopersicum",
     tagline: "Concentrated tomato flavour and colour.",
     description:
       "Made from ripe red tomatoes, this powder concentrates their savoury-sweet flavour and rich colour into a shelf-stable form. It rehydrates into paste or sauce and is a staple for soups, seasonings and ready meals.",
@@ -390,7 +388,7 @@ export const products: Product[] = [
   },
   {
     slug: "carrot-powder", name: "Carrot Powder", category: "dehydrated-vegetable-powders",
-    image: IMG("14850477"), emoji: "🥕", hsn: "0712 90 90", botanical: "Daucus carota",
+    image: "/assets/img/products/carrot-powder.webp", emoji: "🥕", hsn: "0712 90 90", botanical: "Daucus carota",
     tagline: "Sweet, orange and rich in natural beta-carotene.",
     description:
       "Carrot powder carries the vegetable's natural sweetness and warm orange colour, plus its well-known beta-carotene. It is widely used in baby food, soups, seasonings and natural colouring applications.",
@@ -401,7 +399,7 @@ export const products: Product[] = [
   },
   {
     slug: "jackfruit-powder", name: "Jackfruit Powder", category: "dehydrated-vegetable-powders",
-    image: IMGJ("14969247"), emoji: "🟡", hsn: "1106 30 10", botanical: "Artocarpus heterophyllus",
+    image: "/assets/img/products/jackfruit-powder.webp", emoji: "🟡", hsn: "1106 30 10", botanical: "Artocarpus heterophyllus",
     tagline: "India's super-fruit — sweet, filling, on-trend.",
     description:
       "Jackfruit powder turns one of India's most talked-about fruits into a versatile ingredient. Ripe jackfruit gives a sweet, tropical flavour for beverages and nutrition, while the fruit's fibre and resistant starch make it a popular functional and flour ingredient.",
@@ -438,7 +436,7 @@ export const products: Product[] = [
   // -------------------------------------------------- AYURVEDIC & HERBAL
   {
     slug: "moringa-powder", name: "Moringa Powder", category: "ayurvedic-herbal-powders",
-    image: IMG("14850451"), emoji: "🌿", hsn: "1211 90 99", botanical: "Moringa oleifera",
+    image: "/assets/img/products/moringa-powder.webp", emoji: "🌿", hsn: "1211 90 99", botanical: "Moringa oleifera",
     tagline: "The 'miracle tree' leaf, dried to keep it green.",
     description:
       "Moringa leaves are among the most nutrient-dense greens on earth. We dry them carefully to protect their vivid colour and nutrition, then mill them into a fine powder used worldwide in supplements, green blends and functional foods.",
@@ -552,7 +550,7 @@ export const products: Product[] = [
   // ------------------------------------------- HYDROCOLLOIDS & FOOD ADDITIVES
   {
     slug: "guar-gum-powder", name: "Guar Gum Powder", category: "hydrocolloids-food-additives",
-    image: IMG("14850461"), emoji: "🧪", hsn: "1302 32 30", botanical: "Cyamopsis tetragonoloba",
+    image: "/assets/img/products/guar-gum-powder.webp", emoji: "🧪", hsn: "1302 32 30", botanical: "Cyamopsis tetragonoloba",
     tagline: "India's flagship thickener — from ice cream to oil wells.",
     description:
       "Guar gum is a natural galactomannan extracted from the guar bean, and India produces the majority of the world's supply. It is a highly efficient cold-water thickener and stabiliser, available in food, pharma and industrial grades — including the high-viscosity, derivatised grades used in oil & gas well drilling and hydraulic fracturing.",
@@ -563,7 +561,7 @@ export const products: Product[] = [
   },
   {
     slug: "psyllium-husk-powder", name: "Psyllium Husk Powder (Isabgol)", category: "hydrocolloids-food-additives",
-    image: IMG("14935100"), emoji: "🌾", hsn: "1211 90 12", botanical: "Plantago ovata",
+    image: "/assets/img/products/psyllium-husk-powder.webp", emoji: "🌾", hsn: "1211 90 12", botanical: "Plantago ovata",
     tagline: "The world's go-to soluble-fibre, grown in India.",
     description:
       "India grows almost all of the world's psyllium. The husk is an exceptional source of soluble dietary fibre that forms a gel in water, making it a staple in digestive health products, fibre supplements and gluten-free baking.",
@@ -574,7 +572,7 @@ export const products: Product[] = [
   },
   {
     slug: "tamarind-kernel-powder", name: "Tamarind Kernel Powder", category: "hydrocolloids-food-additives",
-    image: IMGJ("14969249"), emoji: "🟤", hsn: "1302 32 90", botanical: "Tamarindus indica",
+    image: "/assets/img/products/tamarind-kernel-powder.webp", emoji: "🟤", hsn: "1302 32 90", botanical: "Tamarindus indica",
     tagline: "A versatile natural thickener and sizing agent.",
     description:
       "Tamarind kernel powder (TKP) is a polysaccharide gum milled from tamarind seeds. It is a cost-effective thickening, gelling and sizing agent used in food, textiles and other industries, and pairs well with other hydrocolloids.",

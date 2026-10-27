@@ -86,7 +86,8 @@ const productLd = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: p.name,
-  ...(p.image ? { image: [p.image] } : {}),
+  // Absolute: images are self-hosted paths, and Google wants full URLs here.
+  ...(p.image ? { image: [new URL(p.image, SITE.url).href] } : {}),
   description: p.description,
   category: cat.name,
   sku: p.slug,
