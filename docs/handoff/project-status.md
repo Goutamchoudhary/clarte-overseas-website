@@ -1,8 +1,8 @@
 # Project status and open items
 
-Snapshot as of 27 Oct 2026. Production (`main`) is at `970fa98`; branch
-`feat/self-host-assets-i18n-fonts` holds the self-hosting, translation and
-font-preload work below (not yet merged). Re-check counts against the code
+Snapshot as of 27 Oct 2026. Production (`main`) includes the
+self-hosting, translation and font-preload work below (merged at
+`d5e37be`, verified live). Re-check counts against the code
 before acting — they drift.
 
 ## What the site is
@@ -24,7 +24,7 @@ before acting — they drift.
   Vercel Analytics + Speed Insights.
 - First-visit splash — see [first-visit-splash.md](first-visit-splash.md).
 
-## Done on `feat/self-host-assets-i18n-fonts` (27 Oct 2026)
+## Done and live (27 Oct 2026)
 
 - **No asset loads from the old site builder's CDN any more**
   (`lsmedia.linker-cdn.net`): the 25 product photos are local WebP
@@ -64,8 +64,8 @@ before acting — they drift.
   `sheetWebhook` (leads → Google Sheet + WhatsApp alert).
 
 ### Performance / splash
-- Splash still waits ~2.7–4.8 s on slow 4G desktop and ~9.6 s on slow 3G
-  on the homepage (bandwidth-bound). Speed Index regressed ~0.8–1.2 s with
+- Homepage splash still waits ~2.7 s after the logo on slow-4G desktop and
+  ~10 s on slow 3G (bandwidth-bound; measured live after the merge). Speed Index regressed ~0.8–1.2 s with
   the splash; LCP/TBT/CLS fine.
 
 ### Platform

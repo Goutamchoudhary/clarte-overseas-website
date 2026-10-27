@@ -272,6 +272,22 @@ paths must match `fonts.css` exactly, with `crossorigin`.
 (old CDN) vs branch (local WebP, brotli server): `page-ready` 3769 → 2088 ms,
 lingers 1.39 → **0.05 s**, LCP 1.13 → 0.73 s.
 
+**Live after merging (27 Oct 2026, `main` @ `d5e37be`)** — same live runs as
+the "Live re-measure" table, before → after:
+
+| Page, network | `page-ready` | Lingers after logo | LCP |
+|---|---|---|---|
+| Home, 375px, slow 4G (2 runs) | 2950–4000 → 2924–3095 ms | 0.85–1.19 → 0.73–0.85 s | ~2.9 → 1.46–1.68 s |
+| Home, desktop, slow 4G | 4975 → 4954 ms | 2.8 → 2.7 s | 0.95 → 1.45 s (worse) |
+| Home, 375px, slow 3G | 12739 → 12742 ms | 10.2 → 10.1 s | 12.5 → **4.7 s** |
+| Mango, 375px, slow 4G | 3769 → **2322 ms** | 1.39 → **0.16 s** | 1.13 → 0.92 s |
+| Contact, 375px, slow 4G | 2021 → 1712 ms | 0 → 0 | 1.07 → 0.79 s |
+
+The local brotli A/B predicted a bigger slow-3G splash gain (12.1 → 9.6 s)
+than live shows (unchanged ~12.7 s); the LCP gains held. Desktop slow-4G LCP
+got worse, as the A/B also showed (0.73 → 0.99 s there). Navbar sticky after
+the splash on live home and product pages; CLS ≤ 0.013.
+
 ## What's left
 
 - [x] Stop below-the-fold images holding `load` — done (lazy-image fix).
