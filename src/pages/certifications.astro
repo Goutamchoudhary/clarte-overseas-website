@@ -8,14 +8,17 @@ const title = "Certifications & Compliance — Clarté Overseas | Verified Expor
 const description =
   "View and download Clarté Overseas's certifications and registrations — GST, IEC, Udyam (MSME), FSSAI, APEDA and ISO 9001:2015 — plus the food-safety standards upheld across our partner facilities.";
 
-// Company-held credentials — each has a downloadable certificate (hosted copy).
+// Company-held credentials — each has a downloadable certificate, self-hosted in
+// public/assets/certifications/docs/. Signed PDFs are kept byte-for-byte as issued
+// (re-compressing would break the digital signature). Renewed certificate? Use a
+// new filename and update `file` here.
 const companyCerts = [
   {
     name: "APEDA Registration",
     authority: "Agricultural & Processed Food Products Export Dev. Authority",
     tag: "Agri-export",
     desc: "Registration with APEDA, and the Registration-cum-Membership Certificate it carries, marks us as a recognised exporter of agricultural and processed food products across all of our ingredient categories.",
-    file: "https://lsmedia.linker-cdn.net/1059756/2026/14878220.pdf",
+    file: "/assets/certifications/docs/clarte-overseas-apeda-rcmc.pdf",
     kind: "PDF",
     logo: "apeda.png",
   },
@@ -24,7 +27,7 @@ const companyCerts = [
     authority: "Spices Board of India, Ministry of Commerce & Industry",
     tag: "Spice trade",
     desc: "The Registration-cum-Membership Certificate from the Spices Board of India recognises us as a registered exporter of spices — the credential the spice trade specifically expects, alongside our broader APEDA registration.",
-    file: "https://lsmedia.linker-cdn.net/1059756/2026/14990548.pdf",
+    file: "/assets/certifications/docs/clarte-overseas-spices-board-rcmc.pdf",
     kind: "PDF",
     logo: "spices_board_rcmc.jpeg",
   },
@@ -33,7 +36,7 @@ const companyCerts = [
     authority: "Quality Management System",
     tag: "Quality",
     desc: "ISO 9001:2015 certification shows our quality-management system is documented, audited and built for consistency — the same disciplined process that sits behind every single order.",
-    file: "https://lsmedia.linker-cdn.net/1059756/2026/14918555.pdf",
+    file: "/assets/certifications/docs/clarte-overseas-iso-9001-2015.pdf",
     kind: "PDF",
     logo: "iso-9001.jpg",
   },
@@ -42,8 +45,8 @@ const companyCerts = [
     authority: "Food Safety & Standards Authority of India",
     tag: "Food safety",
     desc: "Our Central FSSAI licence certifies that Clarté Overseas operates within India's food-safety law as a trader and exporter of food products — your assurance that everything we handle is managed to regulation.",
-    file: "https://lsmedia.linker-cdn.net/1059756/2026/14898318.png",
-    kind: "Image",
+    file: "/assets/certifications/docs/clarte-overseas-fssai-central-licence.pdf",
+    kind: "PDF",
     logo: "fssai.png",
   },
   {
@@ -51,7 +54,7 @@ const companyCerts = [
     authority: "DGFT, Ministry of Commerce & Industry",
     tag: "Export licence",
     desc: "The Importer-Exporter Code is the licence that authorises us to move goods across India's borders. No consignment leaves the country without it — and ours is active and in our own name.",
-    file: "https://lsmedia.linker-cdn.net/1059756/2026/14801920.pdf",
+    file: "/assets/certifications/docs/clarte-overseas-iec.pdf",
     kind: "PDF",
     logo: "iec.jpg",
   },
@@ -60,7 +63,7 @@ const companyCerts = [
     authority: "Government of India",
     tag: "Tax registered",
     desc: "Our Goods & Services Tax registration confirms Clarté Overseas as a compliant, tax-registered business entity in India — the baseline every legitimate exporter is expected to hold.",
-    file: "https://lsmedia.linker-cdn.net/1059756/2026/14801919.pdf",
+    file: "/assets/certifications/docs/clarte-overseas-gst-registration.pdf",
     kind: "PDF",
     logo: "gst.jpeg",
   },
@@ -69,7 +72,7 @@ const companyCerts = [
     authority: "Ministry of Micro, Small & Medium Enterprises",
     tag: "Registered enterprise",
     desc: "Our Udyam registration recognises Clarté Overseas under India's MSME framework, supporting priority access to trade-facilitation and finance schemes for growing exporters.",
-    file: "https://lsmedia.linker-cdn.net/1059756/2026/14878221.pdf",
+    file: "/assets/certifications/docs/clarte-overseas-udyam-msme.pdf",
     kind: "PDF",
     logo: "msme-udyam.png",
   },
