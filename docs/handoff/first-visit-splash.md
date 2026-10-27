@@ -260,10 +260,13 @@ Next lever: preload the first-screen fonts (see "What's left").
       `scripts/defer-site-css.mjs` still captures the stylesheet correctly
       (CLAUDE.md). Preloading too many fonts competes with the hero image on
       slow links, so keep it to what the first screen renders.
-- [ ] Two products (mango + one other in `src/data/products.ts`) use a
-      ~380 KB image from `lsmedia.linker-cdn.net`; it gates those product
-      pages' splash. Moving them to local `.webp` like the rest would fix
-      it.
+- [ ] **25 of 41 products** use photos from `lsmedia.linker-cdn.net` (the
+      old site builder's storage, via the `IMG()`/`IMGJ()` helpers in
+      `src/data/products.ts`) — 350 KB to 1.2 MB AVIFs each. They gate
+      those product pages' splash. Moving them to local ~100–150 KB `.webp`
+      (process in `public/assets/img/products/README.txt`) would fix it.
+      (An earlier version of this note said "two products" — that was a
+      miscount.)
 - [ ] Not tried: loading GSAP/ScrollTrigger/Lenis after `load` (they're
       deferred, so they do gate "DOM parsed", but on the measured pages
       fonts finished later than DOMContentLoaded anyway); shortening the
