@@ -1,7 +1,9 @@
 # Project status and open items
 
-Snapshot as of 27 Oct 2026 (`main` at `5bb6388` live, plus doc commits).
-Re-check counts against the code before acting — they drift.
+Snapshot as of 27 Oct 2026. Production (`main`) is at `970fa98`; branch
+`feat/self-host-assets-i18n-fonts` holds the self-hosting, translation and
+font-preload work below (not yet merged). Re-check counts against the code
+before acting — they drift.
 
 ## What the site is
 
@@ -22,33 +24,33 @@ Re-check counts against the code before acting — they drift.
   Vercel Analytics + Speed Insights.
 - First-visit splash — see [first-visit-splash.md](first-visit-splash.md).
 
+## Done on `feat/self-host-assets-i18n-fonts` (27 Oct 2026)
+
+- **No asset loads from the old site builder's CDN any more**
+  (`lsmedia.linker-cdn.net`): the 25 product photos are local WebP
+  (20.2 MB → 3.6 MB), and the 7 certificates are in
+  `public/assets/certifications/docs/` (signed PDFs byte-for-byte; FSSAI
+  image wrapped as a PDF).
+- **Amchur and pomegranate translated** into all 16 languages; every
+  product is now fully translated.
+- **Homepage fonts preloaded** — homepage splash wait and LCP down on slow
+  connections (see first-visit-splash.md).
+
 ## Open items
 
 ### Product photos
-- **11 products have no photo** (show an emoji placeholder):
+- **11 products have no photo** (emoji placeholder) — to be supplied:
   ashwagandha, shatavari, brahmi, triphala, giloy, neem, trikatu (Ayurvedic
-  & herbal); watermelon, chia, pumpkin, melon seeds (edible seeds).
-- **25 products use photos on the old site builder's CDN**
-  (`lsmedia.linker-cdn.net`, account `1059756`, via `IMG()`/`IMGJ()` in
-  `products.ts`): 350 KB–1.2 MB each, slow on mobile, and they'd break if
-  that account lapses. Migrate to local `.webp` (~100–150 KB) following
-  `public/assets/img/products/README.txt`, with new filenames (images are
-  cached immutable — see CLAUDE.md).
-- Only 5 products have local photos: amchur, coriander leaf, curry leaf,
-  mint, tulsi.
+  & herbal); watermelon, chia, pumpkin, melon seeds (edible seeds). Process:
+  `public/assets/img/products/README.txt`.
+- The tamarind powder photo has a small sparkle mark bottom-right (looks
+  like an AI generator's watermark) — consider replacing.
 
 ### Certificates
-- 7 certificate documents on `/certifications` (PDFs/PNG) are also hosted
-  on the old CDN (`src/pages/certifications.astro`). Same lapse risk — move
-  them into the repo (`public/`) or another host you control.
-
-### Translations
-- **Amchur powder and pomegranate powder have no product translations** in
-  any of the 17 locales (0 of 17 keys each: name, tagline, description,
-  features, uses, grades). Their pages fall back to English when another
-  language is chosen. All other products, and all locale files, are
-  complete and in sync (1,432 keys each).
-- Optional: splash caption isn't wired to i18n.
+- FSSAI licence is valid until **12 Apr 2027**; renewal can be filed 180
+  days earlier. When renewed (any certificate), add the new file under a
+  new name and update `src/pages/certifications.astro`.
+- Ideally replace the FSSAI image-PDF with the signed PDF from FoSCoS.
 
 ### Availability flags (`src/consts.ts`) — confirm these are still true
 - Unavailable: apple powder.
@@ -62,14 +64,15 @@ Re-check counts against the code before acting — they drift.
   `sheetWebhook` (leads → Google Sheet + WhatsApp alert).
 
 ### Performance / splash
-- Preload first-screen fonts (biggest remaining splash/LCP lever).
-- Re-measure the splash on the live site (fixes are deployed).
-- Speed Index regressed ~0.8–1.2 s with the splash; LCP/TBT/CLS fine.
+- Splash still waits ~2.7–4.8 s on slow 4G desktop and ~9.6 s on slow 3G
+  on the homepage (bandwidth-bound). Speed Index regressed ~0.8–1.2 s with
+  the splash; LCP/TBT/CLS fine.
 
 ### Platform
-- Astro 5 + `@astrojs/vercel` 9.0.5 upgrade to retire the runtime
-  workaround — trial-built, see [astro-5-upgrade.md](astro-5-upgrade.md).
-  Astro 4 is tagged `legacy` on npm.
+- **Astro upgrade (4 → 7)** — assessed, trial-built, zero-downtime plan in
+  [astro-upgrade.md](astro-upgrade.md). Recommended: Astro 4 has had no
+  fixes since Aug 2025 and carries a critical advisory affecting the
+  spec-sheet function.
 
 ### Minor
 - `/404` page's canonical/og:url point at `/404/` (pre-existing, harmless).

@@ -236,46 +236,57 @@ almost nothing else is outstanding, so ready ≈ load. (The Leadsy/Calendly
 rows at the very end are the post-`load` injections, blocked by the
 harness.) Crossfade frame gaps and CLS are unchanged (CLS 0–0.0125).
 
-Next lever: preload the first-screen fonts (see "What's left").
+**Live re-measure** (27 Oct 2026, `main` @ `970fa98` = lazy images +
+ready-based exit, real Vercel CDN/compression, 4x CPU, trackers blocked)
+
+| Page, network | `page-ready` | Lingers after logo | LCP |
+|---|---|---|---|
+| Home, 375px, slow 4G (2 runs) | 2950–4000 ms | 0.85–1.19 s | ~2.9 s |
+| Home, desktop, slow 4G | 4975 ms | 2.8 s | 0.95 s |
+| Home, 375px, slow 3G | 12739 ms | 10.2 s | 12.5 s |
+| Mango (old-CDN photo), 375px, slow 4G | 3769 ms | 1.39 s | 1.13 s |
+| Contact, 375px, slow 4G | 2021 ms | 0 | 1.07 s |
+
+**Font preload — homepage only** (`f393d18`). Measured as an A/B on the same
+production build served locally **with brotli** (a small Node server that
+mimics Vercel's compression — without it, uncompressed CSS/JS distorts the
+bandwidth picture and preloading looked harmful everywhere). Medians,
+4x CPU:
+
+| Page, network | `page-ready` none → preload | Lingers after logo | LCP |
+|---|---|---|---|
+| Home, 375px, slow 4G (n=3) | 2785 → 2607 ms | 0.76 → **0.48 s** | 2.70 → **1.12 s** |
+| Home, 375px, slow 3G | 12136 → 9612 ms | 9.8 → **7.1 s** | 11.3 → **2.9 s** |
+| Home, desktop, slow 4G (n=2) | 4773 → 4759 ms | 2.74 → 2.63 s | 0.73 → 0.99 s |
+| Product, 375px, slow 4G (n=2) | 1888 → 1857 ms | 0 → 0 | 0.73 → **1.53 s (worse)** |
+| Contact, 375px, slow 4G (n=2) | 1601 → 1424 ms | 0 → 0 | 0.68 → **1.07 s (worse)** |
+
+The homepage's hero title is Fraunces Italic, so its fonts *are* the first
+screen and the preload pays off. On product/contact pages the logo is the
+long pole anyway, and preloads compete with the product photo for
+bandwidth — so they don't preload. Implemented as an opt-in
+`preloadFonts` prop on `BaseLayout` (homepage passes its 4 Latin subsets);
+paths must match `fonts.css` exactly, with `crossorigin`.
+
+**Self-hosted product photos** (`88aa727`): mango on 375px slow 4G, live
+(old CDN) vs branch (local WebP, brotli server): `page-ready` 3769 → 2088 ms,
+lingers 1.39 → **0.05 s**, LCP 1.13 → 0.73 s.
 
 ## What's left
 
-- [x] Stop below-the-fold images holding `load` — done (lazy-image fix,
-      see "After the lazy-image fix").
-- [ ] **Re-measure on the live site** once the fix is deployed (same
-      `verify-splash.mjs` runs as the live table above).
-- [x] Exit on "logo done + page ready" (hero decoded + fonts + CSS + DOM)
-      instead of full `load` — done; see "Ready-based exit" above. On its
-      own it gains almost nothing, because fonts were the real `load`
-      blocker too.
-- [ ] **Preload the first-screen fonts** — now the single biggest lever.
-      The woff2 files are only discovered after `styles.css` arrives and
-      layout runs (~1.7 s in on slow 4G, ~6.3 s on slow 3G), and
-      `document.fonts.ready` then waits for them. A
-      `<link rel="preload" as="font" type="font/woff2" crossorigin>` in
-      `<head>` for the files the first screen uses (Fraunces upright +
-      italic, Inter latin, Sora — check which subsets each page actually
-      requests) would start them at HTML parse instead. **Head change:**
-      verify against a real `npm run build` and check
-      `scripts/defer-site-css.mjs` still captures the stylesheet correctly
-      (CLAUDE.md). Preloading too many fonts competes with the hero image on
-      slow links, so keep it to what the first screen renders.
-- [ ] **25 of 41 products** use photos from `lsmedia.linker-cdn.net` (the
-      old site builder's storage, via the `IMG()`/`IMGJ()` helpers in
-      `src/data/products.ts`) — 350 KB to 1.2 MB AVIFs each. They gate
-      those product pages' splash. Moving them to local ~100–150 KB `.webp`
-      (process in `public/assets/img/products/README.txt`) would fix it.
-      (An earlier version of this note said "two products" — that was a
-      miscount.)
-- [ ] Not tried: loading GSAP/ScrollTrigger/Lenis after `load` (they're
-      deferred, so they do gate "DOM parsed", but on the measured pages
-      fonts finished later than DOMContentLoaded anyway); shortening the
-      backstop to a fixed time after the logo (caps the slow-3G worst case,
-      ~13 s → e.g. 4–6 s, at the cost of revealing a page whose fonts
-      haven't arrived).
-- [ ] Retire `scripts/fix-vercel-runtime.mjs` via the Astro 5 + adapter
-      9.0.5 upgrade — scoped and trial-built, see
-      [astro-5-upgrade.md](astro-5-upgrade.md).
+- [x] Stop below-the-fold images holding `load` — done (lazy-image fix).
+- [x] Re-measure on the live site — done (table above).
+- [x] Exit on "logo done + page ready" instead of full `load` — done.
+- [x] Preload fonts — done, homepage only (see above for why).
+- [x] Self-host the 25 product photos from the old CDN — done.
+- [ ] Remaining homepage wait is bandwidth-bound (~0.5 s slow-4G phone,
+      ~2.6 s slow-4G desktop, ~7 s slow 3G). Not tried: loading
+      GSAP/ScrollTrigger/Lenis after `load` (they're deferred, so they gate
+      "DOM parsed"); shortening the backstop to a fixed time after the logo
+      (caps the slow-3G worst case at the cost of revealing a page whose
+      fonts haven't arrived).
+- [ ] Retire `scripts/fix-vercel-runtime.mjs` via the Astro upgrade — see
+      [astro-upgrade.md](astro-upgrade.md).
 - [ ] If the i18n system should translate the splash caption text (the
       original spec mentioned this as optional) — currently English-only,
       not wired to `/js/i18n.js`.

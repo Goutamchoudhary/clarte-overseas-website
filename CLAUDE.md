@@ -15,15 +15,19 @@ that area).
   `.vercel/output/functions/*.func/.vc-config.json` — see
   `scripts/fix-vercel-runtime.mjs` and
   [docs/handoff/first-visit-splash.md](docs/handoff/first-visit-splash.md)
-  for why that script exists. The upgrade that retires it (Astro 5 +
-  `@astrojs/vercel` 9.0.5) is scoped in
-  [docs/handoff/astro-5-upgrade.md](docs/handoff/astro-5-upgrade.md).
+  for why that script exists. The upgrade that retires it (Astro 7 +
+  `@astrojs/vercel` 11, with a zero-downtime rollout plan) is assessed in
+  [docs/handoff/astro-upgrade.md](docs/handoff/astro-upgrade.md).
 - The first-visit splash exits once the logo has finished AND the page is
   ready (CSS applied, fonts loaded, every `img[data-splash-hero]` decoded) —
   not on `window.load`. Put `data-splash-hero` on the above-the-fold photo
   of any new page template, and keep below-the-fold images
   `loading="lazy"`. Details in
   [docs/handoff/first-visit-splash.md](docs/handoff/first-visit-splash.md).
+- Font preloads are **opt-in per page** (`preloadFonts` prop on
+  `BaseLayout`; only the homepage uses it). A global preload was measured to
+  push back LCP on product/contact pages — measure before adding one, with
+  compression on (see first-visit-splash.md).
 - To check splash/load-timing changes, use `scripts/verify-splash.mjs`
   against a production build (`.claude/launch.json` → `prod-static`
   serves `.vercel/output/static` on port 4330) or the live site.
@@ -61,6 +65,13 @@ that area).
   loaded the page will keep seeing the old cached image for up to a year.
   **Give the new image a new filename** (e.g. append `-v2`) and update every
   reference, rather than overwriting in place.
+- **Self-host every asset.** Product photos live in
+  `public/assets/img/products/<slug>.webp` (recipe in the README there) and
+  certificates in `public/assets/certifications/docs/`. Nothing should load
+  from the old site builder's CDN (`lsmedia.linker-cdn.net`) — that
+  dependency was removed in Oct 2026. Keep signed certificate PDFs
+  byte-for-byte as issued (re-compressing breaks the signature); a renewed
+  certificate gets a new filename.
 
 ## i18n
 
