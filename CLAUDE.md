@@ -25,8 +25,9 @@ that area).
   `loading="lazy"`. Details in
   [docs/handoff/first-visit-splash.md](docs/handoff/first-visit-splash.md).
 - Font preloads are **opt-in per page** (`preloadFonts` prop on
-  `BaseLayout`; only the homepage uses it). A global preload was measured to
-  push back LCP on product/contact pages — measure before adding one, with
+  `BaseLayout`; only the homepage uses it, and only on screens ≤ 1024px via
+  `preloadFontsMedia`). Preloads were measured to push back LCP on product
+  and contact pages and on desktop — measure before adding one, with
   compression on (see first-visit-splash.md).
 - To check splash/load-timing changes, use `scripts/verify-splash.mjs`
   against a production build (`.claude/launch.json` → `prod-static`

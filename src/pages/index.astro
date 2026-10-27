@@ -31,7 +31,12 @@ const partnerCerts = [
   { file: "kosher.avif", alt: "Kosher certified — partner facility" },
 ];
 // Fonts the homepage's first screen renders with (hero title in Fraunces
-// Italic; Fraunces, Inter and Sora around it). Preloaded via BaseLayout.
+// Italic; Fraunces, Inter and Sora around it). Preloaded via BaseLayout on
+// phones and tablets only: there the late font swap sets LCP and holds the
+// splash, and preloading cut both. On desktop the headline paints as soon as
+// styles.css lands, and the preloads only slowed that down (LCP ~0.73 s ->
+// ~0.98 s on throttled slow 4G) with no splash gain. 1024px matches the
+// hero's own mobile/desktop image breakpoint.
 const HOME_FONTS = [
   "/fonts/fraunces-italic-var-latin.woff2",
   "/fonts/fraunces-var-latin.woff2",
@@ -39,7 +44,7 @@ const HOME_FONTS = [
   "/fonts/sora-400-29.woff2",
 ];
 ---
-<BaseLayout title={title} description={description} preloadFonts={HOME_FONTS}>
+<BaseLayout title={title} description={description} preloadFonts={HOME_FONTS} preloadFontsMedia="(max-width: 1024px)">
 <!-- =====================================================================
        HERO
        ===================================================================== -->

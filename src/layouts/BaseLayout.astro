@@ -25,6 +25,8 @@ interface Props {
   noindex?: boolean;
   /** Font files to preload because this page's first screen is held up by them. */
   preloadFonts?: string[];
+  /** Media query limiting those preloads to the screens where they help. */
+  preloadFontsMedia?: string;
 }
 const {
   title = SITE.defaultTitle,
@@ -32,6 +34,7 @@ const {
   image = SITE.defaultImage,
   noindex = false,
   preloadFonts = [],
+  preloadFontsMedia,
 } = Astro.props;
 
 // Opt-in per page, not global. Without a preload the browser only discovers a
@@ -106,7 +109,7 @@ const orgSchema = {
     <style is:inline set:html={fontsCss}></style>
     <!-- crossorigin is required: fonts are always fetched in CORS mode, so a
          preload without it isn't reused and the file downloads twice. -->
-    {fontPreloads.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
+    {fontPreloads.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin media={preloadFontsMedia} />)}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />

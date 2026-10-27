@@ -288,6 +288,28 @@ than live shows (unchanged ~12.7 s); the LCP gains held. Desktop slow-4G LCP
 got worse, as the A/B also showed (0.73 → 0.99 s there). Navbar sticky after
 the splash on live home and product pages; CLS ≤ 0.013.
 
+**Desktop LCP fix — preloads limited to ≤ 1024px** (branch
+`fix/desktop-lcp-font-preload`). Live after the merge, desktop slow-4G LCP
+had gone 0.95 → 1.45 s. Cause: on desktop the LCP element is the hero `h1`,
+which paints as soon as `styles.css` lands — and the four font preloads sat
+ahead of the stylesheet's preload, sharing its bandwidth. (On phones the
+late font swap is what sets LCP, so there the preload helps.) A/B on the
+same build with brotli, 4x CPU, slow 4G, median of 3:
+
+| Variant | Desktop 1366 LCP | Phone 375 LCP | Phone splash wait |
+|---|---|---|---|
+| Preload everywhere (was live) | 984 ms | 972 ms | 0.47 s |
+| **Preload with `media="(max-width: 1024px)"`** | **724 ms** | **956 ms** | **0.48 s** |
+| Stylesheet preload moved first | 960 ms | 932 ms | 0.47 s |
+| No preloads | 736 ms | 2696 ms | 0.75 s |
+
+Verified on the built fix vs no preloads: desktop 1920/1366 LCP 846→742 /
+728→734 ms (baseline restored, splash unchanged); tablet 1024 and 820 LCP
+~3.2/3.1 s → ~1.0 s and splash wait 1.36/1.15 → 0.52 s; phone LCP 2.69 →
+0.96 s. CLS ≤ 0.013 everywhere. Implemented as a `preloadFontsMedia` prop
+on `BaseLayout`; the homepage passes `(max-width: 1024px)` (the hero's own
+mobile/desktop image breakpoint).
+
 ## What's left
 
 - [x] Stop below-the-fold images holding `load` — done (lazy-image fix).
