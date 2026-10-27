@@ -23,13 +23,26 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  /** Font files to preload because this page's first screen is held up by them. */
+  preloadFonts?: string[];
 }
 const {
   title = SITE.defaultTitle,
   description = SITE.defaultDescription,
   image = SITE.defaultImage,
   noindex = false,
+  preloadFonts = [],
 } = Astro.props;
+
+// Opt-in per page, not global. Without a preload the browser only discovers a
+// font after styles.css has arrived and layout has run, and the first-visit
+// splash waits on document.fonts.ready. Measured Oct 2026 (throttled, brotli —
+// see docs/handoff/first-visit-splash.md): on the homepage, whose hero title is
+// set in Fraunces, preloading cut the splash wait and LCP sharply; on product
+// and contact pages it gained nothing (the logo animation is the long pole
+// there) and pushed LCP back by competing with the product photo. Paths must
+// match fonts.css exactly, or the font downloads twice.
+const fontPreloads = [...new Set(preloadFonts)];
 
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const ogImage = new URL(image, SITE.url).href;
@@ -91,6 +104,9 @@ const orgSchema = {
          which is slow or outright blocked from some countries — the whole
          page used to stall behind that request. -->
     <style is:inline set:html={fontsCss}></style>
+    <!-- crossorigin is required: fonts are always fetched in CORS mode, so a
+         preload without it isn't reused and the file downloads twice. -->
+    {fontPreloads.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
