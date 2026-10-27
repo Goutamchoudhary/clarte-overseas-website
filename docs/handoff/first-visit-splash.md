@@ -310,6 +310,19 @@ Verified on the built fix vs no preloads: desktop 1920/1366 LCP 846→742 /
 on `BaseLayout`; the homepage passes `(max-width: 1024px)` (the hero's own
 mobile/desktop image breakpoint).
 
+**Live after deploying the desktop fix (27 Oct 2026, `main` @ `d9d7f7a`)**
+— homepage, slow 4G, 4x CPU, 3 runs each:
+
+| Screen | LCP before any preload → preload everywhere → now | Splash wait now |
+|---|---|---|
+| Desktop 1366 | 0.95 s → 1.45 s → **0.96 s** (runs 0.96/0.96/2.11) | 2.8 s |
+| Desktop 1920 | — → — → 0.96 s | 2.8 s |
+| Tablet 820 | not measured live before | 1.51 s LCP, 1.1 s wait |
+| Phone 375 | ~2.9 s → 1.46–1.68 s → **1.50 s** | 0.72 s |
+
+Desktop LCP is back to its pre-preload value and the phone gain is kept.
+LCP element is the hero `h1` at every size. CLS ≤ 0.012.
+
 ## What's left
 
 - [x] Stop below-the-fold images holding `load` — done (lazy-image fix).
