@@ -37,7 +37,13 @@ export interface Product {
   slug: string;
   name: string;
   category: string;
+  /** Square photo for the product's own page (and related-product tiles). */
   image?: string;
+  /** Landscape photo for the category list card. Products that have one get
+   *  the full-bleed photo layout on both the card and the product page. */
+  listImage?: string;
+  /** Extra photos shown as a thumbnail gallery under the main product photo. */
+  gallery?: { src: string; alt: string }[];
   emoji: string;
   hsn: string;
   botanical?: string;
@@ -211,7 +217,9 @@ export const products: Product[] = [
   },
   {
     slug: "amla-powder", name: "Amla Powder", category: "functional-nutritional-powders",
-    image: "/assets/img/products/amla-powder.webp", emoji: "🫒", hsn: "0813 40 90", botanical: "Phyllanthus emblica",
+    image: "/assets/img/products/amla-powder-v2.webp", emoji: "🫒", hsn: "0813 40 90", botanical: "Phyllanthus emblica",
+    listImage: "/assets/img/products/amla-powder-wide.webp",
+    gallery: [{ src: "/assets/img/products/amla-powder-dried.webp", alt: "Dried amla (Indian gooseberry) pieces" }],
     tagline: "Indian gooseberry — a vitamin-C powerhouse.",
     description:
       "Amla, or Indian gooseberry, is one of the most prized fruits in Ayurveda. Our amla powder retains its natural tartness and is widely used in supplements, hair and skin care, and functional foods for its antioxidant reputation.",
@@ -222,7 +230,8 @@ export const products: Product[] = [
   },
   {
     slug: "amchur-powder", name: "Amchur Powder", category: "functional-nutritional-powders",
-    image: "/assets/img/products/amchur-powder.webp",
+    image: "/assets/img/products/amchur-powder-v2.webp",
+    listImage: "/assets/img/products/amchur-powder-wide.webp",
     emoji: "🥭", hsn: "0813 40 90", botanical: "Mangifera indica (unripe)",
     tagline: "Dried green mango — a traditional Ayurvedic digestive.",
     description:
@@ -355,7 +364,8 @@ export const products: Product[] = [
   // ------------------------------------------------ FUNCTIONAL & NUTRITIONAL
   {
     slug: "lemon-powder", name: "Lemon Powder", category: "functional-nutritional-powders",
-    image: "/assets/img/products/lemon-powder.webp", emoji: "🍋", hsn: "1106 30 10", botanical: "Citrus limon",
+    image: "/assets/img/products/lemon-powder-v2.webp", emoji: "🍋", hsn: "1106 30 10", botanical: "Citrus limon",
+    listImage: "/assets/img/products/lemon-powder-wide.webp",
     tagline: "Zesty citrus brightness, ready to dose.",
     description:
       "Lemon powder brings clean, zesty citrus acidity and aroma to dry blends without added liquid. It is perfect for seasonings, beverages and bakery where a precise, consistent lemon note is needed.",
@@ -366,7 +376,8 @@ export const products: Product[] = [
   },
   {
     slug: "beetroot-powder", name: "Beetroot Powder", category: "functional-nutritional-powders",
-    image: "/assets/img/products/beetroot-powder.webp", emoji: "🟣", hsn: "0712 90 90", botanical: "Beta vulgaris",
+    image: "/assets/img/products/beetroot-powder-v2.webp", emoji: "🟣", hsn: "0712 90 90", botanical: "Beta vulgaris",
+    listImage: "/assets/img/products/beetroot-powder-wide.webp",
     tagline: "Deep natural crimson and earthy nutrition.",
     description:
       "Beetroot powder delivers a striking natural crimson colour along with the root's earthy sweetness and nutrients. It is a clean-label favourite for natural colouring, sports nutrition and functional foods.",

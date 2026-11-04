@@ -61,7 +61,7 @@ for (const p of products) {
   set(
     `/products/${p.category}/${p.slug}/`,
     productsDate,
-    p.image ? [p.image] : [],
+    p.image ? [p.image, ...(p.gallery ?? []).map((g) => g.src)] : [],
   );
 }
 

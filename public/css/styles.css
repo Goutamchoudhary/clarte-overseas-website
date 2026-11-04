@@ -1341,6 +1341,9 @@ html:not(.js-ready) .reveal {
 .prod-media img { position: relative; z-index: 1; width: 74%; height: 74%; object-fit: contain; transition: transform .4s ease; }
 .prod-card:hover .prod-media img { transform: scale(1.07); }
 .prod-emoji { position: relative; z-index: 1; font-size: 3rem; }
+/* New photo set (product has a landscape listImage): full-bleed scene photo instead of a centred cut-out. */
+.prod-media.has-photo { aspect-ratio: 16/9; }
+.prod-media.has-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .prod-badge { position: absolute; top: .7rem; right: .7rem; z-index: 2; font: 700 .62rem "Sora", sans-serif; letter-spacing: .04em; color: #16265a; background: rgba(255,255,255,.92); border: 1px solid #e2e9f5; padding: .22rem .55rem; border-radius: 999px; }
 .prod-status { position: absolute; top: .7rem; left: .7rem; z-index: 2; font: 700 .62rem "Sora", sans-serif; letter-spacing: .03em; padding: .22rem .55rem; border-radius: 999px; }
 .prod-status-unavail { color: #b91c1c; background: rgba(254,242,242,.95); border: 1px solid #fecaca; }
@@ -1366,6 +1369,13 @@ html:not(.js-ready) .reveal {
 .pd-frame::before { content: ""; position: absolute; inset: 0; background: linear-gradient(150deg, var(--from), var(--to)); opacity: .07; }
 .pd-frame.no-img { cursor: default; }
 .pd-img { position: relative; z-index: 1; width: 82%; height: 82%; object-fit: contain; transition: transform .15s ease; will-change: transform; }
+.pd-frame.has-photo .pd-img { width: 100%; height: 100%; object-fit: cover; }
+.pd-thumbs { display: flex; gap: .6rem; margin-top: .8rem; }
+.pd-thumb { width: 4.5rem; aspect-ratio: 1; padding: 0; border-radius: .8rem; overflow: hidden; border: 2px solid transparent; background: #fff; cursor: pointer; box-shadow: 0 6px 16px -10px rgba(31,70,147,.5); transition: border-color .2s ease, transform .2s ease; }
+.pd-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pd-thumb:hover { transform: translateY(-2px); }
+.pd-thumb.active { border-color: #1f4693; }
+.pd-thumb:focus-visible { outline: 2px solid #1f4693; outline-offset: 2px; }
 .pd-emoji { font-size: 5rem; }
 .pd-zoom-hint { position: absolute; z-index: 2; bottom: .8rem; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: .4rem; font: 600 .72rem "Inter", sans-serif; color: #46566f; background: rgba(255,255,255,.92); border: 1px solid #e6ecf6; border-radius: 999px; padding: .3rem .7rem; pointer-events: none; }
 .pd-zoom-hint svg { width: 14px; height: 14px; }

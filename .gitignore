@@ -19,3 +19,6 @@ dist/
 .DS_Store
 *.log
 npm-debug.log*
+
+# drop-off folder for original photos before conversion (never committed)
+incoming/

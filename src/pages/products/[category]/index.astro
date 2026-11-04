@@ -80,10 +80,10 @@ const listLd = {
       <div class="prod-grid">
         {items.map((p, i) => (
           <article class={`prod-card reveal ${["", "d1", "d2"][i % 3]}`} style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
-            <a href={`/products/${cat.slug}/${p.slug}`} class="prod-media" aria-label={p.name}>
+            <a href={`/products/${cat.slug}/${p.slug}`} class={`prod-media${p.listImage ? " has-photo" : ""}`} aria-label={p.name}>
               <span class="prod-media-tint" aria-hidden="true"></span>
-              {p.image
-                ? <img src={p.image} alt={p.name} loading="lazy" />
+              {(p.listImage || p.image)
+                ? <img src={p.listImage || p.image} alt={p.name} loading="lazy" />
                 : <span class="prod-emoji">{p.emoji}</span>}
               {p.forms && <span class="prod-badge">{p.forms.length}&nbsp;<span data-i18n="products.forms_unit">forms</span></span>}
               {UNAVAILABLE_PRODUCTS.has(p.slug) && <span class="prod-status prod-status-unavail">Currently Unavailable</span>}
