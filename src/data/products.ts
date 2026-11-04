@@ -229,6 +229,18 @@ export const products: Product[] = [
     drying: DRY.herbal,
   },
   {
+    slug: "beetroot-powder", name: "Beetroot Powder", category: "functional-nutritional-powders",
+    image: "/assets/img/products/beetroot-powder-v2.webp", emoji: "🟣", hsn: "0712 90 90", botanical: "Beta vulgaris",
+    listImage: "/assets/img/products/beetroot-powder-wide.webp",
+    tagline: "Deep natural crimson and earthy nutrition.",
+    description:
+      "Beetroot powder delivers a striking natural crimson colour along with the root's earthy sweetness and nutrients. It is a clean-label favourite for natural colouring, sports nutrition and functional foods.",
+    features: ["Vivid natural red colour", "Clean-label colourant", "Earthy, mildly sweet taste", "Popular in sports nutrition", F_DRY, F_CUSTOM],
+    uses: ["Natural food colouring", "Sports and nutrition blends", "Bakery, pasta and snacks", "Smoothies and lattes"],
+    grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 6%", "Private label / bulk"],
+    drying: DRY.functional,
+  },
+  {
     slug: "amchur-powder", name: "Amchur Powder", category: "functional-nutritional-powders",
     image: "/assets/img/products/amchur-powder-v2.webp",
     listImage: "/assets/img/products/amchur-powder-wide.webp",
@@ -372,18 +384,6 @@ export const products: Product[] = [
     features: ["Bright, natural citrus tang", "Convenient dry dosing", "Disperses readily", "No added acidulants", F_DRY, F_CUSTOM],
     uses: ["Seasonings and spice rubs", "Instant drinks and teas", "Bakery and confectionery", "Marinades and dressings"],
     grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 5%", "Private label / bulk"],
-    drying: DRY.functional,
-  },
-  {
-    slug: "beetroot-powder", name: "Beetroot Powder", category: "functional-nutritional-powders",
-    image: "/assets/img/products/beetroot-powder-v2.webp", emoji: "🟣", hsn: "0712 90 90", botanical: "Beta vulgaris",
-    listImage: "/assets/img/products/beetroot-powder-wide.webp",
-    tagline: "Deep natural crimson and earthy nutrition.",
-    description:
-      "Beetroot powder delivers a striking natural crimson colour along with the root's earthy sweetness and nutrients. It is a clean-label favourite for natural colouring, sports nutrition and functional foods.",
-    features: ["Vivid natural red colour", "Clean-label colourant", "Earthy, mildly sweet taste", "Popular in sports nutrition", F_DRY, F_CUSTOM],
-    uses: ["Natural food colouring", "Sports and nutrition blends", "Bakery, pasta and snacks", "Smoothies and lattes"],
-    grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 6%", "Private label / bulk"],
     drying: DRY.functional,
   },
   {
