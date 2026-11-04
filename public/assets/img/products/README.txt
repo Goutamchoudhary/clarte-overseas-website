@@ -11,7 +11,8 @@ A product with a listImage automatically gets the full-bleed photo layout;
 products without one keep the old centred cut-out layout.
 
 Done: functional-nutritional-powders (amla + dried-amla gallery, amchur,
-lemon, beetroot).
+lemon, beetroot); ayurvedic-herbal-powders: moringa, tulsi, ashwagandha
+(rest of that category still pending).
 
 How to add a set:
   1. Drop the originals (any format) in the git-ignored folder
@@ -28,6 +29,6 @@ How to add a set:
      check the category list, the product page and the related tiles.
 
 Still without any photo (emoji placeholder) as of Nov 2026:
-  ashwagandha-powder, shatavari-powder, brahmi-powder, triphala-powder,
+  shatavari-powder, brahmi-powder, triphala-powder,
   giloy-powder, neem-powder, trikatu-powder, watermelon-seeds, chia-seeds,
   pumpkin-seeds, melon-seeds

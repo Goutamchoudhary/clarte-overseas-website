@@ -42,9 +42,10 @@ before acting — they drift.
 - **Migrating to a new photo set** (landscape list + 1:1 product page;
   process in `public/assets/img/products/README.txt`). Done:
   Functional & Nutritional Powders (4 products, Amla with a dried-amla
-  gallery photo). Remaining: the other 6 categories.
-- **11 products have no photo** (emoji placeholder) — to be supplied:
-  ashwagandha, shatavari, brahmi, triphala, giloy, neem, trikatu (Ayurvedic
+  gallery photo); Ayurvedic & Herbal: moringa, tulsi, ashwagandha.
+  Remaining: the rest of Ayurvedic & Herbal and the other 5 categories.
+- **10 products have no photo** (emoji placeholder) — to be supplied:
+  shatavari, brahmi, triphala, giloy, neem, trikatu (Ayurvedic
   & herbal); watermelon, chia, pumpkin, melon seeds (edible seeds). Process:
   `public/assets/img/products/README.txt`.
 - The tamarind powder photo has a small sparkle mark bottom-right (looks

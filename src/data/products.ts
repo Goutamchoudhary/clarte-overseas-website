@@ -447,7 +447,9 @@ export const products: Product[] = [
   // -------------------------------------------------- AYURVEDIC & HERBAL
   {
     slug: "moringa-powder", name: "Moringa Powder", category: "ayurvedic-herbal-powders",
-    image: "/assets/img/products/moringa-powder.webp", emoji: "🌿", hsn: "1211 90 99", botanical: "Moringa oleifera",
+    image: "/assets/img/products/moringa-powder-v2.webp",
+    listImage: "/assets/img/products/moringa-powder-wide.webp",
+    emoji: "🌿", hsn: "1211 90 99", botanical: "Moringa oleifera",
     tagline: "The 'miracle tree' leaf, dried to keep it green.",
     description:
       "Moringa leaves are among the most nutrient-dense greens on earth. We dry them carefully to protect their vivid colour and nutrition, then mill them into a fine powder used worldwide in supplements, green blends and functional foods.",
@@ -470,7 +472,8 @@ export const products: Product[] = [
   },
   {
     slug: "tulsi-powder", name: "Tulsi (Holy Basil) Powder", category: "ayurvedic-herbal-powders",
-    image: "/assets/img/products/tulsi-powder.webp",
+    image: "/assets/img/products/tulsi-powder-v2.webp",
+    listImage: "/assets/img/products/tulsi-powder-wide.webp",
     emoji: "🌱", hsn: "1211 90 99", botanical: "Ocimum sanctum",
     tagline: "India's sacred adaptogenic herb.",
     description:
@@ -482,6 +485,8 @@ export const products: Product[] = [
   },
   {
     slug: "ashwagandha-powder", name: "Ashwagandha Powder", category: "ayurvedic-herbal-powders",
+    image: "/assets/img/products/ashwagandha-powder-v2.webp",
+    listImage: "/assets/img/products/ashwagandha-powder-wide.webp",
     emoji: "🌿", hsn: "1211 90 99", botanical: "Withania somnifera",
     tagline: "India's premier adaptogen root, milled for consistent potency.",
     description:
