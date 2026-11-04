@@ -39,6 +39,10 @@ before acting — they drift.
 ## Open items
 
 ### Product photos
+- **Migrating to a new photo set** (landscape list + 1:1 product page;
+  process in `public/assets/img/products/README.txt`). Done:
+  Functional & Nutritional Powders (4 products, Amla with a dried-amla
+  gallery photo). Remaining: the other 6 categories.
 - **11 products have no photo** (emoji placeholder) — to be supplied:
   ashwagandha, shatavari, brahmi, triphala, giloy, neem, trikatu (Ayurvedic
   & herbal); watermelon, chia, pumpkin, melon seeds (edible seeds). Process:

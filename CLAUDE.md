@@ -66,8 +66,15 @@ that area).
   loaded the page will keep seeing the old cached image for up to a year.
   **Give the new image a new filename** (e.g. append `-v2`) and update every
   reference, rather than overwriting in place.
+- **Product photo migration (Nov 2026 →):** each product gets a 1:1
+  `image` (`<slug>-v2.webp`, product page) and a landscape `listImage`
+  (`<slug>-wide.webp`, category list + related tiles), optionally a
+  `gallery`. Having a `listImage` switches that product to the full-bleed
+  layout; unmigrated products keep the old cut-out layout. Originals go in
+  the git-ignored `incoming/product-photos/<category>/{landscape,square}/`.
+  Process and progress: `public/assets/img/products/README.txt`.
 - **Self-host every asset.** Product photos live in
-  `public/assets/img/products/<slug>.webp` (recipe in the README there) and
+  `public/assets/img/products/` (recipe in the README there) and
   certificates in `public/assets/certifications/docs/`. Nothing should load
   from the old site builder's CDN (`lsmedia.linker-cdn.net`) — that
   dependency was removed in Oct 2026. Keep signed certificate PDFs
