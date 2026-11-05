@@ -11,8 +11,8 @@ A product with a listImage automatically gets the full-bleed photo layout;
 products without one keep the old centred cut-out layout.
 
 Done: functional-nutritional-powders (amla + dried-amla gallery, amchur,
-lemon, beetroot); ayurvedic-herbal-powders: moringa, tulsi, ashwagandha
-(rest of that category still pending).
+lemon, beetroot); ayurvedic-herbal-powders: moringa, tulsi, ashwagandha,
+shatavari, brahmi, triphala (giloy, neem, trikatu still pending).
 
 How to add a set:
   1. Drop the originals (any format) in the git-ignored folder
@@ -24,11 +24,13 @@ How to add a set:
          withoutEnlargement: true }).webp({ quality: 78, effort: 6 })
   3. ALWAYS a new filename (-v2, -wide, -v3 ...) — images here are cached for a
      year (see CLAUDE.md); never overwrite a file in place. Delete the replaced
-     file once nothing references it.
-  4. Set image / listImage / gallery in products.ts, run `npm run build`, and
+     file (and its -480/-800 copies) once nothing references it.
+  4. Make the phone-sized copies (-480, -800) for every new file:
+       node scripts/gen-image-variants.mjs
+     The templates pick them up automatically via srcset (src/lib/responsive-img.ts).
+  5. Set image / listImage / gallery in products.ts, run `npm run build`, and
      check the category list, the product page and the related tiles.
 
 Still without any photo (emoji placeholder) as of Nov 2026:
-  shatavari-powder, brahmi-powder, triphala-powder,
   giloy-powder, neem-powder, trikatu-powder, watermelon-seeds, chia-seeds,
   pumpkin-seeds, melon-seeds

@@ -73,6 +73,11 @@ that area).
   layout; unmigrated products keep the old cut-out layout. Originals go in
   the git-ignored `incoming/product-photos/<category>/{landscape,square}/`.
   Process and progress: `public/assets/img/products/README.txt`.
+- **Mobile image sizes:** after adding or replacing any product photo, run
+  `node scripts/gen-image-variants.mjs` — it writes `<name>-480.webp` and
+  `<name>-800.webp` copies, and the templates (`src/lib/responsive-img.ts`)
+  add a `srcset` only when both exist. Forget it and the photo still works,
+  but phones download the full 1200px file.
 - **Self-host every asset.** Product photos live in
   `public/assets/img/products/` (recipe in the README there) and
   certificates in `public/assets/certifications/docs/`. Nothing should load

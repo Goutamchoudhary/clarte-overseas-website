@@ -42,10 +42,16 @@ before acting — they drift.
 - **Migrating to a new photo set** (landscape list + 1:1 product page;
   process in `public/assets/img/products/README.txt`). Done:
   Functional & Nutritional Powders (4 products, Amla with a dried-amla
-  gallery photo); Ayurvedic & Herbal: moringa, tulsi, ashwagandha.
-  Remaining: the rest of Ayurvedic & Herbal and the other 5 categories.
-- **10 products have no photo** (emoji placeholder) — to be supplied:
-  shatavari, brahmi, triphala, giloy, neem, trikatu (Ayurvedic
+  gallery photo); Ayurvedic & Herbal: moringa, tulsi, ashwagandha,
+  shatavari, brahmi, triphala. Remaining: giloy, neem, trikatu and the
+  other 5 categories.
+- **Responsive product photos (Nov 2026):** every product photo has
+  480px and 800px copies (`scripts/gen-image-variants.mjs`) served via
+  `srcset`; 2x phones get the 800px file (~40–110 KB instead of 100–230 KB),
+  3x phones still get the full 1200px for sharpness. /products overview
+  thumbnails use the 480px copy.
+- **7 products have no photo** (emoji placeholder) — to be supplied:
+  giloy, neem, trikatu (Ayurvedic
   & herbal); watermelon, chia, pumpkin, melon seeds (edible seeds). Process:
   `public/assets/img/products/README.txt`.
 - The tamarind powder photo has a small sparkle mark bottom-right (looks

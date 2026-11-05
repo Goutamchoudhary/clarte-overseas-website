@@ -498,6 +498,8 @@ export const products: Product[] = [
   },
   {
     slug: "shatavari-powder", name: "Shatavari Powder", category: "ayurvedic-herbal-powders",
+    image: "/assets/img/products/shatavari-powder-v2.webp",
+    listImage: "/assets/img/products/shatavari-powder-wide.webp",
     emoji: "🌱", hsn: "1211 90 99", botanical: "Asparagus racemosus",
     tagline: "The classic Ayurvedic root tonic for women's wellness.",
     description:
@@ -509,6 +511,8 @@ export const products: Product[] = [
   },
   {
     slug: "brahmi-powder", name: "Brahmi Powder", category: "ayurvedic-herbal-powders",
+    image: "/assets/img/products/brahmi-powder-v2.webp",
+    listImage: "/assets/img/products/brahmi-powder-wide.webp",
     emoji: "🍃", hsn: "1211 90 99", botanical: "Bacopa monnieri",
     tagline: "The Ayurvedic memory herb, dried to hold its actives.",
     description:
@@ -520,6 +524,8 @@ export const products: Product[] = [
   },
   {
     slug: "triphala-powder", name: "Triphala Powder", category: "ayurvedic-herbal-powders",
+    image: "/assets/img/products/triphala-powder-v2.webp",
+    listImage: "/assets/img/products/triphala-powder-wide.webp",
     emoji: "🟤", hsn: "1211 90 99", botanical: "Terminalia chebula, Terminalia bellirica, Phyllanthus emblica",
     tagline: "The classic three-fruit Ayurvedic digestive blend.",
     description:

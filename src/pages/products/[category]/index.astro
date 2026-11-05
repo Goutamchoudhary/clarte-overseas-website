@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EnquiryDialog from "../../../components/EnquiryDialog.astro";
 import { categories, productsByCategory, getCategory } from "../../../data/products";
 import { SITE, UNAVAILABLE_PRODUCTS, COMING_SOON_PRODUCTS } from "../../../consts";
+import { srcsetFor, SIZES } from "../../../lib/responsive-img";
 
 export function getStaticPaths() {
   return categories.map((c) => ({ params: { category: c.slug } }));
@@ -83,7 +84,7 @@ const listLd = {
             <a href={`/products/${cat.slug}/${p.slug}`} class={`prod-media${p.listImage ? " has-photo" : ""}`} aria-label={p.name}>
               <span class="prod-media-tint" aria-hidden="true"></span>
               {(p.listImage || p.image)
-                ? <img src={p.listImage || p.image} alt={p.name} loading="lazy" />
+                ? <img src={p.listImage || p.image} srcset={srcsetFor(p.listImage || p.image)} sizes={SIZES.card} alt={p.name} loading="lazy" decoding="async" />
                 : <span class="prod-emoji">{p.emoji}</span>}
               {p.forms && <span class="prod-badge">{p.forms.length}&nbsp;<span data-i18n="products.forms_unit">forms</span></span>}
               {UNAVAILABLE_PRODUCTS.has(p.slug) && <span class="prod-status prod-status-unavail">Currently Unavailable</span>}
