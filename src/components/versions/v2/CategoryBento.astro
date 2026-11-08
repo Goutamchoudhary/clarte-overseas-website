@@ -1,0 +1,84 @@
+---
+// V2 "Living Collage" product-range section: the 7 categories (+ Custom
+// Blends) as a bento grid of photo tiles instead of a uniform card grid.
+// Tiles with migrated product photos slowly cross-fade through them
+// (/js/site-v2.js, only while on screen; off for reduced motion).
+// Copy reuses the V1 section's i18n keys, so all 17 languages still work.
+import { collageCats } from "../../../lib/collage";
+
+// Same descriptions (and keys) as the V1 cards on the homepage.
+const DESC: Record<string, { key: string; text: string }> = {
+  "ayurvedic-herbal-powders": { key: "home.card1_desc", text: "Ashwagandha, shatavari, brahmi, triphala, giloy, neem, tulsi and moringa — dried gently and milled into clean, consistent powders for supplements and herbal formulations." },
+  "culinary-spice-powders": { key: "home.card2_desc", text: "Onion, garlic, ginger, green chilli, mint, coriander and curry leaf powders that carry real flavour into kitchens, ready blends and savoury mixes." },
+  "functional-nutritional-powders": { key: "home.card3_desc", text: "Amla, amchur, lemon and beetroot powders chosen for natural colour, tang and clean-label nutrition in supplements, seasonings and ready meals." },
+  "fruit-powders": { key: "home.card4_desc", text: "Mango, guava, banana, pineapple, papaya, apple, pomegranate and tamarind powders made for bakery, dairy, beverage and confectionery recipes." },
+  "hydrocolloids-food-additives": { key: "home.card5_desc", text: "Guar gum, psyllium husk and tamarind kernel powder — plant-based thickeners and fibres for texture, binding and stability in your formulations." },
+  "dehydrated-vegetable-powders": { key: "home.card7_desc", text: "Tomato, carrot and jackfruit, dried and milled to concentrate natural colour, flavour and nutrition into a shelf-stable form." },
+  "edible-seeds-kernels": { key: "home.card8_desc", text: "Watermelon, melon (magaz), pumpkin and chia — cleaned, colour-sorted and graded for snacking, bakery and nutrition brands." },
+};
+// Grid area per category (layout in site-v2.css).
+const AREA: Record<string, string> = {
+  "ayurvedic-herbal-powders": "a",
+  "culinary-spice-powders": "b",
+  "functional-nutritional-powders": "c",
+  "dehydrated-vegetable-powders": "d",
+  "fruit-powders": "e",
+  "edible-seeds-kernels": "f",
+  "hydrocolloids-food-additives": "g",
+};
+const BIG = new Set(["a", "b", "d"]);
+---
+<section id="export" class="v2-range">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="v2-range-head reveal">
+      <div>
+        <span class="eyebrow"><span data-i18n="home.products_eyebrow">Product Range</span></span>
+        <h2 class="v2-h2"><span data-i18n="home.products_heading">Powders and ingredients for every formulation</span></h2>
+      </div>
+      <div class="v2-range-aside">
+        <p data-i18n="home.products_sub">Indian-grown produce, dried and milled into clean powders and food-grade ingredients. Each grade is made for long shelf life, true flavour and reliable performance in your recipes.</p>
+        <a href="/products" class="btn btn-primary"><span data-i18n="home.hero_cta_explore">Explore Products</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="v2-bento">
+      {collageCats.map((c, i) => {
+        const area = AREA[c.slug];
+        const frames = c.products.slice(0, 4).map((p) => p.src);
+        return (
+          <a href={c.href} class={`v2-bento-tile reveal d${i % 3}`} style={`grid-area:${area}`} data-v2-cycle={frames.length ? JSON.stringify(frames) : undefined}>
+            <img
+              class="v2-bento-img is-cur"
+              src={c.src}
+              srcset={c.srcset}
+              sizes={BIG.has(area) ? "(max-width: 767px) 100vw, (max-width: 1023px) 92vw, 620px" : "(max-width: 767px) 50vw, (max-width: 1023px) 46vw, 310px"}
+              alt=""
+              width="900"
+              height="502"
+              loading="lazy"
+              decoding="async"
+            />
+            {frames.length > 0 && <img class="v2-bento-img is-next" alt="" aria-hidden="true" decoding="async" sizes={BIG.has(area) ? "(max-width: 767px) 100vw, (max-width: 1023px) 92vw, 620px" : "(max-width: 767px) 50vw, (max-width: 1023px) 46vw, 310px"} />}
+            <span class="v2-bento-card">
+              <span class="v2-bento-top">
+                <b data-i18n={c.i18n}>{c.name}</b>
+                <span class="v2-bento-count">{c.count}</span>
+              </span>
+              <span class="v2-bento-desc" data-i18n={DESC[c.slug]?.key}>{DESC[c.slug]?.text}</span>
+              <span class="v2-bento-link"><span data-i18n="products.cat_explore">Explore range</span> →</span>
+            </span>
+          </a>
+        );
+      })}
+      <a href="/contact" class="v2-bento-tile v2-bento-dark reveal d2" style="grid-area:h">
+        <span class="v2-bento-dark-body">
+          <span class="v2-bento-dark-kicker" data-i18n="home.card6_title">Custom Blends</span>
+          <span class="v2-bento-dark-desc" data-i18n="home.card6_desc">Private-label blends and made-to-spec grades, built around your recipe and packed to your brief.</span>
+          <span class="v2-bento-dark-row"><span data-i18n="home.card6_link">Talk to Us</span><span class="v2-explore-arrow" aria-hidden="true">→</span></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -151,6 +151,11 @@ that area).
   planned in [docs/handoff/site-versions.md](docs/handoff/site-versions.md) —
   read it before building any of them. Vector source SVGs (30) and their loop
   animations: `docs/design/vector-kit/`.
+- Site versions are wired through `site-config.json` → `version` and
+  `public/{css,js}/site-v<N>.{css,js}` (scoped `[data-version="vN"]`, linked
+  only for that version). Preview one with `SITE_VERSION=v2 npm run build`.
+  If you add a version stylesheet, keep it directly after styles.css — the
+  defer script relies on that order.
 
 ## Repo scope
 

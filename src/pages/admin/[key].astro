@@ -82,7 +82,7 @@ if (Astro.request.method === "POST") {
   } else if (authed && action === "publish") {
     const next = normalizeConfig(Object.fromEntries(GROUPS.map((g) => [g.key, String(form.get(g.key) ?? "")])));
     try {
-      await writeConfig(next, `Admin: hero=${next.hero} theme=${next.theme} edition=${next.edition} cta=${next.cta}`);
+      await writeConfig(next, `Admin: version=${next.version} hero=${next.hero} theme=${next.theme} edition=${next.edition} cta=${next.cta}`);
       return Astro.redirect(`${self}?m=published`, 303);
     } catch { error = "Publishing failed (GitHub didn't accept the change). Nothing on the live site changed."; }
   } else if (authed && action === "revert") {

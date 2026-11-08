@@ -6,6 +6,11 @@ import CookieBanner from "../components/CookieBanner.astro";
 import SplashHead from "../components/SplashHead.astro";
 import Splash from "../components/Splash.astro";
 import { SITE, ANALYTICS, SOCIAL, CONTACT } from "../consts";
+import { siteConfig } from "../data/site-options";
+// Active whole-site version (docs/handoff/site-versions.md). V1 = today's site;
+// any other version adds its own stylesheet + script on top of styles.css.
+const version = siteConfig.version;
+const versionAssets = version !== "v1";
 // Inlined so the font-face rules are available on the first byte of HTML —
 // a separate stylesheet put a request between the HTML and every font file.
 import fontsCss from "../../public/fonts/fonts.css?raw";
@@ -76,7 +81,7 @@ const orgSchema = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-version={version}>
   <head>
     <meta charset="UTF-8" />
     <SplashHead />
@@ -117,6 +122,9 @@ const orgSchema = {
          is moved to just after the splash by scripts/defer-site-css.mjs, so the
          splash can paint before this file arrives. Source and dev keep it here. -->
     <link rel="stylesheet" href={`/css/styles.css?v=${__ASSET_V__}`} />
+    <!-- Version stylesheet. Must directly follow styles.css: defer-site-css.mjs
+         moves it together with styles.css (same order) into <body>. -->
+    {versionAssets && <link rel="stylesheet" href={`/css/site-${version}.css?v=${__ASSET_V__}`} />}
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchema)} />
 
@@ -169,6 +177,7 @@ const orgSchema = {
     <Footer />
     <CookieBanner />
     <script is:inline src={`/js/script.js?v=${__ASSET_V__}`}></script>
+    {versionAssets && <script is:inline defer src={`/js/site-${version}.js?v=${__ASSET_V__}`}></script>}
     <SpeedInsights />
     <VercelAnalytics />
   </body>

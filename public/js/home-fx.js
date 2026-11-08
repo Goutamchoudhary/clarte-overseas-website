@@ -25,7 +25,9 @@
      ====================================================================== */
   function heroScene() {
     const hero = $("#home");
-    if (!hero) return;
+    // V2+ site versions bring their own hero (see /js/site-v2.js); this
+    // curtain/intro scene belongs to the V1 flat-lay hero only.
+    if (!hero || !hero.classList.contains("hero-flatlay")) return;
 
     // Load intro: one quick, unified fade-in rather than a long sequential
     // reveal. The photo settles from a barely-there zoom, the veil/warm

@@ -44,12 +44,14 @@ async function main() {
     const m = LINK_RE.exec(html);
     if (!m || m.index > headEnd || !html.includes(MARKER)) { skipped++; continue; }
 
-    // Astro-inlined <style> blocks between the link and </head>.
+    // Astro-inlined <style> blocks between the link and </head>, plus the
+    // active site version's stylesheet (/css/site-v2.css etc.), in order.
     const tail = html.slice(m.index + m[0].length, headEnd);
-    const styles = tail.match(/<style>[\s\S]*?<\/style>/g) || [];
+    const styles = tail.match(/<style>[\s\S]*?<\/style>|<link rel="stylesheet" href="\/css\/site-v\d+\.css\?v=[^"]+"\s*\/?>/g) || [];
     const tailWithout = styles.reduce((t, s) => t.replace(s, ""), tail);
 
-    const head = html.slice(0, m.index) + `<link rel="preload" as="style" href="${m[1]}">` + tailWithout;
+    const versionCss = styles.map((t) => /href="(\/css\/site-v[^"]+)"/.exec(t)?.[1]).filter(Boolean);
+    const head = html.slice(0, m.index) + `<link rel="preload" as="style" href="${m[1]}">` + versionCss.map((h) => `<link rel="preload" as="style" href="${h}">`).join("") + tailWithout;
     let body = html.slice(headEnd);
     body = body.replace(MARKER, m[0] + styles.join("") + "<script> </script>");
     html = head + body;

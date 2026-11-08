@@ -20,7 +20,9 @@ const specPdfs = fs.existsSync("./spec-pdfs")
 const ASSET_V = crypto
   .createHash("sha1")
   .update(
-    ["css/styles.css", "fonts/fonts.css", "js/script.js", "js/i18n.js", "js/home-fx.js"]
+    ["css/styles.css", "fonts/fonts.css", "js/script.js", "js/i18n.js", "js/home-fx.js",
+     // Site-version assets (docs/handoff/site-versions.md), whichever exist.
+     ...["css", "js"].flatMap((d) => fs.readdirSync(`./public/${d}`).filter((f) => /^site-v\d+\.(css|js)$/.test(f)).map((f) => `${d}/${f}`))]
       .map((f) => fs.readFileSync(`./public/${f}`))
       .join("\n"),
   )

@@ -19,6 +19,37 @@ The owner picked **V2, V4, V5, V8** as the versions to redesign the site
 around, plus **V6** as the dark-mode version. **V7 (split-flap board) was
 dropped** on 8 Nov 2026. V3 stays a hero-only option.
 
+## Status
+
+- **V2 Living Collage — built (Nov 2026), publishable from the admin.**
+  Production still runs V1 until the owner switches "Site version" to V2.
+- V4, V5, V6, V8: planned below.
+
+## How versions are wired (built with V2)
+
+- `site-config.json` → `version` (`v1` default). Options + `ready` flags in
+  `src/data/site-options.ts` (`VERSIONS`); `isVersion("v2")` in templates.
+- `BaseLayout` sets `<html data-version="…">` and, for any version other than
+  V1, links `/css/site-<v>.css` right after styles.css and defers
+  `/js/site-<v>.js`. `defer-site-css.mjs` moves that stylesheet with
+  styles.css (same order); `minify-css.mjs` minifies both; both feed the
+  `__ASSET_V__` hash. V1 pages contain no V2 bytes at all.
+- Every rule in `site-<v>.css` is scoped `[data-version="<v>"] …`.
+- Version-only markup: `src/components/versions/<v>/`. V2 swaps the home
+  hero (`HeroCollage`) and product range (`CategoryBento`), and
+  `PageHero` renders a split layout with rotating tiles (`CollageTiles`).
+  Everything else is restyled by CSS. V2 adds **no new i18n keys** — it
+  reuses existing ones, so all 17 languages work.
+- Collage photos: `public/assets/img/categories/collage/<slug>-{520,900}.webp`
+  from `node scripts/gen-collage-images.mjs`. Fruit and Hydrocolloids only
+  have 500 px sources (no -900); give them 1600 px category photos to sharpen
+  their desktop tiles.
+- **Previewing a version without publishing it:**
+  - local: `SITE_VERSION=v2 npm run build` then the `prod-static` server;
+  - Vercel preview deployments (never production) read
+    `src/data/site-config.preview.json` (`{"version":"v2"}` on
+    `feat/site-admin`) or a `SITE_VERSION` env var. Production ignores both.
+
 ## What a version is
 
 One preset that switches all of these together:
@@ -152,8 +183,8 @@ CSS variables so each version recolours them.
    - vector components
    - library loader
    - admin group
-2. **Versions,** one PR each: V2 → V4 → V5 → V8 → V6 (or in the owner's
-   chosen order). For each:
+2. **Versions,** one PR each: ~~V2~~ (done) → V4 → V5 → V8 → V6 (or in the
+   owner's chosen order). For each:
    - navbar, hero, product-range section, section headings,
      cards/buttons/forms, footer
    - pages: home, products, category, product, How We Export,
