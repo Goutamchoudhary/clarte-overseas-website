@@ -134,6 +134,19 @@ that area).
   `restore`, `reset`, `clean`, `rm -rf` in the repo), run `git status` first
   and stash or commit anything sitting there.
 
+## Site admin
+
+- `/admin/<ADMIN_URL_KEY>` (`src/pages/admin/[key].astro`, SSR) switches
+  hero / colour version / CTA gradient / site edition by committing
+  `src/data/site-config.json` via the GitHub API → Vercel rebuild. Read
+  [docs/handoff/admin.md](docs/handoff/admin.md) before touching it.
+- Never build the admin page on `BaseLayout` (analytics would leak the secret
+  URL). Never add a default value for any `ADMIN_*` secret, and never run
+  `scripts/admin-setup.mjs` yourself — the owner runs it so the secrets stay
+  out of chat.
+- New design options go in `src/data/site-options.ts` with `ready: false`
+  until the site actually renders them.
+
 ## Repo scope
 
 - This repo (`Website-1`, the clarteoverseas.com marketing site) is
