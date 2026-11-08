@@ -16,6 +16,23 @@
 > - At most 2 pinned scroll moments per page, none on phones; every section
 >   has a finished still state for reduced motion.
 >
+> **Home A "The Journey" chosen (8 Nov 2026).** Build notes from the owner:
+>
+> - Our Process reel: product photos only, read from the same product records
+>   as `/products` (`image` field via `smallest()`, skipping coming-soon and
+>   unavailable products), never copied, so new photos appear automatically.
+> - Who We Serve: V1's `industries-we-serve-v2.webp`, plus the existing
+>   `home.industries_sub` line.
+> - Clarté Edge: arch stays; no photo. Each reason lights up in turn and its
+>   illustration fills the arch.
+> - Standards & Trust: the 14 official logos, compact, in two labelled rows.
+>   Testimonials are a separate section with their own heading.
+> - Closing CTA: WhatsApp, Calendly and a compact Request a Quote; truck, crane
+>   and ship drop from above onto road and water, with clear space under the
+>   buttons. No falling photos here.
+> - Footer: V1 footer unchanged.
+> - Owner will send feedback on the other pages before implementation starts.
+>
 > The version switch and V2 build below (commit b740ba8, not merged) are still
 > on `feat/site-admin`. Reuse the V2 collage parts in the combined design. The
 > rest of this document is the earlier per-version plan, kept for its phone
