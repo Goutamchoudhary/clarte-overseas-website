@@ -1,5 +1,26 @@
 # Whole-site versions (plan)
 
+> **Direction changed on 8 Nov 2026: one combined design, not switchable themes.**
+> The owner wants a single site that uses V2, V3, V4, V5, V6 and V8 together,
+> each with its own job, and all 30 vector illustrations in large and small
+> sizes. Canvas boards "Home A / B / C" are the three proposed home pages;
+> "Page ·" boards show the other pages; "Where every design and vector goes"
+> maps them. Fixed requirements:
+>
+> - Home hero stays V5 (Grown / Milled / Shipped) with a designed Request a
+>   Quote button (three options on the boards).
+> - "From India to your port" replaces or absorbs the Export Footprint section.
+> - Inner-page headers keep the light watermark word + dark heading, but take
+>   a third to half of the screen (330 px on the boards, about 640 today) with
+>   a smaller heading; colours can vary by page.
+> - At most 2 pinned scroll moments per page, none on phones; every section
+>   has a finished still state for reduced motion.
+>
+> The version switch and V2 build below (commit b740ba8, not merged) are still
+> on `feat/site-admin`. Reuse the V2 collage parts in the combined design. The
+> rest of this document is the earlier per-version plan, kept for its phone
+> rules and architecture notes.
+
 Started Nov 2026. Each "version" restyles the **entire site**: colours,
 design elements, animation, vector illustrations, every section and page. It
 is more than a home-hero swap. Designs are previewed on the
