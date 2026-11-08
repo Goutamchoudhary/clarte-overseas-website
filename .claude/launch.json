@@ -4,14 +4,39 @@
     {
       "name": "astro",
       "runtimeExecutable": "/Users/gautamchoudhary/.nvm/versions/node/v24.22.1/bin/node",
-      "runtimeArgs": ["node_modules/astro/astro.js", "dev", "--port", "4321"],
+      "runtimeArgs": [
+        "node_modules/astro/astro.js",
+        "dev",
+        "--port",
+        "4321"
+      ],
       "port": 4321
     },
     {
       "name": "prod-static",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4330", "--bind", "127.0.0.1", "--directory", ".vercel/output/static"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4330",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        ".vercel/output/static"
+      ],
       "port": 4330
+    },
+    {
+      "name": "astro-admin-test",
+      "runtimeExecutable": "/Users/gautamchoudhary/.nvm/versions/node/v24.22.1/bin/node",
+      "runtimeArgs": [
+        "--env-file-if-exists=.env.admin-test",
+        "node_modules/astro/astro.js",
+        "dev",
+        "--port",
+        "4322"
+      ],
+      "port": 4322
     }
   ]
 }

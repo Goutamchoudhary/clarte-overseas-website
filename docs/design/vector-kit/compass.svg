@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Port compass · use: Incoterms explainer (FOB/CIF), section icon · motion: Needle settles -->
+<circle cx="100" cy="100" r="78" fill="#15123a"/><circle cx="100" cy="100" r="66" fill="#ffffff"/>
+<circle cx="100" cy="100" r="58" fill="none" stroke="#ede9fe" stroke-width="10"/>
+<g font-family="Sora,sans-serif" font-size="12" font-weight="800" text-anchor="middle" fill="#15123a"><text x="100" y="34">N</text><text x="100" y="176">S</text><text x="172" y="104">E</text><text x="28" y="104">W</text></g>
+<g class="vl-needle" style="transform-origin:100px 100px"><path d="M100 46 L112 100 L100 154 L88 100Z" fill="#c4b5fd"/><path d="M100 46 L112 100 H88Z" fill="#be185d"/></g>
+<circle cx="100" cy="100" r="7" fill="#15123a"/>
+</svg>

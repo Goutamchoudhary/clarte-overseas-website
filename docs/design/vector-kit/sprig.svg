@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160">
+<g class="vk-sprig">
+  <path d="M60 150 Q58 90 66 30" stroke="#365314" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g class="vk-leafs">
+    <path d="M62 120 Q30 112 22 88 Q50 88 62 120Z" fill="#4d7c0f"/><path d="M63 100 Q94 92 100 66 Q72 68 63 100Z" fill="#65a30d"/>
+    <path d="M64 78 Q36 70 30 46 Q56 48 64 78Z" fill="#65a30d"/><path d="M65 58 Q90 50 92 28 Q70 32 65 58Z" fill="#4d7c0f"/>
+    <path d="M66 34 Q60 14 68 2 Q78 16 66 34Z" fill="#84cc16"/>
+  </g>
+</g>
+</svg>

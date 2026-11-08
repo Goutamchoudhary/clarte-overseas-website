@@ -12,7 +12,46 @@ interface Props {
   i18nCrumb?: string;       // data-i18n key for the crumb label, e.g. "nav.how_we_export"
 }
 const { crumb, eyebrow, heading, watermark, subtitle, chips = [], i18nPrefix, i18nCrumb } = Astro.props;
+// V2 ("Living Collage") puts the copy left and three rotating category tiles
+// right; V1 keeps the centred blueprint hero below, unchanged.
+import { isVersion } from "../data/site-options";
+import CollageTiles from "./versions/v2/CollageTiles.astro";
+const v2 = isVersion("v2");
+// Vary the starting category per page so each page opens on different photos.
+const start = [...watermark].reduce((n, ch) => n + ch.charCodeAt(0), 0) % 7;
 ---
+{v2 ? (
+<section class="v2-pagehero">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 v2-pagehero-inner">
+    <div class="v2-pagehero-copy">
+      <nav class="crumb text-sm" aria-label="Breadcrumb">
+        <a href="/" data-i18n="nav.home">Home</a> <span class="text-slate-300 mx-1">/</span>
+        <span class="text-slate-500" data-i18n={i18nCrumb || undefined}>{crumb}</span>
+      </nav>
+      <span class="eyebrow mt-5" data-i18n={i18nPrefix ? `${i18nPrefix}.hero_eyebrow` : undefined}>{eyebrow}</span>
+      <h1 class="v2-pagehero-title" data-i18n-html={i18nPrefix ? `${i18nPrefix}.hero_heading` : undefined} set:html={heading}></h1>
+      {subtitle && (
+        <p class="v2-pagehero-sub" data-i18n={i18nPrefix ? `${i18nPrefix}.hero_sub` : undefined}>{subtitle}</p>
+      )}
+      {chips.length > 0 && (
+        <div class="ph-chips v2-pagehero-chips">
+          {chips.map((c, idx) => <span class="ph-chip" data-i18n={i18nPrefix ? `${i18nPrefix}.hero_chip${idx + 1}` : undefined}>{c}</span>)}
+        </div>
+      )}
+    </div>
+    <CollageTiles
+      class="v2-collage--page"
+      hero
+      start={start}
+      sizes={[
+        "(max-width: 767px) 100vw, 520px",
+        "(max-width: 767px) 50vw, 260px",
+        "(max-width: 767px) 50vw, 260px",
+      ]}
+    />
+  </div>
+</section>
+) : (
 <section class="page-hero blueprint">
   <span class="bp-plus" style="top:16%;left:7%"></span>
   <span class="bp-plus" style="top:60%;left:13%"></span>
@@ -40,3 +79,4 @@ const { crumb, eyebrow, heading, watermark, subtitle, chips = [], i18nPrefix, i1
     </div>
   </div>
 </section>
+)}

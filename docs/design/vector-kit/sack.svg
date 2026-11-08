@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<g class="vk-sack">
+  <ellipse cx="80" cy="146" rx="60" ry="8" fill="#15123a" opacity=".14"/>
+  <path d="M34 60 Q28 140 44 146 L116 146 Q132 140 126 60 Q80 48 34 60Z" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/>
+  <path d="M44 56 Q80 30 116 56 Q100 46 80 48 Q60 46 44 56Z" fill="#d9c69c"/>
+  <path d="M52 44 Q80 26 108 44" stroke="#be185d" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="80" cy="40" rx="26" ry="8" fill="#e0a526"/>
+  <rect x="50" y="82" width="60" height="38" rx="6" fill="#1f4693"/>
+  <text x="80" y="99" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#ffffff">25 KG</text>
+  <text x="80" y="112" text-anchor="middle" font-family="Inter, sans-serif" font-size="7.5" fill="#c4b5fd">EXPORT GRADE</text>
+</g>
+</svg>

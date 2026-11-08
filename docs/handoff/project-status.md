@@ -79,6 +79,12 @@ before acting — they drift.
   ~10 s on slow 3G (bandwidth-bound; measured live after the merge). Speed Index regressed ~0.8–1.2 s with
   the splash; LCP/TBT/CLS fine.
 
+### Site admin & design versions (Nov 2026)
+- Admin built (authenticator-code sign-in, publish/revert via GitHub) — see
+  [admin.md](admin.md). Owner setup (secrets, Upstash, GitHub token) pending;
+  public site doesn't read the config yet. Next: themes/CTA gradients, hero
+  V2 + V3, then V4/V5 and the multi-category edition.
+
 ### Platform
 - **Astro upgrade (4 → 7)** — assessed, trial-built, zero-downtime plan in
   [astro-upgrade.md](astro-upgrade.md). Recommended: Astro 4 has had no

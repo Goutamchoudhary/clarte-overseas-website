@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Chilli, garlic, ginger · use: Culinary & Spice, onion/garlic product pages · motion: Chilli rocks gently -->
+<ellipse cx="100" cy="186" rx="72" ry="6" fill="#15123a" opacity=".12"/>
+<g class="vl-rock2" style="transform-origin:60px 150px"><path d="M30 140 Q60 120 110 150 Q120 158 108 160 Q60 156 30 140Z" fill="#c2410c"/><path d="M26 138 Q20 128 30 124 L34 134Z" fill="#4d7c0f"/></g>
+<path d="M120 170 Q100 150 116 122 Q128 104 132 92 Q136 104 148 122 Q164 150 144 170Z" fill="#fbf6ea" stroke="#d6c9a8" stroke-width="2"/>
+<path d="M132 96 Q128 130 132 170 M124 112 Q114 140 124 168 M140 112 Q152 140 140 168" stroke="#d6c9a8" stroke-width="2" fill="none"/>
+<path d="M128 92 L132 80 L136 92Z" fill="#d6c9a8"/>
+<g fill="#d6a46a" stroke="#a86b32" stroke-width="1.5"><ellipse cx="56" cy="174" rx="20" ry="9"/><ellipse cx="80" cy="168" rx="9" ry="14" transform="rotate(25 80 168)"/><ellipse cx="38" cy="166" rx="7" ry="11" transform="rotate(-30 38 166)"/><ellipse cx="94" cy="176" rx="12" ry="7"/></g><path d="M48 172 h8 M70 176 h6" stroke="#a86b32" stroke-width="1.5"/>
+</svg>

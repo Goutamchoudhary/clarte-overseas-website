@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Mortar & pestle · use: Culinary & Spice category, blog · motion: Pestle grinds -->
+<ellipse cx="100" cy="190" rx="54" ry="6" fill="#15123a" opacity=".12"/>
+<g class="vl-grind" style="transform-origin:100px 120px"><rect x="106" y="34" width="20" height="84" rx="10" fill="#a86b32" transform="rotate(28 116 76)"/></g>
+<path d="M44 108 H156 Q152 160 112 170 H88 Q48 160 44 108Z" fill="#6d28d9"/>
+<ellipse cx="100" cy="108" rx="56" ry="12" fill="#4c1d95"/><ellipse cx="100" cy="110" rx="44" ry="7" fill="#c2410c"/>
+<rect x="80" y="168" width="40" height="12" rx="4" fill="#4c1d95"/>
+<circle cx="40" cy="176" r="5" fill="#15123a"/><circle cx="50" cy="182" r="4" fill="#15123a"/><path d="M150 176 l10 -4 l2 6z" fill="#c2410c"/><path d="M160 184 q8 -10 18 -4" stroke="#c2410c" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

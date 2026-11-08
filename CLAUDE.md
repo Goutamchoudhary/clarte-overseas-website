@@ -134,6 +134,29 @@ that area).
   `restore`, `reset`, `clean`, `rm -rf` in the repo), run `git status` first
   and stash or commit anything sitting there.
 
+## Site admin
+
+- `/admin/<ADMIN_URL_KEY>` (`src/pages/admin/[key].astro`, SSR) switches
+  hero / colour version / CTA gradient / site edition by committing
+  `src/data/site-config.json` via the GitHub API → Vercel rebuild. Read
+  [docs/handoff/admin.md](docs/handoff/admin.md) before touching it.
+- Never build the admin page on `BaseLayout` (analytics would leak the secret
+  URL). Never add a default value for any `ADMIN_*` secret, and never run
+  `scripts/admin-setup.mjs` yourself — the owner runs it so the secrets stay
+  out of chat.
+- New design options go in `src/data/site-options.ts` with `ready: false`
+  until the site actually renders them.
+- Whole-site **versions** (V2, V4, V5, V8 + V6 dark; V7 dropped — palette,
+  components, motion library, vector kit, phone rules per version) are
+  planned in [docs/handoff/site-versions.md](docs/handoff/site-versions.md) —
+  read it before building any of them. Vector source SVGs (30) and their loop
+  animations: `docs/design/vector-kit/`.
+- Site versions are wired through `site-config.json` → `version` and
+  `public/{css,js}/site-v<N>.{css,js}` (scoped `[data-version="vN"]`, linked
+  only for that version). Preview one with `SITE_VERSION=v2 npm run build`.
+  If you add a version stylesheet, keep it directly after styles.css — the
+  defer script relies on that order.
+
 ## Repo scope
 
 - This repo (`Website-1`, the clarteoverseas.com marketing site) is

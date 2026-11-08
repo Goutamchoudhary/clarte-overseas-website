@@ -1,0 +1,56 @@
+---
+// Rotating category-photo tiles (V2 "Living Collage"). Server-renders the
+// first frame — real <img>s, so it's the LCP element and works with no JS —
+// then /js/site-v2.js swaps each tile to the next category every few seconds
+// (paused on hover/touch, off-screen, hidden tab, and for reduced motion).
+//
+// Used by the home hero (3 tiles + Explore tile) and by page heroes (3 tiles).
+import { collageCats } from "../../../lib/collage";
+
+interface Props {
+  /** Category index the first tile starts on (vary per page). */
+  start?: number;
+  /** Mark the photos as the page's hero images (splash waits for them; high priority). */
+  hero?: boolean;
+  /** `sizes` per tile, in tile order. */
+  sizes: string[];
+  /** Extra class on the wrapper (layout lives in site-v2.css). */
+  class?: string;
+  label?: string;
+}
+const { start = 0, hero = false, sizes, class: cls = "", label = "Product categories" } = Astro.props;
+const n = collageCats.length;
+// Tiles step 2 categories apart so the three never show the same one.
+const tiles = sizes.map((s, t) => ({ cat: collageCats[(start + t * 2) % n], sizes: s }));
+const data = collageCats.map((c) => ({ i18n: c.i18n, href: c.href, src: c.src, srcset: c.srcset, count: c.count, name: c.name }));
+---
+<div class={`v2-collage ${cls}`} data-v2-collage data-start={start} role="group" aria-label={label}>
+  {tiles.map(({ cat, sizes: sz }, t) => (
+    <a href={cat.href} class={`v2-tile v2-tile--${t}`} data-v2-tile={t} aria-label={cat.name}>
+      <img
+        class="v2-tile-img is-cur"
+        src={cat.src}
+        srcset={cat.srcset}
+        sizes={sz}
+        alt=""
+        width="900"
+        height="502"
+        decoding="async"
+        fetchpriority={hero && t === 0 ? "high" : undefined}
+        loading={hero ? "eager" : "lazy"}
+        data-splash-hero={hero ? "" : undefined}
+      />
+      <img class="v2-tile-img is-next" alt="" aria-hidden="true" sizes={sz} decoding="async" />
+      <span class="v2-tile-label">
+        <span class="v2-tile-text">
+          <b class="v2-tile-name" data-i18n={cat.i18n}>{cat.name}</b>
+          <small class="v2-tile-count"><span data-v2-count>{cat.count}</span> <span data-i18n="nav.products">Products</span></small>
+        </span>
+        <span class="v2-tile-arrow" aria-hidden="true">→</span>
+      </span>
+    </a>
+  ))}
+  <slot />
+  <script type="application/json" data-v2-cats set:html={JSON.stringify(data)} />
+  <span hidden>{collageCats.map((c) => <span data-v2-name={c.href} data-i18n={c.i18n}>{c.name}</span>)}</span>
+</div>

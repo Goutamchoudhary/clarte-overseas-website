@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Trade globe · use: Contact, “where we ship”, V4 sections · motion: Routes draw from India -->
+<ellipse cx="100" cy="192" rx="50" ry="6" fill="#15123a" opacity=".12"/>
+<circle cx="100" cy="98" r="72" fill="#dbeafe"/>
+<path d="M58 60 Q74 52 86 62 Q92 76 80 84 Q66 86 60 76Z M104 72 Q126 66 136 80 Q140 98 126 110 Q114 116 108 104 Q102 88 104 72Z M60 116 Q76 112 84 124 Q82 140 70 144 Q58 136 60 116Z M140 120 Q154 124 152 140 Q140 146 136 134Z" fill="#93c5fd"/>
+<path d="M118 92 Q128 100 122 112 Q114 108 112 98Z" fill="#6d28d9"/>
+<ellipse cx="100" cy="98" rx="72" ry="26" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="1.5"/><ellipse cx="100" cy="98" rx="30" ry="72" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="1.5"/>
+<path class="vl-route" d="M118 100 Q90 40 52 74" stroke="#be185d" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path class="vl-route" style="animation-delay:.6s" d="M118 100 Q160 70 156 132" stroke="#be185d" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="118" cy="100" r="5" fill="#be185d"/><circle cx="52" cy="74" r="4" fill="#15123a"/><circle cx="156" cy="132" r="4" fill="#15123a"/>
+</svg>

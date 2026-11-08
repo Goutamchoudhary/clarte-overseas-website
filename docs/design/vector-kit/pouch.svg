@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Sample pouch · use: Free sample CTA, product page · motion: Pouch bobs, sparkle -->
+<ellipse cx="100" cy="190" rx="46" ry="6" fill="#15123a" opacity=".12"/>
+<g class="vl-bob"><path d="M58 40 H142 L148 172 Q100 182 52 172Z" fill="#1f4693"/>
+<rect x="58" y="40" width="84" height="12" fill="#16346f"/><path d="M64 46 H136" stroke="#c4b5fd" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="72" y="70" width="56" height="50" rx="25" fill="#e0a526" stroke="#ffffff" stroke-width="3"/>
+<text x="100" y="140" text-anchor="middle" font-family="Sora,sans-serif" font-size="11" font-weight="800" fill="#ffffff">SAMPLE</text>
+<text x="100" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#c4b5fd">on request</text></g>
+<path class="vl-twinkle" d="M160 50 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3z" fill="#f9a8d4"/>
+</svg>

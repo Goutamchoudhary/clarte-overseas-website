@@ -1,0 +1,55 @@
+---
+// V2 "Living Collage" home hero: copy on the left, three rotating category
+// tiles + a dark "Explore" tile on the right. White, like the navbar above it.
+import CollageTiles from "./CollageTiles.astro";
+import { collageCats, totalProducts } from "../../../lib/collage";
+---
+<section id="home" class="v2-hero">
+  <div class="v2-hero-inner max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="v2-hero-copy">
+      <span class="v2-kicker" data-i18n="home.hero_eyebrow">Merchant exporter of dehydrated foods · India</span>
+      <h1 class="v2-hero-title">
+        <span data-i18n-html="home.hero_tagline"><span class="hero-tagline-highlight">India's Harvest</span>,<br />Preserved for the<br />World.</span>
+      </h1>
+      <p class="v2-hero-sub" data-i18n="products.hero_sub">Seven focused categories, each grown and processed in India for clean flavour, true colour and dependable, spec-driven supply. Pick a category to see the full range.</p>
+      <div class="v2-hero-ctas">
+        <a href="/products" class="btn btn-primary"><span data-i18n="home.hero_cta_explore">Explore Products</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/contact" class="btn btn-ghost"><span data-i18n="home.hero_cta_quote">Request a Quote</span></a>
+      </div>
+      <dl class="v2-stats">
+        <div><dt>{totalProducts}</dt><dd data-i18n="nav.products">Products</dd></div>
+        <div><dt>100%</dt><dd data-i18n="home.quality_stat1_label">Quality Checked</dd></div>
+        <div><dt>24mo</dt><dd data-i18n="home.quality_stat3_label">Typical Shelf Life</dd></div>
+      </dl>
+    </div>
+
+    <CollageTiles
+      class="v2-collage--hero"
+      hero
+      start={0}
+      sizes={[
+        "(max-width: 767px) calc(50vw - 30px), (max-width: 1279px) 36vw, 470px",
+        "(max-width: 767px) calc(50vw - 30px), (max-width: 1279px) 18vw, 240px",
+        "(max-width: 767px) calc(50vw - 30px), (max-width: 1279px) 18vw, 240px",
+      ]}
+    >
+      <a href="/products" class="v2-explore">
+        <span class="v2-explore-ring" aria-hidden="true"></span>
+        <span class="v2-explore-body">
+          <span class="v2-explore-top" aria-hidden="true">
+            <span class="v2-explore-thumbs">
+              {collageCats.slice(0, 4).map((c) => <img src={c.src} alt="" width="40" height="40" loading="lazy" decoding="async" />)}
+            </span>
+            <span class="v2-explore-meta">+{collageCats.length - 4}</span>
+          </span>
+          <span class="v2-explore-row">
+            <span class="v2-explore-title" data-i18n="home.hero_cta_explore">Explore Products</span>
+            <span class="v2-explore-arrow" aria-hidden="true">→</span>
+          </span>
+        </span>
+      </a>
+    </CollageTiles>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Harvester · use: About · our sourcing, Herbal category header · motion: Leaves on the basket sway -->
+<ellipse cx="100" cy="188" rx="56" ry="6" fill="#15123a" opacity=".12"/>
+<path d="M70 102 Q100 90 130 102 L142 182 L58 182 Z" fill="#be185d"/>
+<path d="M88 132 L84 182 M100 130 L100 182 M112 132 L116 182" stroke="#9d174d" stroke-width="2"/>
+<path d="M58 176 L142 176 L142 182 L58 182Z" fill="#e0a526"/>
+<path d="M74 102 Q106 110 128 152 L117 158 Q96 122 70 114 Z" fill="#e0a526"/>
+<path d="M78 106 Q62 82 70 50 L80 52 Q74 80 88 102 Z" fill="#c68a5a"/>
+<path d="M122 106 Q138 82 130 50 L120 52 Q126 80 112 102 Z" fill="#c68a5a"/>
+<rect x="94" y="80" width="12" height="14" rx="4" fill="#b97a4c"/>
+<circle cx="100" cy="70" r="16" fill="#c68a5a"/>
+<path d="M84 68 Q86 52 100 52 Q114 52 116 68 Q108 60 100 61 Q92 60 84 68Z" fill="#2b1d14"/>
+<circle cx="100" cy="64" r="1.8" fill="#be185d"/><circle cx="94" cy="70" r="1.7" fill="#2b1d14"/><circle cx="106" cy="70" r="1.7" fill="#2b1d14"/>
+<path d="M96 77 Q100 80 104 77" stroke="#7a3f22" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<g class="vl-sway"><ellipse cx="74" cy="34" rx="9" ry="5" fill="#4d7c0f" transform="rotate(-25 74 34)"/><ellipse cx="88" cy="28" rx="9" ry="5" fill="#65a30d" transform="rotate(-10 88 28)"/><ellipse cx="102" cy="26" rx="9" ry="5" fill="#4d7c0f"/><ellipse cx="116" cy="28" rx="9" ry="5" fill="#84cc16" transform="rotate(12 116 28)"/><ellipse cx="128" cy="34" rx="9" ry="5" fill="#65a30d" transform="rotate(28 128 34)"/></g>
+<path d="M60 36 L140 36 L132 54 L68 54 Z" fill="#a86b32"/><path d="M64 44 L136 44" stroke="#7a4a20" stroke-width="2"/><path d="M80 36 L82 54 M100 36 L100 54 M120 36 L118 54" stroke="#7a4a20" stroke-width="1.5" opacity=".7"/>
+</svg>

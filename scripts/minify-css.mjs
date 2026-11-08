@@ -49,7 +49,21 @@ async function minifyJs() {
   }
 }
 
-main().then(minifyJs).catch((err) => {
+// Site-version assets (public/css/site-v*.css, public/js/site-v*.js): same
+// treatment, only for the files that exist.
+async function minifyVersions() {
+  const { readdir } = await import("node:fs/promises");
+  for (const dir of ["css", "js"]) {
+    for (const f of (await readdir(`public/${dir}`)).filter((f) => /^site-v\d+\.(css|js)$/.test(f))) {
+      const src = await readFile(`public/${dir}/${f}`, "utf8");
+      const { code } = await transform(src, { loader: dir === "css" ? "css" : "js", minify: true });
+      await writeFile(`.vercel/output/static/${dir}/${f}`, code, "utf8");
+      console.log(`[minify-version] ${dir}/${f}: ${(Buffer.byteLength(src) / 1024).toFixed(1)} KiB → ${(Buffer.byteLength(code) / 1024).toFixed(1)} KiB`);
+    }
+  }
+}
+
+main().then(minifyJs).then(minifyVersions).catch((err) => {
   console.error("[minify-css] failed:", err);
   process.exit(1);
 });
