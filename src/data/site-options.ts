@@ -9,7 +9,8 @@ export type Option = { id: string; label: string; note: string; ready: boolean }
 // Whole-site versions: each restyles every page (palette, components, motion,
 // home hero and product-range section). Plan: docs/handoff/site-versions.md.
 export const VERSIONS: Option[] = [
-  { id: "v1", label: "V1 · Classic Harvest", note: "Today's site, unchanged.", ready: true },
+  { id: "v1", label: "V1 · Classic Harvest", note: "The original site.", ready: true },
+  { id: "v3", label: "The Journey (one combined design)", note: "New home page; other pages follow one by one.", ready: true },
   { id: "v2", label: "V2 · Living Collage", note: "White + ink, navy→violet→pink CTAs, rotating category collage hero, bento product range, collage page heroes.", ready: true },
 ];
 

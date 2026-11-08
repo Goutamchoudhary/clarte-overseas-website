@@ -1,0 +1,354 @@
+---
+// Home page "The Journey" (design: canvas board Home A; notes in
+// docs/handoff/site-versions.md). Styles: /css/site-v3.css, motion: /js/site-v3.js.
+// Copy reuses existing i18n keys wherever one exists.
+import Vector from "../Vector.astro";
+import { CONTACT, COMING_SOON_PRODUCTS, UNAVAILABLE_PRODUCTS } from "../../consts";
+import { collageCats, totalProducts } from "../../lib/collage";
+import { products } from "../../data/products";
+import { smallest } from "../../lib/responsive-img";
+
+const directCerts = [
+  { file: "iso-9001.jpg", alt: "ISO 9001:2015 certified" },
+  { file: "apeda.png", alt: "APEDA registered exporter" },
+  { file: "spices_board_rcmc.jpeg", alt: "Spices Board of India RCMC" },
+  { file: "fssai.png", alt: "FSSAI licensed" },
+  { file: "msme-udyam.png", alt: "MSME / Udyam registered" },
+  { file: "iec.jpg", alt: "IEC — Import Export Code" },
+  { file: "gst.jpeg", alt: "GST registered" },
+];
+const partnerCerts = [
+  { file: "iso-22000.png", alt: "ISO 22000 — partner facility" },
+  { file: "fssc-22000.png", alt: "FSSC 22000 — partner facility" },
+  { file: "haccp.webp", alt: "HACCP — partner facility" },
+  { file: "brcgs.jpeg", alt: "BRCGS — partner facility" },
+  { file: "fda.png", alt: "US FDA registered — partner facility" },
+  { file: "halal.png", alt: "Halal certified — partner facility" },
+  { file: "kosher.avif", alt: "Kosher certified — partner facility" },
+];
+const ticker = ["ISO 9001:2015", "APEDA", "Spices Board RCMC", "FSSAI", "MSME / Udyam", "IEC", "GST", "Partner: ISO 22000", "Partner: FSSC 22000", "Partner: HACCP", "Partner: BRCGS", "Partner: US FDA", "Partner: Halal", "Partner: Kosher"];
+
+// Falling category circles: [category index, size %, left %, top %, final rotation]
+const balls = [
+  [3, 27, 3, 56, -8], [1, 25, 31, 60, 6], [4, 23, 57, 63, -4], [5, 24, 79, 61, 10],
+  [0, 22, 16, 26, 4], [2, 21, 42, 31, -10], [6, 20, 65, 34, 8],
+] as const;
+
+const why = [
+  ["fruit2powder", "home.why_d_shelf_title", "Long shelf life", "home.why_d_shelf_body", "12 to 24 months with no cold chain."],
+  ["truck", "home.why_d_light_title", "Lighter to ship", "home.why_d_light_body", "Less weight means lower freight."],
+  ["warehouse", "home.why_d_clean_title", "All-year supply", "home.why_d_clean_body", "Available well beyond the harvest."],
+  ["shield", "home.why_d_colour_title", "Stable quality", "home.why_d_colour_body", "Same flavour and colour each batch."],
+];
+
+// Film reels: the same product records and photo field the /products page
+// uses, so a replaced product photo shows up here on the next build. Products
+// with the new photography come first.
+const hidden = (slug: string) => COMING_SOON_PRODUCTS.has(slug) || UNAVAILABLE_PRODUCTS.has(slug);
+const withPhotos = products.filter((p) => p.image && !hidden(p.slug));
+const reelItems = [...withPhotos.filter((p) => p.listImage), ...withPhotos.filter((p) => !p.listImage)]
+  .slice(0, 16)
+  .map((p) => ({ name: p.name.replace(/ Powder.*$/, ""), src: smallest(p.image!) }));
+const reelA = reelItems.filter((_, i) => i % 2 === 0);
+const reelB = reelItems.filter((_, i) => i % 2 === 1);
+
+const stages = [["harvester", "Grown"], ["drying", "Dried"], ["mill", "Milled"], ["labtech", "Tested"], ["container", "Packed"], ["crane", "Shipped"]];
+const qc = [1, 2, 3, 4].map((n) => [`home.quality_step${n}_title`, `home.quality_step${n}_body`]);
+const qcText = [
+  ["Raw-material grading", "Incoming produce is sorted and graded the moment it arrives."],
+  ["Moisture & microbial testing", "Each lot is tested against spec before it moves to processing."],
+  ["Metal detection", "Every batch runs through a metal detector, no exceptions."],
+  ["Final check & sealing", "Signed off, then sealed and packed ready for export."],
+];
+const markets = ["🇺🇸 United States", "🇬🇧 United Kingdom", "🇦🇪 UAE & Middle East", "🇦🇺 Australia", "🌏 South East Asia"];
+const industries = [
+  ["home.industries_list1", "Food & beverage manufacturers"],
+  ["home.industries_list2", "Flavour houses & ingredient blenders"],
+  ["home.industries_list3", "Seasoning & formulation companies"],
+  ["home.industries_list4", "Bakery & confectionery"],
+  ["home.industries_list5", "Nutraceutical & health-food brands"],
+  ["home.industries_list6", "HoReCa & private-label retailers"],
+];
+const edge = [
+  ["certificate", "home.edge_c1_title", "Compliance, Built In", "FSSAI, ISO 22000, HACCP, APEDA and the paperwork your market expects."],
+  ["harvester", "home.edge_c2_title", "Farm-Direct Sourcing", "Straight from growers and audited units, traceable from farm to pack."],
+  ["plane", "home.edge_c3_title", "Speed & Availability", "Quotes in 24 hours, samples in 7 days, bulk in 15–21 days."],
+  ["specsheet", "home.edge_c4_title", "Batch Traceability System", "Every lot carries a code from raw material to dispatch."],
+  ["compass", "home.edge_c5_title", "Integrity & Transparency", "Straight answers, clear pricing, ethical trade."],
+  ["inquiry", "home.edge_c6_title", "Long-Term Partnerships", "Primary source or qualified second source, for the long run."],
+];
+const work = [
+  ["pallet", "home.working_c1_title", "Trial-Friendly MOQs", "home.working_c1_body", "Begin with a small test order and scale up as your demand grows."],
+  ["compass", "home.working_c2_title", "Priced in Your Currency", "home.working_c2_body", "Clear, itemised quotes in USD, EUR, GBP or AED, with nothing hidden."],
+  ["pouch", "home.working_c3_title", "Private Label & Custom Packs", "home.working_c3_body", "Your brand and your spec, packed to retail or bulk format."],
+  ["warehouse", "home.working_c4_title", "15–21 Day Dispatch", "home.working_c4_body", "Quick turnaround from confirmed order to goods on the dock."],
+  ["crane", "home.working_c5_title", "Door-to-Port Freight", "home.working_c5_body", "Dependable freight partners for reliable, on-time global delivery."],
+  ["specsheet", "home.working_c6_title", "Full Export Documentation", "home.working_c6_body", "Invoice, packing list, COO and certificates handled end-to-end."],
+];
+
+// Real buyer feedback only: quote, person's name and country, given by the
+// buyer. The section renders only when this list has entries.
+const buyerFeedback: { quote: string; name: string; country: string }[] = [];
+
+const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+---
+<!-- HERO: Grown. Milled. Shipped. -->
+<section id="home" class="j-hero">
+  <div class="j-wrap j-hero-grid">
+    <div class="j-words" data-j-words>
+      <h1 class="j-w j-w-a">Grown.</h1>
+      <span class="j-w j-w-b" aria-hidden="true">Milled.</span>
+      <span class="j-w j-w-c" aria-hidden="true">Shipped.</span>
+    </div>
+    <div class="j-hero-side">
+      <span class="j-kicker" data-i18n="home.hero_eyebrow">Merchant exporter of dehydrated foods · India</span>
+      <p>India's harvest, dehydrated and milled into {totalProducts} export-graded powders, seeds and additives.</p>
+      <a href="/products" class="j-explore"><span data-i18n="home.hero_cta_explore">Explore Products</span> <Fragment set:html={arrow} /></a>
+      <a href="/contact" class="j-ticket">
+        <span class="j-ticket-ico"><Vector name="inquiry" size={50} /></span>
+        <span class="j-ticket-txt"><b data-i18n="home.hero_cta_quote">Request a Quote</b><small>Reply within 24 hours</small></span>
+        <span class="j-ticket-go" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="j-ticker" aria-label="Certifications and registrations">
+  <div class="j-ticker-track">
+    {[0, 1].map((n) => ticker.map((t) => (
+      <span class="j-ticker-item" aria-hidden={n === 1 ? "true" : undefined}><Vector name="shield" size={22} />{t}</span>
+    )))}
+  </div>
+</div>
+
+<!-- PRODUCT RANGE: categories fall and pile up -->
+<section id="export" class="j-range">
+  <div class="j-wrap j-range-grid">
+    <div class="j-range-copy reveal">
+      <span class="eyebrow"><span data-i18n="home.products_eyebrow">Product Range</span></span>
+      <h2 class="j-h2"><span data-i18n="home.products_heading">Powders and ingredients for every formulation</span></h2>
+      <p data-i18n="home.products_sub">Indian-grown produce, dried and milled into clean powders and food-grade ingredients. Each grade is made for long shelf life, true flavour and reliable performance in your recipes.</p>
+      <a href="/products" class="j-btn"><span data-i18n="home.hero_cta_explore">Explore Products</span> <Fragment set:html={arrow} /></a>
+    </div>
+    <div class="j-pile" data-j-play>
+      {balls.map(([c, size, left, top, r], i) => (
+        <a href={collageCats[c].href} class="j-ball j-fall" aria-label={collageCats[c].name} style={`--s:${size}%;--l:${left}%;--t:${top}%;--r:${r}deg;--d:${i * 0.13}s`}>
+          <img src={collageCats[c].src} alt="" loading="lazy" decoding="async" width="200" height="200" />
+          <span data-i18n={collageCats[c].i18n}>{collageCats[c].name}</span>
+        </a>
+      ))}
+      <span class="j-pill j-fall" style="--l:22%;--t:6%;--r:-10deg;--d:1.05s">{totalProducts} <span data-i18n="nav.products">Products</span></span>
+      <span class="j-sack j-fall" style="--l:-5%;--t:40%;--r:-9deg;--d:.9s"><Vector name="sack" /></span>
+      <span class="j-sprig vk-sprig-wrap" style="right:-1%;top:30%"><Vector name="sprig" size={72} /></span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DEHYDRATED -->
+<section id="why-dehydrated" class="j-why">
+  <div class="j-wrap j-why-grid">
+    <div class="reveal">
+      <span class="eyebrow"><span data-i18n="home.why_dehydrated_eyebrow">Why Dehydrated</span></span>
+      <h2 class="j-h2 j-h2-md"><span data-i18n="home.why_dehydrated_heading">Smaller, lighter, longer&#8209;lasting</span></h2>
+      <p class="j-sub" data-i18n="home.why_dehydrated_sub">Take out the water and you keep the goodness while cutting the cost and hassle of moving it.</p>
+    </div>
+    <div class="j-why-cards">
+      {why.map(([v, tk, t, bk, b], i) => (
+        <div class={`j-card reveal d${i}`}>
+          <Vector name={v} size={120} />
+          <h3 data-i18n={tk}>{t}</h3>
+          <p data-i18n={bk}>{b}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS: product photo film reels + export stages -->
+<section id="process" class="j-process">
+  <div class="j-reels" aria-hidden="true">
+    {[reelA, reelB].map((reel, r) => (
+      <div class="j-strip">
+        <div class={`j-reel ${r ? "j-reel-down" : "j-reel-up"}`}>
+          {[0, 1].map(() => reel.map((p) => (
+            <div class="j-frame"><img src={p.src} alt="" loading="lazy" decoding="async" width="240" height="240" /><span>{p.name}</span></div>
+          )))}
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="j-reels-fade" aria-hidden="true"></div>
+  <div class="j-wrap">
+    <div class="j-process-copy reveal">
+      <span class="eyebrow light" data-i18n="home.quality_eyebrow">Our Process</span>
+      <h2 class="j-h2 j-light" data-i18n="home.quality_heading">Quality controlled,<br class="hidden sm:block" /> batch by batch.</h2>
+      <p class="j-sub j-light-sub" data-i18n="home.quality_sub">Every lot is made in hygienic, certified facilities under tight quality control. We grade the raw material, test moisture and microbial counts, run metal detection, then do a final check before it leaves for dispatch.</p>
+      <ol class="j-steps">
+        {qc.map(([tk, bk], i) => (
+          <li><span class="j-step-n">{i + 1}</span><span><b data-i18n={tk}>{qcText[i][0]}</b><small data-i18n={bk}>{qcText[i][1]}</small></span></li>
+        ))}
+      </ol>
+      <div class="j-stages">
+        <span class="j-stages-line" aria-hidden="true"></span>
+        {stages.map(([v, t], i) => (
+          <div class="j-stage" style={`--i:${i}`}><span class="j-stage-ring"><Vector name={v} size={52} /></span><b>{t}</b></div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FROM INDIA TO YOUR PORT (replaces Export Footprint) -->
+<section id="markets" class="j-port">
+  <div class="j-wrap j-port-head reveal">
+    <span class="eyebrow"><span data-i18n="home.markets_eyebrow">Export Footprint</span></span>
+    <h2 class="j-port-title">From India <em>to your port.</em></h2>
+    <p data-i18n="home.markets_sub">From the US and UK to the Gulf, Australia and South East Asia, Clarté Overseas supplies importers, processors and distributors across multiple continents, and the map keeps growing.</p>
+    <div class="j-chips">{markets.map((m) => <span>{m}</span>)}</div>
+  </div>
+  <div class="j-globe">
+    <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <defs>
+        <pattern id="jdots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="7" cy="7" r="2.1" fill="#6d28d9" /></pattern>
+        <clipPath id="jclip"><circle cx="720" cy="800" r="700" /></clipPath>
+        <linearGradient id="jarc" x1="0" x2="1"><stop offset="0" stop-color="#6d28d9" /><stop offset=".5" stop-color="#c026d3" /><stop offset="1" stop-color="#2563eb" /></linearGradient>
+      </defs>
+      <circle cx="720" cy="800" r="704" fill="#fff" stroke="#ddd6fe" stroke-width="2" />
+      <g clip-path="url(#jclip)"><rect class="j-dots" y="100" width="1480" height="330" fill="url(#jdots)" opacity=".42" /></g>
+      <path class="j-arc" d="M820 180 Q600 -40 330 280" /><path class="j-arc" d="M820 180 Q980 -80 1150 240" /><path class="j-arc" d="M820 180 Q760 40 560 150" /><path class="j-arc" d="M820 180 Q1080 40 1270 350" />
+      <circle cx="330" cy="280" r="6" fill="#6d28d9" /><circle cx="1150" cy="240" r="6" fill="#2563eb" /><circle cx="560" cy="150" r="6" fill="#6d28d9" /><circle cx="1270" cy="350" r="6" fill="#2563eb" />
+      <circle class="j-india" cx="820" cy="180" r="16" fill="#f9a8d4" /><circle cx="820" cy="180" r="7" fill="#be185d" />
+    </svg>
+    <span class="j-india-tag">India</span>
+    <span class="j-farmer"><Vector name="farmer" /></span>
+    <span class="j-ship"><Vector name="ship" /></span>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section id="industries" class="j-serve">
+  <div class="j-wrap j-serve-grid">
+    <div class="j-serve-img reveal from-left">
+      <img src="/assets/img/misc/industries-we-serve-v3.webp" alt="Food, supplement and bakery products made with dehydrated ingredients" width="1536" height="1024" loading="lazy" decoding="async" />
+      <span class="j-serve-badge"><Vector name="mortar" size={104} /></span>
+    </div>
+    <div class="reveal d1 from-right">
+      <span class="eyebrow"><span data-i18n="home.industries_eyebrow">Who We Serve</span></span>
+      <h2 class="j-h2"><span data-i18n="home.industries_heading">Industries we serve</span></h2>
+      <p class="j-sub" data-i18n="home.industries_sub">We supply dehydrated ingredients to businesses that build flavour into their products:</p>
+      <ul class="j-list">{industries.map(([k, t]) => <li data-i18n={k}>{t}</li>)}</ul>
+    </div>
+  </div>
+</section>
+
+<!-- THE CLARTE EDGE: arch spotlight -->
+<section id="advantage" class="j-edge">
+  <div class="j-wrap">
+    <div class="j-center reveal">
+      <span class="eyebrow light"><span data-i18n="home.edge_eyebrow">The Clarté Edge</span></span>
+      <h2 class="j-h2 j-light"><span data-i18n="home.edge_heading">Why buyers choose Clarté Overseas</span></h2>
+    </div>
+    <div class="j-edge-grid">
+      {[0, 3].map((start) => (
+        <div class={`j-edge-col ${start ? "j-edge-r" : "j-edge-l"}`}>
+          {edge.slice(start, start + 3).map(([v, tk, t, d], i) => (
+            <div class="j-edge-card" style={`--k:${start + i}`}>
+              <span class="j-edge-txt"><b data-i18n={tk}>{t}</b><small>{d}</small></span>
+              <Vector name={v} size={66} />
+            </div>
+          ))}
+        </div>
+      ))}
+      <div class="j-arch" aria-hidden="true">
+        <div class="j-arch-inner">
+          <i class="j-star" style="left:18%;top:13%"></i><i class="j-star" style="left:35%;top:8%"></i><i class="j-star" style="left:63%;top:12%"></i><i class="j-star" style="left:80%;top:21%"></i><i class="j-star" style="left:12%;top:33%"></i><i class="j-star" style="left:86%;top:38%"></i>
+          <svg class="j-hills" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 70 Q110 10 220 62 T400 40 V160 H0Z" fill="#6d28d9" opacity=".55" /><path d="M0 110 Q120 60 250 104 T400 92 V160 H0Z" fill="#be185d" opacity=".55" /></svg>
+          {edge.map(([v, , t], k) => (
+            <div class="j-spot" style={`--k:${k}`}><Vector name={v} size={210} /><b>{t}</b></div>
+          ))}
+        </div>
+        <svg class="j-seal" viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#0c0a1f" stroke="#6d28d9" stroke-width="2" /><defs><path id="jsealp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs><text font-family="Sora,sans-serif" font-size="12.5" font-weight="700" fill="#f9a8d4" letter-spacing="3"><textPath href="#jsealp">GROWN · MILLED · SHIPPED ·</textPath></text></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCING MADE SIMPLE -->
+<section class="j-work">
+  <div class="j-wrap">
+    <div class="j-center reveal">
+      <span class="eyebrow center"><span data-i18n="home.working_eyebrow">Working With Us</span></span>
+      <h2 class="j-h2"><span data-i18n="home.working_heading">Sourcing made simple</span></h2>
+    </div>
+    <div class="j-work-grid">
+      {work.map(([v, tk, t, bk, b], i) => (
+        <div class={`j-card j-card-row reveal d${i % 3}`}>
+          <Vector name={v} size={92} />
+          <span><h3 data-i18n={tk}>{t}</h3><p data-i18n={bk}>{b}</p></span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- STANDARDS & TRUST -->
+<section id="certifications" class="j-certs">
+  <div class="j-wrap">
+    <div class="j-certs-head reveal">
+      <div>
+        <span class="eyebrow"><span data-i18n="home.certs_eyebrow">Standards &amp; Trust</span></span>
+        <h2 class="j-h2"><span data-i18n="home.certs_heading">Certified &amp; compliant</span></h2>
+        <p class="j-sub" data-i18n="home.certs_sub">The paperwork and certifications that move your shipments through customs faster and give buyers one less thing to worry about.</p>
+      </div>
+      <div class="j-certs-art"><Vector name="certificate" size={126} /><Vector name="shield" size={108} /></div>
+    </div>
+    <p class="j-logo-label reveal" data-i18n="home.certs_regs_label">Our Registrations</p>
+    <div class="j-logos reveal">{directCerts.map((c) => <span><img src={`/assets/certifications/${c.file}`} alt={c.alt} loading="lazy" width="110" height="66" /></span>)}</div>
+    <p class="j-logo-label reveal" data-i18n="home.certs_quality_label">Quality &amp; Partner Certifications</p>
+    <div class="j-logos reveal">{partnerCerts.map((c) => <span><img src={`/assets/certifications/${c.file}`} alt={c.alt} loading="lazy" width="110" height="66" /></span>)}</div>
+    <p class="j-logo-note" data-i18n="home.certs_disclaimer">Held by our vetted manufacturing partners — arranged per order, on request.</p>
+  </div>
+</section>
+
+{buyerFeedback.length > 0 && (
+  <section class="j-feedback">
+    <div class="j-wrap j-feedback-grid">
+      <div><span class="eyebrow">Buyer Feedback</span><h2 class="j-h2 j-h2-md">What our buyers say</h2></div>
+      {buyerFeedback.map((f) => (
+        <blockquote class="j-quote"><p>“{f.quote}”</p><footer><b>{f.name}</b><small>{f.country}</small></footer></blockquote>
+      ))}
+    </div>
+  </section>
+)}
+
+<!-- CLOSING CTA -->
+<section id="quote" class="j-cta">
+  <div class="j-wrap j-cta-copy reveal">
+    <h2 class="j-h2 j-cta-title"><span data-i18n="home.cta_heading">Ready to source from India?</span></h2>
+    <p class="j-sub" data-i18n="home.cta_sub">Tell us what you need and where it is headed. We will reply with specs, samples and a quote in your currency.</p>
+    <div class="j-cta-row">
+      <a href="#" data-wa data-wa-msg="Hi Clarté Overseas, I visited your website and I'm interested in importing your dehydrated fruits, vegetables or powders. Can we discuss?" class="j-cta-btn j-wa">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+        <span data-i18n="home.cta_btn_whatsapp">Chat on WhatsApp</span>
+      </a>
+      {CONTACT.calendlyUrl && (
+        <a href={CONTACT.calendlyUrl} onclick={`Calendly.initPopupWidget({url:'${CONTACT.calendlyUrl}'});return false;`} class="j-cta-btn j-cal">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span data-i18n="cta.book_call">Book a 20-min call</span>
+        </a>
+      )}
+      <a href="/contact" class="j-ticket j-ticket-sm">
+        <span class="j-ticket-ico"><Vector name="inquiry" size={36} /></span>
+        <span class="j-ticket-txt"><b data-i18n="home.hero_cta_quote">Request a Quote</b><small>Reply within 24 hours</small></span>
+        <span class="j-ticket-go" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+  <div class="j-stage-land" data-j-play aria-hidden="true">
+    <span class="j-plane"><span><Vector name="plane" /></span></span>
+    <span class="j-road"></span><span class="j-water"></span>
+    <span class="j-land j-fall j-truck" style="--d:0s;--r:0deg"><Vector name="truck" /></span>
+    <span class="j-land j-fall j-crane" style="--d:.28s;--r:0deg"><Vector name="crane" /></span>
+    <span class="j-land j-fall j-boat" style="--d:.56s;--r:0deg"><Vector name="ship" /></span>
+  </div>
+</section>

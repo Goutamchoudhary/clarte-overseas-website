@@ -8,9 +8,11 @@ import { SITE, CONTACT } from '../consts';
 import { isVersion } from '../data/site-options';
 import HeroCollage from '../components/versions/v2/HeroCollage.astro';
 import CategoryBento from '../components/versions/v2/CategoryBento.astro';
+import HomeJourney from '../components/home/HomeJourney.astro';
 // Whole-site version (docs/handoff/site-versions.md). V1 markup below is
 // untouched; V2 swaps in its own hero and product-range section.
 const v2 = isVersion('v2');
+const v3 = isVersion('v3');
 const title = 'Clarté Overseas — Premium Dehydrated Fruits, Vegetables & Powders | Indian Exporter';
 const description = 'Clarté Overseas is an India-based merchant exporter of premium dehydrated fruits, vegetables, flakes and powders, supplying food manufacturers, flavour houses and distributors worldwide.';
 
@@ -50,7 +52,8 @@ const HOME_FONTS = [
   "/fonts/sora-400-29.woff2",
 ];
 ---
-<BaseLayout title={title} description={description} preloadFonts={v2 ? [] : HOME_FONTS} preloadFontsMedia="(max-width: 1024px)">
+<BaseLayout title={title} description={description} preloadFonts={v2 || v3 ? [] : HOME_FONTS} preloadFontsMedia="(max-width: 1024px)">
+{v3 ? <HomeJourney /> : (<Fragment>
 {v2 ? <HeroCollage /> : (<Fragment>
 <!-- =====================================================================
        HERO
@@ -602,6 +605,8 @@ const HOME_FONTS = [
       </div>
     </div>
   </section>
+
+</Fragment>)}
 
   <!-- Immersive scroll experience (homepage only) — GSAP + ScrollTrigger + Lenis -->
   <script is:inline defer src="/js/vendor/gsap.min.js"></script>

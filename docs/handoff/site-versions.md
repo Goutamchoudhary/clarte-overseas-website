@@ -44,6 +44,17 @@
 >   brightness 1.08). Save as a new filename when building (immutable cache).
 > - Owner will send feedback on the other pages before implementation starts.
 >
+> **Status (9 Nov 2026): Home A is built and live** as site version `v3`
+> (`src/components/home/HomeJourney.astro`, `public/css/site-v3.css`,
+> `public/js/site-v3.js`, inline vectors via `src/components/Vector.astro`).
+> `BaseLayout` links v3 assets on the home page only; other pages stay on the
+> old design until each is finished, then widen that check. Not done yet:
+> Matter.js drag-to-toss (circles use a CSS drop), a real cobe globe (SVG dome
+> for now), translations for new English lines (hero words, "From India to your
+> port", stage names, Edge card summaries, ticket subtext). `buyerFeedback` in
+> HomeJourney stays empty until real buyers supply words, name and country.
+> About still renders the old unverified `Testimonials` component.
+>
 > The version switch and V2 build below (commit b740ba8, not merged) are still
 > on `feat/site-admin`. Reuse the V2 collage parts in the combined design. The
 > rest of this document is the earlier per-version plan, kept for its phone
