@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Moringa branch · use: Herbal category, moringa product page · motion: Pods swing -->
+<path d="M20 40 Q100 30 180 60" stroke="#365314" stroke-width="4" fill="none" stroke-linecap="round"/>
+<ellipse cx="30" cy="34.0" rx="5" ry="3.2" fill="#4d7c0f"/><ellipse cx="41" cy="47.6" rx="5" ry="3.2" fill="#65a30d"/><ellipse cx="52" cy="37.2" rx="5" ry="3.2" fill="#84cc16"/><ellipse cx="63" cy="50.8" rx="5" ry="3.2" fill="#4d7c0f"/><ellipse cx="74" cy="40.4" rx="5" ry="3.2" fill="#65a30d"/><ellipse cx="85" cy="54.0" rx="5" ry="3.2" fill="#84cc16"/><ellipse cx="96" cy="43.6" rx="5" ry="3.2" fill="#4d7c0f"/><ellipse cx="107" cy="57.2" rx="5" ry="3.2" fill="#65a30d"/><ellipse cx="118" cy="46.8" rx="5" ry="3.2" fill="#84cc16"/><ellipse cx="129" cy="60.4" rx="5" ry="3.2" fill="#4d7c0f"/><ellipse cx="140" cy="50.0" rx="5" ry="3.2" fill="#65a30d"/><ellipse cx="151" cy="63.6" rx="5" ry="3.2" fill="#84cc16"/><ellipse cx="162" cy="53.2" rx="5" ry="3.2" fill="#4d7c0f"/><ellipse cx="173" cy="66.8" rx="5" ry="3.2" fill="#65a30d"/>
+<g class="vl-swing" style="transform-origin:70px 40px"><path d="M70 40 Q66 110 74 170" stroke="#4d7c0f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M70 60 v4 M70 80 v4 M71 100 v4 M72 120 v4 M73 140 v4" stroke="#365314" stroke-width="2"/></g>
+<g class="vl-swing" style="transform-origin:110px 46px;animation-delay:-1s"><path d="M110 46 Q116 110 108 160" stroke="#65a30d" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+<g class="vl-swing" style="transform-origin:140px 52px;animation-delay:-.5s"><path d="M140 52 Q136 100 142 136" stroke="#4d7c0f" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+<circle cx="160" cy="62" r="5" fill="#fbf6ea" stroke="#e9dcc0"/><circle cx="168" cy="56" r="4" fill="#fbf6ea" stroke="#e9dcc0"/>
+</svg>

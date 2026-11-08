@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Air samples · use: Sample request form, thank-you message · motion: Flies on a dotted trail -->
+<path d="M10 160 Q70 170 110 120" stroke="#c4b5fd" stroke-width="3" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/>
+<g class="vl-fly"><path d="M70 110 L176 70 Q190 66 186 78 L82 128 Z" fill="#ffffff" stroke="#15123a" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M120 92 L96 56 L110 54 L150 84 Z" fill="#6d28d9"/><path d="M120 108 L112 146 L124 146 L148 100 Z" fill="#6d28d9"/>
+<path d="M78 112 L66 92 L76 92 L92 106Z" fill="#be185d"/>
+<circle cx="160" cy="78" r="3" fill="#93c5fd"/><circle cx="148" cy="83" r="3" fill="#93c5fd"/><circle cx="136" cy="88" r="3" fill="#93c5fd"/>
+</g>
+</svg>

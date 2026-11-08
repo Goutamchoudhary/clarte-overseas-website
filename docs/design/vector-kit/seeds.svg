@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Bowl of seeds · use: Edible Seeds & Kernels category · motion: A seed hops out -->
+<ellipse cx="100" cy="184" rx="66" ry="6" fill="#15123a" opacity=".12"/>
+<path d="M34 112 H166 Q160 166 100 168 Q40 166 34 112Z" fill="#a86b32"/>
+<ellipse cx="100" cy="112" rx="66" ry="14" fill="#7a4a20"/>
+<ellipse cx="50" cy="104" rx="7" ry="4" fill="#84cc16" transform="rotate(-45 50 104)"/><ellipse cx="73" cy="111" rx="7" ry="4" fill="#e9dcc0" transform="rotate(-8 73 111)"/><ellipse cx="96" cy="108" rx="7" ry="4" fill="#65a30d" transform="rotate(29 96 108)"/><ellipse cx="119" cy="105" rx="7" ry="4" fill="#15123a" transform="rotate(-24 119 105)"/><ellipse cx="142" cy="112" rx="7" ry="4" fill="#84cc16" transform="rotate(13 142 112)"/><ellipse cx="65" cy="109" rx="7" ry="4" fill="#e9dcc0" transform="rotate(-40 65 109)"/><ellipse cx="88" cy="106" rx="7" ry="4" fill="#65a30d" transform="rotate(-3 88 106)"/><ellipse cx="111" cy="113" rx="7" ry="4" fill="#15123a" transform="rotate(34 111 113)"/><ellipse cx="134" cy="110" rx="7" ry="4" fill="#84cc16" transform="rotate(-19 134 110)"/><ellipse cx="57" cy="107" rx="7" ry="4" fill="#e9dcc0" transform="rotate(18 57 107)"/><ellipse cx="80" cy="104" rx="7" ry="4" fill="#65a30d" transform="rotate(-35 80 104)"/><ellipse cx="103" cy="111" rx="7" ry="4" fill="#15123a" transform="rotate(2 103 111)"/><ellipse cx="126" cy="108" rx="7" ry="4" fill="#84cc16" transform="rotate(39 126 108)"/><ellipse cx="149" cy="105" rx="7" ry="4" fill="#e9dcc0" transform="rotate(-14 149 105)"/>
+<g class="vl-hop"><ellipse cx="160" cy="176" rx="8" ry="4.5" fill="#84cc16" transform="rotate(20 160 176)"/></g>
+<circle cx="40" cy="178" r="2" fill="#15123a"/><circle cx="48" cy="182" r="2" fill="#15123a"/><circle cx="34" cy="184" r="2" fill="#e9dcc0"/>
+</svg>

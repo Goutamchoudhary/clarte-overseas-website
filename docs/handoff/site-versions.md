@@ -1,19 +1,30 @@
 # Whole-site versions (plan)
 
-Started Nov 2026. The owner wants each "version" to restyle the **entire
-site** — colours, design elements, animation, vector illustrations, every
-section and page — not just the home hero. Designs are previewed on the
-"Clarté Hero & Theme Options" canvas (claude.ai artifact, boards HeroV1–V8,
-Vector kit, "Plan · whole-site versions"). Build them **one version at a
-time**, in the order below. Admin + config are described in
+Started Nov 2026. Each "version" restyles the **entire site**: colours,
+design elements, animation, vector illustrations, every section and page. It
+is more than a home-hero swap. Designs are previewed on the
+"Clarté Hero & Theme Options" canvas (claude.ai artifact). The canvas has
+these boards:
+
+- Heroes V1–V6 and V8
+- Phone versions of the heroes
+- Vector kit + vector library
+- Six product-range section ideas
+- "Plan · whole-site versions"
+
+Build **one version at a time**. Admin and config are described in
 [admin.md](admin.md).
+
+The owner picked **V2, V4, V5, V8** as the versions to redesign the site
+around, plus **V6** as the dark-mode version. **V7 (split-flap board) was
+dropped** on 8 Nov 2026. V3 stays a hero-only option.
 
 ## What a version is
 
 One preset that switches all of these together:
 
 1. Palette and type tokens (CSS custom properties)
-2. Navbar — **same colour as the hero** (owner's favourite detail of V4/V5)
+2. Navbar: **same colour as the hero** (the owner's favourite detail of V4/V5)
 3. Home hero
 4. Section headings and dividers
 5. Cards, buttons, chips, forms
@@ -22,54 +33,132 @@ One preset that switches all of these together:
 8. Page moments: products list, category, product page, How We Export,
    certifications, about, contact / thank-you, blog, 404
 
-The **edition** (copy: ingredients vs multi-category) and the **CTA gradient**
-stay separate admin switches, so any version can run either copy set.
+The **edition** (ingredients vs multi-category copy) and the **CTA gradient**
+stay separate admin switches.
 
 ## The versions
 
 | ID | Name | Look | Motion library | Signature elements across the site |
 |---|---|---|---|---|
 | V1 | Classic Harvest | Today's site | CSS only | Unchanged; default and fallback |
-| V4 | Trade Atlas | Lavender-white, ink #15123a, violet/blue/pink | cobe (globe, ~5 KB) + GSAP | Globe hero with arcs from India + waving farmer; route line farm → mill → lab → port drawn on scroll (How We Export); origin pins on category cards; "farm to port" strip on product pages; contact globe with buyer-port pin; ship on thank-you |
-| V5 | Kinetic Harvest | Warm paper #fbf9f4, ink, magenta/violet | GSAP ScrollTrigger + SplitText | Photo-filled page titles; pinned line-by-line reveals; sideways category rail; magazine layout with thin rules; scribble underlines drawn on scroll |
-| V6 | Powder Lab | Midnight #0c0a1f, powder-colour accents | Three.js (Points morph) | Particle hero (leaf → mound → container → globe); product page as "spec lab" with gauges in mono type; glowing certification badges; count-up numbers; line-art lab icons |
-| V7 | Departures | Ink board #14112e, amber #fcd34d | anime.js | Split-flap product board hero (data from `products.ts`); flip-in headings and counters; shipping-label product cards (perforation, barcode, stamp); board view for products; booking-slip quote form |
-| V8 | Ingredient Drop | Pastel lavender / blush / sky | Matter.js (+ springy CSS) | Category photo "balls" drop and pile, drag to toss; sticker-style vectors with white outlines; bouncy chips/cards; footer ball pile |
+| V2 | Living Collage | White, ink, navy → violet → pink CTA | GSAP Flip + CSS | Photo tiles that quietly swap; bento grids; the hero collage unfolds into the product range; dark "Explore all" tile as the recurring CTA |
+| V4 | Trade Atlas | Lavender-white, ink #15123a, violet/blue/pink | cobe (globe, ~5 KB) + GSAP | Globe hero with arcs from India and a waving farmer. Scroll draws a route farm → mill → lab → port. Origin pins on category cards. "Farm to port" strip on the product page. Contact globe pins the buyer's port. |
+| V5 | Kinetic Harvest | Warm paper #fbf9f4, ink, magenta/violet | GSAP ScrollTrigger + SplitText | Photo-filled page titles ("Grown." pans the photo's top strip); pinned line-by-line reveals; magazine layout with thin rules; scribble underlines |
+| V6 | Midnight Reel (dark) | Midnight #0c0a1f, violet/pink glow | GSAP (marquee, DrawSVG, Observer) | Two film reels of real category photos run in opposite directions and speed up with scroll. The export journey (harvester → drying → mill → lab → container → crane) lights up node by node. **Replaces the old particle morph, which the owner felt had no purpose.** |
+| V8 | Ingredient Drop | Pastel lavender / blush / sky | Matter.js (+ springy CSS) | Category photo "balls" drop and pile, drag to toss; sticker-style vectors with white outlines; bouncy chips/cards |
 
-V2 (rotating collage) and V3 (midnight arch) remain hero-only options.
+## Phones (every version)
+
+Each hero has a 390 × 844 phone board on the canvas. Rules that apply to all
+versions:
+
+- The design must be complete with **no JS animation**. Animation is an
+  extra loaded after first paint; `prefers-reduced-motion` shows the
+  finished still state.
+- No scroll-pinning on phones. Pinned sections fight the mobile browser
+  toolbar. Pinned desktop sections become a stacked or swipe layout.
+- Tap targets ≥ 44 px, 16 px side gutters, no horizontal page scroll. Any
+  marquees or reels are decorative and `aria-hidden`.
+- Heavy libraries are desktop-only or lighter on phones:
+
+| Version | Phone treatment |
+|---|---|
+| V2 | 2×2 grid (3 tiles + Explore). Tiles fade instead of wipe. Rotation pauses while touched. |
+| V4 | cobe at 1× pixel ratio with ~40% fewer dots and no drag (it would fight scrolling). The farmer stands on the horizon. A poster image is the LCP element. |
+| V5 | Words drop to 80 px and stack; photos still pan (CSS only). The split-on-scroll becomes a simple reveal. |
+| V6 | Reels become two horizontal CSS marquee rows (no JS). The journey becomes a 3×2 grid of vectors that light up in view. |
+| V8 | A CSS bounce of 5 balls, with no physics engine (saves ~80 KB and battery). Tilt-to-roll is optional, only after a tap. |
+
+Check every version at 360, 390 and 430 px wide, and on a real phone,
+before flipping `ready: true`.
+
+## Next home section: product range (6 ideas)
+
+The canvas has an autoplaying preview of each idea that simulates scrolling.
+The owner picks one per version (or one shared idea).
+
+| # | Idea | Pairs with | Desktop | Phone |
+|---|---|---|---|---|
+| 1 | Unfolding collage | V2 | GSAP Flip: the hero's 3 tiles open into a 7-category bento plus an Explore tile | 2-column grid, stagger reveal |
+| 2 | Route of categories | V4 | Pinned; a truck follows a curved route (MotionPath); each stop pops a category card. Farmer at the start, ship at the end. | Vertical route down the left edge, cards to its right |
+| 3 | Kinetic index | V5 | Outline category names. The one in focus fills with its photo and slides right; product chips slide in beside it. | Accordion: names open an inline photo + chips |
+| 4 | Seven jars | V8 | Jars fill with each category's powder colour. The focused jar pops its lid and product stickers tumble out (Matter.js). | Swipeable jar row (scroll-snap) |
+| 5 | Midnight film reel | V6 | Pinned horizontal scrub. The frame in the "gate" grows and regains colour. | Swipe strip with a larger centre frame |
+| 6 | Stacking deck | V2 + V5 | Full-width category cards stack as you scroll, each earlier card stepping back | Same deck, photo on top |
 
 ## Vector kit
 
-Source SVGs: `docs/design/vector-kit/` — farmer, container ship, export sack,
-herb sprig (flat, 1–3 KB each). When building, move them into
-`src/components/vectors/*.astro` as inline SVG with `currentColor`/CSS vars so
-each version recolours them, and animate with CSS (or GSAP in V4). Planned
-additions: lab technician, delivery truck, drying racks, mill, warehouse,
-port crane.
+Source SVGs live in `docs/design/vector-kit/`: 30 flat illustrations in one
+palette, with loop animations in `animations.css` (`vl-*` / `vk-*` classes).
+
+- **Original four:** farmer, container ship, export sack, herb sprig.
+- **Export story:**
+  - harvester
+  - sun-drying racks
+  - pulveriser mill
+  - mesh sieve
+  - quality analyst
+  - wrapped pallet
+  - loaded container
+  - port crane
+  - delivery truck
+  - air samples
+- **Trust and documents:**
+  - certificate and seal
+  - spec sheet
+  - quality shield
+  - port compass
+  - inquiry envelope
+- **Category still lifes:**
+  - mortar and pestle
+  - scoop of turmeric
+  - chilli, garlic and ginger
+  - moringa branch
+  - fruit-to-powder
+  - bowl of seeds
+- **Places and other:**
+  - warehouse
+  - sample pouch
+  - farm landscape
+  - trade globe
+  - "beyond food" crate (multi-category edition)
+
+Each file's comment says where it is meant to be used. When building, move
+them into `src/components/vectors/*.astro` as inline SVG, with colours from
+CSS variables so each version recolours them.
 
 ## Architecture (when building)
 
-- `site-config.json` gains `version`; `BaseLayout` sets
-  `<html data-version="v4">`. Version tokens live in one stylesheet per
-  version, loaded only for the active one. Keep it inside the
-  `defer-site-css.mjs` capture (see CLAUDE.md) and verify with
-  `npm run build`, not dev.
-- Version-specific markup: `src/components/versions/<id>/…`, chosen at build
-  time from `siteConfig` — pages stay static, no client flag, no flicker.
-- Libraries load **after first paint** (dynamic import on idle / in view),
-  only on pages that use them. The hero's static first frame must be real
-  HTML/CSS/image with `data-splash-hero` so the splash and LCP rules still
-  hold. Budgets: ≤ 60 KB gz JS per page except V6 (Three.js, desktop gets
-  more particles than mobile).
-- `prefers-reduced-motion`: every version renders a still, complete state.
-- Admin: add a "Site version" group to `site-options.ts` (`ready: false`
-  until built). Hero options V6–V8 are already listed, not ready.
+- **Config:** `site-config.json` gains `version`, and `BaseLayout` sets
+  `<html data-version="v4">`.
+- **Stylesheets:** one per version, holding its tokens, loaded only for the
+  active version. Keep it inside the `defer-site-css.mjs` capture (see
+  CLAUDE.md), and verify with `npm run build`, not dev.
+- **Markup:** version-specific markup goes in
+  `src/components/versions/<id>/…`, chosen at build time from `siteConfig`.
+  Pages stay static: no client-side flag, no flicker.
+- **Libraries** load after first paint (dynamic import on idle or when in
+  view), and only on pages that use them. The hero's first frame must be real
+  HTML/CSS/image with `data-splash-hero`. JS budget: ≤ 60 KB gzipped per page.
+- **Admin:** add a "Site version" group to `site-options.ts`, with
+  `ready: false` until it's built. Hero options V2, V4, V5, V6 and V8 are
+  listed already, but none are ready yet.
 
 ## Build order and per-version checklist
 
-1. Foundation: `version` config, token files, vector components, library
-   loader, admin group.
-2. V4 → V5 → V6 → V7 → V8, one PR each. For each: navbar, hero, section
-   headings, cards/buttons/forms, footer, then pages (home, products,
-   category, product, How We Export, certifications, about, contact, blog,
-   404), mobile pass, reduced motion, Lighthouse vs V1, flip `ready: true`.
+1. **Foundation:**
+   - `version` config
+   - token files
+   - vector components
+   - library loader
+   - admin group
+2. **Versions,** one PR each: V2 → V4 → V5 → V8 → V6 (or in the owner's
+   chosen order). For each:
+   - navbar, hero, product-range section, section headings,
+     cards/buttons/forms, footer
+   - pages: home, products, category, product, How We Export,
+     certifications, about, contact, blog, 404
+   - phone pass (360/390/430)
+   - reduced motion
+   - Lighthouse vs V1
+   - flip `ready: true`

@@ -146,10 +146,11 @@ that area).
   out of chat.
 - New design options go in `src/data/site-options.ts` with `ready: false`
   until the site actually renders them.
-- Whole-site **versions** (V4–V8: palette, components, motion library,
-  vector kit per version) are planned in
-  [docs/handoff/site-versions.md](docs/handoff/site-versions.md) — read it
-  before building any of them. Vector source SVGs: `docs/design/vector-kit/`.
+- Whole-site **versions** (V2, V4, V5, V8 + V6 dark; V7 dropped — palette,
+  components, motion library, vector kit, phone rules per version) are
+  planned in [docs/handoff/site-versions.md](docs/handoff/site-versions.md) —
+  read it before building any of them. Vector source SVGs (30) and their loop
+  animations: `docs/design/vector-kit/`.
 
 ## Repo scope
 

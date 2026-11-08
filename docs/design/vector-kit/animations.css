@@ -1,0 +1,62 @@
+/* Loop animations for the vector kit (class names vl-*, vk-*). Off under prefers-reduced-motion. */
+@keyframes vlsway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes vlpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes vlhaze{0%{transform:translateY(6px);opacity:0}50%{opacity:.7}100%{transform:translateY(-8px);opacity:0}}
+@keyframes vlspin{to{transform:rotate(360deg)}}
+@keyframes vlfall{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}100%{transform:translateY(10px);opacity:0}}
+@keyframes vlbubble{0%{transform:translateY(8px);opacity:0}50%{opacity:1}100%{transform:translateY(-10px);opacity:0}}
+@keyframes vlshine{0%,100%{opacity:.16}50%{opacity:.32}}
+@keyframes vldoor{0%,20%{transform:scaleX(1)}50%,80%{transform:scaleX(.25)}100%{transform:scaleX(1)}}
+@keyframes vllift{0%,100%{transform:translateY(0)}50%{transform:translateY(30px)}}
+@keyframes vlwave{to{transform:translateX(-20px)}}
+@keyframes vlroad{to{stroke-dashoffset:-24}}
+@keyframes vlfly{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(-6px,-8px) rotate(-2deg)}}
+@keyframes vlflutter{0%,100%{transform:skewX(0)}50%{transform:skewX(6deg)}}
+@keyframes vldraw{0%,15%{stroke-dashoffset:30}45%,100%{stroke-dashoffset:0}}
+@keyframes vltick{0%,10%{stroke-dashoffset:16}30%,100%{stroke-dashoffset:0}}
+@keyframes vlroute{0%{stroke-dashoffset:140}60%,100%{stroke-dashoffset:0}}
+@keyframes vlgrind{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+@keyframes vlpuff{0%{transform:translateY(4px);opacity:0}40%{opacity:1}100%{transform:translateY(-12px);opacity:0}}
+@keyframes vlrock2{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes vlswing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes vlstep{0%,100%{opacity:.35}20%,50%{opacity:1}}
+@keyframes vlhop{0%,60%,100%{transform:translate(0,0)}75%{transform:translate(-8px,-26px)}90%{transform:translate(-12px,0)}}
+@keyframes vlfly2{0%,100%{transform:translate(0,0)}50%{transform:translate(6px,-6px)}}
+@keyframes vlshutter{0%,20%{transform:scaleY(1)}50%,80%{transform:scaleY(.15)}100%{transform:scaleY(1)}}
+@keyframes vlbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes vltwinkle{0%,100%{transform:scale(.6);opacity:.4}50%{transform:scale(1.1);opacity:1}}
+@keyframes vlcloud{0%,100%{transform:translateX(0)}50%{transform:translateX(24px)}}
+@keyframes vlsweep{0%{transform:translateX(-40px)}60%,100%{transform:translateX(160px)}}
+@keyframes vlpeek{0%,100%{transform:translateY(8px)}50%{transform:translateY(-4px)}}
+@keyframes vlneedle{0%{transform:rotate(-40deg)}30%{transform:rotate(22deg)}50%{transform:rotate(-8deg)}70%,100%{transform:rotate(0)}}
+.vl-sway{transform-box:fill-box;transform-origin:50% 100%;animation:vlsway 3s ease-in-out infinite}
+.vl-pulse{transform-box:fill-box;transform-origin:50% 50%;animation:vlpulse 3s ease-in-out infinite}
+.vl-haze path{animation:vlhaze 2.4s ease-in-out infinite}.vl-haze path:nth-child(2){animation-delay:.8s}.vl-haze path:nth-child(3){animation-delay:1.6s}
+.vl-spin{animation:vlspin 3s linear infinite}
+.vl-fall{animation:vlfall 1.2s linear infinite}
+.vl-bubble circle{animation:vlbubble 1.6s ease-out infinite}.vl-bubble circle:nth-child(2){animation-delay:.8s}
+.vl-shine{animation:vlshine 3s ease-in-out infinite}
+.vl-door{animation:vldoor 5s ease-in-out infinite}
+.vl-lift{animation:vllift 4s ease-in-out infinite}
+.vl-wave,.vk-waves{animation:vlwave 1.6s linear infinite}
+.vl-road{animation:vlroad .6s linear infinite}
+.vl-fly{animation:vlfly 3s ease-in-out infinite}
+.vl-flutter{transform-box:fill-box;transform-origin:50% 0%;animation:vlflutter 1.4s ease-in-out infinite}
+.vl-draw{stroke-dasharray:30;animation:vldraw 3s ease-out infinite}
+.vl-tick{stroke-dasharray:16;animation:vltick 3.5s ease-out infinite}
+.vl-route{stroke-dasharray:140;animation:vlroute 3.6s ease-out infinite}
+.vl-grind{animation:vlgrind 1.4s ease-in-out infinite}
+.vl-puff circle{animation:vlpuff 2s ease-out infinite}.vl-puff circle:nth-child(2n){animation-delay:.7s}
+.vl-rock2{animation:vlrock2 2.6s ease-in-out infinite}
+.vl-swing{animation:vlswing 2.8s ease-in-out infinite}
+.vl-step{animation:vlstep 2.4s ease-in-out infinite}
+.vl-hop{animation:vlhop 2.6s ease-in-out infinite}
+.vl-fly2{animation:vlfly2 2.2s ease-in-out infinite}
+.vl-shutter{transform-box:fill-box;transform-origin:50% 0%;animation:vlshutter 5s ease-in-out infinite}
+.vl-bob{animation:vlbob 3s ease-in-out infinite}
+.vl-twinkle{transform-box:fill-box;transform-origin:50% 50%;animation:vltwinkle 1.8s ease-in-out infinite}
+.vl-cloud{animation:vlcloud 8s ease-in-out infinite}
+.vl-sweep{animation:vlsweep 3.4s ease-in-out infinite}
+.vl-peek{animation:vlpeek 3s ease-in-out infinite}
+.vl-needle{animation:vlneedle 4s ease-out infinite}
+@media (prefers-reduced-motion: reduce){[class^="vl-"],[class*=" vl-"],.vl-haze path,.vl-bubble circle,.vl-puff circle{animation:none!important}}
