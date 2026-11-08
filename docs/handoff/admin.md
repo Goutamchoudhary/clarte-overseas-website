@@ -69,3 +69,5 @@ tampered cookie, lockout) all passed on 8 Nov 2026.
   (2) hero V2 (rotating category collage) and V3 (arch + photo pins);
   (3) bold heroes V4 (cobe globe) / V5 (GSAP kinetic type) if approved;
   (4) multi-category edition copy. Flip `ready: true` as each lands.
+- Superseded in scope by whole-site versions (V4–V8) — see
+  [site-versions.md](site-versions.md). Hero options V6–V8 are listed, not ready.

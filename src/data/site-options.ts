@@ -10,8 +10,11 @@ export const HEROES: Option[] = [
   { id: "v1", label: "V1 · Current flat-lay", note: "Today's photo, curtain scroll and torn edge, unchanged.", ready: true },
   { id: "v2", label: "V2 · Rotating category collage", note: "Three category tiles that slide every 2 s + Explore-all tile.", ready: false },
   { id: "v3", label: "V3 · Midnight arch + photo pins", note: "Dark hero; today's photo in an arch with category pins.", ready: false },
-  { id: "v4", label: "V4 · Rising trade globe", note: "WebGL globe (cobe) with arcs from India.", ready: false },
-  { id: "v5", label: "V5 · Kinetic type", note: "Photo-filled headline, GSAP scroll split.", ready: false },
+  { id: "v4", label: "V4 · Trade Atlas", note: "Rising WebGL globe (cobe) with arcs from India + waving farmer (vector kit).", ready: false },
+  { id: "v5", label: "V5 · Kinetic Harvest", note: "Photo-filled headline, GSAP scroll split.", ready: false },
+  { id: "v6", label: "V6 · Powder Lab", note: "Dark; glowing powder particles morph leaf → mound → container → globe (Three.js).", ready: false },
+  { id: "v7", label: "V7 · Departures", note: "Split-flap board of products flipping in (anime.js).", ready: false },
+  { id: "v8", label: "V8 · Ingredient Drop", note: "Category photos drop and pile up; drag to toss (Matter.js).", ready: false },
 ];
 
 export const THEMES: Option[] = [

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 130">
+<g class="vk-ship">
+  <g class="vk-rock">
+    <rect x="58" y="44" width="30" height="22" rx="2" fill="#6d28d9"/><rect x="90" y="44" width="30" height="22" rx="2" fill="#be185d"/><rect x="122" y="44" width="30" height="22" rx="2" fill="#e0a526"/>
+    <rect x="58" y="22" width="30" height="20" rx="2" fill="#93c5fd"/><rect x="90" y="22" width="30" height="20" rx="2" fill="#1f4693"/><rect x="154" y="44" width="30" height="22" rx="2" fill="#c4b5fd"/>
+    <path d="M64 50 V60 M70 50 V60 M76 50 V60 M96 50 V60 M102 50 V60 M108 50 V60 M128 50 V60 M134 50 V60 M140 50 V60 M160 50 V60 M166 50 V60 M172 50 V60" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>
+    <rect x="186" y="18" width="24" height="48" rx="3" fill="#ffffff" stroke="#15123a" stroke-width="2"/>
+    <rect x="190" y="24" width="16" height="6" rx="1.5" fill="#93c5fd"/>
+    <rect x="194" y="6" width="8" height="12" fill="#be185d"/>
+    <path d="M20 66 L224 66 L206 100 L40 100 Z" fill="#15123a"/>
+    <path d="M26 76 L220 76" stroke="#be185d" stroke-width="4"/>
+    <text x="60" y="94" font-family="Sora, sans-serif" font-size="9" font-weight="700" fill="#c4b5fd" letter-spacing="1.5">CLARTÉ OVERSEAS</text>
+  </g>
+  <path class="vk-waves" d="M0 108 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0" stroke="#6d28d9" stroke-opacity=".5" stroke-width="3" fill="none"/>
+  <path class="vk-waves vk-waves2" d="M-15 120 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0" stroke="#93c5fd" stroke-width="3" fill="none"/>
+</g>
+</svg>
