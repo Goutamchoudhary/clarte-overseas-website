@@ -35,8 +35,13 @@
 > - Closing CTA vectors are medium size (truck 200, crane 210, ship 270 px wide)
 >   and the plane vector flies right to left across the sky. Calendly button
 >   uses the V1 lavender `.btn-calendly` colour everywhere.
-> - Testimonials: compact section with a name on each card. Names must be real
->   and approved by the buyer; the site currently says names are withheld.
+> - Testimonials: two compact cards, person's name and country only. Quote,
+>   name and country must come from real buyers; the section stays hidden until
+>   they exist. The live site's four quotes are not from real buyers and need
+>   removing (raised with the owner 9 Nov 2026).
+> - Who We Serve photo: colour-corrected to remove the green cast
+>   (`sharp` recomb R 1.0 / G 0.985 / B 1.07, linear 1.1/-14, saturation 1.1,
+>   brightness 1.08). Save as a new filename when building (immutable cache).
 > - Owner will send feedback on the other pages before implementation starts.
 >
 > The version switch and V2 build below (commit b740ba8, not merged) are still
