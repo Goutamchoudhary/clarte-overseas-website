@@ -44,7 +44,9 @@
 >   brightness 1.08). Save as a new filename when building (immutable cache).
 > - Owner will send feedback on the other pages before implementation starts.
 >
-> **Status (9 Nov 2026): Home A is built and live** as site version `v3`
+> **Status (9 Nov 2026): Home A is built but NOT live.** Production runs V1
+> (`version: "v1"` on main); the owner reviews on the `feat/site-admin` preview and
+> switches production from the admin portal. Built as site version `v3`
 > (`src/components/home/HomeJourney.astro`, `public/css/site-v3.css`,
 > `public/js/site-v3.js`, inline vectors via `src/components/Vector.astro`).
 > `BaseLayout` links v3 assets on the home page only; other pages stay on the
