@@ -30,7 +30,13 @@
 > - Closing CTA: WhatsApp, Calendly and a compact Request a Quote; truck, crane
 >   and ship drop from above onto road and water, with clear space under the
 >   buttons. No falling photos here.
-> - Footer: V1 footer unchanged.
+> - Footer: same layout, links and content as V1, recoloured to the home page
+>   palette (midnight background, gradient top line, lavender accents).
+> - Closing CTA vectors are medium size (truck 200, crane 210, ship 270 px wide)
+>   and the plane vector flies right to left across the sky. Calendly button
+>   uses the V1 lavender `.btn-calendly` colour everywhere.
+> - Testimonials: compact section with a name on each card. Names must be real
+>   and approved by the buyer; the site currently says names are withheld.
 > - Owner will send feedback on the other pages before implementation starts.
 >
 > The version switch and V2 build below (commit b740ba8, not merged) are still
