@@ -51,7 +51,7 @@
 > `public/js/site-v3.js`, inline vectors via `src/components/Vector.astro`).
 > v3 assets now load on every page: navbar and footer colours everywhere, and
 > compact `PageHero` headers (330 px, tint per page via `data-ph`). Section
-> order: Hero, Ticker, Range, Who We Serve, Why Dehydrated, Process, Edge, From
+> order: Hero (full screen, sticky) with Range sliding over it, then Who We Serve, Why Dehydrated, Process, Edge, From
 > India, Sourcing, Certifications, CTA. New copy is in all 17 locales
 > (`home.j_*`). Not done: Matter.js drag-to-toss (circles use a CSS drop), a
 > real cobe globe (SVG dome). `buyerFeedback` in HomeJourney stays empty.

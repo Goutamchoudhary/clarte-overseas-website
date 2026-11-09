@@ -26,7 +26,6 @@ const partnerCerts = [
   { file: "halal.png", alt: "Halal certified — partner facility" },
   { file: "kosher.avif", alt: "Kosher certified — partner facility" },
 ];
-const ticker = ["ISO 9001:2015", "APEDA", "Spices Board RCMC", "FSSAI", "MSME / Udyam", "IEC", "GST", "Partner: ISO 22000", "Partner: FSSC 22000", "Partner: HACCP", "Partner: BRCGS", "Partner: US FDA", "Partner: Halal", "Partner: Kosher"];
 
 // Falling category circles: [category index, size %, left %, top %, final rotation]
 const balls = [
@@ -93,6 +92,7 @@ const buyerFeedback: { quote: string; name: string; country: string }[] = [];
 const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
 ---
 <!-- HERO: Grown. Milled. Shipped. -->
+<div class="j-curtain">
 <section id="home" class="j-hero">
   <div class="j-wrap j-hero-grid">
     <div class="j-words" data-j-words>
@@ -111,15 +111,8 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       </a>
     </div>
   </div>
+  <span class="j-scroll" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
 </section>
-
-<div class="j-ticker" aria-label="Certifications and registrations">
-  <div class="j-ticker-track">
-    {[0, 1].map((n) => ticker.map((t) => (
-      <span class="j-ticker-item" aria-hidden={n === 1 ? "true" : undefined}><Vector name="shield" size={22} /><span>{t.startsWith("Partner: ") ? <Fragment><span data-i18n="home.j_partner">Partner</span>: {t.slice(9)}</Fragment> : t}</span></span>
-    )))}
-  </div>
-</div>
 
 <!-- PRODUCT RANGE: categories fall and pile up -->
 <section id="export" class="j-range">
@@ -143,6 +136,8 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
     </div>
   </div>
 </section>
+
+</div>
 
 <!-- WHO WE SERVE -->
 <section id="industries" class="j-serve">

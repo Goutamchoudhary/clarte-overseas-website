@@ -7,6 +7,19 @@
   var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var plays = document.querySelectorAll("[data-j-play]");
 
+  // The full-screen hero is sized from the navbar's real height (it can wrap).
+  function syncNav() {
+    var nav = document.getElementById("navbar");
+    if (nav) root.style.setProperty("--nav-h", nav.offsetHeight + "px");
+  }
+  syncNav();
+  window.addEventListener("resize", syncNav);
+  // The range's lifted shadow only appears once scrolling starts, so nothing
+  // of the next section shows on the first screen.
+  function lifted() { root.classList.toggle("j-scrolled", window.scrollY > 4); }
+  lifted();
+  window.addEventListener("scroll", lifted, { passive: true });
+
   // Translated hero words can be longer than the English ones: shrink all
   // three together so the longest always fits its column.
   function fitWords() {
@@ -41,13 +54,17 @@
   }, { threshold: 0.2 });
   plays.forEach(function (el) { io.observe(el); });
 
+  // As the product range slides over the hero, the hero recedes; on desktop the
+  // three words also drift apart.
   function partWords() {
-    if (!window.gsap || !window.ScrollTrigger || window.innerWidth < 1024 || !document.querySelector(".j-w")) return;
-    var hero = document.getElementById("home");
-    var offset = [-90, 90, -50];
-    document.querySelectorAll(".j-w").forEach(function (w, i) {
-      gsap.to(w, { x: offset[i], ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 } });
-    });
+    var hero = document.getElementById("home"), grid = document.querySelector(".j-hero-grid");
+    if (!window.gsap || !window.ScrollTrigger || !grid || !document.querySelector(".j-w")) return;
+    var tl = gsap.timeline({ scrollTrigger: { start: 0, end: function () { return hero.offsetHeight; }, scrub: 0.5, invalidateOnRefresh: true } });
+    tl.to(grid, { scale: 0.93, autoAlpha: 0.2, ease: "none" }, 0);
+    if (window.innerWidth >= 1024) {
+      var offset = [-90, 90, -50];
+      document.querySelectorAll(".j-w").forEach(function (w, i) { tl.to(w, { x: offset[i], ease: "none" }, 0); });
+    }
   }
   if (document.readyState === "complete") partWords();
   else window.addEventListener("load", partWords, { once: true });
