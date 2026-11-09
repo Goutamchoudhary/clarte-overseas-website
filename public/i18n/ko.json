@@ -1573,5 +1573,20 @@
   "home.j_partner": "파트너",
   "home.j_stage_grown": "재배",
   "home.j_stage_milled": "분쇄",
-  "home.j_stage_shipped": "선적"
+  "home.j_stage_shipped": "선적",
+
+  "products.docs_eyebrow": "수출 서류",
+  "products.docs_heading": "주문과 함께 제공되는 모든 것",
+  "products.docs_sub": "다섯 가지 핵심 서류가 화물과 함께 제공되며, 지연 없이 진행되도록 정확하고 제때 준비합니다.",
+  "products.doc1_title": "상업 송장",
+  "products.doc1_desc": "귀사 통화로 작성된 주문 상세 내역.",
+  "products.doc2_title": "포장 명세서",
+  "products.doc2_desc": "포대와 상자별 중량 및 화인.",
+  "products.doc3_title": "원산지 증명서",
+  "products.doc3_desc": "인도에서 생산된 제품임을 확인합니다.",
+  "products.doc4_title": "분석 증명서",
+  "products.doc4_desc": "규격에 따라 확인한 해당 로트의 시험 결과.",
+  "products.doc5_title": "제품 사양서",
+  "products.doc5_desc": "합의된 등급, 메시, 품질 기준.",
+  "products.docs_note": "목적지에서 요구하는 경우 식물위생증명서 및 기타 시장별 증명서를 추가합니다."
 }

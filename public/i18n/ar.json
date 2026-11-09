@@ -1573,5 +1573,20 @@
   "home.j_partner": "شريك",
   "home.j_stage_grown": "زُرعت",
   "home.j_stage_milled": "طُحنت",
-  "home.j_stage_shipped": "شُحنت"
+  "home.j_stage_shipped": "شُحنت",
+
+  "products.docs_eyebrow": "مستندات التصدير",
+  "products.docs_heading": "كل ما يرافق طلبك",
+  "products.docs_sub": "تُرسل خمسة مستندات أساسية مع شحنتك، تُعد بدقة وفي الوقت المحدد لتتحرك بضاعتك دون تأخير.",
+  "products.doc1_title": "الفاتورة التجارية",
+  "products.doc1_desc": "السجل المفصل لطلبك بعملتك.",
+  "products.doc2_title": "قائمة التعبئة",
+  "products.doc2_desc": "كل كيس وكرتونة مع الأوزان والعلامات.",
+  "products.doc3_title": "شهادة المنشأ",
+  "products.doc3_desc": "تؤكد أن البضائع منتجة في الهند.",
+  "products.doc4_title": "شهادة التحليل",
+  "products.doc4_desc": "نتائج مختبر دفعتك مقارنة بالمواصفات.",
+  "products.doc5_title": "مواصفات المنتج",
+  "products.doc5_desc": "الدرجة وحجم الجسيمات ومعايير الجودة المتفق عليها.",
+  "products.docs_note": "تُضاف شهادات الصحة النباتية وغيرها من الشهادات الخاصة بالسوق عندما تتطلبها وجهتك."
 }

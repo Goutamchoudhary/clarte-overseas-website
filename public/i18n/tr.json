@@ -1573,5 +1573,20 @@
   "home.j_partner": "İş ortağı",
   "home.j_stage_grown": "Yetiştirildi",
   "home.j_stage_milled": "Öğütüldü",
-  "home.j_stage_shipped": "Sevk edildi"
+  "home.j_stage_shipped": "Sevk edildi",
+
+  "products.docs_eyebrow": "İhracat Belgeleri",
+  "products.docs_heading": "Bir siparişle gelen her şey",
+  "products.docs_sub": "Beş temel belge sevkiyatınızla birlikte gider; yükünüz gecikmeden ilerlesin diye doğru ve zamanında hazırlanır.",
+  "products.doc1_title": "Ticari Fatura",
+  "products.doc1_desc": "Siparişinizin para biriminizdeki ayrıntılı kaydı.",
+  "products.doc2_title": "Çeki Listesi",
+  "products.doc2_desc": "Ağırlık ve işaretleriyle her çuval ve koli.",
+  "products.doc3_title": "Menşe Şahadetnamesi",
+  "products.doc3_desc": "Malların Hindistan'da üretildiğini doğrular.",
+  "products.doc4_title": "Analiz Sertifikası",
+  "products.doc4_desc": "Partinizin spesifikasyona göre kontrol edilmiş laboratuvar sonuçları.",
+  "products.doc5_title": "Ürün Spesifikasyonu",
+  "products.doc5_desc": "Üzerinde anlaşılan kalite, elek boyutu ve kalite parametreleri.",
+  "products.docs_note": "Bitki sağlık sertifikası ve pazara özgü diğer belgeler, varış ülkeniz gerektirdiğinde eklenir."
 }

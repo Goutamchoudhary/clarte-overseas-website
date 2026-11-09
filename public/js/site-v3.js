@@ -78,6 +78,49 @@
   }, { threshold: 0.2 });
   plays.forEach(function (el) { io.observe(el); });
 
+  // Three product photos per category, shuffling through the whole category.
+  function shuffle(root) {
+    var items, names = root.querySelectorAll("[data-j-name]"), tiles = root.querySelectorAll("[data-j-sh]");
+    try { items = JSON.parse(root.querySelector("[data-j-items]").textContent); } catch (e) { return; }
+    var n = items.length, gap = +root.getAttribute("data-step") || 1, step = 0, visible = false, held = false;
+    function tick() {
+      if (!visible || held || document.hidden) return;
+      step++;
+      tiles.forEach(function (tile, t) {
+        setTimeout(function () {
+          var k = (step + t * gap) % n, item = items[k];
+          var cur = tile.querySelector(".is-cur"), next = tile.querySelector(".is-next"), label = tile.querySelector(".j-sh-name");
+          if (!cur || !next) return;
+          if (item.srcset) next.setAttribute("srcset", item.srcset); else next.removeAttribute("srcset");
+          next.setAttribute("src", item.src);
+          (next.decode ? next.decode() : Promise.resolve()).then(function () {
+            next.classList.add("is-enter");
+            label.classList.add("is-swap");
+            setTimeout(function () {
+              label.textContent = names[k].textContent;
+              label.setAttribute("data-i18n", names[k].getAttribute("data-key"));
+              tile.href = item.href;
+              tile.setAttribute("aria-label", names[k].textContent);
+              label.classList.remove("is-swap");
+            }, 280);
+            setTimeout(function () {
+              cur.className = "j-sh-img is-next";
+              cur.removeAttribute("src"); cur.removeAttribute("srcset");
+              next.className = "j-sh-img is-cur";
+            }, 950);
+          }, function () { next.removeAttribute("src"); next.removeAttribute("srcset"); });
+        }, t * 260);
+      });
+    }
+    root.addEventListener("mouseenter", function () { held = true; });
+    root.addEventListener("mouseleave", function () { held = false; });
+    root.addEventListener("focusin", function () { held = true; });
+    root.addEventListener("focusout", function () { held = false; });
+    new IntersectionObserver(function (es) { visible = es[es.length - 1].isIntersecting; }, { threshold: 0.3 }).observe(root);
+    setInterval(tick, 2800);
+  }
+  document.querySelectorAll("[data-j-shuffle]").forEach(shuffle);
+
   // As the product range slides over the hero, the hero recedes; on desktop the
   // three words also drift apart.
   function partWords() {

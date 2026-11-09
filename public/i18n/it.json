@@ -1573,5 +1573,20 @@
   "home.j_partner": "Partner",
   "home.j_stage_grown": "Coltivato",
   "home.j_stage_milled": "Macinato",
-  "home.j_stage_shipped": "Spedito"
+  "home.j_stage_shipped": "Spedito",
+
+  "products.docs_eyebrow": "Documenti di esportazione",
+  "products.docs_heading": "Tutto ciò che accompagna un ordine",
+  "products.docs_sub": "Cinque documenti essenziali viaggiano con la spedizione, preparati con precisione e puntualità perché la merce proceda senza intoppi.",
+  "products.doc1_title": "Fattura commerciale",
+  "products.doc1_desc": "Il dettaglio del tuo ordine, nella tua valuta.",
+  "products.doc2_title": "Packing list",
+  "products.doc2_desc": "Ogni sacco e cartone, con pesi e marcature.",
+  "products.doc3_title": "Certificato di origine",
+  "products.doc3_desc": "Conferma che la merce è prodotta in India.",
+  "products.doc4_title": "Certificato di analisi",
+  "products.doc4_desc": "I risultati di laboratorio del tuo lotto, verificati secondo specifica.",
+  "products.doc5_title": "Specifica del prodotto",
+  "products.doc5_desc": "Il grado, la granulometria e i parametri di qualità concordati.",
+  "products.docs_note": "I certificati fitosanitari e altri specifici per il mercato vengono aggiunti quando la destinazione li richiede."
 }

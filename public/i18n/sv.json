@@ -1573,5 +1573,20 @@
   "home.j_partner": "Partner",
   "home.j_stage_grown": "Odlat",
   "home.j_stage_milled": "Malet",
-  "home.j_stage_shipped": "Skeppat"
+  "home.j_stage_shipped": "Skeppat",
+
+  "products.docs_eyebrow": "Exportdokument",
+  "products.docs_heading": "Allt som följer med en order",
+  "products.docs_sub": "Fem kärndokument följer med din sändning, korrekt och i tid upprättade så att godset rör sig utan dröjsmål.",
+  "products.doc1_title": "Handelsfaktura",
+  "products.doc1_desc": "Den specificerade ordern i din valuta.",
+  "products.doc2_title": "Packlista",
+  "products.doc2_desc": "Varje säck och kartong, med vikter och märkning.",
+  "products.doc3_title": "Ursprungscertifikat",
+  "products.doc3_desc": "Bekräftar att varorna är producerade i Indien.",
+  "products.doc4_title": "Analyscertifikat",
+  "products.doc4_desc": "Laboratorieresultat för ditt parti, kontrollerade mot specifikationen.",
+  "products.doc5_title": "Produktspecifikation",
+  "products.doc5_desc": "Den överenskomna kvaliteten, maskstorleken och kvalitetsparametrarna.",
+  "products.docs_note": "Växtskyddscertifikat och andra marknadsspecifika intyg läggs till när destinationen kräver dem."
 }

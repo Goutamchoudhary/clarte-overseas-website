@@ -1573,5 +1573,20 @@
   "home.j_partner": "Partner",
   "home.j_stage_grown": "Geteeld",
   "home.j_stage_milled": "Gemalen",
-  "home.j_stage_shipped": "Verscheept"
+  "home.j_stage_shipped": "Verscheept",
+
+  "products.docs_eyebrow": "Exportdocumenten",
+  "products.docs_heading": "Alles wat bij een bestelling hoort",
+  "products.docs_sub": "Vijf kerndocumenten reizen mee met uw zending, nauwkeurig en op tijd opgesteld zodat uw lading zonder oponthoud verdergaat.",
+  "products.doc1_title": "Handelsfactuur",
+  "products.doc1_desc": "Het gespecificeerde overzicht van uw bestelling, in uw valuta.",
+  "products.doc2_title": "Paklijst",
+  "products.doc2_desc": "Elke zak en doos, met gewichten en markeringen.",
+  "products.doc3_title": "Certificaat van oorsprong",
+  "products.doc3_desc": "Bevestigt dat de goederen in India zijn geproduceerd.",
+  "products.doc4_title": "Analysecertificaat",
+  "products.doc4_desc": "Laboratoriumresultaten van uw partij, gecontroleerd volgens specificatie.",
+  "products.doc5_title": "Productspecificatie",
+  "products.doc5_desc": "De afgesproken kwaliteit, maaswijdte en kwaliteitsparameters.",
+  "products.docs_note": "Fytosanitaire en andere marktspecifieke certificaten worden toegevoegd wanneer uw bestemming dat vereist."
 }

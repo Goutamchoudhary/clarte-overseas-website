@@ -1573,5 +1573,20 @@
   "home.j_partner": "Partner",
   "home.j_stage_grown": "Angebaut",
   "home.j_stage_milled": "Gemahlen",
-  "home.j_stage_shipped": "Verschifft"
+  "home.j_stage_shipped": "Verschifft",
+
+  "products.docs_eyebrow": "Exportdokumente",
+  "products.docs_heading": "Alles, was zu einer Bestellung gehört",
+  "products.docs_sub": "Fünf zentrale Dokumente begleiten Ihre Lieferung, sorgfältig und pünktlich erstellt, damit Ihre Sendung ohne Verzögerung läuft.",
+  "products.doc1_title": "Handelsrechnung",
+  "products.doc1_desc": "Die detaillierte Aufstellung Ihrer Bestellung in Ihrer Währung.",
+  "products.doc2_title": "Packliste",
+  "products.doc2_desc": "Jeder Sack und Karton mit Gewichten und Markierungen.",
+  "products.doc3_title": "Ursprungszeugnis",
+  "products.doc3_desc": "Bestätigt, dass die Ware in Indien hergestellt wurde.",
+  "products.doc4_title": "Analysezertifikat",
+  "products.doc4_desc": "Laborergebnisse Ihrer Charge, geprüft gemäß Spezifikation.",
+  "products.doc5_title": "Produktspezifikation",
+  "products.doc5_desc": "Die vereinbarte Qualität, Mesh-Größe und Qualitätsparameter.",
+  "products.docs_note": "Pflanzengesundheits- und weitere marktspezifische Zeugnisse kommen hinzu, wenn Ihr Zielland sie verlangt."
 }

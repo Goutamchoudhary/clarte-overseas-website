@@ -1573,5 +1573,20 @@
   "home.j_partner": "Partenaire",
   "home.j_stage_grown": "Cultivé",
   "home.j_stage_milled": "Moulu",
-  "home.j_stage_shipped": "Expédié"
+  "home.j_stage_shipped": "Expédié",
+
+  "products.docs_eyebrow": "Documents d'exportation",
+  "products.docs_heading": "Tout ce qui accompagne une commande",
+  "products.docs_sub": "Cinq documents essentiels accompagnent votre expédition, préparés avec précision et à temps pour que votre marchandise circule sans retard.",
+  "products.doc1_title": "Facture commerciale",
+  "products.doc1_desc": "Le détail de votre commande, dans votre devise.",
+  "products.doc2_title": "Liste de colisage",
+  "products.doc2_desc": "Chaque sac et carton, avec poids et marquages.",
+  "products.doc3_title": "Certificat d'origine",
+  "products.doc3_desc": "Atteste que les marchandises sont produites en Inde.",
+  "products.doc4_title": "Certificat d'analyse",
+  "products.doc4_desc": "Les résultats de laboratoire de votre lot, vérifiés selon les spécifications.",
+  "products.doc5_title": "Spécification du produit",
+  "products.doc5_desc": "Le grade, la granulométrie et les paramètres de qualité convenus.",
+  "products.docs_note": "Les certificats phytosanitaires et autres documents propres à chaque marché sont ajoutés lorsque votre destination les exige."
 }

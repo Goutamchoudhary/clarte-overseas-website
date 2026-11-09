@@ -4,6 +4,10 @@ import PageHero from "../../components/PageHero.astro";
 import { categories, productsByCategory } from "../../data/products";
 import { COMING_SOON_PRODUCTS, UNAVAILABLE_PRODUCTS } from "../../consts";
 import { smallest } from "../../lib/responsive-img";
+import { isVersion } from "../../data/site-options";
+import ProductShuffle from "../../components/ProductShuffle.astro";
+import Vector from "../../components/Vector.astro";
+const v3 = isVersion("v3");
 
 const hiddenFromThumbs = (slug: string) =>
   COMING_SOON_PRODUCTS.has(slug) || UNAVAILABLE_PRODUCTS.has(slug);
@@ -23,6 +27,17 @@ const cats = categories.map((c) => {
           .filter((p) => p && p.image && !hiddenFromThumbs(p.slug))
       : items.filter((p) => p.image && !hiddenFromThumbs(p.slug)).slice(0, 4),
     fallback: items.slice(0, 4),
+    // Every available product with a photo, new photography first. A category
+    // with fewer than three tops up from its coming-soon products.
+    shuffle: (() => {
+      const photo = items.filter((p) => p.image);
+      const ready = photo.filter((p) => !hiddenFromThumbs(p.slug));
+      const ordered = [...ready.filter((p) => p.listImage), ...ready.filter((p) => !p.listImage)];
+      const extra = photo.filter((p) => hiddenFromThumbs(p.slug) && !UNAVAILABLE_PRODUCTS.has(p.slug));
+      return (ordered.length >= 3 ? ordered : [...ordered, ...extra]).map((p) => ({
+        name: p.name, key: `cat.prod_${p.slug.replace(/-/g, "_")}_name`, image: p.image!, href: `/products/${c.slug}/${p.slug}`,
+      }));
+    })(),
   };
 });
 ---
@@ -39,9 +54,10 @@ const cats = categories.map((c) => {
     chips={["100% natural", "Spec-driven supply", "Private label ready"]}
   />
 
-  <section class="py-16 lg:py-20 bg-white">
+  <section class={`py-16 lg:py-20 bg-white${v3 ? " j-flow" : ""}`}>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-6 lg:gap-8">
       {cats.map((c, i) => (
+        <div class={i === 0 ? "j-flow-first" : undefined}>
         <article class="cat-row" style={`--from:${c.accentFrom};--to:${c.accentTo}`} data-side={i % 2 === 0 ? "l" : "r"}>
           <div class="cat-row-text reveal">
             <div class="cat-row-head">
@@ -58,6 +74,9 @@ const cats = categories.map((c) => {
               <span class="cat-count">{c.count}&nbsp;<span data-i18n="products.cat_count_unit">products</span></span>
             </div>
           </div>
+          {v3 && c.shuffle.length >= 3 ? (
+            <div class="reveal d1"><ProductShuffle items={c.shuffle} label={c.name} /></div>
+          ) : (
           <a href={`/products/${c.slug}`} class="cat-row-media reveal d1" aria-label={c.name}>
             <span class="cat-media-tint" aria-hidden="true"></span>
             {(c.thumbs.length ? c.thumbs : c.fallback).map((p) => (
@@ -68,8 +87,32 @@ const cats = categories.map((c) => {
               </span>
             ))}
           </a>
+          )}
         </article>
+        </div>
       ))}
     </div>
   </section>
+
+  {v3 && (
+    <section class="j-docs">
+      <div class="j-wrap">
+        <div class="j-center reveal">
+          <span class="eyebrow center"><span data-i18n="products.docs_eyebrow">Export Paperwork</span></span>
+          <h2 class="j-h2" data-i18n="products.docs_heading">Everything that comes with an order</h2>
+          <p class="j-sub" data-i18n="products.docs_sub">Five core documents travel with your shipment, prepared accurately and on time so your consignment moves without hold-ups.</p>
+        </div>
+        <div class="j-docs-grid">
+          {[["inquiry", "Commercial Invoice", "The itemised record of your order, in your currency."], ["pallet", "Packing List", "Every bag and carton, with weights and marks."], ["globe", "Certificate of Origin", "Confirms the goods were produced in India."], ["labtech", "Certificate of Analysis", "Lab results for your lot, checked against spec."], ["specsheet", "Product Specification", "The agreed grade, mesh and quality parameters."]].map(([v, t, d], i) => (
+            <div class={`j-doc reveal d${i % 3}`}>
+              <Vector name={v} size={104} />
+              <h3 data-i18n={`products.doc${i + 1}_title`}>{t}</h3>
+              <p data-i18n={`products.doc${i + 1}_desc`}>{d}</p>
+            </div>
+          ))}
+        </div>
+        <p class="j-docs-note" data-i18n="products.docs_note">Phytosanitary and other market-specific certificates are added when your destination requires them.</p>
+      </div>
+    </section>
+  )}
 </BaseLayout>

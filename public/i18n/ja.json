@@ -1573,5 +1573,20 @@
   "home.j_partner": "パートナー",
   "home.j_stage_grown": "育てる",
   "home.j_stage_milled": "挽く",
-  "home.j_stage_shipped": "届ける"
+  "home.j_stage_shipped": "届ける",
+
+  "products.docs_eyebrow": "輸出書類",
+  "products.docs_heading": "ご注文に付属するもの",
+  "products.docs_sub": "5つの主要書類が貨物に添付され、滞りなく輸送できるよう正確かつ期限どおりに準備します。",
+  "products.doc1_title": "商業インボイス",
+  "products.doc1_desc": "お客様の通貨で記載した注文明細。",
+  "products.doc2_title": "パッキングリスト",
+  "products.doc2_desc": "袋・箱ごとの重量と荷印。",
+  "products.doc3_title": "原産地証明書",
+  "products.doc3_desc": "インドで生産された商品であることを証明。",
+  "products.doc4_title": "分析証明書",
+  "products.doc4_desc": "ロットごとの試験結果を仕様と照合。",
+  "products.doc5_title": "製品仕様書",
+  "products.doc5_desc": "合意したグレード、メッシュ、品質項目。",
+  "products.docs_note": "仕向地で必要な場合は、植物検疫証明書やその他の市場別証明書を追加します。"
 }

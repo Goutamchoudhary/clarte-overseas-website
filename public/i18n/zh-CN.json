@@ -2523,5 +2523,20 @@
   "home.j_partner": "合作伙伴",
   "home.j_stage_grown": "种植",
   "home.j_stage_milled": "研磨",
-  "home.j_stage_shipped": "发运"
+  "home.j_stage_shipped": "发运",
+
+  "products.docs_eyebrow": "出口单据",
+  "products.docs_heading": "每笔订单都包含这些",
+  "products.docs_sub": "五份核心单据随货同行，准确及时地备妥，让您的货物顺利通关。",
+  "products.doc1_title": "商业发票",
+  "products.doc1_desc": "以您的货币列明订单明细。",
+  "products.doc2_title": "装箱单",
+  "products.doc2_desc": "列明每袋每箱的重量和唛头。",
+  "products.doc3_title": "原产地证书",
+  "products.doc3_desc": "证明货物产自印度。",
+  "products.doc4_title": "分析证书",
+  "products.doc4_desc": "您这批货物的实验室结果，已按规格核验。",
+  "products.doc5_title": "产品规格书",
+  "products.doc5_desc": "约定的等级、目数和质量参数。",
+  "products.docs_note": "如目的地有要求，我们会加附植物检疫证书及其他市场专用证书。"
 }

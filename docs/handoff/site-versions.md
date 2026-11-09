@@ -51,6 +51,9 @@
 > `public/js/site-v3.js`, inline vectors via `src/components/Vector.astro`).
 > Navbar hides on scroll down and returns on scroll up, on every page
 > (`#navbar.nav-away`, in `site-v3.js`).
+> `/products` done: page colour runs navbar → header → first category (fade
+> via `.j-flow-first::before`), `ProductShuffle.astro` shuffles three photos per
+> category from the product records, and the five-document section (`products.doc*`).
 > v3 assets now load on every page: navbar and footer colours everywhere, and
 > compact `PageHero` headers (330 px, tint per page via `data-ph`). Section
 > order: Hero (full screen, sticky) with Range sliding over it, then Who We Serve, Why Dehydrated, Process, Edge, From

@@ -1573,5 +1573,20 @@
   "home.j_partner": "Đối tác",
   "home.j_stage_grown": "Trồng",
   "home.j_stage_milled": "Xay",
-  "home.j_stage_shipped": "Vận chuyển"
+  "home.j_stage_shipped": "Vận chuyển",
+
+  "products.docs_eyebrow": "Chứng từ xuất khẩu",
+  "products.docs_heading": "Mọi thứ đi kèm đơn hàng",
+  "products.docs_sub": "Năm chứng từ cốt lõi đi cùng lô hàng, được chuẩn bị chính xác và đúng hạn để hàng của bạn không bị chậm trễ.",
+  "products.doc1_title": "Hóa đơn thương mại",
+  "products.doc1_desc": "Chi tiết đơn hàng bằng đơn vị tiền tệ của bạn.",
+  "products.doc2_title": "Phiếu đóng gói",
+  "products.doc2_desc": "Từng bao và thùng, kèm trọng lượng và ký mã hiệu.",
+  "products.doc3_title": "Giấy chứng nhận xuất xứ",
+  "products.doc3_desc": "Xác nhận hàng hóa được sản xuất tại Ấn Độ.",
+  "products.doc4_title": "Giấy chứng nhận phân tích",
+  "products.doc4_desc": "Kết quả xét nghiệm của lô hàng, đối chiếu theo quy cách.",
+  "products.doc5_title": "Quy cách sản phẩm",
+  "products.doc5_desc": "Cấp hạng, độ mịn và các chỉ tiêu chất lượng đã thỏa thuận.",
+  "products.docs_note": "Giấy chứng nhận kiểm dịch thực vật và các chứng nhận riêng theo thị trường sẽ được bổ sung khi nơi đến yêu cầu."
 }
