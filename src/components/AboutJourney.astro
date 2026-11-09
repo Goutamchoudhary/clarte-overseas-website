@@ -1,0 +1,171 @@
+---
+// About page on "The Journey" (v3): everything between the header and the CTA.
+// Styles: /css/site-v3.css (.j-about*, .j-vals, .j-partners). Buyer quotes stay
+// off this page until real, attributable ones exist.
+import Vector from "./Vector.astro";
+
+interface Props {
+  categoryCount: number;
+  values: { t: string; d: string }[];
+  countries: string[];
+  partners: { t: string }[];
+  aboutFaqs: { q: string; a: string }[];
+}
+const { categoryCount, values, countries, partners, aboutFaqs } = Astro.props;
+
+const valueArt = ["labtech", "certificate", "specsheet", "customer-centric", "warehouse", "partnership"];
+const goals = [
+  ["world-map-pins", "about.goal1_title", "Reach across the globe", "about.goal1_body", "Serve buyers on every continent, then keep widening the map year on year."],
+  ["reliable-schedule", "about.goal2_title", "Reliability, first", "about.goal2_body", "Be the supplier our customers never have to chase, shipment after shipment."],
+  ["farm-to-port", "about.goal3_title", "Traceable & responsible", "about.goal3_body", "Full traceability and fair, sustainable sourcing, from the farm to the port."],
+  ["factory", "about.goal4_title", "Built to scale", "about.goal4_body", "Capacity, systems and certifications that grow as fast as demand does."],
+];
+---
+<!-- STORY + GLANCE -->
+<section class="j-about-top">
+  <div class="j-wrap j-about-story">
+    <div class="reveal">
+      <span class="eyebrow"><span data-i18n="about.who_eyebrow">Who We Are</span></span>
+      <h2 class="j-h2"><span data-i18n="about.who_heading">Sourcing from India, made straightforward</span></h2>
+      <div class="j-about-copy">
+        <p data-i18n="about.who_body1">We started Clarté Overseas in 2025 with one clear aim: make it easy for food businesses anywhere to buy dependable dehydrated ingredients from India. The country grows an extraordinary range of produce and botanicals, yet for an overseas buyer, finding a supplier who is consistent, compliant and genuinely easy to deal with is still surprisingly hard. Closing that gap is the whole reason we exist.</p>
+        <p data-i18n="about.who_body2">We are a merchant exporter, not a single factory. We work with a vetted network of manufacturers and processors across the country, which lets us offer a broad range of grades and forms while keeping a close watch on quality, documentation and delivery. From raw-material selection and lab testing to packaging and export paperwork, every shipment is handled with the same care, whether it is a first trial order or a repeat container.</p>
+        <p data-i18n="about.who_body3">The way we work comes down to three habits: clarity in how we communicate, compliance with the standards each market expects, and consistency you can plan your own production around.</p>
+      </div>
+    </div>
+    <div class="j-glance reveal d1">
+      <p class="j-glance-h" data-i18n="about.glance_heading">Company at a glance</p>
+      <div class="j-glance-row"><span data-i18n="about.glance_established">Established</span><b data-i18n="about.glance_established_val">2025</b></div>
+      <div class="j-glance-row"><span data-i18n="about.glance_location">Head office</span><b data-i18n="about.glance_location_val">New Delhi, India</b></div>
+      <div class="j-glance-row"><span data-i18n="about.glance_type">Business type</span><b data-i18n="about.glance_type_val">Merchant exporter</b></div>
+      <div class="j-glance-row"><span data-i18n="about.glance_reg">Registered</span><b>GST · IEC · RCMC · FSSAI · ISO 9001</b></div>
+      <div class="j-glance-row"><span data-i18n="about.glance_categories">Product lines</span><b data-i18n="about.glance_categories_val">{categoryCount} ingredient categories</b></div>
+      <div class="j-glance-row"><span data-i18n="about.glance_markets">Target markets</span><b data-i18n="about.glance_markets_val">15+ countries</b></div>
+      <div class="j-glance-row"><span data-i18n="about.glance_team">Team</span><b data-i18n="about.glance_team_val">Small, specialist</b></div>
+    </div>
+  </div>
+  <div class="j-wrap">
+    <div class="j-stats reveal">
+      <div><span class="stat-num j-stat-n" data-count={categoryCount}>0</span><small data-i18n="about.stats_categories">Ingredient categories</small></div>
+      <div><span class="stat-num j-stat-n" data-count="15" data-suffix="+">0</span><small data-i18n="about.stats_markets">Markets in our sights</small></div>
+      <div><span class="stat-num j-stat-n" data-count="5">0</span><small data-i18n="about.stats_continents">Continents</small></div>
+      <div><span class="stat-num j-stat-n">100%</span><small data-i18n="about.stats_lots">Quality-checked lots</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION AND VISION -->
+<section id="purpose" class="j-stds">
+  <div class="j-wrap">
+    <div class="j-stds-panel">
+      <div class="reveal j-purpose-head">
+        <span class="eyebrow light"><span data-i18n="about.purpose_eyebrow">Our Purpose</span></span>
+        <h2 class="j-h2 j-light"><span data-i18n="about.purpose_heading">Building the world's go-to ingredient partner</span></h2>
+        <p class="j-sub j-light-sub" data-i18n="about.purpose_sub">We are not here just to fill orders. We are building Clarté Overseas into a name food businesses anywhere can source from with complete confidence.</p>
+      </div>
+      <div class="j-mv">
+        <div class="j-mv-card reveal">
+          <div>
+            <p class="j-mv-label" data-i18n="about.mission_label">Mission</p>
+            <p class="j-mv-text" data-i18n="about.mission_body">Give food brands and manufacturers a dehydrated-ingredient partner they can fully rely on: steady quality, honest sourcing, and supply that lands on time, every single order.</p>
+          </div>
+          <span class="j-mv-art" aria-hidden="true"><Vector name="mission-target" size={94} /></span>
+        </div>
+        <div class="j-mv-card reveal d1">
+          <div>
+            <p class="j-mv-label" data-i18n="about.vision_label">Vision</p>
+            <p class="j-mv-text" data-i18n="about.vision_body">Become the world's largest and most trusted exporter of dehydrated food ingredients, reaching buyers in as many countries as we possibly can.</p>
+          </div>
+          <span class="j-mv-art" aria-hidden="true"><Vector name="vision-telescope" size={104} /></span>
+        </div>
+      </div>
+      <p class="j-goals-h" data-i18n="about.goals_heading">What we're driving toward</p>
+      <div class="j-goals">
+        {goals.map(([art, tk, t, bk, b], i) => (
+          <div class={`reveal d${i}`}>
+            <span class="j-goal-art" aria-hidden="true"><Vector name={art} size={art === "farm-to-port" ? 122 : 68} /></span>
+            <h3 data-i18n={tk}>{t}</h3>
+            <p data-i18n={bk}>{b}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section class="j-about-mkts">
+  <div class="j-wrap j-about-mkts-head reveal">
+    <span class="j-flank j-flank-l" aria-hidden="true"><Vector name="ship-mark" size={200} /></span>
+    <span class="j-flank j-flank-r" aria-hidden="true"><Vector name="globe" size={150} /></span>
+    <span class="eyebrow center"><span data-i18n="about.markets_heading">Where We're Headed</span></span>
+    <h2 class="j-h2 j-h2-md"><span data-i18n="about.markets_sub">Markets we're building toward</span></h2>
+    <p class="j-sub" data-i18n="about.markets_body">We already work with buyers across the US, UK, the Gulf, Australia and South East Asia, and we're actively opening up more. Here is where we're focused next.</p>
+  </div>
+  <div class="marquee reveal">
+    <div class="marquee-track">
+      {[...countries, ...countries].map((c) => <span class="country-chip"><span class="dot"></span>{c}</span>)}
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="j-vals-sec">
+  <div class="j-wrap">
+    <div class="j-center reveal">
+      <span class="eyebrow center"><span data-i18n="about.values_eyebrow">What Sets Us Apart</span></span>
+      <h2 class="j-h2 j-h2-md"><span data-i18n="about.values_sub">The way we like to work</span></h2>
+    </div>
+    <div class="j-vals">
+      {values.map((v, i) => (
+        <div class={`j-val reveal d${i % 3}`}>
+          <span class="j-val-art" aria-hidden="true"><Vector name={valueArt[i]} size={76} /></span>
+          <h3 data-i18n={`about.val${i + 1}_title`}>{v.t}</h3>
+          <p data-i18n={`about.val${i + 1}_body`}>{v.d}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="j-partners">
+  <div class="j-wrap">
+    <div class="j-partners-panel">
+      <div class="reveal">
+        <span class="eyebrow"><span data-i18n="about.partners_eyebrow">Work With Us</span></span>
+        <h2 class="j-h2 j-h2-md"><span data-i18n="about.partners_sub">Who we partner with</span></h2>
+        <p class="j-sub" data-i18n="about.partners_body">If you source, distribute, manufacture or open markets in food ingredients, there is a way to work together.</p>
+      </div>
+      <div class="part-tags reveal d1">
+        {partners.map((p, i) => <span class="part-tag" data-i18n={`about.partner${i + 1}_tag`}>{p.t}</span>)}
+        <a href="#quote" class="part-tag part-tag-cta"><span data-i18n="about.partner_cta">Something else in mind?</span>
+          <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="j-faq">
+  <div class="j-wrap j-faq-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="about.faq_eyebrow">FAQ</span>
+      <h2 class="j-h2 j-h2-md" data-i18n="about.faq_heading">Questions about Clarté Overseas</h2>
+      <p class="j-sub" data-i18n="about.faq_sub">A few things buyers often want to know before getting in touch.</p>
+      <span class="j-faq-art"><Vector name="mill" size={120} /><Vector name="sack" size={110} /></span>
+    </div>
+    <div class="reveal d1">
+      {aboutFaqs.map((f, i) => (
+        <details class="faq-item">
+          <summary>
+            <span data-i18n={`about.faq${i + 1}_q`}>{f.q}</span>
+            <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body" data-i18n={`about.faq${i + 1}_a`}>{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200">
+<!-- The Clarté team in front of the company office, with an "about" info bubble · use: About page header -->
+<rect x="52" y="30" width="120" height="136" rx="8" fill="#1f4693"/>
+<rect x="44" y="22" width="136" height="14" rx="5" fill="#16346f"/>
+<rect x="88" y="4" width="48" height="48" rx="12" fill="#fff" stroke="#c4b5fd" stroke-width="3"/>
+<image href="/assets/logo/logo-icon.svg" x="94" y="10" width="36" height="36.3"/>
+<g fill="#93c5fd"><rect x="64" y="62" width="22" height="20" rx="3"/><rect x="101" y="62" width="22" height="20" rx="3"/><rect x="138" y="62" width="22" height="20" rx="3"/></g>
+<g fill="#fde68a"><rect x="64" y="92" width="22" height="20" rx="3"/><rect x="138" y="92" width="22" height="20" rx="3"/></g>
+<rect x="101" y="92" width="22" height="20" rx="3" fill="#93c5fd"/>
+<path d="M186 8H226C232 8 236 12 236 18V52C236 58 232 62 226 62H204L192 74L194 62H186C180 62 176 58 176 52V18C176 12 180 8 186 8Z" fill="#be185d"/>
+<circle cx="206" cy="21" r="5" fill="#fff"/><rect x="202" y="30" width="8" height="23" rx="3" fill="#fff"/>
+<ellipse cx="120" cy="193" rx="108" ry="6" fill="#15123a" opacity=".1"/>
+<!-- left: colleague in a pink kurta -->
+<path d="M24 192C24 152 42 142 66 142C90 142 108 152 108 192Z" fill="#be185d"/>
+<path d="M58 142L66 156L74 142Z" fill="#fbcfe8"/>
+<rect x="58" y="126" width="16" height="20" rx="6" fill="#c98a5e"/>
+<path d="M42 118C38 90 54 82 66 82C80 82 94 92 90 118C92 132 86 142 80 142V112H52V142C46 142 40 132 42 118Z" fill="#15123a"/>
+<circle cx="66" cy="110" r="20" fill="#d99a6c"/>
+<path d="M46 108C46 90 58 86 66 86C76 86 86 92 86 108C78 98 72 96 66 96C60 96 52 100 46 108Z" fill="#15123a"/>
+<!-- right: colleague in violet -->
+<path d="M132 192C132 152 150 142 174 142C198 142 216 152 216 192Z" fill="#6d28d9"/>
+<path d="M166 142L174 156L182 142Z" fill="#fff"/>
+<rect x="166" y="126" width="16" height="20" rx="6" fill="#d99a6c"/>
+<circle cx="174" cy="110" r="20" fill="#e9b48a"/>
+<path d="M154 108C152 90 166 86 176 88C190 88 196 98 194 108C188 100 182 98 176 100C166 102 160 102 154 108Z" fill="#3b2a1e"/>
+<!-- centre: founder in navy suit, waving -->
+<path d="M72 192C72 146 94 134 120 134C146 134 168 146 168 192Z" fill="#15123a"/>
+<path d="M108 134L120 156L132 134Z" fill="#fff"/><path d="M116 142H124L127 172L120 180L113 172Z" fill="#e0a526"/>
+<rect x="111" y="116" width="18" height="22" rx="7" fill="#d99a6c"/>
+<circle cx="120" cy="98" r="23" fill="#e9b48a"/>
+<path d="M97 96C94 72 112 68 122 70C138 70 146 82 143 96C138 86 130 84 122 86C110 88 104 88 97 96Z" fill="#15123a"/>
+<path d="M112 106Q120 113 128 106" fill="none" stroke="#a96f47" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

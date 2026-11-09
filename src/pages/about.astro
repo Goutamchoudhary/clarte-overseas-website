@@ -5,6 +5,11 @@ import WaveDivider from "../components/WaveDivider.astro";
 import CurveDivider from "../components/CurveDivider.astro";
 import Testimonials from "../components/Testimonials.astro";
 import { CONTACT } from "../consts";
+import { categories } from "../data/products";
+import { isVersion } from "../data/site-options";
+import AboutJourney from "../components/AboutJourney.astro";
+
+const v3 = isVersion("v3");
 
 const title = "About Clarté Overseas — Dehydrated Food Ingredient Exporter from India";
 const description =
@@ -88,6 +93,7 @@ const aboutFaqs = [
     chips={["New Delhi, India", "Merchant exporter", "Shipping worldwide"]}
   />
 
+  {v3 ? <AboutJourney categoryCount={categories.length} values={values} countries={countries} partners={partners} aboutFaqs={aboutFaqs} /> : (<Fragment>
   <!-- ===================== STORY + GLANCE ===================== -->
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -110,7 +116,7 @@ const aboutFaqs = [
           <div class="glance-row"><span class="k"><span data-i18n="about.glance_location">Head office</span></span><span class="v"><span data-i18n="about.glance_location_val">New Delhi, India</span></span></div>
           <div class="glance-row"><span class="k"><span data-i18n="about.glance_type">Business type</span></span><span class="v"><span data-i18n="about.glance_type_val">Merchant exporter</span></span></div>
           <div class="glance-row"><span class="k"><span data-i18n="about.glance_reg">Registered</span></span><span class="v">GST · IEC · RCMC · FSSAI · ISO 9001</span></div>
-          <div class="glance-row"><span class="k"><span data-i18n="about.glance_categories">Product lines</span></span><span class="v" data-i18n="about.glance_categories_val">5 ingredient categories</span></div>
+          <div class="glance-row"><span class="k"><span data-i18n="about.glance_categories">Product lines</span></span><span class="v" data-i18n="about.glance_categories_val">{categories.length} ingredient categories</span></div>
           <div class="glance-row"><span class="k"><span data-i18n="about.glance_markets">Target markets</span></span><span class="v" data-i18n="about.glance_markets_val">15+ countries</span></div>
           <div class="glance-row"><span class="k"><span data-i18n="about.glance_team">Team</span></span><span class="v"><span data-i18n="about.glance_team_val">Small, specialist</span></span></div>
         </div>
@@ -124,7 +130,7 @@ const aboutFaqs = [
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="card text-center p-7 reveal">
-          <div class="stat-num text-grad-deep text-4xl sm:text-5xl" data-count="5">0</div>
+          <div class="stat-num text-grad-deep text-4xl sm:text-5xl" data-count={categories.length}>0</div>
           <div class="text-slate-500 text-sm mt-2"><span data-i18n="about.stats_categories">Ingredient categories</span></div>
         </div>
         <div class="card text-center p-7 reveal d1">
@@ -295,6 +301,8 @@ const aboutFaqs = [
       </div>
     </div>
   </section>
+
+  </Fragment>)}
 
   <!-- ===================== CTA ===================== -->
   <section id="quote" class="py-20">

@@ -10,9 +10,7 @@ import { siteConfig } from "../data/site-options";
 // Active whole-site version (docs/handoff/site-versions.md). V1 = today's site;
 // any other version adds its own stylesheet + script on top of styles.css.
 const version = siteConfig.version;
-// "The Journey" (v3) is being rolled out page by page: home only for now.
-const isHomePage = Astro.url.pathname.replace(/\/+$/, "") === "";
-const versionAssets = version !== "v1" && (version !== "v3" || isHomePage);
+const versionAssets = version !== "v1";
 // Inlined so the font-face rules are available on the first byte of HTML —
 // a separate stylesheet put a request between the HTML and every font file.
 import fontsCss from "../../public/fonts/fonts.css?raw";

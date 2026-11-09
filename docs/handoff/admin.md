@@ -60,6 +60,20 @@ never the real ones). In dev the lockout store falls back to memory. The
 end-to-end checks used (wrong key 404, headers, cross-origin 403, replay,
 tampered cookie, lockout) all passed on 8 Nov 2026.
 
+## Two versions (Nov 2026)
+
+The portal offers one choice: **Version 1 (original)** or **The Journey** (`v3`).
+A setting appears only when it has two or more `ready` options; the others keep
+their current value in hidden fields. V2 Living Collage is no longer selectable.
+
+`site-config.json` stays on `v1` so that merging design work can't change the
+live site; only publishing from the portal does. `site-config.preview.json`
+(`v3`) makes local and Vercel preview builds show the new design, and production
+ignores it. To see production's result locally: `VERCEL_ENV=production npm run build`.
+
+The portal publishes to `ADMIN_GITHUB_BRANCH` (default `main`), so the code for a
+design must be merged to that branch before switching to it.
+
 ## Status / next stages
 
 - Done: admin, auth, publish/history/revert, config file. Only the current

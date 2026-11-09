@@ -1,0 +1,204 @@
+---
+// Certifications page on "The Journey" (v3): credentials, partner standards,
+// requirements by market, FAQ. Styles: /css/site-v3.css (.j-cert*, .j-stds, .j-mkt*).
+// The credential card and standards rail behaviour is in certifications.astro.
+import Vector from "./Vector.astro";
+
+interface Props {
+  companyCerts: { name: string; authority: string; desc: string; file: string; kind: string; logo: string }[];
+  partnerStandards: { name: string; line: string; desc: string }[];
+  certFaqs: { q: string; a: string }[];
+}
+const { companyCerts, partnerStandards, certFaqs } = Astro.props;
+
+const stdLogo: Record<string, string> = {
+  "ISO 22000": "iso-22000.png", HACCP: "haccp.webp", BRCGS: "brcgs.jpeg", "US FDA": "fda.png",
+  Halal: "halal.png", Kosher: "kosher.avif", "FSSC 22000": "fssc-22000.png",
+};
+
+// Certificate names are proper names and stay untranslated, as on the cards above.
+const FSSAI = "FSSAI Central Licence", IEC = "IEC — Import Export Code", APEDA = "APEDA Registration", ISO9001 = "ISO 9001:2015";
+const docs = {
+  coo: ["products.doc3_title", "Certificate of Origin"],
+  phyto: ["cert.mkt_doc_phyto", "Phytosanitary certificate"],
+  lab: ["cert.mkt_doc_lab", "Lab analysis reports"],
+  residue: ["cert.mkt_doc_residue", "Lab analysis & residue reports"],
+  euuk: ["cert.mkt_doc_euuk", "EU/UK import & health certificates"],
+  prior: ["cert.mkt_doc_prior", "Prior notice filing support"],
+  imports: ["cert.mkt_doc_import", "Import compliance documents"],
+  psi: ["cert.mkt_doc_psi", "Pre-shipment inspection support"],
+  permit: ["cert.mkt_doc_permit", "Import permit support"],
+};
+const markets = [
+  { id: "me", name: "UAE & Middle East", countries: "UAE, Saudi Arabia, Qatar, Kuwait, Oman", ours: [FSSAI, IEC, APEDA], partner: ["Halal"], docs: [docs.coo] },
+  { id: "eu", name: "Europe & UK", countries: "UK, Germany, France, Netherlands, Italy", ours: [ISO9001], partner: ["ISO 22000", "HACCP", "BRCGS"], docs: [docs.coo, docs.phyto, docs.euuk] },
+  { id: "na", name: "North America", countries: "USA, Canada, Mexico", ours: [FSSAI], partner: ["US FDA", "HACCP"], docs: [docs.coo, docs.lab, docs.prior] },
+  { id: "sea", name: "South East Asia", countries: "Singapore, Malaysia, Indonesia, Vietnam, Thailand", ours: [FSSAI, APEDA], partner: ["Halal", "ISO 22000", "HACCP"], docs: [docs.coo, docs.phyto] },
+  { id: "nea", name: "North East Asia", countries: "Japan, South Korea, China, Taiwan", ours: [FSSAI], partner: ["ISO 22000", "HACCP"], docs: [docs.residue, docs.coo, docs.phyto, docs.imports] },
+  { id: "af", name: "Africa", countries: "South Africa, Kenya, Nigeria, Egypt, Ghana", ours: [FSSAI, APEDA], partner: ["ISO 22000", "HACCP"], docs: [docs.coo, docs.phyto, docs.psi] },
+  { id: "sa", name: "South America", countries: "Brazil, Argentina, Chile, Colombia, Peru", ours: [FSSAI], partner: ["ISO 22000", "HACCP"], docs: [docs.coo, docs.phyto, docs.lab, docs.permit] },
+];
+---
+<!-- OUR CREDENTIALS -->
+<section class="j-certs">
+  <div class="j-wrap">
+    <div class="j-cert-head">
+      <div class="reveal">
+        <span class="eyebrow"><span data-i18n="cert.our_eyebrow">Our Credentials</span></span>
+        <h2 class="j-h2"><span data-i18n="cert.our_heading">Registered, licensed, downloadable</span></h2>
+        <p class="j-sub" data-i18n="cert.our_sub">Hover a card to inspect it, then download the certificate. These are the documents that let us trade and that buyers ask for first.</p>
+      </div>
+    </div>
+    <div class="cred-grid">
+      {companyCerts.map((c, i) => (
+        <article class={`cred-card reveal d${(i % 4) + 1}`} data-tilt>
+          <span class="cred-shine" aria-hidden="true"></span>
+          <div class="cred-top">
+            <span class="cred-ico"><img src={`/assets/certifications/${c.logo}`} alt={`${c.name} logo`} loading="lazy" width="64" height="64" /></span>
+            <span class="verified">
+              <svg class="vcheck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+              <span data-i18n="cert.verified">Verified</span>
+            </span>
+          </div>
+          <h3 class="cred-name">{c.name}</h3>
+          <p class="cred-auth" data-i18n={`cert.cred${i + 1}_authority`}>{c.authority}</p>
+          <p class="cred-desc" data-i18n={`cert.cred${i + 1}_desc`}>{c.desc}</p>
+          <div class="cred-actions">
+            <a href={c.file} target="_blank" rel="noopener" class="cred-dl" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
+              <span data-i18n="cert.download">Download</span>
+            </a>
+            <a href={c.file} target="_blank" rel="noopener" class="cred-view"><span data-i18n="cert.view">View</span> <span class="cred-kind">{c.kind}</span></a>
+          </div>
+        </article>
+      ))}
+      <div class="cred-ask reveal d4">
+        <Vector name="inquiry" size={104} />
+        <p data-i18n="cert.file_note">Files open in a new tab. Need a stamped or more recent copy for your records? Just ask.</p>
+        <a href="/contact" class="j-btn" data-i18n="cert.cta_btn_enquire">Enquire Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER STANDARDS -->
+<section class="j-stds">
+  <div class="j-wrap">
+    <div class="j-stds-panel">
+      <div class="j-cert-head">
+        <div class="reveal">
+          <span class="eyebrow light"><span data-i18n="cert.partner_eyebrow">Across Our Network</span></span>
+          <h2 class="j-h2 j-light"><span data-i18n="cert.partner_heading">Standards held by our partner facilities</span></h2>
+          <p class="j-sub j-light-sub" data-i18n="cert.partner_sub">Beyond our own licences, the manufacturers we work with operate to internationally recognised food-safety standards. Open a panel to see what each one means.</p>
+        </div>
+        <span class="j-cert-art" aria-hidden="true"><Vector name="labtech" size={130} /><Vector name="factory" size={150} /></span>
+      </div>
+      <div class="std-rail reveal d1" id="stdRail">
+        {partnerStandards.map((s, i) => (
+          <div class={`std-panel${i === 0 ? " open" : ""}`} tabindex="0" role="button" aria-expanded={i === 0 ? "true" : "false"}>
+            <span class="std-index" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <div class="std-body">
+              <div class="std-head">
+                <span class="std-ico"><img src={`/assets/certifications/${stdLogo[s.name]}`} alt={`${s.name} logo`} loading="lazy" width="58" height="58" /></span>
+                <div class="std-title">
+                  <span class="std-name">{s.name}</span>
+                  <span class="std-line" data-i18n={`cert.std${i + 1}_line`}>{s.line}</span>
+                </div>
+              </div>
+              <p class="std-desc" data-i18n={`cert.std${i + 1}_desc`}>{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="j-stds-note" data-i18n="cert.std_note">These certifications are maintained by our vetted manufacturing partners and apply at the facility level. We confirm and arrange the exact certification your order and market require — facility certificates are shared on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS BY MARKET -->
+<section class="j-mkts">
+  <div class="j-wrap j-mkts-grid">
+    <div class="reveal">
+      <span class="eyebrow"><span data-i18n="cert.mkt_eyebrow">Export Compliance</span></span>
+      <h2 class="j-h2 j-h2-md" id="mkt-title"><span data-i18n="cert.mkt_heading">Certification requirements by destination market</span></h2>
+      <p class="j-sub" data-i18n="cert.mkt_sub">Choose your destination to see what we hold ourselves, what comes through partner facilities and what ships with the order.</p>
+      <span class="j-mkts-art" aria-hidden="true"><Vector name="globe" size={190} /></span>
+    </div>
+    <div class="reveal d1" data-mkt-tabs>
+      <div class="j-mkt-tabs" role="tablist" aria-labelledby="mkt-title">
+        {markets.map((m, i) => (
+          <button type="button" role="tab" id={`mkt-tab-${m.id}`} aria-controls={`mkt-${m.id}`} aria-selected={i === 0 ? "true" : "false"} tabindex={i === 0 ? 0 : -1} class="j-mkt-tab" data-i18n={`cert.mkt_${m.id}_name`}>{m.name}</button>
+        ))}
+      </div>
+      {markets.map((m, i) => (
+        <div class="j-mkt-panel" role="tabpanel" id={`mkt-${m.id}`} aria-labelledby={`mkt-tab-${m.id}`} hidden={i !== 0}>
+          <h3 data-i18n={`cert.mkt_${m.id}_name`}>{m.name}</h3>
+          <p class="j-mkt-countries" data-i18n={`cert.mkt_${m.id}_countries`}>{m.countries}</p>
+          <div class="j-mkt-groups">
+            <div>
+              <h4 data-i18n="home.certs_regs_label">Our Registrations</h4>
+              <div class="j-mkt-chips">{m.ours.map((n) => <span class="j-mkt-chip">{n}</span>)}</div>
+            </div>
+            <div>
+              <h4 data-i18n="cert.mkt_partner">Through partner facilities</h4>
+              <div class="j-mkt-chips">{m.partner.map((n) => <span class="j-mkt-chip j-mkt-chip-p">{n}</span>)}</div>
+            </div>
+            <div>
+              <h4 data-i18n="cert.mkt_docs">Documents with your order</h4>
+              <ul class="j-mkt-docs">{m.docs.map(([k, t]) => <li data-i18n={k}>{t}</li>)}</ul>
+            </div>
+          </div>
+        </div>
+      ))}
+      <p class="j-mkt-note"><span data-i18n="cert.mkt_note">Don't see your market? Tell us where you ship and we'll confirm what we can provide.</span> <a href="/contact" data-i18n="cert.cta_btn_enquire">Enquire Us</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="j-faq">
+  <div class="j-wrap j-faq-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="cert.faq_eyebrow">FAQ</span>
+      <h2 class="j-h2 j-h2-md" data-i18n="cert.faq_heading">Certifications &amp; compliance, answered</h2>
+      <p class="j-sub" data-i18n="cert.faq_sub">The questions buyers ask most when they check who they are dealing with.</p>
+      <span class="j-faq-art"><Vector name="certificate" size={120} /><Vector name="shield" size={110} /></span>
+    </div>
+    <div class="reveal d1">
+      {certFaqs.map((f, i) => (
+        <details class="faq-item">
+          <summary>
+            <span data-i18n={`cert.faq${i + 1}_q`}>{f.q}</span>
+            <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body" data-i18n={`cert.faq${i + 1}_a`}>{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll("[data-mkt-tabs]").forEach((root) => {
+    const tabs = Array.from(root.querySelectorAll<HTMLElement>('[role="tab"]'));
+    const select = (tab: HTMLElement, focus: boolean) => {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute("aria-controls") || "");
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => select(tab, false));
+      tab.addEventListener("keydown", (e) => {
+        const step = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+        if (!step) return;
+        e.preventDefault();
+        select(tabs[(i + step + tabs.length) % tabs.length], true);
+      });
+    });
+  });
+</script>

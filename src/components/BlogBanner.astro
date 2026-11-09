@@ -1,0 +1,28 @@
+---
+// A blog post's image area. "The Journey" (v3) shows the post's vector cover from
+// public/assets/img/blog (scripts/gen-blog-art.mjs); otherwise, and for a post
+// that has no cover yet, the emoji on its accent colour.
+import fs from "node:fs";
+import path from "node:path";
+import type { Post } from "../data/blogs";
+import { isVersion } from "../data/site-options";
+
+interface Props {
+  post: Post;
+  class?: string;
+  emojiStyle?: string;
+  hero?: boolean; // above the fold: load eagerly and hold the first-visit splash for it
+}
+const { post, class: cls = "", emojiStyle, hero = false } = Astro.props;
+const src = `/assets/img/blog/${post.id}.svg`;
+const art = isVersion("v3") && fs.existsSync(path.join(process.cwd(), "public", src));
+---
+{art ? (
+  <div class={`blog-banner ${cls}`}>
+    <img src={src} alt="" width="800" height="450" decoding="async" loading={hero ? "eager" : "lazy"} data-splash-hero={hero ? "" : undefined} />
+  </div>
+) : (
+  <div class={`blog-banner ${cls}`} style={`background:${post.accent}`}>
+    <span class="b-emoji" style={emojiStyle}>{post.emoji}</span>
+  </div>
+)}

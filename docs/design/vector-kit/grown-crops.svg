@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+<!-- Young crops growing in tilled soil under the sun · use: Home process, Grown -->
+<circle cx="162" cy="36" r="24" fill="#f9c33c"/>
+<g stroke="#f4a71d" stroke-width="5" stroke-linecap="round"><path d="M162 4V0M192 36H196M134 12L130 8M186 62L190 66M138 62L134 66"/></g>
+<path d="M4 138C60 122 140 122 196 138V162C196 166 194 168 190 168H10C6 168 4 166 4 162Z" fill="#8a5f35"/>
+<path d="M20 158H60M80 156H122M142 158H182" stroke="#6d4826" stroke-width="5" stroke-linecap="round"/>
+<g fill="none" stroke="#3f8a39" stroke-width="6" stroke-linecap="round"><path d="M42 132V70"/><path d="M100 128V40"/><path d="M158 132V82"/></g>
+<g fill="#57a747"><path d="M42 106C26 106 14 94 12 78C30 78 42 90 42 106Z"/><path d="M100 96C80 96 66 82 64 62C86 62 100 76 100 96Z"/><path d="M100 64C82 64 72 52 70 34C90 34 100 46 100 64Z"/><path d="M158 112C146 112 136 102 134 90C148 90 158 100 158 112Z"/></g>
+<g fill="#3f8a39"><path d="M42 92C58 92 70 80 72 64C54 64 42 76 42 92Z"/><path d="M100 82C120 82 134 68 136 48C114 48 100 62 100 82Z"/><path d="M100 50C116 50 126 38 128 22C110 22 100 34 100 50Z"/><path d="M158 100C170 100 180 90 182 78C168 78 158 88 158 100Z"/></g>
+</svg>

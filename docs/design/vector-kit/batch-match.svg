@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 170">
+<!-- Three identical batches on one level line, approved · use: Home, Stable quality -->
+<ellipse cx="100" cy="162" rx="96" ry="5" fill="#15123a" opacity=".1"/>
+<g id="a">
+<rect x="10" y="44" width="56" height="114" rx="10" fill="#eef0f8"/><rect x="14" y="30" width="48" height="18" rx="5" fill="#6d28d9"/><path d="M10 92H66V148C66 154 62 158 56 158H20C14 158 10 154 10 148Z" fill="#e0a526"/>
+</g>
+<g transform="translate(66 0)"><rect x="10" y="44" width="56" height="114" rx="10" fill="#eef0f8"/><rect x="14" y="30" width="48" height="18" rx="5" fill="#6d28d9"/><path d="M10 92H66V148C66 154 62 158 56 158H20C14 158 10 154 10 148Z" fill="#e0a526"/></g>
+<g transform="translate(132 0)"><rect x="10" y="44" width="56" height="114" rx="10" fill="#eef0f8"/><rect x="14" y="30" width="48" height="18" rx="5" fill="#6d28d9"/><path d="M10 92H66V148C66 154 62 158 56 158H20C14 158 10 154 10 148Z" fill="#e0a526"/></g>
+<path d="M2 92H206" stroke="#be185d" stroke-width="4" stroke-dasharray="9 7" stroke-linecap="round"/>
+<circle cx="172" cy="26" r="24" fill="#be185d"/><path d="M160 26L169 35L185 17" fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

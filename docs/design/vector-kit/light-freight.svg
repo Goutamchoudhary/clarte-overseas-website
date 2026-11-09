@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 170">
+<!-- Heavy water-laden weight beside a small light one · use: Home, Lighter to ship -->
+<ellipse cx="104" cy="162" rx="98" ry="5" fill="#15123a" opacity=".1"/>
+<circle cx="62" cy="30" r="18" fill="none" stroke="#5f6480" stroke-width="10"/>
+<path d="M26 44H98L118 150C119 156 115 160 110 160H14C9 160 5 156 6 150Z" fill="#7c8299"/>
+<path d="M98 44L118 150C119 156 115 160 110 160H88C96 120 94 80 82 44Z" fill="#5f6480"/>
+<path d="M62 68C74 86 84 98 84 112C84 126 74 136 62 136C50 136 40 126 40 112C40 98 50 86 62 68Z" fill="#93c5fd"/>
+<path d="M50 112C50 120 54 126 60 128" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M124 112H148M140 100L152 112L140 124" fill="none" stroke="#be185d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="182" cy="100" r="11" fill="none" stroke="#6d28d9" stroke-width="7"/>
+<path d="M164 112H200L208 154C209 158 206 160 203 160H161C158 160 155 158 156 154Z" fill="#6d28d9"/>
+<path d="M170 72C170 46 190 22 206 16C208 42 192 66 170 72Z" fill="#c4b5fd"/><path d="M166 84C176 62 192 38 206 16" fill="none" stroke="#6d28d9" stroke-width="3" stroke-linecap="round"/>
+</svg>

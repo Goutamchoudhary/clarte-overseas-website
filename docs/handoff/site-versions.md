@@ -44,15 +44,26 @@
 >   brightness 1.08). Save as a new filename when building (immutable cache).
 > - Owner will send feedback on the other pages before implementation starts.
 >
-> **Status (9 Nov 2026): Home A is built and live** as site version `v3`
+> **Status (9 Nov 2026): Home A is built but NOT live.** Production runs V1
+> (`version: "v1"` on main); the owner reviews on the `feat/site-admin` preview and
+> switches production from the admin portal. Built as site version `v3`
 > (`src/components/home/HomeJourney.astro`, `public/css/site-v3.css`,
 > `public/js/site-v3.js`, inline vectors via `src/components/Vector.astro`).
-> `BaseLayout` links v3 assets on the home page only; other pages stay on the
-> old design until each is finished, then widen that check. Not done yet:
-> Matter.js drag-to-toss (circles use a CSS drop), a real cobe globe (SVG dome
-> for now), translations for new English lines (hero words, "From India to your
-> port", stage names, Edge card summaries, ticket subtext). `buyerFeedback` in
-> HomeJourney stays empty until real buyers supply words, name and country.
+> Navbar hides on scroll down and returns on scroll up, on every page
+> (`#navbar.nav-away`, in `site-v3.js`).
+> `/products` done: page colour runs navbar → header → first category (fade
+> via `.j-flow-first::before`), `ProductShuffle.astro` shuffles three photos per
+> category from the product records, and the five-document section (`products.doc*`).
+> `/how-we-export`: Stage by Stage is the night sea chart (`StageJourney.astro`):
+> desktop pins and travels the chart right, down, left, down, right.
+> `/products` has an FAQ reusing
+> `export.faq*`.
+> v3 assets now load on every page: navbar and footer colours everywhere, and
+> compact `PageHero` headers (330 px, tint per page via `data-ph`). Section
+> order: Hero (full screen, sticky) with Range sliding over it, then Who We Serve, Why Dehydrated, Process, Edge, From
+> India, Sourcing, Certifications, CTA. New copy is in all 17 locales
+> (`home.j_*`). Not done: Matter.js drag-to-toss (circles use a CSS drop), a
+> real cobe globe (SVG dome). `buyerFeedback` in HomeJourney stays empty.
 > About still renders the old unverified `Testimonials` component.
 >
 > The version switch and V2 build below (commit b740ba8, not merged) are still
@@ -253,3 +264,34 @@ CSS variables so each version recolours them.
    - reduced motion
    - Lighthouse vs V1
    - flip `ready: true`
+
+## Certifications page on v3 (Nov 2026)
+
+`src/components/CertJourney.astro` replaces everything between the hero and the
+CTA when the version is v3; the old markup in `certifications.astro` still
+renders for v1. Order: own credentials, partner standards, requirements by
+market, FAQ. In the market tabs, keep what Clarté holds apart from what comes
+through partner facilities (FSSAI, IEC, APEDA and ISO 9001 are ours; Halal,
+ISO 22000, HACCP, BRCGS and US FDA are partner-held). Certificate names stay
+untranslated; the rest uses `cert.mkt_*` in all 17 locales.
+
+## Blog on v3 (Nov 2026)
+
+List and article templates keep their markup; `BlogBanner.astro` swaps the emoji
+banner for the post's vector cover, and styles live at the end of `site-v3.css`.
+Covers come from `scripts/gen-blog-art.mjs`. Page headers on Certifications and
+Blog have no side vectors because the owner found them crowded.
+
+## Contact on v3 (Nov 2026)
+
+Same markup and form script as v1, restyled at the end of `site-v3.css`
+(`.j-contact`, `.cc-*`, `.map-*`). The only v3 addition is one vector in the info
+panel. Don't submit the form when testing: it posts to the live Web3Forms inbox.
+
+## About on v3 (Nov 2026)
+
+`AboutJourney.astro` replaces everything between the hero and the CTA; the old
+markup still renders for v1. The `Testimonials` component is left out on v3: its
+quotes are not from identifiable buyers. The category count comes from
+`categories.length`, and the `about.glance_categories_val` strings carry the
+number by hand, so update them in all 17 locales if a category is added.

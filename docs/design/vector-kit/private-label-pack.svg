@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+<!-- Blank pack taking the buyer's own label and colours · use: Home, Private Label -->
+<ellipse cx="86" cy="162" rx="66" ry="5" fill="#15123a" opacity=".1"/>
+<path d="M36 10H130L142 150Q83 170 24 150Z" fill="#eef0f8" stroke="#c4b5fd" stroke-width="3"/>
+<rect x="36" y="10" width="94" height="16" fill="#c4b5fd"/>
+<path d="M44 18H122" stroke="#fff" stroke-width="2.5" stroke-dasharray="4 4"/>
+<g transform="rotate(-7 82 90)"><rect x="42" y="50" width="86" height="76" rx="10" fill="#be185d"/>
+<path d="M85 62L93 80L113 82L98 95L103 114L85 104L67 114L72 95L57 82L77 80Z" fill="#fff"/></g>
+<g><rect x="150" y="16" width="30" height="30" rx="7" fill="#6d28d9"/><rect x="150" y="54" width="30" height="30" rx="7" fill="#e0a526"/><rect x="150" y="92" width="30" height="30" rx="7" fill="#22c55e"/><rect x="150" y="130" width="30" height="30" rx="7" fill="#60a5fa"/></g>
+</svg>

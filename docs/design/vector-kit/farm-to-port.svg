@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 130">
+<!-- Farm, pack and port joined in one traced line · use: About goals -->
+<path d="M40 70H200" fill="none" stroke="#c4b5fd" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"/>
+<circle cx="40" cy="70" r="36" fill="#dcf2d6"/>
+<path d="M18 92C26 84 54 84 62 92Z" fill="#8a5f35"/>
+<path d="M40 86C40 72 40 62 40 52" fill="none" stroke="#3f8a39" stroke-width="5" stroke-linecap="round"/>
+<path d="M40 66C28 66 20 58 18 46C32 46 40 54 40 66Z" fill="#57a747"/><path d="M40 58C42 44 50 38 62 36C62 50 54 58 40 58Z" fill="#3f8a39"/>
+<circle cx="120" cy="70" r="36" fill="#fdeccd"/>
+<rect x="98" y="58" width="44" height="34" rx="3" fill="#c98f4e"/><path d="M98 58L106 48H134L142 58Z" fill="#e6bd85"/><rect x="115" y="48" width="10" height="44" fill="#f6e3bd"/>
+<circle cx="200" cy="70" r="36" fill="#d6e7fe"/>
+<g fill="none" stroke="#1f4693" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="200" cy="50" r="7"/><path d="M200 57V94M188 66H212M178 78C180 90 190 94 200 94C210 94 220 90 222 78M178 78L173 86M178 78L186 83M222 78L227 86M222 78L214 83"/></g>
+<circle cx="120" cy="20" r="18" fill="#be185d"/><path d="M111 20L118 27L130 13" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M120 38V34" stroke="#be185d" stroke-width="4"/>
+</svg>

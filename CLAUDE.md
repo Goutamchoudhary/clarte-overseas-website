@@ -78,6 +78,13 @@ that area).
   `<name>-800.webp` copies, and the templates (`src/lib/responsive-img.ts`)
   add a `srcset` only when both exist. Forget it and the photo still works,
   but phones download the full 1200px file.
+- **Don't reuse a vector.** Check `docs/design/vector-kit/` usage first; a new
+  section gets its own artwork rather than one already shown on another page.
+- **Blog covers** are generated vectors: `node scripts/gen-blog-art.mjs` writes
+  `public/assets/img/blog/<id>.svg` from its `ART` map, one line per post. A new
+  post needs a line there (the script fails if one is missing; until then the
+  page falls back to the post's emoji). Once a cover has shipped, change it
+  under a new filename, as with any image here.
 - **Self-host every asset.** Product photos live in
   `public/assets/img/products/` (recipe in the README there) and
   certificates in `public/assets/certifications/docs/`. Nothing should load
@@ -99,6 +106,8 @@ that area).
   `cat.prod_<slug>_name` / `_tagline`,
   `prod.<slug>_desc`, `_f1`–`_f6` (features), `_u1`–`_u4` (uses),
   `_g1`–`_g4` (grades), `home.card<N>_title` / `_desc`.
+- **Any new visible text gets a `data-i18n` key and a translation in all 17
+  locale files in the same change.** Never ship English-only copy.
 - After editing any locale file, diff key sets across all 17 locales (and
   against the keys actually referenced via `data-i18n*` attributes in
   `src/`) before shipping — a missing key fails silently in the UI (falls
@@ -153,7 +162,9 @@ that area).
   animations: `docs/design/vector-kit/`.
 - Site versions are wired through `site-config.json` → `version` and
   `public/{css,js}/site-v<N>.{css,js}` (scoped `[data-version="vN"]`, linked
-  only for that version). Preview one with `SITE_VERSION=v2 npm run build`.
+  only for that version). Local and preview builds show the version in
+  `src/data/site-config.preview.json`; production uses `site-config.json` only
+  (keep it on `v1` until the owner publishes from the admin).
   If you add a version stylesheet, keep it directly after styles.css — the
   defer script relies on that order.
 

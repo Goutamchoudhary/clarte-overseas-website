@@ -1,0 +1,24 @@
+---
+// Three product photos for a category that shuffle through every product in it
+// (/js/site-v3.js). Photos come from the product records, so new photography
+// appears automatically. The first frame is complete without JavaScript.
+import { srcsetFor } from "../lib/responsive-img";
+export interface ShuffleItem { name: string; key: string; image: string; href: string; }
+interface Props { items: ShuffleItem[]; label: string; }
+const { items, label } = Astro.props;
+const SIZES = ["(max-width: 899px) 55vw, 320px", "(max-width: 899px) 40vw, 240px", "(max-width: 899px) 40vw, 240px"];
+const step = Math.max(1, Math.floor(items.length / 3));
+const tiles = [0, 1, 2].map((t) => items[(t * step) % items.length]);
+const data = items.map((p) => ({ src: p.image, srcset: srcsetFor(p.image) ?? "", href: p.href }));
+---
+<div class="j-shuffle" data-j-shuffle data-step={step} role="group" aria-label={label}>
+  {tiles.map((p, t) => (
+    <a href={p.href} class={`j-sh j-sh-${t}`} data-j-sh aria-label={p.name}>
+      <img class="j-sh-img is-cur" src={p.image} srcset={srcsetFor(p.image)} sizes={SIZES[t]} alt="" width="600" height="600" loading="lazy" decoding="async" />
+      <img class="j-sh-img is-next" alt="" aria-hidden="true" sizes={SIZES[t]} decoding="async" />
+      <span class="j-sh-name" data-i18n={p.key}>{p.name}</span>
+    </a>
+  ))}
+  <script type="application/json" data-j-items set:html={JSON.stringify(data)} />
+  <span hidden>{items.map((p) => <span data-j-name data-i18n={p.key} data-key={p.key}>{p.name}</span>)}</span>
+</div>

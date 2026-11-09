@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160">
+<!-- Telescope aimed at a bright star · use: About, Vision -->
+<g stroke="#e0a526" stroke-width="7" stroke-linecap="round"><path d="M88 92L54 154M88 92L122 154M88 92V148"/></g>
+<g transform="rotate(-30 88 86)">
+<rect x="14" y="76" width="22" height="20" rx="4" fill="#be185d"/>
+<rect x="34" y="68" width="62" height="36" rx="5" fill="#8b5cf6"/>
+<rect x="92" y="60" width="52" height="52" rx="6" fill="#60a5fa"/>
+<rect x="142" y="54" width="10" height="64" rx="4" fill="#fde68a"/>
+<rect x="46" y="74" width="40" height="6" rx="3" fill="#c4b5fd"/>
+</g>
+<circle cx="88" cy="88" r="9" fill="#fff"/>
+<path d="M176 6C178 22 182 26 198 28C182 30 178 34 176 50C174 34 170 30 154 28C170 26 174 22 176 6Z" fill="#fde68a"/>
+<path d="M186 62C187 69 189 71 196 72C189 73 187 75 186 82C185 75 183 73 176 72C183 71 185 69 186 62Z" fill="#fff"/>
+<path d="M128 4C129 10 131 12 137 13C131 14 129 16 128 22C127 16 125 14 119 13C125 12 127 10 128 4Z" fill="#c4b5fd"/>
+</svg>

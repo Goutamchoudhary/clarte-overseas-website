@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+<!-- Container packed full with mixed cartons, and a lower-emissions cloud · use: How We Export, Smarter loads -->
+<ellipse cx="100" cy="162" rx="90" ry="6" fill="#15123a" opacity=".1"/>
+<rect x="6" y="66" width="188" height="92" rx="6" fill="#1f4693"/>
+<rect x="14" y="74" width="172" height="76" rx="3" fill="#e8ecff"/>
+<g><rect x="17" y="112" width="40" height="35" rx="2" fill="#c98f4e"/><rect x="59" y="112" width="30" height="35" rx="2" fill="#6d28d9"/><rect x="91" y="112" width="46" height="35" rx="2" fill="#e0a526"/><rect x="139" y="112" width="44" height="35" rx="2" fill="#be185d"/>
+<rect x="17" y="77" width="28" height="33" rx="2" fill="#60a5fa"/><rect x="47" y="77" width="48" height="33" rx="2" fill="#e6bd85"/><rect x="97" y="77" width="32" height="33" rx="2" fill="#8b5cf6"/><rect x="131" y="77" width="52" height="33" rx="2" fill="#c98f4e"/></g>
+<g fill="#ffffff" opacity=".65"><rect x="33" y="112" width="8" height="35"/><rect x="66" y="77" width="8" height="33"/><rect x="153" y="77" width="8" height="33"/><rect x="110" y="112" width="8" height="35"/></g>
+<path d="M58 54C44 54 36 46 36 36C36 26 44 20 54 21C58 10 70 4 82 8C92 2 108 6 112 18C124 16 134 24 134 36C134 46 126 54 114 54Z" fill="#dcf2d6"/>
+<path d="M85 14V44M73 33L85 45L97 33" fill="none" stroke="#3f8a39" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M156 58C140 50 136 32 142 18C158 22 168 40 156 58Z" fill="#57a747"/><path d="M156 58C168 50 174 36 168 24C158 28 150 42 156 58Z" fill="#3f8a39"/>
+</svg>

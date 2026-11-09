@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+<!-- Stack of sealed export cartons · use: How We Export route, first stages · motion: gentle bob -->
+<g class="vl-bob">
+<!-- bottom left -->
+<path d="M14 92L28 80H112L98 92Z" fill="#e6bd85"/>
+<path d="M98 92L112 80V146L98 158Z" fill="#94632f"/>
+<rect x="14" y="92" width="84" height="66" fill="#c98f4e"/>
+<path d="M50 92L64 80H76L62 92Z" fill="#f6e3bd"/>
+<rect x="50" y="92" width="12" height="20" fill="#f6e3bd"/>
+<rect x="66" y="124" width="26" height="28" rx="2" fill="#fff"/>
+<path d="M70 131H88M70 136H82" stroke="#1f4693" stroke-width="2.5"/>
+<path d="M70 141V148M73 141V148M77 141V148M79 141V148M83 141V148M87 141V148" stroke="#15123a" stroke-width="1.8"/>
+<path d="M26 150V132M21 138L26 132L31 138M42 150V132M37 138L42 132L47 138" fill="none" stroke="#6b431a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- bottom right -->
+<path d="M100 92L114 80H190L176 92Z" fill="#e6bd85"/>
+<path d="M176 92L190 80V146L176 158Z" fill="#94632f"/>
+<rect x="100" y="92" width="76" height="66" fill="#d29a5a"/>
+<path d="M132 92L146 80H158L144 92Z" fill="#f6e3bd"/>
+<rect x="132" y="92" width="12" height="20" fill="#f6e3bd"/>
+<rect x="144" y="124" width="26" height="28" rx="2" fill="#fff"/>
+<path d="M148 131H166M148 136H160" stroke="#1f4693" stroke-width="2.5"/>
+<path d="M148 141V148M151 141V148M155 141V148M157 141V148M161 141V148M165 141V148" stroke="#15123a" stroke-width="1.8"/>
+<path d="M112 150V132M107 138L112 132L117 138M128 150V132M123 138L128 132L133 138" fill="none" stroke="#6b431a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- top carton -->
+<path d="M50 30L64 18H152L138 30Z" fill="#efc993"/>
+<path d="M138 30L152 18V76L138 88Z" fill="#a06d36"/>
+<rect x="50" y="30" width="88" height="58" fill="#d9a262"/>
+<path d="M88 30L102 18H114L100 30Z" fill="#f6e3bd"/>
+<rect x="88" y="30" width="12" height="14" fill="#f6e3bd"/>
+<rect x="60" y="50" width="68" height="28" rx="4" fill="#1f4693"/>
+<text x="94" y="69" text-anchor="middle" font-family="Sora,sans-serif" font-size="13" font-weight="800" fill="#fff" letter-spacing="1">CLARTÉ</text>
+</g>
+</svg>
