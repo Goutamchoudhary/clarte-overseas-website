@@ -538,7 +538,7 @@ html.j-route-on .j-rider { display: block; }
 /* The goods change form as the journey advances. */
 [data-version="v3"] .j-form { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.55) rotate(-10deg); transition: opacity .28s ease, transform .5s cubic-bezier(.3,1.6,.5,1); }
 [data-version="v3"] .j-form.now { opacity: 1; transform: none; }
-[data-version="v3"] .j-form-pouches .vec { width: 66%; } [data-version="v3"] .j-form-pallet .vec { width: 62%; } [data-version="v3"] .j-form-truck .vec { width: 84%; } [data-version="v3"] .j-form-crane .vec { width: 76%; } [data-version="v3"] .j-form-ship .vec { width: 100%; }
+[data-version="v3"] .j-form-cartons .vec { width: 74%; } [data-version="v3"] .j-form-pallet .vec { width: 62%; } [data-version="v3"] .j-form-truck .vec { width: 84%; } [data-version="v3"] .j-form-crane .vec { width: 76%; } [data-version="v3"] .j-form-ship .vec { width: 100%; }
 [data-version="v3"] .j-rider.back .j-form .vec { transform: scaleX(-1); }
 [data-version="v3"] .j-rider.back .j-form .vec text { transform: scaleX(-1); transform-box: fill-box; transform-origin: 50% 50%; }
 [data-version="v3"] .j-rider-pulse { position: absolute; left: 50%; top: 50%; width: 70%; aspect-ratio: 1; margin: -35% 0 0 -35%; border-radius: 99px; border: 3px solid #f9a8d4; opacity: 0; }

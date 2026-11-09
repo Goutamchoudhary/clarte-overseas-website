@@ -132,7 +132,7 @@
     var svg = route.querySelector(".j-route-svg"), base = svg.querySelector(".j-route-base"), live = svg.querySelector(".j-route-live");
     var rider = route.querySelector(".j-rider"), riderIn = rider.querySelector(".j-rider-set");
     var forms = rider.querySelectorAll("[data-form]"), pulse = rider.querySelector(".j-rider-pulse"), formNow = -1;
-    // Which form the goods take once each stop is reached: pouches for stops
+    // Which form the goods take once each stop is reached: cartons for stops
     // 1-3, packed at 4, on the truck at 5, craned aboard at 6, the ship last.
     var formAt = [0, 0, 0, 1, 2, 3, 4];
     function setForm(n) {
