@@ -14,6 +14,30 @@
   }
   syncNav();
   window.addEventListener("resize", syncNav);
+  // Navbar: out of the way while reading down the page, back the moment the
+  // visitor scrolls up, and always shown at the very top.
+  (function () {
+    var nav = document.getElementById("navbar");
+    if (!nav) return;
+    var last = window.scrollY, ticking = false;
+    function busy() {
+      var menu = document.getElementById("mobileMenu");
+      return nav.matches(":hover") || nav.querySelector(".lang-dd.open") || (menu && !menu.classList.contains("hidden-menu"));
+    }
+    function update() {
+      ticking = false;
+      var y = window.scrollY, dy = y - last;
+      if (y <= nav.offsetHeight) { nav.classList.remove("nav-away"); last = y; return; }
+      if (Math.abs(dy) < 6) return;
+      if (dy < 0) nav.classList.remove("nav-away");
+      else if (!busy()) nav.classList.add("nav-away");
+      last = y;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+  })();
+
   // The range's lifted shadow only appears once scrolling starts, so nothing
   // of the next section shows on the first screen.
   function lifted() { root.classList.toggle("j-scrolled", window.scrollY > 4); }

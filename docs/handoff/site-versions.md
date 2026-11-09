@@ -49,6 +49,8 @@
 > switches production from the admin portal. Built as site version `v3`
 > (`src/components/home/HomeJourney.astro`, `public/css/site-v3.css`,
 > `public/js/site-v3.js`, inline vectors via `src/components/Vector.astro`).
+> Navbar hides on scroll down and returns on scroll up, on every page
+> (`#navbar.nav-away`, in `site-v3.js`).
 > v3 assets now load on every page: navbar and footer colours everywhere, and
 > compact `PageHero` headers (330 px, tint per page via `data-ph`). Section
 > order: Hero (full screen, sticky) with Range sliding over it, then Who We Serve, Why Dehydrated, Process, Edge, From
