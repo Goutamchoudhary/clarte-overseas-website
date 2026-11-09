@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Ondersteuning bij prior notice",
   "cert.mkt_doc_import": "Documenten voor invoercompliance",
   "cert.mkt_doc_psi": "Ondersteuning bij inspectie vóór verzending",
-  "cert.mkt_doc_permit": "Ondersteuning bij invoervergunningen"
+  "cert.mkt_doc_permit": "Ondersteuning bij invoervergunningen",
+
+  "prod.lock_title": "Dit specificatieblad is vergrendeld",
+  "prod.lock_btn": "Vul uw gegevens in om te ontgrendelen"
 }

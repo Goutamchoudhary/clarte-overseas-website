@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Ön bildirim desteği",
   "cert.mkt_doc_import": "İthalat uyum belgeleri",
   "cert.mkt_doc_psi": "Sevkiyat öncesi denetim desteği",
-  "cert.mkt_doc_permit": "İthalat izni desteği"
+  "cert.mkt_doc_permit": "İthalat izni desteği",
+
+  "prod.lock_title": "Bu teknik föy kilitli",
+  "prod.lock_btn": "Kilidi açmak için bilgilerinizi girin"
 }

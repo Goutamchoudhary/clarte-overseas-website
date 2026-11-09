@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "事前通知の提出サポート",
   "cert.mkt_doc_import": "輸入コンプライアンス書類",
   "cert.mkt_doc_psi": "船積み前検査のサポート",
-  "cert.mkt_doc_permit": "輸入許可のサポート"
+  "cert.mkt_doc_permit": "輸入許可のサポート",
+
+  "prod.lock_title": "この仕様書はロックされています",
+  "prod.lock_btn": "情報を入力してロック解除"
 }

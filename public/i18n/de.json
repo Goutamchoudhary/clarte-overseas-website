@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Unterstützung bei der Prior-Notice-Anmeldung",
   "cert.mkt_doc_import": "Einfuhrkonformitätsdokumente",
   "cert.mkt_doc_psi": "Unterstützung bei der Vorversandkontrolle",
-  "cert.mkt_doc_permit": "Unterstützung bei Einfuhrgenehmigungen"
+  "cert.mkt_doc_permit": "Unterstützung bei Einfuhrgenehmigungen",
+
+  "prod.lock_title": "Dieses Datenblatt ist gesperrt",
+  "prod.lock_btn": "Angaben eingeben und freischalten"
 }

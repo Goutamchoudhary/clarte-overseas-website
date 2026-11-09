@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "사전 통지 제출 지원",
   "cert.mkt_doc_import": "수입 규정 준수 서류",
   "cert.mkt_doc_psi": "선적 전 검사 지원",
-  "cert.mkt_doc_permit": "수입 허가 지원"
+  "cert.mkt_doc_permit": "수입 허가 지원",
+
+  "prod.lock_title": "이 사양서는 잠겨 있습니다",
+  "prod.lock_btn": "정보를 입력하고 잠금 해제"
 }

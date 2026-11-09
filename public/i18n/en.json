@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Prior notice filing support",
   "cert.mkt_doc_import": "Import compliance documents",
   "cert.mkt_doc_psi": "Pre-shipment inspection support",
-  "cert.mkt_doc_permit": "Import permit support"
+  "cert.mkt_doc_permit": "Import permit support",
+
+  "prod.lock_title": "This spec sheet is locked",
+  "prod.lock_btn": "Enter details to unlock"
 }

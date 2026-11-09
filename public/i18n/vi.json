@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Hỗ trợ nộp thông báo trước",
   "cert.mkt_doc_import": "Tài liệu tuân thủ nhập khẩu",
   "cert.mkt_doc_psi": "Hỗ trợ kiểm tra trước khi giao hàng",
-  "cert.mkt_doc_permit": "Hỗ trợ giấy phép nhập khẩu"
+  "cert.mkt_doc_permit": "Hỗ trợ giấy phép nhập khẩu",
+
+  "prod.lock_title": "Bảng thông số này đang bị khóa",
+  "prod.lock_btn": "Nhập thông tin để mở khóa"
 }

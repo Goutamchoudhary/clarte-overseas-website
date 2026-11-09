@@ -313,3 +313,7 @@ the shared product grid. Each category has a muted palette, set with
 The hero holds only what a buyer decides on (name, HSN, stock, form, actions). The
 description, features, uses, specs and grades each appear once below it. Keep the
 `pd*` ids and classes: the gallery, zoom and form scripts in `[product].astro` use them.
+
+The spec sheet panel shows a blurred, padlocked preview and opens the existing
+lead form; the PDF itself stays behind `/api/spec-sheet`. The enquiry and spec
+sheet dialogs take the category palette, falling back to violet elsewhere.

@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Aide à la notification préalable",
   "cert.mkt_doc_import": "Documents de conformité à l'importation",
   "cert.mkt_doc_psi": "Aide à l'inspection avant expédition",
-  "cert.mkt_doc_permit": "Aide aux permis d'importation"
+  "cert.mkt_doc_permit": "Aide aux permis d'importation",
+
+  "prod.lock_title": "Cette fiche technique est verrouillée",
+  "prod.lock_btn": "Saisissez vos coordonnées pour débloquer"
 }

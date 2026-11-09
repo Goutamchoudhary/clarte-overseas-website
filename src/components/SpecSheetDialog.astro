@@ -16,6 +16,8 @@ import { CONTACT } from "../consts";
     </button>
 
     <div class="enq-main" id="ssMain">
+      <div class="enq-head">
+      <span class="ss-lock" hidden aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
       <span class="eyebrow" data-i18n="prod.ss_eyebrow">Spec Sheet</span>
       <h3 id="ssTitle" class="enq-title" data-i18n="prod.ss_title">Download the spec sheet</h3>
       <p class="enq-sub" data-i18n="prod.ss_sub">Tell us a little about you and the PDF downloads right away. We use this only to understand who's sourcing from us — no spam.</p>
@@ -23,6 +25,7 @@ import { CONTACT } from "../consts";
       <div class="enq-chip" id="ssChip" hidden>
         <span class="enq-chip-dot"></span>
         <span><strong id="ssChipProduct"></strong><span id="ssChipCat" class="enq-chip-cat"></span></span>
+      </div>
       </div>
 
       <form id="ssForm" class="enq-form" novalidate>
