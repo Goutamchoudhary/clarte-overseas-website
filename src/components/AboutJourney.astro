@@ -69,21 +69,21 @@ const goals = [
             <p class="j-mv-label" data-i18n="about.mission_label">Mission</p>
             <p class="j-mv-text" data-i18n="about.mission_body">Give food brands and manufacturers a dehydrated-ingredient partner they can fully rely on: steady quality, honest sourcing, and supply that lands on time, every single order.</p>
           </div>
-          <span class="j-mv-art" aria-hidden="true"><Vector name="mission-target" size={94} /></span>
+          <span class="j-mv-art" aria-hidden="true"><Vector name="mission-target" size={56} /></span>
         </div>
         <div class="j-mv-card reveal d1">
           <div>
             <p class="j-mv-label" data-i18n="about.vision_label">Vision</p>
             <p class="j-mv-text" data-i18n="about.vision_body">Become the world's largest and most trusted exporter of dehydrated food ingredients, reaching buyers in as many countries as we possibly can.</p>
           </div>
-          <span class="j-mv-art" aria-hidden="true"><Vector name="vision-telescope" size={104} /></span>
+          <span class="j-mv-art" aria-hidden="true"><Vector name="vision-telescope" size={62} /></span>
         </div>
       </div>
       <p class="j-goals-h" data-i18n="about.goals_heading">What we're driving toward</p>
       <div class="j-goals">
         {goals.map(([art, tk, t, bk, b], i) => (
           <div class={`reveal d${i}`}>
-            <span class="j-goal-art" aria-hidden="true"><Vector name={art} size={art === "farm-to-port" ? 122 : 68} /></span>
+            <span class="j-goal-art" aria-hidden="true"><Vector name={art} size={art === "farm-to-port" ? 73 : 41} /></span>
             <h3 data-i18n={tk}>{t}</h3>
             <p data-i18n={bk}>{b}</p>
           </div>
@@ -119,7 +119,7 @@ const goals = [
     <div class="j-vals">
       {values.map((v, i) => (
         <div class={`j-val reveal d${i % 3}`}>
-          <span class="j-val-art" aria-hidden="true"><Vector name={valueArt[i]} size={76} /></span>
+          <span class="j-val-art" aria-hidden="true"><Vector name={valueArt[i]} size={46} /></span>
           <h3 data-i18n={`about.val${i + 1}_title`}>{v.t}</h3>
           <p data-i18n={`about.val${i + 1}_body`}>{v.d}</p>
         </div>
