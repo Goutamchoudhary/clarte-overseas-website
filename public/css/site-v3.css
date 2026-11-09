@@ -535,7 +535,15 @@ html.j-scrolled[data-version="v3"] .j-plain .j-range { box-shadow: none; }
 [data-version="v3"] .j-chart-compass { display: none; }
 [data-version="v3"] .j-rider { position: absolute; left: 0; top: 0; z-index: 3; width: clamp(112px, 15vw, 220px); display: none; will-change: transform; }
 html.j-route-on .j-rider { display: block; }
-[data-version="v3"] .j-rider > span { display: block; transition: transform .25s ease; filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)); }
+[data-version="v3"] .j-rider { aspect-ratio: 4 / 3; }
+[data-version="v3"] .j-rider-set { position: absolute; inset: 0; display: block; transition: transform .25s ease; filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)); }
+/* The goods change form as the journey advances. */
+[data-version="v3"] .j-form { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.55) rotate(-10deg); transition: opacity .28s ease, transform .5s cubic-bezier(.3,1.6,.5,1); }
+[data-version="v3"] .j-form.now { opacity: 1; transform: none; }
+[data-version="v3"] .j-form-pouches .vec { width: 66%; } [data-version="v3"] .j-form-pallet .vec { width: 62%; } [data-version="v3"] .j-form-truck .vec { width: 84%; } [data-version="v3"] .j-form-crane .vec { width: 76%; } [data-version="v3"] .j-form-ship .vec { width: 100%; }
+[data-version="v3"] .j-rider.back .j-form .vec { transform: scaleX(-1); }
+[data-version="v3"] .j-rider.back .j-form .vec text { transform: scaleX(-1); transform-box: fill-box; transform-origin: 50% 50%; }
+[data-version="v3"] .j-rider-pulse { position: absolute; left: 50%; top: 50%; width: 70%; aspect-ratio: 1; margin: -35% 0 0 -35%; border-radius: 99px; border: 3px solid #f9a8d4; opacity: 0; }
 [data-version="v3"] .j-stop { position: relative; z-index: 2; box-sizing: border-box; width: 88%; padding: 1.25rem; border-radius: 24px; background: #17132f; border: 1px solid rgba(196,181,253,.25); transition: opacity .45s ease, transform .6s cubic-bezier(.3,1.3,.5,1), border-color .4s ease, box-shadow .4s ease, background .4s ease; }
 [data-version="v3"] .j-stop:nth-of-type(even) { align-self: flex-end; }
 [data-version="v3"] .j-stop h3 { margin: .35rem 0 .3rem; font: 700 1.18rem/1.25 var(--font-head); color: #fff; }

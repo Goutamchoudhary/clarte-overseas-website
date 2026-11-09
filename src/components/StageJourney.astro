@@ -19,7 +19,12 @@ const art = ["harvester", "specsheet", "labtech", "pallet", "certificate", "cran
     <div class="j-route" data-route data-cam>
       <svg class="j-route-svg" aria-hidden="true"><path class="j-route-base" /><path class="j-route-live" /></svg>
       <span class="j-chart-compass" aria-hidden="true"><Vector name="compass" size={230} /></span>
-      <span class="j-rider" aria-hidden="true"><span><Vector name="cargo" /></span></span>
+      <span class="j-rider" aria-hidden="true">
+        <span class="j-rider-pulse"></span>
+        <span class="j-rider-set">
+          {["pouches", "pallet", "truck", "crane", "ship"].map((v) => <span class={`j-form j-form-${v}`} data-form><Vector name={v} /></span>)}
+        </span>
+      </span>
       {journey.map((s, i) => (
         <article class={`j-stop j-stop-${i + 1}${s.final ? " j-stop-final" : ""}`} data-stop>
           <span class="j-pin" data-pin aria-hidden="true"></span>

@@ -130,7 +130,18 @@
     var stops = Array.prototype.slice.call(sec.querySelectorAll("[data-stop]"));
     var pins = stops.map(function (s) { return s.querySelector("[data-pin]"); });
     var svg = route.querySelector(".j-route-svg"), base = svg.querySelector(".j-route-base"), live = svg.querySelector(".j-route-live");
-    var rider = route.querySelector(".j-rider"), riderIn = rider.firstElementChild;
+    var rider = route.querySelector(".j-rider"), riderIn = rider.querySelector(".j-rider-set");
+    var forms = rider.querySelectorAll("[data-form]"), pulse = rider.querySelector(".j-rider-pulse"), formNow = -1;
+    // Which form the goods take once each stop is reached: pouches for stops
+    // 1-3, packed at 4, on the truck at 5, craned aboard at 6, the ship last.
+    var formAt = [0, 0, 0, 1, 2, 3, 4];
+    function setForm(n) {
+      if (n === formNow) return;
+      var first = formNow < 0;
+      formNow = n;
+      forms.forEach(function (f, i) { f.classList.toggle("now", i === n); });
+      if (!first && pulse.animate) pulse.animate([{ transform: "scale(.5)", opacity: 0.9 }, { transform: "scale(1.5)", opacity: 0 }], { duration: 620, easing: "ease-out" });
+    }
     var cam = route.hasAttribute("data-cam") && window.innerWidth >= 1024;
     var total = 0, marks = [], trigger;
     if (cam) sec.classList.add("j-cam-live");
@@ -158,7 +169,12 @@
       var dx = next.x - at.x, tilt = Math.max(-9, Math.min(9, Math.atan2(next.y - at.y, Math.abs(dx) + 0.01) * 57.3 * (dx < 0 ? -1 : 1)));
       rider.style.transform = "translate(" + (at.x - w / 2) + "px," + (at.y - h * 0.55) + "px)";
       riderIn.style.transform = "rotate(" + tilt + "deg)";
-      stops.forEach(function (s, i) { s.classList.toggle("on", p >= marks[i] - 0.012); });
+      var reached = 0;
+      stops.forEach(function (s, i) { var hit = p >= marks[i] - 0.012; s.classList.toggle("on", hit); if (hit) reached = i; });
+      // The ship takes over halfway along the last leg, so it sails into the final stop.
+      if (p >= (marks[5] + marks[6]) / 2) reached = 6;
+      setForm(formAt[reached]);
+      rider.classList.toggle("back", dx < -0.2);
       if (cam) {
         var vw = view.clientWidth, vh = view.clientHeight;
         gsap.set(route, { x: Math.min(0, Math.max(vw - route.offsetWidth, vw / 2 - at.x)), y: Math.min(0, Math.max(vh - route.offsetHeight, vh / 2 - at.y - 130)) });
