@@ -306,3 +306,10 @@ the new design, set `version` to `v3` in `src/data/site-config.json` on `main`.
 `[category]/index.astro` swaps its hero for an arch photo layout on v3 and restyles
 the shared product grid. Each category has a muted palette, set with
 `body:has(.j-cat-hero[data-cat=...])` at the end of `site-v3.css`. No vectors here.
+
+## Product pages on v3 (Nov 2026)
+
+`ProductJourney.astro` replaces the page body on v3 and uses the category palette.
+The hero holds only what a buyer decides on (name, HSN, stock, form, actions). The
+description, features, uses, specs and grades each appear once below it. Keep the
+`pd*` ids and classes: the gallery, zoom and form scripts in `[product].astro` use them.

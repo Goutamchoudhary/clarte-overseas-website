@@ -2,6 +2,8 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EnquiryDialog from "../../../components/EnquiryDialog.astro";
 import SpecSheetDialog from "../../../components/SpecSheetDialog.astro";
+import ProductJourney from "../../../components/ProductJourney.astro";
+import { isVersion } from "../../../data/site-options";
 import { products, productsByCategory, getCategory, getProduct } from "../../../data/products";
 import { srcsetFor, smallest, SIZES } from "../../../lib/responsive-img";
 import { SITE, UNAVAILABLE_PRODUCTS, COMING_SOON_PRODUCTS } from "../../../consts";
@@ -10,6 +12,7 @@ export function getStaticPaths() {
   return products.map((p) => ({ params: { category: p.category, product: p.slug } }));
 }
 
+const v3 = isVersion("v3");
 const { category, product } = Astro.params;
 const cat = getCategory(category)!;
 const p = getProduct(product)!;
@@ -134,6 +137,7 @@ const breadcrumbLd = {
     <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
   </Fragment>
 
+  {v3 ? <ProductJourney p={p} cat={cat} specs={specs} faqs={faqs} related={related} stockLabel={stockLabel} stockI18n={stockI18n} isUnavailable={isUnavailable} isComingSoon={isComingSoon} /> : (<Fragment>
   <section class="pd-top" style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <nav class="crumb text-sm reveal" aria-label="Breadcrumb">
@@ -370,6 +374,8 @@ const breadcrumbLd = {
       </div>
     </section>
   )}
+
+  </Fragment>)}
 
   <EnquiryDialog />
   <SpecSheetDialog />
