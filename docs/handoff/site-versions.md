@@ -295,3 +295,14 @@ markup still renders for v1. The `Testimonials` component is left out on v3: its
 quotes are not from identifiable buyers. The category count comes from
 `categories.length`, and the `about.glance_categories_val` strings carry the
 number by hand, so update them in all 17 locales if a category is added.
+
+## Admin removed (Nov 2026)
+
+The admin portal is gone; older mentions of it above are history. To go live with
+the new design, set `version` to `v3` in `src/data/site-config.json` on `main`.
+
+## Category pages on v3 (Nov 2026)
+
+`[category]/index.astro` swaps its hero for an arch photo layout on v3 and restyles
+the shared product grid. Each category has a muted palette, set with
+`body:has(.j-cat-hero[data-cat=...])` at the end of `site-v3.css`. No vectors here.

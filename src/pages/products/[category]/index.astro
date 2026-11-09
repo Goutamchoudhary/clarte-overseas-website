@@ -4,6 +4,10 @@ import EnquiryDialog from "../../../components/EnquiryDialog.astro";
 import { categories, productsByCategory, getCategory } from "../../../data/products";
 import { SITE, UNAVAILABLE_PRODUCTS, COMING_SOON_PRODUCTS } from "../../../consts";
 import { srcsetFor, SIZES } from "../../../lib/responsive-img";
+import { isVersion } from "../../../data/site-options";
+import { collageCats } from "../../../lib/collage";
+
+const v3 = isVersion("v3");
 
 export function getStaticPaths() {
   return categories.map((c) => ({ params: { category: c.slug } }));
@@ -12,6 +16,8 @@ export function getStaticPaths() {
 const { category } = Astro.params;
 const cat = getCategory(category)!;
 const items = productsByCategory(category);
+const catKey = `products.cat_${category.replace(/-/g, "_")}`;
+const photo = collageCats.find((c) => c.slug === category)!;
 
 // Same reasoning as the product pages: lead with the words a sourcing manager
 // types, not with our internal category phrasing.
@@ -49,6 +55,37 @@ const listLd = {
     <script type="application/ld+json" set:html={JSON.stringify(listLd)} />
   </Fragment>
 
+  {v3 ? (
+    <section class="j-cat-hero" data-cat={cat.slug}>
+      <div class="j-wrap j-cat-hero-grid">
+        <div>
+          <nav class="j-cat-crumb" aria-label="Breadcrumb">
+            <a href="/" data-i18n="nav.home">Home</a> <span aria-hidden="true">/</span>
+            <a href="/products" data-i18n="nav.products">Products</a> <span aria-hidden="true">/</span>
+            <span data-i18n={`${catKey}_name`}>{cat.name}</span>
+          </nav>
+          <h1 class="j-cat-title" data-i18n={`${catKey}_name`}>{cat.name}</h1>
+          <p class="j-cat-desc" data-i18n={`${catKey}_desc`}>{cat.description}</p>
+          <div class="j-cat-chips">
+            <span data-i18n="cat.meta_origin">Export-grade, India</span>
+            <span data-i18n="cat.meta_private">Private label ready</span>
+          </div>
+        </div>
+        <div class="j-cat-arch">
+          <span class="j-cat-arch-back" aria-hidden="true"></span>
+          <img src={photo.src} srcset={photo.srcset} sizes="(min-width: 1024px) 340px, 70vw" alt="" width="900" height="900" decoding="async" data-splash-hero />
+          <span class="j-cat-count">{items.length}&nbsp;<span data-i18n="cat.meta_count_unit">products</span></span>
+        </div>
+      </div>
+      <div class="j-wrap">
+        <div class="j-cat-rail">
+          {categories.map((c) => (
+            <a href={`/products/${c.slug}`} class={c.slug === cat.slug ? "on" : undefined} aria-current={c.slug === cat.slug ? "page" : undefined} data-i18n={`products.cat_${c.slug.replace(/-/g, "_")}_name`}>{c.name}</a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ) : (<Fragment>
   <!-- ===================== CATEGORY HERO ===================== -->
   <section class={`cathero${cat.heroImage ? " has-photo" : ""}`} style={`--from:${cat.accentFrom};--to:${cat.accentTo}`}>
     <span class="cathero-glow" aria-hidden="true"></span>
@@ -74,9 +111,10 @@ const listLd = {
       </div>
     </div>
   </section>
+  </Fragment>)}
 
   <!-- ===================== PRODUCT GRID ===================== -->
-  <section class="py-16 lg:py-20 bg-white">
+  <section class={`py-16 lg:py-20 bg-white${v3 ? " j-cat-list" : ""}`}>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="prod-grid">
         {items.map((p, i) => (
@@ -112,3 +150,10 @@ const listLd = {
 
   <EnquiryDialog />
 </BaseLayout>
+
+<script>
+  // On phones the category pills scroll sideways: start with the current one in view.
+  const rail = document.querySelector<HTMLElement>(".j-cat-rail");
+  const on = rail?.querySelector<HTMLElement>("a.on");
+  if (rail && on && rail.scrollWidth > rail.clientWidth) rail.scrollLeft = on.offsetLeft - rail.offsetLeft - 16;
+</script>

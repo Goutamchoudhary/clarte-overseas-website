@@ -1,7 +1,3 @@
 {
-  "version": "v1",
-  "hero": "v1",
-  "theme": "classic",
-  "edition": "ingredients",
-  "cta": "theme"
+  "version": "v1"
 }
