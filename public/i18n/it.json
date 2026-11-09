@@ -1588,5 +1588,7 @@
   "products.doc4_desc": "I risultati di laboratorio del tuo lotto, verificati secondo specifica.",
   "products.doc5_title": "Specifica del prodotto",
   "products.doc5_desc": "Il grado, la granulometria e i parametri di qualità concordati.",
-  "products.docs_note": "I certificati fitosanitari e altri specifici per il mercato vengono aggiunti quando la destinazione li richiede."
+  "products.docs_note": "I certificati fitosanitari e altri specifici per il mercato vengono aggiunti quando la destinazione li richiede.",
+
+  "products.faq_heading": "Acquistare dalla nostra gamma: le risposte alle tue domande"
 }

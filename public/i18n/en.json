@@ -1588,5 +1588,7 @@
   "products.doc4_desc": "Lab results for your lot, checked against spec.",
   "products.doc5_title": "Product Specification",
   "products.doc5_desc": "The agreed grade, mesh and quality parameters.",
-  "products.docs_note": "Phytosanitary and other market-specific certificates are added when your destination requires them."
+  "products.docs_note": "Phytosanitary and other market-specific certificates are added when your destination requires them.",
+
+  "products.faq_heading": "Buying from our range, answered"
 }

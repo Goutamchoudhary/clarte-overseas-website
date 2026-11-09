@@ -1588,5 +1588,7 @@
   "products.doc4_desc": "Resultados de laboratório do seu lote, conferidos conforme a especificação.",
   "products.doc5_title": "Especificação do produto",
   "products.doc5_desc": "O grau, a granulometria e os parâmetros de qualidade acordados.",
-  "products.docs_note": "Certificados fitossanitários e outros específicos do mercado são adicionados quando o destino os exige."
+  "products.docs_note": "Certificados fitossanitários e outros específicos do mercado são adicionados quando o destino os exige.",
+
+  "products.faq_heading": "Comprar da nossa linha: suas dúvidas, respondidas"
 }

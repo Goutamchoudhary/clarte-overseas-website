@@ -1588,5 +1588,7 @@
   "products.doc4_desc": "규격에 따라 확인한 해당 로트의 시험 결과.",
   "products.doc5_title": "제품 사양서",
   "products.doc5_desc": "합의된 등급, 메시, 품질 기준.",
-  "products.docs_note": "목적지에서 요구하는 경우 식물위생증명서 및 기타 시장별 증명서를 추가합니다."
+  "products.docs_note": "목적지에서 요구하는 경우 식물위생증명서 및 기타 시장별 증명서를 추가합니다.",
+
+  "products.faq_heading": "제품 구매 관련 자주 묻는 질문"
 }

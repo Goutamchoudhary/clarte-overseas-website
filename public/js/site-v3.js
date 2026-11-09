@@ -121,6 +121,61 @@
   }
   document.querySelectorAll("[data-j-shuffle]").forEach(shuffle);
 
+  // Stage by Stage: a route drawn through the stops, with a vehicle riding it.
+  function journey() {
+    var sec = document.querySelector('[data-opt="' + (root.getAttribute("data-stage") || "a") + '"]');
+    if (!sec || !window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var route = sec.querySelector("[data-route]"), view = sec.querySelector(".j-cam-view");
+    var stops = Array.prototype.slice.call(sec.querySelectorAll("[data-stop]"));
+    var pins = stops.map(function (s) { return s.querySelector("[data-pin]"); });
+    var svg = route.querySelector(".j-route-svg"), base = svg.querySelector(".j-route-base"), live = svg.querySelector(".j-route-live");
+    var rider = route.querySelector(".j-rider"), riderIn = rider.firstElementChild;
+    var cam = route.hasAttribute("data-cam") && window.innerWidth >= 1024;
+    var total = 0, marks = [], trigger;
+    if (cam) sec.classList.add("j-cam-live");
+    root.classList.add("j-route-on");
+
+    function draw() {
+      var box = route.getBoundingClientRect();
+      var pts = pins.map(function (p) { var r = p.getBoundingClientRect(); return [r.left - box.left + r.width / 2, r.top - box.top + r.height / 2]; });
+      var d = "M" + pts[0][0] + " " + pts[0][1], segs = [d];
+      for (var i = 0; i < pts.length - 1; i++) {
+        var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+        d += " C" + (p1[0] + (p2[0] - p0[0]) / 5) + " " + (p1[1] + (p2[1] - p0[1]) / 5) + " " + (p2[0] - (p3[0] - p1[0]) / 5) + " " + (p2[1] - (p3[1] - p1[1]) / 5) + " " + p2[0] + " " + p2[1];
+        segs.push(d);
+      }
+      base.setAttribute("d", d); live.setAttribute("d", d);
+      total = live.getTotalLength();
+      live.style.strokeDasharray = total;
+      var probe = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      marks = segs.map(function (s) { probe.setAttribute("d", s); return probe.getTotalLength() / total; });
+    }
+    function show(p) {
+      live.style.strokeDashoffset = total * (1 - p);
+      var at = live.getPointAtLength(total * p), next = live.getPointAtLength(Math.min(total, total * p + 5));
+      var w = rider.offsetWidth, h = rider.offsetHeight, back = next.x < at.x - 0.2;
+      rider.style.transform = "translate(" + (at.x - w / 2) + "px," + (at.y - h * 0.82) + "px)";
+      riderIn.style.transform = back ? "scaleX(-1)" : "none";
+      stops.forEach(function (s, i) { s.classList.toggle("on", p >= marks[i] - 0.012); });
+      if (cam) {
+        var vw = view.clientWidth, vh = view.clientHeight;
+        gsap.set(route, { x: Math.min(0, Math.max(vw - route.offsetWidth, vw / 2 - at.x)), y: Math.min(0, Math.max(vh - route.offsetHeight, vh / 2 - at.y)) });
+      }
+    }
+    draw();
+    show(0);
+    trigger = cam
+      ? ScrollTrigger.create({ trigger: view, pin: true, start: "top top", end: "+=" + stops.length * 85 + "%", scrub: 0.6, anticipatePin: 1, onUpdate: function (s) { show(s.progress); } })
+      : ScrollTrigger.create({ trigger: route, start: "top 62%", end: "bottom 78%", scrub: 0.5, onUpdate: function (s) { show(s.progress); } });
+    function redraw() { if (cam) gsap.set(route, { x: 0, y: 0 }); draw(); ScrollTrigger.refresh(); show(trigger.progress); }
+    window.addEventListener("load", redraw, { once: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
+    var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(redraw, 200); });
+  }
+  // Waits for DOMContentLoaded: GSAP is deferred later in the document on this page.
+  if (document.querySelector("[data-opt]")) document.addEventListener("DOMContentLoaded", journey, { once: true });
+
   // As the product range slides over the hero, the hero recedes; on desktop the
   // three words also drift apart.
   function partWords() {

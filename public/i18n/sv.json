@@ -1588,5 +1588,7 @@
   "products.doc4_desc": "Laboratorieresultat för ditt parti, kontrollerade mot specifikationen.",
   "products.doc5_title": "Produktspecifikation",
   "products.doc5_desc": "Den överenskomna kvaliteten, maskstorleken och kvalitetsparametrarna.",
-  "products.docs_note": "Växtskyddscertifikat och andra marknadsspecifika intyg läggs till när destinationen kräver dem."
+  "products.docs_note": "Växtskyddscertifikat och andra marknadsspecifika intyg läggs till när destinationen kräver dem.",
+
+  "products.faq_heading": "Köpa från vårt sortiment: dina frågor besvarade"
 }

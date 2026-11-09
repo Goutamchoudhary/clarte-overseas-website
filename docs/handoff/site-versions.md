@@ -54,6 +54,10 @@
 > `/products` done: page colour runs navbar → header → first category (fade
 > via `.j-flow-first::before`), `ProductShuffle.astro` shuffles three photos per
 > category from the product records, and the five-document section (`products.doc*`).
+> `/how-we-export`: Stage by Stage has three designs for the owner to pick
+> (`StageJourney.astro`, `?stage=a|b|c`; delete the unchosen two and the review
+> switcher, which is English-only and temporary). `/products` has an FAQ reusing
+> `export.faq*`.
 > v3 assets now load on every page: navbar and footer colours everywhere, and
 > compact `PageHero` headers (330 px, tint per page via `data-ph`). Section
 > order: Hero (full screen, sticky) with Range sliding over it, then Who We Serve, Why Dehydrated, Process, Edge, From

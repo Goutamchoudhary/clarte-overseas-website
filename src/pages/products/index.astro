@@ -8,6 +8,16 @@ import { isVersion } from "../../data/site-options";
 import ProductShuffle from "../../components/ProductShuffle.astro";
 import Vector from "../../components/Vector.astro";
 const v3 = isVersion("v3");
+import en from "../../../public/i18n/en.json";
+// Questions already answered and translated for the How We Export page.
+const faqs = [1, 2, 4, 6, 7].map((n) => ({
+  qk: `export.faq${n}_q`, ak: `export.faq${n}_a`,
+  q: (en as Record<string, string>)[`export.faq${n}_q`], a: (en as Record<string, string>)[`export.faq${n}_a`],
+}));
+const faqLd = {
+  "@context": "https://schema.org", "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
 
 const hiddenFromThumbs = (slug: string) =>
   COMING_SOON_PRODUCTS.has(slug) || UNAVAILABLE_PRODUCTS.has(slug);
@@ -43,6 +53,7 @@ const cats = categories.map((c) => {
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">{v3 && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}</Fragment>
   <PageHero
     i18nPrefix="products"
     i18nCrumb="nav.products"
@@ -112,6 +123,30 @@ const cats = categories.map((c) => {
           ))}
         </div>
         <p class="j-docs-note" data-i18n="products.docs_note">Phytosanitary and other market-specific certificates are added when your destination requires them.</p>
+      </div>
+    </section>
+  )}
+
+  {v3 && (
+    <section class="j-faq">
+      <div class="j-wrap j-faq-grid">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="export.faq_eyebrow">FAQ</span>
+          <h2 class="j-h2 j-h2-md" data-i18n="products.faq_heading">Buying from our range, answered</h2>
+          <p class="j-sub" data-i18n="export.faq_sub">The practical questions buyers ask before the first shipment.</p>
+          <span class="j-faq-art"><Vector name="pouch" size={120} /><Vector name="sack" size={130} /></span>
+        </div>
+        <div class="reveal d1">
+          {faqs.map((f) => (
+            <details class="faq-item">
+              <summary>
+                <span data-i18n={f.qk}>{f.q}</span>
+                <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="faq-body" data-i18n={f.ak}>{f.a}</div>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
   )}

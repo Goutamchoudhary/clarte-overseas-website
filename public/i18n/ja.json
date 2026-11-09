@@ -1588,5 +1588,7 @@
   "products.doc4_desc": "ロットごとの試験結果を仕様と照合。",
   "products.doc5_title": "製品仕様書",
   "products.doc5_desc": "合意したグレード、メッシュ、品質項目。",
-  "products.docs_note": "仕向地で必要な場合は、植物検疫証明書やその他の市場別証明書を追加します。"
+  "products.docs_note": "仕向地で必要な場合は、植物検疫証明書やその他の市場別証明書を追加します。",
+
+  "products.faq_heading": "製品のご購入に関するよくある質問"
 }

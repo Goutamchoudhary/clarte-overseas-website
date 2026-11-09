@@ -1588,5 +1588,7 @@
   "products.doc4_desc": "Resultados de laboratorio de su lote, comprobados según especificación.",
   "products.doc5_title": "Especificación del producto",
   "products.doc5_desc": "El grado, la malla y los parámetros de calidad acordados.",
-  "products.docs_note": "Los certificados fitosanitarios y otros específicos del mercado se añaden cuando su destino los exige."
+  "products.docs_note": "Los certificados fitosanitarios y otros específicos del mercado se añaden cuando su destino los exige.",
+
+  "products.faq_heading": "Comprar de nuestra gama: sus preguntas, respondidas"
 }
