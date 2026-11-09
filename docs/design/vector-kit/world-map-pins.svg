@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 150">
+<!-- Folded world map with pins · use: About goals, Reach across the globe -->
+<path d="M8 38L62 20V116L8 134Z" fill="#dbeafe"/><path d="M62 20L118 38V134L62 116Z" fill="#bfdbfe"/><path d="M118 38L172 20V116L118 134Z" fill="#dbeafe"/>
+<path d="M22 46C36 40 52 42 54 54C50 66 36 66 32 76C24 76 18 58 22 46Z" fill="#6ee7b7"/><path d="M76 56C92 50 106 56 106 70C104 92 94 106 86 118C78 112 80 94 74 84C68 74 68 62 76 56Z" fill="#6ee7b7"/><path d="M130 50C146 42 162 46 164 58C158 70 144 66 140 78C132 80 124 62 130 50Z" fill="#6ee7b7"/>
+<path d="M36 62C60 44 98 78 142 56" fill="none" stroke="#be185d" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"/>
+<g fill="#be185d"><path d="M36 66C28 56 24 50 24 43A12 12 0 0 1 48 43C48 50 44 56 36 66Z"/><path d="M90 78C82 68 78 62 78 55A12 12 0 0 1 102 55C102 62 98 68 90 78Z"/><path d="M142 60C134 50 130 44 130 37A12 12 0 0 1 154 37C154 44 150 50 142 60Z"/></g>
+<g fill="#fff"><circle cx="36" cy="43" r="4.5"/><circle cx="90" cy="55" r="4.5"/><circle cx="142" cy="37" r="4.5"/></g>
+</svg>

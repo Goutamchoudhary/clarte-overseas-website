@@ -78,6 +78,8 @@ that area).
   `<name>-800.webp` copies, and the templates (`src/lib/responsive-img.ts`)
   add a `srcset` only when both exist. Forget it and the photo still works,
   but phones download the full 1200px file.
+- **Don't reuse a vector.** Check `docs/design/vector-kit/` usage first; a new
+  section gets its own artwork rather than one already shown on another page.
 - **Blog covers** are generated vectors: `node scripts/gen-blog-art.mjs` writes
   `public/assets/img/blog/<id>.svg` from its `ART` map, one line per post. A new
   post needs a line there (the script fails if one is missing; until then the
