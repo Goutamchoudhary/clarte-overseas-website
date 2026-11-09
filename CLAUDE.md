@@ -150,7 +150,7 @@ that area).
 
 - Which design the site builds with is set by `version` in
   `src/data/site-config.json`: `v1` is the original site, `v3` is "The Journey".
-  Going live with v3 means changing that value on `main`, so confirm first.
+  Changing that value on `main` changes the live site, so confirm first.
 - Whole-site **versions** (V2, V4, V5, V8 + V6 dark; V7 dropped — palette,
   components, motion library, vector kit, phone rules per version) are
   planned in [docs/handoff/site-versions.md](docs/handoff/site-versions.md) —
@@ -160,7 +160,7 @@ that area).
   `public/{css,js}/site-v<N>.{css,js}` (scoped `[data-version="vN"]`, linked
   only for that version). Local and preview builds show the version in
   `src/data/site-config.preview.json`; production uses `site-config.json` only
-  (keep it on `v1` until the owner decides to go live).
+  (live on `v3` since 9 Nov 2026; `v1` stays in the code as the fallback).
   If you add a version stylesheet, keep it directly after styles.css — the
   defer script relies on that order.
 
