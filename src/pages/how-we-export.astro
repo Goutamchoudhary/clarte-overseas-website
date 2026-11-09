@@ -390,7 +390,6 @@ const faqLd = {
   <section class="py-20 lg:py-24 sus-sec">
     <span class="sus-leaf" aria-hidden="true"></span>
     {v3 && <span class="j-sus-deco j-sus-l" aria-hidden="true"><Vector name="moringa" size={190} /></span>}
-    {v3 && <span class="j-sus-deco j-sus-r" aria-hidden="true"><Vector name="fields" size={170} /></span>}
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="eyebrow center eyebrow-green"><span data-i18n="export.sustain_eyebrow">Doing It Responsibly</span></span>
@@ -416,6 +415,29 @@ const faqLd = {
 
   <WaveDivider topColor="#e9f8f0" bottomColor="#ffffff" accent="rgba(15,107,74,0.12)" />
 
+  {v3 ? (
+    <section class="j-faq">
+      <div class="j-wrap j-faq-grid">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="export.faq_eyebrow">FAQ</span>
+          <h2 class="j-h2 j-h2-md" data-i18n="export.faq_heading">Exporting with us, answered</h2>
+          <p class="j-sub" data-i18n="export.faq_sub">The practical questions buyers ask before the first shipment.</p>
+          <span class="j-faq-art"><Vector name="pouch" size={120} /><Vector name="sack" size={130} /></span>
+        </div>
+        <div class="reveal d1">
+          {exportFaqs.map((f, i) => (
+            <details class="faq-item">
+              <summary>
+                <span data-i18n={`export.faq${i + 1}_q`}>{f.q}</span>
+                <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="faq-body" data-i18n={`export.faq${i + 1}_a`}>{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  ) : (<Fragment>
   <!-- ===================== FAQ ===================== -->
   <section class="py-20 lg:py-24 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
@@ -437,6 +459,7 @@ const faqLd = {
       </div>
     </div>
   </section>
+  </Fragment>)}
 
   <!-- ===================== CTA ===================== -->
   <section id="quote" class="py-20">

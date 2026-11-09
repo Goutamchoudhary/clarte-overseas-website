@@ -121,9 +121,9 @@
   }
   document.querySelectorAll("[data-j-shuffle]").forEach(shuffle);
 
-  // Stage by Stage: a route drawn through the stops, with a vehicle riding it.
+  // Stage by Stage: a route drawn through the stops, with the container riding it.
   function journey() {
-    var sec = document.querySelector('[data-opt="' + (root.getAttribute("data-stage") || "a") + '"]');
+    var sec = document.querySelector("[data-opt]");
     if (!sec || !window.gsap || !window.ScrollTrigger) return;
     gsap.registerPlugin(ScrollTrigger);
     var route = sec.querySelector("[data-route]"), view = sec.querySelector(".j-cam-view");
@@ -154,19 +154,20 @@
     function show(p) {
       live.style.strokeDashoffset = total * (1 - p);
       var at = live.getPointAtLength(total * p), next = live.getPointAtLength(Math.min(total, total * p + 5));
-      var w = rider.offsetWidth, h = rider.offsetHeight, back = next.x < at.x - 0.2;
-      rider.style.transform = "translate(" + (at.x - w / 2) + "px," + (at.y - h * 0.82) + "px)";
-      riderIn.style.transform = back ? "scaleX(-1)" : "none";
+      var w = rider.offsetWidth, h = rider.offsetHeight;
+      var dx = next.x - at.x, tilt = Math.max(-9, Math.min(9, Math.atan2(next.y - at.y, Math.abs(dx) + 0.01) * 57.3 * (dx < 0 ? -1 : 1)));
+      rider.style.transform = "translate(" + (at.x - w / 2) + "px," + (at.y - h * 0.55) + "px)";
+      riderIn.style.transform = "rotate(" + tilt + "deg)";
       stops.forEach(function (s, i) { s.classList.toggle("on", p >= marks[i] - 0.012); });
       if (cam) {
         var vw = view.clientWidth, vh = view.clientHeight;
-        gsap.set(route, { x: Math.min(0, Math.max(vw - route.offsetWidth, vw / 2 - at.x)), y: Math.min(0, Math.max(vh - route.offsetHeight, vh / 2 - at.y)) });
+        gsap.set(route, { x: Math.min(0, Math.max(vw - route.offsetWidth, vw / 2 - at.x)), y: Math.min(0, Math.max(vh - route.offsetHeight, vh / 2 - at.y - 130)) });
       }
     }
     draw();
     show(0);
     trigger = cam
-      ? ScrollTrigger.create({ trigger: view, pin: true, start: "top top", end: "+=" + stops.length * 85 + "%", scrub: 0.6, anticipatePin: 1, onUpdate: function (s) { show(s.progress); } })
+      ? ScrollTrigger.create({ trigger: view, pin: true, start: "top top", end: "+=" + stops.length * 115 + "%", scrub: 0.6, anticipatePin: 1, onUpdate: function (s) { show(s.progress); } })
       : ScrollTrigger.create({ trigger: route, start: "top 62%", end: "bottom 78%", scrub: 0.5, onUpdate: function (s) { show(s.progress); } });
     function redraw() { if (cam) gsap.set(route, { x: 0, y: 0 }); draw(); ScrollTrigger.refresh(); show(trigger.progress); }
     window.addEventListener("load", redraw, { once: true });

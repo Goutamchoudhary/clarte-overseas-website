@@ -1,49 +1,36 @@
 ---
-// "Stage by Stage" on How We Export, three designs for the owner to choose
-// from. Only the chosen one renders (html[data-stage], set from ?stage=a|b|c);
-// the small switcher is for review and goes when one is picked. Copy uses the
+// "Stage by Stage" on How We Export: a night sea chart. On desktop the section
+// pins and the view travels right, down, left, down and right with the
+// container; on phones the stops slide in from alternating sides. Copy uses the
 // existing export.journey_* keys. Motion: journey() in /js/site-v3.js.
 import Vector from "./Vector.astro";
 interface Props { journey: { t: string; d: string; final?: boolean }[]; }
 const { journey } = Astro.props;
 const art = ["harvester", "specsheet", "labtech", "pallet", "certificate", "crane", "ship"];
-const options = [
-  { id: "a", cls: "j-opt-road", rider: "truck", label: "A · Winding road" },
-  { id: "b", cls: "j-opt-board", rider: "plane", label: "B · Camera over a board" },
-  { id: "c", cls: "j-opt-sea", rider: "ship", label: "C · Night sea chart" },
-];
 ---
-<script is:inline>
-  (function () {
-    var m = /[?&]stage=([abc])/.exec(location.search);
-    document.documentElement.setAttribute("data-stage", m ? m[1] : "a");
-  })();
-</script>
-{options.map((o) => (
-  <section class={`j-journey ${o.cls}`} data-opt={o.id} id={`journey-${o.id}`}>
-    <div class="j-wrap j-center j-journey-head reveal">
-      <span class={`eyebrow center${o.id === "c" ? " light" : ""}`}><span data-i18n="export.journey_eyebrow">Stage by Stage</span></span>
-      <h2 class={`j-h2${o.id === "c" ? " j-light" : ""}`}><span data-i18n="export.journey_heading">Follow the route</span></h2>
-      <p class={`j-sub${o.id === "c" ? " j-light-sub" : ""}`} data-i18n="export.journey_sub">Scroll down and the road draws itself. Each stop lights up as your shipment reaches it.</p>
+<section class="j-journey j-opt-sea" data-opt id="journey">
+  <div class="j-dusk" aria-hidden="true"></div>
+  <div class="j-wrap j-center j-journey-head reveal">
+    <span class="eyebrow center light"><span data-i18n="export.journey_eyebrow">Stage by Stage</span></span>
+    <h2 class="j-h2 j-light"><span data-i18n="export.journey_heading">Follow the route</span></h2>
+    <p class="j-sub j-light-sub" data-i18n="export.journey_sub">Scroll down and the road draws itself. Each stop lights up as your shipment reaches it.</p>
+  </div>
+  <div class="j-cam-view">
+    <div class="j-route" data-route data-cam>
+      <svg class="j-route-svg" aria-hidden="true"><path class="j-route-base" /><path class="j-route-live" /></svg>
+      <span class="j-chart-compass" aria-hidden="true"><Vector name="compass" size={230} /></span>
+      <span class="j-rider" aria-hidden="true"><span><Vector name="cargo" /></span></span>
+      {journey.map((s, i) => (
+        <article class={`j-stop j-stop-${i + 1}${s.final ? " j-stop-final" : ""}`} data-stop>
+          <span class="j-pin" data-pin aria-hidden="true"></span>
+          <span class="j-stop-art"><Vector name={art[i]} /></span>
+          <span class="j-stop-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+          {s.final && <span class="j-stop-flag" data-i18n="export.journey_final_flag">After-sales</span>}
+          <h3 data-i18n={`export.journey_s${i + 1}_title`}>{s.t}</h3>
+          <p data-i18n={`export.journey_s${i + 1}_body`}>{s.d}</p>
+        </article>
+      ))}
     </div>
-    <div class="j-cam-view">
-      <div class="j-route" data-route data-cam={o.id === "b" ? "" : undefined}>
-        <svg class="j-route-svg" aria-hidden="true"><path class="j-route-base" /><path class="j-route-live" /></svg>
-        <span class="j-rider" aria-hidden="true"><span><Vector name={o.rider} /></span></span>
-        {journey.map((s, i) => (
-          <article class={`j-stop j-stop-${i + 1}${s.final ? " j-stop-final" : ""}`} data-stop>
-            <span class="j-pin" data-pin aria-hidden="true"></span>
-            <span class="j-stop-art"><Vector name={art[i]} /></span>
-            <span class="j-stop-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
-            {s.final && <span class="j-stop-flag" data-i18n="export.journey_final_flag">After-sales</span>}
-            <h3 data-i18n={`export.journey_s${i + 1}_title`}>{s.t}</h3>
-            <p data-i18n={`export.journey_s${i + 1}_body`}>{s.d}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-))}
-<nav class="j-switch" aria-label="Choose a design to review">
-  {options.map((o) => <a href={`?stage=${o.id}`} data-for={o.id}>{o.label}</a>)}
-</nav>
+  </div>
+  <div class="j-dawn" aria-hidden="true"></div>
+</section>
