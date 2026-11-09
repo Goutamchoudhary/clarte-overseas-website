@@ -264,3 +264,13 @@ CSS variables so each version recolours them.
    - reduced motion
    - Lighthouse vs V1
    - flip `ready: true`
+
+## Certifications page on v3 (Nov 2026)
+
+`src/components/CertJourney.astro` replaces everything between the hero and the
+CTA when the version is v3; the old markup in `certifications.astro` still
+renders for v1. Order: own credentials, partner standards, requirements by
+market, FAQ. In the market tabs, keep what Clarté holds apart from what comes
+through partner facilities (FSSAI, IEC, APEDA and ISO 9001 are ours; Halal,
+ISO 22000, HACCP, BRCGS and US FDA are partner-held). Certificate names stay
+untranslated; the rest uses `cert.mkt_*` in all 17 locales.
