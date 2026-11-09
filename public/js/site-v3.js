@@ -58,7 +58,7 @@
   // three words also drift apart.
   function partWords() {
     var hero = document.getElementById("home"), grid = document.querySelector(".j-hero-grid");
-    if (!window.gsap || !window.ScrollTrigger || !grid || !document.querySelector(".j-w")) return;
+    if (!window.gsap || !window.ScrollTrigger || !grid || !document.querySelector(".j-curtain")) return;
     var tl = gsap.timeline({ scrollTrigger: { start: 0, end: function () { return hero.offsetHeight; }, scrub: 0.5, invalidateOnRefresh: true } });
     tl.to(grid, { scale: 0.93, autoAlpha: 0.2, ease: "none" }, 0);
     if (window.innerWidth >= 1024) {

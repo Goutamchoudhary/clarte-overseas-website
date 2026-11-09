@@ -410,6 +410,11 @@ html.j-scrolled[data-version="v3"] .j-range { box-shadow: 0 -26px 60px -30px rgb
 }
 @media (prefers-reduced-motion: reduce) { [data-version="v3"] .j-scroll { animation: none; } }
 
+/* Plain variant of the opening: both sections are full screen, no sheet effect. */
+[data-version="v3"] .j-plain .j-hero { position: relative; top: 0; }
+[data-version="v3"] .j-plain .j-range { border-radius: 0; }
+html.j-scrolled[data-version="v3"] .j-plain .j-range { box-shadow: none; }
+
 /* ---- Vector kit loop animations (docs/design/vector-kit) ---- */
 /* Loop animations for the vector kit (class names vl-*, vk-*). Off under prefers-reduced-motion. */
 @keyframes vlsway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
