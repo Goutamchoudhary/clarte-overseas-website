@@ -727,8 +727,4 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] .j-mkt-note { margin: 1rem 0 0; font-size: .92rem; color: var(--sub); }
 [data-version="v3"] .j-mkt-note a { color: var(--violet); font-weight: 700; text-decoration: underline; }
 
-[data-version="v3"] .j-cert-cta { display: none; position: absolute; }
-[data-version="v3"] .j-cert-cta-l { left: 2.5%; bottom: 8%; }
-[data-version="v3"] .j-cert-cta-r { right: 3%; bottom: 12%; }
-@media (min-width: 1100px) { [data-version="v3"] .j-cert-cta { display: block; } }
 @media (prefers-reduced-motion: reduce) { [data-version="v3"] .j-cert-art { animation: none; } }
