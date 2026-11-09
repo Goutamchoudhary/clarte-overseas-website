@@ -143,7 +143,7 @@
       if (!first && pulse.animate) pulse.animate([{ transform: "scale(.5)", opacity: 0.9 }, { transform: "scale(1.5)", opacity: 0 }], { duration: 620, easing: "ease-out" });
     }
     var cam = route.hasAttribute("data-cam") && window.innerWidth >= 1024;
-    var total = 0, marks = [], trigger;
+    var total = 0, marks = [], shipAt = 1, trigger;
     if (cam) sec.classList.add("j-cam-live");
     root.classList.add("j-route-on");
 
@@ -161,6 +161,14 @@
       live.style.strokeDasharray = total;
       var probe = document.createElementNS("http://www.w3.org/2000/svg", "path");
       marks = segs.map(function (s) { probe.setAttribute("d", s); return probe.getTotalLength() / total; });
+      // Desktop: where the route last touches the stop 6 card is where the ship takes
+      // over. Phones stack the cards, so that point is almost the end; use mid-leg.
+      var card = stops[5].getBoundingClientRect(), from = marks[5] * total, to = marks[6] * total, last = -1;
+      for (var l = from; l <= to; l += 4) {
+        var q = live.getPointAtLength(l), x = q.x + box.left, y = q.y + box.top;
+        if (x >= card.left && x <= card.right && y >= card.top && y <= card.bottom) last = l;
+      }
+      shipAt = !cam || last < 0 ? (marks[5] + marks[6]) / 2 : last / total;
     }
     function show(p) {
       live.style.strokeDashoffset = total * (1 - p);
@@ -171,8 +179,8 @@
       riderIn.style.transform = "rotate(" + tilt + "deg)";
       var reached = 0;
       stops.forEach(function (s, i) { var hit = p >= marks[i] - 0.012; s.classList.toggle("on", hit); if (hit) reached = i; });
-      // The ship takes over just after the crane leaves stop 6, then sails to the final stop.
-      if (p >= marks[5] + (marks[6] - marks[5]) * 0.1) reached = 6;
+      // The crane stays until it has left the stop 6 card behind; then the ship sails on.
+      if (p >= shipAt) reached = 6;
       setForm(formAt[reached]);
       rider.classList.toggle("back", dx < -0.2);
       if (cam) {
