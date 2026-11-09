@@ -9,7 +9,7 @@ const { journey } = Astro.props;
 const art = ["harvester", "specsheet", "labtech", "pallet", "certificate", "crane", "ship"];
 ---
 <section class="j-journey j-opt-sea" data-opt id="journey">
-  <div class="j-dusk" aria-hidden="true"></div>
+  <div class="j-sea-edge" aria-hidden="true"><svg class="j-w1" viewBox="0 0 2880 150" preserveAspectRatio="none"><path d="M0 52 Q180 8 360 52 T720 52 T1080 52 T1440 52 T1800 52 T2160 52 T2520 52 T2880 52 V150 H0Z" /></svg><svg class="j-w2" viewBox="0 0 2880 150" preserveAspectRatio="none"><path d="M0 84 Q180 46 360 84 T720 84 T1080 84 T1440 84 T1800 84 T2160 84 T2520 84 T2880 84 V150 H0Z" /></svg><svg class="j-w3" viewBox="0 0 2880 150" preserveAspectRatio="none"><path d="M0 112 Q180 82 360 112 T720 112 T1080 112 T1440 112 T1800 112 T2160 112 T2520 112 T2880 112 V150 H0Z" /></svg></div>
   <div class="j-wrap j-center j-journey-head reveal">
     <span class="eyebrow center light"><span data-i18n="export.journey_eyebrow">Stage by Stage</span></span>
     <h2 class="j-h2 j-light"><span data-i18n="export.journey_heading">Follow the route</span></h2>
@@ -32,5 +32,5 @@ const art = ["harvester", "specsheet", "labtech", "pallet", "certificate", "cran
       ))}
     </div>
   </div>
-  <div class="j-dawn" aria-hidden="true"></div>
+  <div class="j-sea-edge j-sea-edge-end" aria-hidden="true"><svg class="j-w1" viewBox="0 0 2880 150" preserveAspectRatio="none"><path d="M0 52 Q180 8 360 52 T720 52 T1080 52 T1440 52 T1800 52 T2160 52 T2520 52 T2880 52 V150 H0Z" /></svg><svg class="j-w2" viewBox="0 0 2880 150" preserveAspectRatio="none"><path d="M0 84 Q180 46 360 84 T720 84 T1080 84 T1440 84 T1800 84 T2160 84 T2520 84 T2880 84 V150 H0Z" /></svg><svg class="j-w3" viewBox="0 0 2880 150" preserveAspectRatio="none"><path d="M0 112 Q180 82 360 112 T720 112 T1080 112 T1440 112 T1800 112 T2160 112 T2520 112 T2880 112 V150 H0Z" /></svg></div>
 </section>
