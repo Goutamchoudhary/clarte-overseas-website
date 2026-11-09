@@ -418,6 +418,7 @@ html.j-scrolled[data-version="v3"] .j-plain .j-range { box-shadow: none; }
 /* Navbar hides while scrolling down and returns the moment scrolling goes up. */
 [data-version="v3"] #navbar { transition: transform .32s ease, box-shadow .35s ease, border-color .35s ease; will-change: transform; }
 [data-version="v3"] #navbar.nav-away { transform: translateY(-115%); }
+[data-version="v3"] #navbar.nav-away .lang-hint { visibility: hidden; }
 
 /* Product Range: a little taller than one screen. */
 [data-version="v3"] .j-range { min-height: 108vh; min-height: 108svh; padding-top: 4rem; padding-bottom: 3.5rem; }
