@@ -287,3 +287,11 @@ Blog have no side vectors because the owner found them crowded.
 Same markup and form script as v1, restyled at the end of `site-v3.css`
 (`.j-contact`, `.cc-*`, `.map-*`). The only v3 addition is one vector in the info
 panel. Don't submit the form when testing: it posts to the live Web3Forms inbox.
+
+## About on v3 (Nov 2026)
+
+`AboutJourney.astro` replaces everything between the hero and the CTA; the old
+markup still renders for v1. The `Testimonials` component is left out on v3: its
+quotes are not from identifiable buyers. The category count comes from
+`categories.length`, and the `about.glance_categories_val` strings carry the
+number by hand, so update them in all 17 locales if a category is added.
