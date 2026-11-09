@@ -343,7 +343,7 @@ html.j-armed[data-version="v3"] [data-j-play]:not(.in) .j-fall { visibility: hid
 @media (min-width: 1024px) { [data-version="v3"] .page-hero { min-height: 330px; padding: 2rem 0 1.25rem; } }
 [data-version="v3"] .page-hero[data-ph="Export"] { --ph-bg: #eaf3ff; --ph-ink: #14306e; --ph-wm: rgba(37,99,235,.1); }
 /* The fade below this header starts in the same colour, so the copy sits a little low to even out the space. */
-@media (min-width: 1024px) { [data-version="v3"] .page-hero[data-ph="Export"] .ph-stack { top: 18px; } }
+@media (min-width: 1024px) { [data-version="v3"] .page-hero[data-ph="Export"] { min-height: 348px; padding-top: 50px; } [data-version="v3"] .page-hero[data-ph="Export"] .ph-stack { top: 18px; } [data-version="v3"] body:has(.page-hero[data-ph="Export"]) .j-dusk { height: 322px; } }
 [data-version="v3"] .page-hero[data-ph="Trust"] { --ph-bg: #fff0f6; --ph-ink: #6b0f3f; --ph-wm: rgba(190,24,93,.09); }
 [data-version="v3"] .page-hero[data-ph="About"] { --ph-bg: #fbf6e9; --ph-ink: #4a3208; --ph-wm: rgba(224,165,38,.16); }
 [data-version="v3"] .page-hero[data-ph="Insights"] { --ph-bg: #effaf3; --ph-ink: #14432b; --ph-wm: rgba(77,124,15,.12); }
