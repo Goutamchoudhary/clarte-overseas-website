@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+<!-- Price tags in the buyer's currency, on one string · use: Home, Priced in your currency -->
+<g font-family="Arial, Helvetica, sans-serif">
+<g transform="rotate(-40 100 12)"><path d="M100 12L134 44V140C134 146 130 150 124 150H76C70 150 66 146 66 140V44Z" fill="#1f4693"/><circle cx="100" cy="42" r="8" fill="#fff"/><text x="100" y="116" font-size="50" text-anchor="middle" font-weight="700" fill="#fff">€</text></g><g transform="rotate(40 100 12)"><path d="M100 12L134 44V140C134 146 130 150 124 150H76C70 150 66 146 66 140V44Z" fill="#be185d"/><circle cx="100" cy="42" r="8" fill="#fff"/><text x="100" y="116" font-size="50" text-anchor="middle" font-weight="700" fill="#fff">£</text></g><g transform="rotate(0 100 12)"><path d="M100 12L134 44V140C134 146 130 150 124 150H76C70 150 66 146 66 140V44Z" fill="#6d28d9"/><circle cx="100" cy="42" r="8" fill="#fff"/><text x="100" y="116" font-size="50" text-anchor="middle" font-weight="700" fill="#fff">$</text></g>
+</g>
+<circle cx="100" cy="14" r="10" fill="none" stroke="#a9b0ca" stroke-width="4"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+<!-- Four seasons around a full stock crate · use: Home, All-year supply -->
+<g fill="none" stroke-width="30">
+<path d="M90 16A74 74 0 0 1 164 90" stroke="#f9c33c"/><path d="M164 90A74 74 0 0 1 90 164" stroke="#f97316"/><path d="M90 164A74 74 0 0 1 16 90" stroke="#60a5fa"/><path d="M16 90A74 74 0 0 1 90 16" stroke="#57a747"/>
+</g>
+<g stroke="#fff" stroke-width="5"><path d="M90 2V30M178 90H150M90 178V150M2 90H30"/></g>
+<circle cx="140" cy="40" r="9" fill="#fff"/>
+<g stroke="#fff" stroke-width="3.2" stroke-linecap="round"><path d="M140 24V20M156 40H160M140 56V60M124 40H120"/></g>
+<path d="M130 148C128 134 138 124 150 124C152 138 144 148 130 148Z" fill="#fff"/>
+<g stroke="#fff" stroke-width="3.6" stroke-linecap="round"><path d="M40 124V156M26 132L54 148M54 132L26 148"/></g>
+<path d="M40 56C26 52 22 38 26 26C40 28 48 42 40 56Z" fill="#fff"/>
+<circle cx="90" cy="90" r="42" fill="#fff"/>
+<rect x="66" y="84" width="48" height="30" rx="3" fill="#c98f4e"/><path d="M66 84L74 72H106L114 84Z" fill="#e6bd85"/><rect x="84" y="72" width="12" height="42" fill="#f6e3bd"/>
+</svg>
