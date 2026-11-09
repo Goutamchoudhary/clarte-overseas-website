@@ -171,8 +171,8 @@
       riderIn.style.transform = "rotate(" + tilt + "deg)";
       var reached = 0;
       stops.forEach(function (s, i) { var hit = p >= marks[i] - 0.012; s.classList.toggle("on", hit); if (hit) reached = i; });
-      // The ship takes over halfway along the last leg, so it sails into the final stop.
-      if (p >= (marks[5] + marks[6]) / 2) reached = 6;
+      // The ship takes over just after the crane leaves stop 6, then sails to the final stop.
+      if (p >= marks[5] + (marks[6] - marks[5]) * 0.1) reached = 6;
       setForm(formAt[reached]);
       rider.classList.toggle("back", dx < -0.2);
       if (cam) {
