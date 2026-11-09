@@ -168,7 +168,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
     <div class="j-why-cards">
       {why.map(([v, tk, t, bk, b], i) => (
         <div class={`j-card reveal d${i}`}>
-          <Vector name={v} size={120} />
+          <Vector name={v} size={96} />
           <h3 data-i18n={tk}>{t}</h3>
           <p data-i18n={bk}>{b}</p>
         </div>
@@ -285,7 +285,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
     <div class="j-work-grid">
       {work.map(([v, tk, t, bk, b], i) => (
         <div class={`j-card j-card-row reveal d${i % 3}`}>
-          <Vector name={v} size={92} />
+          <Vector name={v} size={76} />
           <span><h3 data-i18n={tk}>{t}</h3><p data-i18n={bk}>{b}</p></span>
         </div>
       ))}
