@@ -78,6 +78,11 @@ that area).
   `<name>-800.webp` copies, and the templates (`src/lib/responsive-img.ts`)
   add a `srcset` only when both exist. Forget it and the photo still works,
   but phones download the full 1200px file.
+- **Blog covers** are generated vectors: `node scripts/gen-blog-art.mjs` writes
+  `public/assets/img/blog/<id>.svg` from its `ART` map, one line per post. A new
+  post needs a line there (the script fails if one is missing; until then the
+  page falls back to the post's emoji). Once a cover has shipped, change it
+  under a new filename, as with any image here.
 - **Self-host every asset.** Product photos live in
   `public/assets/img/products/` (recipe in the README there) and
   certificates in `public/assets/certifications/docs/`. Nothing should load

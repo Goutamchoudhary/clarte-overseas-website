@@ -5,6 +5,11 @@ import PageHero from "../../components/PageHero.astro";
 import SlantDivider from "../../components/SlantDivider.astro";
 import { sortedPosts, BLOG_PAGE_SIZE, faqs, type Post } from "../../data/blogs";
 import { CONTACT } from "../../consts";
+import BlogBanner from "../../components/BlogBanner.astro";
+import Vector from "../../components/Vector.astro";
+import { isVersion } from "../../data/site-options";
+
+const v3 = isVersion("v3");
 
 // Page 1 keeps a big "featured" post above the grid (always the most recent
 // post); the grid itself — 15 cards per page — is paginated from everything
@@ -54,12 +59,10 @@ const description =
 
   <!-- ===================== FEATURED (page 1 only) ===================== -->
   {isFirstPage && (
-    <section class="py-14 lg:py-16 bg-white">
+    <section class="py-14 lg:py-16 bg-white j-blog-top">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <a href={`/blogs/${featured.id}`} class="blog-card-link card overflow-hidden grid lg:grid-cols-2 reveal">
-          <div class="blog-banner h-60 lg:h-full min-h-[260px]" style={`background:${featured.accent}`}>
-            <span class="b-emoji">{featured.emoji}</span>
-          </div>
+          <BlogBanner post={featured} class="h-60 lg:h-full min-h-[260px]" hero />
           <div class="p-8 lg:p-10 flex flex-col justify-center">
             <div class="flex items-center gap-3 flex-wrap">
               <span class="blog-cat">{featured.category}</span>
@@ -77,7 +80,7 @@ const description =
   )}
 
   <!-- ===================== GRID + PAGINATION ===================== -->
-  <section class={isFirstPage ? "pb-16 lg:pb-20 bg-white" : "pt-14 lg:pt-16 pb-16 lg:pb-20 bg-white"}>
+  <section class={isFirstPage ? "pb-16 lg:pb-20 bg-white" : "pt-14 lg:pt-16 pb-16 lg:pb-20 bg-white j-blog-top"}>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-end justify-between flex-wrap gap-3 mb-8 reveal">
         <p class="font-head font-semibold text-xs tracking-[0.18em] uppercase text-slate-400" data-i18n="blog.more_posts">More from the blog</p>
@@ -88,9 +91,7 @@ const description =
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
         {page.data.map((p, i) => (
           <a href={`/blogs/${p.id}`} class={`blog-card-link card overflow-hidden flex flex-col reveal ${["", "d1", "d2"][i % 3]}`}>
-            <div class="blog-banner h-44" style={`background:${p.accent}`}>
-              <span class="b-emoji">{p.emoji}</span>
-            </div>
+            <BlogBanner post={p} class="h-44" />
             <div class="p-6 flex flex-col flex-1">
               <div class="flex items-center gap-3 flex-wrap">
                 <span class="blog-cat">{p.category}</span>
@@ -153,7 +154,31 @@ const description =
     </div>
   </section>
 
-  {isFirstPage && (<>
+  {isFirstPage && v3 && (
+    <section class="j-faq j-blog-faq">
+      <div class="j-wrap j-faq-grid">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="blog.faq_eyebrow">FAQ</span>
+          <h2 class="j-h2 j-h2-md" data-i18n="blog.faq_heading">Questions buyers ask us</h2>
+          <p class="j-sub" data-i18n="blog.faq_sub">The things importers and manufacturers most often want to know before they get in touch.</p>
+          <span class="j-faq-art"><Vector name="mortar" size={120} /><Vector name="scoop" size={130} /></span>
+        </div>
+        <div class="reveal d1">
+          {faqs.map((f, i) => (
+            <details class="faq-item">
+              <summary>
+                <span data-i18n={`blog.faq${i+1}_q`}>{f.q}</span>
+                <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="faq-body" data-i18n={`blog.faq${i+1}_a`}>{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {isFirstPage && !v3 && (<>
   <!-- bottomColor must match the FAQ section's own background (bg-cream,
        #faf6ec) — it previously used the cool-grey mist token, so the
        diagonal ended in a different colour than the flat section right

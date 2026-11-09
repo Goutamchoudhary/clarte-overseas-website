@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { posts } from "../../data/blogs";
 import { SITE, CONTACT } from "../../consts";
+import BlogBanner from "../../components/BlogBanner.astro";
 
 export async function getStaticPaths() {
   return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
@@ -26,7 +27,7 @@ const schema = {
 <BaseLayout title={`${post.title} | Clarté Overseas`} description={post.excerpt}>
   <script type="application/ld+json" slot="head" is:inline set:html={JSON.stringify(schema)} />
 
-  <article>
+  <article class="j-article">
     <!-- Header -->
     <section class="about-hero pt-14 pb-12">
       <div class="max-w-4xl mx-auto px-6 lg:px-8">
@@ -46,9 +47,7 @@ const schema = {
 
     <!-- Cover banner (placeholder until real cover image is added) -->
     <div class="max-w-4xl mx-auto px-6 lg:px-8 -mt-2">
-      <div class="blog-banner rounded-3xl h-56 sm:h-72 reveal" style={`background:${post.accent}`}>
-        <span class="b-emoji" style="font-size:4.5rem">{post.emoji}</span>
-      </div>
+      <BlogBanner post={post} class="rounded-3xl h-56 sm:h-72 reveal" emojiStyle="font-size:4.5rem" hero />
     </div>
 
     <!-- Body -->
@@ -76,9 +75,7 @@ const schema = {
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {related.map((p, i) => (
             <a href={`/blogs/${p.id}`} class={`blog-card-link card overflow-hidden flex flex-col reveal ${["", "d1", "d2"][i % 3]}`}>
-              <div class="blog-banner h-40" style={`background:${p.accent}`}>
-                <span class="b-emoji">{p.emoji}</span>
-              </div>
+              <BlogBanner post={p} class="h-40" />
               <div class="p-6 flex flex-col flex-1">
                 <span class="blog-cat self-start">{p.category}</span>
                 <h3 class="blog-title font-head font-bold text-lg text-navy mt-3 leading-snug" data-i18n={`blog.post_${p.id.replace(/-/g,'_')}_title`}>{p.title}</h3>

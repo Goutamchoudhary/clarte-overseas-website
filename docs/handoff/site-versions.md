@@ -274,3 +274,10 @@ market, FAQ. In the market tabs, keep what Clarté holds apart from what comes
 through partner facilities (FSSAI, IEC, APEDA and ISO 9001 are ours; Halal,
 ISO 22000, HACCP, BRCGS and US FDA are partner-held). Certificate names stay
 untranslated; the rest uses `cert.mkt_*` in all 17 locales.
+
+## Blog on v3 (Nov 2026)
+
+List and article templates keep their markup; `BlogBanner.astro` swaps the emoji
+banner for the post's vector cover, and styles live at the end of `site-v3.css`.
+Covers come from `scripts/gen-blog-art.mjs`. Page headers on Certifications and
+Blog have no side vectors because the owner found them crowded.

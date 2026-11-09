@@ -21,7 +21,7 @@ import Vector from "./Vector.astro";
 const v3 = isVersion("v3");
 const ART: Record<string, [string, number, string, number]> = {
   Products: ["sack", 92, "seeds", 110], Export: ["truck", 110, "crane", 112],
-  About: ["farmer", 74, "fields", 104], Insights: ["moringa", 104, "scoop", 112], Contact: ["inquiry", 96, "plane", 112],
+  About: ["farmer", 74, "fields", 104], Contact: ["inquiry", 96, "plane", 112],
 };
 const art = v3 ? ART[watermark] : undefined;
 const v2 = isVersion("v2");
