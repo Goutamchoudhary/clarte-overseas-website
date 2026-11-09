@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Magnifier inspecting a crop field · use: How We Export route, stage 1 -->
+<path d="M6 132C50 104 104 112 196 124V186C196 192 192 196 186 196H16C10 196 6 192 6 186Z" fill="#7fb04b"/>
+<g fill="none" stroke="#5e8d35" stroke-width="5" stroke-linecap="round"><path d="M26 192C36 164 44 146 60 126M72 194C76 168 84 146 96 122M122 194C122 170 124 146 130 124M172 194C166 168 160 148 158 126"/></g>
+<circle cx="154" cy="42" r="22" fill="#f9c33c"/>
+<path d="M126 124L172 172" stroke="#15123a" stroke-width="16" stroke-linecap="round"/>
+<circle cx="88" cy="86" r="62" fill="#effaf3" stroke="#1f4693" stroke-width="12"/>
+<path d="M56 116C66 108 110 108 120 116V122C102 130 74 130 56 122Z" fill="#8a5f35"/>
+<path d="M88 114C88 96 88 80 88 64" fill="none" stroke="#3f8a39" stroke-width="7" stroke-linecap="round"/>
+<path d="M88 90C70 90 58 78 56 60C76 60 88 72 88 90Z" fill="#57a747"/><path d="M88 76C90 58 102 48 120 46C120 64 108 76 88 76Z" fill="#3f8a39"/>
+</svg>

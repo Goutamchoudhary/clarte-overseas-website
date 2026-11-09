@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160">
+<!-- Bank-issued letter of credit with an eye for "at sight" · use: How We Export, L/C at sight -->
+<ellipse cx="82" cy="154" rx="62" ry="5" fill="#15123a" opacity=".1"/>
+<rect x="24" y="6" width="112" height="144" rx="7" fill="#fff" stroke="#c4b5fd" stroke-width="3"/>
+<path d="M50 34L80 16L110 34Z" fill="#1f4693"/><rect x="54" y="36" width="52" height="5" fill="#16346f"/>
+<g fill="#60a5fa"><rect x="58" y="43" width="7" height="20"/><rect x="76.5" y="43" width="7" height="20"/><rect x="95" y="43" width="7" height="20"/></g>
+<rect x="50" y="63" width="60" height="6" rx="1" fill="#1f4693"/>
+<g stroke-linecap="round" stroke-width="6" stroke="#ddd6fe"><path d="M40 86H120M40 102H92M40 118H76"/></g>
+<circle cx="132" cy="118" r="38" fill="#be185d"/>
+<path d="M104 118C116 98 148 98 160 118C148 138 116 138 104 118Z" fill="#fff"/>
+<circle cx="132" cy="118" r="13" fill="#1f4693"/><circle cx="132" cy="118" r="6" fill="#15123a"/><circle cx="136" cy="113" r="3" fill="#fff"/>
+</svg>
