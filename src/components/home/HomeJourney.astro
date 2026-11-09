@@ -48,11 +48,11 @@ const hidden = (slug: string) => COMING_SOON_PRODUCTS.has(slug) || UNAVAILABLE_P
 const withPhotos = products.filter((p) => p.image && !hidden(p.slug));
 const reelItems = [...withPhotos.filter((p) => p.listImage), ...withPhotos.filter((p) => !p.listImage)]
   .slice(0, 16)
-  .map((p) => ({ name: p.name.replace(/ Powder.*$/, ""), src: smallest(p.image!) }));
+  .map((p) => ({ name: p.name, key: `cat.prod_${p.slug.replace(/-/g, "_")}_name`, src: smallest(p.image!) }));
 const reelA = reelItems.filter((_, i) => i % 2 === 0);
 const reelB = reelItems.filter((_, i) => i % 2 === 1);
 
-const stages = [["harvester", "Grown"], ["drying", "Dried"], ["mill", "Milled"], ["labtech", "Tested"], ["container", "Packed"], ["crane", "Shipped"]];
+const stages = [["harvester", "Grown", "stage_grown"], ["drying", "Dried", "stage_dried"], ["mill", "Milled", "stage_milled"], ["labtech", "Tested", "stage_tested"], ["container", "Packed", "stage_packed"], ["crane", "Shipped", "stage_shipped"]];
 const qc = [1, 2, 3, 4].map((n) => [`home.quality_step${n}_title`, `home.quality_step${n}_body`]);
 const qcText = [
   ["Raw-material grading", "Incoming produce is sorted and graded the moment it arrives."],
@@ -60,7 +60,7 @@ const qcText = [
   ["Metal detection", "Every batch runs through a metal detector, no exceptions."],
   ["Final check & sealing", "Signed off, then sealed and packed ready for export."],
 ];
-const markets = ["🇺🇸 United States", "🇬🇧 United Kingdom", "🇦🇪 UAE & Middle East", "🇦🇺 Australia", "🌏 South East Asia"];
+const markets = [["🇺🇸", "United States"], ["🇬🇧", "United Kingdom"], ["🇦🇪", "UAE & Middle East"], ["🇦🇺", "Australia"], ["🌏", "South East Asia"]];
 const industries = [
   ["home.industries_list1", "Food & beverage manufacturers"],
   ["home.industries_list2", "Flavour houses & ingredient blenders"],
@@ -96,17 +96,17 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
 <section id="home" class="j-hero">
   <div class="j-wrap j-hero-grid">
     <div class="j-words" data-j-words>
-      <h1 class="j-w j-w-a">Grown.</h1>
-      <span class="j-w j-w-b" aria-hidden="true">Milled.</span>
-      <span class="j-w j-w-c" aria-hidden="true">Shipped.</span>
+      <h1 class="j-w j-w-a" data-i18n="home.j_grown">Grown.</h1>
+      <span class="j-w j-w-b" aria-hidden="true" data-i18n="home.j_milled">Milled.</span>
+      <span class="j-w j-w-c" aria-hidden="true" data-i18n="home.j_shipped">Shipped.</span>
     </div>
     <div class="j-hero-side">
       <span class="j-kicker" data-i18n="home.hero_eyebrow">Merchant exporter of dehydrated foods · India</span>
-      <p>India's harvest, dehydrated and milled into {totalProducts} export-graded powders, seeds and additives.</p>
+      <p data-i18n="home.j_hero_sub">India's harvest, dehydrated and milled into export-graded powders, seeds and additives.</p>
       <a href="/products" class="j-explore"><span data-i18n="home.hero_cta_explore">Explore Products</span> <Fragment set:html={arrow} /></a>
       <a href="/contact" class="j-ticket">
         <span class="j-ticket-ico"><Vector name="inquiry" size={50} /></span>
-        <span class="j-ticket-txt"><b data-i18n="home.hero_cta_quote">Request a Quote</b><small>Reply within 24 hours</small></span>
+        <span class="j-ticket-txt"><b data-i18n="home.hero_cta_quote">Request a Quote</b><small data-i18n="home.j_reply_24">Reply within 24 hours</small></span>
         <span class="j-ticket-go" aria-hidden="true">→</span>
       </a>
     </div>
@@ -116,7 +116,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
 <div class="j-ticker" aria-label="Certifications and registrations">
   <div class="j-ticker-track">
     {[0, 1].map((n) => ticker.map((t) => (
-      <span class="j-ticker-item" aria-hidden={n === 1 ? "true" : undefined}><Vector name="shield" size={22} />{t}</span>
+      <span class="j-ticker-item" aria-hidden={n === 1 ? "true" : undefined}><Vector name="shield" size={22} /><span>{t.startsWith("Partner: ") ? <Fragment><span data-i18n="home.j_partner">Partner</span>: {t.slice(9)}</Fragment> : t}</span></span>
     )))}
   </div>
 </div>
@@ -140,6 +140,22 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       <span class="j-pill j-fall" style="--l:22%;--t:6%;--r:-10deg;--d:1.05s">{totalProducts} <span data-i18n="nav.products">Products</span></span>
       <span class="j-sack j-fall" style="--l:-5%;--t:40%;--r:-9deg;--d:.9s"><Vector name="sack" /></span>
       <span class="j-sprig vk-sprig-wrap" style="right:-1%;top:30%"><Vector name="sprig" size={72} /></span>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section id="industries" class="j-serve">
+  <div class="j-wrap j-serve-grid">
+    <div class="j-serve-img reveal from-left">
+      <img src="/assets/img/misc/industries-we-serve-v3.webp" alt="Food, supplement and bakery products made with dehydrated ingredients" width="1536" height="1024" loading="lazy" decoding="async" />
+      <span class="j-serve-badge"><Vector name="factory" size={104} /></span>
+    </div>
+    <div class="reveal d1 from-right">
+      <span class="eyebrow"><span data-i18n="home.industries_eyebrow">Who We Serve</span></span>
+      <h2 class="j-h2"><span data-i18n="home.industries_heading">Industries we serve</span></h2>
+      <p class="j-sub" data-i18n="home.industries_sub">We supply dehydrated ingredients to businesses that build flavour into their products:</p>
+      <ul class="j-list">{industries.map(([k, t]) => <li data-i18n={k}>{t}</li>)}</ul>
     </div>
   </div>
 </section>
@@ -171,7 +187,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       <div class="j-strip">
         <div class={`j-reel ${r ? "j-reel-down" : "j-reel-up"}`}>
           {[0, 1].map(() => reel.map((p) => (
-            <div class="j-frame"><img src={p.src} alt="" loading="lazy" decoding="async" width="240" height="240" /><span>{p.name}</span></div>
+            <div class="j-frame"><img src={p.src} alt="" loading="lazy" decoding="async" width="240" height="240" /><span data-i18n={p.key}>{p.name}</span></div>
           )))}
         </div>
       </div>
@@ -190,9 +206,41 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       </ol>
       <div class="j-stages">
         <span class="j-stages-line" aria-hidden="true"></span>
-        {stages.map(([v, t], i) => (
-          <div class="j-stage" style={`--i:${i}`}><span class="j-stage-ring"><Vector name={v} size={52} /></span><b>{t}</b></div>
+        {stages.map(([v, t, k], i) => (
+          <div class="j-stage" style={`--i:${i}`}><span class="j-stage-ring"><Vector name={v} size={52} /></span><b data-i18n={`home.j_${k}`}>{t}</b></div>
         ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CLARTE EDGE: arch spotlight -->
+<section id="advantage" class="j-edge">
+  <div class="j-wrap">
+    <div class="j-center reveal">
+      <span class="eyebrow light"><span data-i18n="home.edge_eyebrow">The Clarté Edge</span></span>
+      <h2 class="j-h2 j-light"><span data-i18n="home.edge_heading">Why buyers choose Clarté Overseas</span></h2>
+    </div>
+    <div class="j-edge-grid">
+      {[0, 3].map((start) => (
+        <div class={`j-edge-col ${start ? "j-edge-r" : "j-edge-l"}`}>
+          {edge.slice(start, start + 3).map(([v, tk, t, d], i) => (
+            <div class="j-edge-card" style={`--k:${start + i}`}>
+              <span class="j-edge-txt"><b data-i18n={tk}>{t}</b><small data-i18n={`home.j_edge${start + i + 1}`}>{d}</small></span>
+              <Vector name={v} size={66} />
+            </div>
+          ))}
+        </div>
+      ))}
+      <div class="j-arch" aria-hidden="true">
+        <div class="j-arch-inner">
+          <i class="j-star" style="left:18%;top:13%"></i><i class="j-star" style="left:35%;top:8%"></i><i class="j-star" style="left:63%;top:12%"></i><i class="j-star" style="left:80%;top:21%"></i><i class="j-star" style="left:12%;top:33%"></i><i class="j-star" style="left:86%;top:38%"></i>
+          <svg class="j-hills" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 70 Q110 10 220 62 T400 40 V160 H0Z" fill="#6d28d9" opacity=".55" /><path d="M0 110 Q120 60 250 104 T400 92 V160 H0Z" fill="#be185d" opacity=".55" /></svg>
+          {edge.map(([v, tk, t], k) => (
+            <div class="j-spot" style={`--k:${k}`}><Vector name={v} size={210} /><b data-i18n={tk}>{t}</b></div>
+          ))}
+        </div>
+        <svg class="j-seal" viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#0c0a1f" stroke="#6d28d9" stroke-width="2" /><defs><path id="jsealp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs><text font-family="Sora,sans-serif" font-size="12.5" font-weight="700" fill="#f9a8d4" letter-spacing="3"><textPath href="#jsealp">GROWN · MILLED · SHIPPED ·</textPath></text></svg>
       </div>
     </div>
   </div>
@@ -200,11 +248,16 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
 
 <!-- FROM INDIA TO YOUR PORT (replaces Export Footprint) -->
 <section id="markets" class="j-port">
+  <div class="j-flight" data-j-play aria-hidden="true">
+    <svg class="j-contrail" viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="100" d="M-8 52 C20 47 56 24 96 5" /></svg>
+    <span class="j-flyer"><Vector name="plane" /></span>
+    <svg class="j-burst" viewBox="-30 -30 60 60"><g stroke="#f9a8d4" stroke-width="3" stroke-linecap="round"><path d="M0 -12V-26M0 12V26M-12 0H-26M12 0H26M-9 -9L-18 -18M9 9L18 18M-9 9L-18 18M9 -9L18 -18" /></g><circle r="5" fill="#be185d" /></svg>
+  </div>
   <div class="j-wrap j-port-head reveal">
     <span class="eyebrow"><span data-i18n="home.markets_eyebrow">Export Footprint</span></span>
-    <h2 class="j-port-title">From India <em>to your port.</em></h2>
+    <h2 class="j-port-title"><span data-i18n="home.j_port_a">From India</span> <em data-i18n="home.j_port_b">to your port.</em></h2>
     <p data-i18n="home.markets_sub">From the US and UK to the Gulf, Australia and South East Asia, Clarté Overseas supplies importers, processors and distributors across multiple continents, and the map keeps growing.</p>
-    <div class="j-chips">{markets.map((m) => <span>{m}</span>)}</div>
+    <div class="j-chips">{markets.map(([f, m], i) => <span>{f} <span data-i18n={`home.j_market${i + 1}`}>{m}</span></span>)}</div>
   </div>
   <div class="j-globe">
     <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
@@ -222,54 +275,6 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
     <span class="j-india-tag">India</span>
     <span class="j-farmer"><Vector name="farmer" /></span>
     <span class="j-ship"><Vector name="ship" /></span>
-  </div>
-</section>
-
-<!-- WHO WE SERVE -->
-<section id="industries" class="j-serve">
-  <div class="j-wrap j-serve-grid">
-    <div class="j-serve-img reveal from-left">
-      <img src="/assets/img/misc/industries-we-serve-v3.webp" alt="Food, supplement and bakery products made with dehydrated ingredients" width="1536" height="1024" loading="lazy" decoding="async" />
-      <span class="j-serve-badge"><Vector name="mortar" size={104} /></span>
-    </div>
-    <div class="reveal d1 from-right">
-      <span class="eyebrow"><span data-i18n="home.industries_eyebrow">Who We Serve</span></span>
-      <h2 class="j-h2"><span data-i18n="home.industries_heading">Industries we serve</span></h2>
-      <p class="j-sub" data-i18n="home.industries_sub">We supply dehydrated ingredients to businesses that build flavour into their products:</p>
-      <ul class="j-list">{industries.map(([k, t]) => <li data-i18n={k}>{t}</li>)}</ul>
-    </div>
-  </div>
-</section>
-
-<!-- THE CLARTE EDGE: arch spotlight -->
-<section id="advantage" class="j-edge">
-  <div class="j-wrap">
-    <div class="j-center reveal">
-      <span class="eyebrow light"><span data-i18n="home.edge_eyebrow">The Clarté Edge</span></span>
-      <h2 class="j-h2 j-light"><span data-i18n="home.edge_heading">Why buyers choose Clarté Overseas</span></h2>
-    </div>
-    <div class="j-edge-grid">
-      {[0, 3].map((start) => (
-        <div class={`j-edge-col ${start ? "j-edge-r" : "j-edge-l"}`}>
-          {edge.slice(start, start + 3).map(([v, tk, t, d], i) => (
-            <div class="j-edge-card" style={`--k:${start + i}`}>
-              <span class="j-edge-txt"><b data-i18n={tk}>{t}</b><small>{d}</small></span>
-              <Vector name={v} size={66} />
-            </div>
-          ))}
-        </div>
-      ))}
-      <div class="j-arch" aria-hidden="true">
-        <div class="j-arch-inner">
-          <i class="j-star" style="left:18%;top:13%"></i><i class="j-star" style="left:35%;top:8%"></i><i class="j-star" style="left:63%;top:12%"></i><i class="j-star" style="left:80%;top:21%"></i><i class="j-star" style="left:12%;top:33%"></i><i class="j-star" style="left:86%;top:38%"></i>
-          <svg class="j-hills" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 70 Q110 10 220 62 T400 40 V160 H0Z" fill="#6d28d9" opacity=".55" /><path d="M0 110 Q120 60 250 104 T400 92 V160 H0Z" fill="#be185d" opacity=".55" /></svg>
-          {edge.map(([v, , t], k) => (
-            <div class="j-spot" style={`--k:${k}`}><Vector name={v} size={210} /><b>{t}</b></div>
-          ))}
-        </div>
-        <svg class="j-seal" viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#0c0a1f" stroke="#6d28d9" stroke-width="2" /><defs><path id="jsealp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs><text font-family="Sora,sans-serif" font-size="12.5" font-weight="700" fill="#f9a8d4" letter-spacing="3"><textPath href="#jsealp">GROWN · MILLED · SHIPPED ·</textPath></text></svg>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -339,7 +344,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       )}
       <a href="/contact" class="j-ticket j-ticket-sm">
         <span class="j-ticket-ico"><Vector name="inquiry" size={36} /></span>
-        <span class="j-ticket-txt"><b data-i18n="home.hero_cta_quote">Request a Quote</b><small>Reply within 24 hours</small></span>
+        <span class="j-ticket-txt"><b data-i18n="home.hero_cta_quote">Request a Quote</b><small data-i18n="home.j_reply_24">Reply within 24 hours</small></span>
         <span class="j-ticket-go" aria-hidden="true">→</span>
       </a>
     </div>

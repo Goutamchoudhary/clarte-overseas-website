@@ -16,6 +16,14 @@ const { crumb, eyebrow, heading, watermark, subtitle, chips = [], i18nPrefix, i1
 // right; V1 keeps the centred blueprint hero below, unchanged.
 import { isVersion } from "../data/site-options";
 import CollageTiles from "./versions/v2/CollageTiles.astro";
+import Vector from "./Vector.astro";
+// The Journey (v3): small floating illustrations either side of the compact header.
+const v3 = isVersion("v3");
+const ART: Record<string, [string, number, string, number]> = {
+  Products: ["sack", 92, "seeds", 110], Export: ["truck", 110, "crane", 112], Trust: ["certificate", 92, "shield", 92],
+  About: ["farmer", 74, "fields", 104], Insights: ["moringa", 104, "scoop", 112], Contact: ["inquiry", 96, "plane", 112],
+};
+const art = v3 ? ART[watermark] : undefined;
 const v2 = isVersion("v2");
 // Vary the starting category per page so each page opens on different photos.
 const start = [...watermark].reduce((n, ch) => n + ch.charCodeAt(0), 0) % 7;
@@ -52,7 +60,9 @@ const start = [...watermark].reduce((n, ch) => n + ch.charCodeAt(0), 0) % 7;
   </div>
 </section>
 ) : (
-<section class="page-hero blueprint">
+<section class="page-hero blueprint" data-ph={watermark}>
+  {art && <span class="ph-art ph-art-l" aria-hidden="true"><Vector name={art[0]} size={art[1]} /></span>}
+  {art && <span class="ph-art ph-art-r" aria-hidden="true"><Vector name={art[2]} size={art[3]} /></span>}
   <span class="bp-plus" style="top:16%;left:7%"></span>
   <span class="bp-plus" style="top:60%;left:13%"></span>
   <span class="bp-plus" style="top:28%;right:9%"></span>

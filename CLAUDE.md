@@ -99,6 +99,8 @@ that area).
   `cat.prod_<slug>_name` / `_tagline`,
   `prod.<slug>_desc`, `_f1`–`_f6` (features), `_u1`–`_u4` (uses),
   `_g1`–`_g4` (grades), `home.card<N>_title` / `_desc`.
+- **Any new visible text gets a `data-i18n` key and a translation in all 17
+  locale files in the same change.** Never ship English-only copy.
 - After editing any locale file, diff key sets across all 17 locales (and
   against the keys actually referenced via `data-i18n*` attributes in
   `src/`) before shipping — a missing key fails silently in the UI (falls

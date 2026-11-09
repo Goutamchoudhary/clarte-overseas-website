@@ -318,6 +318,56 @@ html.j-armed[data-version="v3"] [data-j-play]:not(.in) .j-fall { visibility: hid
   [data-version="v3"] .j-spot:nth-of-type(1) { opacity: 1; }
 }
 
+/* ---- Plane over "From India to your port": rises from the left edge, crosses
+   the heading, shrinks into the distance and vanishes in a small spark. ---- */
+[data-version="v3"] .j-flight { position: absolute; inset: 0; z-index: 8; pointer-events: none; container-type: size; }
+[data-version="v3"] .j-flyer { position: absolute; left: 0; top: 0; width: clamp(90px, 10vw, 150px); opacity: 0; }
+[data-version="v3"] .j-flight.in .j-flyer { animation: j-climb 13s linear .4s infinite; }
+@keyframes j-climb { 0% { transform: translate(-8.0cqw, 52.0cqh) translate(-50%,-50%) rotate(11.7deg) scale(1.00); opacity: 1; } 6% { transform: translate(0.6cqw, 50.0cqh) translate(-50%,-50%) rotate(8.4deg) scale(0.97); opacity: 1; } 12% { transform: translate(9.7cqw, 47.0cqh) translate(-50%,-50%) rotate(5.7deg) scale(0.94); opacity: 1; } 18% { transform: translate(19.3cqw, 43.2cqh) translate(-50%,-50%) rotate(3.7deg) scale(0.91); opacity: 1; } 24% { transform: translate(29.2cqw, 38.8cqh) translate(-50%,-50%) rotate(2.3deg) scale(0.88); opacity: 1; } 30% { transform: translate(39.5cqw, 33.8cqh) translate(-50%,-50%) rotate(1.4deg) scale(0.85); opacity: 1; } 36% { transform: translate(50.2cqw, 28.3cqh) translate(-50%,-50%) rotate(0.9deg) scale(0.82); opacity: 1; } 42% { transform: translate(61.2cqw, 22.6cqh) translate(-50%,-50%) rotate(0.7deg) scale(0.79); opacity: 1; } 48% { transform: translate(72.5cqw, 16.7cqh) translate(-50%,-50%) rotate(0.9deg) scale(0.76); opacity: 1; } 54% { transform: translate(84.1cqw, 10.8cqh) translate(-50%,-50%) rotate(1.4deg) scale(0.73); opacity: 1; } 60% { transform: translate(96.0cqw, 5.0cqh) translate(-50%,-50%) rotate(2.1deg) scale(0.70); opacity: 1; } 66% { transform: translate(96.0cqw, 5.0cqh) translate(-50%,-50%) rotate(-10deg) scale(.06); opacity: 0; } 100% { transform: translate(96.0cqw, 5.0cqh) translate(-50%,-50%) scale(.06); opacity: 0; } }
+[data-version="v3"] .j-contrail { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+[data-version="v3"] .j-contrail path { fill: none; stroke: #c4b5fd; stroke-width: .3; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; }
+[data-version="v3"] .j-flight.in .j-contrail path { animation: j-trail 13s linear .4s infinite; }
+@keyframes j-trail { 0% { stroke-dashoffset: 100; opacity: .75; } 60% { stroke-dashoffset: 0; opacity: .75; } 80%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+[data-version="v3"] .j-burst { position: absolute; left: 96%; top: 5%; width: 64px; height: 64px; margin: -32px 0 0 -32px; opacity: 0; }
+[data-version="v3"] .j-flight.in .j-burst { animation: j-burst 13s ease-out .4s infinite; }
+@keyframes j-burst { 0%, 62% { opacity: 0; transform: scale(.2) rotate(0); } 67% { opacity: 1; transform: scale(1) rotate(20deg); } 76%, 100% { opacity: 0; transform: scale(1.5) rotate(40deg); } }
+[data-version="v3"] .j-port { position: relative; }
+[data-version="v3"] .j-port > .j-wrap, [data-version="v3"] .j-port > .j-globe { position: relative; z-index: 1; }
+
+/* ---- Colour flow: Process and Edge share one night sky; the port section
+   rises out of it like dawn. ---- */
+[data-version="v3"] .j-process { background: radial-gradient(700px 480px at 82% 22%, rgba(109,40,217,.34), transparent 70%), #0c0a1f; }
+[data-version="v3"] .j-edge { background: radial-gradient(620px 420px at 10% 60%, rgba(190,24,93,.16), transparent 70%), radial-gradient(700px 460px at 88% 50%, rgba(109,40,217,.26), transparent 70%), #0c0a1f; }
+[data-version="v3"] .j-port::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 120px; background: linear-gradient(180deg, #0c0a1f 0%, rgba(12,10,31,.55) 35%, rgba(233,227,255,0) 100%); }
+[data-version="v3"] .j-port { padding-top: 7rem; }
+
+/* ---- Compact page headers (Products, How We Export, Certifications, About,
+   Blogs, Contact): a third of the screen, one colour per page. ---- */
+[data-version="v3"] .page-hero { --ph-bg: #f4efff; --ph-ink: #2e1a78; --ph-wm: rgba(109,40,217,.1); position: relative; overflow: hidden; display: flex; align-items: center; min-height: 270px; padding: 2.75rem 0 1.5rem; background: var(--ph-bg); }
+@media (min-width: 1024px) { [data-version="v3"] .page-hero { min-height: 330px; padding: 2rem 0 1.25rem; } }
+[data-version="v3"] .page-hero[data-ph="Export"] { --ph-bg: #eaf3ff; --ph-ink: #14306e; --ph-wm: rgba(37,99,235,.1); }
+[data-version="v3"] .page-hero[data-ph="Trust"] { --ph-bg: #fff0f6; --ph-ink: #6b0f3f; --ph-wm: rgba(190,24,93,.09); }
+[data-version="v3"] .page-hero[data-ph="About"] { --ph-bg: #fbf6e9; --ph-ink: #4a3208; --ph-wm: rgba(224,165,38,.16); }
+[data-version="v3"] .page-hero[data-ph="Insights"] { --ph-bg: #effaf3; --ph-ink: #14432b; --ph-wm: rgba(77,124,15,.12); }
+[data-version="v3"] .page-hero[data-ph="Contact"] { --ph-bg: #fdf0fb; --ph-ink: #5b1270; --ph-wm: rgba(192,38,211,.09); }
+[data-version="v3"] .page-hero.blueprint::before, [data-version="v3"] .page-hero.blueprint::after, [data-version="v3"] .page-hero .bp-plus { display: none; }
+[data-version="v3"] .page-hero > .max-w-7xl { width: 100%; position: static; }
+[data-version="v3"] .page-hero .crumb { position: absolute; left: max(1.5rem, calc(50% - 38rem)); top: .9rem; z-index: 2; color: var(--ph-ink); }
+[data-version="v3"] .page-hero .crumb a, [data-version="v3"] .page-hero .crumb span { color: var(--ph-ink); opacity: .7; }
+[data-version="v3"] .page-hero .ph-stack { padding: 0; }
+[data-version="v3"] .page-hero .ph-watermark { font-size: clamp(4.5rem, 14.6vw, 13rem); color: var(--ph-wm); background: none; -webkit-text-fill-color: var(--ph-wm); -webkit-text-stroke: 1.5px var(--ph-wm); }
+[data-version="v3"] .page-hero .eyebrow { color: var(--ph-ink); background: #fff; border-color: var(--ph-wm); }
+[data-version="v3"] .page-hero .ph-h1 { margin: .55rem auto 0; max-width: 54rem; font-size: clamp(1.7rem, 2.95vw, 2.65rem); line-height: 1.1; color: var(--ph-ink); }
+[data-version="v3"] .page-hero .ph-h1 br { display: none; }
+[data-version="v3"] .page-hero p { margin-top: .55rem; font-size: 1rem; line-height: 1.5; color: var(--ph-ink); opacity: .82; }
+[data-version="v3"] .page-hero .ph-chips { margin-top: .7rem; gap: .45rem; }
+[data-version="v3"] .page-hero .ph-chip { color: var(--ph-ink); border-color: var(--ph-wm); font-size: .78rem; padding: .32rem .75rem; box-shadow: none; }
+[data-version="v3"] .ph-art { display: none; position: absolute; bottom: 12px; z-index: 1; animation: j-float 5s ease-in-out infinite; }
+[data-version="v3"] .ph-art-l { left: max(1.5rem, calc(50% - 39rem)); } [data-version="v3"] .ph-art-r { right: max(1.5rem, calc(50% - 39rem)); animation-delay: -2s; }
+@media (min-width: 1100px) { [data-version="v3"] .ph-art { display: block; } }
+@keyframes j-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { [data-version="v3"] .j-flight, [data-version="v3"] .ph-art { animation: none; } [data-version="v3"] .j-flight { display: none; } [data-version="v3"] .ph-art { display: none; } }
+
 /* ---- Vector kit loop animations (docs/design/vector-kit) ---- */
 /* Loop animations for the vector kit (class names vl-*, vk-*). Off under prefers-reduced-motion. */
 @keyframes vlsway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
