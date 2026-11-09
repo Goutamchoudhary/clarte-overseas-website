@@ -2572,5 +2572,8 @@
   "cert.mkt_doc_prior": "预先通报申报支持",
   "cert.mkt_doc_import": "进口合规文件",
   "cert.mkt_doc_psi": "装运前检验支持",
-  "cert.mkt_doc_permit": "进口许可支持"
+  "cert.mkt_doc_permit": "进口许可支持",
+
+  "prod.lock_title": "此规格表已锁定",
+  "prod.lock_btn": "填写信息以解锁"
 }

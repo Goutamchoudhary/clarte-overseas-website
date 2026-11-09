@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Apoyo con la notificación previa",
   "cert.mkt_doc_import": "Documentos de cumplimiento de importación",
   "cert.mkt_doc_psi": "Apoyo en la inspección previa al embarque",
-  "cert.mkt_doc_permit": "Apoyo con permisos de importación"
+  "cert.mkt_doc_permit": "Apoyo con permisos de importación",
+
+  "prod.lock_title": "Esta ficha técnica está bloqueada",
+  "prod.lock_btn": "Introduce tus datos para desbloquear"
 }

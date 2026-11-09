@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Stöd med förhandsanmälan",
   "cert.mkt_doc_import": "Dokument för importefterlevnad",
   "cert.mkt_doc_psi": "Stöd med inspektion före leverans",
-  "cert.mkt_doc_permit": "Stöd med importtillstånd"
+  "cert.mkt_doc_permit": "Stöd med importtillstånd",
+
+  "prod.lock_title": "Det här specifikationsbladet är låst",
+  "prod.lock_btn": "Fyll i uppgifter för att låsa upp"
 }

@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Supporto per la notifica preventiva",
   "cert.mkt_doc_import": "Documenti di conformità all'importazione",
   "cert.mkt_doc_psi": "Supporto per l'ispezione pre-imbarco",
-  "cert.mkt_doc_permit": "Supporto per i permessi di importazione"
+  "cert.mkt_doc_permit": "Supporto per i permessi di importazione",
+
+  "prod.lock_title": "Questa scheda tecnica è bloccata",
+  "prod.lock_btn": "Inserisci i dati per sbloccare"
 }

@@ -3,6 +3,8 @@
 // the dialogs. Colours come from the category palette (body:has([data-cat])) in
 // /css/site-v3.css. The gallery, zoom and form toggle scripts in [product].astro
 // rely on the pd* ids and classes kept here.
+import fs from "node:fs";
+import path from "node:path";
 import type { Product, Category } from "../data/products";
 import { srcsetFor, smallest, SIZES } from "../lib/responsive-img";
 
@@ -20,6 +22,8 @@ interface Props {
 const { p, cat, specs, faqs, related, stockLabel, stockI18n, isUnavailable, isComingSoon } = Astro.props;
 const pk = p.slug.replace(/-/g, "_");
 const ck = cat.slug.replace(/-/g, "_");
+const art = `/assets/img/products/art/${p.slug}.svg`;
+const hasArt = fs.existsSync(path.join(process.cwd(), "public", art));
 ---
 <section class="j-pd-hero" data-cat={cat.slug}>
   <div class="j-wrap">
@@ -95,6 +99,7 @@ const ck = cat.slug.replace(/-/g, "_");
       <p class="j-pd-lead" data-i18n={`prod.${pk}_desc`}>{p.description}</p>
     </div>
     <div class="j-pd-panel reveal d1">
+      {hasArt && <img class="j-pd-mascot" src={art} alt="" width="96" height="96" loading="lazy" decoding="async" />}
       <h2 class="j-pd-h2" data-i18n="prod.features_heading">Key features</h2>
       <ul class="j-pd-ticks">
         {p.features.map((f, i) => <li data-i18n={`prod.${pk}_f${i + 1}`}>{f}</li>)}
@@ -133,15 +138,23 @@ const ck = cat.slug.replace(/-/g, "_");
       <p class="j-pd-note" data-i18n="prod.spec_note">Specs are indicative and can be tailored to your formulation. Full COA and spec sheet shared on request.</p>
     </div>
     <div class="j-pd-sheet reveal d1">
-      <span class="j-pd-doc" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
-      </span>
-      <p class="j-pd-sheet-label" data-i18n="prod.spec_card_label">Technical Data Sheet</p>
-      <p class="j-pd-sheet-title">{p.name} <span data-i18n="prod.spec_sheet_word">spec sheet</span></p>
-      <p class="j-pd-sheet-sub" data-i18n="prod.spec_pdf_sub">PDF · full technical data sheet</p>
+      <button type="button" class="j-lock-doc" data-open-specsheet data-slug={p.slug} data-product={p.name} data-category={cat.name} tabindex="-1" aria-hidden="true">
+        <span class="pd-spec-btn-label" hidden></span>
+        <span class="j-lock-under"></span>
+        <span class="j-lock-paper">
+          <span class="j-lock-band"><small data-i18n="prod.spec_card_label">Technical Data Sheet</small><b>{p.name}</b></span>
+          <span class="j-lock-rows"><span class="j-lock-row"><i style="width:26%"></i><i style="width:40%"></i></span><span class="j-lock-row"><i style="width:34%"></i><i style="width:28%"></i></span><span class="j-lock-row"><i style="width:22%"></i><i style="width:46%"></i></span><span class="j-lock-row"><i style="width:30%"></i><i style="width:36%"></i></span><span class="j-lock-row"><i style="width:24%"></i><i style="width:44%"></i></span><span class="j-lock-row"><i style="width:36%"></i><i style="width:30%"></i></span><span class="j-lock-row"><i style="width:20%"></i><i style="width:42%"></i></span><span class="j-lock-row"><i style="width:28%"></i><i style="width:34%"></i></span></span>
+        </span>
+        <span class="j-lock-frost"></span>
+        <span class="j-lock-badge">
+          <svg viewBox="0 0 48 56" aria-hidden="true"><path class="j-lock-shackle" d="M13 25V15a11 11 0 0 1 22 0v10" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><rect x="5" y="24" width="38" height="29" rx="8" fill="currentColor"/><circle cx="24" cy="36" r="4.5" fill="#fff"/><rect x="22" y="38" width="4" height="9" rx="2" fill="#fff"/></svg>
+        </span>
+      </button>
+      <p class="j-pd-sheet-title" data-i18n="prod.lock_title">This spec sheet is locked</p>
+      <p class="j-pd-sheet-sub"><span>{p.name}</span> · <span data-i18n="prod.spec_pdf_sub">PDF · full technical data sheet</span></p>
       <button type="button" class="j-pd-sheet-btn" data-open-specsheet data-slug={p.slug} data-product={p.name} data-category={cat.name} aria-label={`Download ${p.name} spec sheet`}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
-        <span class="pd-spec-btn-label" data-i18n="prod.spec_download_btn">Download spec sheet</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <span class="pd-spec-btn-label" data-i18n="prod.lock_btn">Enter details to unlock</span>
       </button>
       <p class="j-pd-sheet-note" data-i18n="prod.spec_free_note">Free · share a few details to unlock the PDF</p>
       <button type="button" class="j-pd-sheet-link" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="prod.get_pricing">Get pricing &amp; samples</span></button>

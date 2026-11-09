@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "Dukungan pengajuan prior notice",
   "cert.mkt_doc_import": "Dokumen kepatuhan impor",
   "cert.mkt_doc_psi": "Dukungan inspeksi pra-pengiriman",
-  "cert.mkt_doc_permit": "Dukungan izin impor"
+  "cert.mkt_doc_permit": "Dukungan izin impor",
+
+  "prod.lock_title": "Spec sheet ini terkunci",
+  "prod.lock_btn": "Isi data untuk membuka"
 }

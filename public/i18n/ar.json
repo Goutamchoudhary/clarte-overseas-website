@@ -1622,5 +1622,8 @@
   "cert.mkt_doc_prior": "دعم تقديم الإشعار المسبق",
   "cert.mkt_doc_import": "مستندات الامتثال للاستيراد",
   "cert.mkt_doc_psi": "دعم الفحص قبل الشحن",
-  "cert.mkt_doc_permit": "دعم تصاريح الاستيراد"
+  "cert.mkt_doc_permit": "دعم تصاريح الاستيراد",
+
+  "prod.lock_title": "ورقة المواصفات هذه مقفلة",
+  "prod.lock_btn": "أدخل بياناتك لفتحها"
 }

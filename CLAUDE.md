@@ -85,6 +85,9 @@ that area).
   post needs a line there (the script fails if one is missing; until then the
   page falls back to the post's emoji). Once a cover has shipped, change it
   under a new filename, as with any image here.
+- **Product mascots:** `node scripts/gen-product-art.mjs` writes
+  `public/assets/img/products/art/<slug>.svg`; a new product needs an entry in
+  its `ART` map, and the page simply shows none until then.
 - **Self-host every asset.** Product photos live in
   `public/assets/img/products/` (recipe in the README there) and
   certificates in `public/assets/certifications/docs/`. Nothing should load
