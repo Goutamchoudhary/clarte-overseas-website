@@ -1,0 +1,198 @@
+---
+// Product detail page on "The Journey" (v3): everything between the navbar and
+// the dialogs. Colours come from the category palette (body:has([data-cat])) in
+// /css/site-v3.css. The gallery, zoom and form toggle scripts in [product].astro
+// rely on the pd* ids and classes kept here.
+import type { Product, Category } from "../data/products";
+import { srcsetFor, smallest, SIZES } from "../lib/responsive-img";
+
+interface Props {
+  p: Product;
+  cat: Category;
+  specs: [string, string, string, string?][];
+  faqs: { key: string; q: string; a: string }[];
+  related: Product[];
+  stockLabel: string;
+  stockI18n: string;
+  isUnavailable: boolean;
+  isComingSoon: boolean;
+}
+const { p, cat, specs, faqs, related, stockLabel, stockI18n, isUnavailable, isComingSoon } = Astro.props;
+const pk = p.slug.replace(/-/g, "_");
+const ck = cat.slug.replace(/-/g, "_");
+---
+<section class="j-pd-hero" data-cat={cat.slug}>
+  <div class="j-wrap">
+    <nav class="j-cat-crumb" aria-label="Breadcrumb">
+      <a href="/" data-i18n="nav.home">Home</a> <span aria-hidden="true">/</span>
+      <a href="/products" data-i18n="nav.products">Products</a> <span aria-hidden="true">/</span>
+      <a href={`/products/${cat.slug}`} data-i18n={`products.cat_${ck}_name`}>{cat.name}</a> <span aria-hidden="true">/</span>
+      <span data-i18n={`cat.prod_${pk}_name`}>{p.name}</span>
+    </nav>
+    <div class="j-pd-grid">
+      <div class="pd-media">
+        <div class={`pd-frame${p.image ? " has-photo" : " no-img"}`} id="pdFrame">
+          {p.image
+            ? <img src={p.image} srcset={srcsetFor(p.image)} sizes={SIZES.detail} alt={p.name} id="pdImg" class="pd-img" fetchpriority="high" data-splash-hero />
+            : <span class="pd-emoji">{p.emoji}</span>}
+        </div>
+        {p.image && p.gallery?.length ? (
+          <div class="pd-thumbs" role="group" aria-label="Product photos">
+            {[{ src: p.image, alt: p.name }, ...p.gallery].map((g, i) => (
+              <button type="button" class={`pd-thumb${i === 0 ? " active" : ""}`} data-src={g.src} data-srcset={srcsetFor(g.src)} data-alt={g.alt} aria-label={g.alt} aria-pressed={i === 0 ? "true" : "false"}>
+                <img src={smallest(g.src)} alt="" loading="lazy" decoding="async" />
+              </button>
+            ))}
+          </div>
+        ) : null}
+      </div>
+
+      <div class="j-pd-info">
+        <h1 class="j-pd-title">
+          <span data-i18n={`cat.prod_${pk}_name`}>{p.name}</span>
+          <small data-i18n="prod.title_kicker">Exporter &amp; Bulk Supplier in India</small>
+        </h1>
+        {p.botanical && <p class="j-pd-botanical">{p.botanical}</p>}
+        <p class="j-pd-tagline" data-i18n={`cat.prod_${pk}_tagline`}>{p.tagline}</p>
+        <div class="j-pd-meta">
+          <span class="j-pd-hsn">HSN {p.hsn}</span>
+          <div class={`pd-stock${isUnavailable ? " pd-stock-unavail" : isComingSoon ? " pd-stock-out" : ""}`}>
+            <span class={isUnavailable ? "pd-stock-dot-unavail" : isComingSoon ? "pd-stock-dot-out" : "pd-stock-dot"} aria-hidden="true"></span>
+            <span data-i18n={stockI18n}>{stockLabel}</span>
+          </div>
+        </div>
+        {p.forms && (
+          <div class="pd-forms">
+            <span class="pd-forms-label" data-i18n="prod.available_in">Available in</span>
+            <div class="pd-forms-toggle" role="group">
+              {p.forms.map((f, i) => <button type="button" class={`pd-form-btn${i === 0 ? " active" : ""}`} data-form={f}>{f}</button>)}
+            </div>
+          </div>
+        )}
+        <div class="pd-cta">
+          <button type="button" class="btn btn-primary" data-open-enquire data-product={p.name} data-category={cat.name}>
+            <span data-i18n="prod.enquire_btn">Enquire / Request a quote</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <a href="#" data-wa data-wa-msg="Hi Clarté Overseas, I'm interested in your {product} — could you share pricing, MOQ and availability?" data-wa-product={p.name} class="btn btn-wa">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+            <span data-i18n="prod.whatsapp_btn">WhatsApp</span>
+          </a>
+        </div>
+        <button type="button" class="j-pd-sample" data-open-enquire data-is-sample="true" data-product={p.name} data-category={cat.name}>
+          <span data-i18n="prod.sample_req_btn">Request a Free Sample</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="j-pd-sec">
+  <div class="j-wrap j-pd-about">
+    <div class="reveal">
+      <p class="j-pd-label" data-i18n={`cat.prod_${pk}_name`}>{p.name}</p>
+      <p class="j-pd-lead" data-i18n={`prod.${pk}_desc`}>{p.description}</p>
+    </div>
+    <div class="j-pd-panel reveal d1">
+      <h2 class="j-pd-h2" data-i18n="prod.features_heading">Key features</h2>
+      <ul class="j-pd-ticks">
+        {p.features.map((f, i) => <li data-i18n={`prod.${pk}_f${i + 1}`}>{f}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="j-pd-sec j-pd-sec-tight">
+  <div class="j-wrap">
+    <h2 class="j-pd-h2 reveal" data-i18n="prod.uses_heading">Where it's used</h2>
+    <div class="j-pd-uses">
+      {p.uses.map((u, i) => (
+        <div class={`j-pd-use reveal d${i}`}>
+          <span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+          <p data-i18n={`prod.${pk}_u${i + 1}`}>{u}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="j-pd-sec">
+  <div class="j-wrap j-pd-specs">
+    <div class="j-pd-table reveal">
+      <h2 class="j-pd-h2" data-i18n="prod.spec_heading">Specifications</h2>
+      <dl class="pd-spec">
+        {specs.map(([k, v, i18nKey, vKey]) => (
+          <div class="pd-spec-row"><dt data-i18n={i18nKey}>{k}</dt><dd data-i18n={vKey}>{v}</dd></div>
+        ))}
+      </dl>
+      <h3 class="j-pd-h3" data-i18n="prod.grades_heading">Typical grades</h3>
+      <div class="j-pd-grades">
+        {p.grades.map((g, i) => <span data-i18n={`prod.${pk}_g${i + 1}`}>{g}</span>)}
+      </div>
+      <p class="j-pd-note" data-i18n="prod.spec_note">Specs are indicative and can be tailored to your formulation. Full COA and spec sheet shared on request.</p>
+    </div>
+    <div class="j-pd-sheet reveal d1">
+      <span class="j-pd-doc" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+      </span>
+      <p class="j-pd-sheet-label" data-i18n="prod.spec_card_label">Technical Data Sheet</p>
+      <p class="j-pd-sheet-title">{p.name} <span data-i18n="prod.spec_sheet_word">spec sheet</span></p>
+      <p class="j-pd-sheet-sub" data-i18n="prod.spec_pdf_sub">PDF · full technical data sheet</p>
+      <button type="button" class="j-pd-sheet-btn" data-open-specsheet data-slug={p.slug} data-product={p.name} data-category={cat.name} aria-label={`Download ${p.name} spec sheet`}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        <span class="pd-spec-btn-label" data-i18n="prod.spec_download_btn">Download spec sheet</span>
+      </button>
+      <p class="j-pd-sheet-note" data-i18n="prod.spec_free_note">Free · share a few details to unlock the PDF</p>
+      <button type="button" class="j-pd-sheet-link" data-open-enquire data-product={p.name} data-category={cat.name}><span data-i18n="prod.get_pricing">Get pricing &amp; samples</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="j-faq j-pd-faq">
+  <div class="j-wrap j-faq-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="prod.faq_eyebrow">Sourcing</span>
+      <h2 class="j-h2 j-h2-md"><span data-i18n="prod.faq_heading_a">Buying </span><span data-i18n={`cat.prod_${pk}_name`}>{p.name}</span><span data-i18n="prod.faq_heading_b"> from India</span></h2>
+      <p class="j-sub" data-i18n="prod.faq_intro">Clarté Overseas is an India-based merchant exporter and bulk supplier of dehydrated food ingredients, shipping food-grade material to manufacturers, flavour houses, nutraceutical brands and ingredient distributors worldwide. Below are the questions buyers ask most before a first order.</p>
+    </div>
+    <div class="reveal d1">
+      {faqs.map((f) => (
+        <details class="faq-item">
+          <summary>
+            <span data-i18n={`prod.${f.key}_q`}>{f.q}</span>
+            <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body" data-i18n={`prod.${f.key}_a`}>{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+{related.length > 0 && (
+  <section class="j-cat-list j-pd-related">
+    <div class="j-wrap">
+      <div class="j-pd-related-head reveal">
+        <h2 class="j-pd-h2"><span data-i18n="prod.related_prefix">More from</span> <span data-i18n={`products.cat_${ck}_name`}>{cat.name}</span></h2>
+        <a href={`/products/${cat.slug}`} class="prod-view"><span data-i18n="prod.view_all">View all</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="prod-grid">
+        {related.map((r) => (
+          <article class="prod-card reveal">
+            <a href={`/products/${cat.slug}/${r.slug}`} class="prod-media" aria-label={r.name}>
+              {(r.listImage || r.image) ? <img src={r.listImage || r.image} srcset={srcsetFor(r.listImage || r.image)} sizes={SIZES.card} alt={r.name} loading="lazy" decoding="async" /> : <span class="prod-emoji">{r.emoji}</span>}
+            </a>
+            <div class="prod-body">
+              <span class="prod-hsn">HSN {r.hsn}</span>
+              <h3 class="prod-name"><a href={`/products/${cat.slug}/${r.slug}`} data-i18n={`cat.prod_${r.slug.replace(/-/g, "_")}_name`}>{r.name}</a></h3>
+              <p class="prod-tag" data-i18n={`cat.prod_${r.slug.replace(/-/g, "_")}_tagline`}>{r.tagline}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
