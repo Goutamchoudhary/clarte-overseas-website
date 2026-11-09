@@ -2540,5 +2540,8 @@
   "products.doc5_desc": "约定的等级、目数和质量参数。",
   "products.docs_note": "如目的地有要求，我们会加附植物检疫证书及其他市场专用证书。",
 
-  "products.faq_heading": "选购我们的产品：常见问题解答"
+  "products.faq_heading": "选购我们的产品：常见问题解答",
+
+  "home.products_cta": "浏览产品类别",
+  "home.products_count_categories": "个品类"
 }

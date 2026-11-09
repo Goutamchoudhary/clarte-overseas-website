@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "Üzerinde anlaşılan kalite, elek boyutu ve kalite parametreleri.",
   "products.docs_note": "Bitki sağlık sertifikası ve pazara özgü diğer belgeler, varış ülkeniz gerektirdiğinde eklenir.",
 
-  "products.faq_heading": "Ürün yelpazemizden satın alma: yanıtlar"
+  "products.faq_heading": "Ürün yelpazemizden satın alma: yanıtlar",
+
+  "home.products_cta": "Kategorileri keşfedin",
+  "home.products_count_categories": "Kategori"
 }

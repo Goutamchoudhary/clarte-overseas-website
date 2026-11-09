@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "O grau, a granulometria e os parâmetros de qualidade acordados.",
   "products.docs_note": "Certificados fitossanitários e outros específicos do mercado são adicionados quando o destino os exige.",
 
-  "products.faq_heading": "Comprar da nossa linha: suas dúvidas, respondidas"
+  "products.faq_heading": "Comprar da nossa linha: suas dúvidas, respondidas",
+
+  "home.products_cta": "Explorar categorias",
+  "home.products_count_categories": "Categorias"
 }

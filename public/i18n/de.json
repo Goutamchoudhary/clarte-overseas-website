@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "Die vereinbarte Qualität, Mesh-Größe und Qualitätsparameter.",
   "products.docs_note": "Pflanzengesundheits- und weitere marktspezifische Zeugnisse kommen hinzu, wenn Ihr Zielland sie verlangt.",
 
-  "products.faq_heading": "Einkaufen aus unserem Sortiment: Ihre Fragen, beantwortet"
+  "products.faq_heading": "Einkaufen aus unserem Sortiment: Ihre Fragen, beantwortet",
+
+  "home.products_cta": "Kategorien entdecken",
+  "home.products_count_categories": "Kategorien"
 }

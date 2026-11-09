@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "Den överenskomna kvaliteten, maskstorleken och kvalitetsparametrarna.",
   "products.docs_note": "Växtskyddscertifikat och andra marknadsspecifika intyg läggs till när destinationen kräver dem.",
 
-  "products.faq_heading": "Köpa från vårt sortiment: dina frågor besvarade"
+  "products.faq_heading": "Köpa från vårt sortiment: dina frågor besvarade",
+
+  "home.products_cta": "Utforska kategorier",
+  "home.products_count_categories": "Kategorier"
 }

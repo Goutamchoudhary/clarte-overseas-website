@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "Il grado, la granulometria e i parametri di qualità concordati.",
   "products.docs_note": "I certificati fitosanitari e altri specifici per il mercato vengono aggiunti quando la destinazione li richiede.",
 
-  "products.faq_heading": "Acquistare dalla nostra gamma: le risposte alle tue domande"
+  "products.faq_heading": "Acquistare dalla nostra gamma: le risposte alle tue domande",
+
+  "home.products_cta": "Esplora le categorie",
+  "home.products_count_categories": "Categorie"
 }

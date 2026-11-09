@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "Grade, mesh, dan parameter mutu yang disepakati.",
   "products.docs_note": "Sertifikat fitosanitari dan sertifikat khusus pasar lainnya ditambahkan bila diwajibkan negara tujuan.",
 
-  "products.faq_heading": "Membeli dari rangkaian produk kami: jawabannya"
+  "products.faq_heading": "Membeli dari rangkaian produk kami: jawabannya",
+
+  "home.products_cta": "Jelajahi Kategori",
+  "home.products_count_categories": "Kategori"
 }

@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "The agreed grade, mesh and quality parameters.",
   "products.docs_note": "Phytosanitary and other market-specific certificates are added when your destination requires them.",
 
-  "products.faq_heading": "Buying from our range, answered"
+  "products.faq_heading": "Buying from our range, answered",
+
+  "home.products_cta": "Explore Categories",
+  "home.products_count_categories": "Categories"
 }

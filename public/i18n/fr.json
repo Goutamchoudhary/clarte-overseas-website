@@ -1590,5 +1590,8 @@
   "products.doc5_desc": "Le grade, la granulométrie et les paramètres de qualité convenus.",
   "products.docs_note": "Les certificats phytosanitaires et autres documents propres à chaque marché sont ajoutés lorsque votre destination les exige.",
 
-  "products.faq_heading": "Acheter dans notre gamme : vos questions, nos réponses"
+  "products.faq_heading": "Acheter dans notre gamme : vos questions, nos réponses",
+
+  "home.products_cta": "Explorer les catégories",
+  "home.products_count_categories": "Catégories"
 }
