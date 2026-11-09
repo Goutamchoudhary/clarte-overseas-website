@@ -766,9 +766,6 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] .cc-ico { border-radius: 14px; background: rgba(196,181,253,.14); color: #d8ccff; }
 [data-version="v3"] .cc-label { color: #b9a9f5; }
 [data-version="v3"] .cc-value { color: #f0edff; }
-[data-version="v3"] .cc-art { display: none; margin-top: auto; padding-top: 1.25rem; }
-[data-version="v3"] .cc-art .vec { display: block; margin: 0 auto; }
-@media (min-width: 940px) { [data-version="v3"] .cc-art { display: block; } [data-version="v3"] .cc-art + .cc-social { margin-top: 0; padding-top: 1.5rem; } }
 [data-version="v3"] .cc-social a { border-radius: 99px; background: rgba(196,181,253,.14); }
 [data-version="v3"] .cc-social a:hover { color: var(--violet); }
 [data-version="v3"] .cc-form-h, [data-version="v3"] .cc-modal-title { font-family: var(--font-head); color: var(--ink); letter-spacing: -.02em; }

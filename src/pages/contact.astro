@@ -3,10 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import { CONTACT, SOCIAL } from "../consts";
 import { categories as catData, products } from "../data/products";
-import Vector from "../components/Vector.astro";
-import { isVersion } from "../data/site-options";
-
-const v3 = isVersion("v3");
 
 const title = "Contact Clarté Overseas — Request a Quote | Dehydrated Food Exporter";
 const description =
@@ -104,8 +100,6 @@ const mapLink = "https://maps.app.goo.gl/SVvjHRfum4CHLrJV8";
               <span data-i18n="cta.book_discovery">Book a 20-min discovery call</span>
             </a>
           )}
-
-          {v3 && <span class="cc-art" aria-hidden="true"><Vector name="inquiry" size={120} /></span>}
 
           <div class="cc-social">
             <a href={SOCIAL.instagram} target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>

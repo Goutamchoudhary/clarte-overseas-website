@@ -21,7 +21,7 @@ import Vector from "./Vector.astro";
 const v3 = isVersion("v3");
 const ART: Record<string, [string, number, string, number]> = {
   Products: ["sack", 92, "seeds", 110], Export: ["truck", 110, "crane", 112],
-  About: ["farmer", 74, "fields", 104],
+  About: ["farmer", 74, "fields", 104], Contact: ["", 0, "inquiry", 124],
 };
 const art = v3 ? ART[watermark] : undefined;
 const v2 = isVersion("v2");
@@ -61,7 +61,7 @@ const start = [...watermark].reduce((n, ch) => n + ch.charCodeAt(0), 0) % 7;
 </section>
 ) : (
 <section class="page-hero blueprint" data-ph={watermark}>
-  {art && <span class="ph-art ph-art-l" aria-hidden="true"><Vector name={art[0]} size={art[1]} /></span>}
+  {art?.[0] && <span class="ph-art ph-art-l" aria-hidden="true"><Vector name={art[0]} size={art[1]} /></span>}
   {art && <span class="ph-art ph-art-r" aria-hidden="true"><Vector name={art[2]} size={art[3]} /></span>}
   <span class="bp-plus" style="top:16%;left:7%"></span>
   <span class="bp-plus" style="top:60%;left:13%"></span>
