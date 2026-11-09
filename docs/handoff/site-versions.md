@@ -281,3 +281,9 @@ List and article templates keep their markup; `BlogBanner.astro` swaps the emoji
 banner for the post's vector cover, and styles live at the end of `site-v3.css`.
 Covers come from `scripts/gen-blog-art.mjs`. Page headers on Certifications and
 Blog have no side vectors because the owner found them crowded.
+
+## Contact on v3 (Nov 2026)
+
+Same markup and form script as v1, restyled at the end of `site-v3.css`
+(`.j-contact`, `.cc-*`, `.map-*`). The only v3 addition is one vector in the info
+panel. Don't submit the form when testing: it posts to the live Web3Forms inbox.
