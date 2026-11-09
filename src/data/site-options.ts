@@ -9,9 +9,8 @@ export type Option = { id: string; label: string; note: string; ready: boolean }
 // Whole-site versions: each restyles every page (palette, components, motion,
 // home hero and product-range section). Plan: docs/handoff/site-versions.md.
 export const VERSIONS: Option[] = [
-  { id: "v1", label: "V1 · Classic Harvest", note: "The original site.", ready: true },
-  { id: "v3", label: "The Journey (one combined design)", note: "New home page; other pages follow one by one.", ready: true },
-  { id: "v2", label: "V2 · Living Collage", note: "White + ink, navy→violet→pink CTAs, rotating category collage hero, bento product range, collage page heroes.", ready: true },
+  { id: "v1", label: "Version 1 · Original site", note: "The design that has been live so far.", ready: true },
+  { id: "v3", label: "New design · The Journey", note: "Home, Products, How We Export, Certifications, About, Blog and Contact are done. Category list and product detail pages are still to be designed.", ready: true },
 ];
 
 export const HEROES: Option[] = [
@@ -72,19 +71,16 @@ export function normalizeConfig(input: unknown, allowUnready = false): SiteConfi
 
 // Preview override, so a version can be reviewed before it's published:
 //   * `SITE_VERSION=v2 npm run build` (local), or
-//   * a Vercel *preview* deployment (never production) with SITE_VERSION set,
-//     or a branch whose site-config.preview.json names a version.
-// Production builds ignore both and use site-config.json alone.
+//   * site-config.preview.json, which local and Vercel *preview* builds read.
+// Production builds ignore both and use site-config.json alone, so the file
+// can be merged safely: the live site changes only when the admin publishes.
 const env = (typeof process !== "undefined" ? process.env : {}) as Record<string, string | undefined>;
 const isProd = env.VERCEL_ENV === "production";
 function previewVersion(): string | undefined {
   if (isProd) return undefined;
   if (env.SITE_VERSION) return env.SITE_VERSION;
-  if (env.VERCEL_ENV === "preview") {
-    const files = import.meta.glob("./site-config.preview.json", { eager: true, import: "default" }) as Record<string, { version?: string }>;
-    return Object.values(files)[0]?.version;
-  }
-  return undefined;
+  const files = import.meta.glob("./site-config.preview.json", { eager: true, import: "default" }) as Record<string, { version?: string }>;
+  return Object.values(files)[0]?.version;
 }
 const pv = previewVersion();
 

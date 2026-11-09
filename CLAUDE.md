@@ -162,7 +162,9 @@ that area).
   animations: `docs/design/vector-kit/`.
 - Site versions are wired through `site-config.json` → `version` and
   `public/{css,js}/site-v<N>.{css,js}` (scoped `[data-version="vN"]`, linked
-  only for that version). Preview one with `SITE_VERSION=v2 npm run build`.
+  only for that version). Local and preview builds show the version in
+  `src/data/site-config.preview.json`; production uses `site-config.json` only
+  (keep it on `v1` until the owner publishes from the admin).
   If you add a version stylesheet, keep it directly after styles.css — the
   defer script relies on that order.
 

@@ -97,6 +97,8 @@ if (Astro.request.method === "POST") {
 }
 
 // ---- 3. Data for the signed-in view ----------------------------------------
+// Only settings with a real choice are shown; the rest keep their current value.
+const isChoice = (g: (typeof GROUPS)[number]) => g.options.filter((o) => o.ready).length > 1;
 let current: SiteConfig = siteConfig;
 let history: HistoryItem[] = [];
 let ghError = false;
@@ -106,7 +108,7 @@ if (authed && !missing.length) {
     history = await configHistory(8);
   } catch { ghError = true; }
 }
-const summary = (c: SiteConfig) => GROUPS.map((g) => g.options.find((o) => o.id === c[g.key])?.label ?? c[g.key]).join(" · ");
+const summary = (c: SiteConfig) => GROUPS.filter(isChoice).map((g) => g.options.find((o) => o.id === c[g.key])?.label ?? c[g.key]).join(" · ");
 const fmt = (d: string) => new Date(d).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Kolkata" });
 ---
 <!doctype html>
@@ -182,14 +184,15 @@ const fmt = (d: string) => new Date(d).toLocaleString("en-GB", { dateStyle: "med
         <div class="grid">
           <form method="post" id="cfg">
             <input type="hidden" name="action" value="publish" />
-            {GROUPS.map((g) => (
+            {GROUPS.filter((g) => !isChoice(g)).map((g) => <input type="hidden" name={g.key} value={current[g.key]} />)}
+            {GROUPS.filter(isChoice).map((g) => (
               <fieldset>
                 <legend>{g.title}</legend>
                 <div class="opts">
-                  {g.options.map((o) => (
+                  {g.options.filter((o) => o.ready).map((o) => (
                     <label class="opt">
-                      <input type="radio" name={g.key} value={o.id} checked={current[g.key] === o.id} disabled={!o.ready} />
-                      <span><strong>{o.label}</strong><small>{o.note}</small>{!o.ready && <small class="tag">In progress — not publishable yet</small>}</span>
+                      <input type="radio" name={g.key} value={o.id} checked={current[g.key] === o.id} />
+                      <span><strong>{o.label}</strong><small>{o.note}</small></span>
                     </label>
                   ))}
                 </div>
