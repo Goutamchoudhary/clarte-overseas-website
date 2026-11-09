@@ -16,8 +16,8 @@ const { categoryCount, values, countries, partners, aboutFaqs } = Astro.props;
 const valueArt = ["labtech", "certificate", "specsheet", "customer-centric", "warehouse", "partnership"];
 const goals = [
   ["globe", "about.goal1_title", "Reach across the globe", "about.goal1_body", "Serve buyers on every continent, then keep widening the map year on year."],
-  ["truck-mark", "about.goal2_title", "Reliability, first", "about.goal2_body", "Be the supplier our customers never have to chase, shipment after shipment."],
-  ["harvester", "about.goal3_title", "Traceable & responsible", "about.goal3_body", "Full traceability and fair, sustainable sourcing, from the farm to the port."],
+  ["reliable-schedule", "about.goal2_title", "Reliability, first", "about.goal2_body", "Be the supplier our customers never have to chase, shipment after shipment."],
+  ["farm-to-port", "about.goal3_title", "Traceable & responsible", "about.goal3_body", "Full traceability and fair, sustainable sourcing, from the farm to the port."],
   ["factory", "about.goal4_title", "Built to scale", "about.goal4_body", "Capacity, systems and certifications that grow as fast as demand does."],
 ];
 ---
@@ -83,7 +83,7 @@ const goals = [
       <div class="j-goals">
         {goals.map(([art, tk, t, bk, b], i) => (
           <div class={`reveal d${i}`}>
-            <span class="j-goal-art" aria-hidden="true"><Vector name={art} size={84} /></span>
+            <span class="j-goal-art" aria-hidden="true"><Vector name={art} size={art === "farm-to-port" ? 150 : 84} /></span>
             <h3 data-i18n={tk}>{t}</h3>
             <p data-i18n={bk}>{b}</p>
           </div>
