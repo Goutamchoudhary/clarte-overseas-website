@@ -518,15 +518,9 @@ html.j-scrolled[data-version="v3"] .j-plain .j-range { box-shadow: none; }
 
 /* ---- Stage by Stage: night sea chart ---- */
 [data-version="v3"] .j-journey { position: relative; overflow: hidden; background: #0c0a1f; }
-/* Layered dark waves instead of a colour fade: crisp edges, muted tones. */
-[data-version="v3"] .j-sea-edge { position: relative; height: 130px; overflow: hidden; background: #eaf3ff; }
-[data-version="v3"] .j-sea-edge-end { background: #fff; transform: scaleY(-1); }
-[data-version="v3"] .j-sea-edge svg { position: absolute; left: 0; bottom: -1px; width: 200%; height: 100%; animation: j-tide 26s linear infinite; }
-[data-version="v3"] .j-sea-edge .j-w1 path { fill: #d3deef; } [data-version="v3"] .j-sea-edge-end .j-w1 path { fill: #e6ebf5; }
-[data-version="v3"] .j-sea-edge .j-w2 { animation-duration: 18s; animation-direction: reverse; } [data-version="v3"] .j-sea-edge .j-w2 path { fill: #2b2c58; }
-[data-version="v3"] .j-sea-edge .j-w3 { animation-duration: 13s; } [data-version="v3"] .j-sea-edge .j-w3 path { fill: #0c0a1f; }
-@keyframes j-tide { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { [data-version="v3"] .j-sea-edge svg { animation: none; } }
+/* Soft, muted fades into and out of the night chart (eased stops, low saturation). */
+[data-version="v3"] .j-dusk { height: 340px; background: linear-gradient(180deg, #eaf3ff 0%, #dfe7f4 14%, #c6cfe2 30%, #a0a9c4 45%, #747b9e 59%, #4b4f76 72%, #2a2a4e 84%, #15132f 94%, #0c0a1f 100%); }
+[data-version="v3"] .j-dawn { height: 320px; background: linear-gradient(180deg, #0c0a1f 0%, #15132f 7%, #2a2a4e 17%, #4b4f76 30%, #747b9e 44%, #a0a9c4 59%, #c9d0e1 74%, #e9ecf4 88%, #fff 100%); }
 [data-version="v3"] .j-journey-head { padding-top: 2.25rem; margin-bottom: 2.5rem; }
 [data-version="v3"] .j-route { position: relative; max-width: 78rem; margin: 0 auto; padding: 0 1.25rem 3rem; box-sizing: border-box; display: flex; flex-direction: column; gap: 1.6rem; }
 [data-version="v3"] .j-route-svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
@@ -569,7 +563,7 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] .j-cam-live .j-stop-3 { --x: 2300px; --y: 270px; } [data-version="v3"] .j-cam-live .j-stop-4 { --x: 2320px; --y: 930px; }
 [data-version="v3"] .j-cam-live .j-stop-5 { --x: 1240px; --y: 860px; } [data-version="v3"] .j-cam-live .j-stop-6 { --x: 190px; --y: 980px; }
 [data-version="v3"] .j-cam-live .j-stop-7 { --x: 1150px; --y: 1560px; }
-@media (max-width: 639px) { [data-version="v3"] .j-sea-edge { height: 84px; } }
+@media (max-width: 639px) { [data-version="v3"] .j-dusk { height: 240px; } [data-version="v3"] .j-dawn { height: 220px; } }
 
 /* ---- Vector kit loop animations (docs/design/vector-kit) ---- */
 /* Loop animations for the vector kit (class names vl-*, vk-*). Off under prefers-reduced-motion. */
