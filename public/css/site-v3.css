@@ -656,7 +656,7 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] .j-cert-head { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 [data-version="v3"] .j-cert-art { display: none; flex: none; align-items: flex-end; gap: .75rem; animation: j-float 5s ease-in-out infinite; }
 @media (min-width: 900px) { [data-version="v3"] .j-cert-art { display: flex; } }
-[data-version="v3"] .j-certs { background: linear-gradient(180deg, #fff0f6 0, #fff 340px); padding: 2.25rem 0 4.5rem; }
+[data-version="v3"] .j-certs { background: linear-gradient(180deg, #fff0f6 0, #fff 340px); padding: 4rem 0 4.5rem; }
 [data-version="v3"] .cred-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 2.25rem; }
 @media (min-width: 640px) { [data-version="v3"] .cred-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1100px) { [data-version="v3"] .cred-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
