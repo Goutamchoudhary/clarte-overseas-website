@@ -1043,3 +1043,35 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] .ss-fineprint { color: var(--sub); }
 [data-version="v3"] .ss-link:hover { color: var(--cat-mid, var(--violet)); }
 
+
+/* ---- Premium touches (Nov 2026) ---- */
+/* Count-up digits keep their width while counting */
+[data-version="v3"] .cu { font-variant-numeric: tabular-nums; }
+
+/* Certification logos: two slow, continuous strips (opposite directions) */
+[data-version="v3"] .j-logos.j-marquee { display: block; overflow: hidden; padding: 4px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+[data-version="v3"] .j-marquee-track { display: flex; gap: .75rem; width: max-content; animation: j-marquee 38s linear infinite; }
+[data-version="v3"] .j-marquee-rev .j-marquee-track { animation-direction: reverse; animation-duration: 44s; }
+[data-version="v3"] .j-marquee:hover .j-marquee-track { animation-play-state: paused; }
+[data-version="v3"] .j-marquee-track > span { flex: none; width: 128px; height: 84px; }
+@media (min-width: 768px) { [data-version="v3"] .j-marquee-track > span { width: 150px; height: 92px; } }
+@keyframes j-marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - .375rem)); } }
+@media (prefers-reduced-motion: reduce) {
+  [data-version="v3"] .j-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
+  [data-version="v3"] .j-marquee-track > span[aria-hidden="true"] { display: none; }
+  [data-version="v3"] .j-logos.j-marquee { -webkit-mask-image: none; mask-image: none; }
+}
+
+/* Navbar: sliding highlight pill (desktop, added by site-v3.js) */
+[data-version="v3"] .nav-links { position: relative; }
+[data-version="v3"] .nav-links > .nav-link, [data-version="v3"] .nav-links > .nav-dd { position: relative; z-index: 1; }
+[data-version="v3"] .nav-pill { position: absolute; top: 50%; left: 0; height: 2.25rem; border-radius: 99px; background: var(--lav); opacity: 0; pointer-events: none; transition: transform .35s cubic-bezier(.22,.61,.36,1), width .35s cubic-bezier(.22,.61,.36,1), opacity .25s ease; }
+[data-version="v3"] .nav-links.has-pill .nav-link::after { display: none; }
+
+/* Category product cards: border glow that follows the cursor */
+@media (hover: hover) and (pointer: fine) {
+  [data-version="v3"] .j-cat-list .prod-card::before { content: ""; position: absolute; inset: 0; z-index: 3; border-radius: inherit; padding: 2px; pointer-events: none; background: radial-gradient(200px circle at var(--gx, 50%) var(--gy, 0%), var(--cat-ink), var(--cat-mid) 35%, transparent 75%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); opacity: 0; transition: opacity .3s ease; }
+  [data-version="v3"] .j-cat-list .prod-card:hover::before { opacity: 1; }
+  [data-version="v3"] .j-cat-list .prod-card:hover { border-color: var(--cat-tint); }
+}
+@media (prefers-reduced-motion: reduce) { [data-version="v3"] .j-cat-list .prod-card::before { display: none; } }

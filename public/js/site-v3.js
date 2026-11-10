@@ -216,3 +216,114 @@
   if (document.readyState === "complete") partWords();
   else window.addEventListener("load", partWords, { once: true });
 })();
+
+/* Premium touches (Nov 2026): count-up figures, a sliding navbar highlight,
+   cursor-following glow on category cards and smooth FAQ open/close. Each is
+   an enhancement only — the page reads the same without it, and all of them
+   stay off when the visitor asks for reduced motion. */
+(function () {
+  "use strict";
+  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (still) return;
+  var finePointer = window.matchMedia && matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  // 1. Numbers inside [data-countup] count up from zero the first time the
+  //    element scrolls into view. Works on whatever language is showing.
+  var countEls = document.querySelectorAll("[data-countup]");
+  if (countEls.length && "IntersectionObserver" in window) {
+    var run = function (el) {
+      var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [], n;
+      while ((n = walker.nextNode())) if (/\d/.test(n.nodeValue)) nodes.push(n);
+      var spans = [];
+      nodes.forEach(function (node) {
+        var frag = document.createDocumentFragment();
+        node.nodeValue.split(/(\d+)/).forEach(function (part) {
+          if (/^\d+$/.test(part)) {
+            var s = document.createElement("span");
+            s.className = "cu"; s.textContent = "0"; s.setAttribute("data-n", part);
+            frag.appendChild(s); spans.push(s);
+          } else if (part) frag.appendChild(document.createTextNode(part));
+        });
+        node.parentNode.replaceChild(frag, node);
+      });
+      var t0 = performance.now(), dur = 1300;
+      (function step(now) {
+        var p = Math.min((now - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+        spans.forEach(function (s) { s.textContent = Math.round(+s.getAttribute("data-n") * e); });
+        if (p < 1) requestAnimationFrame(step);
+      })(t0);
+    };
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { cio.unobserve(e.target); run(e.target); } });
+    }, { threshold: 0.7 });
+    countEls.forEach(function (el) { cio.observe(el); });
+  }
+
+  // 2. Navbar: a soft pill slides to the hovered link and rests on the
+  //    current page's link.
+  var links = document.querySelector("#navbar .nav-links");
+  if (links && finePointer) {
+    var pill = document.createElement("span");
+    pill.className = "nav-pill"; pill.setAttribute("aria-hidden", "true");
+    links.insertBefore(pill, links.firstChild);
+    var items = Array.prototype.slice.call(links.querySelectorAll(":scope > .nav-link, :scope > .nav-dd > .nav-link"));
+    var place = function (a, instant) {
+      if (!a) { pill.style.opacity = "0"; return; }
+      var box = links.getBoundingClientRect(), r = a.getBoundingClientRect();
+      if (instant) pill.style.transition = "none";
+      pill.style.width = r.width + 24 + "px";
+      pill.style.transform = "translate(" + (r.left - box.left - 12) + "px,-50%)";
+      pill.style.opacity = "1";
+      if (instant) { pill.offsetWidth; pill.style.transition = ""; }
+    };
+    var current = function () { return links.querySelector(".nav-link.active"); };
+    links.classList.add("has-pill");
+    var settle = function () { place(current(), true); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle); else settle();
+    window.addEventListener("resize", settle);
+    items.forEach(function (a) { a.addEventListener("mouseenter", function () { place(a); }); });
+    links.addEventListener("mouseleave", function () { place(current()); });
+  }
+
+  // 3. Category product cards: a glow on the border follows the cursor.
+  if (finePointer) {
+    document.querySelectorAll(".j-cat-list .prod-card").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--gx", e.clientX - r.left + "px");
+        card.style.setProperty("--gy", e.clientY - r.top + "px");
+      });
+    });
+  }
+
+  // 4. FAQs open and close smoothly instead of snapping.
+  document.querySelectorAll("details.faq-item").forEach(function (d) {
+    var sum = d.querySelector("summary");
+    if (!sum) return;
+    var anim = null;
+    var animate = function (from, to, opening) {
+      d.style.overflow = "hidden";
+      if (anim) anim.cancel();
+      anim = d.animate({ height: [from + "px", to + "px"] }, { duration: opening ? 320 : 260, easing: "cubic-bezier(.22,.61,.36,1)" });
+      anim.onfinish = function () {
+        anim = null; d.style.height = ""; d.style.overflow = "";
+        if (!opening) d.open = false;
+      };
+      anim.oncancel = function () { anim = null; };
+    };
+    sum.addEventListener("click", function (e) {
+      e.preventDefault();
+      var start = d.offsetHeight;
+      if (!d.open || d.classList.contains("faq-closing")) {
+        d.classList.remove("faq-closing");
+        d.open = true;
+        animate(start, d.offsetHeight, true);
+      } else {
+        d.classList.add("faq-closing");
+        animate(start, sum.offsetHeight + (d.offsetHeight - d.clientHeight), false);
+        var done = function () { d.classList.remove("faq-closing"); };
+        setTimeout(done, 300);
+      }
+    });
+  });
+})();

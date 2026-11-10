@@ -317,3 +317,20 @@ description, features, uses, specs and grades each appear once below it. Keep th
 The spec sheet panel shows a blurred, padlocked preview and opens the existing
 lead form; the PDF itself stays behind `/api/spec-sheet`. The enquiry and spec
 sheet dialogs take the category palette, falling back to violet elsewhere.
+
+## Premium touches (Nov 2026)
+
+Five effects, rebuilt in plain JS/CSS (ideas from Vengeance UI / Skiper UI,
+no React added). Code is the last block of `public/js/site-v3.js` and the
+"Premium touches" block at the end of `public/css/site-v3.css`; all are off
+under `prefers-reduced-motion`.
+
+- `data-countup` on any element: its digits count up from 0 the first time it
+  scrolls into view (works on translated text). Used on the home "Speed &
+  Availability" line and the "15–21 Day Dispatch" card.
+- Home certification logos are two continuous strips (`.j-marquee`), each list
+  rendered twice; the copy is `aria-hidden` with empty alt.
+- Navbar `.nav-links` gets a sliding `.nav-pill` (desktop, fine pointer only);
+  it replaces the underline there.
+- Category product cards: border glow follows the cursor (`--gx`/`--gy`).
+- Every `details.faq-item` opens and closes with a height animation.
