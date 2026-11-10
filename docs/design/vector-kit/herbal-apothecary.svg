@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+<!-- Three apothecary jars of herb powder, a sprig and capsules · use: Ayurvedic & Herbal Powders category guide -->
+<ellipse cx="110" cy="163" rx="100" ry="5" fill="#15123a" opacity=".1"/>
+<rect x="14" y="58" width="56" height="100" rx="12" fill="#eef4ec"/><rect x="18" y="44" width="48" height="16" rx="5" fill="#3f6b4a"/><path d="M14 100H70V146C70 152 66 158 58 158H26C18 158 14 152 14 146Z" fill="#8aa86b"/>
+<rect x="80" y="34" width="62" height="124" rx="13" fill="#eef4ec"/><rect x="85" y="20" width="52" height="16" rx="5" fill="#3f6b4a"/><path d="M80 92H142V145C142 152 137 158 129 158H93C85 158 80 152 80 145Z" fill="#c7b37a"/>
+<rect x="92" y="62" width="38" height="20" rx="4" fill="#fff"/><path d="M99 72H123" stroke="#c9d6c2" stroke-width="4" stroke-linecap="round"/>
+<rect x="152" y="70" width="52" height="88" rx="12" fill="#eef4ec"/><rect x="156" y="56" width="44" height="16" rx="5" fill="#3f6b4a"/><path d="M152 110H204V146C204 152 200 158 192 158H164C156 158 152 152 152 146Z" fill="#b98a5a"/>
+<path d="M198 50C206 30 214 22 218 18" fill="none" stroke="#3f6b4a" stroke-width="4" stroke-linecap="round"/>
+<path d="M206 34C196 34 190 26 192 18C202 18 208 26 206 34Z" fill="#6f9a5b"/><path d="M212 26C212 16 218 10 220 8C222 18 218 24 212 26Z" fill="#8aa86b"/>
+<g transform="rotate(-24 40 34)"><rect x="24" y="26" width="34" height="15" rx="7.5" fill="#d9a441"/><path d="M41 26H50.5A7.5 7.5 0 0 1 50.5 41H41Z" fill="#fff"/></g>
+</svg>

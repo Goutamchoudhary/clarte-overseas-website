@@ -6,6 +6,8 @@ import { SITE, UNAVAILABLE_PRODUCTS, COMING_SOON_PRODUCTS } from "../../../const
 import { srcsetFor, SIZES } from "../../../lib/responsive-img";
 import { isVersion } from "../../../data/site-options";
 import { collageCats } from "../../../lib/collage";
+import Vector from "../../../components/Vector.astro";
+import { categoryGuides, guideShelf } from "../../../data/category-guides";
 
 const v3 = isVersion("v3");
 
@@ -18,14 +20,16 @@ const cat = getCategory(category)!;
 const items = productsByCategory(category);
 const catKey = `products.cat_${category.replace(/-/g, "_")}`;
 const photo = collageCats.find((c) => c.slug === category)!;
+const guide = categoryGuides[category];
+const gk = `cat.guide_${category.replace(/-/g, "_")}`;
 
 // Same reasoning as the product pages: lead with the words a sourcing manager
 // types, not with our internal category phrasing.
-const title = `${cat.name} — Exporter & Bulk Supplier in India | Clarté Overseas`;
+const title = `${cat.name} Exporter in India | Clarté Overseas`;
 const description = (
-  `Bulk exporter and supplier of ${cat.name.toLowerCase()} from India. ${cat.description} ` +
-  `Food-grade, COA with every lot, trial quantities to full containers.`
-).slice(0, 200);
+  `${cat.name} exporter in India. ${cat.tagline}. ` +
+  `COA with every lot, mixed containers welcome.`
+);
 
 const breadcrumbLd = {
   "@context": "https://schema.org",
@@ -49,7 +53,7 @@ const listLd = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={photo.big}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(listLd)} />
@@ -150,6 +154,34 @@ const listLd = {
       </div>
     </div>
   </section>
+
+  {v3 && guide && (
+    <section class="j-cat-guide" aria-labelledby="catGuideTitle">
+      <div class="j-wrap">
+        <div class="j-cat-guide-card reveal">
+          <div class="j-cat-guide-art" aria-hidden="true">
+            <span class="j-cat-guide-disc"></span>
+            <Vector name={guide.art} />
+          </div>
+          <div class="j-cat-guide-body">
+            <span class="j-cat-guide-eyebrow" data-i18n="cat.guide_eyebrow">Inside this range</span>
+            <h2 id="catGuideTitle" data-i18n={`${gk}_title`}>{guide.title}</h2>
+            <p class="j-cat-guide-intro" data-i18n={`${gk}_intro`}>{guide.intro}</p>
+            <dl class="j-cat-guide-facts">
+              <div><dt data-i18n="cat.guide_regions">Key growing belts</dt><dd data-i18n={`${gk}_regions`}>{guide.regions}</dd></div>
+              <div><dt data-i18n="cat.guide_uses">Where it's used</dt><dd data-i18n={`${gk}_uses`}>{guide.uses}</dd></div>
+              <div><dt data-i18n="cat.guide_shelf">Shelf life</dt><dd data-i18n={`cat.guide_shelf_${guide.shelf}`}>{guideShelf[guide.shelf]}</dd></div>
+              <div><dt data-i18n="cat.guide_spec">What to tell us</dt><dd data-i18n={`${gk}_spec`}>{guide.spec}</dd></div>
+            </dl>
+            <button type="button" class="j-cat-guide-btn" data-open-enquire data-product="" data-category={cat.name}>
+              <span data-i18n="cat.guide_cta">Enquire about this range</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 
   <EnquiryDialog />
 </BaseLayout>

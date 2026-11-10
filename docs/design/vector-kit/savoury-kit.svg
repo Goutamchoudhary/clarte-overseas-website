@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+<!-- Onion, garlic bulb and chilli beside a seasoning shaker · use: Culinary & Spice Powders category guide -->
+<ellipse cx="110" cy="163" rx="102" ry="5" fill="#15123a" opacity=".1"/>
+<rect x="134" y="54" width="62" height="104" rx="14" fill="#f4ebe4"/><rect x="138" y="36" width="54" height="22" rx="6" fill="#9a4a2a"/>
+<g fill="#f4ebe4"><circle cx="152" cy="46" r="3"/><circle cx="165" cy="46" r="3"/><circle cx="178" cy="46" r="3"/></g>
+<path d="M134 104H196V146C196 152 191 158 184 158H146C139 158 134 152 134 146Z" fill="#d98a4a"/>
+<path d="M12 120C12 96 32 82 54 82C76 82 96 96 96 120C96 144 78 158 54 158C30 158 12 144 12 120Z" fill="#b8566b"/>
+<path d="M54 84C46 98 44 140 54 158M54 84C62 98 64 140 54 158" fill="none" stroke="#9c4458" stroke-width="3"/>
+<path d="M54 82C52 70 56 62 62 56" fill="none" stroke="#7a8f4f" stroke-width="5" stroke-linecap="round"/>
+<path d="M88 150C92 134 104 128 114 132C124 136 126 150 120 158H92C88 158 86 154 88 150Z" fill="#efe6d6"/>
+<path d="M106 131C104 140 104 150 106 158" fill="none" stroke="#d8ccb6" stroke-width="2.5"/>
+<path d="M106 131C106 124 108 120 112 118" fill="none" stroke="#c9b993" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M70 60C86 52 108 54 120 70C112 64 92 62 76 70Z" fill="#b7412c"/><path d="M118 68C124 64 126 58 124 52" fill="none" stroke="#5f8a45" stroke-width="4" stroke-linecap="round"/>
+</svg>

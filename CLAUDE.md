@@ -146,6 +146,22 @@ that area).
   in Nov 2026 (home "Vetted Supplier Network" card, herbal product descriptions,
   two blog posts).
 
+## SEO
+
+- `BaseLayout.astro` enforces lengths for every page: a title over 65
+  characters drops its ` | Clarté Overseas` suffix, and the meta/OG
+  description goes through `clipText()` (`src/lib/seo.ts`, 160 chars, cut at a
+  sentence or word). Still write titles ≤ 65 and descriptions ≤ 160 with the
+  keywords first; the clipping is a safety net.
+- Default share image: `SITE.defaultImage` (1200×630 JPG). Category pages pass
+  their collage photo, product pages their own photo.
+- No `meta keywords` (Google ignores it). Translations switch client-side on the
+  same URL, so search engines index the English copy only and there is no
+  hreflang.
+- Category pages end with an "Inside this range" guide: copy in
+  `src/data/category-guides.ts`, keys `cat.guide_*`, one vector per category.
+  A new category needs an entry there (the section is skipped without one).
+
 ## Git / workflow
 
 - **Always ask before pushing** — commit freely, but confirm before

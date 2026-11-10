@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+<!-- Tomato and carrots resting on a low crate, a powder jar beside · use: Dehydrated Vegetable Powders category guide -->
+<ellipse cx="110" cy="163" rx="102" ry="5" fill="#15123a" opacity=".1"/>
+<rect x="10" y="112" width="130" height="46" rx="6" fill="#c9a06a"/><path d="M10 126H140M10 142H140" stroke="#b08850" stroke-width="4"/><rect x="60" y="112" width="30" height="46" fill="#d8b47e"/>
+<circle cx="46" cy="88" r="28" fill="#c2453a"/><path d="M34 64C40 70 52 70 58 64M46 60V68" fill="none" stroke="#5f8a45" stroke-width="5" stroke-linecap="round"/><path d="M30 80C32 74 36 72 40 72" fill="none" stroke="#e07a6c" stroke-width="4" stroke-linecap="round"/>
+<path d="M84 112L124 56C128 50 142 54 140 63L90 115C88 117 84 116 84 112Z" fill="#e0843a"/><path d="M104 90L110 95M114 78L121 84M124 66L131 72" stroke="#c96d2a" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M134 54C136 42 146 36 152 38M134 54C144 48 154 52 158 58" fill="none" stroke="#6f9a5b" stroke-width="5" stroke-linecap="round"/>
+<rect x="156" y="78" width="54" height="80" rx="12" fill="#f5efe8"/><rect x="160" y="64" width="46" height="16" rx="5" fill="#7a5a3a"/>
+<path d="M156 112H210V146C210 152 205 158 198 158H168C161 158 156 152 156 146Z" fill="#d0603f"/>
+</svg>

@@ -38,10 +38,11 @@ for (let n = 1; n <= page.lastPage; n++) {
 const pageHref = (n: number) => (n === 1 ? "/blogs" : `/blogs/${n}`);
 
 const title = isFirstPage
-  ? "Blog — Dehydrated Foods, Ingredients & India Export Insights | Clarté Overseas"
+  ? "Blog — Dehydrated Food & India Export Insights | Clarté Overseas"
   : `Blog — Page ${page.currentPage} | Clarté Overseas`;
-const description =
-  "Practical reads on dehydrated food ingredients, buying powders and flakes, India's export market and sourcing well. From the team at Clarté Overseas.";
+const description = isFirstPage
+  ? "Practical reads on dehydrated food ingredients, buying powders and flakes, India's export market and sourcing well. From the team at Clarté Overseas."
+  : `Page ${page.currentPage} of the Clarté Overseas blog: buyer guides, ingredient explainers and India export insights for dehydrated food powders.`;
 ---
 
 <BaseLayout title={title} description={description}>

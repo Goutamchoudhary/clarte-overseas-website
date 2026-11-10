@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+<!-- Beaker of thick gel with a spoon lifting a slow ribbon, powder heap beside · use: Hydrocolloids & Food Additives category guide -->
+<ellipse cx="110" cy="163" rx="100" ry="5" fill="#15123a" opacity=".1"/>
+<path d="M60 28H138V40H132V140C132 150 126 158 116 158H82C72 158 66 150 66 140V40H60Z" fill="#eef1f5"/>
+<path d="M66 84H132V140C132 150 126 158 116 158H82C72 158 66 150 66 140Z" fill="#d9cfa8"/>
+<path d="M66 84C78 92 90 78 100 86C110 94 122 80 132 84" fill="none" stroke="#e8e0c0" stroke-width="5"/>
+<path d="M118 62H124M118 78H124M118 100H124M118 120H124" stroke="#b9c2cf" stroke-width="3" stroke-linecap="round"/>
+<path d="M150 8L102 70" stroke="#8a95a8" stroke-width="7" stroke-linecap="round"/>
+<path d="M98 76C92 70 94 62 102 62C110 62 112 72 106 78C104 84 104 90 104 96" fill="#d9cfa8"/>
+<path d="M150 158C150 136 164 122 182 122C200 122 214 136 214 158Z" fill="#efe6cc"/>
+<path d="M164 142C172 136 182 134 192 138" fill="none" stroke="#f8f2df" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -68,8 +68,7 @@ before acting — they drift.
 - Coming soon: curry leaf, tulsi, tamarind kernel powder.
 
 ### Config placeholders (`src/consts.ts`)
-- `SITE.defaultImage` is the logo SVG — needs a real 1200×630 PNG/JPG
-  social-share image (many platforms don't render SVG previews).
+- `SITE.defaultImage` is now a 1200×630 JPG (`/assets/img/og/clarte-share-v1.jpg`, Nov 2026); regenerate under a new filename if the brand line changes.
 - `ANALYTICS.linkedinPartnerId` empty (LinkedIn Insight Tag off).
 - Optional, empty: `turnstileSiteKey` (form spam protection),
   `sheetWebhook` (leads → Google Sheet + WhatsApp alert).
