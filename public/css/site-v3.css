@@ -253,7 +253,7 @@ html.j-armed[data-version="v3"] [data-j-play]:not(.in) .j-fall { visibility: hid
 [data-version="v3"] .j-logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; }
 @media (min-width: 768px) { [data-version="v3"] .j-logos { grid-template-columns: repeat(7, 1fr); gap: .75rem; } }
 [data-version="v3"] .j-logos span { height: 92px; display: flex; align-items: center; justify-content: center; padding: 0 6px; border-radius: 16px; border: 1px solid var(--line); background: #fff; }
-[data-version="v3"] .j-logos img { width: 100%; max-width: 110px; height: 66px; object-fit: contain; display: block; }
+[data-version="v3"] .j-logos img { width: 100%; max-width: 77px; height: 46px; object-fit: contain; display: block; }
 [data-version="v3"] .j-logo-note { margin: 1rem 0 0; text-align: center; font-size: .88rem; color: var(--sub); }
 
 /* ---- Buyer feedback (renders only with real entries) ---- */
