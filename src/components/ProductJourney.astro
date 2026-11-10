@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Product, Category } from "../data/products";
 import { srcsetFor, smallest, SIZES } from "../lib/responsive-img";
+import Vector from "./Vector.astro";
 
 interface Props {
   p: Product;
@@ -168,6 +169,7 @@ const hasArt = fs.existsSync(path.join(process.cwd(), "public", art));
       <span class="eyebrow" data-i18n="prod.faq_eyebrow">Sourcing</span>
       <h2 class="j-h2 j-h2-md"><span data-i18n="prod.faq_heading_a">Buying </span><span data-i18n={`cat.prod_${pk}_name`}>{p.name}</span><span data-i18n="prod.faq_heading_b"> from India</span></h2>
       <p class="j-sub" data-i18n="prod.faq_intro">Clarté Overseas is an India-based merchant exporter and bulk supplier of dehydrated food ingredients, shipping food-grade material to manufacturers, flavour houses, nutraceutical brands and ingredient distributors worldwide. Below are the questions buyers ask most before a first order.</p>
+      <span class="j-faq-art"><Vector name="buyer-questions" size={176} /></span>
     </div>
     <div class="reveal d1">
       {faqs.map((f) => (
