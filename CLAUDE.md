@@ -80,6 +80,8 @@ that area).
   but phones download the full 1200px file.
 - **Don't reuse a vector.** Check `docs/design/vector-kit/` usage first; a new
   section gets its own artwork rather than one already shown on another page.
+  The one deliberate exception: every FAQ section uses `buyer-questions`
+  (owner's choice, Nov 2026).
 - **Blog covers** are generated vectors: `node scripts/gen-blog-art.mjs` writes
   `public/assets/img/blog/<id>.svg` from its `ART` map, one line per post. A new
   post needs a line there (the script fails if one is missing; until then the
