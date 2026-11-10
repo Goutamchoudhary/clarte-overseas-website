@@ -537,6 +537,8 @@ export const products: Product[] = [
   },
   {
     slug: "giloy-powder", name: "Giloy Powder", category: "ayurvedic-herbal-powders",
+    image: "/assets/img/products/giloy-powder-v2.webp",
+    listImage: "/assets/img/products/giloy-powder-wide.webp",
     emoji: "🌿", hsn: "1211 90 99", botanical: "Tinospora cordifolia",
     tagline: "The Ayurvedic immunity vine, stem-milled for potency.",
     description:
@@ -548,6 +550,8 @@ export const products: Product[] = [
   },
   {
     slug: "neem-powder", name: "Neem Powder", category: "ayurvedic-herbal-powders",
+    image: "/assets/img/products/neem-powder-v2.webp",
+    listImage: "/assets/img/products/neem-powder-wide.webp",
     emoji: "🍃", hsn: "1211 90 99", botanical: "Azadirachta indica",
     tagline: "The Ayurvedic bitter leaf, dried for skin and wellness use.",
     description:
@@ -559,6 +563,8 @@ export const products: Product[] = [
   },
   {
     slug: "trikatu-powder", name: "Trikatu Powder", category: "ayurvedic-herbal-powders",
+    image: "/assets/img/products/trikatu-powder-v2.webp",
+    listImage: "/assets/img/products/trikatu-powder-wide.webp",
     emoji: "🌶️", hsn: "1211 90 99", botanical: "Piper nigrum, Zingiber officinale, Piper longum",
     tagline: "The three-spice Ayurvedic blend for digestion and bioavailability.",
     description:
