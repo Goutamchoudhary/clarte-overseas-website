@@ -32,9 +32,9 @@ const stockI18n = isUnavailable ? "prod.stock_unavailable" : isComingSoon ? "pro
 // string, so the words that matter have to come first.
 const title = `${p.name} Exporter & Supplier in India | Clarté Overseas`;
 const description = (
-  `Bulk ${p.name.toLowerCase()} exporter and supplier from India. ${p.tagline} ` +
-  `Food-grade, COA with every lot, trial quantities to full containers.`
-).slice(0, 200);
+  `${p.name} exporter from India. ${p.tagline} ` +
+  `COA with every lot, mixed containers welcome.`
+);
 const url = `${SITE.url}/products/${cat.slug}/${p.slug}`;
 
 /* Buyer-intent Q&A — the questions that actually arrive by email and WhatsApp
@@ -54,7 +54,7 @@ const url = `${SITE.url}/products/${cat.slug}/${p.slug}`;
    stays English to match the default (English) server render. */
 const faqs = [
   { key: "faq1", q: "Which countries do you export to?", a: "We ship from India to buyers across the United States, United Kingdom, UAE and the wider Middle East, Australia and South East Asia, with documentation matched to each destination's import requirements." },
-  { key: "faq2", q: "What is the minimum order quantity?", a: "We keep MOQs trial-friendly, so you can start with a small test quantity and scale to full container loads once the grade is proven in your formulation. Tell us the volume you are targeting and we will confirm what is workable." },
+  { key: "faq2", q: "What is the minimum order quantity?", a: "We keep MOQs trial-friendly, so you can start with a small test quantity and scale to full container loads once the grade is proven in your formulation. Tell us the volume you are targeting and we will confirm what is workable. You can also mix several products in one container, so there's no need to order a full load of a single item." },
   { key: "faq3", q: "Can I get a sample before placing a bulk order?", a: "Yes. Representative samples are typically delivered within about 7 days, so you can check grade, colour, mesh and aroma against your own specification before committing to a shipment." },
   { key: "faq4", q: "What certifications and documents come with each shipment?", a: "Every consignment ships with a full COA and specification sheet. Clarté Overseas is registered for ISO 9001:2015, APEDA, the Spices Board of India (RCMC), FSSAI, Udyam (MSME), IEC and GST, and the standard export set covers the commercial invoice, packing list and certificate of origin." },
   { key: "faq5", q: "How is the product packed for export?", a: "25 kg kraft bags with a food-grade liner as standard. Custom pack sizes, retail packaging and private-label branding are available on request." },
@@ -77,7 +77,7 @@ const specs: [string, string, string, string?][] = [
   ["Processing", p.drying || "Dehydrated", "prod.spec_processing", dryingI18n],
   ["Shelf life", "18–24 months", "prod.spec_shelf", "prod.spec_shelf_value"],
   ["Packaging", "25 kg kraft bags with food-grade liner (custom packing available)", "prod.spec_packaging", "prod.spec_packaging_value"],
-  ["MOQ", "Trial quantities available, scaling to full containers", "prod.spec_moq", "prod.spec_moq_value"],
+  ["MOQ", "Trial quantities, or mix products in one container", "prod.spec_moq", "prod.spec_moq_value"],
   ["Origin", "India", "prod.spec_origin", "prod.origin_value"],
 ];
 
@@ -105,7 +105,7 @@ const productLd = {
     ...(p.forms?.length ? [{ "@type": "PropertyValue", name: "Available forms", value: p.forms.join(", ") }] : []),
     { "@type": "PropertyValue", name: "Country of origin", value: "India" },
     { "@type": "PropertyValue", name: "Packaging", value: "25 kg kraft bags with food-grade liner (custom packing available)" },
-    { "@type": "PropertyValue", name: "Minimum order quantity", value: "Trial quantities available, scaling to full containers" },
+    { "@type": "PropertyValue", name: "Minimum order quantity", value: "Trial quantities, or mix products in one container" },
     { "@type": "PropertyValue", name: "Shelf life", value: "18–24 months" },
   ],
 };

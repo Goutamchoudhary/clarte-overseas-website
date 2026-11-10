@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+<!-- Mango, half guava and a fruit drink with a straw · use: Dehydrated Fruit Powders category guide -->
+<ellipse cx="110" cy="163" rx="100" ry="5" fill="#15123a" opacity=".1"/>
+<path d="M120 46H186L178 150C177 155 174 158 169 158H137C132 158 129 155 128 150Z" fill="#fbf1e6"/>
+<path d="M124 84H182L178 150C177 155 174 158 169 158H137C132 158 129 155 128 150Z" fill="#eaa94e"/>
+<path d="M168 18L156 96" stroke="#c46a8a" stroke-width="6" stroke-linecap="round"/>
+<circle cx="186" cy="50" r="14" fill="#f2d16b"/><circle cx="186" cy="50" r="8" fill="#f8e6a6"/>
+<path d="M14 120C10 92 30 72 56 76C84 80 96 108 84 134C74 156 46 160 28 148C20 142 16 132 14 120Z" fill="#e8a33a"/>
+<path d="M30 92C38 84 50 82 58 84" fill="none" stroke="#f5c86a" stroke-width="5" stroke-linecap="round"/>
+<path d="M62 78C64 70 70 64 78 62" fill="none" stroke="#6f9a5b" stroke-width="4" stroke-linecap="round"/><path d="M70 66C78 56 90 56 94 60C88 68 78 70 70 66Z" fill="#7da35f"/>
+<path d="M80 158C80 138 92 126 106 126C120 126 130 138 130 158Z" fill="#9cba6a"/><path d="M86 158C86 142 95 133 106 133C117 133 124 142 124 158Z" fill="#e48a8a"/>
+<g fill="#f5d3c7"><circle cx="98" cy="148" r="2.5"/><circle cx="108" cy="144" r="2.5"/><circle cx="114" cy="152" r="2.5"/><circle cx="102" cy="154" r="2.5"/></g>
+</svg>

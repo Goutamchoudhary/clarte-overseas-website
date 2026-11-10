@@ -9,8 +9,7 @@ export const SITE = {
     "Clarté Overseas — Premium Dehydrated Fruits, Vegetables & Powders | Indian Exporter",
   defaultDescription:
     "Clarté Overseas is an India-based merchant exporter of premium dehydrated fruits, vegetables, flakes and powders — supplying food manufacturers, flavour houses and distributors worldwide.",
-  // Replace with a real 1200x630 social-share image when available
-  defaultImage: "/assets/logo/logo-icon.svg",
+  defaultImage: "/assets/img/og/clarte-share-v1.jpg",
   locale: "en_US",
 };
 

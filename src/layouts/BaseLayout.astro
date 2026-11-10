@@ -1,4 +1,5 @@
 ---
+import { clipText } from "../lib/seo";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
@@ -52,6 +53,14 @@ const {
 // match fonts.css exactly, or the font downloads twice.
 const fontPreloads = [...new Set(preloadFonts)];
 
+// Search results show ~60-65 title characters and ~155-160 description
+// characters. Long blog/product titles drop the brand suffix rather than lose
+// their keywords; descriptions are cut at a word boundary (social cards get the
+// same text).
+const BRAND_SUFFIX = ` | ${SITE.name}`;
+const docTitle = title.length > 65 && title.endsWith(BRAND_SUFFIX) ? title.slice(0, -BRAND_SUFFIX.length) : title;
+const metaDesc = clipText(description, 160);
+
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const ogImage = new URL(image, SITE.url).href;
 
@@ -86,8 +95,8 @@ const orgSchema = {
     <meta charset="UTF-8" />
     <SplashHead />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <title>{docTitle}</title>
+    <meta name="description" content={metaDesc} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -95,7 +104,7 @@ const orgSchema = {
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDesc} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content={SITE.locale} />
@@ -103,7 +112,7 @@ const orgSchema = {
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={metaDesc} />
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Fonts — self-hosted (mirrors Google's own Sora/Inter files+unicode
