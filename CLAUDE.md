@@ -136,6 +136,16 @@ that area).
   otherwise it stays bundled into the serverless function as dead weight
   (the API's slug allowlist already refuses to serve it).
 
+## Copy / positioning
+
+- Clarté Overseas is a **merchant exporter**: it sources through a vetted
+  network of audited Indian processors and owns quality checks, documentation
+  and shipping. Don't write copy claiming farm-direct buying, "no middlemen",
+  own farms/factories, or that "we" dry/mill/process the goods — describe
+  processing in the passive ("the dried root is milled…"). Reworded site-wide
+  in Nov 2026 (home "Vetted Supplier Network" card, herbal product descriptions,
+  two blog posts).
+
 ## Git / workflow
 
 - **Always ask before pushing** — commit freely, but confirm before

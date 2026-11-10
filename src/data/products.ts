@@ -452,7 +452,7 @@ export const products: Product[] = [
     emoji: "🌿", hsn: "1211 90 99", botanical: "Moringa oleifera",
     tagline: "The 'miracle tree' leaf, dried to keep it green.",
     description:
-      "Moringa leaves are among the most nutrient-dense greens on earth. We dry them carefully to protect their vivid colour and nutrition, then mill them into a fine powder used worldwide in supplements, green blends and functional foods.",
+      "Moringa leaves are among the most nutrient-dense greens on earth. The leaves are dried carefully to protect their vivid colour and nutrition, then milled into a fine powder used worldwide in supplements, green blends and functional foods.",
     features: ["Vibrant green, carefully dried", "Naturally nutrient-dense", "Fine, even particle size", "Trusted superfood ingredient", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Green and smoothie blends", "Functional foods and bars", "Teas and herbal mixes"],
     grades: ["Food / nutraceutical grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
@@ -490,7 +490,7 @@ export const products: Product[] = [
     emoji: "🌿", hsn: "1211 90 99", botanical: "Withania somnifera",
     tagline: "India's premier adaptogen root, milled for consistent potency.",
     description:
-      "Ashwagandha root is one of Ayurveda's most widely used adaptogens, valued for supporting stress resilience, vitality and restful sleep. We mill the dried root into a fine, consistent powder that holds its characteristic earthy aroma and withanolide-rich profile batch after batch.",
+      "Ashwagandha root is one of Ayurveda's most widely used adaptogens, valued for supporting stress resilience, vitality and restful sleep. The dried root is milled into a fine, consistent powder that holds its characteristic earthy aroma and withanolide-rich profile batch after batch.",
     features: ["Root-only, no leaf or stem fillers", "Consistent withanolide-rich profile", "Fine, even particle size", "Trusted adaptogen ingredient", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Functional foods and beverages", "Ayurvedic and herbal formulations", "Sports nutrition and recovery blends"],
     grades: ["Food / nutraceutical grade", "80–120 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
@@ -503,7 +503,7 @@ export const products: Product[] = [
     emoji: "🌱", hsn: "1211 90 99", botanical: "Asparagus racemosus",
     tagline: "The classic Ayurvedic root tonic for women's wellness.",
     description:
-      "Shatavari root is a cornerstone of Ayurvedic women's-health formulations, traditionally used to support reproductive wellness and lactation. We mill the dried root into a fine, pale powder that keeps its mild, slightly sweet character for consistent formulation.",
+      "Shatavari root is a cornerstone of Ayurvedic women's-health formulations, traditionally used to support reproductive wellness and lactation. The dried root is milled into a fine, pale powder that keeps its mild, slightly sweet character for consistent formulation.",
     features: ["Root-only, carefully dried", "Mild, slightly sweet profile", "Fine, even particle size", "Trusted women's-wellness ingredient", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Women's-wellness formulations", "Functional foods and beverages", "Ayurvedic and herbal blends"],
     grades: ["Food / nutraceutical grade", "80–120 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
@@ -516,7 +516,7 @@ export const products: Product[] = [
     emoji: "🍃", hsn: "1211 90 99", botanical: "Bacopa monnieri",
     tagline: "The Ayurvedic memory herb, dried to hold its actives.",
     description:
-      "Brahmi is Ayurveda's leading cognitive-support herb, traditionally used to support memory and mental clarity. We dry the whole herb gently and mill it into a fine green powder that keeps its characteristic bitter profile and bacoside content intact.",
+      "Brahmi is Ayurveda's leading cognitive-support herb, traditionally used to support memory and mental clarity. The whole herb is dried gently and milled into a fine green powder that keeps its characteristic bitter profile and bacoside content intact.",
     features: ["Whole-herb powder", "Naturally bacoside-rich", "Vivid green colour", "Trusted cognitive-support ingredient", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Cognitive-support formulations", "Functional foods and beverages", "Ayurvedic and herbal blends"],
     grades: ["Food / nutraceutical grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
@@ -529,7 +529,7 @@ export const products: Product[] = [
     emoji: "🟤", hsn: "1211 90 99", botanical: "Terminalia chebula, Terminalia bellirica, Phyllanthus emblica",
     tagline: "The classic three-fruit Ayurvedic digestive blend.",
     description:
-      "Triphala is Ayurveda's best-known digestive formula, a traditional blend of amalaki (Indian gooseberry), bibhitaki and haritaki in equal proportion. We mill each fruit separately to spec before blending, so the finished powder holds a consistent tart, astringent profile batch after batch.",
+      "Triphala is Ayurveda's best-known digestive formula, a traditional blend of amalaki (Indian gooseberry), bibhitaki and haritaki in equal proportion. Each fruit is milled separately to spec before blending, so the finished powder holds a consistent tart, astringent profile batch after batch.",
     features: ["Traditional 1:1:1 three-fruit blend", "Consistent tart, astringent profile", "Fine, even particle size", "Trusted digestive-wellness formula", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Digestive-wellness formulations", "Functional foods and beverages", "Ayurvedic and herbal blends"],
     grades: ["Food / nutraceutical grade", "80–120 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
@@ -542,7 +542,7 @@ export const products: Product[] = [
     emoji: "🌿", hsn: "1211 90 99", botanical: "Tinospora cordifolia",
     tagline: "The Ayurvedic immunity vine, stem-milled for potency.",
     description:
-      "Giloy, also known as guduchi, is a widely used Ayurvedic immunity herb. We mill the dried stem into a fine, bitter powder that holds its characteristic profile for consistent formulation batch after batch.",
+      "Giloy, also known as guduchi, is a widely used Ayurvedic immunity herb. The dried stem is milled into a fine, bitter powder that holds its characteristic profile for consistent formulation batch after batch.",
     features: ["Stem-only, no leaf fillers", "Naturally bitter, potent profile", "Fine, even particle size", "Trusted immunity-support ingredient", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Immunity-support formulations", "Functional foods and beverages", "Ayurvedic and herbal blends"],
     grades: ["Food / nutraceutical grade", "80–120 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
@@ -555,7 +555,7 @@ export const products: Product[] = [
     emoji: "🍃", hsn: "1211 90 99", botanical: "Azadirachta indica",
     tagline: "The Ayurvedic bitter leaf, dried for skin and wellness use.",
     description:
-      "Neem leaf is one of Ayurveda's most versatile bitters, traditionally used in skin-care and general-wellness formulations. We dry the leaf gently and mill it into a fine green powder that keeps its characteristic bitter aroma intact.",
+      "Neem leaf is one of Ayurveda's most versatile bitters, traditionally used in skin-care and general-wellness formulations. The leaf is dried gently and milled into a fine green powder that keeps its characteristic bitter aroma intact.",
     features: ["Leaf-only powder", "Naturally bitter profile", "Vivid green colour", "Trusted skin- and wellness-care ingredient", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Skin-care and cosmetic formulations", "Functional foods and beverages", "Ayurvedic and herbal blends"],
     grades: ["Food / nutraceutical grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
@@ -568,7 +568,7 @@ export const products: Product[] = [
     emoji: "🌶️", hsn: "1211 90 99", botanical: "Piper nigrum, Zingiber officinale, Piper longum",
     tagline: "The three-spice Ayurvedic blend for digestion and bioavailability.",
     description:
-      "Trikatu is a classic Ayurvedic formula combining black pepper, ginger and long pepper (pippali) in equal proportion, traditionally used to support digestion and the bioavailability of other herbs. We mill each spice separately to spec before blending for a consistent, pungent profile.",
+      "Trikatu is a classic Ayurvedic formula combining black pepper, ginger and long pepper (pippali) in equal proportion, traditionally used to support digestion and the bioavailability of other herbs. Each spice is milled separately to spec before blending for a consistent, pungent profile.",
     features: ["Traditional 1:1:1 three-spice blend", "Consistent pungent, warming profile", "Fine, even particle size", "Trusted digestive-formulation blend", F_DRY, F_CUSTOM],
     uses: ["Capsules, tablets and supplements", "Digestive-wellness formulations", "Ayurvedic and herbal blends", "Functional foods and beverages"],
     grades: ["Food / nutraceutical grade", "80–120 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],

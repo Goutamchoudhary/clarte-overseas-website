@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+<!-- Three audited processing units feeding one checked lot sheet · use: Home, Vetted Supplier Network -->
+<ellipse cx="110" cy="162" rx="104" ry="6" fill="#15123a" opacity=".1"/>
+<path d="M58 40C92 40 96 84 128 84M58 84H128M58 128C92 128 96 84 128 84" fill="none" stroke="#c4b5fd" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 10"/>
+<g><path d="M8 30L22 20V30L36 20V30L50 20V58H8Z" fill="#eef0f8"/><rect x="8" y="30" width="42" height="28" fill="#6d28d9"/><rect x="16" y="40" width="8" height="10" rx="2" fill="#eef0f8"/><rect x="32" y="40" width="10" height="18" rx="2" fill="#e0a526"/></g>
+<g transform="translate(0 44)"><path d="M8 30L22 20V30L36 20V30L50 20V58H8Z" fill="#eef0f8"/><rect x="8" y="30" width="42" height="28" fill="#6d28d9"/><rect x="16" y="40" width="8" height="10" rx="2" fill="#eef0f8"/><rect x="32" y="40" width="10" height="18" rx="2" fill="#e0a526"/></g>
+<g transform="translate(0 88)"><path d="M8 30L22 20V30L36 20V30L50 20V58H8Z" fill="#eef0f8"/><rect x="8" y="30" width="42" height="28" fill="#6d28d9"/><rect x="16" y="40" width="8" height="10" rx="2" fill="#eef0f8"/><rect x="32" y="40" width="10" height="18" rx="2" fill="#e0a526"/></g>
+<rect x="132" y="34" width="70" height="104" rx="10" fill="#fff" stroke="#e4e2f3" stroke-width="3"/>
+<rect x="152" y="26" width="30" height="14" rx="5" fill="#6d28d9"/>
+<path d="M146 64H188M146 80H188M146 96H174" stroke="#d6d3ea" stroke-width="5" stroke-linecap="round"/>
+<circle cx="190" cy="126" r="20" fill="#be185d"/><path d="M180 126L187 133L200 119" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
