@@ -223,7 +223,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
         <div class={`j-edge-col ${start ? "j-edge-r" : "j-edge-l"}`}>
           {edge.slice(start, start + 3).map(([v, tk, t, d], i) => (
             <div class="j-edge-card" style={`--k:${start + i}`}>
-              <span class="j-edge-txt"><b data-i18n={tk}>{t}</b><small data-i18n={`home.j_edge${start + i + 1}`}>{d}</small></span>
+              <span class="j-edge-txt"><b data-i18n={tk}>{t}</b><small data-i18n={`home.j_edge${start + i + 1}`} data-countup={start + i === 2 ? "" : undefined}>{d}</small></span>
               <Vector name={v} size={66} />
             </div>
           ))}
@@ -286,7 +286,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       {work.map(([v, tk, t, bk, b], i) => (
         <div class={`j-card j-card-row reveal d${i % 3}`}>
           <Vector name={v} size={46} />
-          <span><h3 data-i18n={tk}>{t}</h3><p data-i18n={bk}>{b}</p></span>
+          <span><h3 data-i18n={tk} data-countup={i === 3 ? "" : undefined}>{t}</h3><p data-i18n={bk}>{b}</p></span>
         </div>
       ))}
     </div>
@@ -305,9 +305,9 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       <div class="j-certs-art"><Vector name="certificate" size={126} /><Vector name="shield" size={108} /></div>
     </div>
     <p class="j-logo-label reveal" data-i18n="home.certs_regs_label">Our Registrations</p>
-    <div class="j-logos reveal">{directCerts.map((c) => <span><img src={`/assets/certifications/${c.file}`} alt={c.alt} loading="lazy" width="110" height="66" /></span>)}</div>
+    <div class="j-logos j-marquee reveal"><div class="j-marquee-track">{[0, 1].map((copy) => directCerts.map((c) => <span aria-hidden={copy ? "true" : undefined}><img src={`/assets/certifications/${c.file}`} alt={copy ? "" : c.alt} loading="lazy" width="110" height="66" /></span>))}</div></div>
     <p class="j-logo-label reveal" data-i18n="home.certs_quality_label">Quality &amp; Partner Certifications</p>
-    <div class="j-logos reveal">{partnerCerts.map((c) => <span><img src={`/assets/certifications/${c.file}`} alt={c.alt} loading="lazy" width="110" height="66" /></span>)}</div>
+    <div class="j-logos j-marquee j-marquee-rev reveal"><div class="j-marquee-track">{[0, 1].map((copy) => partnerCerts.map((c) => <span aria-hidden={copy ? "true" : undefined}><img src={`/assets/certifications/${c.file}`} alt={copy ? "" : c.alt} loading="lazy" width="110" height="66" /></span>))}</div></div>
     <p class="j-logo-note" data-i18n="home.certs_disclaimer">Held by our vetted manufacturing partners — arranged per order, on request.</p>
   </div>
 </section>
