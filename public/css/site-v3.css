@@ -871,10 +871,10 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] .j-cat-rail a:hover { border-color: var(--cat-mid); }
 [data-version="v3"] .j-cat-rail a.on { border-color: transparent; background: var(--cat-ink); color: #fff; }
 /* Compact cards: 4 across on desktop (~30% narrower than the old 3-up), 3 on tablets, a horizontal row on phones */
-[data-version="v3"] .j-cat-list .prod-grid { grid-template-columns: 1fr; gap: .9rem; }
-@media (min-width: 560px) { [data-version="v3"] .j-cat-list .prod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; } }
+[data-version="v3"] .j-cat-list .prod-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+@media (min-width: 560px) { [data-version="v3"] .j-cat-list .prod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; } }
 @media (min-width: 720px) { [data-version="v3"] .j-cat-list .prod-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 1024px) { [data-version="v3"] .j-cat-list .prod-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; max-width: 1140px; margin-inline: auto; } }
+@media (min-width: 1024px) { [data-version="v3"] .j-cat-list .prod-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; max-width: 1140px; margin-inline: auto; } }
 [data-version="v3"] .j-cat-list { padding-top: 1.5rem; }
 [data-version="v3"] .j-cat-list .prod-card { border-radius: 20px; border-color: var(--cat-tint); box-shadow: 0 20px 40px -34px rgba(21,18,58,.4); }
 [data-version="v3"] .j-cat-list .prod-card:hover { border-color: var(--cat-mid); box-shadow: 0 28px 50px -34px rgba(21,18,58,.5); }
