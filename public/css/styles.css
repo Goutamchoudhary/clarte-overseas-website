@@ -283,6 +283,8 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.5rem, 2.5vw, 1.95rem); }
   transition: background .18s ease, color .18s ease;
 }
 .nav-dd-item:hover { background: var(--brand-100); color: var(--brand); }
+.mm-arrow, .mm-logo-dark { display: none; }
+.mm-foot { display: contents; }
 .mobile-sub { font-size: 1rem; color: #cdd6e6; font-family: var(--font-body); }
 .mobile-sub:hover { color: #fff; }
 
