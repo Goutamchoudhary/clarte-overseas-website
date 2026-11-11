@@ -114,7 +114,7 @@ const cats = categories.map((c) => {
           <p class="j-sub" data-i18n="products.docs_sub">Five core documents travel with your shipment, prepared accurately and on time so your consignment moves without hold-ups.</p>
         </div>
         <div class="j-docs-grid">
-          {[["inquiry", "Commercial Invoice", "The itemised record of your order, in your currency."], ["pallet", "Packing List", "Every bag and carton, with weights and marks."], ["globe", "Certificate of Origin", "Confirms the goods were produced in India."], ["labtech", "Certificate of Analysis", "Lab results for your lot, checked against spec."], ["specsheet", "Product Specification", "The agreed grade, mesh and quality parameters."]].map(([v, t, d], i) => (
+          {[["doc-invoice", "Commercial Invoice", "The itemised record of your order, in your currency."], ["doc-packing-list", "Packing List", "Every bag and carton, with weights and marks."], ["doc-origin", "Certificate of Origin", "Confirms the goods were produced in India."], ["doc-analysis", "Certificate of Analysis", "Lab results for your lot, checked against spec."], ["doc-spec", "Product Specification", "The agreed grade, mesh and quality parameters."]].map(([v, t, d], i) => (
             <div class={`j-doc reveal d${i % 3}`}>
               <Vector name={v} size={104} />
               <h3 data-i18n={`products.doc${i + 1}_title`}>{t}</h3>
