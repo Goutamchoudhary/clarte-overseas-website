@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+<!-- Itemised invoice sheet with a currency coin and a total line · use: Products, Commercial Invoice -->
+<ellipse cx="100" cy="163" rx="78" ry="5" fill="#15123a" opacity=".1"/>
+<path d="M46 12H136L152 28V156H46Z" fill="#fff" stroke="#e4e2f3" stroke-width="3" stroke-linejoin="round"/>
+<path d="M136 12V28H152" fill="#eef0f8" stroke="#e4e2f3" stroke-width="3" stroke-linejoin="round"/>
+<rect x="58" y="26" width="44" height="9" rx="4.5" fill="#6d28d9"/>
+<path d="M58 54H108M58 70H100M58 86H110" stroke="#d6d3ea" stroke-width="5" stroke-linecap="round"/>
+<path d="M120 54H140M120 70H140M120 86H140" stroke="#c4b5fd" stroke-width="5" stroke-linecap="round"/>
+<path d="M58 106H140" stroke="#e4e2f3" stroke-width="3"/>
+<rect x="104" y="116" width="36" height="12" rx="6" fill="#6d28d9"/>
+<circle cx="158" cy="128" r="24" fill="#e0a526"/><circle cx="158" cy="128" r="17" fill="none" stroke="#f4c75a" stroke-width="3"/>
+<path d="M165 120C161 115 151 116 151 122C151 129 166 127 166 134C166 141 154 142 150 136M158 112V144" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
