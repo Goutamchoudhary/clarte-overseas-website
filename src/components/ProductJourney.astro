@@ -7,6 +7,8 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Product, Category } from "../data/products";
 import { srcsetFor, smallest, SIZES } from "../lib/responsive-img";
+import { artFor } from "../lib/product-art";
+import { checksFor } from "../data/market-checks";
 import Vector from "./Vector.astro";
 
 interface Props {
@@ -25,6 +27,7 @@ const pk = p.slug.replace(/-/g, "_");
 const ck = cat.slug.replace(/-/g, "_");
 const art = `/assets/img/products/art/${p.slug}.svg`;
 const hasArt = fs.existsSync(path.join(process.cwd(), "public", art));
+const checks = checksFor(p.slug, cat.slug);
 ---
 <section class="j-pd-hero" data-cat={cat.slug}>
   <div class="j-wrap">
@@ -39,7 +42,7 @@ const hasArt = fs.existsSync(path.join(process.cwd(), "public", art));
         <div class={`pd-frame${p.image ? " has-photo" : " no-img"}`} id="pdFrame">
           {p.image
             ? <img src={p.image} srcset={srcsetFor(p.image)} sizes={SIZES.detail} alt={p.name} id="pdImg" class="pd-img" fetchpriority="high" data-splash-hero />
-            : <span class="pd-emoji">{p.emoji}</span>}
+            : hasArt ? <img src={art} alt={p.name} class="pd-art" width="320" height="320" data-splash-hero /> : <span class="pd-emoji">{p.emoji}</span>}
         </div>
         {p.image && p.gallery?.length ? (
           <div class="pd-thumbs" role="group" aria-label="Product photos">
@@ -100,7 +103,7 @@ const hasArt = fs.existsSync(path.join(process.cwd(), "public", art));
       <p class="j-pd-lead" data-i18n={`prod.${pk}_desc`}>{p.description}</p>
     </div>
     <div class="j-pd-panel reveal d1">
-      {hasArt && <img class="j-pd-mascot" src={art} alt="" width="96" height="96" loading="lazy" decoding="async" />}
+      {hasArt && p.image && <img class="j-pd-mascot" src={art} alt="" width="96" height="96" loading="lazy" decoding="async" />}
       <h2 class="j-pd-h2" data-i18n="prod.features_heading">Key features</h2>
       <ul class="j-pd-ticks">
         {p.features.map((f, i) => <li data-i18n={`prod.${pk}_f${i + 1}`}>{f}</li>)}
@@ -163,6 +166,27 @@ const hasArt = fs.existsSync(path.join(process.cwd(), "public", art));
   </div>
 </section>
 
+<section class="j-pd-sec j-pd-mkt-sec">
+  <div class="j-wrap">
+    <div class="j-pd-mkt reveal">
+      <div class="j-pd-mkt-head">
+        <span class="j-pd-label" data-i18n="mkt.eyebrow">Export compliance</span>
+        <h2 class="j-pd-h2" data-i18n="mkt.heading">What importers test this product for</h2>
+        <p class="j-pd-mkt-intro" data-i18n="mkt.intro">The limits buyers in the EU, US and Japan check this product against. Tell us your destination and lots are tested against its limits before shipping, with results on the COA.</p>
+        <p class="j-pd-mkt-note" data-i18n="mkt.note">Limits shown are the EU's, the strictest most buyers apply. Where your market's own limits differ, we work to those.</p>
+      </div>
+      <ul class="j-pd-mkt-list">
+        {checks.map((c) => (
+          <li>
+            <span class="j-pd-mkt-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.4 2.4L15.5 9.8"/></svg></span>
+            <span><b data-i18n={`mkt.${c.id}_t`}>{c.title}</b><small data-i18n={`mkt.${c.id}_b`}>{c.body}</small></span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="j-faq j-pd-faq">
   <div class="j-wrap j-faq-grid">
     <div class="reveal">
@@ -198,7 +222,7 @@ const hasArt = fs.existsSync(path.join(process.cwd(), "public", art));
         {related.map((r) => (
           <article class="prod-card reveal">
             <a href={`/products/${cat.slug}/${r.slug}`} class="prod-media" aria-label={r.name}>
-              {(r.listImage || r.image) ? <img src={r.listImage || r.image} srcset={srcsetFor(r.listImage || r.image)} sizes={SIZES.card} alt={r.name} loading="lazy" decoding="async" /> : <span class="prod-emoji">{r.emoji}</span>}
+              {(r.listImage || r.image) ? <img src={r.listImage || r.image} srcset={srcsetFor(r.listImage || r.image)} sizes={SIZES.card} alt={r.name} loading="lazy" decoding="async" /> : artFor(r.slug) ? <img src={artFor(r.slug)} alt={r.name} class="prod-art" loading="lazy" decoding="async" /> : <span class="prod-emoji">{r.emoji}</span>}
             </a>
             <div class="prod-body">
               <span class="prod-hsn">HSN {r.hsn}</span>

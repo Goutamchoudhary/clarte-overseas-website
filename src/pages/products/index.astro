@@ -1,4 +1,5 @@
 ---
+import { artFor } from "../../lib/product-art";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import { categories, productsByCategory } from "../../data/products";
@@ -37,15 +38,15 @@ const cats = categories.map((c) => {
           .filter((p) => p && p.image && !hiddenFromThumbs(p.slug))
       : items.filter((p) => p.image && !hiddenFromThumbs(p.slug)).slice(0, 4),
     fallback: items.slice(0, 4),
-    // Every available product with a photo, new photography first. A category
-    // with fewer than three tops up from its coming-soon products.
+    // Every product in the category, so the rotating tiles cover exactly the
+    // count shown: photos first (newest photography first), then products
+    // still waiting for a photo, shown with their drawing.
     shuffle: (() => {
-      const photo = items.filter((p) => p.image);
-      const ready = photo.filter((p) => !hiddenFromThumbs(p.slug));
-      const ordered = [...ready.filter((p) => p.listImage), ...ready.filter((p) => !p.listImage)];
-      const extra = photo.filter((p) => hiddenFromThumbs(p.slug) && !UNAVAILABLE_PRODUCTS.has(p.slug));
-      return (ordered.length >= 3 ? ordered : [...ordered, ...extra]).map((p) => ({
-        name: p.name, key: `cat.prod_${p.slug.replace(/-/g, "_")}_name`, image: p.image!, href: `/products/${c.slug}/${p.slug}`,
+      const withPhoto = items.filter((p) => p.image);
+      const ordered = [...withPhoto.filter((p) => p.listImage), ...withPhoto.filter((p) => !p.listImage)];
+      const drawn = items.filter((p) => !p.image && artFor(p.slug));
+      return [...ordered, ...drawn].map((p) => ({
+        name: p.name, key: `cat.prod_${p.slug.replace(/-/g, "_")}_name`, image: p.image || artFor(p.slug)!, href: `/products/${c.slug}/${p.slug}`,
       }));
     })(),
   };
@@ -73,7 +74,7 @@ const cats = categories.map((c) => {
           <div class="cat-row-text reveal">
             <div class="cat-row-head">
               <span class="cat-index">{String(i + 1).padStart(2, "0")}</span>
-              <span class="cat-emoji">{c.emoji}</span>
+              {c.icon ? <span class="cat-emoji cat-icon" set:html={c.icon} /> : <span class="cat-emoji">{c.emoji}</span>}
             </div>
             <h2 class="cat-name" data-i18n={`products.cat_${c.slug.replace(/-/g, '_')}_name`}>{c.name}</h2>
             <p class="cat-desc" data-i18n={`products.cat_${c.slug.replace(/-/g, '_')}_desc`}>{c.description}</p>

@@ -80,11 +80,11 @@ const ALLERGEN =
 const COMPLIANCE =
   "Sourced from FSSAI-licensed processing units following ISO 22000 / HACCP food-safety practices. Exported by an APEDA-registered, IEC-holding merchant exporter. Kosher, Halal, BRCGS and organic certification available against specific orders. No added preservatives or synthetic colour.";
 
-// Seeds and kernels are routinely handled on lines that also run sesame and
-// tree nuts, both of which ARE declarable allergens. The generic statement
-// above would understate that, so this category gets its own.
+// Sesame IS a declarable allergen (EU Annex II; US major allergen since the
+// FASTER Act), and the seed spices share handling with it, so this category
+// gets its own statement instead of the generic "no declarable allergens".
 const ALLERGEN_SEEDS =
-  "The seeds and kernels themselves are not declarable allergens under EU Reg. 1169/2011 or US FDA FALCPA (as amended by the FASTER Act). Gluten-free, vegan and non-GMO. Processed under GMP in facilities that may also handle sesame and tree nuts; cross-contact is controlled, and segregated or dedicated-line production can be arranged against a specific order. Confirm allergen status against the batch COA and your own market's labelling rules.";
+  "Sesame is a declarable allergen (EU Reg. 1169/2011 Annex II; a major food allergen in the US under the FASTER Act) and must be labelled. Cumin, coriander, fenugreek and ajwain are not declarable allergens, but are handled in facilities that also process sesame; cross-contact is controlled, and segregated lots can be arranged against a specific order. Gluten-free, vegan and non-GMO. Confirm allergen status against the batch COA and your own market's labelling rules.";
 
 export const categoryDefaults: Record<string, CategoryDefaults> = {
   "fruit-powders": {
@@ -117,11 +117,10 @@ export const categoryDefaults: Record<string, CategoryDefaults> = {
     micro: MICRO_HERBAL, heavyMetals: HEAVY_METALS,
     packaging: PACKAGING, storage: STORAGE, allergen: ALLERGEN, compliance: COMPLIANCE,
   },
-  "edible-seeds-kernels": {
+  "seed-spices-sesame": {
     gradeLabel: "Food grade",
-    // Hulled kernels carry oil and go rancid sooner than a dried powder, so
-    // this category is deliberately shorter than the 18–24 months elsewhere.
-    shelfLife: "12 months from manufacture, in unopened, properly stored packaging",
+    // Whole seed spices keep well; sesame carries more oil and is shorter.
+    shelfLife: "24 months for whole seed spices and 12 months for sesame, from manufacture, in unopened, properly stored packaging",
     micro: MICRO_STD, heavyMetals: HEAVY_METALS,
     packaging: PACKAGING, storage: STORAGE, allergen: ALLERGEN_SEEDS, compliance: COMPLIANCE,
   },
@@ -451,59 +450,110 @@ export const productSpecs: Record<string, ProductSpec> = {
     nutritionNote: "Plant-based thickener and sizing agent (polysaccharide-rich).",
   },
 
-  // ------------------------------------------------- EDIBLE SEEDS & KERNELS
-  // "mesh" is meaningless for a whole kernel; the field is kept (the PDF and
-  // the chip row both read it) but states the format instead of a granulation.
-  "watermelon-seeds": {
-    appearance: "Whole hulled kernels", colour: "Creamy white to pale ivory",
-    odour: "Mild, characteristic nutty", taste: "Clean, mildly nutty",
-    mesh: "Whole kernels (not milled)",
+  // ------------------------------------------------- SEED SPICES & SESAME
+  // "mesh" is meaningless for a whole seed; the field is kept (the PDF and the
+  // chip row both read it) but states the format instead of a granulation.
+  // Typical values; each lot's COA is the reference.
+  "cumin-seeds": {
+    appearance: "Whole, elongated ridged seeds", colour: "Greyish brown",
+    odour: "Strong, warm and earthy", taste: "Warm, slightly bitter and aromatic",
+    mesh: "Whole seed (powder on request)",
     params: [
-      { k: "Purity", v: "≥ 99%" },
-      { k: "Broken / split kernels", v: "≤ 2%" },
-      { k: "Foreign matter", v: "≤ 0.5%" },
-      { k: "Free fatty acid (as oleic)", v: "≤ 2.0%" },
+      { k: "Purity", v: "98% (Singapore) / 99% (Europe)" },
+      { k: "Volatile oil", v: "≥ 2.5% v/w" },
+      { k: "Foreign matter", v: "≤ 1% (Singapore) / ≤ 0.5% (Europe)" },
+      { k: "Total ash", v: "≤ 9.5%" },
     ],
-    nutrition: { energy: 557, protein: 28, fat: 47, carb: 15, sugars: 0, fibre: 4, sodium: 99 },
-    nutritionNote: "High in plant protein, magnesium and unsaturated fats.",
+    nutrition: { energy: 375, protein: 18, fat: 22, carb: 44, sugars: 2, fibre: 11, sodium: 168 },
+    nutritionNote: "Source of iron; carries cumin's natural aromatic oils.",
   },
-  "chia-seeds": {
-    appearance: "Whole, untreated seed", colour: "Black / grey mottled, or white",
-    odour: "Neutral, faintly nutty", taste: "Very mild, nutty",
-    mesh: "Whole seed (not milled)",
+  "coriander-seeds": {
+    appearance: "Whole round seeds (split on request)", colour: "Light brown to greenish yellow",
+    odour: "Fresh, citrusy and sweet", taste: "Mild, warm and citrusy",
+    mesh: "Whole or split seed (powder on request)",
     params: [
-      { k: "Purity", v: "≥ 99.9%" },
-      { k: "Omega-3 (ALA), typical", v: "≥ 17 g/100 g" },
-      { k: "Foreign matter", v: "≤ 0.1%" },
-      { k: "Mucilage / gel formation", v: "Forms gel on hydration" },
+      { k: "Purity", v: "98–99%" },
+      { k: "Grade", v: "Eagle / Scooter, single or double polished" },
+      { k: "Foreign matter", v: "≤ 1%" },
+      { k: "Volatile oil", v: "≥ 0.3% v/w" },
     ],
-    nutrition: { energy: 486, protein: 16.5, fat: 30.7, carb: 42, sugars: 0, fibre: 34, sodium: 16 },
-    nutritionNote: "One of the densest plant sources of omega-3 ALA and soluble fibre.",
+    nutrition: { energy: 298, protein: 12, fat: 18, carb: 55, sugars: 0, fibre: 42, sodium: 35 },
+    nutritionNote: "Very high in dietary fibre.",
   },
-  "pumpkin-seeds": {
-    appearance: "Whole hulled kernels (pepitas)", colour: "Deep olive-green",
-    odour: "Characteristic, nutty", taste: "Rich, roasted-nut",
-    mesh: "Whole kernels (not milled)",
+  "fenugreek-seeds": {
+    appearance: "Whole, hard angular seeds", colour: "Golden yellow to amber",
+    odour: "Strong, maple-like", taste: "Bitter-sweet",
+    mesh: "Whole seed (powder on request)",
     params: [
-      { k: "Purity", v: "≥ 99%" },
-      { k: "Broken / split kernels", v: "≤ 3%" },
-      { k: "Foreign matter", v: "≤ 0.5%" },
-      { k: "Free fatty acid (as oleic)", v: "≤ 2.0%" },
+      { k: "Purity", v: "98–99%" },
+      { k: "Foreign matter", v: "≤ 1%" },
+      { k: "Damaged / discoloured seeds", v: "≤ 3%" },
+      { k: "Total ash", v: "≤ 5%" },
     ],
-    nutrition: { energy: 559, protein: 30, fat: 49, carb: 11, sugars: 1.4, fibre: 6, sodium: 7 },
-    nutritionNote: "High in plant protein, zinc, magnesium and unsaturated fats.",
+    nutrition: { energy: 323, protein: 23, fat: 6, carb: 58, sugars: 0, fibre: 25, sodium: 67 },
+    nutritionNote: "Rich in protein and soluble fibre (galactomannan).",
   },
-  "melon-seeds": {
-    appearance: "Whole hulled kernels (magaz)", colour: "Pale cream to light ivory",
-    odour: "Mild, characteristic", taste: "Delicate, mildly sweet and nutty",
-    mesh: "Whole kernels (not milled)",
+  "ajwain-seeds": {
+    appearance: "Small, ridged ovoid seeds", colour: "Greyish brown",
+    odour: "Sharp, thyme-like (thymol)", taste: "Pungent, slightly bitter",
+    mesh: "Whole seed (powder on request)",
     params: [
-      { k: "Purity", v: "≥ 99%" },
-      { k: "Broken / split kernels", v: "≤ 2%" },
-      { k: "Foreign matter", v: "≤ 0.5%" },
-      { k: "Free fatty acid (as oleic)", v: "≤ 2.0%" },
+      { k: "Purity", v: "98–99%" },
+      { k: "Volatile oil", v: "≥ 2.0% v/w" },
+      { k: "Foreign matter", v: "≤ 1%" },
+      { k: "Total ash", v: "≤ 10%" },
     ],
-    nutrition: { energy: 555, protein: 28, fat: 47, carb: 15, sugars: 0, fibre: 4, sodium: 20 },
-    nutritionNote: "Naturally rich in plant protein, magnesium and unsaturated fats.",
+    nutrition: { energy: 360, protein: 16, fat: 21, carb: 25, sugars: 0, fibre: 21, sodium: 10 },
+    nutritionNote: "Carries ajwain's natural thymol-rich essential oil.",
+  },
+  "sesame-seeds": {
+    appearance: "Whole seeds (natural, hulled or black)", colour: "White, off-white or black by type",
+    odour: "Mild, nutty", taste: "Mild, nutty and slightly sweet",
+    mesh: "Whole seed",
+    params: [
+      { k: "Purity", v: "99.90–99.95%" },
+      { k: "Oil content", v: "≥ 48%" },
+      { k: "Free fatty acid (as oleic)", v: "≤ 2.0%" },
+      { k: "Admixture", v: "≤ 0.05–0.10%" },
+    ],
+    nutrition: { energy: 573, protein: 18, fat: 50, carb: 23, sugars: 0, fibre: 12, sodium: 11 },
+    nutritionNote: "Rich in calcium, unsaturated fats and plant protein.",
+  },
+  "turmeric-powder": {
+    appearance: "Fine powder", colour: "Deep golden yellow",
+    odour: "Warm, earthy turmeric", taste: "Earthy, slightly bitter and warm",
+    mesh: "60–80 mesh (custom available)",
+    params: [
+      { k: "Curcumin", v: "2–5% (by grade)" },
+      { k: "Total ash", v: "≤ 7.0%" },
+      { k: "Acid-insoluble ash", v: "≤ 1.5%" },
+      { k: "Added colour / lead chromate", v: "Absent" },
+    ],
+    nutrition: { energy: 312, protein: 10, fat: 3, carb: 67, sugars: 3, fibre: 23, sodium: 27 },
+    nutritionNote: "Natural curcumin, the source of turmeric's colour.",
+  },
+  "red-chilli-powder": {
+    appearance: "Powder or crushed flakes", colour: "Bright to deep red by grade",
+    odour: "Pungent chilli", taste: "Hot, mild to very hot by grade",
+    mesh: "40–60 mesh, flakes on request",
+    params: [
+      { k: "ASTA colour value", v: "On request (by grade)" },
+      { k: "Pungency (SHU)", v: "On request (by grade)" },
+      { k: "Sudan I–IV dyes", v: "Absent" },
+      { k: "Total ash", v: "≤ 8.0%" },
+    ],
+    nutrition: { energy: 318, protein: 12, fat: 17, carb: 57, sugars: 10, fibre: 27, sodium: 30 },
+    nutritionNote: "Natural capsaicin and carotenoid colour.",
+  },
+  "kasuri-methi": {
+    appearance: "Dried leaves or powder", colour: "Green",
+    odour: "Strong, sweet-bitter fenugreek", taste: "Bitter-sweet and herbal",
+    mesh: "Whole dried leaf (powder on request)",
+    params: [
+      { k: "Foreign matter (stems)", v: "≤ 2%" },
+      { k: "Total ash", v: "≤ 12%" },
+    ],
+    nutrition: { energy: 300, protein: 24, fat: 5, carb: 44, sugars: 4, fibre: 26, sodium: 140 },
+    nutritionNote: "Source of iron and dietary fibre; keeps the leaf's natural aroma.",
   },
 };

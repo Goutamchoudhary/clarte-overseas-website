@@ -8,6 +8,7 @@ import { isVersion } from "../../../data/site-options";
 import { collageCats } from "../../../lib/collage";
 import Vector from "../../../components/Vector.astro";
 import { categoryGuides, guideShelf } from "../../../data/category-guides";
+import { artFor } from "../../../lib/product-art";
 
 const v3 = isVersion("v3");
 
@@ -130,7 +131,7 @@ const listLd = {
               <span class="prod-media-tint" aria-hidden="true"></span>
               {(p.listImage || p.image)
                 ? <img src={p.listImage || p.image} srcset={srcsetFor(p.listImage || p.image)} sizes={SIZES.card} alt={p.name} loading="lazy" decoding="async" />
-                : <span class="prod-emoji">{p.emoji}</span>}
+                : artFor(p.slug) ? <img src={artFor(p.slug)} alt={p.name} class="prod-art" loading="lazy" decoding="async" /> : <span class="prod-emoji">{p.emoji}</span>}
               {p.forms && <span class="prod-badge">{p.forms.length}&nbsp;<span data-i18n="products.forms_unit">forms</span></span>}
               {UNAVAILABLE_PRODUCTS.has(p.slug) && <span class="prod-status prod-status-unavail">Currently Unavailable</span>}
               {COMING_SOON_PRODUCTS.has(p.slug) && <span class="prod-status prod-status-soon">Coming Soon</span>}

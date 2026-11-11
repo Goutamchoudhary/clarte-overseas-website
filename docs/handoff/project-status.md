@@ -50,10 +50,20 @@ before acting — they drift.
   `srcset`; 2x phones get the 800px file (~40–110 KB instead of 100–230 KB),
   3x phones still get the full 1200px for sharpness. /products overview
   thumbnails use the 480px copy.
-- **7 products have no photo** (emoji placeholder) — to be supplied:
-  giloy, neem, trikatu (Ayurvedic
-  & herbal); watermelon, chia, pumpkin, melon seeds (edible seeds). Process:
+- **8 products have no photo** (their drawing stands in) — to be supplied:
+  cumin, coriander, fenugreek, ajwain and sesame seeds (Seed Spices & Sesame);
+  turmeric powder, red chilli powder, kasuri methi (Culinary). The Seed Spices &
+  Sesame category image is an illustrated stand-in too. Process:
   `public/assets/img/products/README.txt`.
+- **Nov 2026 catalogue brief:** watermelon, melon, pumpkin and chia seeds were
+  delisted (not Indian produce); "Edible Seeds & Kernels" became "Seed Spices &
+  Sesame" (`/products/seed-spices-sesame`, 301s from the old slug and its
+  product URLs in `vercel.json`). `public/Clarte_Overseas_Catalogue.pdf` still
+  lists the old seeds and needs a new edition. Kasuri methi's HSN (0910 99 90)
+  is the residual spice code — confirm with the CHA.
+- **Product pages show "What importers test this product for"** — EU limits
+  per product from `src/data/market-checks.ts` (keys `mkt.*`). Keep every figure
+  sourced to the regulation it names.
 - The tamarind powder photo has a small sparkle mark bottom-right (looks
   like an AI generator's watermark) — consider replacing.
 

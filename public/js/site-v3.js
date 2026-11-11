@@ -80,7 +80,7 @@
 
   // Three product photos per category, shuffling through the whole category.
   function shuffle(root) {
-    var items, names = root.querySelectorAll("[data-j-name]"), tiles = root.querySelectorAll("[data-j-sh]");
+    var items, tiles = root.querySelectorAll("[data-j-sh]");
     try { items = JSON.parse(root.querySelector("[data-j-items]").textContent); } catch (e) { return; }
     var n = items.length, gap = +root.getAttribute("data-step") || 1, step = 0, visible = false, held = false;
     function tick() {
@@ -97,10 +97,11 @@
             next.classList.add("is-enter");
             label.classList.add("is-swap");
             setTimeout(function () {
-              label.textContent = names[k].textContent;
-              label.setAttribute("data-i18n", names[k].getAttribute("data-key"));
+              var nm = (window.i18n && window.i18n.t(item.key)) || item.name;
+              label.textContent = nm;
+              label.setAttribute("data-i18n", item.key);
               tile.href = item.href;
-              tile.setAttribute("aria-label", names[k].textContent);
+              tile.setAttribute("aria-label", nm);
               label.classList.remove("is-swap");
             }, 280);
             setTimeout(function () {
