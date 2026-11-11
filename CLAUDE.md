@@ -105,8 +105,8 @@ that area).
   `#f7eedb`) as the warm accent (eyebrow labels, highlights). Tokens live at the
   top of `public/css/site-v3.css` (`--violet` and `--pink` keep their old names
   but now hold navy and turmeric). **No purple or lavender anywhere** — the owner
-  replaced it so the site doesn't read as AI-generated. Buttons are solid navy
-  (`--bloom` is a navy two-tone), not multicolour gradients. Purple-red food
+  replaced it so the site doesn't read as AI-generated. CTA buttons (`--bloom`, `--aurora`)
+  are navy easing into turmeric at the far end — never violet or pink. Purple-red food
   colours in drawings (beetroot, pomegranate, red onion, tulsi) are fine.
 
 ## i18n

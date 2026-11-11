@@ -6,9 +6,9 @@
 [data-version="v3"] {
   --ink: #14213d; --sub: #46506b; --violet: #1f4693; --pink: #c7861c; --lav: #eef2fa;
   --line: #e9eef8; --paper: #fbf9f4;
-  --bloom: linear-gradient(135deg, #22509f 0%, #1f4693 50%, #183a7c 100%);
+  --bloom: linear-gradient(120deg, #1f4693 0%, #1f4693 52%, #c7861c 100%);
   --gold: #c7861c; --gold-ink: #8a5a0f; --gold-tint: #f7eedb;
-  --aurora: linear-gradient(135deg, #22509f 0%, #1f4693 50%, #183a7c 100%);
+  --aurora: linear-gradient(120deg, #1f4693 0%, #1f4693 52%, #c7861c 100%);
   --calendly: linear-gradient(135deg, #8ea6d8 0%, #f1f5fb 100%);
   --midnight: radial-gradient(700px 480px at 82% 20%, rgba(31,70,147,.34), transparent 70%), radial-gradient(520px 340px at 6% 100%, rgba(199,134,28,.2), transparent 70%), #0a1428;
   --pastel: radial-gradient(700px 420px at 85% 100%, #faf2e5 0%, transparent 70%), radial-gradient(600px 400px at 0% 0%, #dbeafe 0%, transparent 70%), #eaf0f9;
