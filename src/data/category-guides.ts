@@ -4,7 +4,7 @@
 // cat.guide_* labels. Each category has its own vector (no reuse).
 export interface CategoryGuide {
   art: string;
-  shelf: "24" | "18" | "12"; // → cat.guide_shelf_<n>, mirrors categoryDefaults in specs.ts
+  shelf: "24" | "18" | "12" | "1224"; // → cat.guide_shelf_<n>, mirrors categoryDefaults in specs.ts
   title: string;
   intro: string;
   regions: string;
@@ -53,13 +53,13 @@ export const categoryGuides: Record<string, CategoryGuide> = {
     uses: "Beverages, dairy, ice cream, confectionery, bakery and nutraceuticals",
     spec: "Fruit, mesh, carrier preference and how free-flowing it needs to be",
   },
-  "edible-seeds-kernels": {
-    art: "seed-grader", shelf: "12",
-    title: "Clean, size-graded seeds and kernels",
-    intro: "Watermelon, pumpkin, melon and chia, cleaned, sorted and graded by size so each lot packs evenly and is ready for snacking, baking or further processing.",
-    regions: "Rajasthan, Madhya Pradesh, Karnataka, Gujarat",
-    uses: "Snacks, bakery toppings, cereals, seed butters and trail mixes",
-    spec: "Seed type, size grade, admixture tolerance and allergen requirements",
+  "seed-spices-sesame": {
+    art: "seed-grader", shelf: "1224",
+    title: "India's seed spices and sesame, cleaned to export purity",
+    intro: "Cumin, coriander, fenugreek, ajwain and sesame, machine-cleaned, sorted and graded to Singapore, Europe or your own purity spec so every lot blends and packs the same way.",
+    regions: "Gujarat, Rajasthan, Madhya Pradesh",
+    uses: "Spice blends, seasonings, bakery, tahini and confectionery",
+    spec: "Seed, purity grade, moisture limit, destination market and packing",
   },
   "hydrocolloids-food-additives": {
     art: "gel-beaker", shelf: "24",
@@ -75,4 +75,5 @@ export const guideShelf = {
   "24": "24 months, unopened",
   "18": "18–24 months, unopened",
   "12": "12 months, unopened",
+  "1224": "12–24 months, unopened",
 };

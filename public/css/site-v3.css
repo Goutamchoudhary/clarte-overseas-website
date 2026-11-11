@@ -849,7 +849,7 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] body:has([data-cat="functional-nutritional-powders"]) { --cat-bg: #ece9f4; --cat-tint: #e1dcef; --cat-ink: #3e3763; --cat-mid: #766ca2; }
 [data-version="v3"] body:has([data-cat="dehydrated-vegetable-powders"]) { --cat-bg: #edf0df; --cat-tint: #e3e8cf; --cat-ink: #424e24; --cat-mid: #7a8a4c; }
 [data-version="v3"] body:has([data-cat="fruit-powders"]) { --cat-bg: #f8ebe7; --cat-tint: #f2dcd7; --cat-ink: #6a3040; --cat-mid: #ad6878; }
-[data-version="v3"] body:has([data-cat="edible-seeds-kernels"]) { --cat-bg: #f2ece0; --cat-tint: #e9e0cd; --cat-ink: #54452c; --cat-mid: #927c52; }
+[data-version="v3"] body:has([data-cat="seed-spices-sesame"]) { --cat-bg: #f2ece0; --cat-tint: #e9e0cd; --cat-ink: #54452c; --cat-mid: #927c52; }
 [data-version="v3"] body:has([data-cat="hydrocolloids-food-additives"]) { --cat-bg: #e7eef3; --cat-tint: #dbe6ed; --cat-ink: #2b4557; --cat-mid: #65859d; }
 [data-version="v3"] body:has([data-cat]) .nav-bar { background: var(--cat-bg); }
 [data-version="v3"] .j-cat-hero { background: linear-gradient(180deg, var(--cat-bg) 0, var(--cat-bg) 72%, #fff 100%); padding: 1.5rem 0 1rem; }
@@ -1112,3 +1112,27 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] #mobileMenu.hidden-menu nav > * { opacity: 0; transform: translateY(14px); transition-delay: 0s; }
 @media (prefers-reduced-motion: reduce) { [data-version="v3"] #mobileMenu nav > * { transition: none; transform: none; } }
 [data-version="v3"] body:has(#mobileMenu:not(.hidden-menu)) :is(.fab-wa, #toTop, .lang-hint) { opacity: 0; visibility: hidden; pointer-events: none; }
+
+/* ---- Product drawings standing in for missing photos ---- */
+[data-version="v3"] .prod-media .prod-art { position: relative; inset: auto; width: 46%; height: auto; object-fit: contain; z-index: 1; }
+[data-version="v3"] .j-cat-list .prod-media img.prod-art { position: relative; inset: auto; width: 46%; height: auto; }
+[data-version="v3"] .j-pd-hero .pd-art { display: block; width: 62%; max-width: 300px; height: auto; margin: 0 auto; }
+[data-version="v3"] .j-pd-hero .pd-frame.no-img { display: grid; place-items: center; }
+[data-version="v3"] .j-sh-img[src$=".svg"] { object-fit: contain; padding: 16%; background: var(--sh-bg, #f4f1ea); }
+@media (max-width: 559px) { [data-version="v3"] .j-cat-list .prod-media img.prod-art { width: 64%; } }
+
+/* ---- Product pages: "What importers test this product for" ---- */
+[data-version="v3"] .j-pd-mkt-sec { padding-top: 0; }
+[data-version="v3"] .j-pd-mkt { display: grid; gap: 1.75rem; padding: 1.75rem 1.4rem; border-radius: 28px; background: var(--cat-bg); border: 1px solid var(--cat-tint); }
+@media (min-width: 960px) { [data-version="v3"] .j-pd-mkt { grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 3rem; padding: 2.75rem 3rem; } }
+[data-version="v3"] .j-pd-mkt-intro { margin: .9rem 0 0; font-size: .98rem; line-height: 1.6; color: var(--cat-ink); opacity: .85; }
+[data-version="v3"] .j-pd-mkt-note { margin: 1rem 0 0; font-size: .82rem; line-height: 1.5; color: var(--cat-mid); }
+[data-version="v3"] .j-pd-mkt-list { display: grid; gap: .7rem; margin: 0; padding: 0; list-style: none; align-content: start; }
+@media (min-width: 640px) { [data-version="v3"] .j-pd-mkt-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+[data-version="v3"] .j-pd-mkt-list li { display: flex; gap: .8rem; align-items: flex-start; padding: 1rem 1.05rem; border-radius: 18px; background: #fff; }
+[data-version="v3"] .j-pd-mkt-ico { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--cat-tint); color: var(--cat-ink); }
+[data-version="v3"] .j-pd-mkt-ico svg { width: 19px; height: 19px; }
+[data-version="v3"] .j-pd-mkt-list b { display: block; font: 700 .95rem/1.3 var(--font-head); color: var(--cat-ink); }
+[data-version="v3"] .j-pd-mkt-list small { display: block; margin-top: .3rem; font-size: .84rem; line-height: 1.5; color: var(--sub); }
+.cat-icon { display: inline-flex; width: 2.6rem; height: 2.6rem; }
+.cat-icon svg { width: 100%; height: 100%; }

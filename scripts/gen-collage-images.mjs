@@ -14,7 +14,7 @@ const SRC = {
   "functional-nutritional-powders": "functional-nutritional-powder-hero.webp",
   "dehydrated-vegetable-powders": "dehydrated-veg-powder-hero.webp",
   "fruit-powders": "dehydrated-fruits-powder.webp",
-  "edible-seeds-kernels": "edible-seeds-kernels-hero.webp",
+  "seed-spices-sesame": "seed-spices-sesame-hero.webp",
   "hydrocolloids-food-additives": "hydrocolloids-additives.webp",
 };
 const DIR = "public/assets/img/categories";

@@ -24,6 +24,8 @@ export interface Category {
   name: string;
   navName: string;
   emoji: string;
+  /** Optional inline SVG icon shown instead of the emoji on /products. */
+  icon?: string;
   tagline: string;
   description: string;
   accentFrom: string;
@@ -122,16 +124,17 @@ export const categories: Category[] = [
     bgImage: "/assets/img/categories/dehydrated-fruits-powder.webp",
   },
   {
-    slug: "edible-seeds-kernels",
-    name: "Edible Seeds & Kernels",
-    navName: "Edible Seeds & Kernels",
-    emoji: "🎃",
-    tagline: "Clean-sorted seeds and hulled kernels",
+    slug: "seed-spices-sesame",
+    name: "Seed Spices & Sesame",
+    navName: "Seed Spices & Sesame",
+    emoji: "🫘",
+    icon: '<svg viewBox="0 0 32 32" aria-hidden="true"><g transform="rotate(-28 11 15)"><ellipse cx="11" cy="15" rx="3.6" ry="9" fill="#9b7a4a"/><path d="M11 7v16M8.6 9v12M13.4 9v12" stroke="#6e5530" stroke-width="1" fill="none"/></g><circle cx="22" cy="21" r="6" fill="#cfae72"/><path d="M22 15v12M18.4 16.6c-1.4 2.8-1.4 6 0 8.8M25.6 16.6c1.4 2.8 1.4 6 0 8.8" stroke="#a8874f" stroke-width="1" fill="none"/><path d="M23 8c3.2 1.8 4 4.6 3 7-3-1-4-3.6-3-7z" fill="#efe4cf" stroke="#c9b48c" stroke-width=".8"/></svg>',
+    tagline: "Whole Indian seed spices and sesame, graded to export purity",
     description:
-      "Watermelon, melon (magaz), pumpkin and chia — edible seeds and hulled kernels, machine-cleaned, colour-sorted and graded to a consistent purity and count for snacking, bakery, confectionery and nutrition brands.",
-    accentFrom: "#6f8630",
-    accentTo: "#4d5f21",
-    bgImage: "/assets/img/categories/edible-seeds-kernels-hero.webp",
+      "Whole Indian seed spices and sesame, machine-cleaned, sorted and graded to export purity. Sourced from the main growing belts of Gujarat, Rajasthan and Madhya Pradesh.",
+    accentFrom: "#8a6a2b",
+    accentTo: "#5e4818",
+    bgImage: "/assets/img/categories/seed-spices-sesame-hero.webp",
   },
   {
     slug: "hydrocolloids-food-additives",
@@ -361,6 +364,30 @@ export const products: Product[] = [
     drying: DRY.culinary,
   },
   {
+    slug: "turmeric-powder", name: "Turmeric Powder", category: "culinary-spice-powders",
+    emoji: "🟡", hsn: "0910 30 30", botanical: "Curcuma longa",
+    tagline: "Bright Indian turmeric from Nizamabad, Sangli and Erode, graded by curcumin.",
+    description:
+      "India grows most of the world's turmeric, and the Nizamabad, Sangli and Erode markets set its grades. The powder is milled to 60–80 mesh and graded by curcumin content (2–5%), giving the deep golden colour and earthy warmth that curry powders, seasonings, natural-colour applications and wellness drinks rely on. Whole fingers are available on request.",
+    features: ["Graded by curcumin (2–5%)", "Deep golden colour, earthy aroma", "60–80 mesh, whole fingers on request", "From Nizamabad, Sangli and Erode", "Tested for lead chromate and Sudan dyes", F_CUSTOM],
+    uses: ["Curry powders and seasonings", "Natural yellow colour", "Wellness drinks and golden milk", "Sauces, soups and ready meals"],
+    grades: ["Food grade", "Curcumin 2–5% (by grade)", "Moisture ≤ 10%", "25 kg paper / PP bags with liner"],
+    forms: ["Powder", "Whole fingers (on request)"],
+    drying: DRY.milled,
+  },
+  {
+    slug: "red-chilli-powder", name: "Red Chilli Powder", category: "culinary-spice-powders",
+    emoji: "🌶️", hsn: "0904 22 11", botanical: "Capsicum annuum",
+    tagline: "Guntur and Byadgi chilli, graded for heat and colour.",
+    description:
+      "Red chilli from Guntur in Andhra Pradesh, from Telangana and from Byadgi in Karnataka covers the full range, from fiery heat to deep red colour with mild pungency. It is supplied as powder (40–60 mesh) or crushed flakes, graded by ASTA colour and Scoville heat on request, for seasonings, sauces, snacks and spice blends.",
+    features: ["Graded by heat (SHU) and ASTA colour", "Guntur heat or Byadgi colour", "Powder or crushed flakes", "40–60 mesh, custom on request", "Tested for aflatoxins and Sudan dyes", F_CUSTOM],
+    uses: ["Seasonings and snack coatings", "Sauces, pastes and marinades", "Spice blends and curry powders", "Ready meals and soups"],
+    grades: ["Food grade", "ASTA colour and SHU on request", "Moisture ≤ 11%", "25 kg paper / PP bags with liner"],
+    forms: ["Powder", "Crushed flakes"],
+    drying: DRY.milled,
+  },
+  {
     slug: "fried-onion", name: "Fried Onion", category: "culinary-spice-powders",
     image: "/assets/img/products/fried-onion.webp", emoji: "🧅", hsn: "2005 99 90", botanical: "Allium cepa",
     tagline: "Crispy, golden and intensely savoury — ready to garnish or blend.",
@@ -469,6 +496,18 @@ export const products: Product[] = [
     uses: ["Spice blends and seasonings", "Hair care and cosmetics", "Herbal and wellness mixes", "Snacks and savoury foods"],
     grades: ["Food grade", "80–100 mesh (custom available)", "Moisture ≤ 7%", "Private label / bulk"],
     drying: DRY.herbal,
+  },
+  {
+    slug: "kasuri-methi", name: "Kasuri Methi (Dried Fenugreek Leaves)", category: "culinary-spice-powders",
+    emoji: "🌿", hsn: "0910 99 90", botanical: "Trigonella foenum-graecum",
+    tagline: "Aromatic dried fenugreek leaves from Nagaur, Rajasthan.",
+    description:
+      "Kasuri methi takes its name from the fenugreek leaves of Nagaur in Rajasthan, prized for their strong, sweet-bitter aroma. The leaves are dried to keep their green colour and supplied whole or as powder for curries, breads, gravies and seasoning blends.",
+    features: ["Strong, sweet-bitter aroma", "Natural green colour", "Dried leaves or powder", "From Nagaur, Rajasthan", F_DRY, F_CUSTOM],
+    uses: ["Curries and gravies", "Breads, naan and parathas", "Seasoning and spice blends", "Sauces and marinades"],
+    grades: ["Food grade", "Green colour, cleaned leaf", "Moisture ≤ 10%", "10 / 20 kg cartons or bags with liner"],
+    forms: ["Dried leaves", "Powder"],
+    drying: DRY.culinary,
   },
   {
     slug: "tulsi-powder", name: "Tulsi (Holy Basil) Powder", category: "ayurvedic-herbal-powders",
@@ -610,53 +649,67 @@ export const products: Product[] = [
     drying: DRY.milled,
   },
 
-  // ------------------------------------------------- EDIBLE SEEDS & KERNELS
+  // ------------------------------------------------- SEED SPICES & SESAME
+  // Indian produce only (Nov 2026 brief): the imported watermelon, melon,
+  // pumpkin and chia seeds were delisted; old URLs 301 to this category.
   {
-    slug: "watermelon-seeds", name: "Watermelon Seeds", category: "edible-seeds-kernels",
-    emoji: "🍉", hsn: "1207 70 90", botanical: "Citrullus lanatus",
-    tagline: "Crisp white kernels with a clean, nutty bite.",
+    slug: "cumin-seeds", name: "Cumin Seeds", category: "seed-spices-sesame",
+    emoji: "🌾", hsn: "0909 31 29", botanical: "Cuminum cyminum",
+    tagline: "Bold, aromatic Indian cumin from Gujarat and Rajasthan, cleaned to 98–99% purity.",
     description:
-      "Watermelon seed kernels — tarbooj magaz — are valued for their mild, nutty flavour and their protein and magnesium content. We supply them hulled and colour-sorted for snacking, bakery and nutrition blends, or in-shell where a whole-seed format suits a roasting or traditional snack line.",
-    features: ["Hulled kernels or in-shell", "Mild, clean nutty flavour", "Naturally high in protein and magnesium", "Uniform, well-sorted kernels", F_SEED_SORT, F_SEED_CUSTOM],
-    uses: ["Snacking and trail mixes", "Bakery toppings and breads", "Indian sweets and confectionery", "Protein and nutrition blends"],
-    grades: ["Food grade", "Kernels ≥ 99% purity (in-shell available)", "Moisture ≤ 6%", "Private label / bulk"],
-    forms: ["Kernels (hulled)", "In-shell (whole)"],
+      "India grows most of the world's cumin, and seed traded through Unjha in Gujarat sets the global benchmark. Lots are machine-cleaned and sorted to Singapore (98%) or Europe (99%) purity, with the warm, earthy aroma that carries spice blends, curry powders and meat seasonings. Powder is available on request.",
+    features: ["Singapore 98% and Europe 99% purity grades", "Warm, earthy aroma with high volatile oil", "Whole seed, powder on request", "From Gujarat (Unjha) and Rajasthan", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Spice blends and curry powders", "Seasonings and snack coatings", "Meat and sausage seasoning", "Breads, pickles and sauces"],
+    grades: ["Food grade", "Purity 98–99%", "Moisture ≤ 10%", "25 / 50 kg PP or paper bags with liner"],
+    forms: ["Whole", "Powder (on request)"],
     drying: DRY.seeds,
   },
   {
-    slug: "chia-seeds", name: "Chia Seeds", category: "edible-seeds-kernels",
-    emoji: "🌱", hsn: "1207 99 90", botanical: "Salvia hispanica",
-    tagline: "Omega-3 and soluble fibre in a whole, untreated seed.",
+    slug: "coriander-seeds", name: "Coriander Seeds", category: "seed-spices-sesame",
+    emoji: "🟤", hsn: "0909 21 90", botanical: "Coriandrum sativum",
+    tagline: "Whole and split Indian coriander with a fresh, citrusy aroma.",
     description:
-      "Chia is one of the densest plant sources of omega-3 ALA and soluble fibre, and it now grows well across Madhya Pradesh, Rajasthan and parts of the south. Ours is cleaned to 99.9% purity and shipped as a whole, untreated seed in black or white, ready for beverages, bakery and functional-nutrition formats.",
-    features: ["Cleaned to 99.9% purity", "Rich in omega-3 ALA and soluble fibre", "Forms a natural gel on hydration", "Black or white seed to order", F_SEED_SORT, F_SEED_CUSTOM],
-    uses: ["Beverages, puddings and shots", "Bakery, breads and crackers", "Cereals, granola and bars", "Functional and sports nutrition"],
-    grades: ["Food grade", "Purity 99.9%, black / white", "Moisture ≤ 8%", "Private label / bulk"],
-    forms: ["Whole seed (black)", "Whole seed (white)"],
+      "Indian coriander from the Kota and Ramganj Mandi belt of Rajasthan, and from Madhya Pradesh and Gujarat, is traded in the familiar Eagle and Scooter grades. It is supplied whole or split and cleaned to 98–99% purity, with the fresh, citrusy aroma that defines curry powders, pickling spice and sausage seasoning.",
+    features: ["Eagle and Scooter grades", "Fresh, citrusy aroma", "Whole or split, powder on request", "From Rajasthan, Madhya Pradesh and Gujarat", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Curry powders and spice blends", "Pickling spice", "Sausages and meat products", "Bakery and confectionery"],
+    grades: ["Food grade", "Purity 98–99%", "Moisture ≤ 10%", "25 / 40 kg PP bags"],
+    forms: ["Whole", "Split", "Powder (on request)"],
     drying: DRY.seeds,
   },
   {
-    slug: "pumpkin-seeds", name: "Pumpkin Seeds", category: "edible-seeds-kernels",
-    emoji: "🎃", hsn: "1207 99 90", botanical: "Cucurbita pepo",
-    tagline: "Deep-green hulled kernels with a rich, roasted-nut flavour.",
+    slug: "fenugreek-seeds", name: "Fenugreek Seeds", category: "seed-spices-sesame",
+    emoji: "🟡", hsn: "0910 99 12", botanical: "Trigonella foenum-graecum",
+    tagline: "Clean, golden Indian fenugreek for curry blends and nutraceuticals.",
     description:
-      "Hulled pumpkin seed kernels — pepitas — carry a deep green colour and a rich, nutty flavour that holds up well to roasting and baking. We supply kernels graded by size and colour for snacking, granola and seed blends, with in-shell available where a whole-seed format is wanted.",
-    features: ["Deep green hulled kernels", "Rich, roasted-nut flavour", "High in protein, zinc and magnesium", "Graded by size and colour", F_SEED_SORT, F_SEED_CUSTOM],
-    uses: ["Snacking and seed mixes", "Granola, bars and cereals", "Bakery toppings and breads", "Plant-protein and nutrition blends"],
-    grades: ["Food grade", "Hulled kernels, AA / A grades", "Moisture ≤ 6%", "Private label / bulk"],
-    forms: ["Kernels (hulled)", "In-shell (whole)"],
+      "India is the world's largest grower of fenugreek, with most of the crop coming from Rajasthan, Madhya Pradesh and Gujarat. The hard, golden seeds bring the bittersweet, maple-like note behind curry blends and spice mixes, and are widely used in nutraceutical formulations. Supplied whole and cleaned to 98–99% purity, with powder on request.",
+    features: ["Golden, uniform whole seeds", "Bittersweet, maple-like aroma", "Whole seed, powder on request", "From Rajasthan, Madhya Pradesh and Gujarat", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Curry blends and spice mixes", "Pickles and chutneys", "Nutraceuticals and supplements", "Seasonings and sauces"],
+    grades: ["Food grade", "Purity 98–99%", "Moisture ≤ 10%", "25 / 50 kg PP bags"],
+    forms: ["Whole", "Powder (on request)"],
     drying: DRY.seeds,
   },
   {
-    slug: "melon-seeds", name: "Melon Seeds", category: "edible-seeds-kernels",
-    emoji: "🍈", hsn: "1207 70 10", botanical: "Cucumis melo",
-    tagline: "Classic magaz kernels for sweets, gravies and garnish.",
+    slug: "ajwain-seeds", name: "Ajwain (Carom) Seeds", category: "seed-spices-sesame",
+    emoji: "🌱", hsn: "0910 99 14", botanical: "Trachyspermum ammi",
+    tagline: "Pungent, thymol-rich Indian carom seeds for snacks and savoury blends.",
     description:
-      "Melon seed kernels — magaz — are a staple of Indian confectionery and rich gravies, valued for their pale colour, delicate sweetness and the body they lend when ground. We supply clean, uniformly sorted kernels for mithai, sauce bases, garnish and nutrition blends.",
-    features: ["Pale, uniformly sorted kernels", "Delicate, mildly sweet flavour", "Traditional thickener when ground", "Naturally rich in protein and healthy fats", F_SEED_SORT, F_SEED_CUSTOM],
-    uses: ["Indian sweets and mithai", "Rich gravies and sauce bases", "Bakery and garnish", "Snack and nutrition blends"],
-    grades: ["Food grade", "Magaz kernels ≥ 99% purity", "Moisture ≤ 6%", "Private label / bulk"],
-    forms: ["Kernels (magaz)"],
+      "Ajwain, or carom, is a small, ridged seed whose sharp, thyme-like bite comes from its high thymol content. Grown mainly in Gujarat, Rajasthan and Madhya Pradesh, it is supplied whole and cleaned to 98–99% purity for snacks, breads, savoury blends and digestive products, with powder on request.",
+    features: ["High thymol, sharp thyme-like aroma", "Small, uniform ridged seeds", "Whole seed, powder on request", "From Gujarat, Rajasthan and Madhya Pradesh", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Snacks, namkeen and crackers", "Breads, parathas and biscuits", "Savoury spice blends", "Digestive and herbal products"],
+    grades: ["Food grade", "Purity 98–99%", "Moisture ≤ 10%", "25 kg PP bags"],
+    forms: ["Whole", "Powder (on request)"],
+    drying: DRY.seeds,
+  },
+  {
+    slug: "sesame-seeds", name: "Sesame Seeds", category: "seed-spices-sesame",
+    emoji: "⚪", hsn: "1207 40 90", botanical: "Sesamum indicum",
+    tagline: "Natural, hulled and black Indian sesame, sorted to export purity.",
+    description:
+      "India is one of the world's largest sesame exporters, with crops from Gujarat, Rajasthan, Madhya Pradesh, Uttar Pradesh and West Bengal. Natural white, hulled white and black seed is cleaned and sorted to 99.90–99.95% purity for bakery toppings, tahini, confectionery and snack bars, and lots are tested against EU ethylene oxide and Salmonella limits before shipping.",
+    features: ["Natural white, hulled white and black", "Purity 99.90–99.95%", "Low moisture for long storage", "From Gujarat, Rajasthan and Madhya Pradesh", F_SEED_SORT, F_SEED_CUSTOM],
+    uses: ["Bakery toppings and buns", "Tahini and sesame pastes", "Confectionery and snack bars", "Oil extraction"],
+    grades: ["Food grade", "Purity 99.90–99.95%", "Moisture ≤ 6%", "25 kg paper / PP bags with liner"],
+    forms: ["Natural white", "Hulled white", "Black"],
     drying: DRY.seeds,
   },
 ];

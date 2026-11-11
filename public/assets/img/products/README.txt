@@ -31,6 +31,11 @@ How to add a set:
   5. Set image / listImage / gallery in products.ts, run `npm run build`, and
      check the category list, the product page and the related tiles.
 
-Still without any photo (emoji placeholder) as of Nov 2026:
-  watermelon-seeds, chia-seeds,
-  pumpkin-seeds, melon-seeds
+Still without any photo as of 11 Nov 2026 (their drawing from
+scripts/gen-product-art.mjs stands in on cards, tiles and the product page):
+  seed-spices-sesame: cumin-seeds, coriander-seeds, fenugreek-seeds,
+  ajwain-seeds, sesame-seeds
+  culinary-spice-powders: turmeric-powder, red-chilli-powder, kasuri-methi
+The seed-spices-sesame category image (categories/collage/seed-spices-sesame-*.webp
+and categories/seed-spices-sesame*.webp) is an illustrated stand-in; replace it
+with a real photo under a new filename.

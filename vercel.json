@@ -33,6 +33,8 @@
   ],
 
   "redirects": [
+    { "source": "/products/edible-seeds-kernels", "destination": "/products/seed-spices-sesame", "permanent": true },
+    { "source": "/products/edible-seeds-kernels/:path*", "destination": "/products/seed-spices-sesame", "permanent": true },
     { "source": "/our-products", "destination": "/products", "permanent": true },
     { "source": "/our-products/dehydrated-fruit-powder-ingredients-exporter-supplier-", "destination": "/products/fruit-powders", "permanent": true },
     { "source": "/our-products/herbal-leaf-powders-bulk-export-supplier-", "destination": "/products/ayurvedic-herbal-powders", "permanent": true },
