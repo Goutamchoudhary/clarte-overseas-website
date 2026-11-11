@@ -3,10 +3,10 @@
 <path d="M4 122C20 112 36 112 52 122V136H4Z" fill="#57a747"/>
 <path d="M52 122Q66 114 80 122T108 122T136 122T164 122V136H52Z" fill="#93c5fd"/>
 <path d="M150 124C164 110 196 110 216 124V136H150Z" fill="#8a7a63"/>
-<path d="M30 58C60 2 136 -6 180 36" fill="none" stroke="#6d28d9" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
-<path d="M30 112C16 94 8 84 8 70A22 22 0 0 1 52 70C52 84 44 94 30 112Z" fill="#be185d"/><circle cx="30" cy="69" r="9" fill="#fff"/>
-<g transform="rotate(-4 106 22)"><rect x="80" y="6" width="54" height="30" rx="3" fill="#6d28d9"/><path d="M89 12V30M98 12V30M107 12V30M116 12V30M125 12V30" stroke="#c4b5fd" stroke-width="3"/></g>
-<path d="M172 118L177 58H193L198 118Z" fill="#fff" stroke="#c4b5fd" stroke-width="2"/>
-<path d="M175 84L176 72H194L195 84Z" fill="#be185d"/><path d="M173 110L174 98H196L197 110Z" fill="#be185d"/>
+<path d="M30 58C60 2 136 -6 180 36" fill="none" stroke="#1f4693" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
+<path d="M30 112C16 94 8 84 8 70A22 22 0 0 1 52 70C52 84 44 94 30 112Z" fill="#c7861c"/><circle cx="30" cy="69" r="9" fill="#fff"/>
+<g transform="rotate(-4 106 22)"><rect x="80" y="6" width="54" height="30" rx="3" fill="#1f4693"/><path d="M89 12V30M98 12V30M107 12V30M116 12V30M125 12V30" stroke="#b7c6e6" stroke-width="3"/></g>
+<path d="M172 118L177 58H193L198 118Z" fill="#fff" stroke="#b7c6e6" stroke-width="2"/>
+<path d="M175 84L176 72H194L195 84Z" fill="#c7861c"/><path d="M173 110L174 98H196L197 110Z" fill="#c7861c"/>
 <rect x="175" y="46" width="20" height="12" rx="2" fill="#fde68a"/><path d="M172 46L185 34L198 46Z" fill="#1f4693"/><rect x="170" y="56" width="30" height="5" rx="2" fill="#1f4693"/>
 </svg>

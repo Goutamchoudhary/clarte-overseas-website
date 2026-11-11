@@ -232,12 +232,12 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
       <div class="j-arch" aria-hidden="true">
         <div class="j-arch-inner">
           <i class="j-star" style="left:18%;top:13%"></i><i class="j-star" style="left:35%;top:8%"></i><i class="j-star" style="left:63%;top:12%"></i><i class="j-star" style="left:80%;top:21%"></i><i class="j-star" style="left:12%;top:33%"></i><i class="j-star" style="left:86%;top:38%"></i>
-          <svg class="j-hills" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 70 Q110 10 220 62 T400 40 V160 H0Z" fill="#6d28d9" opacity=".55" /><path d="M0 110 Q120 60 250 104 T400 92 V160 H0Z" fill="#be185d" opacity=".55" /></svg>
+          <svg class="j-hills" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 70 Q110 10 220 62 T400 40 V160 H0Z" fill="#1f4693" opacity=".55" /><path d="M0 110 Q120 60 250 104 T400 92 V160 H0Z" fill="#c7861c" opacity=".55" /></svg>
           {edge.map(([v, tk, t], k) => (
             <div class="j-spot" style={`--k:${k}`}><Vector name={v} size={210} /><b data-i18n={tk}>{t}</b></div>
           ))}
         </div>
-        <svg class="j-seal" viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#0c0a1f" stroke="#6d28d9" stroke-width="2" /><defs><path id="jsealp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs><text font-family="Sora,sans-serif" font-size="12.5" font-weight="700" fill="#f9a8d4" letter-spacing="3"><textPath href="#jsealp">GROWN · MILLED · SHIPPED ·</textPath></text></svg>
+        <svg class="j-seal" viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#0a1428" stroke="#1f4693" stroke-width="2" /><defs><path id="jsealp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs><text font-family="Sora,sans-serif" font-size="12.5" font-weight="700" fill="#f0c97e" letter-spacing="3"><textPath href="#jsealp">GROWN · MILLED · SHIPPED ·</textPath></text></svg>
       </div>
     </div>
   </div>
@@ -248,7 +248,7 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
   <div class="j-flight" data-j-play aria-hidden="true">
     <svg class="j-contrail" viewBox="0 0 100 100" preserveAspectRatio="none"><path pathLength="100" d="M-8 52 C20 47 56 24 96 5" /></svg>
     <span class="j-flyer"><Vector name="plane" /></span>
-    <svg class="j-burst" viewBox="-30 -30 60 60"><g stroke="#f9a8d4" stroke-width="3" stroke-linecap="round"><path d="M0 -12V-26M0 12V26M-12 0H-26M12 0H26M-9 -9L-18 -18M9 9L18 18M-9 9L-18 18M9 -9L18 -18" /></g><circle r="5" fill="#be185d" /></svg>
+    <svg class="j-burst" viewBox="-30 -30 60 60"><g stroke="#f0c97e" stroke-width="3" stroke-linecap="round"><path d="M0 -12V-26M0 12V26M-12 0H-26M12 0H26M-9 -9L-18 -18M9 9L18 18M-9 9L-18 18M9 -9L18 -18" /></g><circle r="5" fill="#c7861c" /></svg>
   </div>
   <div class="j-wrap j-port-head reveal">
     <span class="eyebrow"><span data-i18n="home.markets_eyebrow">Export Footprint</span></span>
@@ -259,15 +259,15 @@ const arrow = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-wid
   <div class="j-globe">
     <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
       <defs>
-        <pattern id="jdots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="7" cy="7" r="2.1" fill="#6d28d9" /></pattern>
+        <pattern id="jdots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="7" cy="7" r="2.1" fill="#1f4693" /></pattern>
         <clipPath id="jclip"><circle cx="720" cy="800" r="700" /></clipPath>
-        <linearGradient id="jarc" x1="0" x2="1"><stop offset="0" stop-color="#6d28d9" /><stop offset=".5" stop-color="#c026d3" /><stop offset="1" stop-color="#2563eb" /></linearGradient>
+        <linearGradient id="jarc" x1="0" x2="1"><stop offset="0" stop-color="#1f4693" /><stop offset=".5" stop-color="#c7861c" /><stop offset="1" stop-color="#2563eb" /></linearGradient>
       </defs>
-      <circle cx="720" cy="800" r="704" fill="#fff" stroke="#ddd6fe" stroke-width="2" />
+      <circle cx="720" cy="800" r="704" fill="#fff" stroke="#d5def2" stroke-width="2" />
       <g clip-path="url(#jclip)"><rect class="j-dots" y="100" width="1480" height="330" fill="url(#jdots)" opacity=".42" /></g>
       <path class="j-arc" d="M820 180 Q600 -40 330 280" /><path class="j-arc" d="M820 180 Q980 -80 1150 240" /><path class="j-arc" d="M820 180 Q760 40 560 150" /><path class="j-arc" d="M820 180 Q1080 40 1270 350" />
-      <circle cx="330" cy="280" r="6" fill="#6d28d9" /><circle cx="1150" cy="240" r="6" fill="#2563eb" /><circle cx="560" cy="150" r="6" fill="#6d28d9" /><circle cx="1270" cy="350" r="6" fill="#2563eb" />
-      <circle class="j-india" cx="820" cy="180" r="16" fill="#f9a8d4" /><circle cx="820" cy="180" r="7" fill="#be185d" />
+      <circle cx="330" cy="280" r="6" fill="#1f4693" /><circle cx="1150" cy="240" r="6" fill="#2563eb" /><circle cx="560" cy="150" r="6" fill="#1f4693" /><circle cx="1270" cy="350" r="6" fill="#2563eb" />
+      <circle class="j-india" cx="820" cy="180" r="16" fill="#f0c97e" /><circle cx="820" cy="180" r="7" fill="#c7861c" />
     </svg>
     <span class="j-india-tag">India</span>
     <span class="j-farmer"><Vector name="farmer" /></span>

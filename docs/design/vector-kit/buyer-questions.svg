@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190">
 <!-- A buyer's question and a ticked-off answer in two speech bubbles · use: every FAQ section (Blog, Products, product pages, How We Export, Certifications, About) -->
-<ellipse cx="130" cy="182" rx="112" ry="6" fill="#15123a" opacity=".08"/>
-<path d="M30 8H130C144 8 154 18 154 32V90C154 104 144 114 130 114H70L42 142L46 114H30C16 114 6 104 6 90V32C6 18 16 8 30 8Z" fill="#6d28d9"/>
+<ellipse cx="130" cy="182" rx="112" ry="6" fill="#14213d" opacity=".08"/>
+<path d="M30 8H130C144 8 154 18 154 32V90C154 104 144 114 130 114H70L42 142L46 114H30C16 114 6 104 6 90V32C6 18 16 8 30 8Z" fill="#1f4693"/>
 <path d="M58 44C58 30 68 24 80 24C92 24 102 31 102 43C102 58 80 58 80 74" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="80" cy="94" r="7.5" fill="#fff"/>
-<path d="M128 62H232C244 62 254 72 254 84V136C254 148 244 158 232 158H218L222 180L194 158H128C116 158 106 148 106 136V84C106 72 116 62 128 62Z" fill="#fff" stroke="#c4b5fd" stroke-width="3.5"/>
-<circle cx="146" cy="110" r="21" fill="#be185d"/><path d="M135 110L143 118L158 101" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<g stroke-linecap="round" stroke-width="7"><path d="M180 90H232" stroke="#6d28d9"/><path d="M180 110H236" stroke="#c4b5fd"/><path d="M180 130H216" stroke="#c4b5fd"/></g>
+<path d="M128 62H232C244 62 254 72 254 84V136C254 148 244 158 232 158H218L222 180L194 158H128C116 158 106 148 106 136V84C106 72 116 62 128 62Z" fill="#fff" stroke="#b7c6e6" stroke-width="3.5"/>
+<circle cx="146" cy="110" r="21" fill="#c7861c"/><path d="M135 110L143 118L158 101" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<g stroke-linecap="round" stroke-width="7"><path d="M180 90H232" stroke="#1f4693"/><path d="M180 110H236" stroke="#b7c6e6"/><path d="M180 130H216" stroke="#b7c6e6"/></g>
 </svg>

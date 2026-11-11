@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Fruit to powder · use: Fruit Powders category, process explainer · motion: Steps light up in turn -->
-<ellipse cx="100" cy="186" rx="84" ry="6" fill="#15123a" opacity=".12"/>
+<ellipse cx="100" cy="186" rx="84" ry="6" fill="#14213d" opacity=".12"/>
 <g class="vl-step"><circle cx="36" cy="120" r="24" fill="#f59e0b"/><path d="M36 96 q4 -10 12 -10" stroke="#4d7c0f" stroke-width="3" fill="none"/><ellipse cx="46" cy="92" rx="7" ry="4" fill="#65a30d"/></g>
-<path d="M66 120 H78 M74 114 L80 120 L74 126" stroke="#a78bfa" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M66 120 H78 M74 114 L80 120 L74 126" stroke="#8ea6d8" stroke-width="3" fill="none" stroke-linecap="round"/>
 <g class="vl-step" style="animation-delay:.6s"><circle cx="100" cy="112" r="11" fill="#fde68a" stroke="#f59e0b" stroke-width="3"/><circle cx="110" cy="130" r="11" fill="#fde68a" stroke="#f59e0b" stroke-width="3"/><circle cx="92" cy="134" r="9" fill="#fde68a" stroke="#f59e0b" stroke-width="3"/></g>
-<path d="M124 120 H136 M132 114 L138 120 L132 126" stroke="#a78bfa" stroke-width="3" fill="none" stroke-linecap="round"/>
-<g class="vl-step" style="animation-delay:1.2s"><rect x="146" y="98" width="38" height="50" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="3"/><rect x="146" y="92" width="38" height="10" rx="3" fill="#6d28d9"/><path d="M149 148 V124 Q165 114 181 124 V148Z" fill="#f59e0b"/></g>
+<path d="M124 120 H136 M132 114 L138 120 L132 126" stroke="#8ea6d8" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g class="vl-step" style="animation-delay:1.2s"><rect x="146" y="98" width="38" height="50" rx="8" fill="#ffffff" stroke="#b7c6e6" stroke-width="3"/><rect x="146" y="92" width="38" height="10" rx="3" fill="#1f4693"/><path d="M149 148 V124 Q165 114 181 124 V148Z" fill="#f59e0b"/></g>
 </svg>

@@ -93,8 +93,8 @@ export const categories: Category[] = [
     tagline: "Colour, nutrition and clean-label function",
     description:
       "Beetroot, lemon, amla and more — fruit and herb powders chosen for natural colour, nutrition and clean-label functionality in supplements, seasonings, soups and ready meals.",
-    accentFrom: "#be185d",
-    accentTo: "#9d174d",
+    accentFrom: "#c7861c",
+    accentTo: "#9a6512",
     bgImage: "/assets/img/categories/functional-nutritional-powder-hero.webp",
   },
   {

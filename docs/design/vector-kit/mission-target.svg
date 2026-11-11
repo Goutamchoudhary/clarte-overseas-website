@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160">
 <!-- Target with an arrow in the bullseye · use: About, Mission -->
-<circle cx="78" cy="88" r="68" fill="#be185d"/><circle cx="78" cy="88" r="52" fill="#fff"/><circle cx="78" cy="88" r="36" fill="#f472b6"/><circle cx="78" cy="88" r="20" fill="#fff"/><circle cx="78" cy="88" r="9" fill="#e0a526"/>
-<path d="M78 88L150 24" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
-<path d="M150 24L146 6L168 2L164 16L178 20L166 36Z" fill="#6d28d9"/>
-<path d="M150 24L146 6L157 4L160 22Z" fill="#8b5cf6"/>
+<circle cx="78" cy="88" r="68" fill="#c7861c"/><circle cx="78" cy="88" r="52" fill="#fff"/><circle cx="78" cy="88" r="36" fill="#e0a33a"/><circle cx="78" cy="88" r="20" fill="#fff"/><circle cx="78" cy="88" r="9" fill="#e0a526"/>
+<path d="M78 88L150 24" stroke="#b7c6e6" stroke-width="6" stroke-linecap="round"/>
+<path d="M150 24L146 6L168 2L164 16L178 20L166 36Z" fill="#1f4693"/>
+<path d="M150 24L146 6L157 4L160 22Z" fill="#4f74c4"/>
 </svg>

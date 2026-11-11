@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Sun-drying racks · use: How We Export · dehydration step · motion: Sun pulses, heat haze rises -->
-<ellipse cx="95" cy="190" rx="70" ry="6" fill="#15123a" opacity=".12"/>
+<ellipse cx="95" cy="190" rx="70" ry="6" fill="#14213d" opacity=".12"/>
 <g class="vl-pulse"><circle cx="160" cy="36" r="17" fill="#e0a526"/><path d="M160 8 V14 M160 58 V64 M132 36 H138 M182 36 H188 M140 16 L144 20 M176 52 L180 56 M180 16 L176 20 M144 52 L140 56" stroke="#e0a526" stroke-width="3" stroke-linecap="round"/></g>
 <path d="M36 186 V86 M154 186 V86" stroke="#7a4a20" stroke-width="6" stroke-linecap="round"/>
 <rect x="26" y="96" width="138" height="9" rx="3" fill="#e9dcc0" stroke="#a86b32" stroke-width="2"/>

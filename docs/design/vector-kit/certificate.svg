@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Certificate & seal · use: Certifications page, trust strips · motion: Seal ribbon flutters, tick draws -->
-<ellipse cx="100" cy="190" rx="60" ry="6" fill="#15123a" opacity=".12"/>
-<rect x="36" y="24" width="122" height="156" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="3"/>
-<rect x="46" y="34" width="102" height="136" rx="4" fill="none" stroke="#ede9fe" stroke-width="2"/>
+<ellipse cx="100" cy="190" rx="60" ry="6" fill="#14213d" opacity=".12"/>
+<rect x="36" y="24" width="122" height="156" rx="8" fill="#ffffff" stroke="#b7c6e6" stroke-width="3"/>
+<rect x="46" y="34" width="102" height="136" rx="4" fill="none" stroke="#e8eef8" stroke-width="2"/>
 <text x="97" y="58" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="15" fill="#1f4693">Certificate</text>
-<path d="M60 74 H134 M60 86 H134 M60 98 H114" stroke="#c4b5fd" stroke-width="4" stroke-linecap="round"/>
-<path d="M60 150 Q70 138 80 150 T100 148" stroke="#15123a" stroke-width="2" fill="none"/>
-<g class="vl-flutter"><path d="M128 150 L120 186 L132 178 L140 188 L144 152Z" fill="#be185d"/></g>
-<circle cx="134" cy="140" r="20" fill="#be185d"/><circle cx="134" cy="140" r="14" fill="none" stroke="#f9a8d4" stroke-width="2" stroke-dasharray="3 3"/>
+<path d="M60 74 H134 M60 86 H134 M60 98 H114" stroke="#b7c6e6" stroke-width="4" stroke-linecap="round"/>
+<path d="M60 150 Q70 138 80 150 T100 148" stroke="#14213d" stroke-width="2" fill="none"/>
+<g class="vl-flutter"><path d="M128 150 L120 186 L132 178 L140 188 L144 152Z" fill="#c7861c"/></g>
+<circle cx="134" cy="140" r="20" fill="#c7861c"/><circle cx="134" cy="140" r="14" fill="none" stroke="#f0c97e" stroke-width="2" stroke-dasharray="3 3"/>
 <path class="vl-draw" d="M126 140 L132 146 L143 133" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

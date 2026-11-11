@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
 <!-- Mango, half guava and a fruit drink with a straw · use: Dehydrated Fruit Powders category guide -->
-<ellipse cx="110" cy="163" rx="100" ry="5" fill="#15123a" opacity=".1"/>
+<ellipse cx="110" cy="163" rx="100" ry="5" fill="#14213d" opacity=".1"/>
 <path d="M120 46H186L178 150C177 155 174 158 169 158H137C132 158 129 155 128 150Z" fill="#fbf1e6"/>
 <path d="M124 84H182L178 150C177 155 174 158 169 158H137C132 158 129 155 128 150Z" fill="#eaa94e"/>
 <path d="M168 18L156 96" stroke="#c46a8a" stroke-width="6" stroke-linecap="round"/>

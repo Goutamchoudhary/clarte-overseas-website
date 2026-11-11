@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160">
 <!-- A copy of the bill of lading and a repeat loop · use: How We Export, Flexible for regulars -->
-<ellipse cx="80" cy="154" rx="62" ry="5" fill="#15123a" opacity=".1"/>
-<rect x="44" y="4" width="98" height="128" rx="7" fill="#e6defc" transform="rotate(6 93 68)"/>
-<rect x="20" y="14" width="102" height="134" rx="7" fill="#fff" stroke="#c4b5fd" stroke-width="3"/>
-<g transform="translate(36 28)"><path d="M0 26H70L60 46H10Z" fill="#1f4693"/><rect x="0" y="24" width="70" height="4" fill="#be185d"/><rect x="8" y="8" width="16" height="15" rx="1.5" fill="#8b5cf6"/><rect x="26" y="8" width="16" height="15" rx="1.5" fill="#e0a526"/><rect x="50" y="2" width="12" height="21" rx="1.5" fill="#60a5fa"/></g>
-<g stroke-linecap="round" stroke-width="6"><path d="M36 92H106" stroke="#ddd6fe"/><path d="M36 108H92" stroke="#ddd6fe"/><path d="M36 124H70" stroke="#ddd6fe"/></g>
-<circle cx="136" cy="116" r="38" fill="#6d28d9"/>
+<ellipse cx="80" cy="154" rx="62" ry="5" fill="#14213d" opacity=".1"/>
+<rect x="44" y="4" width="98" height="128" rx="7" fill="#e1e8f6" transform="rotate(6 93 68)"/>
+<rect x="20" y="14" width="102" height="134" rx="7" fill="#fff" stroke="#b7c6e6" stroke-width="3"/>
+<g transform="translate(36 28)"><path d="M0 26H70L60 46H10Z" fill="#1f4693"/><rect x="0" y="24" width="70" height="4" fill="#c7861c"/><rect x="8" y="8" width="16" height="15" rx="1.5" fill="#4f74c4"/><rect x="26" y="8" width="16" height="15" rx="1.5" fill="#e0a526"/><rect x="50" y="2" width="12" height="21" rx="1.5" fill="#60a5fa"/></g>
+<g stroke-linecap="round" stroke-width="6"><path d="M36 92H106" stroke="#d5def2"/><path d="M36 108H92" stroke="#d5def2"/><path d="M36 124H70" stroke="#d5def2"/></g>
+<circle cx="136" cy="116" r="38" fill="#1f4693"/>
 <g fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round"><path d="M114 108A23 23 0 0 1 154 102"/><path d="M158 124A23 23 0 0 1 118 130"/></g>
 <path d="M162 86V108H140Z" fill="#fff"/><path d="M110 146V124H132Z" fill="#fff"/>
 </svg>

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 150">
 <!-- Coin travelling between two banks · use: How We Export, Advance T/T -->
-<ellipse cx="95" cy="143" rx="86" ry="5" fill="#15123a" opacity=".1"/>
+<ellipse cx="95" cy="143" rx="86" ry="5" fill="#14213d" opacity=".1"/>
 <g id="b"><path d="M6 80L38 60L70 80Z" fill="#1f4693"/><rect x="10" y="82" width="56" height="7" fill="#16346f"/><rect x="15" y="92" width="9" height="36" fill="#60a5fa"/><rect x="33.5" y="92" width="9" height="36" fill="#60a5fa"/><rect x="52" y="92" width="9" height="36" fill="#60a5fa"/><rect x="6" y="128" width="64" height="11" rx="2" fill="#1f4693"/></g>
-<g transform="translate(114 0)"><path d="M6 80L38 60L70 80Z" fill="#6d28d9"/><rect x="10" y="82" width="56" height="7" fill="#4c1d95"/><rect x="15" y="92" width="9" height="36" fill="#a78bfa"/><rect x="33.5" y="92" width="9" height="36" fill="#a78bfa"/><rect x="52" y="92" width="9" height="36" fill="#a78bfa"/><rect x="6" y="128" width="64" height="11" rx="2" fill="#6d28d9"/></g>
-<path d="M40 52C58 10 132 10 150 50" fill="none" stroke="#be185d" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"/>
-<path d="M140 46L152 56L156 40Z" fill="#be185d"/>
+<g transform="translate(114 0)"><path d="M6 80L38 60L70 80Z" fill="#1f4693"/><rect x="10" y="82" width="56" height="7" fill="#14306b"/><rect x="15" y="92" width="9" height="36" fill="#8ea6d8"/><rect x="33.5" y="92" width="9" height="36" fill="#8ea6d8"/><rect x="52" y="92" width="9" height="36" fill="#8ea6d8"/><rect x="6" y="128" width="64" height="11" rx="2" fill="#1f4693"/></g>
+<path d="M40 52C58 10 132 10 150 50" fill="none" stroke="#c7861c" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"/>
+<path d="M140 46L152 56L156 40Z" fill="#c7861c"/>
 <circle cx="95" cy="24" r="21" fill="#e0a526"/><circle cx="95" cy="24" r="15" fill="#f4c23f"/>
 <path d="M88 16H103M88 23H103M92 16C106 16 106 31 92 31L103 38" fill="none" stroke="#a16207" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

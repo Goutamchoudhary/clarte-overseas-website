@@ -9,7 +9,7 @@
 <rect x="50" y="92" width="12" height="20" fill="#f6e3bd"/>
 <rect x="66" y="124" width="26" height="28" rx="2" fill="#fff"/>
 <path d="M70 131H88M70 136H82" stroke="#1f4693" stroke-width="2.5"/>
-<path d="M70 141V148M73 141V148M77 141V148M79 141V148M83 141V148M87 141V148" stroke="#15123a" stroke-width="1.8"/>
+<path d="M70 141V148M73 141V148M77 141V148M79 141V148M83 141V148M87 141V148" stroke="#14213d" stroke-width="1.8"/>
 <path d="M26 150V132M21 138L26 132L31 138M42 150V132M37 138L42 132L47 138" fill="none" stroke="#6b431a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <!-- bottom right -->
 <path d="M100 92L114 80H190L176 92Z" fill="#e6bd85"/>
@@ -19,7 +19,7 @@
 <rect x="132" y="92" width="12" height="20" fill="#f6e3bd"/>
 <rect x="144" y="124" width="26" height="28" rx="2" fill="#fff"/>
 <path d="M148 131H166M148 136H160" stroke="#1f4693" stroke-width="2.5"/>
-<path d="M148 141V148M151 141V148M155 141V148M157 141V148M161 141V148M165 141V148" stroke="#15123a" stroke-width="1.8"/>
+<path d="M148 141V148M151 141V148M155 141V148M157 141V148M161 141V148M165 141V148" stroke="#14213d" stroke-width="1.8"/>
 <path d="M112 150V132M107 138L112 132L117 138M128 150V132M123 138L128 132L133 138" fill="none" stroke="#6b431a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <!-- top carton -->
 <path d="M50 30L64 18H152L138 30Z" fill="#efc993"/>
