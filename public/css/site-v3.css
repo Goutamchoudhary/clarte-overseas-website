@@ -52,11 +52,11 @@
 }
 @media (min-width: 1024px) { [data-version="v3"] .j-w { font-size: clamp(120px, 13.4vw, 200px); line-height: .86; background-size: 180% auto; } }
 [data-version="v3"] .j-w-a {
-  background-image: linear-gradient(rgba(214,140,60,.62), rgba(190,78,43,.5)), url(/assets/img/hero/hero-flatlay-2026.webp);
-  background-size: 280% auto; animation-name: j-pan-top; animation-duration: 14s;
+  background-image: url(/assets/img/hero/word-grown.webp);
+  background-size: 135% auto; animation-name: j-pan-top; animation-duration: 14s;
 }
-[data-version="v3"] .j-w-b { background-image: url(/assets/img/categories/collage/ayurvedic-herbal-powders-900.webp); animation-delay: -3s; padding-left: 7%; }
-[data-version="v3"] .j-w-c { background-image: url(/assets/img/categories/dehydrated-fruits-powder.webp); animation-delay: -6s; padding-left: 0; }
+[data-version="v3"] .j-w-b { background-image: url(/assets/img/hero/word-milled.webp); background-size: 120% auto; animation-delay: -3s; padding-left: 7%; }
+[data-version="v3"] .j-w-c { background-image: url(/assets/img/hero/word-shipped.webp); background-size: 130% auto; animation-delay: -6s; padding-left: 0; }
 @media (min-width: 1024px) { [data-version="v3"] .j-w-b { padding-left: 14%; } [data-version="v3"] .j-w-c { padding-left: 4.5%; } }
 @keyframes j-pan { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 @keyframes j-pan-top { from { background-position: 0% 3%; } to { background-position: 100% 3%; } }
@@ -394,7 +394,7 @@ html.j-armed[data-version="v3"] [data-j-play]:not(.in) .j-fall { visibility: hid
 @media (max-height: 560px) { [data-version="v3"] .j-hero { position: relative; top: 0; } }
 html.j-scrolled[data-version="v3"] .j-range { box-shadow: 0 -26px 60px -30px rgba(20,33,61,.4); }
 /* Solid colour in the letters until each photo has loaded. */
-[data-version="v3"] .j-w-a { background-color: #c98a4a; } [data-version="v3"] .j-w-b { background-color: #5f7a2c; } [data-version="v3"] .j-w-c { background-color: #c9a24a; }
+[data-version="v3"] .j-w-a { background-color: #5f8a3f; } [data-version="v3"] .j-w-b { background-color: #8a5a32; } [data-version="v3"] .j-w-c { background-color: #c9702a; }
 [data-version="v3"] .j-scroll { display: none; position: absolute; left: 50%; bottom: .6rem; width: 30px; height: 30px; margin-left: -15px; color: var(--violet); animation: j-cue 1.8s ease-in-out infinite; }
 @media (min-width: 1024px) and (min-height: 700px) { [data-version="v3"] .j-scroll { display: block; } }
 @keyframes j-cue { 0%, 100% { transform: translateY(0); opacity: .55; } 50% { transform: translateY(7px); opacity: 1; } }
