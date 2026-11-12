@@ -334,3 +334,7 @@ under `prefers-reduced-motion`.
   it replaces the underline there.
 - Category product cards: border glow follows the cursor (`--gx`/`--gy`).
 - Every `details.faq-item` opens and closes with a height animation.
+- Tilting cards: `.prod-card`, `.j-card` and `.j-doc` lean toward the cursor
+  (max ~5°) and a soft light sweeps across (`.tilt-shine`, added by
+  site-v3.js). Desktop mouse only; off under reduced motion. The owner
+  turned down the 3D globe and opening-container ideas (Nov 2026).

@@ -297,6 +297,35 @@
     });
   }
 
+  // 5. Tilting cards: browsable cards lean toward the cursor and a soft light
+  //    slides across them (desktop mouse only).
+  if (finePointer) {
+    document.querySelectorAll(".prod-card, .j-card, .j-doc").forEach(function (card) {
+      var shine = document.createElement("span");
+      shine.className = "tilt-shine"; shine.setAttribute("aria-hidden", "true");
+      card.appendChild(shine);
+      card.classList.add("has-tilt");
+      var raf = 0, px = 0, py = 0;
+      function apply() {
+        raf = 0;
+        card.style.transform = "perspective(900px) rotateX(" + ((0.5 - py) * 9).toFixed(2) + "deg) rotateY(" + ((px - 0.5) * 11).toFixed(2) + "deg) translateY(-4px)";
+        card.style.setProperty("--tx", (px * 100).toFixed(1) + "%");
+        card.style.setProperty("--ty", (py * 100).toFixed(1) + "%");
+      }
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        px = (e.clientX - r.left) / r.width; py = (e.clientY - r.top) / r.height;
+        card.classList.add("is-tilting");
+        if (!raf) raf = requestAnimationFrame(apply);
+      });
+      card.addEventListener("pointerleave", function () {
+        if (raf) { cancelAnimationFrame(raf); raf = 0; }
+        card.classList.remove("is-tilting");
+        card.style.transform = "";
+      });
+    });
+  }
+
   // 4. FAQs open and close smoothly instead of snapping.
   document.querySelectorAll("details.faq-item").forEach(function (d) {
     var sum = d.querySelector("summary");
