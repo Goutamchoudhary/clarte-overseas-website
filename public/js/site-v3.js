@@ -108,7 +108,7 @@
               cur.className = "j-sh-img is-next";
               cur.removeAttribute("src"); cur.removeAttribute("srcset");
               next.className = "j-sh-img is-cur";
-            }, 950);
+            }, 1150);
           }, function () { next.removeAttribute("src"); next.removeAttribute("srcset"); });
         }, t * 260);
       });
