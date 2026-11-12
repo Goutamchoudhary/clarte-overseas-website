@@ -1141,3 +1141,10 @@ html.j-route-on .j-stop:nth-of-type(even):not(.on) { transform: translateX(34px)
 [data-version="v3"] .j-pd-mkt-list small { display: block; margin-top: .3rem; font-size: .84rem; line-height: 1.5; color: var(--sub); }
 .cat-icon { display: inline-flex; width: 2.6rem; height: 2.6rem; }
 .cat-icon svg { width: 100%; height: 100%; }
+
+/* Tilting cards (site-v3.js): lean toward the cursor, light sweep on top. */
+[data-version="v3"] .has-tilt { position: relative; transition: transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .4s ease, border-color .3s ease; will-change: transform; }
+[data-version="v3"] .has-tilt.is-tilting { transition: transform .12s linear, box-shadow .3s ease, border-color .3s ease; box-shadow: 0 34px 50px -34px rgba(20,33,61,.5); }
+[data-version="v3"] .tilt-shine { position: absolute; inset: 0; z-index: 4; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .35s ease; background: radial-gradient(380px circle at var(--tx, 50%) var(--ty, 0%), rgba(255,255,255,.38), rgba(255,255,255,0) 48%); mix-blend-mode: soft-light; }
+[data-version="v3"] .has-tilt.is-tilting .tilt-shine { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { [data-version="v3"] .tilt-shine { display: none; } }
