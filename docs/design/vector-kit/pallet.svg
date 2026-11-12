@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Wrapped pallet · use: Packaging & MOQ sections, quote form · motion: Wrap shimmer -->
-<ellipse cx="100" cy="190" rx="74" ry="6" fill="#15123a" opacity=".12"/>
+<ellipse cx="100" cy="190" rx="74" ry="6" fill="#14213d" opacity=".12"/>
 <rect x="30" y="170" width="140" height="8" fill="#a86b32"/><rect x="36" y="178" width="12" height="10" fill="#7a4a20"/><rect x="94" y="178" width="12" height="10" fill="#7a4a20"/><rect x="152" y="178" width="12" height="10" fill="#7a4a20"/>
 <rect x="34" y="136" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="80" y="136" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="126" y="136" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="34" y="102" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="80" y="102" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="126" y="102" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="34" y="68" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="80" y="68" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/><rect x="126" y="68" width="42" height="32" rx="8" fill="#e9dcc0" stroke="#cbb88f" stroke-width="2"/>
 <rect x="80" y="74" width="40" height="20" rx="3" fill="#1f4693"/><text x="100" y="88" text-anchor="middle" font-family="Sora,sans-serif" font-size="9" font-weight="700" fill="#ffffff">1 MT</text>
-<rect class="vl-shine" x="28" y="66" width="144" height="106" rx="10" fill="#c4b5fd" opacity=".22" stroke="#a78bfa" stroke-width="2"/>
+<rect class="vl-shine" x="28" y="66" width="144" height="106" rx="10" fill="#b7c6e6" opacity=".22" stroke="#8ea6d8" stroke-width="2"/>
 <path d="M44 80 L60 160 M150 72 L162 150" stroke="#ffffff" stroke-width="4" opacity=".6" stroke-linecap="round"/>
 </svg>

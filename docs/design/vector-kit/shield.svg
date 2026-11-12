@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Quality shield · use: Certifications strip, trust badges · motion: Shine sweeps across -->
 <path d="M100 20 L164 44 V96 Q164 152 100 182 Q36 152 36 96 V44Z" fill="#1f4693"/>
-<path d="M100 32 L152 52 V96 Q152 142 100 168 Q48 142 48 96 V52Z" fill="#6d28d9"/>
+<path d="M100 32 L152 52 V96 Q152 142 100 168 Q48 142 48 96 V52Z" fill="#1f4693"/>
 <path d="M100 132 Q72 118 76 82 Q104 86 112 112" fill="#84cc16"/><path d="M100 132 Q128 112 124 74 Q100 82 94 106" fill="#4d7c0f"/>
 <path d="M100 132 V146" stroke="#365314" stroke-width="3"/>
-<circle cx="140" cy="140" r="18" fill="#be185d" stroke="#ffffff" stroke-width="3"/><path d="M132 140 L138 146 L149 134" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<circle cx="140" cy="140" r="18" fill="#c7861c" stroke="#ffffff" stroke-width="3"/><path d="M132 140 L138 146 L149 134" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round"/>
 <path class="vl-sweep" d="M60 40 L80 40 L40 160 L20 160Z" fill="#ffffff" opacity=".18"/>
 </svg>

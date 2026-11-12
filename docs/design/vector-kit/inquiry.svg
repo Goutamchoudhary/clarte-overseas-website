@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Inquiry on its way · use: Contact form, quote confirmation · motion: Plane loops out of the envelope -->
-<ellipse cx="100" cy="186" rx="56" ry="6" fill="#15123a" opacity=".12"/>
-<rect x="40" y="96" width="120" height="78" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="3"/>
-<path d="M40 104 L100 144 L160 104" stroke="#c4b5fd" stroke-width="3" fill="none"/>
-<path d="M60 92 Q70 40 120 54 Q150 64 150 40" stroke="#a78bfa" stroke-width="2.5" fill="none" stroke-dasharray="3 6" stroke-linecap="round"/>
-<g class="vl-fly2"><path d="M140 30 L184 16 L162 50 Z" fill="#be185d"/><path d="M162 50 L160 36 L184 16Z" fill="#9d174d"/></g>
-<circle cx="100" cy="150" r="12" fill="#6d28d9"/><path d="M95 150 L99 154 L106 146" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="100" cy="186" rx="56" ry="6" fill="#14213d" opacity=".12"/>
+<rect x="40" y="96" width="120" height="78" rx="8" fill="#ffffff" stroke="#b7c6e6" stroke-width="3"/>
+<path d="M40 104 L100 144 L160 104" stroke="#b7c6e6" stroke-width="3" fill="none"/>
+<path d="M60 92 Q70 40 120 54 Q150 64 150 40" stroke="#8ea6d8" stroke-width="2.5" fill="none" stroke-dasharray="3 6" stroke-linecap="round"/>
+<g class="vl-fly2"><path d="M140 30 L184 16 L162 50 Z" fill="#c7861c"/><path d="M162 50 L160 36 L184 16Z" fill="#9a6512"/></g>
+<circle cx="100" cy="150" r="12" fill="#1f4693"/><path d="M95 150 L99 154 L106 146" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
 <!-- Onion, garlic bulb and chilli beside a seasoning shaker · use: Culinary & Spice Powders category guide -->
-<ellipse cx="110" cy="163" rx="102" ry="5" fill="#15123a" opacity=".1"/>
+<ellipse cx="110" cy="163" rx="102" ry="5" fill="#14213d" opacity=".1"/>
 <rect x="134" y="54" width="62" height="104" rx="14" fill="#f4ebe4"/><rect x="138" y="36" width="54" height="22" rx="6" fill="#9a4a2a"/>
 <g fill="#f4ebe4"><circle cx="152" cy="46" r="3"/><circle cx="165" cy="46" r="3"/><circle cx="178" cy="46" r="3"/></g>
 <path d="M134 104H196V146C196 152 191 158 184 158H146C139 158 134 152 134 146Z" fill="#d98a4a"/>

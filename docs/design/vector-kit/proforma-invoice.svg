@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 214 160">
 <!-- Proforma invoice with itemised rows, total and pen · use: How We Export, Proforma first -->
-<ellipse cx="80" cy="154" rx="62" ry="5" fill="#15123a" opacity=".1"/>
-<path d="M22 6H112L142 36V150H22Z" fill="#fff" stroke="#c4b5fd" stroke-width="3" stroke-linejoin="round"/>
-<path d="M112 6V36H142Z" fill="#e6defc"/>
-<rect x="34" y="18" width="62" height="14" rx="3" fill="#6d28d9"/>
-<g fill="#ddd6fe"><rect x="34" y="48" width="48" height="7" rx="3"/><rect x="34" y="66" width="48" height="7" rx="3"/><rect x="34" y="84" width="48" height="7" rx="3"/></g>
-<g fill="#a78bfa"><rect x="92" y="48" width="14" height="7" rx="3"/><rect x="92" y="66" width="14" height="7" rx="3"/><rect x="92" y="84" width="14" height="7" rx="3"/></g>
-<g fill="#6d28d9"><rect x="112" y="48" width="18" height="7" rx="3"/><rect x="112" y="66" width="18" height="7" rx="3"/><rect x="112" y="84" width="18" height="7" rx="3"/></g>
-<path d="M34 102H130" stroke="#c4b5fd" stroke-width="2.5"/>
-<rect x="80" y="112" width="50" height="22" rx="6" fill="#be185d"/><rect x="88" y="120" width="34" height="6" rx="3" fill="#fff"/>
-<g transform="rotate(38 150 110)"><rect x="142" y="56" width="16" height="86" rx="3" fill="#e0a526"/><rect x="142" y="50" width="16" height="14" rx="3" fill="#be185d"/><path d="M142 142H158L150 162Z" fill="#15123a"/></g>
+<ellipse cx="80" cy="154" rx="62" ry="5" fill="#14213d" opacity=".1"/>
+<path d="M22 6H112L142 36V150H22Z" fill="#fff" stroke="#b7c6e6" stroke-width="3" stroke-linejoin="round"/>
+<path d="M112 6V36H142Z" fill="#e1e8f6"/>
+<rect x="34" y="18" width="62" height="14" rx="3" fill="#1f4693"/>
+<g fill="#d5def2"><rect x="34" y="48" width="48" height="7" rx="3"/><rect x="34" y="66" width="48" height="7" rx="3"/><rect x="34" y="84" width="48" height="7" rx="3"/></g>
+<g fill="#8ea6d8"><rect x="92" y="48" width="14" height="7" rx="3"/><rect x="92" y="66" width="14" height="7" rx="3"/><rect x="92" y="84" width="14" height="7" rx="3"/></g>
+<g fill="#1f4693"><rect x="112" y="48" width="18" height="7" rx="3"/><rect x="112" y="66" width="18" height="7" rx="3"/><rect x="112" y="84" width="18" height="7" rx="3"/></g>
+<path d="M34 102H130" stroke="#b7c6e6" stroke-width="2.5"/>
+<rect x="80" y="112" width="50" height="22" rx="6" fill="#c7861c"/><rect x="88" y="120" width="34" height="6" rx="3" fill="#fff"/>
+<g transform="rotate(38 150 110)"><rect x="142" y="56" width="16" height="86" rx="3" fill="#e0a526"/><rect x="142" y="50" width="16" height="14" rx="3" fill="#c7861c"/><path d="M142 142H158L150 162Z" fill="#14213d"/></g>
 </svg>

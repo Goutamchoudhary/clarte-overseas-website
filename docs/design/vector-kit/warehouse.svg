@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Warehouse · use: About · our facility partners, stock availability · motion: Shutter rolls up -->
-<ellipse cx="100" cy="190" rx="86" ry="6" fill="#15123a" opacity=".12"/>
-<path d="M14 84 L100 40 L186 84 V182 H14Z" fill="#ede9fe"/><path d="M8 88 L100 38 L192 88" stroke="#6d28d9" stroke-width="8" fill="none" stroke-linejoin="round"/>
-<rect x="48" y="108" width="104" height="74" fill="#15123a"/>
+<ellipse cx="100" cy="190" rx="86" ry="6" fill="#14213d" opacity=".12"/>
+<path d="M14 84 L100 40 L186 84 V182 H14Z" fill="#e8eef8"/><path d="M8 88 L100 38 L192 88" stroke="#1f4693" stroke-width="8" fill="none" stroke-linejoin="round"/>
+<rect x="48" y="108" width="104" height="74" fill="#14213d"/>
 <rect x="56" y="158" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="80" y="158" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="104" y="158" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="128" y="158" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="56" y="136" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="80" y="136" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="104" y="136" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="128" y="136" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="56" y="114" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="80" y="114" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="104" y="114" width="20" height="18" rx="4" fill="#e9dcc0"/><rect x="128" y="114" width="20" height="18" rx="4" fill="#e9dcc0"/>
-<g class="vl-shutter"><rect x="48" y="108" width="104" height="40" fill="#c4b5fd"/><path d="M48 114 H152" stroke="#a78bfa" stroke-width="2"/><path d="M48 122 H152" stroke="#a78bfa" stroke-width="2"/><path d="M48 130 H152" stroke="#a78bfa" stroke-width="2"/><path d="M48 138 H152" stroke="#a78bfa" stroke-width="2"/></g>
-<rect x="84" y="60" width="32" height="14" rx="3" fill="#ffffff"/><text x="100" y="71" text-anchor="middle" font-family="Sora,sans-serif" font-size="9" font-weight="700" fill="#6d28d9">STOCK</text>
+<g class="vl-shutter"><rect x="48" y="108" width="104" height="40" fill="#b7c6e6"/><path d="M48 114 H152" stroke="#8ea6d8" stroke-width="2"/><path d="M48 122 H152" stroke="#8ea6d8" stroke-width="2"/><path d="M48 130 H152" stroke="#8ea6d8" stroke-width="2"/><path d="M48 138 H152" stroke="#8ea6d8" stroke-width="2"/></g>
+<rect x="84" y="60" width="32" height="14" rx="3" fill="#ffffff"/><text x="100" y="71" text-anchor="middle" font-family="Sora,sans-serif" font-size="9" font-weight="700" fill="#1f4693">STOCK</text>
 </svg>

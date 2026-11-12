@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Food factory · use: Who We Serve, industries · motion: smoke rises, conveyor runs -->
-<ellipse cx="100" cy="188" rx="86" ry="6" fill="#15123a" opacity=".12"/>
-<g class="vl-puff" fill="#c4b5fd"><circle cx="58" cy="30" r="8"/><circle cx="68" cy="20" r="6"/><circle cx="94" cy="36" r="7"/><circle cx="104" cy="26" r="5"/></g>
-<rect x="50" y="42" width="16" height="62" rx="2" fill="#be185d"/><rect x="50" y="52" width="16" height="6" fill="#fbcfe8"/>
-<rect x="86" y="54" width="16" height="50" rx="2" fill="#6d28d9"/><rect x="86" y="64" width="16" height="6" fill="#c4b5fd"/>
+<ellipse cx="100" cy="188" rx="86" ry="6" fill="#14213d" opacity=".12"/>
+<g class="vl-puff" fill="#b7c6e6"><circle cx="58" cy="30" r="8"/><circle cx="68" cy="20" r="6"/><circle cx="94" cy="36" r="7"/><circle cx="104" cy="26" r="5"/></g>
+<rect x="50" y="42" width="16" height="62" rx="2" fill="#c7861c"/><rect x="50" y="52" width="16" height="6" fill="#f6e3bf"/>
+<rect x="86" y="54" width="16" height="50" rx="2" fill="#1f4693"/><rect x="86" y="64" width="16" height="6" fill="#b7c6e6"/>
 <path d="M16 180 V112 L52 88 V112 L88 88 V112 L124 88 V180 Z" fill="#1f4693"/>
 <rect x="30" y="130" width="20" height="16" rx="2" fill="#fde68a"/><rect x="60" y="130" width="20" height="16" rx="2" fill="#fde68a"/><rect x="90" y="130" width="20" height="16" rx="2" fill="#93c5fd"/>
-<rect x="56" y="156" width="28" height="24" rx="2" fill="#15123a"/>
-<rect x="134" y="84" width="24" height="96" rx="12" fill="#e0a526"/><rect x="162" y="100" width="22" height="80" rx="11" fill="#c4b5fd"/>
-<path d="M134 110 H158 M134 134 H158 M162 124 H184 M162 148 H184" stroke="#15123a" stroke-opacity=".22" stroke-width="3"/>
-<path d="M10 180 H190" stroke="#15123a" stroke-width="5" stroke-linecap="round"/>
-<path class="vl-road" d="M12 186 H188" stroke="#a78bfa" stroke-width="3" stroke-dasharray="10 8"/>
+<rect x="56" y="156" width="28" height="24" rx="2" fill="#14213d"/>
+<rect x="134" y="84" width="24" height="96" rx="12" fill="#e0a526"/><rect x="162" y="100" width="22" height="80" rx="11" fill="#b7c6e6"/>
+<path d="M134 110 H158 M134 134 H158 M162 124 H184 M162 148 H184" stroke="#14213d" stroke-opacity=".22" stroke-width="3"/>
+<path d="M10 180 H190" stroke="#14213d" stroke-width="5" stroke-linecap="round"/>
+<path class="vl-road" d="M12 186 H188" stroke="#8ea6d8" stroke-width="3" stroke-dasharray="10 8"/>
 </svg>

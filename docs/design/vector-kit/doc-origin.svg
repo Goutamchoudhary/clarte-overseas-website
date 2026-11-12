@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
 <!-- Certificate with a location pin and a round origin seal · use: Products, Certificate of Origin -->
-<ellipse cx="100" cy="163" rx="80" ry="5" fill="#15123a" opacity=".1"/>
-<rect x="24" y="22" width="132" height="104" rx="8" fill="#fff" stroke="#e4e2f3" stroke-width="3"/>
-<rect x="32" y="30" width="116" height="88" rx="4" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="50" y="42" width="56" height="9" rx="4.5" fill="#6d28d9"/>
-<path d="M50 64H118M50 78H104" stroke="#d6d3ea" stroke-width="5" stroke-linecap="round"/>
-<path d="M120 48C120 40 126 34 134 34C142 34 148 40 148 48C148 58 134 70 134 70C134 70 120 58 120 48Z" fill="#be185d"/><circle cx="134" cy="48" r="5" fill="#fff"/>
+<ellipse cx="100" cy="163" rx="80" ry="5" fill="#14213d" opacity=".1"/>
+<rect x="24" y="22" width="132" height="104" rx="8" fill="#fff" stroke="#e2e7f0" stroke-width="3"/>
+<rect x="32" y="30" width="116" height="88" rx="4" fill="none" stroke="#b7c6e6" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="50" y="42" width="56" height="9" rx="4.5" fill="#1f4693"/>
+<path d="M50 64H118M50 78H104" stroke="#d3dae8" stroke-width="5" stroke-linecap="round"/>
+<path d="M120 48C120 40 126 34 134 34C142 34 148 40 148 48C148 58 134 70 134 70C134 70 120 58 120 48Z" fill="#c7861c"/><circle cx="134" cy="48" r="5" fill="#fff"/>
 <circle cx="150" cy="122" r="28" fill="#e0a526"/><circle cx="150" cy="122" r="20" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="3 4"/>
 <path d="M140 122L147 129L161 114" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M138 146L134 166L146 158L150 168L156 148" fill="#c98a1e"/>

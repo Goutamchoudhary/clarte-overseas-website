@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
 <!-- Scale balancing land and labour · use: How We Export, Responsible sourcing -->
-<ellipse cx="100" cy="162" rx="58" ry="6" fill="#15123a" opacity=".1"/>
-<path d="M72 160H128L120 146H80Z" fill="#15123a"/>
+<ellipse cx="100" cy="162" rx="58" ry="6" fill="#14213d" opacity=".1"/>
+<path d="M72 160H128L120 146H80Z" fill="#14213d"/>
 <rect x="95" y="34" width="10" height="114" rx="4" fill="#1f4693"/>
 <rect x="26" y="34" width="148" height="9" rx="4.5" fill="#1f4693"/>
 <circle cx="100" cy="30" r="10" fill="#e0a526"/>
 <g fill="none" stroke="#a9b0ca" stroke-width="2.5"><path d="M38 43L14 104M38 43L62 104M162 43L138 104M162 43L186 104"/></g>
-<path d="M6 104H70C68 128 8 128 6 104Z" fill="#c4b5fd"/>
-<path d="M130 104H194C192 128 132 128 130 104Z" fill="#c4b5fd"/>
+<path d="M6 104H70C68 128 8 128 6 104Z" fill="#b7c6e6"/>
+<path d="M130 104H194C192 128 132 128 130 104Z" fill="#b7c6e6"/>
 <path d="M38 102C20 96 16 76 22 60C40 62 48 82 38 102Z" fill="#57a747"/><path d="M38 102C54 96 60 80 54 66C42 70 34 84 38 102Z" fill="#3f8a39"/>
-<circle cx="162" cy="72" r="13" fill="#d99a6c"/><path d="M162 57C150 57 147 66 149 71C154 64 170 64 175 71C177 66 174 57 162 57Z" fill="#15123a"/>
-<path d="M142 104C142 90 152 86 162 86C172 86 182 90 182 104Z" fill="#be185d"/>
+<circle cx="162" cy="72" r="13" fill="#d99a6c"/><path d="M162 57C150 57 147 66 149 71C154 64 170 64 175 71C177 66 174 57 162 57Z" fill="#14213d"/>
+<path d="M142 104C142 90 152 86 162 86C172 86 182 90 182 104Z" fill="#c7861c"/>
 </svg>

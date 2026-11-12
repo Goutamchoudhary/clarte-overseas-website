@@ -479,8 +479,8 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.5rem, 2.5vw, 1.95rem); }
 .hero.cta-home { /* deep royal indigo — closest to the base brand navy, since this is the flagship band */
   background:
     radial-gradient(900px 600px at 80% -10%, rgba(107,120,224,.4), transparent 60%),
-    radial-gradient(700px 500px at 0% 110%, rgba(63,58,173,.45), transparent 55%),
-    linear-gradient(160deg, #0d0f2b 0%, #191c52 55%, #33339e 130%);
+    radial-gradient(700px 500px at 0% 110%, rgba(43,66,119,.45), transparent 55%),
+    linear-gradient(160deg, #0d0f2b 0%, #191c52 55%, #263b6d 130%);
 }
 .hero.cta-about { /* deep teal-green — company/growth story */
   background:
@@ -496,9 +496,9 @@ h2.tg-script--sm, h3.tg-script--sm { font-size: clamp(1.5rem, 2.5vw, 1.95rem); }
 }
 .hero.cta-cert { /* deep violet — trust, compliance */
   background:
-    radial-gradient(900px 600px at 80% -10%, rgba(150,120,224,.35), transparent 60%),
-    radial-gradient(700px 500px at 0% 110%, rgba(99,58,173,.45), transparent 55%),
-    linear-gradient(160deg, #160b2c 0%, #2b1654 55%, #4c2889 130%);
+    radial-gradient(900px 600px at 80% -10%, rgba(83,121,211,.35), transparent 60%),
+    radial-gradient(700px 500px at 0% 110%, rgba(43,66,119,.45), transparent 55%),
+    linear-gradient(160deg, #080f1e 0%, #101d3a 55%, #1e315e 130%);
 }
 .hero.cta-blogs { /* deep amber-gold — content, insight */
   background:
@@ -716,7 +716,7 @@ html:not(.js-ready) .reveal {
 /* ---- "Why dehydrated" compact panel (card-in-section, distinct look) -- */
 .wd-panel {
   border-radius: 1.75rem; padding: 1.75rem;
-  background: linear-gradient(120deg, #e7eeff 0%, #f4f7ff 55%, #eae9ff 100%);
+  background: linear-gradient(120deg, #e7eeff 0%, #f4f7ff 55%, #e3ebfe 100%);
   border: 1px solid #e1e8f6;
   box-shadow: 0 26px 54px -34px rgba(13,26,54,.35);
 }
@@ -856,7 +856,7 @@ html:not(.js-ready) .reveal {
   position: relative; isolation: isolate; overflow: hidden;
   background:
     radial-gradient(720px 420px at 88% -10%, rgba(91,130,214,.20), transparent 60%),
-    radial-gradient(560px 360px at 0% 120%, rgba(124,58,237,.10), transparent 55%),
+    radial-gradient(560px 360px at 0% 120%, rgba(42,85,168,.10), transparent 55%),
     linear-gradient(180deg, #eef3fc 0%, #f7f8fb 100%);
 }
 .about-hero::after {
@@ -1154,7 +1154,7 @@ html:not(.js-ready) .reveal {
   /* gradient border trick: two bg-image layers with different clip values */
   background-image:
     linear-gradient(#fff, #fff),
-    linear-gradient(270deg, #1f4693, #4f8ef5, #a78bfa, #4f8ef5, #1f4693);
+    linear-gradient(270deg, #1f4693, #4f8ef5, #8ea6d8, #4f8ef5, #1f4693);
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
   background-size: auto, 400% 100%;
@@ -1687,13 +1687,13 @@ html:not(.js-ready) .reveal {
    ============================================================================= */
 .cc-calendly {
   display: inline-flex; align-items: center; gap: .5rem; align-self: center;
-  margin-top: .9rem; font: 600 .88rem "Sora", sans-serif; color: #2e1065;
-  background: linear-gradient(135deg, #a78bfa 0%, #f5f3ff 100%);
+  margin-top: .9rem; font: 600 .88rem "Sora", sans-serif; color: #102552;
+  background: linear-gradient(135deg, #8ea6d8 0%, #f1f5fb 100%);
   border: none; border-radius: 999px; padding: .6rem 1.3rem;
-  box-shadow: 0 4px 14px rgba(167,139,250,.38);
+  box-shadow: 0 4px 14px rgba(142,166,216,.38);
   transition: opacity .2s ease, transform .15s ease, box-shadow .2s ease;
 }
-.cc-calendly:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(167,139,250,.55); }
+.cc-calendly:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(142,166,216,.55); }
 
 /* =============================================================================
    PRODUCT PAGE — stock badge
@@ -1759,9 +1759,9 @@ html:not(.js-ready) .reveal {
   animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate;
 }
 .tb1 { width: 520px; height: 220px; background: rgba(0,210,140,.12); top: -70px; left: -100px; animation: tb1 9s infinite alternate; }
-.tb2 { width: 440px; height: 190px; background: rgba(220,50,180,.08); top: -40px; right: -80px; animation: tb2 11s infinite alternate; }
+.tb2 { width: 440px; height: 190px; background: rgba(218,159,64,.08); top: -40px; right: -80px; animation: tb2 11s infinite alternate; }
 .tb3 { width: 380px; height: 170px; background: rgba(0,200,230,.09); top: 40px; left: 28%; animation: tb3 13s infinite alternate; }
-.tb4 { width: 300px; height: 150px; background: rgba(130,60,230,.07); bottom: 30px; left: 8%; animation: tb4 10s infinite alternate; }
+.tb4 { width: 300px; height: 150px; background: rgba(30,79,194,.07); bottom: 30px; left: 8%; animation: tb4 10s infinite alternate; }
 .tb5 { width: 340px; height: 160px; background: rgba(0,220,160,.08); bottom: 20px; right: 5%; animation: tb5 8s infinite alternate; }
 
 @keyframes tb1 { from { transform: translate(0,0) scaleX(1); } to { transform: translate(50px,22px) scaleX(1.12); } }
@@ -1835,20 +1835,20 @@ html:not(.js-ready) .reveal {
 /* 2 · Lavender — violet, soft rose & periwinkle (warm, premium) */
 .aurora-lavender {
   background:
-    radial-gradient(46% 56% at 10% 6%,  rgba(167,139,250,.15), transparent 68%),
-    radial-gradient(42% 52% at 92% 2%,  rgba(244,114,182,.10), transparent 70%),
+    radial-gradient(46% 56% at 10% 6%,  rgba(142,166,216,.15), transparent 68%),
+    radial-gradient(42% 52% at 92% 2%,  rgba(224,163,58,.10), transparent 70%),
     radial-gradient(52% 60% at 74% 100%, rgba(129,140,248,.12), transparent 72%),
-    radial-gradient(40% 50% at 20% 102%, rgba(196,140,250,.09), transparent 70%),
-    linear-gradient(180deg, #f8f5ff, #fdf4fb);
+    radial-gradient(40% 50% at 20% 102%, rgba(109,150,245,.09), transparent 70%),
+    linear-gradient(180deg, #f2f6ff, #fdf9f4);
 }
 /* 3 · Peach — warm coral, apricot & soft pink (inviting, energetic) */
 .aurora-peach {
   background:
     radial-gradient(46% 56% at 12% 6%,  rgba(251,146,120,.13), transparent 68%),
     radial-gradient(42% 52% at 90% 0%,  rgba(253,200,140,.13), transparent 70%),
-    radial-gradient(52% 60% at 74% 100%, rgba(244,160,200,.10), transparent 72%),
+    radial-gradient(52% 60% at 74% 100%, rgba(242,213,166,.10), transparent 72%),
     radial-gradient(40% 50% at 22% 102%, rgba(252,180,160,.10), transparent 70%),
-    linear-gradient(180deg, #fff7f2, #fff4f7);
+    linear-gradient(180deg, #fff7f2, #fffbf4);
 }
 /* 4 · Sky — brand-aligned blues & cyan (trust, corporate) */
 .aurora-sky {
@@ -1856,17 +1856,17 @@ html:not(.js-ready) .reveal {
     radial-gradient(46% 56% at 12% 6%,  rgba(96,165,250,.15),  transparent 68%),
     radial-gradient(42% 52% at 90% 0%,  rgba(125,211,252,.13), transparent 70%),
     radial-gradient(52% 60% at 72% 100%, rgba(56,189,248,.10),  transparent 72%),
-    radial-gradient(40% 50% at 22% 102%, rgba(99,102,241,.07),  transparent 70%),
+    radial-gradient(40% 50% at 22% 102%, rgba(57,109,232,.07),  transparent 70%),
     linear-gradient(180deg, #f1f7ff, #eef4ff);
 }
 /* 5 · Blush — pink, lilac & pale blue (the classic aurora ribbon) */
 .aurora-blush {
   background:
-    radial-gradient(46% 56% at 10% 6%,  rgba(244,114,182,.11), transparent 68%),
-    radial-gradient(42% 52% at 92% 0%,  rgba(192,132,252,.12), transparent 70%),
+    radial-gradient(46% 56% at 10% 6%,  rgba(224,163,58,.11), transparent 68%),
+    radial-gradient(42% 52% at 92% 0%,  rgba(99,143,247,.12), transparent 70%),
     radial-gradient(52% 60% at 74% 100%, rgba(147,197,253,.12), transparent 72%),
-    radial-gradient(40% 50% at 20% 102%, rgba(216,180,254,.09), transparent 70%),
-    linear-gradient(180deg, #fdf4fb, #f4f6ff);
+    radial-gradient(40% 50% at 20% 102%, rgba(160,187,251,.09), transparent 70%),
+    linear-gradient(180deg, #fdf9f4, #f4f6ff);
 }
 
 /* =============================================================================
@@ -1898,13 +1898,13 @@ html:not(.js-ready) .reveal {
    ============================================================================= */
 .btn-calendly {
   display: inline-flex; align-items: center; gap: .45rem;
-  font: 600 .92rem "Sora", sans-serif; color: #2e1065;
-  background: linear-gradient(135deg, #a78bfa 0%, #f5f3ff 100%);
+  font: 600 .92rem "Sora", sans-serif; color: #102552;
+  background: linear-gradient(135deg, #8ea6d8 0%, #f1f5fb 100%);
   border: none; border-radius: 999px; padding: .72rem 1.5rem;
-  box-shadow: 0 4px 14px rgba(167,139,250,.38);
+  box-shadow: 0 4px 14px rgba(142,166,216,.38);
   transition: opacity .2s ease, transform .15s ease, box-shadow .2s ease;
 }
-.btn-calendly:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(167,139,250,.55); }
+.btn-calendly:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(142,166,216,.55); }
 
 /* =========================================================================
    IMMERSIVE SCROLL EXPERIENCE (homepage — driven by /js/home-fx.js)

@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 170">
 <!-- A calendar of shipments all ticked off, with an on-time clock · use: About goals -->
 <rect x="10" y="22" width="134" height="130" rx="14" fill="#fff"/>
-<path d="M10 36C10 28 16 22 24 22H130C138 22 144 28 144 36V54H10Z" fill="#6d28d9"/>
-<rect x="38" y="10" width="11" height="28" rx="5.5" fill="#c4b5fd"/><rect x="105" y="10" width="11" height="28" rx="5.5" fill="#c4b5fd"/>
-<g fill="#f1edff"><rect x="22" y="64" width="26" height="24" rx="6"/><rect x="64" y="64" width="26" height="24" rx="6"/><rect x="106" y="64" width="26" height="24" rx="6"/><rect x="22" y="98" width="26" height="24" rx="6"/><rect x="64" y="98" width="26" height="24" rx="6"/></g>
-<g fill="none" stroke="#6d28d9" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M29 76l5 5l8 -10M71 76l5 5l8 -10M113 76l5 5l8 -10M29 110l5 5l8 -10M71 110l5 5l8 -10"/></g>
-<circle cx="136" cy="124" r="38" fill="#be185d"/><circle cx="136" cy="124" r="29" fill="#fff"/>
-<path d="M136 104V124L150 132" fill="none" stroke="#15123a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="136" cy="124" r="4" fill="#be185d"/>
+<path d="M10 36C10 28 16 22 24 22H130C138 22 144 28 144 36V54H10Z" fill="#1f4693"/>
+<rect x="38" y="10" width="11" height="28" rx="5.5" fill="#b7c6e6"/><rect x="105" y="10" width="11" height="28" rx="5.5" fill="#b7c6e6"/>
+<g fill="#eef2fa"><rect x="22" y="64" width="26" height="24" rx="6"/><rect x="64" y="64" width="26" height="24" rx="6"/><rect x="106" y="64" width="26" height="24" rx="6"/><rect x="22" y="98" width="26" height="24" rx="6"/><rect x="64" y="98" width="26" height="24" rx="6"/></g>
+<g fill="none" stroke="#1f4693" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M29 76l5 5l8 -10M71 76l5 5l8 -10M113 76l5 5l8 -10M29 110l5 5l8 -10M71 110l5 5l8 -10"/></g>
+<circle cx="136" cy="124" r="38" fill="#c7861c"/><circle cx="136" cy="124" r="29" fill="#fff"/>
+<path d="M136 104V124L150 132" fill="none" stroke="#14213d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="136" cy="124" r="4" fill="#c7861c"/>
 </svg>

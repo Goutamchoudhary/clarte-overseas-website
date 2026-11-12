@@ -14,7 +14,7 @@ interface Props {
   hero?: boolean; // above the fold: load eagerly and hold the first-visit splash for it
 }
 const { post, class: cls = "", emojiStyle, hero = false } = Astro.props;
-const src = `/assets/img/blog/${post.id}.svg`;
+const src = `/assets/img/blog/${post.id}-v2.svg`;
 const art = isVersion("v3") && fs.existsSync(path.join(process.cwd(), "public", src));
 ---
 {art ? (

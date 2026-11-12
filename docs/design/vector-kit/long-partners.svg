@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
+<!-- Two linked rings with a sprout growing from the join and a rising year trail · use: Home, Long-Term Partnerships -->
+<ellipse cx="110" cy="163" rx="96" ry="5" fill="#000" opacity=".18"/>
+<circle cx="82" cy="100" r="42" fill="none" stroke="#b7c6e6" stroke-width="13"/>
+<circle cx="138" cy="100" r="42" fill="none" stroke="#e0a33a" stroke-width="13"/>
+<path d="M120 60A42 42 0 0 1 124 138" fill="none" stroke="#b7c6e6" stroke-width="13"/>
+<path d="M110 58C110 44 110 34 110 22" stroke="#7da35f" stroke-width="5" stroke-linecap="round"/>
+<path d="M110 36C96 34 88 24 88 12C102 12 110 22 110 36Z" fill="#6f9a4a"/>
+<path d="M110 30C122 26 130 16 128 6C116 8 110 16 110 30Z" fill="#8ab866"/>
+<g fill="#eef2fa"><circle cx="20" cy="150" r="5"/><circle cx="44" cy="140" r="5"/><circle cx="176" cy="140" r="5"/><circle cx="200" cy="128" r="5"/></g>
+<path d="M20 150L44 140M176 140L200 128" stroke="#eef2fa" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round"/>
+</svg>

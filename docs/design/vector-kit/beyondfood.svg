@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Beyond food crate · use: Multi-category edition: textiles, crafts, home · motion: Items peek out of the crate -->
-<ellipse cx="100" cy="190" rx="72" ry="6" fill="#15123a" opacity=".12"/>
-<g class="vl-peek"><rect x="54" y="52" width="26" height="70" rx="6" fill="#be185d"/><path d="M54 64 H80 M54 76 H80 M54 88 H80" stroke="#f9a8d4" stroke-width="3"/>
+<ellipse cx="100" cy="190" rx="72" ry="6" fill="#14213d" opacity=".12"/>
+<g class="vl-peek"><rect x="54" y="52" width="26" height="70" rx="6" fill="#c7861c"/><path d="M54 64 H80 M54 76 H80 M54 88 H80" stroke="#f0c97e" stroke-width="3"/>
 <path d="M92 60 Q86 76 92 120 H118 Q124 76 118 60Z" fill="#a86b32"/><ellipse cx="105" cy="60" rx="13" ry="4" fill="#7a4a20"/><path d="M90 86 H120" stroke="#e0a526" stroke-width="4"/>
 <rect x="128" y="70" width="26" height="52" rx="4" fill="#93c5fd"/><circle cx="141" cy="90" r="7" fill="#ffffff"/></g>
 <rect x="34" y="110" width="132" height="72" rx="6" fill="#d6a46a"/>
 <path d="M34 134 H166 M34 158 H166" stroke="#a86b32" stroke-width="3"/><path d="M34 110 L166 182 M166 110 L34 182" stroke="#a86b32" stroke-width="3" opacity=".45"/>
-<rect x="74" y="136" width="52" height="20" rx="3" fill="#15123a"/><text x="100" y="150" text-anchor="middle" font-family="Sora,sans-serif" font-size="9" font-weight="700" fill="#ffffff">MADE IN INDIA</text>
+<rect x="74" y="136" width="52" height="20" rx="3" fill="#14213d"/><text x="100" y="150" text-anchor="middle" font-family="Sora,sans-serif" font-size="9" font-weight="700" fill="#ffffff">MADE IN INDIA</text>
 </svg>

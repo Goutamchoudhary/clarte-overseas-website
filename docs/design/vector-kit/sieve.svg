@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 <!-- Mesh sieve · use: Product page · particle size / mesh spec · motion: Powder sifts down -->
-<ellipse cx="100" cy="190" rx="46" ry="6" fill="#15123a" opacity=".12"/>
+<ellipse cx="100" cy="190" rx="46" ry="6" fill="#14213d" opacity=".12"/>
 <ellipse cx="100" cy="70" rx="64" ry="20" fill="#a86b32"/>
 <ellipse cx="100" cy="66" rx="56" ry="15" fill="#e9dcc0"/>
 <clipPath id="vlsv"><ellipse cx="100" cy="66" rx="56" ry="15"/></clipPath>
@@ -8,5 +8,5 @@
 <ellipse cx="100" cy="62" rx="26" ry="7" fill="#e0a526"/>
 <g class="vl-fall" fill="#e0a526"><circle cx="78" cy="96" r="1.6"/><circle cx="91" cy="113" r="2.2"/><circle cx="104" cy="130" r="2.8"/><circle cx="117" cy="101" r="1.6"/><circle cx="84" cy="118" r="2.2"/><circle cx="97" cy="135" r="2.8"/><circle cx="110" cy="106" r="1.6"/><circle cx="123" cy="123" r="2.2"/><circle cx="90" cy="140" r="2.8"/><circle cx="103" cy="111" r="1.6"/><circle cx="116" cy="128" r="2.2"/><circle cx="83" cy="99" r="2.8"/><circle cx="96" cy="116" r="1.6"/><circle cx="109" cy="133" r="2.2"/><circle cx="122" cy="104" r="2.8"/><circle cx="89" cy="121" r="1.6"/></g>
 <path d="M66 186 Q100 150 134 186Z" fill="#e0a526"/>
-<g transform="translate(140 104) rotate(12)"><rect width="46" height="22" rx="5" fill="#15123a"/><text x="23" y="15" text-anchor="middle" font-family="Sora,sans-serif" font-size="10" font-weight="700" fill="#ffffff">80 MESH</text></g>
+<g transform="translate(140 104) rotate(12)"><rect width="46" height="22" rx="5" fill="#14213d"/><text x="23" y="15" text-anchor="middle" font-family="Sora,sans-serif" font-size="10" font-weight="700" fill="#ffffff">80 MESH</text></g>
 </svg>

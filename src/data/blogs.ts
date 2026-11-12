@@ -25,7 +25,7 @@ export const posts: Post[] = [
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📈",
-    accent: "linear-gradient(135deg,#1f4693,#4f46e5)",
+    accent: "linear-gradient(135deg,#1f4693,#2154ca)",
     body: `
 <p>For a long time, dehydrated ingredients had an image problem. They were the budget choice, the thing you reached for when fresh or frozen was not practical. That picture is well out of date. Look at how a modern sauce, snack, beverage or supplement is actually made and you will find dried flakes and fine powders doing a lot of the heavy lifting. They are not hiding at the back of the formulation anymore. In plenty of products they are the formulation.</p>
 <p>The change has been gradual enough that many buyers have not fully clocked it. But the direction is clear, and it is worth understanding why, because it affects how you should think about sourcing for the next few years.</p>
@@ -122,7 +122,7 @@ export const posts: Post[] = [
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
-    accent: "linear-gradient(135deg,#4338ca,#7c3aed)",
+    accent: "linear-gradient(135deg,#29478d,#2a55a8)",
     body: `
 <p>A specification sheet is the most useful document a supplier will send you, and the easiest to skim past. It is, in effect, a promise about what every batch will look like. Learn to read it properly and you can judge an ingredient, and to some extent the supplier behind it, before a single kilo ships. Here is how to read the numbers that matter without needing a food-science degree.</p>
 <h2>Why the spec sheet is your first quality check</h2>
@@ -534,7 +534,7 @@ export const posts: Post[] = [
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
-    accent: "linear-gradient(135deg,#7c3aed,#6366f1)",
+    accent: "linear-gradient(135deg,#2a55a8,#396de8)",
     body: `
 <p>In food, guar gum earns its place by being a cheap, effective thickener and stabiliser. In pharmaceuticals and nutraceuticals it does something different — it becomes part of how a drug is delivered, how a tablet survives, and in one important case, how a clinical fibre regulates digestion. The same agricultural crop ends up serving very different industries with very different documentation requirements. If you have only encountered guar in food spec sheets, the pharma side is worth understanding.</p>
 
@@ -1220,7 +1220,7 @@ export const posts: Post[] = [
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "🔴",
-    accent: "linear-gradient(135deg,#be123c,#7e22ce)",
+    accent: "linear-gradient(135deg,#be123c,#1b3d8d)",
     body: `
 <p>Few fruits have earned as much attention from the nutraceutical world as pomegranate. Long valued across South Asian and Middle Eastern food traditions for its ruby-red arils and sharp, tart flavour, pomegranate has more recently become a headline ingredient in antioxidant supplements, functional beverages and sports-nutrition formulations, driven by a specific and well-documented group of plant compounds: polyphenols, and within them, a class called ellagitannins that includes punicalagins — among the most potent natural antioxidants identified in any common fruit. Dried and milled into a powder, that concentrated antioxidant profile becomes something a formulator can actually work with: a stable, easy-to-dose, shelf-ready ingredient rather than a perishable fruit with a narrow harvest window.</p>
 <h2>Where it comes from</h2>
@@ -1250,7 +1250,7 @@ export const posts: Post[] = [
     read: "9 min read",
     author: "Gautam Choudhary",
     emoji: "💊",
-    accent: "linear-gradient(135deg,#7e22ce,#1f4693)",
+    accent: "linear-gradient(135deg,#1b3d8d,#1f4693)",
     body: `
 <p>Pomegranate powder is bought almost entirely for what it does, not just how it tastes — its polyphenol and punicalagin content is the reason it sits in the premium tier of fruit powders, and the reason supplement and functional-beverage brands reach for it in the first place. But turning that antioxidant profile into a finished product that performs, stays stable and supports a credible claim takes more than adding the powder to a formulation and calling it done. Here is a practical look at the formulation decisions that actually matter.</p>
 <h2>Start with the application, not the dose</h2>
@@ -1581,7 +1581,7 @@ export const posts: Post[] = [
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "⚖️",
-    accent: "linear-gradient(135deg,#5b21b6,#92400e)",
+    accent: "linear-gradient(135deg,#1a377d,#92400e)",
     body: `
 <p>Triphala is a compound formula, not a single-ingredient powder, and that changes what buyers need to verify before committing to a supplier. A standard spec sheet — food grade, 80–120 mesh, moisture ≤7% — tells you almost nothing about whether the 1:1:1 amalaki-bibhitaki-haritaki ratio the label claims is actually what is in the bag. Here is how to source triphala with that specific risk in mind.</p>
 <h2>Ask how the blend is actually made</h2>
@@ -1880,7 +1880,7 @@ export const posts: Post[] = [
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🧅",
-    accent: "linear-gradient(135deg,#be185d,#f472b6)",
+    accent: "linear-gradient(135deg,#c7861c,#e0a33a)",
     body: `
 <p>Of the three onion colours we supply, pink is the one buyers most often discover by accident — someone sourcing red onion powder for a bold seasoning finds pink instead and realises it solves a different problem entirely. Milder and sweeter than red, with a pale blush colour that won't darken a light-coloured product the way red or even white sometimes can, pink onion powder occupies a genuinely useful middle ground rather than being a lesser version of either alternative.</p>
 <h2>Where it comes from</h2>
@@ -1910,7 +1910,7 @@ export const posts: Post[] = [
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🥗",
-    accent: "linear-gradient(135deg,#db2777,#f9a8d4)",
+    accent: "linear-gradient(135deg,#d99a36,#f0c97e)",
     body: `
 <p>The most common formulation mistake with pink onion powder is treating it as a drop-in substitute for red onion powder at the same dose. Because pink is meaningfully milder, a formulation built around red onion's pungency and simply swapped to pink at the identical inclusion rate often reads as underseasoned — the onion note that was clearly present with red becomes barely detectable. Getting pink onion powder right in a seasoning or snack formulation means dosing and pairing around its actual character, not its category label.</p>
 <h2>Dose: expect to go higher than you would with red or white</h2>
@@ -2654,7 +2654,7 @@ export const posts: Post[] = [
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "🟣",
-    accent: "linear-gradient(135deg,#831843,#ec4899)",
+    accent: "linear-gradient(135deg,#7d520e,#e9b055)",
     body: `
 <p>Beetroot powder has become one of the most in-demand clean-label ingredients in recent years, driven by two genuinely distinct value propositions that sometimes get conflated: its striking natural red-purple colour, prized as a clean-label alternative to synthetic food dyes, and its naturally occurring dietary nitrates, which have built real commercial momentum in the sports-nutrition category. Understanding which of these two a given buyer actually needs matters for sourcing the right grade.</p>
 <h2>Where it comes from</h2>
@@ -2684,7 +2684,7 @@ export const posts: Post[] = [
     read: "7 min read",
     author: "Gautam Choudhary",
     emoji: "🏃",
-    accent: "linear-gradient(135deg,#9f1239,#f472b6)",
+    accent: "linear-gradient(135deg,#a77017,#e0a33a)",
     body: `
 <p>Beetroot powder's two major commercial use cases — natural food colouring and sports-nutrition nitrate supplementation — sit close enough together that buyers sometimes assume any beetroot powder serves both equally well. In practice, the priorities and even the sourcing questions worth asking differ meaningfully depending on which application you are formulating for.</p>
 <h2>For natural colouring: tinctorial strength and hue consistency</h2>
@@ -3270,7 +3270,7 @@ export const posts: Post[] = [
     read: "8 min read",
     author: "Gautam Choudhary",
     emoji: "📋",
-    accent: "linear-gradient(135deg,#1f4693,#4338ca)",
+    accent: "linear-gradient(135deg,#1f4693,#29478d)",
     body: `
 <p>Import documentation requirements are not static. Regulations governing food safety certification, labelling, traceability and specific ingredient categories shift periodically across every major import market, and the practical burden of staying current with those changes generally falls on the importer rather than the exporter, even though a good supplier can make the process considerably easier. Understanding how to stay ahead of documentation changes — rather than discovering them at a port of entry — is a genuinely valuable habit for any regular importer to build.</p>
 <h2>Why documentation requirements change more often than buyers expect</h2>

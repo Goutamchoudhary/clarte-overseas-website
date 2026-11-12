@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170">
 <!-- Stacked grading screens sorting seeds into an even pile · use: Edible Seeds & Kernels category guide -->
-<ellipse cx="110" cy="163" rx="100" ry="5" fill="#15123a" opacity=".1"/>
+<ellipse cx="110" cy="163" rx="100" ry="5" fill="#14213d" opacity=".1"/>
 <rect x="18" y="30" width="110" height="20" rx="6" fill="#8a6a4a"/><path d="M26 40H120" stroke="#c9ad86" stroke-width="5" stroke-dasharray="4 5"/>
 <rect x="28" y="66" width="96" height="20" rx="6" fill="#a8845c"/><path d="M36 76H116" stroke="#dbc39e" stroke-width="5" stroke-dasharray="3 6"/>
 <g fill="#efe4cf"><ellipse cx="44" cy="22" rx="8" ry="5" transform="rotate(-20 44 22)"/><ellipse cx="66" cy="18" rx="8" ry="5" transform="rotate(15 66 18)"/><ellipse cx="90" cy="22" rx="8" ry="5" transform="rotate(-8 90 22)"/></g>

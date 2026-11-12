@@ -83,7 +83,7 @@ that area).
   The one deliberate exception: every FAQ section uses `buyer-questions`
   (owner's choice, Nov 2026).
 - **Blog covers** are generated vectors: `node scripts/gen-blog-art.mjs` writes
-  `public/assets/img/blog/<id>.svg` from its `ART` map, one line per post. A new
+  `public/assets/img/blog/<id>-v2.svg` from its `ART` map, one line per post. A new
   post needs a line there (the script fails if one is missing; until then the
   page falls back to the post's emoji). Once a cover has shipped, change it
   under a new filename, as with any image here.
@@ -97,6 +97,17 @@ that area).
   dependency was removed in Oct 2026. Keep signed certificate PDFs
   byte-for-byte as issued (re-compressing breaks the signature); a renewed
   certificate gets a new filename.
+
+## Colour
+
+- Brand palette (Nov 2026): **navy** `#1f4693` (the logo colour) for buttons,
+  links and dark sections, and **turmeric** `#c7861c` (ink `#8a5a0f`, tint
+  `#f7eedb`) as the warm accent (eyebrow labels, highlights). Tokens live at the
+  top of `public/css/site-v3.css` (`--violet` and `--pink` keep their old names
+  but now hold navy and turmeric). **No purple or lavender anywhere** — the owner
+  replaced it so the site doesn't read as AI-generated. CTA buttons (`--bloom`, `--aurora`)
+  are navy easing into turmeric at the far end — never violet or pink. Purple-red food
+  colours in drawings (beetroot, pomegranate, red onion, tulsi) are fine.
 
 ## i18n
 
