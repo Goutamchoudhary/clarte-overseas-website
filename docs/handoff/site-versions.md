@@ -338,3 +338,11 @@ under `prefers-reduced-motion`.
   (max ~5°) and a soft light sweeps across (`.tilt-shine`, added by
   site-v3.js). Desktop mouse only; off under reduced motion. The owner
   turned down the 3D globe and opening-container ideas (Nov 2026).
+- Home hero entrance, "Rise from the line" (owner's pick of six prototypes,
+  Nov 2026): the three words slide up from behind their baselines (staggered
+  0 / .14 / .28s) and the side column fades up after them. Pure CSS in
+  `site-v3.css` (`j-rise`, `j-rise-in`), keyed on `html[data-booted]` (first
+  visit, as the splash lifts) or `html[data-boot-gone]` (every later arrival,
+  set before first paint), so it plays each time a visitor lands on Home.
+  Uses the `translate` property so it never fights GSAP's scroll parting.
+  Off under reduced motion; without JS the hero just shows.
