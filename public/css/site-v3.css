@@ -60,6 +60,35 @@
 @media (min-width: 1024px) { [data-version="v3"] .j-w-b { padding-left: 14%; } [data-version="v3"] .j-w-c { padding-left: 4.5%; } }
 @keyframes j-pan { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 @keyframes j-pan-top { from { background-position: 0% 3%; } to { background-position: 100% 3%; } }
+/* Hero entrance, "Rise from the line" (owner's pick, Nov 2026): each word
+   slides up from behind its own baseline, then the side column follows. Runs on
+   every arrival at Home: as the first-visit splash lifts (html[data-booted]) or
+   from first paint on later visits (html[data-boot-gone], set in <head>). Both
+   selectors carry identical declarations, so gaining the second attribute
+   mid-play doesn't restart anything. Uses `translate`, not `transform`, for the
+   rise so it never fights GSAP's scroll parting or the button hover lift.
+   Pure CSS and fill-mode backwards: no JS, no flash, and without the attribute
+   (no JS) the hero simply shows. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-booted][data-version="v3"] .j-w, html[data-boot-gone][data-version="v3"] .j-w {
+    animation-name: j-pan, j-rise; animation-duration: 9s, .95s; animation-timing-function: ease-in-out, cubic-bezier(.2,.8,.2,1);
+    animation-iteration-count: infinite, 1; animation-direction: alternate, normal; animation-fill-mode: none, backwards; animation-delay: 0s, 0s;
+  }
+  html[data-booted][data-version="v3"] .j-w-a, html[data-boot-gone][data-version="v3"] .j-w-a { animation-name: j-pan-top, j-rise; animation-duration: 14s, .95s; }
+  html[data-booted][data-version="v3"] .j-w-b, html[data-boot-gone][data-version="v3"] .j-w-b { animation-delay: -3s, .14s; }
+  html[data-booted][data-version="v3"] .j-w-c, html[data-boot-gone][data-version="v3"] .j-w-c { animation-delay: -6s, .28s; }
+  html[data-booted][data-version="v3"] .j-hero-side > *, html[data-boot-gone][data-version="v3"] .j-hero-side > * { animation: j-rise-in .65s cubic-bezier(.22,.61,.36,1) .52s backwards; }
+  html[data-booted][data-version="v3"] .j-hero-side > :nth-child(2), html[data-boot-gone][data-version="v3"] .j-hero-side > :nth-child(2) { animation-delay: .61s; }
+  html[data-booted][data-version="v3"] .j-hero-side > :nth-child(3), html[data-boot-gone][data-version="v3"] .j-hero-side > :nth-child(3) { animation-delay: .7s; }
+  html[data-booted][data-version="v3"] .j-hero-side > :nth-child(4), html[data-boot-gone][data-version="v3"] .j-hero-side > :nth-child(4) { animation-delay: .79s; }
+}
+/* The clip's bottom edge tracks the word's own baseline as it rises, so each
+   word appears to come up out of a line rather than fade in. */
+@keyframes j-rise {
+  from { translate: 0 105%; transform: skewY(6deg); clip-path: inset(-30% -12% 100% -12%); }
+  to { translate: 0 0; transform: none; clip-path: inset(-30% -12% -30% -12%); }
+}
+@keyframes j-rise-in { from { opacity: 0; translate: 0 18px; } }
 [data-version="v3"] .j-hero-side { display: flex; flex-direction: column; gap: 1.1rem; padding-bottom: .5rem; }
 [data-version="v3"] .j-kicker { font: 600 .8rem var(--font-head); letter-spacing: .12em; text-transform: uppercase; color: var(--pink); }
 [data-version="v3"] .j-hero-side p { margin: 0; font-size: 1.1rem; line-height: 1.6; color: var(--sub); }

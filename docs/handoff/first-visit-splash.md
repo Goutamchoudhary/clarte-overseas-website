@@ -90,6 +90,9 @@ or flashing on every subsequent page view on a multi-page site.
   `window.onSplashExit()` — `public/js/home-fx.js`.
 - `.reveal` entrance animations also wait on `onSplashExit()` —
   `public/js/script.js`.
+- The home hero's CSS entrance (`j-rise`) keys on `html[data-booted]` /
+  `html[data-boot-gone]` instead, so it starts as the veil fades on a first
+  visit and from first paint on later ones — see site-versions.md.
 - Third-party widget loading moved to after `window.load` —
   `src/layouts/BaseLayout.astro`.
 - Production-only CSS reordering so the splash isn't blocked by
