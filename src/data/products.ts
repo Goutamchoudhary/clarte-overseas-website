@@ -415,7 +415,8 @@ export const products: Product[] = [
   },
   {
     slug: "tomato-powder", name: "Tomato Powder", category: "dehydrated-vegetable-powders",
-    image: "/assets/img/products/tomato-powder.webp", emoji: "🍅", hsn: "0712 90 90", botanical: "Solanum lycopersicum",
+    image: "/assets/img/products/tomato-powder-v2.webp", emoji: "🍅", hsn: "0712 90 90", botanical: "Solanum lycopersicum",
+    listImage: "/assets/img/products/tomato-powder-wide.webp",
     tagline: "Concentrated tomato flavour and colour.",
     description:
       "Made from ripe red tomatoes, this powder concentrates their savoury-sweet flavour and rich colour into a shelf-stable form. It rehydrates into paste or sauce and is a staple for soups, seasonings and ready meals.",
@@ -426,7 +427,8 @@ export const products: Product[] = [
   },
   {
     slug: "carrot-powder", name: "Carrot Powder", category: "dehydrated-vegetable-powders",
-    image: "/assets/img/products/carrot-powder.webp", emoji: "🥕", hsn: "0712 90 90", botanical: "Daucus carota",
+    image: "/assets/img/products/carrot-powder-v2.webp", emoji: "🥕", hsn: "0712 90 90", botanical: "Daucus carota",
+    listImage: "/assets/img/products/carrot-powder-wide.webp",
     tagline: "Sweet, orange and rich in natural beta-carotene.",
     description:
       "Carrot powder carries the vegetable's natural sweetness and warm orange colour, plus its well-known beta-carotene. It is widely used in baby food, soups, seasonings and natural colouring applications.",
@@ -437,7 +439,8 @@ export const products: Product[] = [
   },
   {
     slug: "jackfruit-powder", name: "Jackfruit Powder", category: "dehydrated-vegetable-powders",
-    image: "/assets/img/products/jackfruit-powder.webp", emoji: "🟡", hsn: "1106 30 10", botanical: "Artocarpus heterophyllus",
+    image: "/assets/img/products/jackfruit-powder-v2.webp", emoji: "🟡", hsn: "1106 30 10", botanical: "Artocarpus heterophyllus",
+    listImage: "/assets/img/products/jackfruit-powder-wide.webp",
     tagline: "India's super-fruit — sweet, filling, on-trend.",
     description:
       "Jackfruit powder turns one of India's most talked-about fruits into a versatile ingredient. Ripe jackfruit gives a sweet, tropical flavour for beverages and nutrition, while the fruit's fibre and resistant starch make it a popular functional and flour ingredient.",

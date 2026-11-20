@@ -13,6 +13,7 @@ products without one keep the old centred cut-out layout.
 Done: functional-nutritional-powders (amla + dried-amla gallery, amchur,
 lemon, beetroot); ayurvedic-herbal-powders: all nine (moringa, tulsi,
 ashwagandha, shatavari, brahmi, triphala, giloy, neem, trikatu).
+dehydrated-vegetable-powders: tomato, carrot, jackfruit (20 Nov 2026).
 
 How to add a set:
   1. Drop the originals (any format) in the git-ignored folder
